@@ -1,0 +1,196 @@
+/* Gallery — Luke-style continuation of the Projects section.
+   Layout (from reference frames 609-921):
+   - 400vh outer section (four viewports of scroll).
+   - 100vh sticky inner container that holds all visual content.
+   - A small red SVG curve at the top (continuation of Projects curve)
+     that fades out as the user scrolls.
+   - 8 photographer images scattered across the viewport with rotation,
+     each entering from below at the start, staying in place during
+     the text reveal, then exiting upward at the end.
+   - A centered statement "Each project is a chance to learn, experiment
+     and push my limits." that fades in word-by-word with blur, stays
+     visible, then fades out.
+   - Side rails mirror the Projects layout: counter on the left,
+     "Gallery" label + progress line on the right. */
+
+.gallery {
+  position: relative;
+  width: 100%;
+  height: 400vh;
+  background: #000;
+  color: #fff;
+  z-index: 1;
+}
+
+.gallery__sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ---------- Red curve (top of Gallery) ---------- */
+.gallery__curve {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.gallery__curve svg {
+  display: block;
+}
+
+/* ---------- Scattered images ---------- */
+.gallery__image-wrap {
+  position: absolute;
+  z-index: 1;
+  aspect-ratio: 4 / 3;
+  border-radius: 0.5rem;
+  /* The wrap holds the static rotation set inline.
+     It also establishes a containing block for the inner .gallery__image. */
+  transform-origin: center center;
+  will-change: transform, opacity;
+}
+
+.gallery__image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  will-change: transform;
+}
+
+.gallery__image-media {
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+/* ---------- Centered statement ---------- */
+.gallery__text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  text-align: center;
+  max-width: min(80vw, 900px);
+  pointer-events: none;
+  mix-blend-mode: difference;
+  will-change: transform, opacity;
+}
+
+.gallery__text p {
+  font-family: "Helvetica Neue", "Inter", system-ui, sans-serif;
+  font-size: clamp(1.6rem, 3.2vw, 3rem);
+  font-weight: 300;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin: 0;
+}
+
+.gallery__text-word {
+  display: inline-block;
+  /* filter: blur is animated via GSAP */
+  will-change: opacity, filter, transform;
+}
+
+.gallery__text em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* ---------- Side rails ---------- */
+.gallery__rail {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  display: none;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .gallery__rail { display: flex; }
+}
+
+.gallery__rail--left {
+  left: clamp(0.75rem, 1.5vw, 1.25rem);
+  align-items: center;
+}
+
+.gallery__counter {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.6);
+  font-variant-numeric: tabular-nums;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+}
+
+.gallery__rail--right {
+  right: clamp(0.75rem, 1.5vw, 1.25rem);
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.gallery__rail-line {
+  position: relative;
+  width: 1px;
+  height: 6rem;
+  background: rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+}
+
+.gallery__rail-line-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  transform-origin: top center;
+  transform: scaleY(0);
+}
+
+.gallery__rail-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.8);
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+  .gallery__sticky {
+    height: 100vh;
+  }
+  .gallery__image-wrap {
+    width: 40vw !important;
+  }
+  .gallery__text {
+    max-width: 88vw;
+  }
+  .gallery__text p {
+    font-size: clamp(1.1rem, 4vw, 1.5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery__image,
+  .gallery__text {
+    transition: none !important;
+  }
+}

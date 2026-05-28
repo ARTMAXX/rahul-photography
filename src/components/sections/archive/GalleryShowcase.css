@@ -1,0 +1,420 @@
+/* GalleryShowcase — fully visible gallery section.
+   Design goals:
+   - Every image + the video are immediately visible on page load.
+   - No scroll-driven pinning, no scroll-driven hiding.
+   - Subtle fade-in on first reveal (IntersectionObserver, set in JSX).
+   - Click any tile to open a fullscreen lightbox with keyboard nav. */
+
+.showcase {
+  position: relative;
+  width: 100%;
+  background: #000;
+  color: #f5f5f5;
+  padding: clamp(4rem, 8vw, 8rem) clamp(1rem, 4vw, 3rem) clamp(5rem, 10vw, 10rem);
+  overflow: hidden;
+}
+
+/* ---------- Section header ---------- */
+.showcase__header {
+  max-width: 56rem;
+  margin: 0 auto clamp(2.5rem, 5vw, 4rem);
+  text-align: center;
+}
+
+.showcase__eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #ff1a1a;
+  margin-bottom: 1.25rem;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid rgba(255, 26, 26, 0.4);
+  border-radius: 9999px;
+}
+
+.showcase__title {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: clamp(1.75rem, 5vw, 3.75rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.25rem;
+  color: #fff;
+}
+
+.showcase__subtitle {
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  line-height: 1.6;
+  color: rgba(245, 245, 245, 0.65);
+  max-width: 38rem;
+  margin: 0 auto;
+}
+
+/* ---------- Featured video ---------- */
+.showcase__video-wrap {
+  position: relative;
+  max-width: 78rem;
+  margin: 0 auto clamp(3rem, 6vw, 5rem);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background: #0a0a0a;
+  aspect-ratio: 16 / 9;
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.showcase__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.showcase__video-caption {
+  position: absolute;
+  left: 1.5rem;
+  bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.showcase__video-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(255, 26, 26, 0.9);
+  padding: 0.3rem 0.7rem;
+  border-radius: 9999px;
+  width: max-content;
+}
+
+.showcase__video-title {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: clamp(1.1rem, 2.2vw, 1.75rem);
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+}
+
+/* Gradient overlay at bottom of video for caption legibility */
+.showcase__video-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0) 35%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ---------- Image grid ---------- */
+.showcase__grid {
+  display: grid;
+  gap: clamp(0.75rem, 1.5vw, 1.25rem);
+  grid-template-columns: 1fr;
+  max-width: 78rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .showcase__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .showcase__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.showcase__tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 0.875rem;
+  overflow: hidden;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1),
+    border-color 0.3s ease, box-shadow 0.3s ease;
+  /* The reveal animation will override opacity until .is-revealed is added */
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.showcase__tile.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.showcase__tile:hover,
+.showcase__tile:focus-visible {
+  transform: translateY(-4px);
+  border-color: rgba(255, 26, 26, 0.5);
+  box-shadow: 0 18px 40px -12px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 26, 26, 0.3);
+  outline: none;
+}
+
+.showcase__tile:focus-visible {
+  border-color: #ff1a1a;
+  box-shadow: 0 0 0 3px rgba(255, 26, 26, 0.5);
+}
+
+.showcase__tile-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: #111;
+  overflow: hidden;
+}
+
+.showcase__tile-img {
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.showcase__tile:hover .showcase__tile-img,
+.showcase__tile:focus-visible .showcase__tile-img {
+  transform: scale(1.05);
+}
+
+.showcase__tile-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+}
+
+.showcase__tile-category {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #ff1a1a;
+}
+
+.showcase__tile-caption {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: rgba(245, 245, 245, 0.85);
+  text-align: right;
+}
+
+/* Reveal animation for header and video (also gated by [data-reveal]) */
+.showcase__header[data-reveal],
+.showcase__video-wrap[data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.showcase__header.is-revealed,
+.showcase__video-wrap.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Lightbox ---------- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 3vw, 3rem);
+  animation: lightbox-fade 0.25s ease-out;
+}
+
+@keyframes lightbox-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.lightbox__close:hover,
+.lightbox__close:focus-visible {
+  background: rgba(255, 26, 26, 0.9);
+  border-color: #ff1a1a;
+  outline: none;
+  transform: scale(1.05);
+}
+
+.lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.lightbox__nav:hover,
+.lightbox__nav:focus-visible {
+  background: rgba(255, 26, 26, 0.9);
+  border-color: #ff1a1a;
+  outline: none;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.lightbox__nav:focus-visible {
+  box-shadow: 0 0 0 3px rgba(255, 26, 26, 0.5);
+}
+
+.lightbox__nav--prev { left: 1.25rem; }
+.lightbox__nav--next { right: 1.25rem; }
+
+.lightbox__content {
+  position: relative;
+  width: 100%;
+  max-width: 72rem;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 0;
+  animation: lightbox-zoom 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+@keyframes lightbox-zoom {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.lightbox__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  max-height: 75vh;
+  background: #0a0a0a;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.7);
+}
+
+.lightbox__img {
+  object-fit: contain;
+  background: #000;
+}
+
+.lightbox__caption {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  color: #fff;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+}
+
+.lightbox__category {
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #ff1a1a;
+  font-size: 0.72rem;
+}
+
+.lightbox__title {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-style: italic;
+  font-size: 1.05rem;
+}
+
+.lightbox__count {
+  color: rgba(255, 255, 255, 0.5);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.85rem;
+}
+
+/* Mobile lightbox adjustments */
+@media (max-width: 640px) {
+  .lightbox__nav {
+    width: 44px;
+    height: 44px;
+  }
+  .lightbox__nav--prev { left: 0.5rem; }
+  .lightbox__nav--next { right: 0.5rem; }
+  .lightbox__close {
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 42px;
+    height: 42px;
+  }
+  .lightbox__media {
+    aspect-ratio: 4 / 5;
+  }
+  .lightbox__caption {
+    flex-direction: column;
+    gap: 0.4rem;
+    text-align: center;
+  }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .showcase__header[data-reveal],
+  .showcase__video-wrap[data-reveal],
+  .showcase__tile {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .showcase__tile-img {
+    transition: none;
+  }
+  .lightbox,
+  .lightbox__content {
+    animation: none;
+  }
+}

@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #070707;
+  --foreground: #f0f0f0;
+
+  /* ── Font families (resolved by Next.js font loader) ── */
+  --font-editorial: var(--font-playfair), "Playfair Display", Georgia, serif;
+  --font-sans:      var(--font-outfit), "Outfit", system-ui, sans-serif;
+  --font-mono:      "SF Mono", "Fira Code", "Fira Mono", ui-monospace, monospace;
+
+  /* ── Brand accent ── */
+  --gold:           #c8a84b;
+  --gold-light:     #f0cc70;
+  --red-accent:     #e83b2c;
+
+  /* ── Layout tokens ── */
+  --gutter:         clamp(1.25rem, 4vw, 3rem);
+  --max-width:      1400px;
+
+  /* ── Scroll behavior ── */
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  cursor: none;
+}
+
+body {
+  color:      var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ── Typography defaults ── */
+h1, h2, h3, h4 {
+  font-family: var(--font-editorial);
+  font-weight: 700;
+}
+
+/* ── Hide default cursor globally — custom cursor handles it ── */
+a, button, [role="button"], input, select, textarea, label {
+  cursor: none;
+}
+
+/* ── Smooth image rendering ── */
+img, video {
+  max-width: 100%;
+  display: block;
+}
+
+/* ── Selection colour ── */
+::selection {
+  background: rgba(200, 168, 75, 0.25);
+  color: #f0f0f0;
+}
+
+/* ── Scrollbar styling ── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3a;
+}
