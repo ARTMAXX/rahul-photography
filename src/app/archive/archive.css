@@ -141,7 +141,6 @@
   break-inside: avoid;
   margin-bottom: 1rem;
   border-radius: 14px;
-  overflow: hidden;
   cursor: none;
   background: #111;
   display: block;
@@ -149,19 +148,19 @@
 
 /* natural aspect-ratios by default */
 .archive__card:not(.archive__card--wide):not(.archive__card--tall) {
-  aspect-ratio: 4/5;
+  aspect-ratio: auto;
 }
 
 .archive__card--wide {
-  aspect-ratio: 16/9;
+  aspect-ratio: auto;
 }
 
 .archive__card--tall {
-  aspect-ratio: 3/5;
+  aspect-ratio: auto;
 }
 
 .archive__card--video {
-  aspect-ratio: 16/9;
+  aspect-ratio: auto;
 }
 
 /* Stagger the first card of each column via transform shift */
@@ -181,9 +180,9 @@
 
 /* ── Media ── */
 .archive__media {
-  object-fit: cover;
+  object-fit: contain;
   width: 100%;
-  height: 100%;
+  height: auto;
   transition: transform 0.55s cubic-bezier(0.23, 1, 0.32, 1),
     filter 0.5s ease;
   display: block;

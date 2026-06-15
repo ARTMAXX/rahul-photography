@@ -235,12 +235,12 @@ export default function StoryWorld({ onOpenProject, onOpenLightbox }: any) {
                     <div
                       ref={(el) => { imageRefs.current[idx] = el; }}
                       onClick={() => handleOpenDetail(idx)}
-                      className="w-full md:w-[35vw] aspect-[4/5] rounded-sm overflow-hidden bg-[#222] relative group shadow-2xl cursor-pointer"
+                      className="w-full md:w-[35vw] rounded-sm relative group shadow-2xl cursor-pointer"
                     >
                       <img
                         src={chap.img}
                         alt={chap.title}
-                        className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
+                        className="w-full h-auto object-contain transition-transform duration-1000 ease-out group-hover:scale-105"
                       />
                     </div>
                   </div>
@@ -265,12 +265,12 @@ export default function StoryWorld({ onOpenProject, onOpenLightbox }: any) {
           <div className="relative w-full max-w-7xl px-8 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center">
             <div className="col-span-12 md:col-span-7 flex justify-center">
               <div 
-                className="w-full md:w-[42vw] aspect-[4/3] rounded-sm overflow-hidden bg-black/40 border border-white/10 shadow-2xl relative"
+                className="w-full md:w-[42vw] rounded-sm bg-black/40 border border-white/10 shadow-2xl relative"
               >
                 <img
                   src={chapters[expandedIdx].img}
                   alt={chapters[expandedIdx].title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto object-contain"
                 />
               </div>
             </div>

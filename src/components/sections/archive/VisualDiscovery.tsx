@@ -48,11 +48,11 @@ export default function VisualDiscovery() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24">
           {PROJECTS.map((project) => (
             <div key={project.id} className="project-card group cursor-pointer">
-              <div className="aspect-[4/5] bg-neutral-200 overflow-hidden mb-6">
+              <div className="mb-6">
                 <img 
                   src={project.mainImage} 
                   alt={project.title} 
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 hover:scale-105" 
+                  className="w-full h-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-700 hover:scale-105" 
                 />
               </div>
               <div className="flex justify-between items-start">

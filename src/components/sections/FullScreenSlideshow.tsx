@@ -21,7 +21,7 @@ export default function FullScreenSlideshow() {
                 </h2>
                 <p className="text-xs font-sans tracking-[0.2em] uppercase mt-4 text-black/50">{SLIDES[index].desc}</p>
             </div>
-            <div className="w-1/3 h-[50vh] relative">
+            <div className="w-1/3 relative flex items-start justify-center">
                 <AnimatePresence mode="wait">
                     <motion.img 
                         key={index}
@@ -29,7 +29,7 @@ export default function FullScreenSlideshow() {
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0 }}
                         src={SLIDES[index].src}
-                        className="w-full h-full object-cover"
+                        className="w-full h-auto object-contain"
                     />
                 </AnimatePresence>
             </div>

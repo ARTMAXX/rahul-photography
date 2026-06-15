@@ -99,12 +99,12 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                   {project.gallery.map((imgUrl: string, i: number) => (
                     <div
                       key={i}
-                      className="w-full aspect-[4/5] overflow-hidden bg-[#EBE5DB] rounded-sm relative group shadow-sm"
+                      className="w-full rounded-sm group shadow-sm"
                     >
                       <img
                         src={imgUrl}
                         alt={`${project.title} slide ${i}`}
-                        className="w-full h-full object-contain transition-transform duration-700 ease-out"
+                        className="w-full h-auto object-contain transition-transform duration-700 ease-out"
                       />
                     </div>
                   ))}

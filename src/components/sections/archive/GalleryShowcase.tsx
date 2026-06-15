@@ -206,7 +206,8 @@ export default function GalleryShowcase() {
               <Image
                 src={img.src}
                 alt={img.alt}
-                fill
+                width={800}
+                height={450}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="showcase__tile-img"
               />
@@ -273,7 +274,8 @@ export default function GalleryShowcase() {
               <Image
                 src={showcaseImages[lightboxIndex].src}
                 alt={showcaseImages[lightboxIndex].alt}
-                fill
+                width={1200}
+                height={675}
                 sizes="100vw"
                 className="lightbox__img"
                 priority

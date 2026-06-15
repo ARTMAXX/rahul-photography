@@ -22,8 +22,8 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
     <ReactLenis
       root
       options={{
-        lerp: 0.08,
-        duration: 1.4,
+        lerp: 0.1,
+        duration: 1.2,
         smoothWheel: true,
       }}
       autoRaf

@@ -157,7 +157,7 @@ export default function FeaturedCampaign({
           <div className="lg:col-span-7 flex flex-col">
             <div 
               ref={cameraFrameRef}
-              className="relative w-full aspect-[4/5] md:aspect-[4/3] rounded-sm overflow-hidden bg-[#0A0A0A] border border-[#9D8B74]/10 shadow-2xl"
+              className="relative w-full rounded-sm bg-[#0A0A0A] border border-[#9D8B74]/10 shadow-2xl"
             >
               <video
                 ref={videoRef}
@@ -165,7 +165,7 @@ export default function FeaturedCampaign({
                 loop
                 muted
                 playsInline
-                className="w-full h-full object-cover cursor-pointer opacity-85 hover:opacity-100 transition-opacity duration-700 ease-out"
+                className="w-full h-auto object-contain cursor-pointer opacity-85 hover:opacity-100 transition-opacity duration-700 ease-out"
               >
                 <source src="/best shots/Product image/product-energy-can.mp4" type="video/mp4" />
               </video>
@@ -183,11 +183,11 @@ export default function FeaturedCampaign({
                 className="campaign-card-reveal group relative overflow-hidden rounded-sm border border-[#9D8B74]/10 p-6 flex flex-row items-center gap-6 cursor-pointer transition-all duration-500 hover:border-[#9D8B74]/40 bg-[#141311] z-10 shadow-sm"
               >
                 <div className={`absolute inset-0 opacity-15 group-hover:opacity-25 transition-opacity duration-700 pointer-events-none ${prod.bgClass}`} />
-                <div className="relative w-28 h-28 md:w-32 md:h-32 shrink-0 bg-black/20 rounded-sm border border-[#9D8B74]/10 overflow-hidden flex items-center justify-center p-3">
+                <div className="w-32 md:w-36 shrink-0 bg-black/20 rounded-sm border border-[#9D8B74]/10 flex items-center justify-center p-3">
                   <img
                     src={prod.img}
                     alt={prod.label}
-                    className="max-w-full max-h-full object-contain filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.5)] group-hover:-translate-y-2 group-hover:scale-105 transition-all duration-700 ease-out z-10"
+                    className="w-full h-auto object-contain filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.5)] group-hover:-translate-y-2 group-hover:scale-105 transition-all duration-700 ease-out z-10"
                   />
                 </div>
                 <div className="flex-1 select-none z-10">

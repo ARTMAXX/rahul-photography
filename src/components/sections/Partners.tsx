@@ -22,12 +22,12 @@ export default function Partners() {
           {PARTNERS.map((brand) => (
             <div
               key={brand.name}
-              className="relative h-8 w-24 md:w-32 flex items-center justify-center opacity-40 hover:opacity-100 hover:scale-105 transition-all duration-300"
+              className="relative flex items-center justify-center opacity-40 hover:opacity-100 hover:scale-105 transition-all duration-300"
             >
               <img
-                src={`https://cdn.simpleicons.org/${brand.slug}/ffffff`}
+                src={`https://cdn.simpleicons.org/${brand.slug}`}
                 alt={brand.name}
-                className="max-h-8 max-w-full object-contain filter brightness-100 transition-all duration-300"
+                className="h-auto w-auto max-h-16 max-w-[160px] object-contain transition-all duration-300 invert"
                 loading="lazy"
               />
             </div>

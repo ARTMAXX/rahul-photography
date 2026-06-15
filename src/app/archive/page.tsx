@@ -138,7 +138,8 @@ export default function ArchivePage() {
               <Image
                 src={asset.src}
                 alt={asset.alt}
-                fill
+                width={800}
+                height={450}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="archive__media"
                 loading="lazy"

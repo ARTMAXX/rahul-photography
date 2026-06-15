@@ -173,12 +173,10 @@
 .showcase__tile {
   position: relative;
   border-radius: 14px;
-  overflow: hidden;
   cursor: none;
-  aspect-ratio: 4/5;
   border: none;
   padding: 0;
-  background: #111;
+  background: transparent;
   outline: none;
   transition: transform 0.45s cubic-bezier(0.23, 1, 0.32, 1),
     box-shadow 0.45s cubic-bezier(0.23, 1, 0.32, 1);
@@ -190,17 +188,18 @@
 
 .showcase__tile:hover {
   transform: scale(1.025) translateY(-4px);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.55),
-    0 0 0 1px rgba(200, 168, 75, 0.25);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.55);
 }
 
 .showcase__tile-media {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  width: 100%;
 }
 
 .showcase__tile-img {
-  object-fit: cover;
+  object-fit: contain;
+  width: 100%;
+  height: auto;
   transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1),
     filter 0.5s ease;
   filter: brightness(0.9) saturate(0.95);
@@ -378,11 +377,13 @@
 
 .lightbox__media {
   position: relative;
-  width: 100%;
-  aspect-ratio: 4/3;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 40px 80px rgba(0,0,0,0.7);
+  width: auto;
+  height: auto;
+  max-width: 90vw;
+  max-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   animation: lightboxImgIn 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 

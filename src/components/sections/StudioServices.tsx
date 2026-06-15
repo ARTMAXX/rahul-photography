@@ -6,7 +6,7 @@ export default function StudioServices() {
       <div className="max-w-[1400px] mx-auto grid md:grid-cols-3 gap-8">
         {["Studio", "Services", "About us"].map((item) => (
             <div key={item} className="group cursor-pointer">
-                <img src="/best shots/Food photo/food-curry.webp" className="w-full aspect-[4/5] object-cover" />
+                <img src="/best shots/Food photo/food-curry.webp" className="w-full h-auto object-contain" />
                 <h3 className="text-3xl font-sans mt-6">{item}</h3>
             </div>
         ))}

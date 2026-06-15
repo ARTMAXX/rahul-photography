@@ -8,10 +8,10 @@ import { ReactLenis } from "@studio-freight/react-lenis";
 import { X } from "lucide-react";
 
 const GALLERY_ITEMS = [
-  { id: "gal-1", title: "Mechanical Darkness", category: "Chrono Luxury", img: "/best shots/Product image/product-watch-dark.webp", aspect: "aspect-[4/5]" },
-  { id: "gal-2", title: "Botanical Mist", category: "Product / Hairspray", img: "/best shots/Product image/product-hairspray.webp", aspect: "aspect-[3/4]" },
-  { id: "gal-3", title: "Mutton Culinary Style", category: "Velvet Crème / Culinary", img: "/best shots/Food photo/food-mutton.webp", aspect: "aspect-[4/3]" },
-  { id: "gal-4", title: "Refraction Macro", category: "Liquid Shadow / Beverage", img: "/best shots/Beverage images/bev-macro.webp", aspect: "aspect-[16/10]" },
+  { id: "gal-1", title: "Mechanical Darkness", category: "Chrono Luxury", img: "/best shots/Product image/product-watch-dark.webp" },
+  { id: "gal-2", title: "Botanical Mist", category: "Product / Hairspray", img: "/best shots/Product image/product-hairspray.webp" },
+  { id: "gal-3", title: "Mutton Culinary Style", category: "Velvet Crème / Culinary", img: "/best shots/Food photo/food-mutton.webp" },
+  { id: "gal-4", title: "Refraction Macro", category: "Liquid Shadow / Beverage", img: "/best shots/Beverage images/bev-macro.webp" },
 ];
 
 export default function ImmersiveGallery() {
@@ -42,8 +42,8 @@ export default function ImmersiveGallery() {
               onClick={() => handleItemClick(item)}
               className="flex-shrink-0 w-[300px] h-full flex flex-col justify-center cursor-pointer"
             >
-              <div className={`relative w-full ${item.aspect} overflow-hidden bg-neutral-200 rounded-sm group`}>
-                <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div className="relative w-full rounded-sm group">
+                <img src={item.img} alt={item.title} className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-110" />
               </div>
             </div>
           ))}
@@ -53,9 +53,9 @@ export default function ImmersiveGallery() {
       {selectedItem && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-20" onClick={handleClose}>
           <div 
-            className="w-[80vw] h-[80vh] bg-editorial-bg rounded-sm overflow-hidden"
+            className="max-w-[85vw] max-h-[85vh] bg-editorial-bg rounded-sm flex items-center justify-center"
           >
-             <img src={selectedItem.img} alt={selectedItem.title} className="w-full h-full object-contain" />
+             <img src={selectedItem.img} alt={selectedItem.title} className="max-w-full max-h-[85vh] w-auto h-auto object-contain" />
           </div>
           <button onClick={handleClose} className="absolute top-10 right-10 p-4 bg-white rounded-full">
             <X className="w-6 h-6" />

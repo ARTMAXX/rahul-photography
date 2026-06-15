@@ -90,13 +90,14 @@ export default function CreativeServices() {
                 </p>
 
                 {/* Mobile-only visible image (falls back to grid element) */}
-                <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden border border-white/10 mt-8 block md:hidden">
+                <div className="relative w-full mt-8 block md:hidden">
                   <Image
                     src={service.img}
                     alt={service.alt}
-                    fill
+                    width={800}
+                    height={450}
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover"
+                    className="w-full h-auto object-contain"
                     loading="lazy"
                   />
                 </div>
@@ -107,22 +108,23 @@ export default function CreativeServices() {
 
         {/* Right Column: Sticky Image Display (Desktop only) */}
         <div className="hidden md:flex md:w-1/2 sticky top-[20vh] h-[60vh] w-full flex-col justify-center items-center">
-          <div className="relative w-full h-full max-w-[480px] aspect-[4/5] rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black">
+          <div className="relative w-full max-w-[480px] bg-black">
             {SERVICES.map((service, idx) => (
               <div
                 key={`sticky-img-${idx}`}
-                className={`absolute inset-0 w-full h-full transition-all duration-700 ease-in-out ${
+                className={`w-full transition-all duration-700 ease-in-out ${
                   activeIdx === idx 
-                    ? "opacity-100 scale-100 filter blur-0" 
-                    : "opacity-0 scale-95 filter blur-[10px] pointer-events-none"
+                    ? "opacity-100 scale-100 filter blur-0 block" 
+                    : "opacity-0 scale-95 filter blur-[10px] pointer-events-none hidden"
                 }`}
               >
                 <Image
                   src={service.img}
                   alt={service.alt}
-                  fill
+                  width={960}
+                  height={540}
                   sizes="50vw"
-                  className="object-cover"
+                  className="w-full h-auto object-contain"
                   priority={idx === 0}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />

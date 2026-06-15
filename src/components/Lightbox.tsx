@@ -60,7 +60,7 @@ export default function Lightbox({ imageUrl, onClose }: LightboxProps) {
             exit={{ scale: 0.95, y: 15 }}
             transition={{ type: "spring", damping: 25, stiffness: 180 }}
             onClick={(e) => e.stopPropagation()}
-            className="relative max-h-[85vh] max-w-[90vw] overflow-hidden rounded-sm bg-[#1C1C1C] shadow-2xl border border-[#F4EFE7]/5 flex items-center justify-center"
+            className="relative max-h-[90vh] max-w-[95vw] rounded-sm bg-[#1C1C1C] shadow-2xl border border-[#F4EFE7]/5 flex items-center justify-center"
           >
             {imageUrl.endsWith(".mp4") ? (
               <video
@@ -74,7 +74,7 @@ export default function Lightbox({ imageUrl, onClose }: LightboxProps) {
               <img
                 src={imageUrl}
                 alt="High-resolution gallery capture"
-                className="max-h-[85vh] max-w-[90vw] object-contain select-none pointer-events-none"
+                className="max-h-[85vh] w-auto object-contain select-none pointer-events-none"
               />
             )}
           </motion.div>

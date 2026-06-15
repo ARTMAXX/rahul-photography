@@ -129,9 +129,9 @@ export default function PinnedShowcase({
       scrollTrigger: {
         trigger: section,
         start: "top top",
-        end: `+=${total * 100}%`,
+        end: `+=${total * 75}%`,
         pin: true,
-        scrub: 1,
+        scrub: 0.5,
         anticipatePin: 1,
       },
     });
@@ -319,6 +319,7 @@ export default function PinnedShowcase({
               >
                 {item.type === "video" ? (
                   <video
+                    key={`video-${i}`}
                     src={item.src}
                     autoPlay
                     loop
@@ -326,15 +327,20 @@ export default function PinnedShowcase({
                     playsInline
                     className="showcase__preview-media"
                     aria-label={item.alt}
+                    onLoadedData={() => console.log(`Video loaded: ${item.src}`)}
+                    onError={(e) => console.error(`Video error: ${item.src}`, e)}
                   />
                 ) : (
                   <Image
+                    key={`img-${i}`}
                     src={item.src}
                     alt={item.alt}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 30vw"
+                    width={1200}
+                    height={675}
+                    sizes="(max-width: 768px) 100vw, 45vw"
                     className="showcase__preview-media"
                     priority={i === 0}
+                    unoptimized
                   />
                 )}
               </div>

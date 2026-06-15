@@ -149,7 +149,6 @@
   background: #0a0a0a;
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 0.875rem;
-  overflow: hidden;
   padding: 0;
   cursor: pointer;
   text-align: left;
@@ -182,13 +181,13 @@
 .showcase__tile-media {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 5;
   background: #111;
-  overflow: hidden;
 }
 
 .showcase__tile-img {
-  object-fit: cover;
+  object-fit: contain;
+  width: 100%;
+  height: auto;
   transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
@@ -334,12 +333,15 @@
 
 .lightbox__media {
   position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 10;
+  width: auto;
+  height: auto;
+  max-width: 90vw;
   max-height: 75vh;
   background: #0a0a0a;
   border-radius: 0.75rem;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.7);
 }
 

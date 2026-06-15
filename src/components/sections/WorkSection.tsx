@@ -56,12 +56,12 @@ export default function WorkSection() {
               initial={{ opacity: 0, scale: 0.9, x: 20 }}
               animate={{ opacity: 1, scale: 1, x: 0 }}
               exit={{ opacity: 0, scale: 0.9, x: 20 }}
-              className="fixed top-1/3 right-10 w-[300px] h-[400px] z-50 pointer-events-none hidden md:block"
+              className="fixed top-1/3 right-10 w-[400px] z-50 pointer-events-none hidden md:block"
             >
               <img 
                 src={PROJECTS[hoveredProject].src} 
                 alt={PROJECTS[hoveredProject].client}
-                className="w-full h-full object-cover rounded-lg shadow-2xl"
+                className="w-full h-auto object-contain rounded-lg shadow-2xl"
               />
             </motion.div>
           )}
