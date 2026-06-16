@@ -1,0 +1,162 @@
+[    1537ms] [WARNING] [GPT] PubAdsService.setTargeting is deprecated, use googletag.setConfig({targeting: ...}) instead.
+https://goo.gle/gpt-message#170 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606050101/pubads_impl.js?cb=31099014:18
+[    2678ms] [WARNING] [GPT] Using deprecated googletag.encryptedSignalProviders. Please use googletag.secureSignalProviders instead.
+https://goo.gle/gpt-message#155 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606050101/pubads_impl.js?cb=31099014:18
+[    2700ms] [LOG] [8, 1, 1, 0] @ https://cdn.intergi.com/pf?country=IN&browser=Chrome&device=desktop&website_id=76844:0
+[    2700ms] [LOG] [8, 1, 1, 0] @ https://cdn.intergi.com/pf?country=IN&browser=Chrome&device=desktop&website_id=76844:0
+[    2706ms] [WARNING] [GPT] Slot.setTargeting is deprecated, use Slot.setConfig({targeting: ...}) instead.
+https://goo.gle/gpt-message#171 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606050101/pubads_impl.js?cb=31099014:18
+[    2707ms] [LOG] [8, 1, 1, 4] @ https://cdn.intergi.com/pf?country=IN&browser=Chrome&device=desktop&website_id=76844:0
+[    2708ms] [LOG] [8, 1, 1, 0] @ https://cdn.intergi.com/pf?country=IN&browser=Chrome&device=desktop&website_id=76844:0
+[    2711ms] [WARNING] Invalid GPT fixed size specification: [] @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606050101/pubads_impl.js?cb=31099014:18
+[    2712ms] [LOG] [8, 1, 1, 3] @ https://cdn.intergi.com/pf?country=IN&browser=Chrome&device=desktop&website_id=76844:0
+[    2712ms] [LOG] [8, 1, 1, 0] @ https://cdn.intergi.com/pf?country=IN&browser=Chrome&device=desktop&website_id=76844:0
+[    2714ms] [WARNING] Invalid GPT fixed size specification: [] @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606050101/pubads_impl.js?cb=31099014:18
+[    2715ms] [LOG] [8, 1, 1, 7] @ https://cdn.intergi.com/pf?country=IN&browser=Chrome&device=desktop&website_id=76844:0
+[    2715ms] [LOG] [8, 1, 1, 0] @ https://cdn.intergi.com/pf?country=IN&browser=Chrome&device=desktop&website_id=76844:0
+[    2718ms] [LOG] [8, 1, 1, 8] @ https://cdn.intergi.com/pf?country=IN&browser=Chrome&device=desktop&website_id=76844:0
+[    2718ms] [LOG] [8, 1, 1, 0] @ https://cdn.intergi.com/pf?country=IN&browser=Chrome&device=desktop&website_id=76844:0
+[    2719ms] [LOG] [8, 1, 1, 5] @ https://cdn.intergi.com/pf?country=IN&browser=Chrome&device=desktop&website_id=76844:0
+[    2720ms] [LOG] [8, 1, 1, 0] @ https://cdn.intergi.com/pf?country=IN&browser=Chrome&device=desktop&website_id=76844:0
+[    2721ms] [LOG] [8, 1, 1, 2] @ https://cdn.intergi.com/pf?country=IN&browser=Chrome&device=desktop&website_id=76844:0
+[    2721ms] [LOG] [8, 1, 1, 0] @ https://cdn.intergi.com/pf?country=IN&browser=Chrome&device=desktop&website_id=76844:0
+[    2722ms] [LOG] [8, 1, 1, 6] @ https://cdn.intergi.com/pf?country=IN&browser=Chrome&device=desktop&website_id=76844:0
+[    2722ms] [LOG] [8, 1, 1, 0] @ https://cdn.intergi.com/pf?country=IN&browser=Chrome&device=desktop&website_id=76844:0
+[    2768ms] Uncaught (in promise) No locationSelector set in the rules.
+    at <anonymous> (https://cdn.intergient.com/pageos/V.20260608.1/pageos.js:1:121415)
+[    2888ms] [ERROR] Failed to load resource: the server responded with a status of 451 () @ https://api.rlcdn.com/api/identity/envelope?pid=13250:0
+[    2888ms] [ERROR] Attestation check for Protected Audience on https://g2.gumgum.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    2888ms] [ERROR] Attestation check for Protected Audience on https://g2.gumgum.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    2888ms] [ERROR] Attestation check for Protected Audience on https://g2.gumgum.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    2888ms] [ERROR] Attestation check for Protected Audience on https://g2.gumgum.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    2888ms] [ERROR] Attestation check for Protected Audience on https://g2.gumgum.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    2888ms] [ERROR] Attestation check for Protected Audience on https://htlb.casalemedia.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    2888ms] [ERROR] Attestation check for Protected Audience on https://ib.adnxs.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    2888ms] [ERROR] Attestation check for Protected Audience on https://exchange.cootlogix.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    2888ms] [ERROR] Attestation check for Protected Audience on https://exchange.cootlogix.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    2888ms] [ERROR] Attestation check for Protected Audience on https://exchange.cootlogix.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    2888ms] [ERROR] Attestation check for Protected Audience on https://exchange.cootlogix.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    2888ms] [ERROR] Attestation check for Protected Audience on https://hb.yellowblue.io failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    2888ms] [ERROR] Attestation check for Protected Audience on https://btlr.sharethrough.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    2888ms] [ERROR] Attestation check for Protected Audience on https://btlr.sharethrough.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    2888ms] [ERROR] Attestation check for Protected Audience on https://btlr.sharethrough.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    2888ms] [ERROR] Attestation check for Protected Audience on https://btlr.sharethrough.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    2888ms] [ERROR] Attestation check for Protected Audience on https://prebid.media.net failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    2888ms] [ERROR] Attestation check for Protected Audience on https://rtb.openx.net failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    2888ms] [ERROR] Attestation check for Protected Audience on https://fastlane.rubiconproject.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    2889ms] [ERROR] Attestation check for Protected Audience on https://fastlane.rubiconproject.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    2889ms] [ERROR] Attestation check for Protected Audience on https://fastlane.rubiconproject.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    2889ms] [ERROR] Attestation check for Protected Audience on https://fastlane.rubiconproject.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    2889ms] [ERROR] Attestation check for Protected Audience on https://fastlane.rubiconproject.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    2889ms] [ERROR] Attestation check for Protected Audience on https://direct.adsrvr.org failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    2889ms] [ERROR] Attestation check for Protected Audience on https://ib.adnxs.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    2889ms] [ERROR] Attestation check for Protected Audience on https://tlx.3lift.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    2889ms] [ERROR] Attestation check for Protected Audience on https://s.seedtag.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    2893ms] [ERROR] Attestation check for Protected Audience on https://hbopenbid.pubmatic.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    2893ms] [ERROR] Attestation check for Protected Audience on https://grid-bidder.criteo.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    2900ms] [WARNING] [GPT] Using deprecated googletag.encryptedSignalProviders. Please use googletag.secureSignalProviders instead.
+https://goo.gle/gpt-message#155 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606050101/pubads_impl.js?cb=31099014:18
+[    3009ms] [LOG] [8, 1, 1, 1] @ https://cdn.intergi.com/pf?country=IN&browser=Chrome&device=desktop&website_id=76844:0
+[    3009ms] [LOG] [8, 1, 1, 0] @ https://cdn.intergi.com/pf?country=IN&browser=Chrome&device=desktop&website_id=76844:0
+[    3661ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://pbs.intergient.com/cookie_sync:0
+[    3665ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://id.crwdcntrl.net/id?c=17262:0
+[    3822ms] [ERROR] Attestation check for Protected Audience on https://tlx.3lift.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    3822ms] [ERROR] Attestation check for Protected Audience on https://htlb.casalemedia.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    3822ms] [ERROR] Attestation check for Protected Audience on https://ib.adnxs.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    3822ms] [ERROR] Attestation check for Protected Audience on https://prebid-server.rubiconproject.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    3822ms] [ERROR] Attestation check for Protected Audience on https://prebid.media.net failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    3822ms] [ERROR] Attestation check for Protected Audience on https://hb.yellowblue.io failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    3822ms] [ERROR] Attestation check for Protected Audience on https://s.seedtag.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    3822ms] [ERROR] Attestation check for Protected Audience on https://btlr.sharethrough.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    3822ms] [ERROR] Attestation check for Protected Audience on https://ib.adnxs.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    3823ms] [ERROR] Attestation check for Protected Audience on https://exchange.cootlogix.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    3823ms] [ERROR] Attestation check for Protected Audience on https://direct.adsrvr.org failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    3823ms] [ERROR] Attestation check for Protected Audience on https://rtb.openx.net failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    3824ms] [ERROR] Attestation check for Protected Audience on https://hbopenbid.pubmatic.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    3825ms] [ERROR] Attestation check for Protected Audience on https://grid-bidder.criteo.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    6115ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    6125ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    6127ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    6480ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://match.prod.bidr.io/cookie-sync/see:0
+[    6665ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://dps.jp.cinarra.com/pxd?PLATFORM_ID=1&USER_ID=619f6580-ab6f-8020-f6f1-927f18be7f05:0
+[    6843ms] [ERROR] Failed to load resource: the server responded with a status of 424 (Failed Dependency) @ https://t.adx.opera.com/pub/sync?pubid=pub10101531197440&gdpr=1&gdpr_consent=:0
+[    8589ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://cs.nex8.net/cs/openx:0
+[   10389ms] [ERROR] Failed to load resource: net::ERR_TOO_MANY_REDIRECTS @ https://id5-sync.com/c/483/112/1/8.gif?puid=2840647E512ACD8C&gdpr=0&gdpr_consent=:0
+[   13683ms] [ERROR] Failed to load resource: the server responded with a status of 400 (Bad Request) @ https://ps.eyeota.net/match?bid=2ri0rg0&uid={cfcd769a-5be2-7175-2bbc9ee8}:0
+[   13702ms] [WARNING] [GPT] Using deprecated googletag.encryptedSignalProviders. Please use googletag.secureSignalProviders instead.
+https://goo.gle/gpt-message#155 @ https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202606050101/pubads_impl.js?cb=31099014:18
+[   24388ms] [ERROR] Failed to load resource: net::ERR_CERT_DATE_INVALID @ https://eyeota.ck-ie.com/vdm677.gif?gdpr=%7BGDPR%7D&gdpr_consent=%7BGDPR_CONSENT%7D&redir=https://ps.eyeota.net/match?bid=4o6e2ru&uid=%7B$UID%7D:0
+[   28984ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ https://visitor.fiftyt.com/p.gif?ev=sync&bstep=2&p=ey&uid=25juvp2bHRkjFCXlxWsIDQOnPv2PWYsylRSPJ5EolayM:0
+[   30986ms] [LOG] {id5id: Object} @ https://d2qlq4kdetaeuz.cloudfront.net/eyewise-id-module/eyewise-id-module-cookies-consent.js?token=dGVzdHRva2VuOg==:58
+[   30987ms] [LOG] prebid js processing time: 1745 ms @ https://d2qlq4kdetaeuz.cloudfront.net/eyewise-id-module/eyewise-id-module-cookies-consent.js?token=dGVzdHRva2VuOg==:23
+[   33103ms] [ERROR] Attestation check for Protected Audience on https://htlb.casalemedia.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33103ms] [ERROR] Attestation check for Protected Audience on https://btlr.sharethrough.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33103ms] [ERROR] Attestation check for Protected Audience on https://ib.adnxs.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33104ms] [ERROR] Attestation check for Protected Audience on https://prebid.media.net failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33104ms] [ERROR] Attestation check for Protected Audience on https://direct.adsrvr.org failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33104ms] [ERROR] Attestation check for Protected Audience on https://hb.yellowblue.io failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33104ms] [ERROR] Attestation check for Protected Audience on https://g2.gumgum.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33104ms] [ERROR] Attestation check for Protected Audience on https://fastlane.rubiconproject.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33104ms] [ERROR] Attestation check for Protected Audience on https://exchange.cootlogix.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33104ms] [ERROR] Attestation check for Protected Audience on https://ib.adnxs.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33104ms] [ERROR] Attestation check for Protected Audience on https://s.seedtag.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33104ms] [ERROR] Attestation check for Protected Audience on https://rtb.openx.net failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33104ms] [ERROR] Attestation check for Protected Audience on https://tlx.3lift.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33105ms] [ERROR] Attestation check for Protected Audience on https://grid-bidder.criteo.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33105ms] [ERROR] Attestation check for Protected Audience on https://hbopenbid.pubmatic.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33374ms] [ERROR] Attestation check for Protected Audience on https://tlx.3lift.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33374ms] [ERROR] Attestation check for Protected Audience on https://prebid.media.net failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33374ms] [ERROR] Attestation check for Protected Audience on https://htlb.casalemedia.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33374ms] [ERROR] Attestation check for Protected Audience on https://ib.adnxs.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33374ms] [ERROR] Attestation check for Protected Audience on https://g2.gumgum.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33374ms] [ERROR] Attestation check for Protected Audience on https://btlr.sharethrough.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33375ms] [ERROR] Attestation check for Protected Audience on https://fastlane.rubiconproject.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33375ms] [ERROR] Attestation check for Protected Audience on https://s.seedtag.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33375ms] [ERROR] Attestation check for Protected Audience on https://direct.adsrvr.org failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33375ms] [ERROR] Attestation check for Protected Audience on https://rtb.openx.net failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33375ms] [ERROR] Attestation check for Protected Audience on https://ib.adnxs.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33375ms] [ERROR] Attestation check for Protected Audience on https://hb.yellowblue.io failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33375ms] [ERROR] Attestation check for Protected Audience on https://exchange.cootlogix.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33376ms] [ERROR] Attestation check for Protected Audience on https://fastlane.rubiconproject.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33376ms] [ERROR] Attestation check for Protected Audience on https://s.seedtag.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33376ms] [ERROR] Attestation check for Protected Audience on https://btlr.sharethrough.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33376ms] [ERROR] Attestation check for Protected Audience on https://hb.yellowblue.io failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33376ms] [ERROR] Attestation check for Protected Audience on https://direct.adsrvr.org failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33376ms] [ERROR] Attestation check for Protected Audience on https://ib.adnxs.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33376ms] [ERROR] Attestation check for Protected Audience on https://prebid.media.net failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33376ms] [ERROR] Attestation check for Protected Audience on https://rtb.openx.net failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33376ms] [ERROR] Attestation check for Protected Audience on https://exchange.cootlogix.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33376ms] [ERROR] Attestation check for Protected Audience on https://htlb.casalemedia.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33376ms] [ERROR] Attestation check for Protected Audience on https://ib.adnxs.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33376ms] [ERROR] Attestation check for Protected Audience on https://tlx.3lift.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33376ms] [ERROR] Attestation check for Protected Audience on https://g2.gumgum.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33380ms] [ERROR] Attestation check for Protected Audience on https://grid-bidder.criteo.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33381ms] [ERROR] Attestation check for Protected Audience on https://hbopenbid.pubmatic.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33381ms] [ERROR] Attestation check for Protected Audience on https://hbopenbid.pubmatic.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   33381ms] [ERROR] Attestation check for Protected Audience on https://grid-bidder.criteo.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    6115ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    6125ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    6127ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[   36149ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[   43781ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://static.aroa.io/sync/sync.php?eyeid=2fVvtz18aGpKXUyVyPAX6f4nNjMFBURpEMzcwkqLo-3s:0
+[   63715ms] [ERROR] Attestation check for Protected Audience on https://ib.adnxs.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   63715ms] [ERROR] Attestation check for Protected Audience on https://tlx.3lift.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   63715ms] [ERROR] Attestation check for Protected Audience on https://rtb.openx.net failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   63715ms] [ERROR] Attestation check for Protected Audience on https://htlb.casalemedia.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   63715ms] [ERROR] Attestation check for Protected Audience on https://hb.yellowblue.io failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   63715ms] [ERROR] Attestation check for Protected Audience on https://fastlane.rubiconproject.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   63715ms] [ERROR] Attestation check for Protected Audience on https://ib.adnxs.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   63715ms] [ERROR] Attestation check for Protected Audience on https://prebid.media.net failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   63715ms] [ERROR] Attestation check for Protected Audience on https://direct.adsrvr.org failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   63715ms] [ERROR] Attestation check for Protected Audience on https://g2.gumgum.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   63715ms] [ERROR] Attestation check for Protected Audience on https://exchange.cootlogix.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   63715ms] [ERROR] Attestation check for Protected Audience on https://btlr.sharethrough.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   63715ms] [ERROR] Attestation check for Protected Audience on https://s.seedtag.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   63720ms] [ERROR] Attestation check for Protected Audience on https://grid-bidder.criteo.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[   63721ms] [ERROR] Attestation check for Protected Audience on https://hbopenbid.pubmatic.com failed. @ https://www.nexusmods.com/crimsondesert/mods/20:0
+[    6843ms] [ERROR] Failed to load resource: the server responded with a status of 424 (Failed Dependency) @ https://t.adx.opera.com/pub/sync?pubid=pub10101531197440&gdpr=1&gdpr_consent=:0
+[    6115ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    6125ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    6127ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[   36149ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[   66579ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0

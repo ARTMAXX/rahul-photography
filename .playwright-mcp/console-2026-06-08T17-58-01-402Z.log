@@ -1,0 +1,315 @@
+[     297ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:24514
+[     437ms] [LOG] useEffect running. showLoading: true @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:198
+[     460ms] [WARNING] Image with src "/logo/logo.webp" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio. @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/utils/warn-once.js:15
+[    1996ms] [LOG] useEffect running. showLoading: false @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:198
+[    1996ms] [LOG] Loading finished, initializing ScrollTrigger @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:201
+[    1996ms] [LOG] Refs check: {wrapRef: true, fixedSection: true, fixedContainer: true, bgContainer: true, header: true} @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:217
+[    2003ms] [LOG] mainST created: ScrollTrigger @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:570
+[    3512ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Fbest%20shots%2FProduct%20image%2Fproduct-bodywash.webp&w=3840&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[    3512ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Flogo%2Flogo.webp&w=384&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[    8494ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Fbest%20shots%2FProduct%20image%2Fproduct-bodywash.webp&w=3840&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[    8494ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Flogo%2Flogo.webp&w=384&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[   18518ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Fbest%20shots%2FProduct%20image%2Fproduct-bodywash.webp&w=3840&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[   18518ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Flogo%2Flogo.webp&w=384&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[   23640ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Fbest%20shots%2FProduct%20image%2Fproduct-bodywash.webp&w=3840&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[   23640ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Flogo%2Flogo.webp&w=384&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[   33445ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Fbest%20shots%2FProduct%20image%2Fproduct-bodywash.webp&w=3840&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[   33445ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Flogo%2Flogo.webp&w=384&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[   34179ms] [LOG] Scroll progress: 0.00043082583018685255 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   34278ms] [LOG] Scroll progress: 0.0013989737631910156 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   34378ms] [LOG] Scroll progress: 0.0023671216961951786 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   34495ms] [LOG] Scroll progress: 0.0033352696291993416 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   34594ms] [LOG] Scroll progress: 0.004303417562203505 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   34694ms] [LOG] Scroll progress: 0.005271565495207668 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   34794ms] [LOG] Scroll progress: 0.006239713428211831 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   34911ms] [LOG] Scroll progress: 0.007207861361215994 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   35011ms] [LOG] Scroll progress: 0.008176009294220157 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   35111ms] [LOG] Scroll progress: 0.00914415722722432 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   35211ms] [LOG] Scroll progress: 0.010112305160228484 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   35328ms] [LOG] Scroll progress: 0.011080453093232646 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   35428ms] [LOG] Scroll progress: 0.012048601026236809 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   35528ms] [LOG] Scroll progress: 0.013016748959240971 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   35628ms] [LOG] Scroll progress: 0.013984896892245136 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   35728ms] [LOG] Scroll progress: 0.014953044825249298 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   35828ms] [LOG] Scroll progress: 0.01592119275825346 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   35944ms] [LOG] Scroll progress: 0.016889340691257623 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   36044ms] [LOG] Scroll progress: 0.017857488624261786 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   36144ms] [LOG] Scroll progress: 0.018825636557265952 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   36244ms] [LOG] Scroll progress: 0.019793784490270114 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   36344ms] [LOG] Scroll progress: 0.020761932423274277 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   36461ms] [LOG] Scroll progress: 0.02173008035627844 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   36561ms] [LOG] Scroll progress: 0.022698228289282602 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   36661ms] [LOG] Scroll progress: 0.023666376222286765 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   36761ms] [LOG] Scroll progress: 0.024634524155290927 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   36878ms] [LOG] Scroll progress: 0.02560267208829509 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   36978ms] [LOG] Scroll progress: 0.026570820021299256 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   37078ms] [LOG] Scroll progress: 0.02753896795430342 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   37178ms] [LOG] Scroll progress: 0.02850711588730758 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   37278ms] [LOG] Scroll progress: 0.029475263820311744 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   37378ms] [LOG] Scroll progress: 0.030443411753315906 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   37495ms] [LOG] Scroll progress: 0.03141155968632007 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   37595ms] [LOG] Scroll progress: 0.03237970761932423 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   37695ms] [LOG] Scroll progress: 0.033347855552328394 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   37795ms] [LOG] Scroll progress: 0.03431600348533256 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   37895ms] [LOG] Scroll progress: 0.03528415141833672 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   37995ms] [LOG] Scroll progress: 0.03625229935134088 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   38095ms] [LOG] Scroll progress: 0.03722044728434505 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   38211ms] [LOG] Scroll progress: 0.038188595217349214 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   38311ms] [LOG] Scroll progress: 0.039156743150353376 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   38411ms] [LOG] Scroll progress: 0.04012489108335754 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   38511ms] [LOG] Scroll progress: 0.0410930390163617 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   38611ms] [LOG] Scroll progress: 0.042061186949365864 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   38711ms] [LOG] Scroll progress: 0.04302933488237003 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   38828ms] [LOG] Scroll progress: 0.04399748281537419 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   38928ms] [LOG] Scroll progress: 0.04496563074837835 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   39028ms] [LOG] Scroll progress: 0.045933778681382514 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   39128ms] [LOG] Scroll progress: 0.04690192661438668 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   39245ms] [LOG] Scroll progress: 0.04787007454739084 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   39344ms] [LOG] Scroll progress: 0.048838222480395 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   39445ms] [LOG] Scroll progress: 0.049806370413399165 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   39544ms] [LOG] Scroll progress: 0.05077451834640333 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   39661ms] [LOG] Scroll progress: 0.0517426662794075 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   39761ms] [LOG] Scroll progress: 0.05271081421241166 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   39861ms] [LOG] Scroll progress: 0.05367896214541582 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   39961ms] [LOG] Scroll progress: 0.054647110078419985 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   40061ms] [LOG] Scroll progress: 0.05561525801142415 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   40178ms] [LOG] Scroll progress: 0.05658340594442831 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   40278ms] [LOG] Scroll progress: 0.05755155387743247 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   40378ms] [LOG] Scroll progress: 0.058519701810436635 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   40478ms] [LOG] Scroll progress: 0.0594878497434408 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   40578ms] [LOG] Scroll progress: 0.06045599767644496 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   40678ms] [LOG] Scroll progress: 0.06142414560944912 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   40795ms] [LOG] Scroll progress: 0.062392293542453285 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   40895ms] [LOG] Scroll progress: 0.06336044147545745 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   40995ms] [LOG] Scroll progress: 0.06432858940846162 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   41095ms] [LOG] Scroll progress: 0.06529673734146578 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   41211ms] [LOG] Scroll progress: 0.06626488527446994 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   41311ms] [LOG] Scroll progress: 0.0672330332074741 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   41411ms] [LOG] Scroll progress: 0.06820118114047827 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   41511ms] [LOG] Scroll progress: 0.06916932907348243 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   41611ms] [LOG] Scroll progress: 0.07013747700648659 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   41711ms] [LOG] Scroll progress: 0.07110562493949076 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   41811ms] [LOG] Scroll progress: 0.07207377287249492 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   41928ms] [LOG] Scroll progress: 0.07304192080549908 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   42028ms] [LOG] Scroll progress: 0.07401006873850324 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   42128ms] [LOG] Scroll progress: 0.0749782166715074 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   42228ms] [LOG] Scroll progress: 0.07594636460451157 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   42328ms] [LOG] Scroll progress: 0.07691451253751573 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   42428ms] [LOG] Scroll progress: 0.0778826604705199 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   42545ms] [LOG] Scroll progress: 0.07885080840352406 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   42645ms] [LOG] Scroll progress: 0.07981895633652822 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   42745ms] [LOG] Scroll progress: 0.08078710426953238 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   42845ms] [LOG] Scroll progress: 0.08175525220253654 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   42945ms] [LOG] Scroll progress: 0.0827234001355407 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   43061ms] [LOG] Scroll progress: 0.08369154806854487 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   43161ms] [LOG] Scroll progress: 0.08465969600154903 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   43261ms] [LOG] Scroll progress: 0.0856278439345532 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   43361ms] [LOG] Scroll progress: 0.08659599186755736 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   43461ms] [LOG] Scroll progress: 0.08756413980056152 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   43561ms] [LOG] Scroll progress: 0.0885322877335657 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   43661ms] [LOG] Scroll progress: 0.08950043566656986 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   43778ms] [LOG] Scroll progress: 0.09046858359957402 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   43878ms] [LOG] Scroll progress: 0.09143673153257818 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   43995ms] [LOG] Scroll progress: 0.09240487946558235 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   44095ms] [LOG] Scroll progress: 0.09337302739858651 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   52111ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Fbest%20shots%2FProduct%20image%2Fproduct-bodywash.webp&w=3840&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[   52111ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Flogo%2Flogo.webp&w=384&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[   70929ms] [LOG] Scroll progress: 0.10305450672862813 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   70929ms] [LOG] Changing to section: 1 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:560
+[   71746ms] [LOG] Scroll progress: 0.10408752057314358 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[   74093ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Fbest%20shots%2FProduct%20image%2Fproduct-bodywash.webp&w=3840&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[   74094ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Flogo%2Flogo.webp&w=384&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  115873ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:239
+[  116226ms] [LOG] [Fast Refresh] done in 352ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:66
+[  119247ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Fbest%20shots%2FProduct%20image%2Fproduct-bodywash.webp&w=3840&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  119247ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Flogo%2Flogo.webp&w=384&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  126214ms] [LOG] Scroll progress: 0.10305450672862813 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  127014ms] [LOG] Scroll progress: 0.10408752057314358 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  156594ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:239
+[  156836ms] [LOG] [Fast Refresh] done in 242ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:66
+[  156931ms] [LOG] Scroll progress: 0.017272727272727273 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  156931ms] [LOG] Changing to section: 0 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:560
+[  159914ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Fbest%20shots%2FProduct%20image%2Fproduct-bodywash.webp&w=3840&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  159914ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Flogo%2Flogo.webp&w=384&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  174616ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:239
+[  174879ms] [LOG] [Fast Refresh] done in 264ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:66
+[  177896ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Fbest%20shots%2FProduct%20image%2Fproduct-bodywash.webp&w=3840&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  177896ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Flogo%2Flogo.webp&w=384&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  187598ms] [LOG] Scroll progress: 0 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  188399ms] [LOG] Scroll progress: 0.017272727272727273 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  190636ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Fbest%20shots%2FProduct%20image%2Fproduct-bodywash.webp&w=3840&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  190636ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Flogo%2Flogo.webp&w=384&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  206416ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Fbest%20shots%2FProduct%20image%2Fproduct-bodywash.webp&w=3840&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  206416ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Flogo%2Flogo.webp&w=384&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  231225ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:239
+[  231448ms] [LOG] [Fast Refresh] done in 222ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:66
+[  234583ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Fbest%20shots%2FProduct%20image%2Fproduct-bodywash.webp&w=3840&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  234583ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Flogo%2Flogo.webp&w=384&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  239100ms] [LOG] Scroll progress: 0 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  239900ms] [LOG] Scroll progress: 0.14178042404879465 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  239900ms] [LOG] Changing to section: 1 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:560
+[  240699ms] [LOG] Scroll progress: 0.23859521734921096 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  240699ms] [LOG] Changing to section: 2 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:560
+[  241516ms] [LOG] Scroll progress: 0.3354100106496273 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  241516ms] [LOG] Changing to section: 3 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:560
+[  242117ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Fbest%20shots%2FProduct%20image%2Fproduct-bodywash.webp&w=3840&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  242117ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Flogo%2Flogo.webp&w=384&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  257938ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Fbest%20shots%2FProduct%20image%2Fproduct-bodywash.webp&w=3840&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  257938ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Flogo%2Flogo.webp&w=384&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  286537ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:239
+[  286785ms] [LOG] [Fast Refresh] done in 248ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:66
+[  289801ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Fbest%20shots%2FProduct%20image%2Fproduct-bodywash.webp&w=3840&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  289801ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Flogo%2Flogo.webp&w=384&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  521490ms] [LOG] Scroll progress: 0.3354177558330913 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  521506ms] [LOG] Scroll progress: 0.3354313099041534 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  521523ms] [LOG] Scroll progress: 0.33545260915867947 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  521540ms] [LOG] Scroll progress: 0.33547874915287057 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  521556ms] [LOG] Scroll progress: 0.3355116661825927 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  521573ms] [LOG] Scroll progress: 0.3355407106205828 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  521590ms] [LOG] Scroll progress: 0.3355678187627069 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  521606ms] [LOG] Scroll progress: 0.335592990608965 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  521623ms] [LOG] Scroll progress: 0.33561622615935716 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  521639ms] [LOG] Scroll progress: 0.33563752541388325 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  521656ms] [LOG] Scroll progress: 0.3356568883725433 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  521673ms] [LOG] Scroll progress: 0.3356752831832704 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  521689ms] [LOG] Scroll progress: 0.3356917416981315 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  521706ms] [LOG] Scroll progress: 0.33570723206505954 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  521723ms] [LOG] Scroll progress: 0.3357217542840546 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  521739ms] [LOG] Scroll progress: 0.33573530835511667 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  521756ms] [LOG] Scroll progress: 0.3357478942782457 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  521773ms] [LOG] Scroll progress: 0.3357517668699777 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  521789ms] [LOG] Scroll progress: 0.33575467131377673 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  521806ms] [LOG] Scroll progress: 0.3357507987220447 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  521823ms] [LOG] Scroll progress: 0.3357391809468487 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  521840ms] [LOG] Scroll progress: 0.3357217542840546 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  521856ms] [LOG] Scroll progress: 0.3356975505857295 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  521873ms] [LOG] Scroll progress: 0.3356752831832704 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  521890ms] [LOG] Scroll progress: 0.33564720689321326 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  521906ms] [LOG] Scroll progress: 0.33562203504695515 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  521923ms] [LOG] Scroll progress: 0.3355978313486301 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  521940ms] [LOG] Scroll progress: 0.335576532094104 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  521956ms] [LOG] Scroll progress: 0.3355562009875109 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  521973ms] [LOG] Scroll progress: 0.3355378061767838 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  521989ms] [LOG] Scroll progress: 0.3355203795139897 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522006ms] [LOG] Scroll progress: 0.3355039209991287 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522023ms] [LOG] Scroll progress: 0.3354893987801336 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522040ms] [LOG] Scroll progress: 0.33547584470907155 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522056ms] [LOG] Scroll progress: 0.3354632587859425 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522073ms] [LOG] Scroll progress: 0.3354516410107464 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522090ms] [LOG] Scroll progress: 0.3354409913834834 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522106ms] [LOG] Scroll progress: 0.3354313099041534 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522123ms] [LOG] Scroll progress: 0.3354225965727563 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522139ms] [LOG] Scroll progress: 0.3354138832413593 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522156ms] [LOG] Scroll progress: 0.33540613805789526 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522173ms] [LOG] Scroll progress: 0.3353916158389002 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522189ms] [LOG] Scroll progress: 0.3353703165843741 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522206ms] [LOG] Scroll progress: 0.335344176590183 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522223ms] [LOG] Scroll progress: 0.3353112595604608 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522239ms] [LOG] Scroll progress: 0.33527543808693966 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522256ms] [LOG] Scroll progress: 0.33524058476135155 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522273ms] [LOG] Scroll progress: 0.3352086358795624 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522289ms] [LOG] Scroll progress: 0.3351795914415723 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522306ms] [LOG] Scroll progress: 0.33515248329944813 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522323ms] [LOG] Scroll progress: 0.33512827960112307 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522339ms] [LOG] Scroll progress: 0.33510504405073094 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522356ms] [LOG] Scroll progress: 0.33508374479620484 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522373ms] [LOG] Scroll progress: 0.3350643818375448 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522390ms] [LOG] Scroll progress: 0.3350459870268177 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522406ms] [LOG] Scroll progress: 0.3350295285119566 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522423ms] [LOG] Scroll progress: 0.33501403814502856 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522439ms] [LOG] Scroll progress: 0.3349995159260335 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522456ms] [LOG] Scroll progress: 0.33498693000290447 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522473ms] [LOG] Scroll progress: 0.3349743440797754 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522489ms] [LOG] Scroll progress: 0.33496369445251234 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522506ms] [LOG] Scroll progress: 0.33494529964178527 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522523ms] [LOG] Scroll progress: 0.3349220640913932 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522540ms] [LOG] Scroll progress: 0.33489205150547 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522556ms] [LOG] Scroll progress: 0.3348581663278149 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522573ms] [LOG] Scroll progress: 0.33481847226256173 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522590ms] [LOG] Scroll progress: 0.3347816826411076 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522606ms] [LOG] Scroll progress: 0.3347477974634524 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522623ms] [LOG] Scroll progress: 0.3347177848775293 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522640ms] [LOG] Scroll progress: 0.33468874043953917 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522656ms] [LOG] Scroll progress: 0.33466260044534807 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522673ms] [LOG] Scroll progress: 0.33463742859908996 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522689ms] [LOG] Scroll progress: 0.3346151611966309 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522706ms] [LOG] Scroll progress: 0.33459483009003776 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522723ms] [LOG] Scroll progress: 0.3345754671313777 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522740ms] [LOG] Scroll progress: 0.3345580404685836 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522756ms] [LOG] Scroll progress: 0.3345415819537225 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522773ms] [LOG] Scroll progress: 0.33452609158679447 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522789ms] [LOG] Scroll progress: 0.3345125375157324 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522806ms] [LOG] Scroll progress: 0.3344999515926034 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522823ms] [LOG] Scroll progress: 0.3344873656694743 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522839ms] [LOG] Scroll progress: 0.33447671604221124 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522856ms] [LOG] Scroll progress: 0.3344660664149482 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522873ms] [LOG] Scroll progress: 0.3344573530835512 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522890ms] [LOG] Scroll progress: 0.3344486397521541 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522907ms] [LOG] Scroll progress: 0.3344408945686901 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522923ms] [LOG] Scroll progress: 0.33443314938522606 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522940ms] [LOG] Scroll progress: 0.334426372349695 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522957ms] [LOG] Scroll progress: 0.33442056346209703 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522973ms] [LOG] Scroll progress: 0.334414754574499 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  522990ms] [LOG] Scroll progress: 0.33440894568690094 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523007ms] [LOG] Scroll progress: 0.33440410494723594 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523023ms] [LOG] Scroll progress: 0.33439926420757093 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523040ms] [LOG] Scroll progress: 0.3343953916158389 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523057ms] [LOG] Scroll progress: 0.3343915190241069 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523074ms] [LOG] Scroll progress: 0.33438764643237484 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523091ms] [LOG] Scroll progress: 0.3343847419885759 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523107ms] [LOG] Scroll progress: 0.33438183754477685 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523123ms] [LOG] Scroll progress: 0.3343789331009778 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523140ms] [LOG] Scroll progress: 0.3343760286571788 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523156ms] [LOG] Scroll progress: 0.3343740923613128 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523173ms] [LOG] Scroll progress: 0.3343711879175138 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523189ms] [LOG] Scroll progress: 0.33436925162164777 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523206ms] [LOG] Scroll progress: 0.3343673153257818 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523223ms] [LOG] Scroll progress: 0.3343663471778488 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523239ms] [LOG] Scroll progress: 0.33436441088198277 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523256ms] [LOG] Scroll progress: 0.33436247458611673 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523273ms] [LOG] Scroll progress: 0.33436150643818374 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523289ms] [LOG] Scroll progress: 0.33436053829025075 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523306ms] [LOG] Scroll progress: 0.3343586019943847 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523323ms] [LOG] Scroll progress: 0.33435763384645173 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523340ms] [LOG] Scroll progress: 0.33435666569851874 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523356ms] [LOG] Scroll progress: 0.33435569755058575 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523390ms] [LOG] Scroll progress: 0.3343547294026527 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523406ms] [LOG] Scroll progress: 0.3343537612547197 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523423ms] [LOG] Scroll progress: 0.3343527931067867 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523456ms] [LOG] Scroll progress: 0.33435182495885374 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523491ms] [LOG] Scroll progress: 0.3343508568109207 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523523ms] [LOG] Scroll progress: 0.3343498886629877 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523557ms] [LOG] Scroll progress: 0.3343489205150547 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523606ms] [LOG] Scroll progress: 0.33434795236712167 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523690ms] [LOG] Scroll progress: 0.3343469842191887 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  523791ms] [LOG] Scroll progress: 0.3343460160712557 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:555
+[  524024ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:24514
+[  524122ms] [LOG] useEffect running. showLoading: true @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:198
+[  524142ms] [WARNING] Image with src "/logo/logo.webp" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio. @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/utils/warn-once.js:15
+[  525654ms] [LOG] useEffect running. showLoading: false @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:198
+[  525654ms] [LOG] Loading finished, initializing ScrollTrigger @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:201
+[  525655ms] [LOG] Refs check: {wrapRef: true, fixedSection: true, fixedContainer: true, bgContainer: true, header: true} @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:217
+[  527300ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Fbest%20shots%2FProduct%20image%2Fproduct-bodywash.webp&w=3840&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  527300ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Flogo%2Flogo.webp&w=384&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  534535ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Fbest%20shots%2FProduct%20image%2Fproduct-bodywash.webp&w=3840&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  534535ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Flogo%2Flogo.webp&w=384&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  536791ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[  536807ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[  549707ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[  550507ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[  557377ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Fbest%20shots%2FProduct%20image%2Fproduct-bodywash.webp&w=3840&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  557377ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Flogo%2Flogo.webp&w=384&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  559908ms] [LOG] Scrolling to: 0 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:492
+[  565324ms] [LOG] Scrolling to: 110000 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:492
+[  565908ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Fbest%20shots%2FProduct%20image%2Fproduct-bodywash.webp&w=3840&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  565908ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Flogo%2Flogo.webp&w=384&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[  566925ms] [LOG] Scrolling to: 220000 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:492
+[  567859ms] [LOG] Scrolling to: 330000 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:492
+[  568635ms] [LOG] Scrolling to: 440000 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:492
+[  569443ms] [LOG] Scrolling to: 550000 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:492
+[  572115ms] [LOG] Scrolling to: 550000 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:492
+[  575283ms] [LOG] Scrolling to: 550000 @ webpack-internal:///(app-pages-browser)/./src/components/sections/FullScreenSlideshow.tsx:492
+[ 1170286ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:239
+[ 1170749ms] [LOG] [Fast Refresh] done in 463ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:66
+[ 1173803ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Fbest%20shots%2FProduct%20image%2Fproduct-bodywash.webp&w=3840&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0
+[ 1173803ms] [WARNING] The resource http://localhost:3000/_next/image?url=%2Flogo%2Flogo.webp&w=384&q=75 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:0

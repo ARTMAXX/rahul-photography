@@ -1,0 +1,203 @@
+/* =============================================================
+   SCROLL 3D GRID — Codrops "On-Scroll 3D Grid Animations" port
+   Adapted to the site's #050505 / #f4efe7 palette + Tailwind tokens.
+   6 perspective grids cycled with all 6 animation variants.
+   ============================================================= */
+
+:root {
+  --s3d-perspective: 1500px;
+  --s3d-grid-item-ratio: 1.5;
+  --s3d-grid-width: 100%;
+  --s3d-grid-gap: 2vw;
+  --s3d-grid-columns: 4;
+  --s3d-grid-inner-scale: 1;
+}
+
+.s3d-wrap {
+  position: relative;
+  background: #050505;
+  color: #f4efe7;
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  /* Stub that is later replaced via JS, but prevents unset vars during SSR. */
+  perspective: var(--s3d-perspective);
+}
+
+/* Section eyebrow + heading */
+.s3d-intro {
+  padding: 18vh 6vw 6vh;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.s3d-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(244, 239, 231, 0.35);
+  display: block;
+  margin-bottom: 1.5rem;
+}
+.s3d-heading {
+  font-family: var(--font-serif, Georgia, "Times New Roman", serif);
+  font-size: clamp(2.25rem, 6vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin: 0;
+  max-width: 22ch;
+}
+.s3d-sub {
+  margin-top: 1.5rem;
+  font-family: var(--font-mono, ui-monospace, "SF Mono", Menlo, monospace);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(244, 239, 231, 0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.s3d-sub::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: rgba(244, 239, 231, 0.4);
+}
+
+/* Each grid section (perspective stage) */
+.s3d-content {
+  position: relative;
+  padding: 6vh 0;
+  margin-bottom: 8vh;
+}
+.s3d-content:nth-of-type(odd) { margin-bottom: 14vh; }
+
+.s3d-grid {
+  display: grid;
+  place-items: center;
+  padding: 1.5rem 2rem;
+  width: 100%;
+  perspective: var(--s3d-perspective);
+  /* Subtle warm spotlight like the rest of the site */
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 230, 180, 0.03) 0%,
+    transparent 60%
+  );
+}
+
+.s3d-grid-wrap {
+  height: auto;
+  width: var(--s3d-grid-width);
+  display: grid;
+  grid-template-columns: repeat(var(--s3d-grid-columns), 1fr);
+  gap: var(--s3d-grid-gap);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.s3d-grid-item {
+  aspect-ratio: var(--s3d-grid-item-ratio);
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  background: #111;
+  will-change: transform, filter, opacity;
+}
+
+.s3d-grid-item__inner {
+  position: relative;
+  width: calc(1 / var(--s3d-grid-inner-scale) * 100%);
+  height: calc(1 / var(--s3d-grid-inner-scale) * 100%);
+  background-size: cover;
+  background-position: 50% 50%;
+  /* overlay brand tint */
+}
+.s3d-grid-item__inner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.5));
+  pointer-events: none;
+}
+
+/* Centered quote titles in big viewport-fixed blocks between grids */
+.s3d-title {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 50%;
+  left: 50%;
+  margin: -50vh 0 0 -50vw;
+  padding: 0 8vw;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-family: var(--font-serif, Georgia, serif);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(1.5rem, 8vw, 5rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #f4efe7;
+  pointer-events: none;
+  z-index: 2;
+  text-shadow: 0 2px 60px rgba(0, 0, 0, 0.85);
+}
+.s3d-title--top    { align-items: start;   padding-top: 12vh; }
+.s3d-title--bottom { align-items: end;    padding-bottom: 12vh; }
+.s3d-title--left   { justify-items: start; text-align: left; }
+.s3d-title--right  { justify-items: end;   text-align: right; }
+
+/* Footer outro after the 6 grids */
+.s3d-outro {
+  padding: 14vh 6vw 18vh;
+  text-align: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.s3d-outro__rule {
+  display: inline-block;
+  width: 1px;
+  height: 48px;
+  background: rgba(244, 239, 231, 0.3);
+  margin-bottom: 2rem;
+}
+.s3d-outro__title {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  letter-spacing: -0.02em;
+  margin: 0 0 1rem;
+  font-style: italic;
+}
+.s3d-outro__sub {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(244, 239, 231, 0.4);
+}
+
+/* Mobile fallback — keep heights sane and disable scrub */
+@media (max-width: 768px) {
+  .s3d-grid { padding: 1rem; }
+  .s3d-title { font-size: clamp(2rem, 12vw, 4rem); padding: 0 6vw; }
+  .s3d-title--left, .s3d-title--right { text-align: center; justify-items: center; }
+}
+
+/* Reduced motion — keep visuals but disable transforms */
+@media (prefers-reduced-motion: reduce) {
+  .s3d-grid-wrap,
+  .s3d-grid-item,
+  .s3d-grid-item__inner {
+    transform: none !important;
+    filter: none !important;
+  }
+}

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 
@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 w-full p-6 md:p-12 flex justify-between items-center z-50 mix-blend-difference pointer-events-none text-white">
       <div className="pointer-events-auto cursor-pointer" data-cursor="pointer">
-        <Image
+        <Image quality={100}
           src="/logo/logo.webp"
           alt="Rahul Chanda"
           width={180}
@@ -24,3 +24,4 @@ export default function Header() {
     </header>
   );
 }
+

@@ -1,11 +1,11 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import "./archive.css";
 
-/* ── ALL assets: images + video ── */
+/* â”€â”€ ALL assets: images + video â”€â”€ */
 const ALL_ASSETS: Array<{
   src: string;
   alt: string;
@@ -31,7 +31,7 @@ const ALL_ASSETS: Array<{
   { type: "image", src: "/best shots/ladies shoe/High-end-shoe.webp",     alt: "High-end shoe luxury",      caption: "High-End",            category: "Footwear" },
 ];
 
-/* ── Parallax depth — different rows scroll at different speeds ── */
+/* â”€â”€ Parallax depth â€” different rows scroll at different speeds â”€â”€ */
 const SPEEDS = [0, -35, 20, -15, 25, -30, 15, -20, 30, -25, 20, -35, 10, -20];
 
 function useParallaxScroll(containerRef: React.RefObject<HTMLDivElement | null>) {
@@ -139,7 +139,7 @@ export default function ArchivePage() {
                 src={asset.src}
                 alt={asset.alt}
                 width={800}
-                height={450}
+                height={450}`n                quality={100}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="archive__media"
                 loading="lazy"
@@ -157,9 +157,11 @@ export default function ArchivePage() {
       {/* footer */}
       <div className="archive__footer" data-reveal>
         <Link href="/" className="archive__footer-link">
-          ← Return to Portfolio
+          â† Return to Portfolio
         </Link>
       </div>
     </div>
   );
 }
+
+

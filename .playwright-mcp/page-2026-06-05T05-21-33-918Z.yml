@@ -1,0 +1,144 @@
+- generic [active] [ref=e1]:
+  - banner:
+    - img "Rahul Chanda" [ref=e3] [cursor=pointer]
+    - navigation [ref=e4]:
+      - link "Work" [ref=e5] [cursor=pointer]:
+        - /url: "#work"
+      - link "About" [ref=e6] [cursor=pointer]:
+        - /url: "#about"
+      - link "Contact" [ref=e7] [cursor=pointer]:
+        - /url: "#contact"
+  - main [ref=e8]:
+    - generic [ref=e10]:
+      - paragraph [ref=e13]:
+        - text: Creating high-impact visual identities,
+        - text: that connect brands with their audience.
+      - generic [ref=e14]:
+        - generic [ref=e15]: Rahul
+        - generic [ref=e16]: Chanda
+      - generic [ref=e17]:
+        - generic [ref=e18]: → V3.0
+        - generic [ref=e19]:
+          - link "INSTAGRAM" [ref=e20] [cursor=pointer]:
+            - /url: https://www.instagram.com/rahul_chanda_photography/
+          - text: /
+          - link "EMAIL" [ref=e21] [cursor=pointer]:
+            - /url: mailto:rahulchandaphotography@gmail.com
+          - text: /
+          - link "PHONE" [ref=e22] [cursor=pointer]:
+            - /url: tel:+917078939475
+        - generic [ref=e23]:
+          - link "WORK" [ref=e24] [cursor=pointer]:
+            - /url: "#work"
+          - link "INFO" [ref=e25] [cursor=pointer]:
+            - /url: "#about"
+          - link "CONTACT" [ref=e26] [cursor=pointer]:
+            - /url: "#contact"
+      - generic [ref=e28]:
+        - generic: +
+        - generic: +
+        - generic: +
+        - generic: +
+        - generic:
+          - heading "Basically, I make images." [level=2]
+    - generic [ref=e30]:
+      - generic [ref=e31]: (34)
+      - generic [ref=e32]:
+        - heading "As a commercial photographer, I craft tailor-made visual experiences, blending technical precision and emotion." [level=2] [ref=e33]:
+          - text: As a
+          - generic [ref=e34]: commercial photographer
+          - text: ", I craft tailor-made visual experiences, blending technical precision and"
+          - generic [ref=e35]: emotion
+          - text: .
+        - paragraph [ref=e36]: My name is Rahul Chanda. A high-end commercial product photographer based in Dehradun, I build high-impact visual identities that connect brands with their audience.
+        - link "INFO" [ref=e38] [cursor=pointer]:
+          - /url: "#info"
+      - generic [ref=e39]:
+        - generic [ref=e40]: →
+        - generic [ref=e41]: V3.0
+      - img "Rahul Chanda" [ref=e43]
+    - generic [ref=e45]:
+      - generic:
+        - img
+      - generic [ref=e46]:
+        - generic [ref=e49]:
+          - heading "Product Photography" [level=3] [ref=e51]
+          - heading "Photo Editing" [level=3] [ref=e53]
+          - heading "Retouching" [level=3] [ref=e55]
+          - heading "Video Editing" [level=3] [ref=e57]
+          - heading "Social Media Campaigns" [level=3] [ref=e59]
+          - heading "Food Photography" [level=3] [ref=e61]
+        - generic [ref=e63]:
+          - generic [ref=e64]:
+            - generic [ref=e65]:
+              - generic [ref=e66]: 01 2025
+              - generic [ref=e67]: 02 2025
+              - generic [ref=e68]: 03 2025
+              - generic [ref=e69]: 04 2025
+              - generic [ref=e70]: 05 2025
+              - generic [ref=e71]: 06 2025
+            - generic [ref=e72]: PREVIEW
+          - img "Product Photography" [ref=e74]
+          - img "Photo Editing" [ref=e76]
+          - img "Retouching" [ref=e78]
+          - img "Social Media Campaigns" [ref=e82]
+          - img "Food Photography" [ref=e84]
+      - generic [ref=e87]: Projects
+    - generic [ref=e88]:
+      - generic:
+        - img
+      - img "Gallery 0" [ref=e90]
+      - img "Gallery 1" [ref=e92]
+      - img "Gallery 2" [ref=e94]
+      - img "Gallery 3" [ref=e96]
+      - img "Gallery 4" [ref=e98]
+      - img "Gallery 5" [ref=e100]
+      - img "Gallery 6" [ref=e102]
+      - generic:
+        - heading "Each shoot is a chance to learn, experiment and push my limits." [level=2]
+      - generic [ref=e103]: (64)
+      - generic [ref=e107]: Gallery
+    - generic [ref=e108]:
+      - generic:
+        - img
+      - generic [ref=e109]:
+        - generic [ref=e110]:
+          - generic [ref=e111]:
+            - paragraph [ref=e112]: "Services:"
+            - heading "High-End Commercial Product Photography & Visual Strategy in Dehradun." [level=2] [ref=e113]
+          - generic [ref=e114]:
+            - paragraph [ref=e115]: Start a project
+            - button "Let's Meet" [ref=e117] [cursor=pointer]:
+              - link "Let's Meet" [ref=e118]:
+                - /url: mailto:rahulchandaphotography@gmail.com
+                - generic [ref=e119]: Let's Meet
+                - img [ref=e120]
+        - generic [ref=e122]:
+          - generic [ref=e123] [cursor=pointer]:
+            - heading "Product Photography" [level=3] [ref=e124]
+            - generic [ref=e125]: +
+          - generic [ref=e126] [cursor=pointer]:
+            - heading "Photo Editing" [level=3] [ref=e127]
+            - generic [ref=e128]: +
+          - generic [ref=e129] [cursor=pointer]:
+            - heading "Retouching" [level=3] [ref=e130]
+            - generic [ref=e131]: +
+          - generic [ref=e132] [cursor=pointer]:
+            - heading "Video Editing" [level=3] [ref=e133]
+            - generic [ref=e134]: +
+          - generic [ref=e135] [cursor=pointer]:
+            - heading "Social Media Campaigns" [level=3] [ref=e136]
+            - generic [ref=e137]: +
+          - generic [ref=e138] [cursor=pointer]:
+            - heading "Food Photography" [level=3] [ref=e139]
+            - generic [ref=e140]: +
+      - generic [ref=e141]: (77)
+      - generic [ref=e145]: Services
+  - status [ref=e146]:
+    - generic [ref=e147]:
+      - img [ref=e149]
+      - generic [ref=e151]:
+        - text: Static route
+        - button "Hide static indicator" [ref=e152] [cursor=pointer]:
+          - img [ref=e153]
+  - alert [ref=e156]

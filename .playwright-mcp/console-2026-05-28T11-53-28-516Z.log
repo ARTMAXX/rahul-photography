@@ -1,0 +1,1978 @@
+[    1508ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/#about:0
+[    1659ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ webpack-internal:///./node_modules/react-dom/cjs/react-dom-client.development.js:24514
+[    1693ms] ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   × the name `FeaturedCampaign` is defined multiple times
+    ╭─[C:\Users\Rahul\Downloads\data\new-design\src\components\sections\FeaturedCampaign.tsx:11:1]
+  8 │   onOpenProject: (project: typeof PROJECTS[0]) => void;
+  9 │ }
+ 10 │ 
+ 11 │ export default function FeaturedCampaign({ onOpenProject }: FeaturedCampaignProps) {
+    ·                         ────────┬───────
+    ·                                 ╰── previous definition of `FeaturedCampaign` here
+ 12 │   const targetProject = PROJECTS.find((p) => p.id === "liquid-shadow") || PROJECTS[1];
+ 13 │ 
+ 14 │   return (
+ 15 │     <section className="w-full min-h-screen bg-[#F5F5F0] text-[#111111] py-24 px-6 md:px-24">
+ 16 │       {/* Editorial Title - Asymmetrical positioning */}
+ 17 │       <motion.div 
+ 18 │         initial={{ opacity: 0, y: 50 }}
+ 19 │         whileInView={{ opacity: 1, y: 0 }}
+ 20 │         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+ 21 │         className="mb-24"
+ 22 │       >
+ 23 │         <h2 className="font-serif italic text-7xl md:text-[12rem] text-[#9D8B74] leading-[0.8]">Still</h2>
+ 24 │         <h2 className="font-sans font-black text-7xl md:text-[12rem] uppercase tracking-tighter leading-[0.8] ml-4 md:ml-12">LIFE.</h2>
+ 25 │       </motion.div>
+ 26 │ 
+ 27 │       {/* Main Editorial Spread - Asymmetrical Grid */}
+ 28 │       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+ 29 │         
+ 30 │         {/* Main Video Block (Spans 7 columns) */}
+ 31 │         <motion.div 
+ 32 │           initial={{ opacity: 0, scale: 0.95 }}
+ 33 │           whileInView={{ opacity: 1, scale: 1 }}
+ 34 │           transition={{ duration: 1.2, delay: 0.2 }}
+ 35 │           className="lg:col-span-7"
+ 36 │         >
+ 37 │           <video
+ 38 │             src="/best shots/Product image/product-energy-can.mp4"
+ 39 │             autoPlay
+ 40 │             loop
+ 41 │             muted
+ 42 │             playsInline
+ 43 │             className="w-full h-auto object-contain rounded-sm"
+ 44 │           />
+ 45 │         </motion.div>
+ 46 │ 
+ 47 │         {/* Supporting Visuals Stack (Spans 5 columns) */}
+ 48 │         <div className="lg:col-span-5 flex flex-col gap-16 md:pl-12">
+ 49 │           <motion.div 
+ 50 │             initial={{ opacity: 0, x: 50 }}
+ 51 │             whileInView={{ opacity: 1, x: 0 }}
+ 52 │             transition={{ duration: 1, delay: 0.4 }}
+ 53 │             className="w-full max-w-[300px]"
+ 54 │           >
+ 55 │             <img
+ 56 │               src="/best shots/Product image/hair-spray-bottle.png"
+ 57 │               alt="Hair Spray"
+ 58 │               className="w-full h-auto object-contain"
+ 59 │             />
+ 60 │           </motion.div>
+ 61 │           
+ 62 │           <motion.div 
+ 63 │             initial={{ opacity: 0, x: 50 }}
+ 64 │             whileInView={{ opacity: 1, x: 0 }}
+ 65 │             transition={{ duration: 1, delay: 0.6 }}
+ 66 │             className="w-full max-w-[300px] self-end"
+ 67 │           >
+ 68 │             <img
+ 69 │               src="/best shots/Product image/bodywash-cream.png"
+ 70 │               alt="Body Wash"
+ 71 │               className="w-full h-auto object-contain"
+ 72 │             />
+ 73 │           </motion.div>
+ 74 │ 
+ 75 │           <motion.div 
+ 76 │             initial={{ opacity: 0 }}
+ 77 │             whileInView={{ opacity: 1 }}
+ 78 │             transition={{ duration: 1, delay: 0.8 }}
+ 79 │             className="mt-8"
+ 80 │           >
+ 81 │             <button
+ 82 │               onClick={() => onOpenProject(targetProject)}
+ 83 │               className="flex items-center space-x-4 border-b border-[#111111] pb-2 font-sans text-sm uppercase tracking-widest hover:text-[#9D8B74] hover:border-[#9D8B74] transition-colors duration-300 group"
+ 84 │             >
+ 85 │               <span>Read Campaign</span>
+ 86 │               <ArrowRight className="w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-300" />
+ 87 │             </button>
+ 88 │           </motion.div>
+ 89 │         </div>
+ 90 │       </div>
+ 91 │     </section>
+ 92 │   );
+ 93 │ }
+ 94 │ 
+ 95 │ export default function FeaturedCampaign({ onOpenProject }: FeaturedCampaignProps) {
+    ·                         ────────┬───────
+    ·                                 ╰── `FeaturedCampaign` redefined here
+ 96 │   const sectionRef = useRef<HTMLDivElement>(null);
+ 97 │   const targetProject = PROJECTS.find((p) => p.id === "liquid-shadow") || PROJECTS[1];
+    ╰────
+  × the name `default` is exported multiple times
+     ╭─[C:\Users\Rahul\Downloads\data\new-design\src\components\sections\FeaturedCampaign.tsx:11:1]
+   8 │       onOpenProject: (project: typeof PROJECTS[0]) => void;
+   9 │     }
+  10 │     
+  11 │ ╭─▶ export default function FeaturedCampaign({ onOpenProject }: FeaturedCampaignProps) {
+  12 │ │     const targetProject = PROJECTS.find((p) => p.id === "liquid-shadow") || PROJECTS[1];
+  13 │ │   
+  14 │ │     return (
+  15 │ │       <section className="w-full min-h-screen bg-[#F5F5F0] text-[#111111] py-24 px-6 md:px-24">
+  16 │ │         {/* Editorial Title - Asymmetrical positioning */}
+  17 │ │         <motion.div 
+  18 │ │           initial={{ opacity: 0, y: 50 }}
+  19 │ │           whileInView={{ opacity: 1, y: 0 }}
+  20 │ │           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+  21 │ │           className="mb-24"
+  22 │ │         >
+  23 │ │           <h2 className="font-serif italic text-7xl md:text-[12rem] text-[#9D8B74] leading-[0.8]">Still</h2>
+  24 │ │           <h2 className="font-sans font-black text-7xl md:text-[12rem] uppercase tracking-tighter leading-[0.8] ml-4 md:ml-12">LIFE.</h2>
+  25 │ │         </motion.div>
+  26 │ │   
+  27 │ │         {/* Main Editorial Spread - Asymmetrical Grid */}
+  28 │ │         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+  29 │ │           
+  30 │ │           {/* Main Video Block (Spans 7 columns) */}
+  31 │ │           <motion.div 
+  32 │ │             initial={{ opacity: 0, scale: 0.95 }}
+  33 │ │             whileInView={{ opacity: 1, scale: 1 }}
+  34 │ │             transition={{ duration: 1.2, delay: 0.2 }}
+  35 │ │             className="lg:col-span-7"
+  36 │ │           >
+  37 │ │             <video
+  38 │ │               src="/best shots/Product image/product-energy-can.mp4"
+  39 │ │               autoPlay
+  40 │ │               loop
+  41 │ │               muted
+  42 │ │               playsInline
+  43 │ │               className="w-full h-auto object-contain rounded-sm"
+  44 │ │             />
+  45 │ │           </motion.div>
+  46 │ │   
+  47 │ │           {/* Supporting Visuals Stack (Spans 5 columns) */}
+  48 │ │           <div className="lg:col-span-5 flex flex-col gap-16 md:pl-12">
+  49 │ │             <motion.div 
+  50 │ │               initial={{ opacity: 0, x: 50 }}
+  51 │ │               whileInView={{ opacity: 1, x: 0 }}
+  52 │ │               transition={{ duration: 1, delay: 0.4 }}
+  53 │ │               className="w-full max-w-[300px]"
+  54 │ │             >
+  55 │ │               <img
+  56 │ │                 src="/best shots/Product image/hair-spray-bottle.png"
+  57 │ │                 alt="Hair Spray"
+  58 │ │                 className="w-full h-auto object-contain"
+  59 │ │               />
+  60 │ │             </motion.div>
+  61 │ │             
+  62 │ │             <motion.div 
+  63 │ │               initial={{ opacity: 0, x: 50 }}
+  64 │ │               whileInView={{ opacity: 1, x: 0 }}
+  65 │ │               transition={{ duration: 1, delay: 0.6 }}
+  66 │ │               className="w-full max-w-[300px] self-end"
+  67 │ │             >
+  68 │ │               <img
+  69 │ │                 src="/best shots/Product image/bodywash-cream.png"
+  70 │ │                 alt="Body Wash"
+  71 │ │                 className="w-full h-auto object-contain"
+  72 │ │               />
+  73 │ │             </motion.div>
+  74 │ │   
+  75 │ │             <motion.div 
+  76 │ │               initial={{ opacity: 0 }}
+  77 │ │               whileInView={{ opacity: 1 }}
+  78 │ │               transition={{ duration: 1, delay: 0.8 }}
+  79 │ │               className="mt-8"
+  80 │ │             >
+  81 │ │               <button
+  82 │ │                 onClick={() => onOpenProject(targetProject)}
+  83 │ │                 className="flex items-center space-x-4 border-b border-[#111111] pb-2 font-sans text-sm uppercase tracking-widest hover:text-[#9D8B74] hover:border-[#9D8B74] transition-colors duration-300 group"
+  84 │ │               >
+  85 │ │                 <span>Read Campaign</span>
+  86 │ │                 <ArrowRight className="w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-300" />
+  87 │ │               </button>
+  88 │ │             </motion.div>
+  89 │ │           </div>
+  90 │ │         </div>
+  91 │ │       </section>
+  92 │ │     );
+  93 │ ├─▶ }
+     · ╰──── previous exported here
+  94 │     
+  95 │ ╭─▶ export default function FeaturedCampaign({ onOpenProject }: FeaturedCampaignProps) {
+  96 │ │     const sectionRef = useRef<HTMLDivElement>(null);
+  97 │ │     const targetProject = PROJECTS.find((p) => p.id === "liquid-shadow") || PROJECTS[1];
+  98 │ │   
+  99 │ │     return (
+ 100 │ │       <section
+ 101 │ │         ref={sectionRef}
+ 102 │ │         className="w-full bg-[#F5F5F0] text-[#111111] px-6 md:px-12 py-12 md:py-24"
+ 103 │ │       >
+ 104 │ │         {/* Editorial Title */}
+ 105 │ │         <div className="mb-12 md:mb-24">
+ 106 │ │           <h2 className="font-serif italic text-5xl sm:text-7xl md:text-9xl text-[#9D8B74] leading-none tracking-tight">
+ 107 │ │             Still
+ 108 │ │           </h2>
+ 109 │ │           <h2 className="font-sans font-black text-5xl sm:text-7xl md:text-9xl uppercase tracking-tighter leading-[0.9]">
+ 110 │ │             Life.
+ 111 │ │           </h2>
+ 112 │ │         </div>
+ 113 │ │   
+ 114 │ │         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
+ 115 │ │           {/* Left Column: Video (Span 8) */}
+ 116 │ │           <div className="md:col-span-8 flex items-center justify-center">
+ 117 │ │             <video
+ 118 │ │               src="/best shots/Product image/product-energy-can.mp4"
+ 119 │ │               autoPlay
+ 120 │ │               loop
+ 121 │ │               muted
+ 122 │ │               playsInline
+ 123 │ │               className="w-full h-auto"
+ 124 │ │             />
+ 125 │ │           </div>
+ 126 │ │   
+ 127 │ │           {/* Right Column: Supporting Visuals & Link (Span 4) */}
+ 128 │ │           <div className="md:col-span-4 flex flex-col gap-8">
+ 129 │ │             <div className="flex items-center justify-center">
+ 130 │ │               <img
+ 131 │ │                 src="/best shots/Product image/hair-spray-bottle.png"
+ 132 │ │                 alt="Hair Spray"
+ 133 │ │                 className="w-full h-auto object-contain max-w-[200px] md:max-w-full"
+ 134 │ │               />
+ 135 │ │             </div>
+ 136 │ │             <div className="flex items-center justify-center">
+ 137 │ │               <img
+ 138 │ │                 src="/best shots/Product image/bodywash-cream.png"
+ 139 │ │                 alt="Body Wash"
+ 140 │ │                 className="w-full h-auto object-contain max-w-[200px] md:max-w-full"
+ 141 │ │               />
+ 142 │ │             </div>
+ 143 │ │             
+ 144 │ │             {/* Campaign Link */}
+ 145 │ │             <div className="mt-8">
+ 146 │ │               <button
+ 147 │ │                 onClick={() => onOpenProject(targetProject)}
+ 148 │ │                 className="flex items-center space-x-4 border-b border-[#111111] pb-2 font-sans text-xs uppercase tracking-widest hover:text-[#9D8B74] hover:border-[#9D8B74] transition-colors duration-300 group"
+ 149 │ │               >
+ 150 │ │                 <span>Read Campaign</span>
+ 151 │ │                 <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" />
+ 152 │ │               </button>
+ 153 │ │             </div>
+ 154 │ │           </div>
+ 155 │ │         </div>
+ 156 │ │       </section>
+ 157 │ │     );
+ 158 │ ├─▶ }
+     · ╰──── exported more than once
+     ╰────
+
+Advice:   ☞ Exported identifiers must be unique
+
+    at processResult (file://C:\Users\Rahul\Downloads\data\new-design\node_modules\next\dist\compiled\webpack\bundle5.js:28:400616)
+    at <unknown> (file://C:\Users\Rahul\Downloads\data\new-design\node_modules\next\dist\compiled\webpack\bundle5.js:28:402328)
+    at <unknown> (file://C:\Users\Rahul\Downloads\data\new-design\node_modules\next\dist\compiled\loader-runner\LoaderRunner.js:1:8645)
+    at <unknown> (file://C:\Users\Rahul\Downloads\data\new-design\node_modules\next\dist\compiled\loader-runner\LoaderRunner.js:1:5019)
+    at r.callback (file://C:\Users\Rahul\Downloads\data\new-design\node_modules\next\dist\compiled\loader-runner\LoaderRunner.js:1:4039)
+[    1689ms] [LOG] [HMR] connected @ webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:41
+[    1692ms] [ERROR] ./src/components/sections/FeaturedCampaign.tsx
+Error:   × the name `FeaturedCampaign` is defined multiple times
+    ╭─[C:\Users\Rahul\Downloads\data\new-design\src\components\sections\FeaturedCampaign.tsx:11:1]
+  8 │   onOpenProject: (project: typeof PROJECTS[0]) => void;
+  9 │ }
+ 10 │ 
+ 11 │ export default function FeaturedCampaign({ onOpenProject }: FeaturedCampaignProps) {
+    ·                         ────────┬───────
+    ·                                 ╰── previous definition of `FeaturedCampaign` here
+ 12 │   const targetProject = PROJECTS.find((p) => p.id === "liquid-shadow") || PROJECTS[1];
+ 13 │ 
+ 14 │   return (
+ 15 │     <section className="w-full min-h-screen bg-[#F5F5F0] text-[#111111] py-24 px-6 md:px-24">
+ 16 │       {/* Editorial Title - Asymmetrical positioning */}
+ 17 │       <motion.div 
+ 18 │         initial={{ opacity: 0, y: 50 }}
+ 19 │         whileInView={{ opacity: 1, y: 0 }}
+ 20 │         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+ 21 │         className="mb-24"
+ 22 │       >
+ 23 │         <h2 className="font-serif italic text-7xl md:text-[12rem] text-[#9D8B74] leading-[0.8]">Still</h2>
+ 24 │         <h2 className="font-sans font-black text-7xl md:text-[12rem] uppercase tracking-tighter leading-[0.8] ml-4 md:ml-12">LIFE.</h2>
+ 25 │       </motion.div>
+ 26 │ 
+ 27 │       {/* Main Editorial Spread - Asymmetrical Grid */}
+ 28 │       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+ 29 │         
+ 30 │         {/* Main Video Block (Spans 7 columns) */}
+ 31 │         <motion.div 
+ 32 │           initial={{ opacity: 0, scale: 0.95 }}
+ 33 │           whileInView={{ opacity: 1, scale: 1 }}
+ 34 │           transition={{ duration: 1.2, delay: 0.2 }}
+ 35 │           className="lg:col-span-7"
+ 36 │         >
+ 37 │           <video
+ 38 │             src="/best shots/Product image/product-energy-can.mp4"
+ 39 │             autoPlay
+ 40 │             loop
+ 41 │             muted
+ 42 │             playsInline
+ 43 │             className="w-full h-auto object-contain rounded-sm"
+ 44 │           />
+ 45 │         </motion.div>
+ 46 │ 
+ 47 │         {/* Supporting Visuals Stack (Spans 5 columns) */}
+ 48 │         <div className="lg:col-span-5 flex flex-col gap-16 md:pl-12">
+ 49 │           <motion.div 
+ 50 │             initial={{ opacity: 0, x: 50 }}
+ 51 │             whileInView={{ opacity: 1, x: 0 }}
+ 52 │             transition={{ duration: 1, delay: 0.4 }}
+ 53 │             className="w-full max-w-[300px]"
+ 54 │           >
+ 55 │             <img
+ 56 │               src="/best shots/Product image/hair-spray-bottle.png"
+ 57 │               alt="Hair Spray"
+ 58 │               className="w-full h-auto object-contain"
+ 59 │             />
+ 60 │           </motion.div>
+ 61 │           
+ 62 │           <motion.div 
+ 63 │             initial={{ opacity: 0, x: 50 }}
+ 64 │             whileInView={{ opacity: 1, x: 0 }}
+ 65 │             transition={{ duration: 1, delay: 0.6 }}
+ 66 │             className="w-full max-w-[300px] self-end"
+ 67 │           >
+ 68 │             <img
+ 69 │               src="/best shots/Product image/bodywash-cream.png"
+ 70 │               alt="Body Wash"
+ 71 │               className="w-full h-auto object-contain"
+ 72 │             />
+ 73 │           </motion.div>
+ 74 │ 
+ 75 │           <motion.div 
+ 76 │             initial={{ opacity: 0 }}
+ 77 │             whileInView={{ opacity: 1 }}
+ 78 │             transition={{ duration: 1, delay: 0.8 }}
+ 79 │             className="mt-8"
+ 80 │           >
+ 81 │             <button
+ 82 │               onClick={() => onOpenProject(targetProject)}
+ 83 │               className="flex items-center space-x-4 border-b border-[#111111] pb-2 font-sans text-sm uppercase tracking-widest hover:text-[#9D8B74] hover:border-[#9D8B74] transition-colors duration-300 group"
+ 84 │             >
+ 85 │               <span>Read Campaign</span>
+ 86 │               <ArrowRight className="w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-300" />
+ 87 │             </button>
+ 88 │           </motion.div>
+ 89 │         </div>
+ 90 │       </div>
+ 91 │     </section>
+ 92 │   );
+ 93 │ }
+ 94 │ 
+ 95 │ export default function FeaturedCampaign({ onOpenProject }: FeaturedCampaignProps) {
+    ·                         ────────┬───────
+    ·                                 ╰── `FeaturedCampaign` redefined here
+ 96 │   const sectionRef = useRef<HTMLDivElement>(null);
+ 97 │   const targetProject = PROJECTS.find((p) => p.id === "liquid-shadow") || PROJECTS[1];
+    ╰────
+  × the name `default` is exported multiple times
+     ╭─[C:\Users\Rahul\Downloads\data\new-design\src\components\sections\FeaturedCampaign.tsx:11:1]
+   8 │       onOpenProject: (project: typeof PROJECTS[0]) => void;
+   9 │     }
+  10 │     
+  11 │ ╭─▶ export default function FeaturedCampaign({ onOpenProject }: FeaturedCampaignProps) {
+  12 │ │     const targetProject = PROJECTS.find((p) => p.id === "liquid-shadow") || PROJECTS[1];
+  13 │ │   
+  14 │ │     return (
+  15 │ │       <section className="w-full min-h-screen bg-[#F5F5F0] text-[#111111] py-24 px-6 md:px-24">
+  16 │ │         {/* Editorial Title - Asymmetrical positioning */}
+  17 │ │         <motion.div 
+  18 │ │           initial={{ opacity: 0, y: 50 }}
+  19 │ │           whileInView={{ opacity: 1, y: 0 }}
+  20 │ │           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+  21 │ │           className="mb-24"
+  22 │ │         >
+  23 │ │           <h2 className="font-serif italic text-7xl md:text-[12rem] text-[#9D8B74] leading-[0.8]">Still</h2>
+  24 │ │           <h2 className="font-sans font-black text-7xl md:text-[12rem] uppercase tracking-tighter leading-[0.8] ml-4 md:ml-12">LIFE.</h2>
+  25 │ │         </motion.div>
+  26 │ │   
+  27 │ │         {/* Main Editorial Spread - Asymmetrical Grid */}
+  28 │ │         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+  29 │ │           
+  30 │ │           {/* Main Video Block (Spans 7 columns) */}
+  31 │ │           <motion.div 
+  32 │ │             initial={{ opacity: 0, scale: 0.95 }}
+  33 │ │             whileInView={{ opacity: 1, scale: 1 }}
+  34 │ │             transition={{ duration: 1.2, delay: 0.2 }}
+  35 │ │             className="lg:col-span-7"
+  36 │ │           >
+  37 │ │             <video
+  38 │ │               src="/best shots/Product image/product-energy-can.mp4"
+  39 │ │               autoPlay
+  40 │ │               loop
+  41 │ │               muted
+  42 │ │               playsInline
+  43 │ │               className="w-full h-auto object-contain rounded-sm"
+  44 │ │             />
+  45 │ │           </motion.div>
+  46 │ │   
+  47 │ │           {/* Supporting Visuals Stack (Spans 5 columns) */}
+  48 │ │           <div className="lg:col-span-5 flex flex-col gap-16 md:pl-12">
+  49 │ │             <motion.div 
+  50 │ │               initial={{ opacity: 0, x: 50 }}
+  51 │ │               whileInView={{ opacity: 1, x: 0 }}
+  52 │ │               transition={{ duration: 1, delay: 0.4 }}
+  53 │ │               className="w-full max-w-[300px]"
+  54 │ │             >
+  55 │ │               <img
+  56 │ │                 src="/best shots/Product image/hair-spray-bottle.png"
+  57 │ │                 alt="Hair Spray"
+  58 │ │                 className="w-full h-auto object-contain"
+  59 │ │               />
+  60 │ │             </motion.div>
+  61 │ │             
+  62 │ │             <motion.div 
+  63 │ │               initial={{ opacity: 0, x: 50 }}
+  64 │ │               whileInView={{ opacity: 1, x: 0 }}
+  65 │ │               transition={{ duration: 1, delay: 0.6 }}
+  66 │ │               className="w-full max-w-[300px] self-end"
+  67 │ │             >
+  68 │ │               <img
+  69 │ │                 src="/best shots/Product image/bodywash-cream.png"
+  70 │ │                 alt="Body Wash"
+  71 │ │                 className="w-full h-auto object-contain"
+  72 │ │               />
+  73 │ │             </motion.div>
+  74 │ │   
+  75 │ │             <motion.div 
+  76 │ │               initial={{ opacity: 0 }}
+  77 │ │               whileInView={{ opacity: 1 }}
+  78 │ │               transition={{ duration: 1, delay: 0.8 }}
+  79 │ │               className="mt-8"
+  80 │ │             >
+  81 │ │               <button
+  82 │ │                 onClick={() => onOpenProject(targetProject)}
+  83 │ │                 className="flex items-center space-x-4 border-b border-[#111111] pb-2 font-sans text-sm uppercase tracking-widest hover:text-[#9D8B74] hover:border-[#9D8B74] transition-colors duration-300 group"
+  84 │ │               >
+  85 │ │                 <span>Read Campaign</span>
+  86 │ │                 <ArrowRight className="w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-300" />
+  87 │ │               </button>
+  88 │ │             </motion.div>
+  89 │ │           </div>
+  90 │ │         </div>
+  91 │ │       </section>
+  92 │ │     );
+  93 │ ├─▶ }
+     · ╰──── previous exported here
+  94 │     
+  95 │ ╭─▶ export default function FeaturedCampaign({ onOpenProject }: FeaturedCampaignProps) {
+  96 │ │     const sectionRef = useRef<HTMLDivElement>(null);
+  97 │ │     const targetProject = PROJECTS.find((p) => p.id === "liquid-shadow") || PROJECTS[1];
+  98 │ │   
+  99 │ │     return (
+ 100 │ │       <section
+ 101 │ │         ref={sectionRef}
+ 102 │ │         className="w-full bg-[#F5F5F0] text-[#111111] px-6 md:px-12 py-12 md:py-24"
+ 103 │ │       >
+ 104 │ │         {/* Editorial Title */}
+ 105 │ │         <div className="mb-12 md:mb-24">
+ 106 │ │           <h2 className="font-serif italic text-5xl sm:text-7xl md:text-9xl text-[#9D8B74] leading-none tracking-tight">
+ 107 │ │             Still
+ 108 │ │           </h2>
+ 109 │ │           <h2 className="font-sans font-black text-5xl sm:text-7xl md:text-9xl uppercase tracking-tighter leading-[0.9]">
+ 110 │ │             Life.
+ 111 │ │           </h2>
+ 112 │ │         </div>
+ 113 │ │   
+ 114 │ │         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
+ 115 │ │           {/* Left Column: Video (Span 8) */}
+ 116 │ │           <div className="md:col-span-8 flex items-center justify-center">
+ 117 │ │             <video
+ 118 │ │               src="/best shots/Product image/product-energy-can.mp4"
+ 119 │ │               autoPlay
+ 120 │ │               loop
+ 121 │ │               muted
+ 122 │ │               playsInline
+ 123 │ │               className="w-full h-auto"
+ 124 │ │             />
+ 125 │ │           </div>
+ 126 │ │   
+ 127 │ │           {/* Right Column: Supporting Visuals & Link (Span 4) */}
+ 128 │ │           <div className="md:col-span-4 flex flex-col gap-8">
+ 129 │ │             <div className="flex items-center justify-center">
+ 130 │ │               <img
+ 131 │ │                 src="/best shots/Product image/hair-spray-bottle.png"
+ 132 │ │                 alt="Hair Spray"
+ 133 │ │                 className="w-full h-auto object-contain max-w-[200px] md:max-w-full"
+ 134 │ │               />
+ 135 │ │             </div>
+ 136 │ │             <div className="flex items-center justify-center">
+ 137 │ │               <img
+ 138 │ │                 src="/best shots/Product image/bodywash-cream.png"
+ 139 │ │                 alt="Body Wash"
+ 140 │ │                 className="w-full h-auto object-contain max-w-[200px] md:max-w-full"
+ 141 │ │               />
+ 142 │ │             </div>
+ 143 │ │             
+ 144 │ │             {/* Campaign Link */}
+ 145 │ │             <div className="mt-8">
+ 146 │ │               <button
+ 147 │ │                 onClick={() => onOpenProject(targetProject)}
+ 148 │ │                 className="flex items-center space-x-4 border-b border-[#111111] pb-2 font-sans text-xs uppercase tracking-widest hover:text-[#9D8B74] hover:border-[#9D8B74] transition-colors duration-300 group"
+ 149 │ │               >
+ 150 │ │                 <span>Read Campaign</span>
+ 151 │ │                 <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" />
+ 152 │ │               </button>
+ 153 │ │             </div>
+ 154 │ │           </div>
+ 155 │ │         </div>
+ 156 │ │       </section>
+ 157 │ │     );
+ 158 │ ├─▶ }
+     · ╰──── exported more than once
+     ╰────
+
+Advice:   ☞ Exported identifiers must be unique @ webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/pages/client.js:84
+[    1706ms] [ERROR] ./src/components/sections/FeaturedCampaign.tsx
+Error:   × the name `FeaturedCampaign` is defined multiple times
+    ╭─[C:\Users\Rahul\Downloads\data\new-design\src\components\sections\FeaturedCampaign.tsx:11:1]
+  8 │   onOpenProject: (project: typeof PROJECTS[0]) => void;
+  9 │ }
+ 10 │ 
+ 11 │ export default function FeaturedCampaign({ onOpenProject }: FeaturedCampaignProps) {
+    ·                         ────────┬───────
+    ·                                 ╰── previous definition of `FeaturedCampaign` here
+ 12 │   const targetProject = PROJECTS.find((p) => p.id === "liquid-shadow") || PROJECTS[1];
+ 13 │ 
+ 14 │   return (
+ 15 │     <section className="w-full min-h-screen bg-[#F5F5F0] text-[#111111] py-24 px-6 md:px-24">
+ 16 │       {/* Editorial Title - Asymmetrical positioning */}
+ 17 │       <motion.div 
+ 18 │         initial={{ opacity: 0, y: 50 }}
+ 19 │         whileInView={{ opacity: 1, y: 0 }}
+ 20 │         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+ 21 │         className="mb-24"
+ 22 │       >
+ 23 │         <h2 className="font-serif italic text-7xl md:text-[12rem] text-[#9D8B74] leading-[0.8]">Still</h2>
+ 24 │         <h2 className="font-sans font-black text-7xl md:text-[12rem] uppercase tracking-tighter leading-[0.8] ml-4 md:ml-12">LIFE.</h2>
+ 25 │       </motion.div>
+ 26 │ 
+ 27 │       {/* Main Editorial Spread - Asymmetrical Grid */}
+ 28 │       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+ 29 │         
+ 30 │         {/* Main Video Block (Spans 7 columns) */}
+ 31 │         <motion.div 
+ 32 │           initial={{ opacity: 0, scale: 0.95 }}
+ 33 │           whileInView={{ opacity: 1, scale: 1 }}
+ 34 │           transition={{ duration: 1.2, delay: 0.2 }}
+ 35 │           className="lg:col-span-7"
+ 36 │         >
+ 37 │           <video
+ 38 │             src="/best shots/Product image/product-energy-can.mp4"
+ 39 │             autoPlay
+ 40 │             loop
+ 41 │             muted
+ 42 │             playsInline
+ 43 │             className="w-full h-auto object-contain rounded-sm"
+ 44 │           />
+ 45 │         </motion.div>
+ 46 │ 
+ 47 │         {/* Supporting Visuals Stack (Spans 5 columns) */}
+ 48 │         <div className="lg:col-span-5 flex flex-col gap-16 md:pl-12">
+ 49 │           <motion.div 
+ 50 │             initial={{ opacity: 0, x: 50 }}
+ 51 │             whileInView={{ opacity: 1, x: 0 }}
+ 52 │             transition={{ duration: 1, delay: 0.4 }}
+ 53 │             className="w-full max-w-[300px]"
+ 54 │           >
+ 55 │             <img
+ 56 │               src="/best shots/Product image/hair-spray-bottle.png"
+ 57 │               alt="Hair Spray"
+ 58 │               className="w-full h-auto object-contain"
+ 59 │             />
+ 60 │           </motion.div>
+ 61 │           
+ 62 │           <motion.div 
+ 63 │             initial={{ opacity: 0, x: 50 }}
+ 64 │             whileInView={{ opacity: 1, x: 0 }}
+ 65 │             transition={{ duration: 1, delay: 0.6 }}
+ 66 │             className="w-full max-w-[300px] self-end"
+ 67 │           >
+ 68 │             <img
+ 69 │               src="/best shots/Product image/bodywash-cream.png"
+ 70 │               alt="Body Wash"
+ 71 │               className="w-full h-auto object-contain"
+ 72 │             />
+ 73 │           </motion.div>
+ 74 │ 
+ 75 │           <motion.div 
+ 76 │             initial={{ opacity: 0 }}
+ 77 │             whileInView={{ opacity: 1 }}
+ 78 │             transition={{ duration: 1, delay: 0.8 }}
+ 79 │             className="mt-8"
+ 80 │           >
+ 81 │             <button
+ 82 │               onClick={() => onOpenProject(targetProject)}
+ 83 │               className="flex items-center space-x-4 border-b border-[#111111] pb-2 font-sans text-sm uppercase tracking-widest hover:text-[#9D8B74] hover:border-[#9D8B74] transition-colors duration-300 group"
+ 84 │             >
+ 85 │               <span>Read Campaign</span>
+ 86 │               <ArrowRight className="w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-300" />
+ 87 │             </button>
+ 88 │           </motion.div>
+ 89 │         </div>
+ 90 │       </div>
+ 91 │     </section>
+ 92 │   );
+ 93 │ }
+ 94 │ 
+ 95 │ export default function FeaturedCampaign({ onOpenProject }: FeaturedCampaignProps) {
+    ·                         ────────┬───────
+    ·                                 ╰── `FeaturedCampaign` redefined here
+ 96 │   const sectionRef = useRef<HTMLDivElement>(null);
+ 97 │   const targetProject = PROJECTS.find((p) => p.id === "liquid-shadow") || PROJECTS[1];
+    ╰────
+  × the name `default` is exported multiple times
+     ╭─[C:\Users\Rahul\Downloads\data\new-design\src\components\sections\FeaturedCampaign.tsx:11:1]
+   8 │       onOpenProject: (project: typeof PROJECTS[0]) => void;
+   9 │     }
+  10 │     
+  11 │ ╭─▶ export default function FeaturedCampaign({ onOpenProject }: FeaturedCampaignProps) {
+  12 │ │     const targetProject = PROJECTS.find((p) => p.id === "liquid-shadow") || PROJECTS[1];
+  13 │ │   
+  14 │ │     return (
+  15 │ │       <section className="w-full min-h-screen bg-[#F5F5F0] text-[#111111] py-24 px-6 md:px-24">
+  16 │ │         {/* Editorial Title - Asymmetrical positioning */}
+  17 │ │         <motion.div 
+  18 │ │           initial={{ opacity: 0, y: 50 }}
+  19 │ │           whileInView={{ opacity: 1, y: 0 }}
+  20 │ │           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+  21 │ │           className="mb-24"
+  22 │ │         >
+  23 │ │           <h2 className="font-serif italic text-7xl md:text-[12rem] text-[#9D8B74] leading-[0.8]">Still</h2>
+  24 │ │           <h2 className="font-sans font-black text-7xl md:text-[12rem] uppercase tracking-tighter leading-[0.8] ml-4 md:ml-12">LIFE.</h2>
+  25 │ │         </motion.div>
+  26 │ │   
+  27 │ │         {/* Main Editorial Spread - Asymmetrical Grid */}
+  28 │ │         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+  29 │ │           
+  30 │ │           {/* Main Video Block (Spans 7 columns) */}
+  31 │ │           <motion.div 
+  32 │ │             initial={{ opacity: 0, scale: 0.95 }}
+  33 │ │             whileInView={{ opacity: 1, scale: 1 }}
+  34 │ │             transition={{ duration: 1.2, delay: 0.2 }}
+  35 │ │             className="lg:col-span-7"
+  36 │ │           >
+  37 │ │             <video
+  38 │ │               src="/best shots/Product image/product-energy-can.mp4"
+  39 │ │               autoPlay
+  40 │ │               loop
+  41 │ │               muted
+  42 │ │               playsInline
+  43 │ │               className="w-full h-auto object-contain rounded-sm"
+  44 │ │             />
+  45 │ │           </motion.div>
+  46 │ │   
+  47 │ │           {/* Supporting Visuals Stack (Spans 5 columns) */}
+  48 │ │           <div className="lg:col-span-5 flex flex-col gap-16 md:pl-12">
+  49 │ │             <motion.div 
+  50 │ │               initial={{ opacity: 0, x: 50 }}
+  51 │ │               whileInView={{ opacity: 1, x: 0 }}
+  52 │ │               transition={{ duration: 1, delay: 0.4 }}
+  53 │ │               className="w-full max-w-[300px]"
+  54 │ │             >
+  55 │ │               <img
+  56 │ │                 src="/best shots/Product image/hair-spray-bottle.png"
+  57 │ │                 alt="Hair Spray"
+  58 │ │                 className="w-full h-auto object-contain"
+  59 │ │               />
+  60 │ │             </motion.div>
+  61 │ │             
+  62 │ │             <motion.div 
+  63 │ │               initial={{ opacity: 0, x: 50 }}
+  64 │ │               whileInView={{ opacity: 1, x: 0 }}
+  65 │ │               transition={{ duration: 1, delay: 0.6 }}
+  66 │ │               className="w-full max-w-[300px] self-end"
+  67 │ │             >
+  68 │ │               <img
+  69 │ │                 src="/best shots/Product image/bodywash-cream.png"
+  70 │ │                 alt="Body Wash"
+  71 │ │                 className="w-full h-auto object-contain"
+  72 │ │               />
+  73 │ │             </motion.div>
+  74 │ │   
+  75 │ │             <motion.div 
+  76 │ │               initial={{ opacity: 0 }}
+  77 │ │               whileInView={{ opacity: 1 }}
+  78 │ │               transition={{ duration: 1, delay: 0.8 }}
+  79 │ │               className="mt-8"
+  80 │ │             >
+  81 │ │               <button
+  82 │ │                 onClick={() => onOpenProject(targetProject)}
+  83 │ │                 className="flex items-center space-x-4 border-b border-[#111111] pb-2 font-sans text-sm uppercase tracking-widest hover:text-[#9D8B74] hover:border-[#9D8B74] transition-colors duration-300 group"
+  84 │ │               >
+  85 │ │                 <span>Read Campaign</span>
+  86 │ │                 <ArrowRight className="w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-300" />
+  87 │ │               </button>
+  88 │ │             </motion.div>
+  89 │ │           </div>
+  90 │ │         </div>
+  91 │ │       </section>
+  92 │ │     );
+  93 │ ├─▶ }
+     · ╰──── previous exported here
+  94 │     
+  95 │ ╭─▶ export default function FeaturedCampaign({ onOpenProject }: FeaturedCampaignProps) {
+  96 │ │     const sectionRef = useRef<HTMLDivElement>(null);
+  97 │ │     const targetProject = PROJECTS.find((p) => p.id === "liquid-shadow") || PROJECTS[1];
+  98 │ │   
+  99 │ │     return (
+ 100 │ │       <section
+ 101 │ │         ref={sectionRef}
+ 102 │ │         className="w-full bg-[#F5F5F0] text-[#111111] px-6 md:px-12 py-12 md:py-24"
+ 103 │ │       >
+ 104 │ │         {/* Editorial Title */}
+ 105 │ │         <div className="mb-12 md:mb-24">
+ 106 │ │           <h2 className="font-serif italic text-5xl sm:text-7xl md:text-9xl text-[#9D8B74] leading-none tracking-tight">
+ 107 │ │             Still
+ 108 │ │           </h2>
+ 109 │ │           <h2 className="font-sans font-black text-5xl sm:text-7xl md:text-9xl uppercase tracking-tighter leading-[0.9]">
+ 110 │ │             Life.
+ 111 │ │           </h2>
+ 112 │ │         </div>
+ 113 │ │   
+ 114 │ │         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
+ 115 │ │           {/* Left Column: Video (Span 8) */}
+ 116 │ │           <div className="md:col-span-8 flex items-center justify-center">
+ 117 │ │             <video
+ 118 │ │               src="/best shots/Product image/product-energy-can.mp4"
+ 119 │ │               autoPlay
+ 120 │ │               loop
+ 121 │ │               muted
+ 122 │ │               playsInline
+ 123 │ │               className="w-full h-auto"
+ 124 │ │             />
+ 125 │ │           </div>
+ 126 │ │   
+ 127 │ │           {/* Right Column: Supporting Visuals & Link (Span 4) */}
+ 128 │ │           <div className="md:col-span-4 flex flex-col gap-8">
+ 129 │ │             <div className="flex items-center justify-center">
+ 130 │ │               <img
+ 131 │ │                 src="/best shots/Product image/hair-spray-bottle.png"
+ 132 │ │                 alt="Hair Spray"
+ 133 │ │                 className="w-full h-auto object-contain max-w-[200px] md:max-w-full"
+ 134 │ │               />
+ 135 │ │             </div>
+ 136 │ │             <div className="flex items-center justify-center">
+ 137 │ │               <img
+ 138 │ │                 src="/best shots/Product image/bodywash-cream.png"
+ 139 │ │                 alt="Body Wash"
+ 140 │ │                 className="w-full h-auto object-contain max-w-[200px] md:max-w-full"
+ 141 │ │               />
+ 142 │ │             </div>
+ 143 │ │             
+ 144 │ │             {/* Campaign Link */}
+ 145 │ │             <div className="mt-8">
+ 146 │ │               <button
+ 147 │ │                 onClick={() => onOpenProject(targetProject)}
+ 148 │ │                 className="flex items-center space-x-4 border-b border-[#111111] pb-2 font-sans text-xs uppercase tracking-widest hover:text-[#9D8B74] hover:border-[#9D8B74] transition-colors duration-300 group"
+ 149 │ │               >
+ 150 │ │                 <span>Read Campaign</span>
+ 151 │ │                 <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" />
+ 152 │ │               </button>
+ 153 │ │             </div>
+ 154 │ │           </div>
+ 155 │ │         </div>
+ 156 │ │       </section>
+ 157 │ │     );
+ 158 │ ├─▶ }
+     · ╰──── exported more than once
+     ╰────
+
+Advice:   ☞ Exported identifiers must be unique
+
+Import trace for requested module:
+./src/components/sections/FeaturedCampaign.tsx
+./src/app/page.tsx @ webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/pages/client.js:84
+[    1812ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/favicon.ico:0
+[    1834ms] [ERROR] ./src/components/sections/FeaturedCampaign.tsx
+Error:   × the name `FeaturedCampaign` is defined multiple times
+    ╭─[C:\Users\Rahul\Downloads\data\new-design\src\components\sections\FeaturedCampaign.tsx:11:1]
+  8 │   onOpenProject: (project: typeof PROJECTS[0]) => void;
+  9 │ }
+ 10 │ 
+ 11 │ export default function FeaturedCampaign({ onOpenProject }: FeaturedCampaignProps) {
+    ·                         ────────┬───────
+    ·                                 ╰── previous definition of `FeaturedCampaign` here
+ 12 │   const targetProject = PROJECTS.find((p) => p.id === "liquid-shadow") || PROJECTS[1];
+ 13 │ 
+ 14 │   return (
+ 15 │     <section className="w-full min-h-screen bg-[#F5F5F0] text-[#111111] py-24 px-6 md:px-24">
+ 16 │       {/* Editorial Title - Asymmetrical positioning */}
+ 17 │       <motion.div 
+ 18 │         initial={{ opacity: 0, y: 50 }}
+ 19 │         whileInView={{ opacity: 1, y: 0 }}
+ 20 │         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+ 21 │         className="mb-24"
+ 22 │       >
+ 23 │         <h2 className="font-serif italic text-7xl md:text-[12rem] text-[#9D8B74] leading-[0.8]">Still</h2>
+ 24 │         <h2 className="font-sans font-black text-7xl md:text-[12rem] uppercase tracking-tighter leading-[0.8] ml-4 md:ml-12">LIFE.</h2>
+ 25 │       </motion.div>
+ 26 │ 
+ 27 │       {/* Main Editorial Spread - Asymmetrical Grid */}
+ 28 │       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+ 29 │         
+ 30 │         {/* Main Video Block (Spans 7 columns) */}
+ 31 │         <motion.div 
+ 32 │           initial={{ opacity: 0, scale: 0.95 }}
+ 33 │           whileInView={{ opacity: 1, scale: 1 }}
+ 34 │           transition={{ duration: 1.2, delay: 0.2 }}
+ 35 │           className="lg:col-span-7"
+ 36 │         >
+ 37 │           <video
+ 38 │             src="/best shots/Product image/product-energy-can.mp4"
+ 39 │             autoPlay
+ 40 │             loop
+ 41 │             muted
+ 42 │             playsInline
+ 43 │             className="w-full h-auto object-contain rounded-sm"
+ 44 │           />
+ 45 │         </motion.div>
+ 46 │ 
+ 47 │         {/* Supporting Visuals Stack (Spans 5 columns) */}
+ 48 │         <div className="lg:col-span-5 flex flex-col gap-16 md:pl-12">
+ 49 │           <motion.div 
+ 50 │             initial={{ opacity: 0, x: 50 }}
+ 51 │             whileInView={{ opacity: 1, x: 0 }}
+ 52 │             transition={{ duration: 1, delay: 0.4 }}
+ 53 │             className="w-full max-w-[300px]"
+ 54 │           >
+ 55 │             <img
+ 56 │               src="/best shots/Product image/hair-spray-bottle.png"
+ 57 │               alt="Hair Spray"
+ 58 │               className="w-full h-auto object-contain"
+ 59 │             />
+ 60 │           </motion.div>
+ 61 │           
+ 62 │           <motion.div 
+ 63 │             initial={{ opacity: 0, x: 50 }}
+ 64 │             whileInView={{ opacity: 1, x: 0 }}
+ 65 │             transition={{ duration: 1, delay: 0.6 }}
+ 66 │             className="w-full max-w-[300px] self-end"
+ 67 │           >
+ 68 │             <img
+ 69 │               src="/best shots/Product image/bodywash-cream.png"
+ 70 │               alt="Body Wash"
+ 71 │               className="w-full h-auto object-contain"
+ 72 │             />
+ 73 │           </motion.div>
+ 74 │ 
+ 75 │           <motion.div 
+ 76 │             initial={{ opacity: 0 }}
+ 77 │             whileInView={{ opacity: 1 }}
+ 78 │             transition={{ duration: 1, delay: 0.8 }}
+ 79 │             className="mt-8"
+ 80 │           >
+ 81 │             <button
+ 82 │               onClick={() => onOpenProject(targetProject)}
+ 83 │               className="flex items-center space-x-4 border-b border-[#111111] pb-2 font-sans text-sm uppercase tracking-widest hover:text-[#9D8B74] hover:border-[#9D8B74] transition-colors duration-300 group"
+ 84 │             >
+ 85 │               <span>Read Campaign</span>
+ 86 │               <ArrowRight className="w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-300" />
+ 87 │             </button>
+ 88 │           </motion.div>
+ 89 │         </div>
+ 90 │       </div>
+ 91 │     </section>
+ 92 │   );
+ 93 │ }
+ 94 │ 
+ 95 │ export default function FeaturedCampaign({ onOpenProject }: FeaturedCampaignProps) {
+    ·                         ────────┬───────
+    ·                                 ╰── `FeaturedCampaign` redefined here
+ 96 │   const sectionRef = useRef<HTMLDivElement>(null);
+ 97 │   const targetProject = PROJECTS.find((p) => p.id === "liquid-shadow") || PROJECTS[1];
+    ╰────
+  × the name `default` is exported multiple times
+     ╭─[C:\Users\Rahul\Downloads\data\new-design\src\components\sections\FeaturedCampaign.tsx:11:1]
+   8 │       onOpenProject: (project: typeof PROJECTS[0]) => void;
+   9 │     }
+  10 │     
+  11 │ ╭─▶ export default function FeaturedCampaign({ onOpenProject }: FeaturedCampaignProps) {
+  12 │ │     const targetProject = PROJECTS.find((p) => p.id === "liquid-shadow") || PROJECTS[1];
+  13 │ │   
+  14 │ │     return (
+  15 │ │       <section className="w-full min-h-screen bg-[#F5F5F0] text-[#111111] py-24 px-6 md:px-24">
+  16 │ │         {/* Editorial Title - Asymmetrical positioning */}
+  17 │ │         <motion.div 
+  18 │ │           initial={{ opacity: 0, y: 50 }}
+  19 │ │           whileInView={{ opacity: 1, y: 0 }}
+  20 │ │           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+  21 │ │           className="mb-24"
+  22 │ │         >
+  23 │ │           <h2 className="font-serif italic text-7xl md:text-[12rem] text-[#9D8B74] leading-[0.8]">Still</h2>
+  24 │ │           <h2 className="font-sans font-black text-7xl md:text-[12rem] uppercase tracking-tighter leading-[0.8] ml-4 md:ml-12">LIFE.</h2>
+  25 │ │         </motion.div>
+  26 │ │   
+  27 │ │         {/* Main Editorial Spread - Asymmetrical Grid */}
+  28 │ │         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+  29 │ │           
+  30 │ │           {/* Main Video Block (Spans 7 columns) */}
+  31 │ │           <motion.div 
+  32 │ │             initial={{ opacity: 0, scale: 0.95 }}
+  33 │ │             whileInView={{ opacity: 1, scale: 1 }}
+  34 │ │             transition={{ duration: 1.2, delay: 0.2 }}
+  35 │ │             className="lg:col-span-7"
+  36 │ │           >
+  37 │ │             <video
+  38 │ │               src="/best shots/Product image/product-energy-can.mp4"
+  39 │ │               autoPlay
+  40 │ │               loop
+  41 │ │               muted
+  42 │ │               playsInline
+  43 │ │               className="w-full h-auto object-contain rounded-sm"
+  44 │ │             />
+  45 │ │           </motion.div>
+  46 │ │   
+  47 │ │           {/* Supporting Visuals Stack (Spans 5 columns) */}
+  48 │ │           <div className="lg:col-span-5 flex flex-col gap-16 md:pl-12">
+  49 │ │             <motion.div 
+  50 │ │               initial={{ opacity: 0, x: 50 }}
+  51 │ │               whileInView={{ opacity: 1, x: 0 }}
+  52 │ │               transition={{ duration: 1, delay: 0.4 }}
+  53 │ │               className="w-full max-w-[300px]"
+  54 │ │             >
+  55 │ │               <img
+  56 │ │                 src="/best shots/Product image/hair-spray-bottle.png"
+  57 │ │                 alt="Hair Spray"
+  58 │ │                 className="w-full h-auto object-contain"
+  59 │ │               />
+  60 │ │             </motion.div>
+  61 │ │             
+  62 │ │             <motion.div 
+  63 │ │               initial={{ opacity: 0, x: 50 }}
+  64 │ │               whileInView={{ opacity: 1, x: 0 }}
+  65 │ │               transition={{ duration: 1, delay: 0.6 }}
+  66 │ │               className="w-full max-w-[300px] self-end"
+  67 │ │             >
+  68 │ │               <img
+  69 │ │                 src="/best shots/Product image/bodywash-cream.png"
+  70 │ │                 alt="Body Wash"
+  71 │ │                 className="w-full h-auto object-contain"
+  72 │ │               />
+  73 │ │             </motion.div>
+  74 │ │   
+  75 │ │             <motion.div 
+  76 │ │               initial={{ opacity: 0 }}
+  77 │ │               whileInView={{ opacity: 1 }}
+  78 │ │               transition={{ duration: 1, delay: 0.8 }}
+  79 │ │               className="mt-8"
+  80 │ │             >
+  81 │ │               <button
+  82 │ │                 onClick={() => onOpenProject(targetProject)}
+  83 │ │                 className="flex items-center space-x-4 border-b border-[#111111] pb-2 font-sans text-sm uppercase tracking-widest hover:text-[#9D8B74] hover:border-[#9D8B74] transition-colors duration-300 group"
+  84 │ │               >
+  85 │ │                 <span>Read Campaign</span>
+  86 │ │                 <ArrowRight className="w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-300" />
+  87 │ │               </button>
+  88 │ │             </motion.div>
+  89 │ │           </div>
+  90 │ │         </div>
+  91 │ │       </section>
+  92 │ │     );
+  93 │ ├─▶ }
+     · ╰──── previous exported here
+  94 │     
+  95 │ ╭─▶ export default function FeaturedCampaign({ onOpenProject }: FeaturedCampaignProps) {
+  96 │ │     const sectionRef = useRef<HTMLDivElement>(null);
+  97 │ │     const targetProject = PROJECTS.find((p) => p.id === "liquid-shadow") || PROJECTS[1];
+  98 │ │   
+  99 │ │     return (
+ 100 │ │       <section
+ 101 │ │         ref={sectionRef}
+ 102 │ │         className="w-full bg-[#F5F5F0] text-[#111111] px-6 md:px-12 py-12 md:py-24"
+ 103 │ │       >
+ 104 │ │         {/* Editorial Title */}
+ 105 │ │         <div className="mb-12 md:mb-24">
+ 106 │ │           <h2 className="font-serif italic text-5xl sm:text-7xl md:text-9xl text-[#9D8B74] leading-none tracking-tight">
+ 107 │ │             Still
+ 108 │ │           </h2>
+ 109 │ │           <h2 className="font-sans font-black text-5xl sm:text-7xl md:text-9xl uppercase tracking-tighter leading-[0.9]">
+ 110 │ │             Life.
+ 111 │ │           </h2>
+ 112 │ │         </div>
+ 113 │ │   
+ 114 │ │         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
+ 115 │ │           {/* Left Column: Video (Span 8) */}
+ 116 │ │           <div className="md:col-span-8 flex items-center justify-center">
+ 117 │ │             <video
+ 118 │ │               src="/best shots/Product image/product-energy-can.mp4"
+ 119 │ │               autoPlay
+ 120 │ │               loop
+ 121 │ │               muted
+ 122 │ │               playsInline
+ 123 │ │               className="w-full h-auto"
+ 124 │ │             />
+ 125 │ │           </div>
+ 126 │ │   
+ 127 │ │           {/* Right Column: Supporting Visuals & Link (Span 4) */}
+ 128 │ │           <div className="md:col-span-4 flex flex-col gap-8">
+ 129 │ │             <div className="flex items-center justify-center">
+ 130 │ │               <img
+ 131 │ │                 src="/best shots/Product image/hair-spray-bottle.png"
+ 132 │ │                 alt="Hair Spray"
+ 133 │ │                 className="w-full h-auto object-contain max-w-[200px] md:max-w-full"
+ 134 │ │               />
+ 135 │ │             </div>
+ 136 │ │             <div className="flex items-center justify-center">
+ 137 │ │               <img
+ 138 │ │                 src="/best shots/Product image/bodywash-cream.png"
+ 139 │ │                 alt="Body Wash"
+ 140 │ │                 className="w-full h-auto object-contain max-w-[200px] md:max-w-full"
+ 141 │ │               />
+ 142 │ │             </div>
+ 143 │ │             
+ 144 │ │             {/* Campaign Link */}
+ 145 │ │             <div className="mt-8">
+ 146 │ │               <button
+ 147 │ │                 onClick={() => onOpenProject(targetProject)}
+ 148 │ │                 className="flex items-center space-x-4 border-b border-[#111111] pb-2 font-sans text-xs uppercase tracking-widest hover:text-[#9D8B74] hover:border-[#9D8B74] transition-colors duration-300 group"
+ 149 │ │               >
+ 150 │ │                 <span>Read Campaign</span>
+ 151 │ │                 <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" />
+ 152 │ │               </button>
+ 153 │ │             </div>
+ 154 │ │           </div>
+ 155 │ │         </div>
+ 156 │ │       </section>
+ 157 │ │     );
+ 158 │ ├─▶ }
+     · ╰──── exported more than once
+     ╰────
+
+Advice:   ☞ Exported identifiers must be unique
+
+Import trace for requested module:
+./src/components/sections/FeaturedCampaign.tsx
+./src/app/page.tsx @ webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/pages/client.js:84
+[  169540ms] [ERROR] ./src/components/sections/FeaturedCampaign.tsx
+Error:   × the name `FeaturedCampaign` is defined multiple times
+    ╭─[C:\Users\Rahul\Downloads\data\new-design\src\components\sections\FeaturedCampaign.tsx:11:1]
+  8 │   onOpenProject: (project: typeof PROJECTS[0]) => void;
+  9 │ }
+ 10 │ 
+ 11 │ export default function FeaturedCampaign({ onOpenProject }: FeaturedCampaignProps) {
+    ·                         ────────┬───────
+    ·                                 ╰── previous definition of `FeaturedCampaign` here
+ 12 │   const targetProject = PROJECTS.find((p) => p.id === "liquid-shadow") || PROJECTS[1];
+ 13 │ 
+ 14 │   return (
+ 15 │     <section className="w-full min-h-screen bg-[#F5F5F0] text-[#111111] py-24 px-6 md:px-24">
+ 16 │       {/* Editorial Title - Asymmetrical positioning */}
+ 17 │       <motion.div 
+ 18 │         initial={{ opacity: 0, y: 50 }}
+ 19 │         whileInView={{ opacity: 1, y: 0 }}
+ 20 │         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+ 21 │         className="mb-24"
+ 22 │       >
+ 23 │         <h2 className="font-serif italic text-7xl md:text-[12rem] text-[#9D8B74] leading-[0.8]">Still</h2>
+ 24 │         <h2 className="font-sans font-black text-7xl md:text-[12rem] uppercase tracking-tighter leading-[0.8] ml-4 md:ml-12">LIFE.</h2>
+ 25 │       </motion.div>
+ 26 │ 
+ 27 │       {/* Main Editorial Spread - Asymmetrical Grid */}
+ 28 │       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+ 29 │         
+ 30 │         {/* Main Video Block (Spans 7 columns) */}
+ 31 │         <motion.div 
+ 32 │           initial={{ opacity: 0, scale: 0.95 }}
+ 33 │           whileInView={{ opacity: 1, scale: 1 }}
+ 34 │           transition={{ duration: 1.2, delay: 0.2 }}
+ 35 │           className="lg:col-span-7"
+ 36 │         >
+ 37 │           <video
+ 38 │             src="/best shots/Product image/product-energy-can.mp4"
+ 39 │             autoPlay
+ 40 │             loop
+ 41 │             muted
+ 42 │             playsInline
+ 43 │             className="w-full h-auto object-contain rounded-sm"
+ 44 │           />
+ 45 │         </motion.div>
+ 46 │ 
+ 47 │         {/* Supporting Visuals Stack (Spans 5 columns) */}
+ 48 │         <div className="lg:col-span-5 flex flex-col gap-16 md:pl-12">
+ 49 │           <motion.div 
+ 50 │             initial={{ opacity: 0, x: 50 }}
+ 51 │             whileInView={{ opacity: 1, x: 0 }}
+ 52 │             transition={{ duration: 1, delay: 0.4 }}
+ 53 │             className="w-full max-w-[300px]"
+ 54 │           >
+ 55 │             <img
+ 56 │               src="/best shots/Product image/hair-spray-bottle.png"
+ 57 │               alt="Hair Spray"
+ 58 │               className="w-full h-auto object-contain"
+ 59 │             />
+ 60 │           </motion.div>
+ 61 │           
+ 62 │           <motion.div 
+ 63 │             initial={{ opacity: 0, x: 50 }}
+ 64 │             whileInView={{ opacity: 1, x: 0 }}
+ 65 │             transition={{ duration: 1, delay: 0.6 }}
+ 66 │             className="w-full max-w-[300px] self-end"
+ 67 │           >
+ 68 │             <img
+ 69 │               src="/best shots/Product image/bodywash-cream.png"
+ 70 │               alt="Body Wash"
+ 71 │               className="w-full h-auto object-contain"
+ 72 │             />
+ 73 │           </motion.div>
+ 74 │ 
+ 75 │           <motion.div 
+ 76 │             initial={{ opacity: 0 }}
+ 77 │             whileInView={{ opacity: 1 }}
+ 78 │             transition={{ duration: 1, delay: 0.8 }}
+ 79 │             className="mt-8"
+ 80 │           >
+ 81 │             <button
+ 82 │               onClick={() => onOpenProject(targetProject)}
+ 83 │               className="flex items-center space-x-4 border-b border-[#111111] pb-2 font-sans text-sm uppercase tracking-widest hover:text-[#9D8B74] hover:border-[#9D8B74] transition-colors duration-300 group"
+ 84 │             >
+ 85 │               <span>Read Campaign</span>
+ 86 │               <ArrowRight className="w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-300" />
+ 87 │             </button>
+ 88 │           </motion.div>
+ 89 │         </div>
+ 90 │       </div>
+ 91 │     </section>
+ 92 │   );
+ 93 │ }
+ 94 │ 
+ 95 │ export default function FeaturedCampaign({ onOpenProject }: FeaturedCampaignProps) {
+    ·                         ────────┬───────
+    ·                                 ╰── `FeaturedCampaign` redefined here
+ 96 │   const sectionRef = useRef<HTMLDivElement>(null);
+ 97 │   const targetProject = PROJECTS.find((p) => p.id === "liquid-shadow") || PROJECTS[1];
+    ╰────
+  × the name `default` is exported multiple times
+     ╭─[C:\Users\Rahul\Downloads\data\new-design\src\components\sections\FeaturedCampaign.tsx:11:1]
+   8 │       onOpenProject: (project: typeof PROJECTS[0]) => void;
+   9 │     }
+  10 │     
+  11 │ ╭─▶ export default function FeaturedCampaign({ onOpenProject }: FeaturedCampaignProps) {
+  12 │ │     const targetProject = PROJECTS.find((p) => p.id === "liquid-shadow") || PROJECTS[1];
+  13 │ │   
+  14 │ │     return (
+  15 │ │       <section className="w-full min-h-screen bg-[#F5F5F0] text-[#111111] py-24 px-6 md:px-24">
+  16 │ │         {/* Editorial Title - Asymmetrical positioning */}
+  17 │ │         <motion.div 
+  18 │ │           initial={{ opacity: 0, y: 50 }}
+  19 │ │           whileInView={{ opacity: 1, y: 0 }}
+  20 │ │           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+  21 │ │           className="mb-24"
+  22 │ │         >
+  23 │ │           <h2 className="font-serif italic text-7xl md:text-[12rem] text-[#9D8B74] leading-[0.8]">Still</h2>
+  24 │ │           <h2 className="font-sans font-black text-7xl md:text-[12rem] uppercase tracking-tighter leading-[0.8] ml-4 md:ml-12">LIFE.</h2>
+  25 │ │         </motion.div>
+  26 │ │   
+  27 │ │         {/* Main Editorial Spread - Asymmetrical Grid */}
+  28 │ │         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+  29 │ │           
+  30 │ │           {/* Main Video Block (Spans 7 columns) */}
+  31 │ │           <motion.div 
+  32 │ │             initial={{ opacity: 0, scale: 0.95 }}
+  33 │ │             whileInView={{ opacity: 1, scale: 1 }}
+  34 │ │             transition={{ duration: 1.2, delay: 0.2 }}
+  35 │ │             className="lg:col-span-7"
+  36 │ │           >
+  37 │ │             <video
+  38 │ │               src="/best shots/Product image/product-energy-can.mp4"
+  39 │ │               autoPlay
+  40 │ │               loop
+  41 │ │               muted
+  42 │ │               playsInline
+  43 │ │               className="w-full h-auto object-contain rounded-sm"
+  44 │ │             />
+  45 │ │           </motion.div>
+  46 │ │   
+  47 │ │           {/* Supporting Visuals Stack (Spans 5 columns) */}
+  48 │ │           <div className="lg:col-span-5 flex flex-col gap-16 md:pl-12">
+  49 │ │             <motion.div 
+  50 │ │               initial={{ opacity: 0, x: 50 }}
+  51 │ │               whileInView={{ opacity: 1, x: 0 }}
+  52 │ │               transition={{ duration: 1, delay: 0.4 }}
+  53 │ │               className="w-full max-w-[300px]"
+  54 │ │             >
+  55 │ │               <img
+  56 │ │                 src="/best shots/Product image/hair-spray-bottle.png"
+  57 │ │                 alt="Hair Spray"
+  58 │ │                 className="w-full h-auto object-contain"
+  59 │ │               />
+  60 │ │             </motion.div>
+  61 │ │             
+  62 │ │             <motion.div 
+  63 │ │               initial={{ opacity: 0, x: 50 }}
+  64 │ │               whileInView={{ opacity: 1, x: 0 }}
+  65 │ │               transition={{ duration: 1, delay: 0.6 }}
+  66 │ │               className="w-full max-w-[300px] self-end"
+  67 │ │             >
+  68 │ │               <img
+  69 │ │                 src="/best shots/Product image/bodywash-cream.png"
+  70 │ │                 alt="Body Wash"
+  71 │ │                 className="w-full h-auto object-contain"
+  72 │ │               />
+  73 │ │             </motion.div>
+  74 │ │   
+  75 │ │             <motion.div 
+  76 │ │               initial={{ opacity: 0 }}
+  77 │ │               whileInView={{ opacity: 1 }}
+  78 │ │               transition={{ duration: 1, delay: 0.8 }}
+  79 │ │               className="mt-8"
+  80 │ │             >
+  81 │ │               <button
+  82 │ │                 onClick={() => onOpenProject(targetProject)}
+  83 │ │                 className="flex items-center space-x-4 border-b border-[#111111] pb-2 font-sans text-sm uppercase tracking-widest hover:text-[#9D8B74] hover:border-[#9D8B74] transition-colors duration-300 group"
+  84 │ │               >
+  85 │ │                 <span>Read Campaign</span>
+  86 │ │                 <ArrowRight className="w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-300" />
+  87 │ │               </button>
+  88 │ │             </motion.div>
+  89 │ │           </div>
+  90 │ │         </div>
+  91 │ │       </section>
+  92 │ │     );
+  93 │ ├─▶ }
+     · ╰──── previous exported here
+  94 │     
+  95 │ ╭─▶ export default function FeaturedCampaign({ onOpenProject }: FeaturedCampaignProps) {
+  96 │ │     const sectionRef = useRef<HTMLDivElement>(null);
+  97 │ │     const targetProject = PROJECTS.find((p) => p.id === "liquid-shadow") || PROJECTS[1];
+  98 │ │   
+  99 │ │     return (
+ 100 │ │       <section
+ 101 │ │         ref={sectionRef}
+ 102 │ │         className="w-full bg-[#F5F5F0] text-[#111111] px-6 md:px-12 py-12 md:py-24"
+ 103 │ │       >
+ 104 │ │         {/* Editorial Title */}
+ 105 │ │         <div className="mb-12 md:mb-24">
+ 106 │ │           <h2 className="font-serif italic text-5xl sm:text-7xl md:text-9xl text-[#9D8B74] leading-none tracking-tight">
+ 107 │ │             Still
+ 108 │ │           </h2>
+ 109 │ │           <h2 className="font-sans font-black text-5xl sm:text-7xl md:text-9xl uppercase tracking-tighter leading-[0.9]">
+ 110 │ │             Life.
+ 111 │ │           </h2>
+ 112 │ │         </div>
+ 113 │ │   
+ 114 │ │         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
+ 115 │ │           {/* Left Column: Video (Span 8) */}
+ 116 │ │           <div className="md:col-span-8 flex items-center justify-center">
+ 117 │ │             <video
+ 118 │ │               src="/best shots/Product image/product-energy-can.mp4"
+ 119 │ │               autoPlay
+ 120 │ │               loop
+ 121 │ │               muted
+ 122 │ │               playsInline
+ 123 │ │               className="w-full h-auto"
+ 124 │ │             />
+ 125 │ │           </div>
+ 126 │ │   
+ 127 │ │           {/* Right Column: Supporting Visuals & Link (Span 4) */}
+ 128 │ │           <div className="md:col-span-4 flex flex-col gap-8">
+ 129 │ │             <div className="flex items-center justify-center">
+ 130 │ │               <img
+ 131 │ │                 src="/best shots/Product image/hair-spray-bottle.png"
+ 132 │ │                 alt="Hair Spray"
+ 133 │ │                 className="w-full h-auto object-contain max-w-[200px] md:max-w-full"
+ 134 │ │               />
+ 135 │ │             </div>
+ 136 │ │             <div className="flex items-center justify-center">
+ 137 │ │               <img
+ 138 │ │                 src="/best shots/Product image/bodywash-cream.png"
+ 139 │ │                 alt="Body Wash"
+ 140 │ │                 className="w-full h-auto object-contain max-w-[200px] md:max-w-full"
+ 141 │ │               />
+ 142 │ │             </div>
+ 143 │ │             
+ 144 │ │             {/* Campaign Link */}
+ 145 │ │             <div className="mt-8">
+ 146 │ │               <button
+ 147 │ │                 onClick={() => onOpenProject(targetProject)}
+ 148 │ │                 className="flex items-center space-x-4 border-b border-[#111111] pb-2 font-sans text-xs uppercase tracking-widest hover:text-[#9D8B74] hover:border-[#9D8B74] transition-colors duration-300 group"
+ 149 │ │               >
+ 150 │ │                 <span>Read Campaign</span>
+ 151 │ │                 <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" />
+ 152 │ │               </button>
+ 153 │ │             </div>
+ 154 │ │           </div>
+ 155 │ │         </div>
+ 156 │ │       </section>
+ 157 │ │     );
+ 158 │ ├─▶ }
+     · ╰──── exported more than once
+     ╰────
+
+Advice:   ☞ Exported identifiers must be unique
+
+Import trace for requested module:
+./src/components/sections/FeaturedCampaign.tsx
+./src/app/page.tsx @ webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/pages/client.js:84
+[  169541ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/pages/hot-reloader-client.js:221
+[  169979ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/pages/hot-reloader-client.js:221
+[  170099ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/pages/hot-reloader-client.js:350
+[  170857ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:24514
+[  171031ms] [WARNING] GSAP target .hero-title-line-1 not found. https://gsap.com @ webpack-internal:///(app-pages-browser)/./node_modules/gsap/gsap-core.js:164
+[  171031ms] [WARNING] GSAP target  not found. https://gsap.com @ webpack-internal:///(app-pages-browser)/./node_modules/gsap/gsap-core.js:164
+[  171032ms] [WARNING] GSAP target .hero-title-line-2 not found. https://gsap.com @ webpack-internal:///(app-pages-browser)/./node_modules/gsap/gsap-core.js:164
+[  171032ms] [WARNING] GSAP target  not found. https://gsap.com @ webpack-internal:///(app-pages-browser)/./node_modules/gsap/gsap-core.js:164
+[  171328ms] [WARNING] GSAP target  not found. https://gsap.com @ webpack-internal:///(app-pages-browser)/./node_modules/gsap/gsap-core.js:164
+[  171427ms] [WARNING] GSAP target  not found. https://gsap.com @ webpack-internal:///(app-pages-browser)/./node_modules/gsap/gsap-core.js:164
+[  850975ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:239
+[  851345ms] [LOG] [Fast Refresh] done in 370ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:66
+[  851419ms] [ERROR] %o
+
+%s
+
+%s
+ NotFoundError: Failed to execute 'insertBefore' on 'Node': The node before which the new node is to be inserted is not a child of this node.
+    at insertOrAppendPlacementNode (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11200:27)
+    at insertOrAppendPlacementNode (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11203:11)
+    at commitPlacement (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11236:13)
+    at runWithFiberInDEV (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:544:16)
+    at commitReconciliationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:12370:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11916:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:12139:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:12362:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:12362:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11931:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11931:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11931:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:12362:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:12362:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:12139:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:12139:11) The above error occurred in the <NotFoundErrorBoundary> component. React will try to recreate this component tree from scratch using the error boundary you provided, ReactDevOverlay. @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/globals/intercept-console-error.js:28
+[  851471ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:139
+[  852029ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:24514
+[  852166ms] [WARNING] GSAP target .hero-title-line-1 not found. https://gsap.com @ webpack-internal:///(app-pages-browser)/./node_modules/gsap/gsap-core.js:164
+[  852167ms] [WARNING] GSAP target  not found. https://gsap.com @ webpack-internal:///(app-pages-browser)/./node_modules/gsap/gsap-core.js:164
+[  852167ms] [WARNING] GSAP target .hero-title-line-2 not found. https://gsap.com @ webpack-internal:///(app-pages-browser)/./node_modules/gsap/gsap-core.js:164
+[  852167ms] [WARNING] GSAP target  not found. https://gsap.com @ webpack-internal:///(app-pages-browser)/./node_modules/gsap/gsap-core.js:164
+[  852461ms] [WARNING] GSAP target  not found. https://gsap.com @ webpack-internal:///(app-pages-browser)/./node_modules/gsap/gsap-core.js:164
+[  852560ms] [WARNING] GSAP target  not found. https://gsap.com @ webpack-internal:///(app-pages-browser)/./node_modules/gsap/gsap-core.js:164
+[ 1410731ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:239
+[ 1411254ms] [ERROR] %o
+
+%s
+
+%s
+ NotFoundError: Failed to execute 'insertBefore' on 'Node': The node before which the new node is to be inserted is not a child of this node.
+    at insertOrAppendPlacementNode (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11200:27)
+    at insertOrAppendPlacementNode (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11203:11)
+    at commitPlacement (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11236:13)
+    at runWithFiberInDEV (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:544:16)
+    at commitReconciliationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:12370:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11916:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:12139:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:12362:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:12362:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11931:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11931:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11931:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:12362:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:12362:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:12139:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:12139:11) The above error occurred in the <NotFoundErrorBoundary> component. React will try to recreate this component tree from scratch using the error boundary you provided, ReactDevOverlay. @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/globals/intercept-console-error.js:28
+[ 1411297ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:139
+[ 1411869ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/_next/static/chunks/main-app.js?v=1779970619915:0
+[ 1411870ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/_next/static/chunks/app-pages-internals.js:0
+[ 1412005ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/favicon.ico:0
+[ 1886231ms] [WARNING] GSAP target .hero-title-line-1 not found. https://gsap.com @ http://localhost:3000/_next/static/chunks/c15bf2b0-03795515e990ec56.js:0
+[ 1886231ms] [WARNING] GSAP target  not found. https://gsap.com @ http://localhost:3000/_next/static/chunks/c15bf2b0-03795515e990ec56.js:0
+[ 1886232ms] [WARNING] GSAP target .hero-title-line-2 not found. https://gsap.com @ http://localhost:3000/_next/static/chunks/c15bf2b0-03795515e990ec56.js:0
+[ 1886232ms] [WARNING] GSAP target  not found. https://gsap.com @ http://localhost:3000/_next/static/chunks/c15bf2b0-03795515e990ec56.js:0
+[ 1886465ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/favicon.ico:0
+[ 1886544ms] [WARNING] GSAP target  not found. https://gsap.com @ http://localhost:3000/_next/static/chunks/c15bf2b0-03795515e990ec56.js:0
+[ 1886635ms] [WARNING] GSAP target  not found. https://gsap.com @ http://localhost:3000/_next/static/chunks/c15bf2b0-03795515e990ec56.js:0
+[ 4193227ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4193238ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4193238ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/favicon.ico:0
+[ 4194246ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4195260ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4196271ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4197284ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4198301ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4199325ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4200350ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4201364ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4202387ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4203396ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4204407ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4205419ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4206430ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4207445ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4208469ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4209479ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4210493ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4211504ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4212515ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4213525ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4214539ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4215564ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4216575ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4217589ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4218600ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4219611ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4220620ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4221639ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4222653ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4223668ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4224678ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4225699ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4226718ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4227744ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4228756ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4229769ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4230781ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4231790ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4232809ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4233826ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4234847ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4235868ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4236890ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4237908ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4238925ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4239944ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4240965ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4241980ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4242995ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4244011ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4245020ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4246044ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4247061ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4248070ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4249092ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4250104ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4251116ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4252126ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4253149ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4254161ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4255179ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4256190ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4257215ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4258264ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4259286ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4260296ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4261307ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4262318ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4263327ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4264341ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4265352ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4266366ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4267379ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4268403ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4269414ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4270426ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4271443ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4272462ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4273485ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4274509ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4275523ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4276546ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4277559ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4278582ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4279596ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4280605ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4281619ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4282636ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4283649ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4284661ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4285672ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4286695ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4287719ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4288734ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4289757ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4290769ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4291783ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4292794ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4293804ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4294827ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4295838ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4296847ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4297858ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4298867ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4299881ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4300893ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4301903ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4302916ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4303938ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4304952ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4305966ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4306989ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4308000ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4309023ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4310034ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4311046ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4312057ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4313068ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4314077ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4315090ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4316105ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4317116ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4318141ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4319165ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4320180ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4321192ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4322206ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4323218ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4324228ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4325240ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4326250ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4327263ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4328275ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4329287ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4330300ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4331325ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4332337ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4333351ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4334365ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4335376ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4336386ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4337400ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4338424ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4339434ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4340444ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4341453ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4342465ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4343481ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4344497ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4345521ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4346533ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4347547ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4348560ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4349585ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4350596ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4351618ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4352630ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4353642ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4354652ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4355668ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4356677ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4357690ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4358701ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4359713ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4360723ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4361736ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4362752ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4363775ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4364787ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4365797ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4366810ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4367821ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4368831ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4369844ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4370855ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4371865ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4372882ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4373892ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4374902ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4375914ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4376938ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4377952ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4378974ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4379987ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4380999ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4382018ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4383030ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4384043ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4385056ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4386067ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4387078ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4388088ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4389100ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4390112ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4391121ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4392138ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4393163ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4394185ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4395208ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4396222ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4397238ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4398258ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4399281ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4400305ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4401329ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4402345ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4403369ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4404387ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4405397ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4406409ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4407420ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4408432ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4409444ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4410457ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4411480ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4412491ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4413501ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4414511ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4415521ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4416530ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4417540ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4418564ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4419587ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4420599ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4421611ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4422623ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4423634ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4424645ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4425658ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4426670ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4427679ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4428690ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4429700ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4430711ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4431728ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4432744ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4433765ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4434778ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4435794ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4436807ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4437831ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4438841ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4439853ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4440864ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4441874ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4442887ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4443897ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4444907ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4445921ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4446935ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4447958ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4448981ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4449995ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4451008ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4452020ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4453045ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4454067ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4455077ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4456088ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4457112ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4458127ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4459151ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4460168ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4461179ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4462193ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4463204ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4464216ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4465231ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4466244ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4467255ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4468266ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4469288ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4470298ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4471312ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4472328ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4473342ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4474356ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4475369ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4476380ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4477390ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4478400ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4479424ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4480434ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4481446ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4482457ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4483467ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4484478ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4485488ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4486512ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4487522ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4488536ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4489546ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4490557ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4491574ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4492597ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4493619ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4494643ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4495654ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4496666ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4497676ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4498699ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4499723ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4500750ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4501772ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4502784ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4503808ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4504821ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4505846ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4506859ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4507873ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4508898ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4509908ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4510918ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4511933ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4512945ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4513955ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4514965ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4515652ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4515662ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4516267ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4516276ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4516458ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4516467ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4517481ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4518489ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4519497ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4520512ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4521523ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4522532ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4523544ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4524556ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4525566ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4526589ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4527599ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4528610ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4529618ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4530627ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4531641ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4532652ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4533666ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4534678ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4535686ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4536698ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/#about:0
+[ 4543905ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:24514
+[ 4544057ms] [WARNING] GSAP target .hero-title-line-1 not found. https://gsap.com @ webpack-internal:///(app-pages-browser)/./node_modules/gsap/gsap-core.js:164
+[ 4544057ms] [WARNING] GSAP target  not found. https://gsap.com @ webpack-internal:///(app-pages-browser)/./node_modules/gsap/gsap-core.js:164
+[ 4544058ms] [WARNING] GSAP target .hero-title-line-2 not found. https://gsap.com @ webpack-internal:///(app-pages-browser)/./node_modules/gsap/gsap-core.js:164
+[ 4544058ms] [WARNING] GSAP target  not found. https://gsap.com @ webpack-internal:///(app-pages-browser)/./node_modules/gsap/gsap-core.js:164
+[ 4544350ms] [WARNING] GSAP target  not found. https://gsap.com @ webpack-internal:///(app-pages-browser)/./node_modules/gsap/gsap-core.js:164
+[ 4544449ms] [WARNING] GSAP target  not found. https://gsap.com @ webpack-internal:///(app-pages-browser)/./node_modules/gsap/gsap-core.js:164
+[ 4555450ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4555500ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4560233ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4560267ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4560950ms] [WARNING] You are trying to animate backgroundColor from "rgba(17, 17, 17, 1)" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4561000ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4561533ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4562200ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4562250ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4562300ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4562800ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4563302ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4564867ms] [WARNING] You are trying to animate backgroundColor from "rgba(29, 27, 25, 1)" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4565117ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4565533ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4565583ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4570001ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4570067ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4571017ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4571468ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4571534ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4572584ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4572600ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4572617ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4573850ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4574317ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4574367ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4575267ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4575284ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4575317ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4575334ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4575350ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4575367ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4575417ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4632319ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4636235ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4717721ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4717821ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4717954ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4717971ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4718071ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4718320ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4718421ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4718920ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4739438ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4739488ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4740929ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:24514
+[ 4741060ms] [WARNING] GSAP target .hero-title-line-1 not found. https://gsap.com @ webpack-internal:///(app-pages-browser)/./node_modules/gsap/gsap-core.js:164
+[ 4741061ms] [WARNING] GSAP target  not found. https://gsap.com @ webpack-internal:///(app-pages-browser)/./node_modules/gsap/gsap-core.js:164
+[ 4741061ms] [WARNING] GSAP target .hero-title-line-2 not found. https://gsap.com @ webpack-internal:///(app-pages-browser)/./node_modules/gsap/gsap-core.js:164
+[ 4741061ms] [WARNING] GSAP target  not found. https://gsap.com @ webpack-internal:///(app-pages-browser)/./node_modules/gsap/gsap-core.js:164
+[ 4741354ms] [WARNING] GSAP target  not found. https://gsap.com @ webpack-internal:///(app-pages-browser)/./node_modules/gsap/gsap-core.js:164
+[ 4741454ms] [WARNING] GSAP target  not found. https://gsap.com @ webpack-internal:///(app-pages-browser)/./node_modules/gsap/gsap-core.js:164
+[ 4746372ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4746388ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4748888ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4749504ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4749871ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4750771ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4750938ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4753921ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4754121ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4756938ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4758004ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4758288ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4758805ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4759538ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4759571ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4761288ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4763605ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4764188ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4764821ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4765705ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4765721ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4769838ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4769855ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4769922ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4771972ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4772088ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4772672ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4772688ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4772705ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4772772ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4772805ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4773355ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4775572ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4776755ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4777022ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4777072ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4777655ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4777738ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4777806ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4778172ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4778805ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4782688ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4783272ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4783305ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4783339ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4783589ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4784455ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4786322ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4786389ms] [WARNING] You are trying to animate backgroundColor from "#111111" to "transparent". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 4786722ms] [WARNING] You are trying to animate backgroundColor from "transparent" to "#111111". "transparent" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable @ webpack-internal:///(app-pages-browser)/./node_modules/motion-utils/dist/es/errors.mjs:15
+[ 5014332ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:239
+[ 5014740ms] [LOG] [Fast Refresh] done in 407ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:66
+[ 5038158ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:239
+[ 5038444ms] [LOG] [Fast Refresh] done in 286ms @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:66
+[ 5076760ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:239
+[ 5077044ms] [ERROR] %o
+
+%s
+
+%s
+ NotFoundError: Failed to execute 'insertBefore' on 'Node': The node before which the new node is to be inserted is not a child of this node.
+    at insertOrAppendPlacementNode (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11200:27)
+    at insertOrAppendPlacementNode (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11203:11)
+    at commitPlacement (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11236:13)
+    at runWithFiberInDEV (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:544:16)
+    at commitReconciliationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:12370:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11916:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:12139:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:12362:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:12362:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11931:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11931:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11931:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:12362:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:12362:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11915:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:12139:11)
+    at recursivelyTraverseMutationEffects (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:11904:11)
+    at commitMutationEffectsOnFiber (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:12139:11) The above error occurred in the <NotFoundErrorBoundary> component. React will try to recreate this component tree from scratch using the error boundary you provided, ReactDevOverlay. @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/globals/intercept-console-error.js:28
+[ 5077068ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:139
+[ 5077785ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:24514
+[ 5077885ms] [WARNING] GSAP target .hero-title-line-1 not found. https://gsap.com @ webpack-internal:///(app-pages-browser)/./node_modules/gsap/gsap-core.js:164
+[ 5077886ms] [WARNING] GSAP target  not found. https://gsap.com @ webpack-internal:///(app-pages-browser)/./node_modules/gsap/gsap-core.js:164
+[ 5077886ms] [WARNING] GSAP target .hero-title-line-2 not found. https://gsap.com @ webpack-internal:///(app-pages-browser)/./node_modules/gsap/gsap-core.js:164
+[ 5077886ms] [WARNING] GSAP target  not found. https://gsap.com @ webpack-internal:///(app-pages-browser)/./node_modules/gsap/gsap-core.js:164
+[ 5078179ms] [WARNING] GSAP target  not found. https://gsap.com @ webpack-internal:///(app-pages-browser)/./node_modules/gsap/gsap-core.js:164
+[ 5078283ms] [WARNING] GSAP target  not found. https://gsap.com @ webpack-internal:///(app-pages-browser)/./node_modules/gsap/gsap-core.js:164

@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Inspiration Hub — Rahul Chanda Photography</title>
+<style>
+  :root {
+    --bg: #F4EFE7;
+    --ink: #111111;
+    --muted: #666666;
+    --accent: #9D8B74;
+    --line: rgba(17, 17, 17, 0.08);
+    --card: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); }
+  body {
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 80px 32px 120px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 40px; margin-bottom: 64px; }
+  .eyebrow {
+    font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 18px;
+  }
+  h1 {
+    font-size: clamp(40px, 7vw, 84px); font-weight: 500; letter-spacing: -0.02em;
+    margin: 0 0 16px; line-height: 1.02;
+  }
+  .lede {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-size: 17px; color: var(--muted); max-width: 720px; margin: 0;
+  }
+  .meta {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--muted); margin-top: 28px;
+  }
+  section { margin-top: 72px; }
+  .section-head {
+    display: flex; align-items: baseline; gap: 18px; margin-bottom: 28px;
+    border-bottom: 1px solid var(--line); padding-bottom: 14px;
+  }
+  .num {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-size: 12px; letter-spacing: 0.2em; color: var(--accent); width: 32px;
+  }
+  h2 {
+    font-size: clamp(26px, 3.5vw, 40px); font-weight: 500; margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .note {
+    font-family: 'Outfit', system-ui, sans-serif;
+    color: var(--muted); font-size: 14px; margin: 0 0 28px 50px;
+  }
+  .grid {
+    display: grid; gap: 14px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    margin-left: 50px;
+  }
+  a.card {
+    display: block; text-decoration: none; color: inherit;
+    background: var(--card); border: 1px solid var(--line);
+    padding: 22px 22px 24px; border-radius: 2px;
+    transition: transform .25s ease, border-color .25s ease, background .25s ease;
+    position: relative; overflow: hidden;
+  }
+  a.card:hover {
+    transform: translateY(-2px);
+    border-color: var(--ink);
+    background: #fbfaf7;
+  }
+  a.card .arrow {
+    position: absolute; top: 20px; right: 22px;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-size: 16px; color: var(--accent);
+    transition: transform .25s ease, color .25s ease;
+  }
+  a.card:hover .arrow { transform: translate(2px, -2px); color: var(--ink); }
+  a.card .name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 22px; font-weight: 500; margin: 6px 0 8px; letter-spacing: -0.01em;
+  }
+  a.card .desc {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-size: 13px; color: var(--muted); margin: 0;
+  }
+  a.card .tag {
+    display: inline-block; margin-top: 14px;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--accent);
+  }
+  .order {
+    margin: 96px 0 0; padding: 36px 40px;
+    background: var(--ink); color: #f4efe7; border-radius: 2px;
+    font-family: 'Outfit', system-ui, sans-serif;
+  }
+  .order h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 28px; font-weight: 500; margin: 0 0 22px; color: #fff;
+  }
+  .order ol { margin: 0; padding-left: 20px; }
+  .order li { margin: 8px 0; font-size: 14px; color: rgba(244, 239, 231, 0.78); }
+  .order li strong { color: #f4efe7; font-weight: 600; }
+  footer {
+    margin-top: 80px; padding-top: 32px; border-top: 1px solid var(--line);
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--muted);
+  }
+  @media (max-width: 720px) {
+    .grid { margin-left: 0; }
+    .note { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">Inspiration Hub</p>
+    <h1>React animation &amp;<br/>layout references.</h1>
+    <p class="lede">A curated set of links to browse for cinematic, scroll-driven, motion-rich design — to copy patterns (not bundles) into the Rahul Chanda Photography portfolio.</p>
+    <p class="meta">Brand: Editorial · Serif display · Warm neutrals · Glass + grain</p>
+  </header>
+
+  <section>
+    <div class="section-head">
+      <span class="num">01</span>
+      <h2>Award &amp; inspiration galleries</h2>
+    </div>
+    <p class="note">Start here. Scan 10–15 sites you like the feel of, then come back for components.</p>
+    <div class="grid">
+      <a class="card" href="https://godly.website" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">Godly</div>
+        <p class="desc">Best curated cinematic list. The fastest way to find the vibe you want.</p>
+        <span class="tag">Start here</span>
+      </a>
+      <a class="card" href="https://www.awwwards.com" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">Awwwards</div>
+        <p class="desc">Filter: Site of the Day, Photography. Industry standard.</p>
+        <span class="tag">Awards</span>
+      </a>
+      <a class="card" href="https://cssdesignawards.com" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">CSS Design Awards</div>
+        <p class="desc">Strong technical-craft picks. Good for scroll &amp; motion studies.</p>
+        <span class="tag">Awards</span>
+      </a>
+      <a class="card" href="https://www.siteinspire.com" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">SiteInspire</div>
+        <p class="desc">Clean web design index, browsable by category.</p>
+        <span class="tag">Index</span>
+      </a>
+      <a class="card" href="https://minimal.gallery" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">Minimal Gallery</div>
+        <p class="desc">Editorial minimal sites. Closest aesthetic to your brand.</p>
+        <span class="tag">Minimal</span>
+      </a>
+      <a class="card" href="https://www.darkmodedesign.com" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">Dark Mode Design</div>
+        <p class="desc">Dark editorial references. Good for cinematic mood.</p>
+        <span class="tag">Dark</span>
+      </a>
+      <a class="card" href="https://www.hoverstat.es" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">Hover States</div>
+        <p class="desc">Interaction snippets and micro-animation library.</p>
+        <span class="tag">Interactions</span>
+      </a>
+      <a class="card" href="https://www.lapa.ninja" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">Lapa Ninja</div>
+        <p class="desc">Landing-page gallery. Good for hero and CTA patterns.</p>
+        <span class="tag">Landing</span>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="num">02</span>
+      <h2>Animated component libraries</h2>
+    </div>
+    <p class="note">Browse, then copy the JSX + Tailwind of one component at a time into your sections.</p>
+    <div class="grid">
+      <a class="card" href="https://ui.aceternity.com" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">Aceternity UI</div>
+        <p class="desc">Closest match to your cinematic brief. Bento, gradients, 3D pin, card spotlight.</p>
+        <span class="tag">Top pick</span>
+      </a>
+      <a class="card" href="https://magicui.design" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">Magic UI</div>
+        <p class="desc">BentoGrid, Marquee, AnimatedText, HeroVideoDialog, OrbitIcons.</p>
+        <span class="tag">Top pick</span>
+      </a>
+      <a class="card" href="https://reactbits.dev" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">React Bits</div>
+        <p class="desc">SplitText, Magnetic, TiltCard, ScrollReveal, StickyScroll, Gooey.</p>
+        <span class="tag">Top pick</span>
+      </a>
+      <a class="card" href="https://www.cult-ui.com" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">Cult UI</div>
+        <p class="desc">Premium-feel animated components.</p>
+        <span class="tag">Components</span>
+      </a>
+      <a class="card" href="https://originui.com" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">Origin UI</div>
+        <p class="desc">Marketing-style animated sections.</p>
+        <span class="tag">Marketing</span>
+      </a>
+      <a class="card" href="https://kokonutui.com" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">Kokonut UI</div>
+        <p class="desc">Animated marketing blocks and hero patterns.</p>
+        <span class="tag">Marketing</span>
+      </a>
+      <a class="card" href="https://ui.shadcn.com" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">shadcn/ui</div>
+        <p class="desc">Accessible Tailwind primitives. Copy Dialog, Sheet, Tabs, Carousel.</p>
+        <span class="tag">Base</span>
+      </a>
+      <a class="card" href="https://park-ui.com" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">Park UI</div>
+        <p class="desc">Ark UI + motion recipes.</p>
+        <span class="tag">Base</span>
+      </a>
+      <a class="card" href="https://daisyui.com" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">DaisyUI</div>
+        <p class="desc">Fast Tailwind class components. Not animated, but quick scaffolding.</p>
+        <span class="tag">Scaffolding</span>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="num">03</span>
+      <h2>Animation library docs</h2>
+    </div>
+    <p class="note">Already installed in your stack, but the docs are great for demos and recipes.</p>
+    <div class="grid">
+      <a class="card" href="https://motion.dev" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">Motion / Framer</div>
+        <p class="desc">useScroll, useTransform, layout animations.</p>
+        <span class="tag">Installed</span>
+      </a>
+      <a class="card" href="https://gsap.com" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">GSAP</div>
+        <p class="desc">ScrollTrigger, SplitText, timelines.</p>
+        <span class="tag">Installed</span>
+      </a>
+      <a class="card" href="https://lenis.darkroom.engineering" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">Lenis</div>
+        <p class="desc">Smooth scroll. Foundation for everything scroll-driven.</p>
+        <span class="tag">Installed</span>
+      </a>
+      <a class="card" href="https://r3f.docs.pmnd.rs" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">React Three Fiber</div>
+        <p class="desc">3D layers, shaders, distortion.</p>
+        <span class="tag">Installed</span>
+      </a>
+      <a class="card" href="https://github.com/pmndrs/drei" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">drei</div>
+        <p class="desc">R3F helpers. ScrollControls, MeshDistort, useTexture.</p>
+        <span class="tag">Installed</span>
+      </a>
+      <a class="card" href="https://www.theatrejs.com" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">Theatre.js</div>
+        <p class="desc">Visual motion-design editor for complex sequences.</p>
+        <span class="tag">Optional</span>
+      </a>
+      <a class="card" href="https://www.react-spring.dev" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">React Spring</div>
+        <p class="desc">Physics-based animation. Organic feel.</p>
+        <span class="tag">Optional</span>
+      </a>
+      <a class="card" href="https://airbnb.io/lottie/" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">Lottie</div>
+        <p class="desc">After Effects micro-animations.</p>
+        <span class="tag">Optional</span>
+      </a>
+      <a class="card" href="https://github.com/pmndrs/react-postprocessing" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">@react-three/postprocessing</div>
+        <p class="desc">Bloom, ChromaticAberration, Glitch, DoF for cinematic post-FX.</p>
+        <span class="tag">Recommended</span>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="num">04</span>
+      <h2>Sites to study (scroll, don't read)</h2>
+    </div>
+    <p class="note">Open these in a fresh tab and watch the scroll rhythm. That's where the feel comes from.</p>
+    <div class="grid">
+      <a class="card" href="https://linear.app" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">Linear</div>
+        <p class="desc">Sticky scroll storytelling, magnetic hover.</p>
+        <span class="tag">Reference</span>
+      </a>
+      <a class="card" href="https://www.apple.com/iphone-15-pro/" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">Apple iPhone 15 Pro</div>
+        <p class="desc">Overlapping typography, scrubbed transitions, cinematic product narrative.</p>
+        <span class="tag">Reference</span>
+      </a>
+      <a class="card" href="https://vercel.com" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">Vercel</div>
+        <p class="desc">Minimal cinematic, smooth scroll, restrained type.</p>
+        <span class="tag">Reference</span>
+      </a>
+      <a class="card" href="https://stripe.com" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">Stripe</div>
+        <p class="desc">Gradient backgrounds, bento grid, animated numbers.</p>
+        <span class="tag">Reference</span>
+      </a>
+      <a class="card" href="https://raunofreiberg.com" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">Rauno Freiberg</div>
+        <p class="desc">Micro-interactions study.</p>
+        <span class="tag">Reference</span>
+      </a>
+      <a class="card" href="https://activetheory.net" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">Active Theory</div>
+        <p class="desc">WebGL + scroll storytelling.</p>
+        <span class="tag">Reference</span>
+      </a>
+      <a class="card" href="https://locomotive.ca" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">Locomotive</div>
+        <p class="desc">Scroll-driven editorial.</p>
+        <span class="tag">Reference</span>
+      </a>
+      <a class="card" href="https://resn.co.nz" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">Resn</div>
+        <p class="desc">Experimental web ideas.</p>
+        <span class="tag">Reference</span>
+      </a>
+      <a class="card" href="https://studiofreight.com" target="_blank" rel="noopener">
+        <span class="arrow">↗</span>
+        <div class="name">Studio Freight</div>
+        <p class="desc">Portfolio patterns.</p>
+        <span class="tag">Reference</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="order">
+    <h3>Suggested 10–20 min browse</h3>
+    <ol>
+      <li><strong>Godly</strong> — scan 10–15 sites you like the feel of.</li>
+      <li><strong>Aceternity UI</strong> — bookmark 2–3 components that match your sections.</li>
+      <li><strong>Magic UI</strong> — same, especially BentoGrid / Marquee / AnimatedText.</li>
+      <li><strong>React Bits</strong> — SplitText, Magnetic, TiltCard, ScrollReveal, StickyScroll.</li>
+      <li><strong>2–3 photographer portfolios</strong> from Awwwards or Godly — watch their scroll rhythm.</li>
+    </ol>
+  </div>
+
+  <footer>
+    <span>Once you pick a pattern, tell me which section — I'll wire it up.</span>
+  </footer>
+
+</div>
+</body>
+</html>

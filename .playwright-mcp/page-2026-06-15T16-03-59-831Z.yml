@@ -1,0 +1,198 @@
+- generic [active] [ref=e1]:
+  - banner:
+    - img "Rahul Chanda" [ref=e3] [cursor=pointer]
+    - navigation [ref=e4]:
+      - link "Work" [ref=e5]:
+        - /url: "#work"
+      - link "About" [ref=e6]:
+        - /url: "#about"
+      - link "Gallery" [ref=e7]:
+        - /url: "#gallery"
+      - link "Contact" [ref=e8]:
+        - /url: "#contact"
+  - main [ref=e9]:
+    - generic [ref=e11]:
+      - paragraph [ref=e14]:
+        - text: Creating high-impact visual identities,
+        - text: that connect brands with their audience.
+      - generic [ref=e15]:
+        - generic [ref=e16]: Rahul
+        - generic [ref=e17]: Chanda
+      - generic [ref=e18]:
+        - generic [ref=e19]: → V3.0
+        - generic [ref=e20]:
+          - link "INSTAGRAM" [ref=e21]:
+            - /url: https://www.instagram.com/rahul_chanda_photography/
+          - text: /
+          - link "EMAIL" [ref=e22]:
+            - /url: mailto:rahulchandaphotography@gmail.com
+          - text: /
+          - link "PHONE" [ref=e23]:
+            - /url: tel:+917078939475
+        - generic [ref=e24]:
+          - link "WORK" [ref=e25]:
+            - /url: "#work"
+          - link "INFO" [ref=e26]:
+            - /url: "#about"
+          - link "CONTACT" [ref=e27]:
+            - /url: "#contact"
+      - generic [ref=e29]:
+        - generic: +
+        - generic: +
+        - generic: +
+        - generic: +
+        - generic:
+          - heading "Basically, I make images." [level=2]
+    - generic [ref=e31]:
+      - generic [ref=e32]: (34)
+      - generic [ref=e33]:
+        - heading "As a commercial photographer, I craft tailor-made visual experiences, blending technical precision and emotion." [level=2] [ref=e34]:
+          - text: As a
+          - generic [ref=e35]: commercial photographer
+          - text: ", I craft tailor-made visual experiences, blending technical precision and"
+          - generic [ref=e36]: emotion
+          - text: .
+        - paragraph [ref=e37]: My name is Rahul Chanda. A high-end commercial product photographer based in Dehradun, I build high-impact visual identities that connect brands with their audience.
+        - link "INFO" [ref=e39]:
+          - /url: "#info"
+      - generic [ref=e40]:
+        - generic [ref=e41]: →
+        - generic [ref=e42]: V3.0
+      - img "Rahul Chanda" [ref=e44]
+    - region "Featured Work showcase" [ref=e47]:
+      - generic:
+        - generic: Featured Work
+      - generic:
+        - generic: (30)
+      - generic [ref=e48]:
+        - generic:
+          - generic:
+            - generic:
+              - generic: Solé Campaign
+            - generic:
+              - generic: Liquid Shadow
+            - generic:
+              - generic: Street Sole
+            - generic:
+              - generic: Hydro Blast
+            - generic:
+              - generic: Velvet Crème
+            - generic:
+              - generic: Bold Edit
+        - generic:
+          - generic:
+            - generic: 09 2025
+            - generic: PREVIEW
+          - generic:
+            - generic:
+              - generic "High-end ladies footwear campaign in motion"
+            - generic:
+              - img "Beverage editorial splash capturing direct refraction lighting"
+            - generic:
+              - img "Modern athletic mens footwear details"
+            - generic:
+              - generic "Commercial beverage can splash campaign"
+            - generic:
+              - img "Organic skincare serum drops under macro spotlight"
+            - generic:
+              - img "Bold commercial cosmetic editorial campaign"
+    - generic [ref=e50]:
+      - generic [ref=e51]: Selected Collaborators
+      - generic [ref=e52]:
+        - generic:
+          - img "Behance"
+        - generic:
+          - img "Fiverr"
+        - generic:
+          - img "Casio"
+        - generic:
+          - img "Adidas"
+        - generic:
+          - img "HBO"
+        - generic:
+          - img "GQ"
+        - generic:
+          - img "ASOS"
+        - generic:
+          - img "A24"
+    - generic [ref=e54]:
+      - generic [ref=e55]:
+        - generic [ref=e56]: CAPABILITIES & SPECIALIZATIONS
+        - heading "Creating high-impact visual identities." [level=2] [ref=e57]
+        - generic [ref=e58]:
+          - generic [ref=e59]:
+            - generic [ref=e60]: 01 // SERVICE
+            - heading "Commercial Product Photography" [level=3] [ref=e61]
+            - paragraph [ref=e62]: Creating high-contrast, razor-sharp visual layouts for luxury assets, timepieces, cosmetics, and packaging. I sculpt form and detail out of deep shadows using specialized, precise studio lighting setups.
+          - generic [ref=e63]:
+            - generic [ref=e64]: 02 // SERVICE
+            - heading "Culinary & Beverage Arts" [level=3] [ref=e65]
+            - paragraph [ref=e66]: Capturing rich textures, steam, heat, and high-speed splash kinetics. Every drop is frozen in time to showcase gourmet flavor depth, fresh ingredient styling, and drink dynamics.
+          - generic [ref=e67]:
+            - generic [ref=e68]: 03 // SERVICE
+            - heading "High-End Retouching & Post-Production" [level=3] [ref=e69]
+            - paragraph [ref=e70]: Perfecting glass refractions, correcting dust and reflections, and balancing micro-detail texture mapping. Every pixel is edited with campaign-level color science and precision.
+          - generic [ref=e71]:
+            - generic [ref=e72]: 04 // SERVICE
+            - heading "Dynamic Video Campaigns" [level=3] [ref=e73]
+            - paragraph [ref=e74]: Directing and filming cinematically paced video campaigns for social platforms and digital displays. Connecting fluid motion, crisp close-ups, and brand messaging into strategic video content.
+      - img "Commercial product photography campaign" [ref=e78]
+    - generic [ref=e81]:
+      - generic:
+        - heading "Sticky Grid Scroll" [level=2]
+        - paragraph: Progressive layout experiment
+      - generic [ref=e82]:
+        - img "Culinary Craft" [ref=e84]
+        - img "Effortless Slip" [ref=e86]
+        - img "Product Blast" [ref=e88]
+        - img "Pour & Glow" [ref=e90]
+        - img "Heel Detail" [ref=e92]
+        - img "Energy Shot" [ref=e94]
+        - img "Popout Ad" [ref=e96]
+        - img "Royal Biriyani" [ref=e98]
+        - img "Street Sole" [ref=e100]
+        - img "Bold Edit" [ref=e102]
+        - img "Sky Heel" [ref=e104]
+        - img "Ultra Macro" [ref=e106]
+    - generic "Contact and footer" [ref=e107]:
+      - generic [ref=e108]:
+        - generic [ref=e109]: Let's collaborate
+        - heading "Let's Meet & create something iconic." [level=2] [ref=e110]:
+          - text: Let's
+          - emphasis [ref=e111]: Meet
+          - text: "& create something iconic."
+        - paragraph [ref=e112]: Whether it's a product launch, editorial campaign, or brand identity — bring your vision and let's build it together.
+        - generic [ref=e113]:
+          - link "Email the Studio" [ref=e114]:
+            - /url: mailto:hello@studio.com
+            - text: Email the Studio
+            - img [ref=e115]
+          - link "WhatsApp" [ref=e117]:
+            - /url: https://wa.me/
+      - generic [ref=e118]:
+        - generic [ref=e119]:
+          - generic [ref=e120]: © 2025 Studio
+          - generic [ref=e121]: ·
+          - generic [ref=e122]: Visual Design & Photography
+        - navigation "Social media links" [ref=e123]:
+          - link "Behance" [ref=e124]:
+            - /url: https://www.behance.net/
+            - img [ref=e125]
+          - link "Fiverr" [ref=e127]:
+            - /url: https://www.fiverr.com/
+            - img [ref=e128]
+          - link "Instagram" [ref=e130]:
+            - /url: https://instagram.com/
+            - img [ref=e131]
+          - link "LinkedIn" [ref=e135]:
+            - /url: https://linkedin.com/
+            - img [ref=e136]
+        - generic [ref=e139]: Crafted with intention
+  - status [ref=e140]:
+    - generic [ref=e141]:
+      - img [ref=e143]
+      - generic [ref=e145]:
+        - text: Static route
+        - button "Hide static indicator" [ref=e146] [cursor=pointer]:
+          - img [ref=e147]
+  - alert [ref=e150]

@@ -1,0 +1,806 @@
+- generic [active]:
+  - alert [ref=e1]
+  - dialog [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - heading "Build Error" [level=1] [ref=e7]
+        - generic [ref=e8]:
+          - text: Next.js (15.0.0) is outdated
+          - link "(learn more)" [ref=e10] [cursor=pointer]:
+            - /url: https://nextjs.org/docs/messages/version-staleness
+        - paragraph [ref=e11]: Failed to compile
+      - generic [ref=e12]:
+        - generic [ref=e13]:
+          - link "./src/components/sections/FeaturedCampaign.tsx" [ref=e14] [cursor=pointer]:
+            - text: ./src/components/sections/FeaturedCampaign.tsx
+            - img [ref=e15]
+          - generic [ref=e19]:
+            - generic [ref=e20]: "Error:"
+            - text: ×
+            - generic [ref=e21]: "the name `FeaturedCampaign` is defined multiple times ╭─["
+            - text: C:\Users\Rahul\Downloads\data\new-design\src\components\sections\FeaturedCampaign.tsx
+            - generic [ref=e22]: :11:1]
+            - generic [ref=e23]: "8"
+            - generic [ref=e24]: "│ onOpenProject: (project: typeof PROJECTS[0]) => void;"
+            - generic [ref=e25]: "9"
+            - generic [ref=e26]: "│ }"
+            - text: "10"
+            - generic [ref=e27]: │
+            - text: "11"
+            - generic [ref=e28]: "│ export default function FeaturedCampaign({ onOpenProject }: FeaturedCampaignProps) { ·"
+            - generic [ref=e29]: ────────┬───────
+            - generic [ref=e30]: ·
+            - generic [ref=e31]: ╰──
+            - generic [ref=e32]: "previous definition of `FeaturedCampaign` here"
+            - text: "12"
+            - generic [ref=e33]: │ const targetProject = PROJECTS.find((p) => p.id === "liquid-shadow") || PROJECTS[1];
+            - text: "13"
+            - generic [ref=e34]: │
+            - text: "14"
+            - generic [ref=e35]: │ return (
+            - text: "15"
+            - generic [ref=e36]: │ <section className="w-full min-h-screen bg-[#F5F5F0] text-[#111111] py-24 px-6 md:px-24">
+            - text: "16"
+            - generic [ref=e37]: "│ {/* Editorial Title - Asymmetrical positioning */}"
+            - text: "17"
+            - generic [ref=e38]: │ <motion.div
+            - text: "18"
+            - generic [ref=e39]: "│ initial={{ opacity: 0, y: 50 }}"
+            - text: "19"
+            - generic [ref=e40]: "│ whileInView={{ opacity: 1, y: 0 }}"
+            - text: "20"
+            - generic [ref=e41]: "│ transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}"
+            - text: "21"
+            - generic [ref=e42]: │ className="mb-24"
+            - text: "22"
+            - generic [ref=e43]: │ >
+            - text: "23"
+            - generic [ref=e44]: │ <h2 className="font-serif italic text-7xl md:text-[12rem] text-[#9D8B74] leading-[0.8]">Still</h2>
+            - text: "24"
+            - generic [ref=e45]: │ <h2 className="font-sans font-black text-7xl md:text-[12rem] uppercase tracking-tighter leading-[0.8] ml-4 md:ml-12">LIFE.</h2>
+            - text: "25"
+            - generic [ref=e46]: │ </motion.div>
+            - text: "26"
+            - generic [ref=e47]: │
+            - text: "27"
+            - generic [ref=e48]: "│ {/* Main Editorial Spread - Asymmetrical Grid */}"
+            - text: "28"
+            - generic [ref=e49]: │ <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            - text: "29"
+            - generic [ref=e50]: │
+            - text: "30"
+            - generic [ref=e51]: "│ {/* Main Video Block (Spans 7 columns) */}"
+            - text: "31"
+            - generic [ref=e52]: │ <motion.div
+            - text: "32"
+            - generic [ref=e53]: "│ initial={{ opacity: 0, scale: 0.95 }}"
+            - text: "33"
+            - generic [ref=e54]: "│ whileInView={{ opacity: 1, scale: 1 }}"
+            - text: "34"
+            - generic [ref=e55]: "│ transition={{ duration: 1.2, delay: 0.2 }}"
+            - text: "35"
+            - generic [ref=e56]: │ className="lg:col-span-7"
+            - text: "36"
+            - generic [ref=e57]: │ >
+            - text: "37"
+            - generic [ref=e58]: │ <video
+            - text: "38"
+            - generic [ref=e59]: │ src="/best shots/Product image/product-energy-can.mp4"
+            - text: "39"
+            - generic [ref=e60]: │ autoPlay
+            - text: "40"
+            - generic [ref=e61]: │ loop
+            - text: "41"
+            - generic [ref=e62]: │ muted
+            - text: "42"
+            - generic [ref=e63]: │ playsInline
+            - text: "43"
+            - generic [ref=e64]: │ className="w-full h-auto object-contain rounded-sm"
+            - text: "44"
+            - generic [ref=e65]: │ />
+            - text: "45"
+            - generic [ref=e66]: │ </motion.div>
+            - text: "46"
+            - generic [ref=e67]: │
+            - text: "47"
+            - generic [ref=e68]: "│ {/* Supporting Visuals Stack (Spans 5 columns) */}"
+            - text: "48"
+            - generic [ref=e69]: │ <div className="lg:col-span-5 flex flex-col gap-16 md:pl-12">
+            - text: "49"
+            - generic [ref=e70]: │ <motion.div
+            - text: "50"
+            - generic [ref=e71]: "│ initial={{ opacity: 0, x: 50 }}"
+            - text: "51"
+            - generic [ref=e72]: "│ whileInView={{ opacity: 1, x: 0 }}"
+            - text: "52"
+            - generic [ref=e73]: "│ transition={{ duration: 1, delay: 0.4 }}"
+            - text: "53"
+            - generic [ref=e74]: │ className="w-full max-w-[300px]"
+            - text: "54"
+            - generic [ref=e75]: │ >
+            - text: "55"
+            - generic [ref=e76]: │ <img
+            - text: "56"
+            - generic [ref=e77]: │ src="/best shots/Product image/hair-spray-bottle.png"
+            - text: "57"
+            - generic [ref=e78]: │ alt="Hair Spray"
+            - text: "58"
+            - generic [ref=e79]: │ className="w-full h-auto object-contain"
+            - text: "59"
+            - generic [ref=e80]: │ />
+            - text: "60"
+            - generic [ref=e81]: │ </motion.div>
+            - text: "61"
+            - generic [ref=e82]: │
+            - text: "62"
+            - generic [ref=e83]: │ <motion.div
+            - text: "63"
+            - generic [ref=e84]: "│ initial={{ opacity: 0, x: 50 }}"
+            - text: "64"
+            - generic [ref=e85]: "│ whileInView={{ opacity: 1, x: 0 }}"
+            - text: "65"
+            - generic [ref=e86]: "│ transition={{ duration: 1, delay: 0.6 }}"
+            - text: "66"
+            - generic [ref=e87]: │ className="w-full max-w-[300px] self-end"
+            - text: "67"
+            - generic [ref=e88]: │ >
+            - text: "68"
+            - generic [ref=e89]: │ <img
+            - text: "69"
+            - generic [ref=e90]: │ src="/best shots/Product image/bodywash-cream.png"
+            - text: "70"
+            - generic [ref=e91]: │ alt="Body Wash"
+            - text: "71"
+            - generic [ref=e92]: │ className="w-full h-auto object-contain"
+            - text: "72"
+            - generic [ref=e93]: │ />
+            - text: "73"
+            - generic [ref=e94]: │ </motion.div>
+            - text: "74"
+            - generic [ref=e95]: │
+            - text: "75"
+            - generic [ref=e96]: │ <motion.div
+            - text: "76"
+            - generic [ref=e97]: "│ initial={{ opacity: 0 }}"
+            - text: "77"
+            - generic [ref=e98]: "│ whileInView={{ opacity: 1 }}"
+            - text: "78"
+            - generic [ref=e99]: "│ transition={{ duration: 1, delay: 0.8 }}"
+            - text: "79"
+            - generic [ref=e100]: │ className="mt-8"
+            - text: "80"
+            - generic [ref=e101]: │ >
+            - text: "81"
+            - generic [ref=e102]: │ <button
+            - text: "82"
+            - generic [ref=e103]: "│ onClick={() => onOpenProject(targetProject)}"
+            - text: "83"
+            - generic [ref=e104]: │ className="flex items-center space-x-4 border-b border-[#111111] pb-2 font-sans text-sm uppercase tracking-widest hover:text-[#9D8B74] hover:border-[#9D8B74] transition-colors duration-300 group"
+            - text: "84"
+            - generic [ref=e105]: │ >
+            - text: "85"
+            - generic [ref=e106]: │ <span>Read Campaign</span>
+            - text: "86"
+            - generic [ref=e107]: │ <ArrowRight className="w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-300" />
+            - text: "87"
+            - generic [ref=e108]: │ </button>
+            - text: "88"
+            - generic [ref=e109]: │ </motion.div>
+            - text: "89"
+            - generic [ref=e110]: │ </div>
+            - text: "90"
+            - generic [ref=e111]: │ </div>
+            - text: "91"
+            - generic [ref=e112]: │ </section>
+            - text: "92"
+            - generic [ref=e113]: │ );
+            - text: "93"
+            - generic [ref=e114]: "│ }"
+            - text: "94"
+            - generic [ref=e115]: │
+            - text: "95"
+            - generic [ref=e116]: "│ export default function FeaturedCampaign({ onOpenProject }: FeaturedCampaignProps) { ·"
+            - generic [ref=e117]: ────────┬───────
+            - generic [ref=e118]: ·
+            - generic [ref=e119]: ╰──
+            - generic [ref=e120]: "`FeaturedCampaign` redefined here"
+            - text: "96"
+            - generic [ref=e121]: │ const sectionRef = useRef<HTMLDivElement>(null);
+            - text: "97"
+            - generic [ref=e122]: │ const targetProject = PROJECTS.find((p) => p.id === "liquid-shadow") || PROJECTS[1]; ╰────
+            - text: ×
+            - generic [ref=e123]: "the name `default` is exported multiple times ╭─["
+            - text: C:\Users\Rahul\Downloads\data\new-design\src\components\sections\FeaturedCampaign.tsx
+            - generic [ref=e124]: :11:1]
+            - generic [ref=e125]: "8"
+            - generic [ref=e126]: "│ onOpenProject: (project: typeof PROJECTS[0]) => void;"
+            - generic [ref=e127]: "9"
+            - generic [ref=e128]: "│ }"
+            - generic [ref=e129]: "10"
+            - generic [ref=e130]: │
+            - generic [ref=e131]: "11"
+            - generic [ref=e132]: │
+            - text: ╭─▶
+            - generic [ref=e133]: "export default function FeaturedCampaign({ onOpenProject }: FeaturedCampaignProps) {"
+            - generic [ref=e134]: "12"
+            - generic [ref=e135]: │
+            - text: │
+            - generic [ref=e136]: const targetProject = PROJECTS.find((p) => p.id === "liquid-shadow") || PROJECTS[1];
+            - generic [ref=e137]: "13"
+            - generic [ref=e138]: │
+            - text: │
+            - generic [ref=e139]: "14"
+            - generic [ref=e140]: │
+            - text: │
+            - generic [ref=e141]: return (
+            - generic [ref=e142]: "15"
+            - generic [ref=e143]: │
+            - text: │
+            - generic [ref=e144]: <section className="w-full min-h-screen bg-[#F5F5F0] text-[#111111] py-24 px-6 md:px-24">
+            - generic [ref=e145]: "16"
+            - generic [ref=e146]: │
+            - text: │
+            - generic [ref=e147]: "{/* Editorial Title - Asymmetrical positioning */}"
+            - generic [ref=e148]: "17"
+            - generic [ref=e149]: │
+            - text: │
+            - generic [ref=e150]: <motion.div
+            - generic [ref=e151]: "18"
+            - generic [ref=e152]: │
+            - text: │
+            - generic [ref=e153]: "initial={{ opacity: 0, y: 50 }}"
+            - generic [ref=e154]: "19"
+            - generic [ref=e155]: │
+            - text: │
+            - generic [ref=e156]: "whileInView={{ opacity: 1, y: 0 }}"
+            - generic [ref=e157]: "20"
+            - generic [ref=e158]: │
+            - text: │
+            - generic [ref=e159]: "transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}"
+            - generic [ref=e160]: "21"
+            - generic [ref=e161]: │
+            - text: │
+            - generic [ref=e162]: className="mb-24"
+            - generic [ref=e163]: "22"
+            - generic [ref=e164]: │
+            - text: │
+            - generic [ref=e165]: ">"
+            - generic [ref=e166]: "23"
+            - generic [ref=e167]: │
+            - text: │
+            - generic [ref=e168]: <h2 className="font-serif italic text-7xl md:text-[12rem] text-[#9D8B74] leading-[0.8]">Still</h2>
+            - generic [ref=e169]: "24"
+            - generic [ref=e170]: │
+            - text: │
+            - generic [ref=e171]: <h2 className="font-sans font-black text-7xl md:text-[12rem] uppercase tracking-tighter leading-[0.8] ml-4 md:ml-12">LIFE.</h2>
+            - generic [ref=e172]: "25"
+            - generic [ref=e173]: │
+            - text: │
+            - generic [ref=e174]: </motion.div>
+            - generic [ref=e175]: "26"
+            - generic [ref=e176]: │
+            - text: │
+            - generic [ref=e177]: "27"
+            - generic [ref=e178]: │
+            - text: │
+            - generic [ref=e179]: "{/* Main Editorial Spread - Asymmetrical Grid */}"
+            - generic [ref=e180]: "28"
+            - generic [ref=e181]: │
+            - text: │
+            - generic [ref=e182]: <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            - generic [ref=e183]: "29"
+            - generic [ref=e184]: │
+            - text: │
+            - generic [ref=e185]: "30"
+            - generic [ref=e186]: │
+            - text: │
+            - generic [ref=e187]: "{/* Main Video Block (Spans 7 columns) */}"
+            - generic [ref=e188]: "31"
+            - generic [ref=e189]: │
+            - text: │
+            - generic [ref=e190]: <motion.div
+            - generic [ref=e191]: "32"
+            - generic [ref=e192]: │
+            - text: │
+            - generic [ref=e193]: "initial={{ opacity: 0, scale: 0.95 }}"
+            - generic [ref=e194]: "33"
+            - generic [ref=e195]: │
+            - text: │
+            - generic [ref=e196]: "whileInView={{ opacity: 1, scale: 1 }}"
+            - generic [ref=e197]: "34"
+            - generic [ref=e198]: │
+            - text: │
+            - generic [ref=e199]: "transition={{ duration: 1.2, delay: 0.2 }}"
+            - generic [ref=e200]: "35"
+            - generic [ref=e201]: │
+            - text: │
+            - generic [ref=e202]: className="lg:col-span-7"
+            - generic [ref=e203]: "36"
+            - generic [ref=e204]: │
+            - text: │
+            - generic [ref=e205]: ">"
+            - generic [ref=e206]: "37"
+            - generic [ref=e207]: │
+            - text: │
+            - generic [ref=e208]: <video
+            - generic [ref=e209]: "38"
+            - generic [ref=e210]: │
+            - text: │
+            - generic [ref=e211]: src="/best shots/Product image/product-energy-can.mp4"
+            - generic [ref=e212]: "39"
+            - generic [ref=e213]: │
+            - text: │
+            - generic [ref=e214]: autoPlay
+            - generic [ref=e215]: "40"
+            - generic [ref=e216]: │
+            - text: │
+            - generic [ref=e217]: loop
+            - generic [ref=e218]: "41"
+            - generic [ref=e219]: │
+            - text: │
+            - generic [ref=e220]: muted
+            - generic [ref=e221]: "42"
+            - generic [ref=e222]: │
+            - text: │
+            - generic [ref=e223]: playsInline
+            - generic [ref=e224]: "43"
+            - generic [ref=e225]: │
+            - text: │
+            - generic [ref=e226]: className="w-full h-auto object-contain rounded-sm"
+            - generic [ref=e227]: "44"
+            - generic [ref=e228]: │
+            - text: │
+            - generic [ref=e229]: />
+            - generic [ref=e230]: "45"
+            - generic [ref=e231]: │
+            - text: │
+            - generic [ref=e232]: </motion.div>
+            - generic [ref=e233]: "46"
+            - generic [ref=e234]: │
+            - text: │
+            - generic [ref=e235]: "47"
+            - generic [ref=e236]: │
+            - text: │
+            - generic [ref=e237]: "{/* Supporting Visuals Stack (Spans 5 columns) */}"
+            - generic [ref=e238]: "48"
+            - generic [ref=e239]: │
+            - text: │
+            - generic [ref=e240]: <div className="lg:col-span-5 flex flex-col gap-16 md:pl-12">
+            - generic [ref=e241]: "49"
+            - generic [ref=e242]: │
+            - text: │
+            - generic [ref=e243]: <motion.div
+            - generic [ref=e244]: "50"
+            - generic [ref=e245]: │
+            - text: │
+            - generic [ref=e246]: "initial={{ opacity: 0, x: 50 }}"
+            - generic [ref=e247]: "51"
+            - generic [ref=e248]: │
+            - text: │
+            - generic [ref=e249]: "whileInView={{ opacity: 1, x: 0 }}"
+            - generic [ref=e250]: "52"
+            - generic [ref=e251]: │
+            - text: │
+            - generic [ref=e252]: "transition={{ duration: 1, delay: 0.4 }}"
+            - generic [ref=e253]: "53"
+            - generic [ref=e254]: │
+            - text: │
+            - generic [ref=e255]: className="w-full max-w-[300px]"
+            - generic [ref=e256]: "54"
+            - generic [ref=e257]: │
+            - text: │
+            - generic [ref=e258]: ">"
+            - generic [ref=e259]: "55"
+            - generic [ref=e260]: │
+            - text: │
+            - generic [ref=e261]: <img
+            - generic [ref=e262]: "56"
+            - generic [ref=e263]: │
+            - text: │
+            - generic [ref=e264]: src="/best shots/Product image/hair-spray-bottle.png"
+            - generic [ref=e265]: "57"
+            - generic [ref=e266]: │
+            - text: │
+            - generic [ref=e267]: alt="Hair Spray"
+            - generic [ref=e268]: "58"
+            - generic [ref=e269]: │
+            - text: │
+            - generic [ref=e270]: className="w-full h-auto object-contain"
+            - generic [ref=e271]: "59"
+            - generic [ref=e272]: │
+            - text: │
+            - generic [ref=e273]: />
+            - generic [ref=e274]: "60"
+            - generic [ref=e275]: │
+            - text: │
+            - generic [ref=e276]: </motion.div>
+            - generic [ref=e277]: "61"
+            - generic [ref=e278]: │
+            - text: │
+            - generic [ref=e279]: "62"
+            - generic [ref=e280]: │
+            - text: │
+            - generic [ref=e281]: <motion.div
+            - generic [ref=e282]: "63"
+            - generic [ref=e283]: │
+            - text: │
+            - generic [ref=e284]: "initial={{ opacity: 0, x: 50 }}"
+            - generic [ref=e285]: "64"
+            - generic [ref=e286]: │
+            - text: │
+            - generic [ref=e287]: "whileInView={{ opacity: 1, x: 0 }}"
+            - generic [ref=e288]: "65"
+            - generic [ref=e289]: │
+            - text: │
+            - generic [ref=e290]: "transition={{ duration: 1, delay: 0.6 }}"
+            - generic [ref=e291]: "66"
+            - generic [ref=e292]: │
+            - text: │
+            - generic [ref=e293]: className="w-full max-w-[300px] self-end"
+            - generic [ref=e294]: "67"
+            - generic [ref=e295]: │
+            - text: │
+            - generic [ref=e296]: ">"
+            - generic [ref=e297]: "68"
+            - generic [ref=e298]: │
+            - text: │
+            - generic [ref=e299]: <img
+            - generic [ref=e300]: "69"
+            - generic [ref=e301]: │
+            - text: │
+            - generic [ref=e302]: src="/best shots/Product image/bodywash-cream.png"
+            - generic [ref=e303]: "70"
+            - generic [ref=e304]: │
+            - text: │
+            - generic [ref=e305]: alt="Body Wash"
+            - generic [ref=e306]: "71"
+            - generic [ref=e307]: │
+            - text: │
+            - generic [ref=e308]: className="w-full h-auto object-contain"
+            - generic [ref=e309]: "72"
+            - generic [ref=e310]: │
+            - text: │
+            - generic [ref=e311]: />
+            - generic [ref=e312]: "73"
+            - generic [ref=e313]: │
+            - text: │
+            - generic [ref=e314]: </motion.div>
+            - generic [ref=e315]: "74"
+            - generic [ref=e316]: │
+            - text: │
+            - generic [ref=e317]: "75"
+            - generic [ref=e318]: │
+            - text: │
+            - generic [ref=e319]: <motion.div
+            - generic [ref=e320]: "76"
+            - generic [ref=e321]: │
+            - text: │
+            - generic [ref=e322]: "initial={{ opacity: 0 }}"
+            - generic [ref=e323]: "77"
+            - generic [ref=e324]: │
+            - text: │
+            - generic [ref=e325]: "whileInView={{ opacity: 1 }}"
+            - generic [ref=e326]: "78"
+            - generic [ref=e327]: │
+            - text: │
+            - generic [ref=e328]: "transition={{ duration: 1, delay: 0.8 }}"
+            - generic [ref=e329]: "79"
+            - generic [ref=e330]: │
+            - text: │
+            - generic [ref=e331]: className="mt-8"
+            - generic [ref=e332]: "80"
+            - generic [ref=e333]: │
+            - text: │
+            - generic [ref=e334]: ">"
+            - generic [ref=e335]: "81"
+            - generic [ref=e336]: │
+            - text: │
+            - generic [ref=e337]: <button
+            - generic [ref=e338]: "82"
+            - generic [ref=e339]: │
+            - text: │
+            - generic [ref=e340]: "onClick={() => onOpenProject(targetProject)}"
+            - generic [ref=e341]: "83"
+            - generic [ref=e342]: │
+            - text: │
+            - generic [ref=e343]: className="flex items-center space-x-4 border-b border-[#111111] pb-2 font-sans text-sm uppercase tracking-widest hover:text-[#9D8B74] hover:border-[#9D8B74] transition-colors duration-300 group"
+            - generic [ref=e344]: "84"
+            - generic [ref=e345]: │
+            - text: │
+            - generic [ref=e346]: ">"
+            - generic [ref=e347]: "85"
+            - generic [ref=e348]: │
+            - text: │
+            - generic [ref=e349]: <span>Read Campaign</span>
+            - generic [ref=e350]: "86"
+            - generic [ref=e351]: │
+            - text: │
+            - generic [ref=e352]: <ArrowRight className="w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-300" />
+            - generic [ref=e353]: "87"
+            - generic [ref=e354]: │
+            - text: │
+            - generic [ref=e355]: </button>
+            - generic [ref=e356]: "88"
+            - generic [ref=e357]: │
+            - text: │
+            - generic [ref=e358]: </motion.div>
+            - generic [ref=e359]: "89"
+            - generic [ref=e360]: │
+            - text: │
+            - generic [ref=e361]: </div>
+            - generic [ref=e362]: "90"
+            - generic [ref=e363]: │
+            - text: │
+            - generic [ref=e364]: </div>
+            - generic [ref=e365]: "91"
+            - generic [ref=e366]: │
+            - text: │
+            - generic [ref=e367]: </section>
+            - generic [ref=e368]: "92"
+            - generic [ref=e369]: │
+            - text: │
+            - generic [ref=e370]: );
+            - generic [ref=e371]: "93"
+            - generic [ref=e372]: │
+            - text: ├─▶
+            - generic [ref=e373]: "} ·"
+            - text: ╰────
+            - generic [ref=e374]: previous exported here
+            - generic [ref=e375]: "94"
+            - generic [ref=e376]: │
+            - generic [ref=e377]: "95"
+            - generic [ref=e378]: │
+            - text: ╭─▶
+            - generic [ref=e379]: "export default function FeaturedCampaign({ onOpenProject }: FeaturedCampaignProps) {"
+            - generic [ref=e380]: "96"
+            - generic [ref=e381]: │
+            - text: │
+            - generic [ref=e382]: const sectionRef = useRef<HTMLDivElement>(null);
+            - generic [ref=e383]: "97"
+            - generic [ref=e384]: │
+            - text: │
+            - generic [ref=e385]: const targetProject = PROJECTS.find((p) => p.id === "liquid-shadow") || PROJECTS[1];
+            - generic [ref=e386]: "98"
+            - generic [ref=e387]: │
+            - text: │
+            - generic [ref=e388]: "99"
+            - generic [ref=e389]: │
+            - text: │
+            - generic [ref=e390]: return (
+            - text: "100"
+            - generic [ref=e391]: │
+            - text: │
+            - generic [ref=e392]: <section
+            - text: "101"
+            - generic [ref=e393]: │
+            - text: │
+            - generic [ref=e394]: "ref={sectionRef}"
+            - text: "102"
+            - generic [ref=e395]: │
+            - text: │
+            - generic [ref=e396]: className="w-full bg-[#F5F5F0] text-[#111111] px-6 md:px-12 py-12 md:py-24"
+            - text: "103"
+            - generic [ref=e397]: │
+            - text: │
+            - generic [ref=e398]: ">"
+            - text: "104"
+            - generic [ref=e399]: │
+            - text: │
+            - generic [ref=e400]: "{/* Editorial Title */}"
+            - text: "105"
+            - generic [ref=e401]: │
+            - text: │
+            - generic [ref=e402]: <div className="mb-12 md:mb-24">
+            - text: "106"
+            - generic [ref=e403]: │
+            - text: │
+            - generic [ref=e404]: <h2 className="font-serif italic text-5xl sm:text-7xl md:text-9xl text-[#9D8B74] leading-none tracking-tight">
+            - text: "107"
+            - generic [ref=e405]: │
+            - text: │
+            - generic [ref=e406]: Still
+            - text: "108"
+            - generic [ref=e407]: │
+            - text: │
+            - generic [ref=e408]: </h2>
+            - text: "109"
+            - generic [ref=e409]: │
+            - text: │
+            - generic [ref=e410]: <h2 className="font-sans font-black text-5xl sm:text-7xl md:text-9xl uppercase tracking-tighter leading-[0.9]">
+            - text: "110"
+            - generic [ref=e411]: │
+            - text: │
+            - generic [ref=e412]: Life.
+            - text: "111"
+            - generic [ref=e413]: │
+            - text: │
+            - generic [ref=e414]: </h2>
+            - text: "112"
+            - generic [ref=e415]: │
+            - text: │
+            - generic [ref=e416]: </div>
+            - text: "113"
+            - generic [ref=e417]: │
+            - text: │ 114
+            - generic [ref=e418]: │
+            - text: │
+            - generic [ref=e419]: <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
+            - text: "115"
+            - generic [ref=e420]: │
+            - text: │
+            - generic [ref=e421]: "{/* Left Column: Video (Span 8) */}"
+            - text: "116"
+            - generic [ref=e422]: │
+            - text: │
+            - generic [ref=e423]: <div className="md:col-span-8 flex items-center justify-center">
+            - text: "117"
+            - generic [ref=e424]: │
+            - text: │
+            - generic [ref=e425]: <video
+            - text: "118"
+            - generic [ref=e426]: │
+            - text: │
+            - generic [ref=e427]: src="/best shots/Product image/product-energy-can.mp4"
+            - text: "119"
+            - generic [ref=e428]: │
+            - text: │
+            - generic [ref=e429]: autoPlay
+            - text: "120"
+            - generic [ref=e430]: │
+            - text: │
+            - generic [ref=e431]: loop
+            - text: "121"
+            - generic [ref=e432]: │
+            - text: │
+            - generic [ref=e433]: muted
+            - text: "122"
+            - generic [ref=e434]: │
+            - text: │
+            - generic [ref=e435]: playsInline
+            - text: "123"
+            - generic [ref=e436]: │
+            - text: │
+            - generic [ref=e437]: className="w-full h-auto"
+            - text: "124"
+            - generic [ref=e438]: │
+            - text: │
+            - generic [ref=e439]: />
+            - text: "125"
+            - generic [ref=e440]: │
+            - text: │
+            - generic [ref=e441]: </div>
+            - text: "126"
+            - generic [ref=e442]: │
+            - text: │ 127
+            - generic [ref=e443]: │
+            - text: │
+            - generic [ref=e444]: "{/* Right Column: Supporting Visuals & Link (Span 4) */}"
+            - text: "128"
+            - generic [ref=e445]: │
+            - text: │
+            - generic [ref=e446]: <div className="md:col-span-4 flex flex-col gap-8">
+            - text: "129"
+            - generic [ref=e447]: │
+            - text: │
+            - generic [ref=e448]: <div className="flex items-center justify-center">
+            - text: "130"
+            - generic [ref=e449]: │
+            - text: │
+            - generic [ref=e450]: <img
+            - text: "131"
+            - generic [ref=e451]: │
+            - text: │
+            - generic [ref=e452]: src="/best shots/Product image/hair-spray-bottle.png"
+            - text: "132"
+            - generic [ref=e453]: │
+            - text: │
+            - generic [ref=e454]: alt="Hair Spray"
+            - text: "133"
+            - generic [ref=e455]: │
+            - text: │
+            - generic [ref=e456]: className="w-full h-auto object-contain max-w-[200px] md:max-w-full"
+            - text: "134"
+            - generic [ref=e457]: │
+            - text: │
+            - generic [ref=e458]: />
+            - text: "135"
+            - generic [ref=e459]: │
+            - text: │
+            - generic [ref=e460]: </div>
+            - text: "136"
+            - generic [ref=e461]: │
+            - text: │
+            - generic [ref=e462]: <div className="flex items-center justify-center">
+            - text: "137"
+            - generic [ref=e463]: │
+            - text: │
+            - generic [ref=e464]: <img
+            - text: "138"
+            - generic [ref=e465]: │
+            - text: │
+            - generic [ref=e466]: src="/best shots/Product image/bodywash-cream.png"
+            - text: "139"
+            - generic [ref=e467]: │
+            - text: │
+            - generic [ref=e468]: alt="Body Wash"
+            - text: "140"
+            - generic [ref=e469]: │
+            - text: │
+            - generic [ref=e470]: className="w-full h-auto object-contain max-w-[200px] md:max-w-full"
+            - text: "141"
+            - generic [ref=e471]: │
+            - text: │
+            - generic [ref=e472]: />
+            - text: "142"
+            - generic [ref=e473]: │
+            - text: │
+            - generic [ref=e474]: </div>
+            - text: "143"
+            - generic [ref=e475]: │
+            - text: │ 144
+            - generic [ref=e476]: │
+            - text: │
+            - generic [ref=e477]: "{/* Campaign Link */}"
+            - text: "145"
+            - generic [ref=e478]: │
+            - text: │
+            - generic [ref=e479]: <div className="mt-8">
+            - text: "146"
+            - generic [ref=e480]: │
+            - text: │
+            - generic [ref=e481]: <button
+            - text: "147"
+            - generic [ref=e482]: │
+            - text: │
+            - generic [ref=e483]: "onClick={() => onOpenProject(targetProject)}"
+            - text: "148"
+            - generic [ref=e484]: │
+            - text: │
+            - generic [ref=e485]: className="flex items-center space-x-4 border-b border-[#111111] pb-2 font-sans text-xs uppercase tracking-widest hover:text-[#9D8B74] hover:border-[#9D8B74] transition-colors duration-300 group"
+            - text: "149"
+            - generic [ref=e486]: │
+            - text: │
+            - generic [ref=e487]: ">"
+            - text: "150"
+            - generic [ref=e488]: │
+            - text: │
+            - generic [ref=e489]: <span>Read Campaign</span>
+            - text: "151"
+            - generic [ref=e490]: │
+            - text: │
+            - generic [ref=e491]: <ArrowRight className="w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" />
+            - text: "152"
+            - generic [ref=e492]: │
+            - text: │
+            - generic [ref=e493]: </button>
+            - text: "153"
+            - generic [ref=e494]: │
+            - text: │
+            - generic [ref=e495]: </div>
+            - text: "154"
+            - generic [ref=e496]: │
+            - text: │
+            - generic [ref=e497]: </div>
+            - text: "155"
+            - generic [ref=e498]: │
+            - text: │
+            - generic [ref=e499]: </div>
+            - text: "156"
+            - generic [ref=e500]: │
+            - text: │
+            - generic [ref=e501]: </section>
+            - text: "157"
+            - generic [ref=e502]: │
+            - text: │
+            - generic [ref=e503]: );
+            - text: "158"
+            - generic [ref=e504]: │
+            - text: ├─▶
+            - generic [ref=e505]: "} ·"
+            - text: ╰────
+            - generic [ref=e506]: exported more than once
+            - generic [ref=e507]: "╰──── Advice:"
+            - text: ☞
+            - generic [ref=e508]: Exported identifiers must be unique
+        - contentinfo [ref=e509]:
+          - paragraph [ref=e510]: This error occurred during the build process and can only be dismissed by fixing the error.

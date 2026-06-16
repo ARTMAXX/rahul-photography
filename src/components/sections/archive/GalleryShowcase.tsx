@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
@@ -85,7 +85,7 @@ const VIDEO_SRC = "/best shots/ladies shoe/shoe-ladies-video.mp4";
 const VIDEO_POSTER = "/best shots/ladies shoe/High-end-shoe.webp";
 
 /* Hook: fade-in on scroll via IntersectionObserver.
-   Lightweight — no GSAP, no pinning, no scroll-driven hiding. */
+   Lightweight â€” no GSAP, no pinning, no scroll-driven hiding. */
 function useReveal() {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -166,11 +166,11 @@ export default function GalleryShowcase() {
         </h2>
         <p className="showcase__subtitle">
           A curated selection of recent work across product, food, beverage,
-          and lifestyle — every frame available to view in full.
+          and lifestyle â€” every frame available to view in full.
         </p>
       </header>
 
-      {/* Featured video — large, autoplays, always visible */}
+      {/* Featured video â€” large, autoplays, always visible */}
       <div className="showcase__video-wrap" data-reveal>
         <video
           className="showcase__video"
@@ -185,11 +185,11 @@ export default function GalleryShowcase() {
         />
         <div className="showcase__video-caption">
           <span className="showcase__video-tag">Featured Reel</span>
-          <span className="showcase__video-title">Ladies Footwear — In Motion</span>
+          <span className="showcase__video-title">Ladies Footwear â€” In Motion</span>
         </div>
       </div>
 
-      {/* Image grid — all 12 images visible at once */}
+      {/* Image grid â€” all 12 images visible at once */}
       <div className="showcase__grid" role="list">
         {showcaseImages.map((img, i) => (
           <button
@@ -203,7 +203,7 @@ export default function GalleryShowcase() {
             role="listitem"
           >
             <div className="showcase__tile-media">
-              <Image
+              <Image quality={100}
                 src={img.src}
                 alt={img.alt}
                 width={800}
@@ -220,7 +220,7 @@ export default function GalleryShowcase() {
         ))}
       </div>
 
-      {/* Lightbox — full-size viewer with keyboard + click nav */}
+      {/* Lightbox â€” full-size viewer with keyboard + click nav */}
       {lightboxIndex !== null && (
         <div
           className="lightbox"
@@ -271,7 +271,7 @@ export default function GalleryShowcase() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="lightbox__media">
-              <Image
+              <Image quality={100}
                 src={showcaseImages[lightboxIndex].src}
                 alt={showcaseImages[lightboxIndex].alt}
                 width={1200}
@@ -319,3 +319,5 @@ export default function GalleryShowcase() {
     </section>
   );
 }
+
+

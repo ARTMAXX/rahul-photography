@@ -1,0 +1,511 @@
+[
+  {
+    "progress": 0,
+    "scrollY": 9791,
+    "visibleCount": 0,
+    "visible": [],
+    "phrase": {
+      "op": "0",
+      "tr": "",
+      "screen": {
+        "x": 400,
+        "y": 331,
+        "w": 640,
+        "h": 283
+      },
+      "words": 52,
+      "visibleWords": 0
+    }
+  },
+  {
+    "progress": 0.2,
+    "scrollY": 11051,
+    "visibleCount": 5,
+    "visible": [
+      {
+        "i": "0",
+        "op": "1",
+        "z": "280",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(239.6px, -112.1px, -320.3px) rotateY(-143.2deg)"
+      },
+      {
+        "i": "1",
+        "op": "1",
+        "z": "527",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(393.2px, -25.7px, -73.4px) rotateY(-100.6deg)"
+      },
+      {
+        "i": "2",
+        "op": "1",
+        "z": "812",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(339px, 74.3px, 212.3px) rotateY(-57.9deg)"
+      },
+      {
+        "i": "3",
+        "op": "1",
+        "z": "986",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(105.7px, 135px, 385.8px) rotateY(-15.3deg)"
+      },
+      {
+        "i": "4",
+        "op": "1",
+        "z": "808",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(-588.2px, 140px, 207.8px) rotateY(0deg)"
+      }
+    ],
+    "phrase": {
+      "op": "0.833333",
+      "tr": "translateY(25px)",
+      "screen": {
+        "x": 400,
+        "y": 331,
+        "w": 640,
+        "h": 283
+      },
+      "words": 52,
+      "visibleWords": 9
+    }
+  },
+  {
+    "progress": 0.4,
+    "scrollY": 12311,
+    "visibleCount": 10,
+    "visible": [
+      {
+        "i": "0",
+        "op": "1",
+        "z": "983",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(-115.2px, 134.1px, 383.1px) rotateY(-343.3deg)"
+      },
+      {
+        "i": "1",
+        "op": "1",
+        "z": "804",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(-344.2px, 71.3px, 203.8px) rotateY(-300.6deg)"
+      },
+      {
+        "i": "2",
+        "op": "1",
+        "z": "517",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(-391.3px, -29.1px, -83.2px) rotateY(-258deg)"
+      },
+      {
+        "i": "3",
+        "op": "1",
+        "z": "274",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(-231.5px, -114.2px, -326.2px) rotateY(-215.4deg)"
+      },
+      {
+        "i": "4",
+        "op": "1",
+        "z": "203",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(50.6px, -138.9px, -396.8px) rotateY(-172.7deg)"
+      },
+      {
+        "i": "5",
+        "op": "1",
+        "z": "342",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(305.9px, -90.2px, -257.7px) rotateY(-130.1deg)"
+      },
+      {
+        "i": "6",
+        "op": "1",
+        "z": "618",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(399.6px, 6.2px, 17.6px) rotateY(-87.5deg)"
+      },
+      {
+        "i": "7",
+        "op": "1",
+        "z": "884",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(282.1px, 99.3px, 283.6px) rotateY(-44.8deg)"
+      },
+      {
+        "i": "8",
+        "op": "1",
+        "z": "1000",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(15.4px, 139.9px, 399.7px) rotateY(-2.2deg)"
+      },
+      {
+        "i": "9",
+        "op": "0.577778",
+        "z": "716",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(-870.4px, 140px, 115.6px) rotateY(0deg)"
+      }
+    ],
+    "phrase": {
+      "op": "1",
+      "tr": "translateY(3.1px)",
+      "screen": {
+        "x": 400,
+        "y": 331,
+        "w": 640,
+        "h": 283
+      },
+      "words": 52,
+      "visibleWords": 52
+    }
+  },
+  {
+    "progress": 0.5,
+    "scrollY": 12941,
+    "visibleCount": 9,
+    "visible": [
+      {
+        "i": "1",
+        "op": "0.569444",
+        "z": "714",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(875.5px, 140px, 113.9px) rotateY(-360deg)"
+      },
+      {
+        "i": "2",
+        "op": "1",
+        "z": "1000",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(-13.8px, 139.9px, 399.8px) rotateY(-358deg)"
+      },
+      {
+        "i": "3",
+        "op": "1",
+        "z": "885",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(-280.9px, 99.7px, 284.8px) rotateY(-315.4deg)"
+      },
+      {
+        "i": "4",
+        "op": "1",
+        "z": "619",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(-399.5px, 6.7px, 19.3px) rotateY(-272.8deg)"
+      },
+      {
+        "i": "5",
+        "op": "1",
+        "z": "344",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(-307px, -89.7px, -256.4px) rotateY(-230.1deg)"
+      },
+      {
+        "i": "6",
+        "op": "1",
+        "z": "203",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(-52.2px, -138.8px, -396.6px) rotateY(-187.5deg)"
+      },
+      {
+        "i": "7",
+        "op": "1",
+        "z": "273",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(230.2px, -114.5px, -327.1px) rotateY(-144.9deg)"
+      },
+      {
+        "i": "8",
+        "op": "1",
+        "z": "515",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(390.9px, -29.7px, -84.8px) rotateY(-102.2deg)"
+      },
+      {
+        "i": "9",
+        "op": "1",
+        "z": "802",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(345px, 70.8px, 202.4px) rotateY(-59.6deg)"
+      }
+    ],
+    "phrase": {
+      "op": "1",
+      "tr": "translateY(-7.8px)",
+      "screen": {
+        "x": 400,
+        "y": 331,
+        "w": 640,
+        "h": 283
+      },
+      "words": 52,
+      "visibleWords": 52
+    }
+  },
+  {
+    "progress": 0.6,
+    "scrollY": 13571,
+    "visibleCount": 7,
+    "visible": [
+      {
+        "i": "3",
+        "op": "0.05",
+        "z": "610",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(1193.4px, 140px, 10px) rotateY(-360deg)"
+      },
+      {
+        "i": "4",
+        "op": "1",
+        "z": "910",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(275.4px, 140px, 310px) rotateY(-360deg)"
+      },
+      {
+        "i": "5",
+        "op": "1",
+        "z": "947",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(-199px, 121.4px, 347px) rotateY(-330.2deg)"
+      },
+      {
+        "i": "6",
+        "op": "1",
+        "z": "720",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(-381.4px, 42.2px, 120.5px) rotateY(-287.5deg)"
+      },
+      {
+        "i": "7",
+        "op": "1",
+        "z": "430",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(-362.2px, -59.4px, -169.7px) rotateY(-244.9deg)"
+      },
+      {
+        "i": "8",
+        "op": "1",
+        "z": "230",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(-151.5px, -129.6px, -370.2px) rotateY(-202.3deg)"
+      },
+      {
+        "i": "9",
+        "op": "1",
+        "z": "225",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(139.2px, -131.2px, -375px) rotateY(-159.6deg)"
+      }
+    ],
+    "phrase": {
+      "op": "1",
+      "tr": "translateY(-18.8px)",
+      "screen": {
+        "x": 400,
+        "y": 331,
+        "w": 640,
+        "h": 283
+      },
+      "words": 52,
+      "visibleWords": 52
+    }
+  },
+  {
+    "progress": 0.8,
+    "scrollY": 14831,
+    "visibleCount": 2,
+    "visible": [
+      {
+        "i": "8",
+        "op": "0.511111",
+        "z": "702",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(911.2px, 140px, 102.2px) rotateY(-360deg)"
+      },
+      {
+        "i": "9",
+        "op": "1",
+        "z": "1000",
+        "screen": {
+          "x": 720,
+          "y": 450,
+          "w": 202,
+          "h": 134
+        },
+        "tr": "translate3d(-2.2px, 140px, 400px) rotateY(-359.7deg)"
+      }
+    ],
+    "phrase": {
+      "op": "0",
+      "tr": "translateY(-18.8px)",
+      "screen": {
+        "x": 400,
+        "y": 331,
+        "w": 640,
+        "h": 283
+      },
+      "words": 52,
+      "visibleWords": 52
+    }
+  }
+]

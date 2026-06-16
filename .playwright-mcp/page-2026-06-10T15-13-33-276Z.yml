@@ -1,0 +1,956 @@
+- generic [active] [ref=e1]:
+  - dialog "Responsible use of your data" [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e6]:
+        - img "logo" [ref=e8]
+        - link "Cookiebot by Usercentrics - opens in a new window" [ref=e9] [cursor=pointer]:
+          - /url: https://www.cookiebot.com/en/what-is-behind-powered-by-cookiebot/?utm_source=banner_cb&utm_medium=referral&utm_content=v2
+          - img [ref=e10]
+      - tabpanel "Consent" [ref=e37]:
+        - generic [ref=e39]:
+          - heading "Responsible use of your data" [level=2] [ref=e40]
+          - generic [ref=e41]:
+            - text: We and
+            - link "our 1022 partners" [ref=e42] [cursor=pointer]:
+              - /url: "#"
+            - text: process your personal data, e.g. your IP-number, using technology such as cookies to store and access information on your device in order to serve personalized ads and content, ad and content measurement, audience research and services development. You have a choice in who uses your data and for what purposes. Your privacy choices are only applicable on this digital property where you have made your choices. You can change or withdraw your consent any time from the Cookie Declaration or by clicking on the Privacy trigger icon.
+            - generic [ref=e43]:
+              - text: "If you allow, we would also like to:"
+              - list [ref=e44]:
+                - listitem [ref=e45]: Collect information about your geographical location which can be accurate to within several meters
+                - listitem [ref=e46]: Identify your device by actively scanning it for specific characteristics (fingerprinting)
+            - text: Find out more about how your personal data is processed and set your preferences in the
+            - link "details section" [ref=e47] [cursor=pointer]:
+              - /url: "#"
+            - text: .
+            - paragraph [ref=e48]: We use cookies to personalise content and ads, to provide social media features and to analyse our traffic. We also share information about your use of our site with our social media, advertising and analytics partners who may combine it with other information that you’ve provided to them or that they’ve collected from your use of their services.
+            - text: We work with
+            - link "62 third parties" [ref=e49] [cursor=pointer]:
+              - /url: "#"
+            - text: who may receive and process your information.
+        - generic [ref=e50]:
+          - group "Consent Selection" [ref=e56]:
+            - generic [ref=e57]: Consent Selection
+            - generic [ref=e58]:
+              - generic [ref=e59]:
+                - strong [ref=e61]: Necessary
+                - generic [ref=e62]:
+                  - checkbox "Necessary" [checked] [disabled]
+              - generic [ref=e63]:
+                - strong [ref=e65] [cursor=pointer]: Preferences
+                - switch "Preferences" [checked] [ref=e67] [cursor=pointer]
+              - generic [ref=e68]:
+                - strong [ref=e70] [cursor=pointer]: Statistics
+                - switch "Statistics" [checked] [ref=e72] [cursor=pointer]
+              - generic [ref=e73]:
+                - strong [ref=e75] [cursor=pointer]: Marketing
+                - switch "Marketing" [checked] [ref=e77] [cursor=pointer]
+          - link "Show details" [ref=e79] [cursor=pointer]:
+            - /url: "#"
+      - generic [ref=e83]:
+        - button "Deny" [ref=e84] [cursor=pointer]
+        - button "Allow selection" [ref=e85] [cursor=pointer]
+        - button "Allow all" [ref=e86] [cursor=pointer]
+  - text: c  c  c c c c b b
+  - banner [ref=e87]:
+    - generic [ref=e88]:
+      - button "menu" [ref=e90] [cursor=pointer]:
+        - generic [ref=e91]: menu
+      - link "Nexus Mods" [ref=e93] [cursor=pointer]:
+        - /url: /
+        - img [ref=e94]
+      - generic [ref=e133]:
+        - button "Show search" [ref=e136] [cursor=pointer]
+        - button "person" [ref=e138] [cursor=pointer]:
+          - generic [ref=e139]: person
+    - generic [ref=e140]:
+      - generic [ref=e141]:
+        - link "Nexus Mods" [ref=e142] [cursor=pointer]:
+          - /url: /
+          - img [ref=e143]
+        - button "close Close navigation menu" [ref=e172] [cursor=pointer]:
+          - generic [ref=e173]: close
+          - generic [ref=e174]: Close navigation menu
+      - list [ref=e176]:
+        - listitem [ref=e177]:
+          - link "Crimson Desert Crimson Desert" [ref=e178] [cursor=pointer]:
+            - /url: https://www.nexusmods.com/games/crimsondesert
+            - img "Crimson Desert" [ref=e179]
+            - generic [ref=e180]: Crimson Desert
+          - link "close Clear game filter" [ref=e181] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e182]: close
+            - generic [ref=e183]: Clear game filter
+        - listitem [ref=e184]:
+          - button "Games chevron_right" [ref=e185] [cursor=pointer]:
+            - paragraph [ref=e186]: Games
+            - generic [ref=e187]: chevron_right
+          - generic [ref=e188]:
+            - generic [ref=e189]:
+              - button "Back" [ref=e190] [cursor=pointer]:
+                - generic [ref=e192]: Back
+              - button "close Close navigation menu" [ref=e193] [cursor=pointer]:
+                - generic [ref=e194]: close
+                - generic [ref=e195]: Close navigation menu
+            - generic [ref=e196]:
+              - list [ref=e197]:
+                - listitem [ref=e198]:
+                  - generic [ref=e199]: Games
+                - listitem [ref=e200]:
+                  - link "All games (4,778)" [ref=e201] [cursor=pointer]:
+                    - /url: /games
+                    - paragraph [ref=e202]: All games (4,778)
+                - listitem [ref=e203]:
+                  - link "Recently added (114)" [ref=e204] [cursor=pointer]:
+                    - /url: /games?sort=approved
+                    - paragraph [ref=e205]: Recently added (114)
+              - list [ref=e206]:
+                - listitem [ref=e207]:
+                  - generic [ref=e208]: My games
+                - generic [ref=e210]:
+                  - generic [ref=e211]: 
+                  - paragraph [ref=e212]: Your favourited games will be displayed here
+        - listitem [ref=e213]:
+          - button "Mods chevron_right" [ref=e214] [cursor=pointer]:
+            - paragraph [ref=e215]: Mods
+            - generic [ref=e216]: chevron_right
+          - generic [ref=e217]:
+            - generic [ref=e218]:
+              - button "Back" [ref=e219] [cursor=pointer]:
+                - generic [ref=e221]: Back
+              - button "close Close navigation menu" [ref=e222] [cursor=pointer]:
+                - generic [ref=e223]: close
+                - generic [ref=e224]: Close navigation menu
+            - generic [ref=e225]:
+              - list [ref=e226]:
+                - listitem [ref=e227]:
+                  - generic [ref=e228]: Mods
+                - listitem [ref=e229]:
+                  - link "All mods" [ref=e230] [cursor=pointer]:
+                    - /url: https://www.nexusmods.com/games/crimsondesert/mods
+                    - paragraph [ref=e231]: All mods
+                - listitem [ref=e232]:
+                  - link "New" [ref=e233] [cursor=pointer]:
+                    - /url: https://www.nexusmods.com/games/crimsondesert/mods?sort=createdAt&timeRange=7
+                    - paragraph [ref=e234]: New
+                - listitem [ref=e235]:
+                  - link "Trending" [ref=e236] [cursor=pointer]:
+                    - /url: https://www.nexusmods.com/games/crimsondesert/mods?sort=endorsements&timeRange=7
+                    - paragraph [ref=e237]: Trending
+                - listitem [ref=e238]:
+                  - link "Most endorsed" [ref=e239] [cursor=pointer]:
+                    - /url: https://www.nexusmods.com/games/crimsondesert/mods?sort=endorsements&timeRange=0
+                    - paragraph [ref=e240]: Most endorsed
+                - listitem [ref=e241]:
+                  - link "Top files" [ref=e242] [cursor=pointer]:
+                    - /url: https://www.nexusmods.com/crimsondesert/mods/top
+                    - paragraph [ref=e243]: Top files
+                - listitem [ref=e244]:
+                  - link "Mod categories" [ref=e245] [cursor=pointer]:
+                    - /url: https://www.nexusmods.com/crimsondesert/mods/categories
+                    - paragraph [ref=e246]: Mod categories
+                - listitem [ref=e247]:
+                  - link "Mods of the month" [ref=e248] [cursor=pointer]:
+                    - /url: https://www.nexusmods.com/crimsondesert/mods/motm
+                    - paragraph [ref=e249]: Mods of the month
+              - list [ref=e250]:
+                - listitem [ref=e251]:
+                  - generic [ref=e252]: Mod updates
+                - listitem [ref=e253]:
+                  - link "Recent activity" [ref=e254] [cursor=pointer]:
+                    - /url: https://www.nexusmods.com/crimsondesert/mods/newrecently
+                    - paragraph [ref=e255]: Recent activity
+        - listitem [ref=e256]:
+          - button "Collections chevron_right" [ref=e257] [cursor=pointer]:
+            - paragraph [ref=e258]: Collections
+            - generic [ref=e259]: chevron_right
+          - generic [ref=e260]:
+            - generic [ref=e261]:
+              - button "Back" [ref=e262] [cursor=pointer]:
+                - generic [ref=e264]: Back
+              - button "close Close navigation menu" [ref=e265] [cursor=pointer]:
+                - generic [ref=e266]: close
+                - generic [ref=e267]: Close navigation menu
+            - list [ref=e269]:
+              - listitem [ref=e270]:
+                - generic [ref=e271]: Collections
+              - listitem [ref=e272]:
+                - link "All collections" [ref=e273] [cursor=pointer]:
+                  - /url: https://www.nexusmods.com/games/crimsondesert/collections?sort=downloads
+                  - paragraph [ref=e274]: All collections
+              - listitem [ref=e275]:
+                - link "Recently added" [ref=e276] [cursor=pointer]:
+                  - /url: https://www.nexusmods.com/games/crimsondesert/collections?sort=createdAt
+                  - paragraph [ref=e277]: Recently added
+              - listitem [ref=e278]:
+                - link "Most endorsed" [ref=e279] [cursor=pointer]:
+                  - /url: https://www.nexusmods.com/games/crimsondesert/collections?sort=endorsements
+                  - paragraph [ref=e280]: Most endorsed
+              - listitem [ref=e281]:
+                - link "Highest rated" [ref=e282] [cursor=pointer]:
+                  - /url: https://www.nexusmods.com/games/crimsondesert/collections?sort=rating
+                  - paragraph [ref=e283]: Highest rated
+        - listitem [ref=e284]:
+          - button "Media chevron_right" [ref=e285] [cursor=pointer]:
+            - paragraph [ref=e286]: Media
+            - generic [ref=e287]: chevron_right
+          - generic [ref=e288]:
+            - generic [ref=e289]:
+              - button "Back" [ref=e290] [cursor=pointer]:
+                - generic [ref=e292]: Back
+              - button "close Close navigation menu" [ref=e293] [cursor=pointer]:
+                - generic [ref=e294]: close
+                - generic [ref=e295]: Close navigation menu
+            - generic [ref=e296]:
+              - list [ref=e297]:
+                - listitem [ref=e298]:
+                  - generic [ref=e299]: Images
+                - listitem [ref=e300]:
+                  - link "Latest" [ref=e301] [cursor=pointer]:
+                    - /url: https://www.nexusmods.com/games/crimsondesert/images
+                    - paragraph [ref=e302]: Latest
+                - listitem [ref=e303]:
+                  - link "Trending" [ref=e304] [cursor=pointer]:
+                    - /url: https://www.nexusmods.com/games/crimsondesert/images?sort=rating&timeRange=14
+                    - paragraph [ref=e305]: Trending
+                - listitem [ref=e306]:
+                  - link "Most endorsed" [ref=e307] [cursor=pointer]:
+                    - /url: https://www.nexusmods.com/games/crimsondesert/images?sort=rating
+                    - paragraph [ref=e308]: Most endorsed
+              - list [ref=e309]:
+                - listitem [ref=e310]:
+                  - generic [ref=e311]: Videos
+                - listitem [ref=e312]:
+                  - link "Latest" [ref=e313] [cursor=pointer]:
+                    - /url: https://www.nexusmods.com/games/crimsondesert/videos
+                    - paragraph [ref=e314]: Latest
+                - listitem [ref=e315]:
+                  - link "Trending" [ref=e316] [cursor=pointer]:
+                    - /url: https://www.nexusmods.com/games/crimsondesert/videos?sort=rating&timeRange=14
+                    - paragraph [ref=e317]: Trending
+                - listitem [ref=e318]:
+                  - link "Most endorsed" [ref=e319] [cursor=pointer]:
+                    - /url: https://www.nexusmods.com/games/crimsondesert/videos?sort=rating
+                    - paragraph [ref=e320]: Most endorsed
+        - listitem [ref=e321]:
+          - button "Community chevron_right" [ref=e322] [cursor=pointer]:
+            - paragraph [ref=e323]: Community
+            - generic [ref=e324]: chevron_right
+          - generic [ref=e325]:
+            - generic [ref=e326]:
+              - button "Back" [ref=e327] [cursor=pointer]:
+                - generic [ref=e329]: Back
+              - button "close Close navigation menu" [ref=e330] [cursor=pointer]:
+                - generic [ref=e331]: close
+                - generic [ref=e332]: Close navigation menu
+            - generic [ref=e333]:
+              - list [ref=e334]:
+                - listitem [ref=e335]:
+                  - generic [ref=e336]: Community
+                - listitem [ref=e337]:
+                  - link "Forums" [ref=e338] [cursor=pointer]:
+                    - /url: https://forums.nexusmods.com/forum/8406-modding-discussion
+                    - paragraph [ref=e339]: Forums
+                - listitem [ref=e340]:
+                  - link "Wiki" [ref=e341] [cursor=pointer]:
+                    - /url: https://wiki.nexusmods.com/index.php/Main_Page
+                    - paragraph [ref=e342]: Wiki
+                - listitem [ref=e343]:
+                  - link "Support authors" [ref=e344] [cursor=pointer]:
+                    - /url: https://www.patreon.com/nexusmods
+                    - paragraph [ref=e345]: Support authors
+              - list [ref=e346]:
+                - listitem [ref=e347]:
+                  - generic [ref=e348]: News
+                - listitem [ref=e349]:
+                  - link "All news" [ref=e350] [cursor=pointer]:
+                    - /url: https://www.nexusmods.com/crimsondesert/news
+                    - paragraph [ref=e351]: All news
+                - listitem [ref=e352]:
+                  - link "Site news" [ref=e353] [cursor=pointer]:
+                    - /url: https://www.nexusmods.com/crimsondesert/news?tab=site+news
+                    - paragraph [ref=e354]: Site news
+                - listitem [ref=e355]:
+                  - link "Competitions" [ref=e356] [cursor=pointer]:
+                    - /url: https://www.nexusmods.com/crimsondesert/news?tab=competition
+                    - paragraph [ref=e357]: Competitions
+                - listitem [ref=e358]:
+                  - link "Interviews" [ref=e359] [cursor=pointer]:
+                    - /url: https://www.nexusmods.com/crimsondesert/news?tab=interviews
+                    - paragraph [ref=e360]: Interviews
+              - generic [ref=e361]:
+                - link "Discord" [ref=e362] [cursor=pointer]:
+                  - /url: https://discord.gg/nexusmods
+                  - img "Discord" [ref=e363]
+                - link "Twitter" [ref=e364] [cursor=pointer]:
+                  - /url: https://twitter.com/nexussites
+                  - img "Twitter" [ref=e365]
+                - link "TikTok" [ref=e366] [cursor=pointer]:
+                  - /url: https://www.tiktok.com/@nexusmodsofficial
+                  - img "TikTok" [ref=e367]
+                - link "Twitch" [ref=e368] [cursor=pointer]:
+                  - /url: https://www.twitch.tv/nexusmodsofficial
+                  - img "Twitch" [ref=e369]
+                - link "Youtube" [ref=e370] [cursor=pointer]:
+                  - /url: https://www.youtube.com/@NexusModsOfficial
+                  - img "Youtube" [ref=e371]
+                - link "Instagram" [ref=e372] [cursor=pointer]:
+                  - /url: https://www.instagram.com/nexusmodsofficial
+                  - img "Instagram" [ref=e373]
+        - listitem [ref=e374]:
+          - button "Support chevron_right" [ref=e375] [cursor=pointer]:
+            - paragraph [ref=e376]: Support
+            - generic [ref=e377]: chevron_right
+          - generic [ref=e378]:
+            - generic [ref=e379]:
+              - button "Back" [ref=e380] [cursor=pointer]:
+                - generic [ref=e382]: Back
+              - button "close Close navigation menu" [ref=e383] [cursor=pointer]:
+                - generic [ref=e384]: close
+                - generic [ref=e385]: Close navigation menu
+            - generic [ref=e386]:
+              - list [ref=e387]:
+                - listitem [ref=e388]:
+                  - generic [ref=e389]: Support
+                - listitem [ref=e390]:
+                  - link "Help" [ref=e391] [cursor=pointer]:
+                    - /url: https://help.nexusmods.com/
+                    - paragraph [ref=e392]: Help
+                - listitem [ref=e393]:
+                  - link "Contact" [ref=e394] [cursor=pointer]:
+                    - /url: https://help.nexusmods.com/article/125-contact-us
+                    - paragraph [ref=e395]: Contact
+                - listitem [ref=e396]:
+                  - link "Give feedback" [ref=e397] [cursor=pointer]:
+                    - /url: https://forums.nexusmods.com/forum/9063-suggestion-board/
+                    - paragraph [ref=e398]: Give feedback
+                - listitem [ref=e399]:
+                  - link "FAQ" [ref=e400] [cursor=pointer]:
+                    - /url: https://help.nexusmods.com/category/26-frequently-asked-questions
+                    - paragraph [ref=e401]: FAQ
+                - listitem [ref=e402]:
+                  - link "API" [ref=e403] [cursor=pointer]:
+                    - /url: https://api-docs.nexusmods.com/
+                    - paragraph [ref=e404]: API
+              - list [ref=e405]:
+                - listitem [ref=e406]:
+                  - generic [ref=e407]: Wiki
+                - listitem [ref=e408]:
+                  - link "Game guides" [ref=e409] [cursor=pointer]:
+                    - /url: https://wiki.nexusmods.com/index.php/Games
+                    - paragraph [ref=e410]: Game guides
+                - listitem [ref=e411]:
+                  - link "Tutorial" [ref=e412] [cursor=pointer]:
+                    - /url: https://wiki.nexusmods.com/index.php/Category:Tutorials
+                    - paragraph [ref=e413]: Tutorial
+                - listitem [ref=e414]:
+                  - link "Collections" [ref=e415] [cursor=pointer]:
+                    - /url: https://modding.wiki/en/nexusmods/collections
+                    - paragraph [ref=e416]: Collections
+                - listitem [ref=e417]:
+                  - link "Tools" [ref=e418] [cursor=pointer]:
+                    - /url: https://wiki.nexusmods.com/index.php/Category:Tools
+                    - paragraph [ref=e419]: Tools
+              - list [ref=e420]:
+                - listitem [ref=e421]:
+                  - generic [ref=e422]: Vortex
+                - listitem [ref=e423]:
+                  - link "Vortex help" [ref=e424] [cursor=pointer]:
+                    - /url: https://wiki.nexusmods.com/index.php/Category:Vortex
+                    - paragraph [ref=e425]: Vortex help
+                - listitem [ref=e426]:
+                  - link "Install Vortex" [ref=e427] [cursor=pointer]:
+                    - /url: https://www.nexusmods.com/about/vortex/
+                    - paragraph [ref=e428]: Install Vortex
+    - generic [ref=e429]:
+      - generic [ref=e430]:
+        - link "Nexus Mods" [ref=e434] [cursor=pointer]:
+          - /url: /
+          - img [ref=e435]
+        - button "close Close navigation menu" [ref=e474] [cursor=pointer]:
+          - generic [ref=e475]: close
+          - generic [ref=e476]: Close navigation menu
+      - generic [ref=e477]:
+        - generic [ref=e478]:
+          - heading "Please log in" [level=1] [ref=e479]
+          - paragraph [ref=e480]: To enjoy the benefits of Nexus Mods, please log in.
+          - link "Log in" [ref=e481] [cursor=pointer]:
+            - /url: https://users.nexusmods.com/auth/sign_in?redirect_url=https%3A%2F%2Fwww.nexusmods.com%2Fcrimsondesert%2Fmods%2F20
+        - generic [ref=e483]:
+          - generic [ref=e485]:
+            - heading "Exclusive media content and more" [level=3] [ref=e486]
+            - paragraph [ref=e487]:
+              - text: Unlock
+              - strong [ref=e488]: uncapped download speeds
+              - text: ","
+              - strong [ref=e489]: auto-install collections
+              - text: and
+              - strong [ref=e490]: no ads
+              - text: .
+          - link "Go premium arrow_forward" [ref=e491] [cursor=pointer]:
+            - /url: https://next.nexusmods.com/premium
+            - generic [ref=e492]: Go premium
+            - generic [ref=e493]: arrow_forward
+    - generic [ref=e494]:
+      - button "close Close navigation menu" [ref=e496] [cursor=pointer]:
+        - generic [ref=e497]: close
+        - generic [ref=e498]: Close navigation menu
+      - generic [ref=e500]:
+        - generic [ref=e501]:
+          - generic [ref=e502]:
+            - generic [ref=e503]: b
+            - generic [ref=e504]: Notifications
+          - generic [ref=e505]:
+            - button "Mark all as read (0)" [ref=e506] [cursor=pointer]
+            - link "Notification preferences" [ref=e507] [cursor=pointer]:
+              - /url: https://www.nexusmods.com/settings/notifications
+              - img "Notification preferences" [ref=e508]
+        - generic [ref=e509]:
+          - generic [ref=e510]:
+            - list
+            - generic [ref=e511]:
+              - generic [ref=e512]: b
+              - paragraph [ref=e513]: No unread notifications right now
+              - generic [ref=e514]: You're up to date
+          - link "See All" [ref=e516] [cursor=pointer]:
+            - /url: https://next.nexusmods.com/notifications/all
+          - paragraph [ref=e518]: You're up to date
+  - generic [ref=e521]:
+    - generic [ref=e523]:
+      - img [ref=e525]
+      - generic [ref=e526]:
+        - list [ref=e527]:
+          - listitem [ref=e528]:
+            - link "Games" [ref=e529] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e530]:
+            - link "Crimson Desert" [ref=e531] [cursor=pointer]:
+              - /url: https://www.nexusmods.com/games/crimsondesert
+            - text: /
+          - listitem [ref=e532]:
+            - link "Mods" [ref=e533] [cursor=pointer]:
+              - /url: https://www.nexusmods.com/games/crimsondesert/mods
+            - text: /
+          - listitem [ref=e534]:
+            - link "Utilities" [ref=e535] [cursor=pointer]:
+              - /url: https://www.nexusmods.com/games/crimsondesert/mods?categoryName=Utilities
+            - text: /
+          - listitem [ref=e536]: SWISS Knife Save Editor /
+        - heading "SWISS Knife Save Editor" [level=1] [ref=e537]
+        - list [ref=e538]:
+          - listitem [ref=e539]:
+            - img [ref=e540]
+            - generic [ref=e542]:
+              - generic [ref=e543]: Endorsements
+              - link "1,518" [ref=e545] [cursor=pointer]:
+                - /url: /Core/Libs/Common/Widgets/ModEndorsersPopUp?gameId=8969&modId=20
+          - listitem [ref=e546]:
+            - img [ref=e547]
+            - generic [ref=e549]:
+              - generic [ref=e550]: Unique DLs
+              - generic [ref=e551]: 63,523
+          - listitem [ref=e552]:
+            - img [ref=e553]
+            - generic [ref=e555]:
+              - generic [ref=e556]: Total DLs
+              - generic [ref=e557]: 184,322
+          - listitem [ref=e558]:
+            - img [ref=e559]
+            - generic [ref=e561]:
+              - generic [ref=e562]: Total views
+              - generic [ref=e563]: 526,651
+          - listitem [ref=e564]:
+            - img [ref=e565]
+            - generic [ref=e567]:
+              - generic [ref=e568]: Version
+              - generic [ref=e569]: 1.1.5
+        - list [ref=e570]:
+          - listitem [ref=e571]: "Download:"
+          - listitem [ref=e572]:
+            - link "Manual" [ref=e573] [cursor=pointer]:
+              - /url: https://www.nexusmods.com/crimsondesert/mods/20?tab=files
+              - img [ref=e574]
+              - generic [ref=e576]: Manual
+    - generic [ref=e577]:
+      - generic [ref=e578]:
+        - generic [ref=e579]:
+          - img [ref=e581] [cursor=pointer]
+          - img [ref=e584] [cursor=pointer]
+          - img [ref=e587] [cursor=pointer]
+          - generic [ref=e590]: 24 items
+          - list [ref=e591]:
+            - listitem [ref=e592]:
+              - figure [ref=e593]:
+                - link [ref=e594] [cursor=pointer]:
+                  - /url: "#"
+            - listitem [ref=e595]:
+              - figure [ref=e596]:
+                - link [ref=e597] [cursor=pointer]:
+                  - /url: "#"
+            - listitem [ref=e598]:
+              - figure [ref=e599]:
+                - link [ref=e600] [cursor=pointer]:
+                  - /url: "#"
+            - listitem [ref=e601]:
+              - figure [ref=e602]:
+                - link [ref=e603] [cursor=pointer]:
+                  - /url: "#"
+            - listitem [ref=e604]:
+              - figure [ref=e605]:
+                - link [ref=e606] [cursor=pointer]:
+                  - /url: "#"
+            - listitem [ref=e607]:
+              - figure [ref=e608]:
+                - link [ref=e609] [cursor=pointer]:
+                  - /url: "#"
+            - listitem [ref=e610]:
+              - figure [ref=e611]:
+                - link [ref=e612] [cursor=pointer]:
+                  - /url: "#"
+            - listitem [ref=e613]:
+              - figure [ref=e614]:
+                - link [ref=e615] [cursor=pointer]:
+                  - /url: "#"
+            - listitem [ref=e616]:
+              - figure [ref=e617]:
+                - link [ref=e618] [cursor=pointer]:
+                  - /url: "#"
+            - listitem [ref=e619]:
+              - figure [ref=e620]:
+                - link [ref=e621] [cursor=pointer]:
+                  - /url: "#"
+            - listitem [ref=e622]:
+              - figure [ref=e623]:
+                - link [ref=e624] [cursor=pointer]:
+                  - /url: "#"
+            - listitem [ref=e625]:
+              - figure [ref=e626]:
+                - link [ref=e627] [cursor=pointer]:
+                  - /url: "#"
+            - listitem [ref=e628]:
+              - figure [ref=e629]:
+                - link [ref=e630] [cursor=pointer]:
+                  - /url: "#"
+            - listitem [ref=e631]:
+              - figure [ref=e632]:
+                - link [ref=e633] [cursor=pointer]:
+                  - /url: "#"
+            - listitem [ref=e634]:
+              - figure [ref=e635]:
+                - link [ref=e636] [cursor=pointer]:
+                  - /url: "#"
+            - listitem [ref=e637]:
+              - figure [ref=e638]:
+                - link [ref=e639] [cursor=pointer]:
+                  - /url: "#"
+            - listitem [ref=e640]:
+              - figure [ref=e641]:
+                - link [ref=e642] [cursor=pointer]:
+                  - /url: "#"
+            - listitem [ref=e643]:
+              - figure [ref=e644]:
+                - link [ref=e645] [cursor=pointer]:
+                  - /url: "#"
+            - listitem [ref=e646]:
+              - figure [ref=e647]:
+                - link [ref=e648] [cursor=pointer]:
+                  - /url: "#"
+            - listitem [ref=e649]:
+              - figure [ref=e650]:
+                - link [ref=e651] [cursor=pointer]:
+                  - /url: "#"
+            - listitem [ref=e652]:
+              - figure [ref=e653]:
+                - link [ref=e654] [cursor=pointer]:
+                  - /url: "#"
+            - listitem [ref=e655]:
+              - figure [ref=e656]:
+                - link [ref=e657] [cursor=pointer]:
+                  - /url: "#"
+            - listitem [ref=e658]:
+              - figure [ref=e659]:
+                - link [ref=e660] [cursor=pointer]:
+                  - /url: "#"
+            - listitem [ref=e661]:
+              - figure [ref=e662]:
+                - link [ref=e663] [cursor=pointer]:
+                  - /url: "#"
+        - generic [ref=e664]:
+          - generic [ref=e665]:
+            - heading "Last updated" [level=3] [ref=e666]
+            - time [ref=e667]: 10 June 2026, 5:36AM
+          - generic [ref=e668]:
+            - heading "Original upload" [level=3] [ref=e669]
+            - time [ref=e670]: 20 March 2026, 8:21PM
+          - generic [ref=e671]:
+            - heading "Created by" [level=3] [ref=e672]
+            - text: RicePaddy
+          - generic [ref=e673]:
+            - heading "Uploaded by" [level=3] [ref=e674]
+            - link "SoraSkySun" [ref=e675] [cursor=pointer]:
+              - /url: https://www.nexusmods.com/crimsondesert/users/267722500
+          - generic [ref=e676]:
+            - heading "Virus scan" [level=3] [ref=e677]
+            - generic [ref=e678]:
+              - img [ref=e679]
+              - generic [ref=e681]: Some manually verified files
+        - generic [ref=e682]:
+          - heading "Tags for this mod" [level=2] [ref=e683]
+          - generic [ref=e684]:
+            - list:
+              - generic:
+                - listitem [ref=e685]:
+                  - link "Cheating" [ref=e686] [cursor=pointer]:
+                    - /url: https://www.nexusmods.com/games/crimsondesert/mods/?tags_yes[]=1041&tag=Cheating
+                    - generic [ref=e687]: Cheating
+                - listitem [ref=e688]:
+                  - link "Fair and balanced" [ref=e689] [cursor=pointer]:
+                    - /url: https://www.nexusmods.com/games/crimsondesert/mods/?tags_yes[]=1043&tag=Fair+and+balanced
+                    - generic [ref=e690]: Fair and balanced
+                - listitem [ref=e691]:
+                  - link "Modder's Resource" [ref=e692] [cursor=pointer]:
+                    - /url: https://www.nexusmods.com/games/crimsondesert/mods/?tags_yes[]=1075&tag=Modder%27s+Resource
+                    - generic [ref=e693]: Modder's Resource
+                - listitem [ref=e694]:
+                  - link "Utilities for Players" [ref=e695] [cursor=pointer]:
+                    - /url: https://www.nexusmods.com/games/crimsondesert/mods/?tags_yes[]=1081&tag=Utilities+for+Players
+                    - generic [ref=e696]: Utilities for Players
+            - link "Tag this mod" [ref=e697] [cursor=pointer]:
+              - /url: /Core/Libs/Common/Widgets/ModTaggingPopUp?mod_id=20&game_id=8969
+              - img [ref=e698]
+              - text: Tag this mod
+      - generic [ref=e701]:
+        - list [ref=e702]:
+          - listitem [ref=e703] [cursor=pointer]:
+            - link "Description" [ref=e704]:
+              - /url: /crimsondesert/mods/20?tab=description
+          - listitem [ref=e705] [cursor=pointer]:
+            - link "Files 2" [ref=e706]:
+              - /url: /crimsondesert/mods/20?tab=files
+              - text: Files
+              - generic [ref=e707]: "2"
+          - listitem [ref=e708] [cursor=pointer]:
+            - link "Images 24" [ref=e709]:
+              - /url: /crimsondesert/mods/20?tab=images
+              - text: Images
+              - generic [ref=e710]: "24"
+          - listitem [ref=e711] [cursor=pointer]:
+            - link "Videos 8" [ref=e712]:
+              - /url: /crimsondesert/mods/20?tab=videos
+              - text: Videos
+              - generic [ref=e713]: "8"
+          - listitem [ref=e714] [cursor=pointer]:
+            - link "Articles 1" [ref=e715]:
+              - /url: /crimsondesert/mods/20?tab=articles
+              - text: Articles
+              - generic [ref=e716]: "1"
+          - listitem [ref=e717] [cursor=pointer]:
+            - link "Docs" [ref=e718]:
+              - /url: /crimsondesert/mods/20?tab=docs
+          - listitem [ref=e719] [cursor=pointer]:
+            - link "Posts 2,172" [ref=e720]:
+              - /url: /crimsondesert/mods/20?tab=posts
+              - text: Posts
+              - generic [ref=e721]: 2,172
+          - listitem [ref=e722] [cursor=pointer]:
+            - link "Forum 0" [ref=e723]:
+              - /url: /crimsondesert/mods/20?tab=forum
+              - text: Forum
+              - generic [ref=e724]: "0"
+          - listitem [ref=e725] [cursor=pointer]:
+            - link "Bugs 65" [ref=e726]:
+              - /url: /crimsondesert/mods/20?tab=bugs
+              - text: Bugs
+              - generic [ref=e727]: "65"
+          - listitem [ref=e728] [cursor=pointer]:
+            - link "Logs" [ref=e729]:
+              - /url: /crimsondesert/mods/20?tab=logs
+          - listitem [ref=e730] [cursor=pointer]:
+            - link "Stats" [ref=e731]:
+              - /url: /crimsondesert/mods/20?tab=stats
+        - status [ref=e732]:
+          - generic [ref=e733]:
+            - heading "About this mod" [level=2] [ref=e734]
+            - paragraph [ref=e735]: Add new Item directly to inventory no swap, C++ Version, edit items stack, swap items, Insert Damian and Oongka into any save, Unlock Dragon + 5 Mounts right from start | Skip/Reset/Complete ANY Quest | Unlock ALL Knowledge (skills, dyes, UI, teleporters) | Reveal/Re-Fog Entire Map | Manage Quest Editor packs and more
+            - list [ref=e736]:
+              - listitem [ref=e737]:
+                - generic [ref=e739] [cursor=pointer]: Share
+            - generic [ref=e741]:
+              - term [ref=e742]:
+                - text: Permissions and credits
+                - img [ref=e744]
+              - term [ref=e746]:
+                - text: Mods using this mod (2)
+                - img [ref=e748]
+          - generic [ref=e750]:
+            - generic [ref=e752]:
+              - strong [ref=e754]:
+                - text: This is now only for the save editor,
+                - text: if you are looking for the Game mods tab like itembuffs its now standalone
+              - link "https://www.nexusmods.com/crimsondesert/mods/1292" [ref=e755] [cursor=pointer]:
+                - /url: https://www.nexusmods.com/crimsondesert/mods/1292
+                - strong [ref=e756]: https://www.nexusmods.com/crimsondesert/mods/1292
+            - strong [ref=e759]: If you want to create your own mods you can check out the mod creator.
+            - generic [ref=e760]:
+              - link "https://www.nexusmods.com/crimsondesert/mods/2267" [ref=e762] [cursor=pointer]:
+                - /url: https://www.nexusmods.com/crimsondesert/mods/1292
+                - strong [ref=e763]: https://www.nexusmods.com/crimsondesert/mods/2267
+              - generic [ref=e764]:
+                - strong [ref=e765]: "---"
+                - strong [ref=e766]: "**CrimsonGameMods** by NattKh"
+                - strong [ref=e767]: https://github.com/NattKh/CRIMSON-DESERT-SAVE-EDITOR-AND-GAME-MODS
+                - strong [ref=e768]: © 2026 NattKh. Tool is free for personal use. Mods require attribution.
+                - strong [ref=e770]: Drop rate & loot table editor have it your way.
+                - strong [ref=e772]: Advanced Item Editor Export as Json or Mod for other Mod Manager.
+                - strong [ref=e774]: credit to
+                - strong [ref=e776]:
+                  - text: "@gek for helping with the decryption method."
+                  - text: "@adastmin for the tips on decryption"
+                  - text: "@MrIkso and the RE community for the decompression method."
+                - strong [ref=e778]: "@potter420 helping me with pabgb issues."
+                - strong [ref=e780]: "@Fire someone to vent to."
+                - strong [ref=e782]: "@Warflash lolquest.gg for icon."
+                - strong [ref=e784]: "@Tooltip for rename pet/merc parser"
+                - link "https://github.com/NattKh/CRIMSON-DESERT-SAVE-EDITOR/releases" [ref=e785] [cursor=pointer]:
+                  - /url: https://github.com/NattKh/CRIMSON-DESERT-SAVE-EDITOR/releases/tag/v3.0.5
+                  - strong [ref=e786]: https://github.com/NattKh/CRIMSON-DESERT-SAVE-EDITOR/releases
+                - strong [ref=e788]: Crimson Desert - Save Editor International
+                - strong [ref=e790]: Download the International Version it includes these langauges
+              - list [ref=e791]:
+                - listitem [ref=e792]:
+                  - strong [ref=e794]: de — Deutsch (German)
+                - listitem [ref=e795]:
+                  - strong [ref=e797]: es-mx — Español México (Spanish - Mexico)
+                - listitem [ref=e798]:
+                  - strong [ref=e800]: es — Español (Spanish - Spain)
+                - listitem [ref=e801]:
+                  - strong [ref=e803]: fr — Français (French)
+                - listitem [ref=e804]:
+                  - strong [ref=e806]: it — Italiano (Italian)
+                - listitem [ref=e807]:
+                  - strong [ref=e809]: ko — 한국어 (Korean)
+                - listitem [ref=e810]:
+                  - strong [ref=e812]: pl — Polski (Polish)
+                - listitem [ref=e813]:
+                  - strong [ref=e815]: pt-br — Português Brasil (Portuguese - Brazil)
+                - listitem [ref=e816]:
+                  - strong [ref=e818]: ru — Русский (Russian)
+                - listitem [ref=e819]:
+                  - strong [ref=e821]: tr — Türkçe (Turkish)
+                - listitem [ref=e822]:
+                  - strong [ref=e824]: zh-tw — 繁體中文 (Chinese - Traditional)
+                - listitem [ref=e825]:
+                  - strong [ref=e827]: zh — 简体中文 (Chinese - Simplified)
+                - listitem [ref=e828]:
+                  - strong [ref=e830]: Jp— Japanese
+              - strong [ref=e832]:
+                - link "READ THE README.MD & CHANGE LOG." [ref=e833] [cursor=pointer]:
+                  - /url: https://github.com/NattKh/CRIMSON-DESERT-SAVE-EDITOR/releases
+                  - text: READ THE README.MD & CHANGE LOG.
+              - generic [ref=e835]:
+                - text: Inventory Editor • Equipment Enchants • Item Swap • Give Item (Donor) • 6000+ Item DB
+                - link "DISCORD" [ref=e836] [cursor=pointer]:
+                  - /url: https://discord.gg/nBqSzunyFS
+              - link "Discord for updates & item name sharing" [ref=e838] [cursor=pointer]:
+                - /url: https://discord.gg/6ZMKpD9RCY
+              - strong [ref=e839]: ONLY works on in-game saves (save.save) — NOT lobby.save
+              - text: Tested primarily on Steam version
+              - text: The cleanest way to edit your Crimson Desert save file directly — no game running, no risk of bans, no injected code.
+              - strong [ref=e840]: "NEW Features:"
+              - strong [ref=e841]: "New: Unlock All Knowledge Injects ALL 5,500+ knowledge entries from game data: (THIS DOES A LOT TO YOUR GAME DON'T BLAME ME)"
+              - strong [ref=e842]: Unlocks most skills, ALL dyes/recipes/crafting manuals
+              - strong [ref=e843]: Reveals entire map + all fast travel points (cannot be undone)
+              - strong [ref=e844]: perma Infinite ammo/bullet/cannon key items
+              - strong [ref=e845]: ═══════════════════════════════ NEW IN v2.5.6 ═══════════════════════════════
+              - strong [ref=e846]: "NEW: Mercenary/Pets Tab - Browse all mercs, pets, mounts, playable chars, and Greymanes - Rename any mercenary with custom names (shows in-game) - Label All to identify mercs by ID, then rename and clear the rest - Credits to Tooltip for the rename engine"
+              - strong [ref=e847]: "NEW: Mount Unlock System - Unlock Dragon (Blackstar) — with or without quest flags - Unlock All Confirmed Mounts — Silver Fang (Wolf), White Bear, Snowwhite Deer, Rock Tusk (Warthog), Icicle Edge (Alpine Ibex) - One-click unlock, no quest needed - Dev Mode: 21 experimental mounts (Elephant, Camel, Wyverns, ATAG, and more)"
+              - strong [ref=e848]: "NEW: Quest/Knowledge Pack Browser - Right sidebar for managing shareable Quest and Knowledge packs - Create packs, add entries via right-click, inject into save - Double-click any entry to navigate to it in Quest Database or Knowledge tab - Community can share .json pack files (e.g. \"All Dyes\", \"Dragon Quest Chain\")"
+              - strong [ref=e849]: "NEW: Quest Editor Improvements - Reset to Available — reset quest to before you started it - Add Quest as Completed (PARC Insert) — insert quests not in your save - Right-click menu: Add to Pack, Mark Complete, Reset, Copy Keys - Popup window removed — everything in the inline tab now"
+              - strong [ref=e850]: "NEW: Knowledge Tab Improvements - Unlearn Selected — set entries back to level 0 - Skill Menu Fix — quick-fix for missing skill/quest UI - Right-click: Add to Pack, Learn, Unlearn, Copy Keys"
+              - strong [ref=e851]: "NEW: Global Backup System - Backups saved next to the editor exe (survives game folder wipes) - Manual \"Backup to Local Folder\" button - Keeps last 10 per save slot"
+              - strong [ref=e852]: ═══════════════════════════════ KEY FEATURES ═══════════════════════════════
+              - strong [ref=e853]: "Unlock ALL Knowledge — Injects 5,500+ entries: skills, ALL dyes/recipes, full map reveal, fast travel, infinite ammo keys. (THIS DOES A LOT — BACK UP FIRST)"
+              - strong [ref=e854]: Quest Editor — Skip, Complete, or Reset any quest. Browse 6,780+ quests/missions from game data. Fix bugged quests blocking progression.
+              - strong [ref=e855]: Reveal Map / Re-Fog Map — Reveal the entire world map or cover it back up.
+              - strong [ref=e856]: Unlock All Abyss Nexus Gates — Show all nexus gate locations on your map.
+              - strong [ref=e857]: Dragon Mount + Reduced CD Item — Get Blackstar dragon via save edit. Use with Narima's Horn (PARC Insert) for instant cooldown reset.
+              - strong [ref=e858]: Inventory Editor — View/edit stack sizes, batch edit, delete items. Max bag space slot is 230.
+              - strong [ref=e859]: Equipment Editor — Change enchant level (0-10), endurance, sharpness.
+              - strong [ref=e860]: Item Swap — Transform any item into another using 6,000+ item database with real game templates.
+              - strong [ref=e861]: "Repurchase (Vendor Swap) — The most reliable swap method: sell junk, swap in editor, buy back."
+              - strong [ref=e862]: Socket Editor — Swap Abyss Gear gems (189 gems across 30+ categories).
+              - strong [ref=e863]: "ItemBuffs (Dev Mode) — Edit base stats on ANY item: damage, defense, speed, crit, resistances. Presets: God Mode, Max DDD, Max HP."
+              - strong [ref=e864]: Max Stacks — Set all stackable items to 99/999/9999 (replaces FatStacks mod).
+              - strong [ref=e865]: GPatch (Dev Mode) — Mount death respawn (1s), storage expansion (700 slots).
+              - strong [ref=e866]: Community Mod Loader — Load community JSON mods alongside editor patches.
+              - strong [ref=e867]: Item Packs — Download and apply curated item collections from the community.
+              - strong [ref=e868]: Give Item (Donor System) — Sacrifice a cheap item to get any item you want.
+              - strong [ref=e869]: Automatic Backups — Creates backup before every save + global backup next to exe.
+              - strong [ref=e870]: Auto-Find Saves — Detects Steam/Epic/Game Pass/Linux Proton save locations.
+              - strong [ref=e871]: ═══════════════════════════════ QUICK START ═══════════════════════════════
+              - strong [ref=e872]: "1. Close Crimson Desert completely 2. Run CrimsonSaveEditor.exe (single file — no install) 3. File > Auto-Find Save or File > Open Save File Common path: %LOCALAPPDATA%\\Pearl Abyss\\CD\\save\\<steamid>\\slot100\\save.save 4. Make changes in any tab 5. File > Save (automatic backup created) 6. Launch game, load the edited save"
+              - strong [ref=e873]: ═══════════════════════════════ IMPORTANT NOTES ═══════════════════════════════
+              - strong [ref=e874]: "- Store & Mercenary items are read-only for editing (renaming works) - Swapped equipment may show wrong icon until unequip + re-equip - Only supports save.save files, not lobby.save - Enchant changes affect stats — game recalculates on load - HP and MP are set by the game at runtime — changing them does nothing - Dev Mode available for experimental features (Game Patches, ItemBuffs, etc.)"
+              - strong [ref=e875]: ═══════════════════════════════ SAVE FILE LOCATIONS ═══════════════════════════════
+              - strong [ref=e876]: "| Platform | Path |------------|--------------------------------------------------------------- | Steam | %LOCALAPPDATA%\\Pearl Abyss\\CD\\save\\<id>\\slot100\\save.save | Epic | %LOCALAPPDATA%\\Pearl Abyss\\CD_Epic\\save\\<id>\\slot100\\save.save | Game Pass | %LOCALAPPDATA%\\Pearl Abyss\\CD_GamePass\\save\\<id>\\slot100\\save.save | Linux | ~/.steam/steam/steamapps/compatdata/2623190/pfx/drive_c/..."
+              - strong [ref=e877]: "Slots: slot0-2 = autosaves, slot100-108 = manual saves (1-9 in-game)"
+              - strong [ref=e878]: ═══════════════════════════════ COMMUNITY ═══════════════════════════════
+              - strong [ref=e879]: "6000+ items bundled — maintained at: github.com/NattKh/CrimsonDesertCommunityItemMapping"
+              - strong [ref=e880]: Quest and Knowledge Packs shareable via .json files. Drop them in quest_packs/ or knowledge_packs/ next to the exe.
+            - generic [ref=e881]:
+              - text: Thank you for the support.
+              - link "Patreon" [ref=e882] [cursor=pointer]:
+                - /url: https://www.patreon.com/c/RicePaddyCheater?vanity=user
+                - text: Patreon
+              - link "BuymeCoffee" [ref=e883] [cursor=pointer]:
+                - /url: https://buymeacoffee.com/sungoku
+  - generic "Back to top":
+    - generic: 
+  - contentinfo [ref=e886]:
+    - generic [ref=e888]:
+      - generic [ref=e889]:
+        - img "Vortex" [ref=e890]
+        - generic [ref=e891]: VORTEX
+        - generic [ref=e892]: The powerful open-source mod manager from Nexus Mods.
+      - button "Learn more" [ref=e895] [cursor=pointer]
+    - generic [ref=e897]:
+      - generic [ref=e898]:
+        - heading "Nexus Mods" [level=3] [ref=e899]: Nexus Mods 
+        - list [ref=e900]:
+          - listitem [ref=e901]:
+            - link "News" [ref=e902] [cursor=pointer]:
+              - /url: https://www.nexusmods.com/crimsondesert/news
+          - listitem [ref=e903]:
+            - link "Statistics" [ref=e904] [cursor=pointer]:
+              - /url: https://www.nexusmods.com/crimsondesert/about/stats
+          - listitem [ref=e905]:
+            - link "Careers" [ref=e906] [cursor=pointer]:
+              - /url: https://www.nexusmods.com/about/careers
+          - listitem [ref=e907]:
+            - link "About us" [ref=e908] [cursor=pointer]:
+              - /url: https://www.nexusmods.com/about
+          - listitem [ref=e909]:
+            - link "Premium features" [ref=e910] [cursor=pointer]:
+              - /url: https://next.nexusmods.com/premium
+      - generic [ref=e911]:
+        - heading "Discover" [level=3] [ref=e912]: Discover 
+        - list [ref=e913]:
+          - listitem [ref=e914]:
+            - link "All games" [ref=e915] [cursor=pointer]:
+              - /url: https://www.nexusmods.com/games
+          - listitem [ref=e916]:
+            - link "All mods" [ref=e917] [cursor=pointer]:
+              - /url: https://www.nexusmods.com/games/crimsondesert/mods
+          - listitem [ref=e918]:
+            - link "New mods" [ref=e919] [cursor=pointer]:
+              - /url: https://www.nexusmods.com/games/crimsondesert/mods?sort=createdAt&timeRange=1
+          - listitem [ref=e920]:
+            - link "Popular mods" [ref=e921] [cursor=pointer]:
+              - /url: https://www.nexusmods.com/games/crimsondesert/mods?sort=endorsements&timeRange=0
+          - listitem [ref=e922]:
+            - link "Trending mods" [ref=e923] [cursor=pointer]:
+              - /url: https://www.nexusmods.com/games/crimsondesert/mods?sort=endorsements&timeRange=7
+          - listitem [ref=e924]:
+            - link "All collections" [ref=e925] [cursor=pointer]:
+              - /url: https://www.nexusmods.com/collections
+          - listitem [ref=e926]:
+            - link "All images" [ref=e927] [cursor=pointer]:
+              - /url: https://www.nexusmods.com/games/crimsondesert/images
+      - generic [ref=e928]:
+        - heading "Support" [level=3] [ref=e929]: Support 
+        - list [ref=e930]:
+          - listitem [ref=e931]:
+            - link "Help" [ref=e932] [cursor=pointer]:
+              - /url: https://help.nexusmods.com
+          - listitem [ref=e933]:
+            - link "Wiki" [ref=e934] [cursor=pointer]:
+              - /url: https://wiki.nexusmods.com/index.php/Main_Page
+          - listitem [ref=e935]:
+            - link "API" [ref=e936] [cursor=pointer]:
+              - /url: https://api-docs.nexusmods.com/
+          - listitem [ref=e937]:
+            - link "Give feedback" [ref=e938] [cursor=pointer]:
+              - /url: https://forums.nexusmods.com/forum/9063-suggestion-board
+          - listitem [ref=e939]:
+            - link "Report a bug" [ref=e940] [cursor=pointer]:
+              - /url: https://forums.nexusmods.com/index.php?/forum/8394-website-bug-report/
+          - listitem [ref=e941]:
+            - link "Unban requests" [ref=e942] [cursor=pointer]:
+              - /url: https://help.nexusmods.com/article/33-what-can-i-do-if-my-account-has-been-banned
+          - listitem [ref=e943]:
+            - link "DMCA" [ref=e944] [cursor=pointer]:
+              - /url: https://www.cognitoforms.com/NexusMods/NexusModsDMCAForm
+          - listitem [ref=e945]:
+            - link "Manage cookie settings" [ref=e946] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e947]:
+        - heading "Community" [level=3] [ref=e948]: Community 
+        - list [ref=e949]:
+          - listitem [ref=e950]:
+            - link "Forums" [ref=e951] [cursor=pointer]:
+              - /url: https://forums.nexusmods.com
+          - listitem [ref=e952]:
+            - link "Discord" [ref=e953] [cursor=pointer]:
+              - /url: https://discord.gg/nexusmods
+          - listitem [ref=e954]:
+            - link "Support authors" [ref=e955] [cursor=pointer]:
+              - /url: https://www.patreon.com/nexusmods
+          - listitem [ref=e956]:
+            - link "Contact us" [ref=e957] [cursor=pointer]:
+              - /url: https://help.nexusmods.com/article/125-contact-us
+      - generic [ref=e958]:
+        - generic [ref=e959]:
+          - heading "Support Nexus Mods" [level=3] [ref=e960]
+          - list [ref=e961]:
+            - listitem [ref=e962]:
+              - link "Go premium" [ref=e963] [cursor=pointer]:
+                - /url: https://users.nexusmods.com/account/billing/premium
+        - generic [ref=e964]:
+          - heading "Network Stats" [level=3] [ref=e965]
+          - list [ref=e966]:
+            - listitem [ref=e967]:
+              - heading "Members" [level=4] [ref=e968]
+              - generic [ref=e969]: 74,909,186
+            - listitem [ref=e970]:
+              - heading "Mods" [level=4] [ref=e971]
+              - generic [ref=e972]: 869,883
+            - listitem [ref=e973]:
+              - heading "Kudos given" [level=4] [ref=e974]
+              - generic [ref=e975]: 4,098,453
+            - listitem [ref=e976]:
+              - heading "Page served in" [level=4] [ref=e977]
+              - generic [ref=e978]: 0.121s
+              - generic "flamework-6f9dcc487-qpm8f" [ref=e979]: v2026.0610.1401 | UK 2
+    - generic [ref=e981]:
+      - link "Nexus Mods" [ref=e983] [cursor=pointer]:
+        - /url: https://www.nexusmods.com/crimsondesert
+        - img [ref=e984]
+      - generic [ref=e1024]:
+        - link "Discord" [ref=e1025] [cursor=pointer]:
+          - /url: https://discord.gg/nexusmods
+          - img "Discord" [ref=e1026]
+        - link "Twitter" [ref=e1027] [cursor=pointer]:
+          - /url: https://twitter.com/nexussites
+          - img "Twitter" [ref=e1028]
+        - link "TikTok" [ref=e1029] [cursor=pointer]:
+          - /url: https://www.tiktok.com/@nexusmodsofficial
+          - img "TikTok" [ref=e1030]
+        - link "Twitch" [ref=e1031] [cursor=pointer]:
+          - /url: https://www.twitch.tv/nexusmodsofficial
+          - img "Twitch" [ref=e1032]
+        - link "Youtube" [ref=e1033] [cursor=pointer]:
+          - /url: https://www.youtube.com/@NexusModsOfficial
+          - img "Youtube" [ref=e1034]
+        - link "Instagram" [ref=e1035] [cursor=pointer]:
+          - /url: https://www.instagram.com/nexusmodsofficial
+          - img "Instagram" [ref=e1036]
+    - generic [ref=e1038]:
+      - generic [ref=e1039]: Copyright © 2026 Black Tree Gaming Ltd. All rights reserved.
+      - generic [ref=e1040]:
+        - link "Terms of Service" [ref=e1041] [cursor=pointer]:
+          - /url: https://help.nexusmods.com/article/18-terms-of-service
+        - text: "|"
+        - link "Privacy Policy" [ref=e1042] [cursor=pointer]:
+          - /url: https://help.nexusmods.com/article/20-privacy-policy
+  - iframe [ref=e1043]:
+    

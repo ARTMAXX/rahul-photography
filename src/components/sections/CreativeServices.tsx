@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef, useState } from "react";
 import Image from "next/image";
@@ -91,7 +91,7 @@ export default function CreativeServices() {
 
                 {/* Mobile-only visible image (falls back to grid element) */}
                 <div className="relative w-full mt-8 block md:hidden">
-                  <Image
+                  <Image quality={100}
                     src={service.img}
                     alt={service.alt}
                     width={800}
@@ -118,7 +118,7 @@ export default function CreativeServices() {
                     : "opacity-0 scale-95 filter blur-[10px] pointer-events-none hidden"
                 }`}
               >
-                <Image
+                <Image quality={100}
                   src={service.img}
                   alt={service.alt}
                   width={960}
@@ -136,3 +136,5 @@ export default function CreativeServices() {
     </section>
   );
 }
+
+

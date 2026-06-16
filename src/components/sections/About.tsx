@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef } from "react";
 import gsap from "gsap";
@@ -67,9 +67,9 @@ export default function About() {
 
     // ---------- SINGLE TIMELINE: main text + photo (gradual, long scroll) ----------
     // Trigger on the SECTION (not the text) so the animation starts the moment
-    // the section enters the viewport — the photo (at top: 0 of section) is
+    // the section enters the viewport â€” the photo (at top: 0 of section) is
     // already at the bottom of the viewport, blurring in from the hero.
-    // Range "top 100%" → "top 15%" = 85% of viewport ≈ 798px of scroll.
+    // Range "top 100%" â†’ "top 15%" = 85% of viewport â‰ˆ 798px of scroll.
     // That's a long, gradual range so the photo blur and text reveal happen
     // over many frames (like Luke's flow).
     const tl = gsap.timeline({
@@ -81,7 +81,7 @@ export default function About() {
       },
     });
 
-    // Photo blur clear — takes the FULL timeline (1.0) so it clears gradually
+    // Photo blur clear â€” takes the FULL timeline (1.0) so it clears gradually
     // over the entire 798px scroll range. Opacity stays 1 throughout so the
     // photo is always visible (just blurred), matching Luke's flow where the
     // photo is visible from the hero transition onward.
@@ -94,9 +94,9 @@ export default function About() {
       );
     }
 
-    // Main text words reveal staggered — starts at 0.5 of the timeline because
+    // Main text words reveal staggered â€” starts at 0.5 of the timeline because
     // the H2 (at 45vh below section top) only enters the viewport around 53%
-    // through the trigger range. Stagger 0.02, each word 0.2 → 14 words
+    // through the trigger range. Stagger 0.02, each word 0.2 â†’ 14 words
     // finish at 0.5 + 0.28 + 0.2 = 0.98 of the timeline.
     mainWords.forEach((word, i) => {
       tl.to(
@@ -113,7 +113,7 @@ export default function About() {
       0.6
     );
 
-    // ---------- V3.0 words reveal (separate trigger — V3.0 is at the
+    // ---------- V3.0 words reveal (separate trigger â€” V3.0 is at the
     //              bottom of the section and enters view much later) ----------
     versionWords.forEach((word) => {
       gsap.to(word, {
@@ -144,7 +144,7 @@ export default function About() {
 
       {/* ---------- Text column (direct child of section, like Luke's) ---------- */}
       <div ref={textRef} className="relative z-20 w-full md:w-[55%]">
-        {/* Wide heading — words animate in via blur reveal */}
+        {/* Wide heading â€” words animate in via blur reveal */}
         <h2
           ref={aboutTextRef}
           className="text-3xl md:text-5xl font-serif leading-[1.45] tracking-[-0.01em] w-full text-balance"
@@ -178,17 +178,17 @@ export default function About() {
       </div>
 
       {/* V3.0 right-aligned (spans full section width, positioned at bottom-right
-          overlapping with photo — matches Luke's layout) */}
+          overlapping with photo â€” matches Luke's layout) */}
       <div
         ref={aboutVersionRef}
         className="absolute right-[32%] bottom-[22vh] z-20 text-3xl md:text-5xl font-serif leading-[1.45] tracking-[-0.01em] flex items-baseline justify-end gap-2"
       >
-        <span className="inline-block">→</span>
+        <span className="inline-block">â†’</span>
         <span>V3.0</span>
       </div>
 
       {/* ---------- Photo (direct child of section, absolute right at top: 0 so it
-                    enters the viewport right at the hero→about transition) ---------- */}
+                    enters the viewport right at the heroâ†’about transition) ---------- */}
       <div
         ref={imageRef}
         className="absolute right-0 top-0 z-[5] w-[min(50vw,720px)]"
@@ -198,6 +198,7 @@ export default function About() {
           alt="Rahul Chanda"
           width={3712}
           height={4608}
+          quality={100}
           className="about-photo block w-full h-auto"
           style={{ borderRadius: "420px 0 0 420px" }}
           priority
@@ -206,3 +207,5 @@ export default function About() {
     </section>
   );
 }
+
+
