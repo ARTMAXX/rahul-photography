@@ -1,0 +1,353 @@
+/* ─────────────────────────────────────────────
+   TILE SCROLL GRID — Codrops-inspired
+   Horizontal parallax image rows
+   Powered by GSAP ScrollTrigger + Lenis
+────────────────────────────────────────────── */
+
+/* ── Base Tiles Section ── */
+.tiles {
+  --tiles-height: 52vw;
+  height: var(--tiles-height);
+  position: relative;
+  overflow: hidden;
+}
+
+.tiles--rotated {
+  --tiles-height: 90vh;
+  min-height: 600px;
+}
+
+.tiles--rotated .tiles__wrap {
+  --tileswrap-height: calc(var(--tiles-height) * 1.8);
+  transform: translate3d(-50%, -50%, 0) rotate(22.5deg);
+}
+
+.tiles--columns {
+  --tiles-height: 140vh;
+}
+
+.tiles--columns .tiles__wrap {
+  width: 100%;
+  display: flex;
+  --tileswrap-height: calc(var(--tiles-height) * 1.4);
+  transform: translate3d(0, -50%, 0);
+  left: 0;
+  top: 50%;
+}
+
+.tiles--columns .tiles__line {
+  width: 25%;
+  padding: 0 1rem;
+  display: block;
+}
+
+.tiles--perspective {
+  overflow: visible;
+  perspective: 1000px;
+  --tiles-height: 500px;
+}
+
+.tiles--perspective .tiles__wrap {
+  width: 200%;
+  transform: translate3d(-50%, -50%, 0) translateX(-25%) translateZ(-1200px) rotateX(75.5deg) rotateZ(12deg);
+}
+
+.tiles--oneline {
+  --tiles-height: 50vh;
+  min-height: 400px;
+  margin: 10vh 0;
+}
+
+.tiles--oneline .tiles__wrap {
+  width: 150%;
+  --tileswrap-height: var(--tiles-height);
+  height: var(--tileswrap-height);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.tiles--oneline .tiles__line {
+  height: 100%;
+}
+
+.tiles--oneline .tiles__line-img {
+  --tile-margin: 1vw;
+  margin: 0 var(--tile-margin);
+  width: calc(25% - var(--tile-margin) * 2);
+  height: 100%;
+}
+
+.tiles--fixed {
+  --tiles-height: 65vw;
+  margin-top: 25vh;
+}
+
+.tiles--fixed .tiles__wrap {
+  width: 100%;
+  --tileswrap-height: var(--tiles-height);
+  height: var(--tileswrap-height);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.tiles--fixed .tiles__line-img {
+  --tile-margin: 10px;
+  filter: brightness(0.8);
+  width: calc(16.6666% - var(--tile-margin) * 2);
+  height: calc(var(--tileswrap-height) / 3 - (3 * var(--tile-margin) / 2));
+}
+
+.tiles--small {
+  --tiles-height: 100px;
+  margin: 10vh 0 0;
+}
+
+.tiles--small .tiles__wrap {
+  width: 150%;
+  --tileswrap-height: var(--tiles-height);
+  height: var(--tileswrap-height);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.tiles--small .tiles__line {
+  height: 100%;
+}
+
+.tiles--small .tiles__line-img {
+  --tile-margin: 5px;
+  margin: 0 var(--tile-margin);
+  width: calc(12.5% - var(--tile-margin) * 2);
+  height: 100%;
+}
+
+.tiles--darker .tiles__line-img {
+  opacity: 0.7;
+}
+
+/* ── Wrap ── */
+.tiles__wrap {
+  width: 150%;
+  --tileswrap-height: var(--tiles-height);
+  height: var(--tileswrap-height);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+/* ── Row ── */
+.tiles__line {
+  display: flex;
+  will-change: transform;
+}
+
+/* ── Tile Image ── */
+.tiles__line-img {
+  --tile-margin: 2vw;
+  flex: none;
+  width: calc(16.6666% - var(--tile-margin) * 2);
+  height: calc(var(--tileswrap-height) / 3 - (3 * var(--tile-margin) / 2));
+  margin: var(--tile-margin);
+  background-size: cover;
+  background-position: 50% 50%;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.tiles__line-img:hover {
+  filter: brightness(1.15);
+  transform: scale(1.03);
+  z-index: 2;
+}
+
+/* ── Tile Label (caption overlay) ── */
+.tiles__line-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 50%);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  pointer-events: none;
+}
+
+.tiles__line-img:hover .tiles__line-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tiles__line-category {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #c8a84b;
+  margin-bottom: 0.15rem;
+}
+
+.tiles__line-caption {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #f0f0f0;
+  letter-spacing: -0.01em;
+}
+
+/* ── Rotated Variant ── */
+.tiles--rotated .tiles__line-img {
+  --tile-margin: 1vw;
+  width: calc(16.6666% - var(--tile-margin) * 2);
+  height: calc(var(--tileswrap-height) / 5 - (4 * var(--tile-margin) / 2));
+}
+
+/* ── Text Overlay Section ── */
+.tiles-scroll-text {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 3rem;
+  position: relative;
+  background: #070707;
+}
+
+.tiles-scroll-text__content {
+  max-width: 800px;
+  text-align: center;
+}
+
+.tiles-scroll-text__quote {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  line-height: 1.5;
+  color: rgba(240, 240, 240, 0.75);
+  font-style: italic;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+.tiles-scroll-text__attr {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: rgba(200, 168, 75, 0.5);
+}
+
+.tiles-scroll-text__breakout {
+  margin: 2rem -3rem;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-weight: 200;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+  user-select: none;
+}
+
+.tiles-scroll-text__breakout--big {
+  font-size: 13vw;
+}
+
+.tiles-scroll-text__breakout--medium {
+  font-size: 5vw;
+}
+
+/* ── Title Overlay (for sections with text overlay on tiles) ── */
+.tiles__title {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10vw;
+  padding: 3rem;
+  margin: 0;
+  line-height: 0.8;
+  font-weight: 700;
+  font-style: normal;
+  pointer-events: none;
+}
+
+.tiles__title--alt {
+  font-size: 9vw;
+  font-size: clamp(2rem, 9vw, 7.25rem);
+}
+
+.tiles__title--intro {
+  padding-top: 10vh;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.tiles__title--right {
+  justify-content: flex-end;
+}
+
+.tiles__title--left {
+  justify-content: flex-start;
+}
+
+.tiles__title--full {
+  height: 100%;
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .tiles__line {
+    transform: none !important;
+  }
+}
+
+/* ── Responsive (Desktop) ── */
+@media screen and (min-width: 53em) {
+  .tiles--columns-rotated .tiles__line {
+    width: 33vmax;
+  }
+
+  .tiles--columns-rotated .tiles__line:nth-child(even) {
+    margin-top: -20vmax;
+  }
+
+  .tiles--columns-rotated .tiles__line-img {
+    height: 40vmax;
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .tiles--rotated {
+    --tiles-height: 60vh;
+    min-height: 400px;
+  }
+
+  .tiles--oneline {
+    --tiles-height: 30vh;
+    min-height: 250px;
+  }
+
+  .tiles__line-img {
+    --tile-margin: 1.5vw;
+  }
+
+  .tiles--rotated .tiles__line-img {
+    --tile-margin: 0.75vw;
+  }
+
+  .tiles-scroll-text {
+    padding: 3rem 1.5rem;
+  }
+}
