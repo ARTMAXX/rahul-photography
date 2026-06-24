@@ -148,7 +148,7 @@ export default function ContactCTA() {
                 </a>
 
                 <a
-                  href="#work"
+                  href="#archive"
                   className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white/5 backdrop-blur-xl ring-1 ring-white/10 text-white font-medium transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-white/10 hover:ring-white/20 active:scale-[0.98]"
                 >
                   <span>View Portfolio</span>

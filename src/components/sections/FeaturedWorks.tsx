@@ -45,7 +45,7 @@ const FEATURED_ITEMS: readonly ShowcaseItem[] = [
 
 export default function FeaturedWorks() {
   return (
-    <div id="work" className="bg-black">
+    <div className="bg-black">
       <PinnedShowcase
         id="featured-showcase"
         label="Featured Work"

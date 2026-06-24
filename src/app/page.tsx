@@ -1,6 +1,6 @@
 ﻿import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
-import RedesignedGallery from "@/components/sections/RedesignedGallery";
+import ArchiveFeature from "@/components/sections/ArchiveFeature";
 import ServicesShowcase from "@/components/sections/redesign/ServicesShowcase";
 import TestimonialsCarousel from "@/components/sections/redesign/TestimonialsCarousel";
 import ContactForm from "@/components/sections/redesign/ContactForm";
@@ -10,7 +10,7 @@ export default function Home() {
     <main className="w-full">
       <Hero />
       <About />
-      <RedesignedGallery />
+      <ArchiveFeature />
       <ServicesShowcase />
       <TestimonialsCarousel />
       <ContactForm />

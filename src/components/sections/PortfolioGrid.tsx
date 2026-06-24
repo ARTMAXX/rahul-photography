@@ -91,7 +91,7 @@ export default function PortfolioGrid() {
   return (
     <section
       ref={sectionRef}
-      id="work"
+      id="gallery"
       className="relative w-full bg-[#050505] overflow-hidden"
       style={{ padding: "clamp(6rem, 12vh, 10rem) clamp(1rem, 4vw, 3rem)" }}
     >
@@ -205,7 +205,7 @@ export default function PortfolioGrid() {
       {/* Bottom CTA */}
       <div className="flex justify-center mt-16 md:mt-24">
         <a
-          href="#gallery"
+          href="#archive"
           className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white/5 backdrop-blur-xl ring-1 ring-white/10 text-white transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-white/10 hover:ring-white/20 active:scale-[0.98]"
         >
           <span className="text-sm font-medium tracking-wide">

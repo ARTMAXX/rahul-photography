@@ -109,7 +109,7 @@ export default function Hero() {
           <a href="tel:+917078939475" className="hover:opacity-70 transition-opacity">PHONE</a>
         </div>
         <div className="hidden md:flex gap-6 text-[10px] font-sans tracking-widest uppercase">
-          <a href="#work" className="hover:opacity-70 transition-opacity">WORK</a>
+          <a href="#archive" className="hover:opacity-70 transition-opacity">WORK</a>
           <a href="#about" className="hover:opacity-70 transition-opacity">INFO</a>
           <a href="#contact" className="hover:opacity-70 transition-opacity">CONTACT</a>
         </div>

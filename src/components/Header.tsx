@@ -16,9 +16,9 @@ export default function Header() {
         />
       </div>
       <nav className="flex gap-4 md:gap-8 text-[10px] md:text-xs uppercase tracking-widest pointer-events-auto">
-        <a href="#work" className="hover:italic transition-all duration-300" data-cursor="pointer">Work</a>
+        <a href="#archive" className="hover:italic transition-all duration-300" data-cursor="pointer">Work</a>
         <a href="#about" className="hover:italic transition-all duration-300" data-cursor="pointer">About</a>
-        <a href="#gallery" className="hover:italic transition-all duration-300" data-cursor="pointer">Gallery</a>
+        <a href="#archive" className="hover:italic transition-all duration-300" data-cursor="pointer">Archive</a>
         <a href="#contact" className="hover:italic transition-all duration-300" data-cursor="pointer">Contact</a>
       </nav>
     </header>
