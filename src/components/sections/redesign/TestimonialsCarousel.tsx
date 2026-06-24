@@ -154,17 +154,14 @@ export default function TestimonialsCarousel() {
       />
 
       <div className="relative z-10 max-w-[1400px] mx-auto">
-        {/* Eyebrow tag */}
-        <span className="inline-block rounded-full bg-white/5 px-4 py-1.5 text-[10px] uppercase tracking-[0.25em] font-medium text-white/40 ring-1 ring-white/10 mb-8">
-          Testimonials
-        </span>
-
-        {/* Heading */}
+        {/* Heading — no eyebrow pill, integrated title */}
         <h2 
           ref={headingRef}
           className="text-[clamp(2.5rem,8vw,7rem)] font-serif leading-[0.9] tracking-[-0.02em] text-white mb-24 max-w-[18ch]"
         >
-          Words from <span className="italic">happy</span> clients.
+          Words from{" "}
+          <span className="text-[#c8a84b]">happy</span>{" "}
+          clients.
         </h2>
 
         {/* Carousel Container */}

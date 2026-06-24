@@ -5,6 +5,7 @@ colors:
   primary: "#c8a84b"
   primary-light: "#f0cc70"
   accent: "#e83b2c"
+  ambient: "rgba(140,28,19,0.5)"
   neutral-bg: "#070707"
   neutral-text: "#f0f0f0"
   neutral-muted: "#888888"
@@ -120,6 +121,7 @@ A restrained, dark-editorial palette with two accent notes. The deep black body 
 
 ### Tertiary
 - **Signature Red** (#e83b2c): Reserved for critical attention — error states, urgent CTAs, or the hero's ambient gradient bleed (8c1c13). Not a general-purpose accent.
+- **Ambient Crimson** (rgba(140,28,19, 0.5)): Full-opacity pinned value for the blurred gradient orbs (blur-3xl, 800-1000px) positioned behind sections. Renders as a warm atmosphere halo. The `0.5` is the full intensity; rendered opacity is 0.10-0.15 via CSS opacity on the orb element.
 
 ### Neutral
 - **Pitch Black** (#070707): The primary background. Contains nearly no light. Not a dark gray — this is the paper stock of a master print.
@@ -195,8 +197,9 @@ Depth is conveyed through **tonal layering and atmospheric glow**, not box-shado
 - **Title overlay:** `position: absolute`, centered, `18vw` serif italic, `mix-blend-difference` white.
 
 ### Custom Cursor
-- Default cursor is globally hidden (`cursor: none` on html).
-- A custom pointer element tracks mouse movement. Interactive elements get `data-cursor="pointer"` attribute to trigger state changes (ring expansion, color shift to Antique Gold).
+- Default cursor is visible on non-interactive elements. The native cursor shows by default (`cursor: auto` on html).
+- Interactive elements (`a, button, [role="button"], input, select, textarea, label, [data-cursor]`) get `cursor: none`, hiding the native cursor so the custom cursor is the sole pointer.
+- A custom pointer element (Framer Motion spring, `damping: 45, stiffness: 350, mass: 0.5`) tracks mouse movement. Interactive elements get state-based changes (ring expansion, color shift to Antique Gold, view/explore/close variants).
 - On mobile, standard touch behavior applies.
 
 ### Accordion (Services)

@@ -222,19 +222,17 @@ export default function ServicesShowcase() {
       />
 
       <div className="relative z-10 max-w-[1600px] mx-auto">
-        {/* Section header - no eyebrow, cleaner approach for variety */}
+        {/* Section header — clean, no numbered marker */}
         <div className="mb-24 md:mb-32">
-          <span className="inline-block text-[10px] uppercase tracking-[0.25em] text-white/30 font-medium mb-6">
-            02 / Services
-          </span>
           <h2
             ref={headingRef}
             className="text-[clamp(3rem,10vw,8rem)] font-serif leading-[0.85] tracking-[-0.03em] text-white max-w-[16ch]"
           >
-            What I{" "}
-            <span className="italic text-[#c8a84b]">craft</span>{" "}
+            <span className="text-[#c8a84b]">Services</span>
             <br />
-            for you.
+            tailored to your
+            <br />
+            vision.
           </h2>
           <p className="text-lg md:text-xl text-white/50 max-w-[50ch] mt-8 leading-relaxed">
             Specialized photography services tailored to your brand&apos;s

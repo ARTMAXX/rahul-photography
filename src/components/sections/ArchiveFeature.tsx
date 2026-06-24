@@ -152,9 +152,6 @@ export default function ArchiveFeature() {
               {/* Info row beneath */}
               <div className="pr-info flex flex-col md:flex-row md:items-end justify-between gap-2">
                 <div className="flex items-baseline gap-3 md:gap-5">
-                  <span className="text-[10px] font-mono text-white/20 tabular-nums select-none">
-                    {p.id}
-                  </span>
                   <h3 className="text-lg md:text-xl font-serif text-white/80 leading-tight group-hover:text-white transition-colors duration-500">
                     {p.title}
                   </h3>

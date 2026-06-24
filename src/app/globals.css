@@ -29,7 +29,7 @@
 }
 
 html {
-  cursor: none;
+  cursor: auto;
 }
 
 body {
@@ -47,8 +47,8 @@ h1, h2, h3, h4 {
   font-weight: 700;
 }
 
-/* ── Hide default cursor globally — custom cursor handles it ── */
-a, button, [role="button"], input, select, textarea, label {
+/* ── Custom cursor handles interactive elements ── */
+a, button, [role="button"], input, select, textarea, label, [data-cursor] {
   cursor: none;
 }
 

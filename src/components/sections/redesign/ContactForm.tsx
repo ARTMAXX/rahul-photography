@@ -278,17 +278,14 @@ export default function ContactForm() {
       />
 
       <div className="relative z-10 max-w-[1400px] mx-auto">
-        {/* Header — no numbered marker for variety */}
+        {/* Header — clean, no eyebrow label */}
         <div className="mb-16 md:mb-20">
-          <span className="inline-block text-[10px] uppercase tracking-[0.25em] text-white/30 font-medium mb-6">
-            Contact
-          </span>
           <h2
             ref={headingRef}
             className="text-[clamp(3rem,10vw,7rem)] font-serif leading-[0.85] tracking-[-0.03em] text-white max-w-[16ch]"
           >
             Let&apos;s{" "}
-            <span className="italic text-[#c8a84b]">create</span>{" "}
+            <span className="text-[#c8a84b]">work</span>{" "}
             together.
           </h2>
         </div>
