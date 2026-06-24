@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -13,34 +13,11 @@ const CONTACT_METHODS = [
     label: "Email",
     value: "rahulchandaphotography@gmail.com",
     href: "mailto:rahulchandaphotography@gmail.com",
-    icon: (
-      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="4" width="20" height="16" rx="2" />
-        <path d="M22 4l-10 8L2 4" />
-      </svg>
-    ),
   },
   {
     label: "Phone",
     value: "+91 70789 39475",
     href: "tel:+917078939475",
-    icon: (
-      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z" />
-      </svg>
-    ),
-  },
-  {
-    label: "Instagram",
-    value: "@rahul_chanda_photography",
-    href: "https://www.instagram.com/rahul_chanda_photography/",
-    icon: (
-      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="2" width="20" height="20" rx="5" />
-        <circle cx="12" cy="12" r="5" />
-        <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
-      </svg>
-    ),
   },
 ];
 
@@ -50,12 +27,29 @@ const SOCIAL_LINKS = [
   { name: "Phone", href: "tel:+917078939475" },
 ];
 
+// Generate horizontal lines that form text pattern
+function generateLines(count: number) {
+  const lines = [];
+  for (let i = 0; i < count; i++) {
+    const y = (i / count) * 100;
+    // Vary line length to create "TRIONN" text silhouette
+    const width = 30 + Math.sin(i * 0.3) * 20 + Math.cos(i * 0.5) * 15;
+    const left = 10 + Math.sin(i * 0.2) * 5;
+    lines.push({ y, width, left, delay: i * 0.02 });
+  }
+  return lines;
+}
+
 export default function ContactForm() {
   const containerRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
+  const linesRef = useRef<HTMLDivElement>(null);
+  const [isHovering, setIsHovering] = useState(false);
+
+  const lines = generateLines(60);
 
   useGSAP(() => {
-    // ── Large heading animation — trionn style ──
+    // ── Large heading animation ──
     if (headingRef.current) {
       gsap
         .timeline({
@@ -68,7 +62,7 @@ export default function ContactForm() {
         })
         .fromTo(
           headingRef.current,
-          { opacity: 0, y: 100, filter: "blur(16px)" },
+          { opacity: 0, y: 80, filter: "blur(12px)" },
           {
             opacity: 1,
             y: 0,
@@ -79,7 +73,29 @@ export default function ContactForm() {
         );
     }
 
-    // ── Footer info stagger ──
+    // ── Lines animation on scroll ──
+    if (linesRef.current) {
+      const lineElements = linesRef.current.querySelectorAll(".line-element");
+      gsap.fromTo(
+        lineElements,
+        { scaleX: 0, opacity: 0 },
+        {
+          scaleX: 1,
+          opacity: 1,
+          stagger: 0.01,
+          ease: "power2.out",
+          duration: 0.5,
+          scrollTrigger: {
+            trigger: linesRef.current,
+            start: "top 90%",
+            end: "top 50%",
+            scrub: 1,
+          },
+        }
+      );
+    }
+
+    // ── Footer items stagger ──
     const footerItems = containerRef.current?.querySelectorAll(".footer-item");
     if (footerItems) {
       gsap.fromTo(
@@ -110,26 +126,15 @@ export default function ContactForm() {
       id="contact"
       className="relative w-full bg-[#070707] overflow-hidden"
     >
-      {/* ── Ambient gradient ── */}
-      <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] rounded-full opacity-[0.06] blur-3xl pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, rgba(140,28,19,0.4) 0%, transparent 70%)",
-        }}
-      />
-
-      {/* ── Main CTA section — trionn "Ready to build something bold?" style ── */}
+      {/* ── Main CTA — trionn "Ready to build something bold?" ── */}
       <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-16 pt-32 md:pt-44 pb-16 md:pb-24">
         <div ref={headingRef}>
-          {/* Large editorial heading */}
           <h2 className="text-[clamp(2.5rem,8vw,6rem)] font-serif leading-[0.9] tracking-[-0.03em] text-white/90 max-w-[20ch] mb-8">
             Ready to build
             <br />
-            something{" "}
-            <span className="italic text-white/50">bold</span>?
+            something <span className="italic text-white/50">bold</span>?
           </h2>
 
-          {/* CTA link — trionn "START A COLLABORATION" style */}
           <Link
             href="mailto:rahulchandaphotography@gmail.com"
             className="group inline-flex items-center gap-4 mt-8"
@@ -146,7 +151,38 @@ export default function ContactForm() {
         </div>
       </div>
 
-      {/* ── Footer — trionn style with columns ── */}
+      {/* ── Animated Lines — trionn "HOVER THE LINES" effect ── */}
+      <div
+        ref={linesRef}
+        className="relative w-full h-[300px] md:h-[400px] overflow-hidden cursor-pointer"
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+      >
+        {lines.map((line, i) => (
+          <div
+            key={i}
+            className="line-element absolute h-[1px] transition-all duration-700"
+            style={{
+              top: `${line.y}%`,
+              left: `${line.left}%`,
+              width: `${line.width}%`,
+              background: isHovering
+                ? "linear-gradient(90deg, transparent, rgba(200,168,75,0.4), transparent)"
+                : "linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent)",
+              transform: `scaleX(${isHovering ? 1.1 : 1})`,
+            }}
+          />
+        ))}
+
+        {/* Hover text */}
+        <div className="absolute bottom-4 left-6 md:left-16 flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-white/30">
+          <span>Sound On</span>
+          <span className="text-white/20">🔊</span>
+          <span>Hover the lines.</span>
+        </div>
+      </div>
+
+      {/* ── Footer — trionn style ── */}
       <div className="relative z-10 w-full border-t border-white/[0.06]">
         <div className="max-w-[1400px] mx-auto px-6 md:px-16 py-12 md:py-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
@@ -169,7 +205,7 @@ export default function ContactForm() {
                 Business Enquiry
               </p>
               <div className="space-y-2">
-                {CONTACT_METHODS.slice(0, 2).map((method) => (
+                {CONTACT_METHODS.map((method) => (
                   <a
                     key={method.label}
                     href={method.href}
