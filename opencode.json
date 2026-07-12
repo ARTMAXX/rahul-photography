@@ -1,0 +1,46 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "skills": {
+    "paths": ["agent-skills/skills"]
+  },
+  "mcp": {
+    "chrome-devtools": {
+      "type": "local",
+      "command": ["npx", "-y", "chrome-devtools-mcp"],
+      "enabled": true
+    },
+    "context7": {
+      "type": "local",
+      "command": ["npx", "-y", "@upstash/context7-mcp@latest"],
+      "enabled": true
+    },
+    "codebase-memory-mcp": {
+      "type": "local",
+      "command": ["npx", "-y", "codebase-memory-mcp"],
+      "enabled": true
+    },
+    "memory": {
+      "type": "local",
+      "command": ["npx", "-y", "@modelcontextprotocol/server-memory"],
+      "enabled": true
+    },
+    "playwright": {
+      "type": "local",
+      "command": ["npx", "-y", "@playwright/mcp"],
+      "enabled": true
+    },
+    "vercel": {
+      "type": "local",
+      "command": ["powershell", "-NoProfile", "-Command", "$env:VERCEL_API_KEY='vcp_6148ZOg7LYi8jMqHp5qqj4xO3B7mXFFAF15Q9IlEuEORKmAE7d0ZGFga'; npx -y @mistertk/vercel-mcp"],
+      "enabled": true
+    },
+    "webwright": {
+      "type": "local",
+      "command": [
+        "C:\\Users\\Rahul\\Downloads\\data\\Webwright\\venv\\Scripts\\python.exe",
+        "C:\\Users\\Rahul\\Downloads\\data\\Webwright\\mcp_bridge.py"
+      ],
+      "enabled": true
+    }
+  }
+}

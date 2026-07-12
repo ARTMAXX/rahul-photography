@@ -1,6 +1,7 @@
 ﻿import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
-import ArchiveFeature from "@/components/sections/ArchiveFeature";
+import DesignInMotion from "@/components/sections/DesignInMotion";
+import Gallery3DCarousel from "@/components/Gallery3DCarousel";
 import ServicesShowcase from "@/components/sections/redesign/ServicesShowcase";
 import TestimonialsCarousel from "@/components/sections/redesign/TestimonialsCarousel";
 import ContactForm from "@/components/sections/redesign/ContactForm";
@@ -10,7 +11,8 @@ export default function Home() {
     <main className="w-full">
       <Hero />
       <About />
-      <ArchiveFeature />
+      <DesignInMotion />
+      <Gallery3DCarousel />
       <ServicesShowcase />
       <TestimonialsCarousel />
       <ContactForm />
