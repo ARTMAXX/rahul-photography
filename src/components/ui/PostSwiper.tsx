@@ -13,6 +13,7 @@ interface PostSwiperProps {
   swiperClassName?: string;
   loop?: boolean;
   grabCursor?: boolean;
+  onSwiper?: (swiper: any) => void;
 }
 
 const PostSwiper = ({
@@ -21,6 +22,7 @@ const PostSwiper = ({
   swiperClassName,
   loop = true,
   grabCursor = true,
+  onSwiper,
 }: PostSwiperProps) => {
   return (
     <div className={cn("w-full flex flex-col items-center justify-center", className)}>
@@ -31,6 +33,7 @@ const PostSwiper = ({
         className={cn("w-full max-w-xl h-auto", swiperClassName)}
         modules={[EffectCards]}
         cardsEffect={{ slideShadows: false }}
+        onSwiper={onSwiper}
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index} className="!flex !items-start !justify-center bg-transparent">

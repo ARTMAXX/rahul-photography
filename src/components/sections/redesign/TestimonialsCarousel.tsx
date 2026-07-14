@@ -1,10 +1,11 @@
 ﻿"use client";
 
 import { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import PostSwiper from "@/components/ui/PostSwiper";
+import type { Swiper as SwiperType } from "swiper";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -63,6 +64,7 @@ const testimonials: Testimonial[] = [
 export default function TestimonialsCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
   const containerRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
@@ -88,6 +90,19 @@ export default function TestimonialsCarousel() {
     }
   }, { scope: containerRef });
 
+  useEffect(() => {
+    if (!swiperInstance) return;
+
+    const handleSlideChange = () => {
+      setActiveIndex(swiperInstance!.realIndex);
+    };
+
+    swiperInstance.on("slideChange", handleSlideChange);
+    return () => {
+      swiperInstance?.off("slideChange", handleSlideChange);
+    };
+  }, [swiperInstance]);
+
   // Auto-play carousel
   useEffect(() => {
     autoPlayRef.current = setInterval(() => {
@@ -101,12 +116,20 @@ export default function TestimonialsCarousel() {
 
   const handleNext = () => {
     setDirection(1);
-    setActiveIndex((prev) => (prev + 1) % testimonials.length);
+    if (swiperInstance) {
+      swiperInstance.slideNext();
+    } else {
+      setActiveIndex((prev) => (prev + 1) % testimonials.length);
+    }
   };
 
   const handlePrev = () => {
     setDirection(-1);
-    setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    if (swiperInstance) {
+      swiperInstance.slidePrev();
+    } else {
+      setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    }
   };
 
   const handleDotClick = (index: number) => {
@@ -120,24 +143,6 @@ export default function TestimonialsCarousel() {
         handleNext();
       }, 7000);
     }
-  };
-
-  const variants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? 1000 : -1000,
-      opacity: 0,
-      filter: "blur(10px)",
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-      filter: "blur(0px)",
-    },
-    exit: (direction: number) => ({
-      x: direction < 0 ? 1000 : -1000,
-      opacity: 0,
-      filter: "blur(10px)",
-    }),
   };
 
   return (
@@ -164,60 +169,50 @@ export default function TestimonialsCarousel() {
           clients.
         </h2>
 
-        {/* Carousel Container */}
-        <div className="relative">
-          {/* Main Testimonial Card */}
-          <div className="relative min-h-[500px] md:min-h-[400px]">
-            <AnimatePresence initial={false} custom={direction} mode="wait">
-              <motion.div
-                key={activeIndex}
-                custom={direction}
-                variants={variants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{
-                  x: { type: "spring", stiffness: 300, damping: 30 },
-                  opacity: { duration: 0.4 },
-                  filter: { duration: 0.4 }
-                }}
-                className="absolute inset-0"
-              >
-                {/* Double-bezel wrapper */}
-                <div className="p-2 rounded-[2.5rem] bg-white/[0.03] ring-1 ring-white/10">
-                  <div className="p-8 md:p-12 rounded-[calc(2.5rem-0.5rem)] bg-gradient-to-br from-white/[0.04] to-transparent min-h-[400px] flex flex-col justify-between">
-                    {/* Quote */}
-                    <div>
-                      <div className="text-white/20 text-6xl md:text-7xl font-serif mb-6 leading-none">"</div>
-                      <p className="text-xl md:text-2xl font-serif leading-relaxed text-white/90 mb-8">
-                        {testimonials[activeIndex].quote}
-                      </p>
-                    </div>
+          {/* Carousel Container */}
+          <div className="relative">
+            {/* Main Testimonial Card */}
+            <div className="relative min-h-[500px] md:min-h-[400px]">
+              <PostSwiper 
+                onSwiper={setSwiperInstance}
+                slides={testimonials.map((t) => (
+                  <div key={t.id} className="w-full max-w-xl mx-auto">
+                    {/* Double-bezel wrapper */}
+                    <div className="p-2 rounded-[2.5rem] bg-white/[0.03] ring-1 ring-white/10">
+                      <div className="p-8 md:p-12 rounded-[calc(2.5rem-0.5rem)] bg-gradient-to-br from-white/[0.04] to-transparent min-h-[400px] flex flex-col justify-between">
+                        {/* Quote */}
+                        <div>
+                          <div className="text-white/20 text-6xl md:text-7xl font-serif mb-6 leading-none">"</div>
+                          <p className="text-xl md:text-2xl font-serif leading-relaxed text-white/90 mb-8">
+                            {t.quote}
+                          </p>
+                        </div>
 
-                    {/* Author Info + Project */}
-                    <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pt-6 border-t border-white/10">
-                      <div>
-                        <h4 className="text-lg md:text-xl font-serif text-white mb-1">
-                          {testimonials[activeIndex].name}
-                        </h4>
-                        <p className="text-sm text-white/60">
-                          {testimonials[activeIndex].role} · {testimonials[activeIndex].company}
-                        </p>
-                      </div>
-                      <div className="text-right">
-                        <span className="text-xs uppercase tracking-[0.2em] text-white/40 font-medium block mb-1">
-                          Project
-                        </span>
-                        <p className="text-sm text-white/80">
-                          {testimonials[activeIndex].project}
-                        </p>
+                        {/* Author Info + Project */}
+                        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pt-6 border-t border-white/10">
+                          <div>
+                            <h4 className="text-lg md:text-xl font-serif text-white mb-1">
+                              {t.name}
+                            </h4>
+                            <p className="text-sm text-white/60">
+                              {t.role} · {t.company}
+                            </p>
+                          </div>
+                          <div className="text-right">
+                            <span className="text-xs uppercase tracking-[0.2em] text-white/40 font-medium block mb-1">
+                              Project
+                            </span>
+                            <p className="text-sm text-white/80">
+                              {t.project}
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
+                ))}
+              />
+            </div>
 
           {/* Navigation Controls */}
           <div className="mt-12 flex items-center justify-between gap-6">
