@@ -3,12 +3,11 @@
 # dependencies
 /node_modules
 /.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
+/.yarn/*
+!/.yarn/patches
+!/.yarn/plugins
+!/.yarn/releases
+!/.yarn/versions
 
 # testing
 /coverage
@@ -40,26 +39,26 @@ yarn-error.log*
 next-env.d.ts
 
 # AI agent / dev tool config (NOT part of your website)
-.claude/
-.impeccable/
-.opencode/
-.playwright-mcp/
-.qoder/
-.superpowers/
-.agents/
-agent-skills/
-.fallow/
-.kilo/
+ Claude
+ .impeccable
+ .opencode
+ .playwright-mcp
+ .qoder
+ .superpowers
+ .agents
+ agent-skills
+ .fallow
+ .kilo
 
 # Logs & temp files
 dev-err.log
 dev-out.log
+dev-3001-err.log
+dev-3001.log
 temp_analysis/
 trae-page.txt
 providers-list.txt
 providers.txt
-bun-canary.zip
-services-section.png
 
 # Videos (too large for GitHub — host separately)
 *.mp4
@@ -68,3 +67,4 @@ services-section.png
 ai-website-cloner-template/
 reference/
 docs/
+.superdesign
