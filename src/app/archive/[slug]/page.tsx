@@ -17,8 +17,9 @@ export async function generateStaticParams() {
 }
 
 // ── Metadata ──
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const project = ARCHIVE.find((p) => p.slug === params.slug);
+export async function generateMetadata(props: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await props.params;
+  const project = ARCHIVE.find((p) => p.slug === slug);
   if (!project) return {};
   return {
     title: `${project.title} — Rahul Chanda Photography`,
@@ -27,12 +28,11 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 // ── Server Component: reads folder, passes to client gallery ──
-export default async function ProjectPage({
-  params,
-}: {
-  params: { slug: string };
+export default async function ProjectPage(props: {
+  params: Promise<{ slug: string }>;
 }) {
-  const project = ARCHIVE.find((p) => p.slug === params.slug);
+  const { slug } = await props.params;
+  const project = ARCHIVE.find((p) => p.slug === slug);
   if (!project) notFound();
 
   // Read all media from the project's folder

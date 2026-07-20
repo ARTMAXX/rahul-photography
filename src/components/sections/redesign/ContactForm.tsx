@@ -1,10 +1,11 @@
 ﻿"use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
+import LiquidEther from "@/components/LiquidEther";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -126,8 +127,26 @@ export default function ContactForm() {
       id="contact"
       className="relative w-full bg-[#070707] overflow-hidden"
     >
+      {/* ── LiquidEther fluid background — radial vignette mask ──
+          Monochrome Navier-Stokes fluid simulation (liquid mercury / silk).
+          Concentrated behind the CTA via .fluid-mask radial fade.
+          pointer-events: none so the contact links stay clickable.
+          Mouse + auto-demo interaction enabled. */}
+      <div className="absolute inset-0 z-0 pointer-events-none fluid-mask h-[1000px]">
+        <LiquidEther
+          colors={["#0a0a0a", "#3a3a3a", "#888888", "#d8d8d8", "#ffffff"]}
+          mouseForce={20}
+          cursorSize={120}
+          autoDemo={true}
+          autoSpeed={0.5}
+          autoIntensity={2.2}
+          resolution={0.5}
+          BFECC={true}
+        />
+      </div>
+
       {/* ── Main CTA — trionn "Ready to build something bold?" ── */}
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-16 pt-32 md:pt-44 pb-16 md:pb-24">
+      <div className="relative z-20 w-full max-w-[1400px] mx-auto px-6 md:px-16 pt-32 md:pt-44 pb-16 md:pb-24">
         <div ref={headingRef}>
           <h2 className="text-[clamp(2.5rem,8vw,6rem)] font-serif leading-[0.9] tracking-[-0.03em] text-white/90 max-w-[20ch] mb-8">
             Ready to build
@@ -162,6 +181,7 @@ export default function ContactForm() {
           <div
             key={i}
             className="line-element absolute h-[1px] transition-all duration-700"
+            suppressHydrationWarning
             style={{
               top: `${line.y}%`,
               left: `${line.left}%`,

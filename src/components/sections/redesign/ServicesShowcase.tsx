@@ -209,6 +209,7 @@ export default function ServicesShowcase() {
   return (
     <section
       ref={containerRef}
+      id="services"
       className="relative w-full bg-black py-32 md:py-40 px-4 md:px-12 overflow-hidden"
     >
       {/* Sticker Parallax Gradient */}

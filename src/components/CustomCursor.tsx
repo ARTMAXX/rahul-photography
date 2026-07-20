@@ -77,7 +77,7 @@ export default function CustomCursor() {
       width: 32,
       height: 32,
       border: "1.5px solid rgba(232, 59, 44, 0.4)",
-      backgroundColor: "transparent",
+      backgroundColor: "rgba(0,0,0,0)",
       boxShadow: "0 0 12px rgba(232, 59, 44, 0.15)",
     },
     pointer: {

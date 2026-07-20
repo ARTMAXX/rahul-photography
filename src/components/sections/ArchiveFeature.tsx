@@ -161,7 +161,7 @@ export default function ArchiveFeature() {
         }}
       />
 
-      {/* ── Header — DESIGN IN MOTION style ── */}
+{/* ── Header — DESIGN IN MOTION style ── */}
       <div
         ref={headingRef}
         className="relative w-full max-w-[1400px] mx-auto px-6 md:px-16 pt-32 md:pt-44 pb-16 md:pb-24"

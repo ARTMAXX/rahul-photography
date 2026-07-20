@@ -93,6 +93,15 @@ img, video {
   background-image: radial-gradient(circle, var(--tw-gradient-stops));
 }
 
+/* ── LiquidEther fluid vignette mask ──
+   Radial mask that fades the fluid to transparent at the edges,
+   concentrating it behind the center (the CTA heading).
+   Matches the chosen Superdesign variant: "Fluid Vignette / Radial Pool". */
+.fluid-mask {
+  -webkit-mask-image: radial-gradient(circle at center, black 0%, black 40%, transparent 85%);
+          mask-image: radial-gradient(circle at center, black 0%, black 40%, transparent 85%);
+}
+
 .line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;

@@ -7,40 +7,40 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-/* Tell ScrollTrigger that Lenis is the real scroll driver.
-   Without this proxy, long-range triggers (top bottom → bottom top)
-   can't compute progress because Lenis uses virtual scrolling and
-   the native scrollTop never changes. Deferred to useEffect so
-   document is available (no SSR reference error). */
-function setupScrollerProxy() {
-  ScrollTrigger.scrollerProxy("[data-lenis]", {
-    scrollTop(value) {
-      return arguments.length
-        ? window.scrollTo(0, value)
-        : window.scrollY;
-    },
-    getBoundingClientRect() {
-      return {
-        top: 0,
-        left: 0,
-        width: window.innerWidth,
-        height: window.innerHeight,
-      };
-    },
-    pinType: "fixed",
-  });
-  ScrollTrigger.refresh();
-}
-
 function LenisScrollSync() {
   const lenis = useLenis();
 
   useEffect(() => {
-    setupScrollerProxy();
-    if (lenis) {
-      lenis.on("scroll", ScrollTrigger.update);
-      gsap.ticker.lagSmoothing(0);
-    }
+    if (!lenis) return;
+
+    /* Tell ScrollTrigger that Lenis is the real scroll driver.
+       Without this proxy, long-range triggers can't compute progress
+       because Lenis uses virtual scrolling and the native scrollTop
+       never changes. In root mode, the scroller is the window. */
+    ScrollTrigger.scrollerProxy(window, {
+      scrollTop(value) {
+        return arguments.length
+          ? lenis.scrollTo(value as number, { immediate: true })
+          : lenis.scroll;
+      },
+      getBoundingClientRect() {
+        return {
+          top: 0,
+          left: 0,
+          width: window.innerWidth,
+          height: window.innerHeight,
+        };
+      },
+      pinType: "fixed",
+    });
+
+    lenis.on("scroll", ScrollTrigger.update);
+    gsap.ticker.lagSmoothing(0);
+    ScrollTrigger.refresh();
+
+    return () => {
+      lenis.off("scroll", ScrollTrigger.update);
+    };
   }, [lenis]);
 
   return null;
