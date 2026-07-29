@@ -39,14 +39,14 @@ yarn-error.log*
 next-env.d.ts
 
 # AI agent / dev tool config (NOT part of your website)
- Claude
- .impeccable
- .opencode
- .playwright-mcp
- .qoder
- .superpowers
- .agents
- agent-skills
+.claude
+.impeccable
+.opencode
+.playwright-mcp
+.qoder
+.superpowers
+.agents
+agent-skills
  .fallow
  .kilo
 
@@ -68,3 +68,9 @@ ai-website-cloner-template/
 reference/
 docs/
 .superdesign
+
+# Project-specific analysis & exported assets
+ANALYSIS.md
+/services-section.png
+# bun archive
+bun-canary.zip
