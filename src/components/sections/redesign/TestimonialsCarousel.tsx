@@ -173,7 +173,8 @@ export default function TestimonialsCarousel() {
           <div className="relative">
             {/* Main Testimonial Card */}
             <div className="relative min-h-[500px] md:min-h-[400px]">
-              <PostSwiper 
+              <PostSwiper
+                loop={false}
                 onSwiper={setSwiperInstance}
                 slides={testimonials.map((t) => (
                   <div key={t.id} className="w-full max-w-xl mx-auto">
