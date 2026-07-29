@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
+import { ReactLenis, useLenis } from "lenis/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -53,9 +53,8 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
       options={{
         lerp: 0.1,
         duration: 1.2,
-        smoothWheel: true,
+        autoRaf: true,
       }}
-      autoRaf
     >
       <LenisScrollSync />
       {children}

@@ -2,7 +2,7 @@ import styles from "./style.module.scss";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useLenis } from "@studio-freight/react-lenis";
+import { useLenis } from "lenis/react";
 import { links, footerLinks } from "./data";
 import { perspective, slideIn } from "./anim";
 
