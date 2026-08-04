@@ -24,7 +24,7 @@
     color: #fff;
     overflow: hidden;
     z-index: 1;
-    font-family: "Inter", "Helvetica Neue", system-ui, sans-serif;
+    font-family: var(--font-outfit), system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }

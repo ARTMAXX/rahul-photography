@@ -1,509 +1,206 @@
-﻿"use client";
+"use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import RipplePortrait from "@/components/about/RipplePortrait";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
-/* About section — luxury editorial spread
- * Massive typography with staggered reveal
- * Sticky B&W portrait with warm glow, film grain, glass border
- * Scroll-triggered count-up stats
- * Services list
- */
-
-function useCountUp(end: number, duration: number = 2, startOnView: boolean = false) {
-  const [count, setCount] = useState(0);
-  const ref = useRef<HTMLDivElement>(null);
-  const hasAnimated = useRef(false);
-
-  useEffect(() => {
-    if (!startOnView) return;
-    const el = ref.current;
-    if (!el) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated.current) {
-          hasAnimated.current = true;
-          const startTime = Date.now();
-          const animate = () => {
-            const elapsed = Date.now() - startTime;
-            const progress = Math.min(elapsed / (duration * 1000), 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-            setCount(Math.floor(eased * end));
-            if (progress < 1) requestAnimationFrame(animate);
-          };
-          animate();
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [end, duration, startOnView]);
-
-  return { count, ref };
-}
-
 export default function About() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const headingRef = useRef<HTMLHeadingElement>(null);
-  const portraitRef = useRef<HTMLDivElement>(null);
-  const [startCounting, setStartCounting] = useState(false);
-
-  const stat1 = useCountUp(10, 2, startCounting);
-  const stat2 = useCountUp(200, 2.5, startCounting);
-  const stat3 = useCountUp(50, 2, startCounting);
+  const containerRef = useRef<HTMLElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+  const aboutTextRef = useRef<HTMLHeadingElement>(null);
+  const aboutSubRef = useRef<HTMLParagraphElement>(null);
+  const aboutVersionRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    // ============ PORTRAIT REVEAL ============
-    if (portraitRef.current) {
-      gsap.fromTo(
-        portraitRef.current,
-        { clipPath: "inset(100% 0 0 0)", scale: 1.1 },
-        {
-          clipPath: "inset(0% 0 0 0)",
-          scale: 1,
-          ease: "none",
-          scrollTrigger: {
-            trigger: portraitRef.current,
-            start: "top 80%",
-            end: "top 25%",
-            scrub: true,
-          },
-        }
-      );
-    }
+    // ---------- Word wrapping helper (Luke's setupAboutSection) ----------
+    const wrapWords = (el: HTMLElement | null) => {
+      if (!el) return;
+      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+      const textNodes: Text[] = [];
+      while (walker.nextNode()) textNodes.push(walker.currentNode as Text);
 
-    // ============ HEADING REVEAL — cinematic blur to sharp ============
-    if (headingRef.current) {
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: headingRef.current,
-            start: "top 80%",
-            end: "top 35%",
-            scrub: 1.2,
-          },
-        })
-        .fromTo(
-          headingRef.current,
-          { opacity: 0, y: 80, filter: "blur(24px)", rotateX: 12 },
-          {
-            opacity: 1,
-            y: 0,
-            filter: "blur(0px)",
-            rotateX: 0,
-            ease: "power3.out",
+      textNodes.forEach((node) => {
+        const words = node.textContent?.split(/(\s+)/);
+        if (!words) return;
+        const frag = document.createDocumentFragment();
+        words.forEach((w) => {
+          if (/^\s+$/.test(w)) {
+            frag.appendChild(document.createTextNode(w));
+          } else if (w) {
+            const span = document.createElement("span");
+            span.className = "word";
+            span.textContent = w;
+            frag.appendChild(span);
           }
-        );
-    }
-
-    // ============ BIO LINE-BY-LINE ============
-    const bioLines = gsap.utils.toArray<HTMLElement>(".bio-line");
-    if (bioLines.length) {
-      gsap.fromTo(
-        bioLines,
-        { opacity: 0, y: 15 },
-        {
-          opacity: 1,
-          y: 0,
-          ease: "none",
-          stagger: 0.08,
-          scrollTrigger: {
-            trigger: bioLines[0],
-            start: "top 85%",
-            end: "top 55%",
-            scrub: true,
-          },
-        }
-      );
-    }
-
-    // ============ SERVICES STAGGER ============
-    const services = gsap.utils.toArray<HTMLElement>(".service-item");
-    if (services.length) {
-      gsap.fromTo(
-        services,
-        { opacity: 0, x: -30 },
-        {
-          opacity: 1,
-          x: 0,
-          ease: "none",
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: services[0],
-            start: "top 85%",
-            end: "top 55%",
-            scrub: true,
-          },
-        }
-      );
-    }
-
-    // ============ STATS TRIGGER ============
-    const statsSection = document.querySelector(".stats-section");
-    if (statsSection) {
-      ScrollTrigger.create({
-        trigger: statsSection,
-        start: "top 70%",
-        onEnter: () => setStartCounting(true),
-        once: true,
+        });
+        node.parentNode?.replaceChild(frag, node);
       });
-    }
+    };
 
-    // ============ STATS FADE IN ============
-    const statCards = gsap.utils.toArray<HTMLElement>(".stat-card");
-    if (statCards.length) {
-      gsap.fromTo(
-        statCards,
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          ease: "none",
-          stagger: 0.15,
-          scrollTrigger: {
-            trigger: statCards[0],
-            start: "top 85%",
-            end: "top 55%",
-            scrub: true,
-          },
-        }
+    wrapWords(aboutTextRef.current);
+    wrapWords(aboutVersionRef.current);
+
+    // ---------- Collect all elements ----------
+    const mainWords = gsap.utils.toArray(
+      aboutTextRef.current?.querySelectorAll(".word") ?? []
+    ) as HTMLElement[];
+    const versionWords = gsap.utils.toArray(
+      aboutVersionRef.current?.querySelectorAll(".word") ?? []
+    ) as HTMLElement[];
+    const photo = imageRef.current?.querySelector(
+      ".about-photo"
+    ) as HTMLElement | null;
+
+    // ---------- Initial states (Luke's CSS defaults) ----------
+    // Photo is VISIBLE from the start with full blur, so the user can see it
+    // "blur in" from the hero transition (it enters view at top: 0 of section
+    // which is right after the hero, at the same vertical level).
+    gsap.set(mainWords, { opacity: 0, filter: "blur(8px)" });
+    gsap.set(versionWords, { opacity: 0, filter: "blur(8px)" });
+    gsap.set(aboutSubRef.current, { opacity: 0, filter: "blur(12px)" });
+    if (photo) gsap.set(photo, { opacity: 1, filter: "blur(20px)" });
+
+    // ---------- SINGLE TIMELINE: main text + photo (gradual, long scroll) ----------
+    // Trigger on the SECTION (not the text) so the animation starts the moment
+    // the section enters the viewport — the photo (at top: 0 of section) is
+    // already at the bottom of the viewport, blurring in from the hero.
+    // Range "top 100%" → "top 15%" = 85% of viewport ≈ 798px of scroll.
+    // That's a long, gradual range so the photo blur and text reveal happen
+    // over many frames (like Luke's flow).
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 100%",
+        end: "top 15%",
+        scrub: true,
+      },
+    });
+
+    // Photo blur clear — takes the FULL timeline (1.0) so it clears gradually
+    // over the entire 798px scroll range. Opacity stays 1 throughout so the
+    // photo is always visible (just blurred), matching Luke's flow where the
+    // photo is visible from the hero transition onward.
+    if (photo) {
+      tl.fromTo(
+        photo,
+        { opacity: 1, filter: "blur(20px)" },
+        { opacity: 1, filter: "blur(0px)", ease: "none", duration: 1 },
+        0
       );
     }
-  }, { scope: sectionRef });
+
+    // Main text words reveal staggered — starts at 0.5 of the timeline because
+    // the H2 (at 45vh below section top) only enters the viewport around 53%
+    // through the trigger range. Stagger 0.02, each word 0.2 → 14 words
+    // finish at 0.5 + 0.28 + 0.2 = 0.98 of the timeline.
+    mainWords.forEach((word, i) => {
+      tl.to(
+        word,
+        { opacity: 1, filter: "blur(0px)", ease: "none", duration: 0.2 },
+        0.5 + i * 0.02
+      );
+    });
+
+    // Sub-text reveal (starts at 60% of timeline, finishes at 100%)
+    tl.to(
+      aboutSubRef.current,
+      { opacity: 1, filter: "blur(0px)", ease: "none", duration: 0.4 },
+      0.6
+    );
+
+    // ---------- V3.0 words reveal (separate trigger — V3.0 is at the
+    //              bottom of the section and enters view much later) ----------
+    versionWords.forEach((word) => {
+      gsap.to(word, {
+        opacity: 1,
+        filter: "blur(0px)",
+        ease: "none",
+        scrollTrigger: {
+          trigger: word,
+          start: "top 75%",
+          end: "top 60%",
+          scrub: true,
+        },
+      });
+    });
+  }, { scope: containerRef });
 
   return (
     <section
       id="about"
-      ref={sectionRef}
-      className="relative w-full z-40"
-      style={{ backgroundColor: "#040508" }}
+      ref={containerRef}
+      className="relative w-full text-white min-h-screen"
+      style={{ padding: "45vh 4rem 40vh" }}
     >
-      {/* ============ MAIN LAYOUT ============ */}
-      <div
-        className="relative w-full mx-auto flex flex-col lg:flex-row"
-        style={{
-          maxWidth: "var(--max-width)",
-          padding: "0 var(--gutter)",
-          minHeight: "100vh",
-        }}
-      >
-        {/* ============ LEFT: TYPOGRAPHY STACK ============ */}
-        <div
-          className="flex-1 flex flex-col justify-center min-w-0"
-          style={{
-            paddingTop: "clamp(6rem, 15vh, 12rem)",
-            paddingBottom: "clamp(4rem, 10vh, 8rem)",
-            paddingRight: "clamp(2rem, 5vw, 6rem)",
-          }}
+      {/* ---------- Text column (direct child of section, like Luke's) ---------- */}
+      <div ref={textRef} className="relative z-20 w-full md:w-[55%]">
+        {/* Wide heading ✦ words animate in via blur reveal */}
+        <h2
+          ref={aboutTextRef}
+          className="text-3xl md:text-5xl font-serif leading-[1.45] tracking-[-0.01em] w-full text-balance"
         >
-          {/* ============ MASSIVE HEADING ============ */}
-          <h2
-            ref={headingRef}
-            className="text-[clamp(3rem,10vw,8rem)] font-serif leading-[0.85] tracking-[-0.03em] text-white max-w-[16ch]"
-            style={{ marginBottom: "clamp(2rem, 5vh, 4rem)" }}
-          >
-            <span className="about-word block">I create</span>
-            <span className="about-word block">visuals that</span>
-            <span className="about-word block">sell <span className="text-[#c8a84b]">products.</span></span>
-          </h2>
+          As a{" "}
+          <span className="italic font-bold">commercial photographer</span>, I
+          craft tailor-made visual experiences, blending technical precision and{" "}
+          <span className="italic font-bold">emotion</span>.
+        </h2>
 
-          {/* ============ BIO ============ */}
-          <div style={{ marginBottom: "clamp(3rem, 6vh, 5rem)" }}>
-            <p
-              className="bio-line"
-              style={{
-                fontFamily: "var(--font-sans)",
-                fontSize: "clamp(0.875rem, 1.1vw, 1.0625rem)",
-                fontWeight: 400,
-                lineHeight: 1.7,
-                color: "#9c9c9c",
-                maxWidth: "42ch",
-                marginBottom: "0.75rem",
-                textWrap: "pretty",
-              }}
-            >
-              Rahul Chanda is a high-end commercial product photographer based in
-              Dehradun, India. Over a decade of precision lighting and intentional
-              composition — crafting visuals that connect brands with their audience.
-            </p>
-          </div>
-
-          {/* ============ SERVICES LIST ============ */}
-          <div
-            style={{
-              borderTop: "1px solid rgba(255,255,255,0.1)",
-              paddingTop: "clamp(1.5rem, 3vh, 2.5rem)",
-              marginBottom: "clamp(3rem, 6vh, 5rem)",
-            }}
-          >
-            {[
-              "Product Photography",
-              "Food Photography",
-              "Motion Design",
-              "Commercial Campaigns",
-            ].map((service) => (
-              <div
-                key={service}
-                className="service-item font-serif text-[clamp(1rem,1.5vw,1.25rem)] tracking-[-0.01em] text-[#d8d8d8]"
-                style={{
-                  padding: "0.625rem 0",
-                  borderBottom: "1px solid rgba(255,255,255,0.06)",
-                }}
-              >
-                {service}
-              </div>
-            ))}
-          </div>
-
-          {/* ============ STATS ============ */}
-          <div className="stats-section flex flex-wrap gap-10 md:gap-14">
-            <div className="stat-card" ref={stat1.ref}>
-              <div
-                className="font-serif text-[clamp(2.5rem,5vw,4rem)] leading-[1] tracking-[-0.03em] text-white"
-                style={{ marginBottom: "0.5rem" }}
-              >
-                {stat1.count}+
-              </div>
-              <div
-                style={{
-                  fontFamily: "var(--font-sans)",
-                  fontSize: "0.6875rem",
-                  fontWeight: 500,
-                  letterSpacing: "0.06em",
-                  textTransform: "uppercase",
-                  color: "#434343",
-                  lineHeight: 1.4,
-                }}
-              >
-                Years Crafting
-                <br />
-                Commercial Visuals
-              </div>
-            </div>
-            <div className="stat-card" ref={stat2.ref}>
-              <div
-                className="font-serif text-[clamp(2.5rem,5vw,4rem)] leading-[1] tracking-[-0.03em] text-white"
-                style={{ marginBottom: "0.5rem" }}
-              >
-                {stat2.count}+
-              </div>
-              <div
-                style={{
-                  fontFamily: "var(--font-sans)",
-                  fontSize: "0.6875rem",
-                  fontWeight: 500,
-                  letterSpacing: "0.06em",
-                  textTransform: "uppercase",
-                  color: "#434343",
-                  lineHeight: 1.4,
-                }}
-              >
-                Campaigns
-                <br />
-                Delivered
-              </div>
-            </div>
-            <div className="stat-card" ref={stat3.ref}>
-              <div
-                className="font-serif text-[clamp(2.5rem,5vw,4rem)] leading-[1] tracking-[-0.03em] text-white"
-                style={{ marginBottom: "0.5rem" }}
-              >
-                {stat3.count}+
-              </div>
-              <div
-                style={{
-                  fontFamily: "var(--font-sans)",
-                  fontSize: "0.6875rem",
-                  fontWeight: 500,
-                  letterSpacing: "0.06em",
-                  textTransform: "uppercase",
-                  color: "#434343",
-                  lineHeight: 1.4,
-                }}
-              >
-                Brands
-                <br />
-                Served
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* ============ MOBILE PORTRAIT (visible < lg) ============ */}
-        <div className="flex lg:hidden items-center justify-center w-full" style={{ paddingBottom: "3rem" }}>
-          <div
-            className="relative overflow-hidden w-full max-w-[400px]"
-            style={{
-              aspectRatio: "3/4",
-              borderRadius: "12px",
-              border: "1px solid rgba(255,255,255,0.12)",
-            }}
-          >
-            {/* Warm glow behind portrait */}
-            <div
-              style={{
-                position: "absolute",
-                inset: "-20%",
-                background:
-                  "radial-gradient(ellipse at center, rgba(200,168,75,0.12) 0%, rgba(200,168,75,0.04) 40%, transparent 70%)",
-                zIndex: 0,
-                pointerEvents: "none",
-              }}
-            />
-            {/* Portrait image — WebGL ripple shader */}
-            <div className="relative z-[1]" style={{ width: "100%", height: "100%" }}>
-              <RipplePortrait
-                src="/about me photo/1me.webp"
-                alt="Rahul Chanda — commercial product photographer"
-                width={3712}
-                height={4608}
-                className="w-full h-full"
-              />
-            </div>
-            {/* Film grain overlay */}
-            <div
-              className="pointer-events-none"
-              style={{
-                position: "absolute",
-                inset: 0,
-                zIndex: 2,
-                opacity: 0.08,
-                mixBlendMode: "overlay",
-                backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
-                backgroundSize: "128px 128px",
-              }}
-            />
-            {/* Glass edge highlight */}
-            <div
-              className="pointer-events-none"
-              style={{
-                position: "absolute",
-                inset: 0,
-                zIndex: 3,
-                borderRadius: "12px",
-                boxShadow:
-                  "inset 0 1px 0 0 rgba(255,255,255,0.1), inset 0 -1px 0 0 rgba(255,255,255,0.05)",
-              }}
-            />
-          </div>
-        </div>
-
-        {/* ============ RIGHT: STICKY PORTRAIT ============ */}
-        <div
-          className="hidden lg:flex items-center justify-center"
-          style={{
-            width: "45%",
-            position: "sticky",
-            top: 0,
-            height: "100vh",
-            paddingTop: "clamp(4rem, 8vh, 6rem)",
-            paddingBottom: "clamp(4rem, 8vh, 6rem)",
-          }}
+        {/* Sub-text (30% of section wide, indented 25% from section left) */}
+        <p
+          ref={aboutSubRef}
+          className="text-sm md:text-base font-sans leading-[1.6] tracking-[-0.005em] w-full md:w-[55%] mt-[12vh] md:ml-[45%] text-neutral-300"
         >
-          <div
-            ref={portraitRef}
-            className="relative overflow-hidden"
-            style={{
-              width: "100%",
-              maxWidth: "480px",
-              height: "auto",
-              aspectRatio: "3/4",
-              borderRadius: "12px",
-              border: "1px solid rgba(255,255,255,0.12)",
-            }}
+          My name is Rahul Chanda. A high-end commercial product photographer
+          based in Dehradun, I build high-impact visual identities that connect
+          brands with their audience.
+        </p>
+
+        {/* INFO link (indented to match sub-text) */}
+        <div className="mt-14 md:ml-[45%]">
+          <a
+            href="#contact"
+            className="text-xs uppercase tracking-widest font-bold hover:opacity-70 transition-opacity"
+            data-cursor="pointer"
           >
-            {/* Warm glow behind portrait */}
-            <div
-              style={{
-                position: "absolute",
-                inset: "-20%",
-                background:
-                  "radial-gradient(ellipse at center, rgba(200,168,75,0.12) 0%, rgba(200,168,75,0.04) 40%, transparent 70%)",
-                zIndex: 0,
-                pointerEvents: "none",
-              }}
-            />
-
-            {/* Portrait image — WebGL ripple shader */}
-            <div className="relative z-[1]" style={{ width: "100%", height: "100%" }}>
-              <RipplePortrait
-                src="/about me photo/1me.webp"
-                alt="Rahul Chanda — commercial product photographer"
-                width={3712}
-                height={4608}
-                className="w-full h-full"
-              />
-            </div>
-
-            {/* Film grain overlay */}
-            <div
-              className="pointer-events-none"
-              style={{
-                position: "absolute",
-                inset: 0,
-                zIndex: 2,
-                opacity: 0.08,
-                mixBlendMode: "overlay",
-                backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
-                backgroundSize: "128px 128px",
-              }}
-            />
-
-            {/* Glass edge highlight */}
-            <div
-              className="pointer-events-none"
-              style={{
-                position: "absolute",
-                inset: 0,
-                zIndex: 3,
-                borderRadius: "12px",
-                boxShadow:
-                  "inset 0 1px 0 0 rgba(255,255,255,0.1), inset 0 -1px 0 0 rgba(255,255,255,0.05)",
-              }}
-            />
-          </div>
+            INFO
+          </a>
         </div>
       </div>
 
-      {/* ============ BOTTOM RULE ============ */}
+      {/* V3.0 right-aligned (spans full section width, positioned at bottom-right
+          overlapping with photo ✦ matches Luke's layout) */}
       <div
-        className="w-full mx-auto"
-        style={{
-          maxWidth: "var(--max-width)",
-          padding: "0 var(--gutter)",
-          paddingBottom: "clamp(3rem, 6vh, 5rem)",
-        }}
+        ref={aboutVersionRef}
+        className="absolute right-[32%] bottom-[22vh] z-20 text-3xl md:text-5xl font-serif leading-[1.45] tracking-[-0.01em] flex items-baseline justify-end gap-2"
       >
-        <div
-          style={{
-            width: "100%",
-            height: "1px",
-            background: "rgba(255,255,255,0.1)",
-          }}
+        <span className="inline-block">?</span>
+        <span>✦ 2026</span>
+      </div>
+
+      {/* ---------- Photo (direct child of section, absolute right at top: 0 so it
+                    enters the viewport right at the hero?about transition) ---------- */}
+      <div
+        ref={imageRef}
+        className="absolute right-0 top-0 z-[5] w-[min(50vw,720px)]"
+      >
+        <Image
+          src="/about me photo/1me.webp"
+          alt="Rahul Chanda"
+          width={3712}
+          height={4608}
+          quality={100}
+          className="about-photo block w-full h-auto"
+          style={{ borderRadius: "420px 0 0 420px" }}
+          priority
         />
-        <div
-          className="flex justify-between items-center"
-          style={{
-            marginTop: "1.5rem",
-            fontFamily: "var(--font-sans)",
-            fontSize: "0.625rem",
-            letterSpacing: "0.08em",
-            textTransform: "uppercase",
-            color: "#434343",
-          }}
-        >
-          <span>COMMERCIAL PRODUCT PHOTOGRAPHER</span>
-          <span>DEHRADUN, INDIA</span>
-        </div>
       </div>
     </section>
   );
 }
+
+

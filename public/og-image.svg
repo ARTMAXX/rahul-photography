@@ -1,0 +1,38 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#070707"/>
+  <!-- Ambient gradient orbs -->
+  <defs>
+    <radialGradient id="glow1" cx="80%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#8c1c13" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#8c1c13" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="15%" cy="85%" r="40%">
+      <stop offset="0%" stop-color="#c8a84b" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#c8a84b" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="accent" cx="75%" cy="45%" r="30%">
+      <stop offset="0%" stop-color="#c8a84b" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#c8a84b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#glow1)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+  
+  <!-- Subtle grid pattern -->
+  <line x1="0" y1="157.5" x2="1200" y2="157.5" stroke="white" stroke-opacity="0.03" stroke-width="1"/>
+  <line x1="0" y1="315" x2="1200" y2="315" stroke="white" stroke-opacity="0.05" stroke-width="1"/>
+  <line x1="0" y1="472.5" x2="1200" y2="472.5" stroke="white" stroke-opacity="0.03" stroke-width="1"/>
+  
+  <!-- Accent vertical line -->
+  <rect x="100" y="280" width="3" height="120" fill="url(#accent)" rx="1.5"/>
+  <rect x="100" y="280" width="3" height="80" fill="#c8a84b" rx="1.5" opacity="0.7"/>
+  
+  <!-- Name -->
+  <text x="140" y="380" font-family="'Playfair Display', Georgia, serif" font-size="64" font-weight="700" fill="#f0f0f0" letter-spacing="-1">Rahul Chanda</text>
+  
+  <!-- Tagline -->
+  <text x="140" y="425" font-family="'Outfit', Arial, sans-serif" font-size="24" fill="rgba(255,255,255,0.5)" font-weight="400" letter-spacing="3">Commercial Product Photographer</text>
+  
+  <!-- Location -->
+  <text x="140" y="465" font-family="'Outfit', Arial, sans-serif" font-size="16" fill="rgba(200,168,75,0.7)" font-weight="300" letter-spacing="4">DEHRADUN, INDIA</text>
+</svg>

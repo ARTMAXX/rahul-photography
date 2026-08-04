@@ -1,17 +1,27 @@
-﻿"use client";
+"use client";
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import {
+  ArrowUpRight,
+  Building2,
+  Camera,
+  Clapperboard,
+  Pizza,
+  Repeat,
+  Shirt,
+  type LucideIcon,
+} from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 interface Service {
   id: number;
   title: string;
-  icon: string;
+  icon: LucideIcon;
   shortDesc: string;
   fullDesc: string;
   deliverables: string[];
@@ -22,7 +32,7 @@ const services: Service[] = [
   {
     id: 1,
     title: "Product Photography",
-    icon: "◰",
+    icon: Camera,
     shortDesc: "High-end commercial product shots that showcase every detail.",
     fullDesc:
       "Professional product photography for e-commerce, marketing campaigns, and brand identity. From small accessories to large furniture pieces, I create images that sell.",
@@ -33,12 +43,12 @@ const services: Service[] = [
       "Retouching & color correction",
       "Web-optimized versions",
     ],
-    pricing: "Starting at ₹25,000",
+    pricing: "Starting at ?25,000",
   },
   {
     id: 2,
     title: "Fashion & Lifestyle",
-    icon: "◈",
+    icon: Shirt,
     shortDesc: "Editorial-quality fashion imagery for brands and publications.",
     fullDesc:
       "From lookbooks to editorial campaigns, I craft fashion photography that tells your brand's story with emotional depth and visual impact.",
@@ -49,12 +59,12 @@ const services: Service[] = [
       "Location scouting & setup",
       "Post-production & retouching",
     ],
-    pricing: "Starting at ₹40,000",
+    pricing: "Starting at ?40,000",
   },
   {
     id: 3,
     title: "Food & Beverage",
-    icon: "◐",
+    icon: Pizza,
     shortDesc: "Mouth-watering food photography for restaurants and brands.",
     fullDesc:
       "Make your menu items irresistible with photography that captures texture, color, and appetite appeal. Perfect for menus, social media, and marketing.",
@@ -65,12 +75,12 @@ const services: Service[] = [
       "Multiple compositions",
       "Menu-ready files",
     ],
-    pricing: "Starting at ₹20,000",
+    pricing: "Starting at ?20,000",
   },
   {
     id: 4,
     title: "Commercial Campaigns",
-    icon: "◉",
+    icon: Clapperboard,
     shortDesc:
       "Full-scale campaign photography from concept to delivery.",
     fullDesc:
@@ -87,7 +97,7 @@ const services: Service[] = [
   {
     id: 5,
     title: "Brand Content Creation",
-    icon: "◇",
+    icon: Repeat,
     shortDesc: "Monthly content packages for consistent brand presence.",
     fullDesc:
       "Ongoing photography services to keep your social media, website, and marketing materials fresh. Perfect for brands who need regular, high-quality content.",
@@ -98,12 +108,12 @@ const services: Service[] = [
       "Priority scheduling",
       "Quick turnaround (48-72hrs)",
     ],
-    pricing: "₹35,000/month",
+    pricing: "?35,000/month",
   },
   {
     id: 6,
     title: "Architectural & Interiors",
-    icon: "◻",
+    icon: Building2,
     shortDesc:
       "Architectural photography that showcases space and design.",
     fullDesc:
@@ -115,19 +125,75 @@ const services: Service[] = [
       "Floor plan integration (optional)",
       "Virtual staging consultation",
     ],
-    pricing: "Starting at ₹30,000",
+    pricing: "Starting at ?30,000",
   },
 ];
 
 export default function ServicesShowcase() {
   const [expandedService, setExpandedService] = useState<number | null>(null);
   const containerRef = useRef<HTMLElement>(null);
+
+  // Inject FAQPage JSON-LD schema
+  useEffect(() => {
+    const existing = document.getElementById("faq-schema");
+    if (existing) return;
+    const script = document.createElement("script");
+    script.id = "faq-schema";
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What photography services do you offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Product photography, fashion & lifestyle, food & beverage, commercial campaigns, brand content creation, and architectural & interiors photography based in Dehradun, India."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does commercial photography cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pricing varies by service: Product Photography starts at ?25,000, Food & Beverage at ?20,000, Fashion & Lifestyle at ?40,000, and Architectural at ?30,000. Custom campaigns and monthly retainers are quoted individually."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you travel for shoots outside Dehradun?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, travel is available within Uttarakhand and across India for commercial projects. Travel costs are quoted as part of the project estimate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does a typical photoshoot take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A typical product shoot takes 4✦6 hours. Larger campaigns or multi-scene shoots may require a full day or multiple days depending on complexity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide edited/retouched images?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, all images are professionally color-graded, retouched, and delivered in multiple formats optimized for print and digital use."
+          }
+        }
+      ]
+    });
+    document.head.appendChild(script);
+  }, []);
   const stickerRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const servicesRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useGSAP(() => {
-    // Heading reveal — cinematic blur to sharp
+    // Heading reveal ✦ cinematic blur to sharp
     if (headingRef.current) {
       gsap
         .timeline({
@@ -152,7 +218,7 @@ export default function ServicesShowcase() {
         );
     }
 
-    // Sticker parallax — follows scroll
+    // Sticker parallax ✦ follows scroll
     if (stickerRef.current) {
       gsap.to(stickerRef.current, {
         y: -200,
@@ -167,7 +233,7 @@ export default function ServicesShowcase() {
       });
     }
 
-    // Each service card — staggered entrance
+    // Each service card ✦ staggered entrance
     servicesRef.current.forEach((card, i) => {
       if (!card) return;
       gsap.fromTo(
@@ -206,11 +272,30 @@ export default function ServicesShowcase() {
     setExpandedService(expandedService === id ? null : id);
   };
 
+  // Scroll to the enquiry form and pre-select the service they asked about.
+  const inquireAbout = (serviceTitle: string) => {
+    // On the homepage: dispatch + smooth-scroll to the in-page contact section.
+    // On a standalone /services page: navigate to /contact?service=✦
+    if (window.location.pathname === "/") {
+      window.dispatchEvent(
+        new CustomEvent("inquire-service", { detail: serviceTitle })
+      );
+      const contact = document.getElementById("contact");
+      if (contact) {
+        contact.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      window.location.href = `/contact?service=${encodeURIComponent(
+        serviceTitle
+      )}`;
+    }
+  };
+
   return (
     <section
       ref={containerRef}
       id="services"
-      className="relative w-full bg-black py-32 md:py-40 px-4 md:px-12 overflow-hidden"
+      className="relative w-full py-32 md:py-40 px-4 md:px-12 overflow-hidden bg-[#070707]"
     >
       {/* Sticker Parallax Gradient */}
       <div
@@ -223,13 +308,13 @@ export default function ServicesShowcase() {
       />
 
       <div className="relative z-10 max-w-[1600px] mx-auto">
-        {/* Section header — clean, no numbered marker */}
+        {/* Section header ✦ clean, no numbered marker */}
         <div className="mb-24 md:mb-32">
           <h2
             ref={headingRef}
             className="text-[clamp(3rem,10vw,8rem)] font-serif leading-[0.85] tracking-[-0.03em] text-white max-w-[16ch]"
           >
-            <span className="text-[#c8a84b]">Services</span>
+            <span className="text-[#e83b2c]">Services</span>
             <br />
             tailored to your
             <br />
@@ -256,16 +341,16 @@ export default function ServicesShowcase() {
                 <div
                   className={`p-[2px] rounded-[2rem] transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ${
                     isExpanded
-                      ? "bg-gradient-to-br from-[#c8a84b]/30 via-white/10 to-transparent"
+                      ? "bg-gradient-to-br from-[#e83b2c]/30 via-[#8c1c13]/10 to-transparent"
                       : "bg-white/[0.03] hover:bg-white/[0.06]"
                   }`}
                 >
                   <div
                     className={`rounded-[calc(2rem-2px)] transition-all duration-700 bg-gradient-to-br from-black to-[#0a0a0a] overflow-hidden ${
-                      isExpanded ? "ring-1 ring-white/10" : ""
+                      isExpanded ? "ring-1 ring-[#e83b2c]/30" : ""
                     }`}
                   >
-                    {/* Header — Always Visible */}
+                    {/* Header ✦ Always Visible */}
                     <button
                       onClick={() => toggleService(service.id)}
                       className="w-full p-6 md:p-8 text-left transition-all duration-300"
@@ -274,13 +359,13 @@ export default function ServicesShowcase() {
                         <div className="flex items-start gap-4 md:gap-6 flex-1 min-w-0">
                           {/* Icon with glow */}
                           <div
-                            className={`w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center text-xl md:text-2xl flex-shrink-0 transition-all duration-500 ${
+                            className={`w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-500 ${
                               isExpanded
-                                ? "bg-[#c8a84b]/15 ring-2 ring-[#c8a84b]/30 text-[#c8a84b] scale-110"
+                                ? "bg-[#e83b2c]/15 ring-2 ring-[#e83b2c]/30 text-[#e83b2c] scale-110"
                                 : "bg-white/5 ring-1 ring-white/10 text-white/40"
                             }`}
                           >
-                            {service.icon}
+                            <service.icon className="w-5 h-5 md:w-6 md:h-6" strokeWidth={1.5} />
                           </div>
 
                           {/* Title + Short Desc */}
@@ -298,7 +383,7 @@ export default function ServicesShowcase() {
                         <div
                           className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-500 ${
                             isExpanded
-                              ? "bg-[#c8a84b]/15 ring-1 ring-[#c8a84b]/30 text-[#c8a84b]"
+                              ? "bg-[#e83b2c]/15 ring-1 ring-[#e83b2c]/30 text-[#e83b2c]"
                               : "bg-white/5 ring-1 ring-white/10 text-white/40 hover:bg-white/10"
                           }`}
                         >
@@ -335,13 +420,13 @@ export default function ServicesShowcase() {
                         >
                           <div className="px-6 md:px-8 pb-6 md:pb-8 pt-2">
                             {/* Gold divider */}
-                            <div className="w-full h-px bg-gradient-to-r from-[#c8a84b]/40 via-white/10 to-transparent mb-8" />
+                            <div className="w-full h-px bg-gradient-to-r from-[#ffffff]/40 via-white/10 to-transparent mb-8" />
 
                             {/* Grid: Overview + Deliverables */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
                               {/* Full Description */}
                               <div>
-                                <h4 className="text-[10px] uppercase tracking-[0.25em] text-[#c8a84b]/60 font-medium mb-4">
+                                <h4 className="text-[10px] uppercase tracking-[0.25em] text-[#ffffff]/60 font-medium mb-4">
                                   Overview
                                 </h4>
                                 <p className="text-white/70 leading-relaxed text-base md:text-lg">
@@ -351,7 +436,7 @@ export default function ServicesShowcase() {
 
                               {/* Deliverables */}
                               <div>
-                                <h4 className="text-[10px] uppercase tracking-[0.25em] text-[#c8a84b]/60 font-medium mb-4">
+                                <h4 className="text-[10px] uppercase tracking-[0.25em] text-[#ffffff]/60 font-medium mb-4">
                                   What You Get
                                 </h4>
                                 <ul className="space-y-3">
@@ -367,7 +452,7 @@ export default function ServicesShowcase() {
                                       }}
                                       className="flex items-start gap-3 text-white/60 text-sm md:text-base"
                                     >
-                                      <span className="text-[#c8a84b]/50 mt-1.5 w-1.5 h-1.5 rounded-full bg-[#c8a84b]/50 flex-shrink-0" />
+                                      <span className="text-[#e83b2c]/50 mt-1.5 w-1.5 h-1.5 rounded-full bg-[#e83b2c]/50 flex-shrink-0" />
                                       <span>{item}</span>
                                     </motion.li>
                                   ))}
@@ -381,19 +466,23 @@ export default function ServicesShowcase() {
                                 <span className="text-[10px] uppercase tracking-[0.25em] text-white/30 font-medium block mb-1">
                                   Investment
                                 </span>
-                                <span className="text-2xl md:text-3xl font-serif text-[#c8a84b]">
+                                <span className="text-2xl md:text-3xl font-serif text-[#e83b2c]">
                                   {service.pricing}
                                 </span>
                               </div>
 
-                              <button className="group relative">
-                                <div className="p-[1.5px] rounded-full bg-gradient-to-br from-[#c8a84b]/40 to-white/10 transition-all duration-500 group-hover:from-[#c8a84b]/70 group-hover:to-white/30 active:scale-[0.97]">
+                              <button
+                                onClick={() => inquireAbout(service.title)}
+                                className="group relative"
+                                aria-label={`Inquire about ${service.title}`}
+                              >
+                                <div className="p-[1.5px] rounded-full bg-gradient-to-br from-[#e83b2c]/40 to-[#e83b2c]/10 transition-all duration-500 group-hover:from-[#e83b2c]/70 group-hover:to-[#e83b2c]/30 active:scale-[0.97]">
                                   <div className="px-6 py-3 md:px-8 md:py-3.5 rounded-full bg-black flex items-center gap-3 transition-all duration-300">
                                     <span className="text-sm font-medium text-white/90 group-hover:text-white">
                                       Inquire Now
                                     </span>
-                                    <div className="w-5 h-5 rounded-full bg-[#c8a84b]/20 flex items-center justify-center text-[#c8a84b] text-xs transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-[2px]">
-                                      →
+                                    <div className="w-5 h-5 rounded-full bg-[#e83b2c]/20 flex items-center justify-center text-[#e83b2c] text-xs transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-[2px]">
+                                      <ArrowUpRight className="w-3 h-3" />
                                     </div>
                                   </div>
                                 </div>

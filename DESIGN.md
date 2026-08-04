@@ -1,305 +1,272 @@
----
-name: TRIONN
-description: AI-Powered Creative Design & Development Studio — dark, minimal, editorial with extreme typographic scale
-colors:
-  primary: "#ffffff"
-  primary-light: "#d8d8d8"
-  accent: "#ffffff"
-  neutral-bg: "#040508"
-  neutral-text: "#d8d8d8"
-  neutral-muted: "#434343"
-  neutral-line: "#434343"
-  surface-dark: "#0c0c0c"
-  surface-card: "#111111"
-  cream: "#e6e4e2"
-  panel-gray: "#c8c8c8"
-  grey-light: "#9c9c9c"
-  glass-line: "rgba(255,255,255,0.18)"
-typography:
-  display:
-    fontFamily: "Familjen Grotesk, familjen, sans-serif"
-    fontSize: "clamp(4rem, 12vw, 12.5rem)"
-    fontWeight: 400
-    lineHeight: 0.95
-    letterSpacing: -0.03em
-  headline:
-    fontFamily: "Familjen Grotesk, familjen, sans-serif"
-    fontSize: "clamp(2.5rem, 8vw, 7.5rem)"
-    fontWeight: 400
-    lineHeight: 1
-    letterSpacing: -0.02em
-  title:
-    fontFamily: "Familjen Grotesk, familjen, sans-serif"
-    fontSize: "clamp(1.5rem, 3vw, 2.1rem)"
-    fontWeight: 400
-    lineHeight: 1.2
-  body:
-    fontFamily: "Neue Haas Grotesk, neueHaas, Helvetica, Arial, sans-serif"
-    fontSize: "clamp(0.875rem, 1.2vw, 1.125rem)"
-    fontWeight: 400
-    lineHeight: 1.6
-    color: "#d8d8d8"
-  label:
-    fontFamily: "Neue Haas Grotesk, neueHaas, Helvetica, Arial, sans-serif"
-    fontSize: "clamp(0.75rem, 0.9vw, 0.875rem)"
-    fontWeight: 500
-    letterSpacing: 0.05em
-    textTransform: uppercase
-    color: "#9c9c9c"
-  mono:
-    fontFamily: "Martian Mono, martianMono, Space Mono, monospace"
-    fontSize: "clamp(0.75rem, 0.9vw, 0.875rem)"
-  nav:
-    fontFamily: "Familjen Grotesk, familjen, sans-serif"
-    fontSize: "clamp(0.875rem, 1.2vw, 1.175rem)"
-    fontWeight: 400
-    letterSpacing: -0.04em
-    textTransform: uppercase
-    color: "#ffffff"
-rounded:
-  sm: "4px"
-  md: "6px"
-  lg: "12px"
-  xl: "16px"
-  full: "9999px"
-spacing:
-  xs: "4px"
-  sm: "8px"
-  md: "16px"
-  lg: "24px"
-  xl: "32px"
-  2xl: "48px"
-  3xl: "64px"
-  4xl: "96px"
-  5xl: "128px"
-components:
-  button-primary:
-    backgroundColor: "transparent"
-    textColor: "#d8d8d8"
-    rounded: "{rounded.full}"
-    padding: "6px 15px"
-    borderColor: "rgba(216,216,216,0.5)"
-    borderWidth: "1px"
-    fontFamily: "Familjen Grotesk, familjen, sans-serif"
-    fontSize: "1rem"
-    textTransform: uppercase
-    letterSpacing: -0.02em
-  button-primary-hover:
-    borderColor: "#ffffff"
-    textColor: "#ffffff"
-  nav-link:
-    fontFamily: "Familjen Grotesk, familjen, sans-serif"
-    fontSize: "1.175rem"
-    textTransform: uppercase
-    letterSpacing: -0.04em
-    color: "#ffffff"
-    padding: "0"
-  card:
-    backgroundColor: "rgba(255,255,255,0.03)"
-    textColor: "#d8d8d8"
-    rounded: "{rounded.lg}"
-    padding: "24px 32px"
-  input-field:
-    backgroundColor: "transparent"
-    textColor: "#ffffff"
-    rounded: "{rounded.md}"
-    padding: "12px 16px"
-    borderColor: "rgba(255,255,255,0.1)"
-    borderWidth: "1px"
+# Rahul Chanda Photography — Design System
+
+## 1. Brand Essence
+
+**Positioning:** High-end commercial product photographer based in Dehradun, India. The website IS the portfolio — design quality directly equals perceived photography quality.
+
+**Design Ethos:** Cinematic precision luxe. Every pixel communicates that Rahul's photography is premium, deliberate, and technically flawless. The site itself is proof of craft.
+
 ---
 
-# Design System: TRIONN
+## 2. Color System
 
-## 1. Overview
+### Primary Palette
+| Token | Value | Usage |
+|-------|-------|-------|
+| `--background` | `#070707` | Page root, deepest black |
+| `--foreground` | `#f0f0f0` | Primary text, near-white |
+| `--gold` | `#c8a84b` | Brand accent, CTAs, highlights |
+| `--gold-light` | `#f0cc70` | Hover states, secondary gold |
+| `--red-accent` | `#e83b2c` | Rare accent, alerts |
 
-**Creative North Star: "The Monochrome Atelier"**
+### Surface Colors
+| Token | Value | Usage |
+|-------|-------|-------|
+| Hero bg | `#0a0a0a` | Section backgrounds |
+| Card bg | `#0f0f0f` | Elevated surfaces |
+| Border | `rgba(255,255,255,0.06)` | Subtle dividers |
+| Border hover | `rgba(255,255,255,0.1)` | Interactive states |
+| Text muted | `rgba(255,255,255,0.4–0.6)` | Secondary text |
 
-A radically restrained, dark-editorial design language built for a creative digital studio. The canvas is near-black — not dark gray — allowing typography to become the primary visual element. There is no traditional accent color. Hierarchy is achieved through extreme size contrast, weight, tracking, and transparency. The palette is intentionally achromatic: black, white, and every gray in between.
+### Gradient Language
+- **Hero background:** `from-[#0a0a0a] via-[#8c1c13] to-[#0a0a0a]` (dark red atmospheric wash)
+- **Gold gradient borders:** `from-[#c8a84b]/30 via-white/10 to-transparent`
+- **Service card expanded:** `from-[#c8a84b]/30 via-white/10 to-transparent`
+- **Selection color:** `rgba(200, 168, 75, 0.25)` (gold tint)
 
-The system explicitly rejects: colorful accents, gradients, heavy shadows, decorative elements, stock photography, and any visual that competes with typography. This is design as typographic craft — quiet, confident, uncompromising.
-
-### Key Characteristics:
-- **Extreme typographic scale** — display text reaches 150px (12.5rem). Sections titles sit at 89-94px. The size itself creates drama.
-- **Achromatic palette** — the only "colors" are white, near-black, and carefully calibrated grays. No accent color exists.
-- **Two-type-family system** — Familjen Grotesk for all headings (clean, geometric, understated). Neue Haas Grotesk for body (Swiss precision). Martian Mono for technical data.
-- **12-column grid** — everything aligns to a disciplined 12-column grid with 22.5px gaps.
-- **Transparency as depth** — depth comes from layered opacity, not shadows. Surfaces use `rgba(255,255,255, 0.03-0.06)` backgrounds.
-- **Uppercase navigation** — nav links are always uppercase with tight negative tracking (-0.04em).
-- **Generous whitespace** — sections breathe. The dark canvas is not filled; it's composed.
-
-## 2. Colors
-
-A strictly monochrome/achromatic palette. The full range is black → white through ~6 stops of gray. No hues.
-
-### Primary
-- **Pure White** (#ffffff): Used for the logo, top-level navigation text, and primary CTAs. Highest emphasis.
-- **Light Gray** (#d8d8d8): Primary body text, headings, footer content. The default "on-dark" color.
-
-### Neutral
-- **Void Black** (#040508): Primary background. Near-black with a faint cool cast. The canvas.
-- **Absolute Black** (#000000): Used for full-screen overlays/menus at varying opacities.
-- **Deep Surface** (#0c0c0c): Secondary surface backgrounds, card containers.
-- **Dark Card** (#111111): Inner card surfaces.
-- **Line Gray** (#434343): Dividers, borders, muted structural lines, subdued heading text.
-- **Mid Gray** (#9c9c9c): Secondary text, labels, metadata, hints. Low presence.
-- **Panel Gray** (#c8c8c8): Accent surface elements, panel backgrounds.
-- **Cream** (#e6e4e2): The only off-white variant, used sparingly for warmth in specific sections.
-
-### Functional
-- **Glass Line** (rgba(255,255,255, 0.18)): Subtle border/ring on glass surfaces.
-- **Ink Soft** (rgba(10,10,10, 0.55)): Overlay scrim for modal/tooltip backgrounds.
-- **Faint White** (rgba(255,255,255, 0.03-0.06)): Surface background for cards and elevated containers.
-
-### Named Rules
-**The No-Accent Rule.** There is no accent color. Never introduce a hue. If emphasis is needed, use size, weight, tracking, or opacity — not color.
+---
 
 ## 3. Typography
 
-**Display Font:** Familjen Grotesk (with sans-serif fallback)
-**Body Font:** Neue Haas Grotesk (with Helvetica, Arial, sans-serif fallback)
-**Mono Font:** Martian Mono (with Space Mono, monospace fallback)
+### Font Families
+| Role | Font | Fallback | CSS Variable |
+|------|------|----------|--------------|
+| Editorial / Headlines | Playfair Display | Georgia, serif | `--font-editorial` |
+| Body / UI | Outfit | system-ui, sans-serif | `--font-sans` |
+| Code / Mono | SF Mono, Fira Code | ui-monospace | `--font-mono` |
 
-**Character:** A Swiss-modernist pairing with extreme editorial confidence. Familjen Grotesk brings clean geometric proportions with subtle personality; Neue Haas Grotesk provides the precision of classic Swiss typography. Together they read as "design studio that knows what it's doing."
+### Type Scale
+| Element | Size | Weight | Style | Notes |
+|---------|------|--------|-------|-------|
+| Hero H1 | `12–13vw` | serif | normal + italic | "Rahul" normal, "Chanda" italic |
+| Section H2 | `clamp(3rem, 10vw, 8rem)` | serif 700 | normal | Services, Contact |
+| About H2 | `3–5xl` | serif 700 | normal | Word-by-word blur reveal |
+| Body text | `sm–base` | sans 400 | normal | `leading-[1.6]` |
+| Labels | `10–11px` | sans 500 | uppercase | `tracking-[0.25em]` |
+| Nav links | `10px` | sans | uppercase | `tracking-widest` |
+| Footer text | `11–12px` | sans | uppercase | `tracking-[0.2em]` |
 
-### Hierarchy
-- **Display** (400, clamp(4rem, 12vw, 12.5rem), 0.95, -0.03em): Hero statements, brand-defining text. Never more than 2 per page. Use `text-wrap: balance`. Massive size is the point.
-- **Headline** (400, clamp(2.5rem, 8vw, 7.5rem), 1, -0.02em): Section titles, key facts, impactful statements. Familjen Grotesk. Can be subdued to `color: #434343` for depth.
-- **Title** (400, clamp(1.5rem, 3vw, 2.1rem), 1.2): Project titles, service names, testimonial text. Familjen Grotesk.
-- **Body** (400, clamp(0.875rem, 1.2vw, 1.125rem), 1.6): Paragraphs, descriptions. Neue Haas Grotesk. Color: #d8d8d8. Cap line length at 65-75ch. `text-wrap: pretty`.
-- **Label** (500, clamp(0.75rem, 0.9vw, 0.875rem), 0.05em uppercase): Metadata, tags, small print. Color: #9c9c9c. Always uppercase.
-- **Nav** (400, clamp(0.875rem, 1.2vw, 1.175rem), -0.04em uppercase): Navigation links. Familjen Grotesk. Color: #ffffff.
-- **Mono** (clamp(0.75rem, 0.9vw, 0.875rem)): Technical data, code, metrics. Martian Mono.
+### Typography Rules
+- **Never wrap headlines beyond 6 lines** — editorial typography demands tight control
+- **Serif for impact, sans for information** — hard separation
+- **Italic for emphasis within headlines** — Playfair Display italic is a design element
+- **`mix-blend-difference`** on hero text for cinematic overlay effect
 
-### Named Rules
-**The Extreme Scale Rule.** Display text at 150px is intentional. Do not reduce it for "readability" — it's meant to overwhelm slightly. Balance with `text-wrap: balance`.
+---
 
-**The Uppercase Navigation Rule.** All primary nav links are uppercase. Never use sentence case in navigation. Negative tracking (-0.04em) is required for uppercase to feel intentional.
-
-**The Mono Technical Rule.** Use Martian Mono for statistics, numbers, technical specs, and code snippets. It signals precision and engineering craft.
-
-## 4. Elevation & Depth
-
-Depth is conveyed through **tonal layering and transparency**, never box-shadows. No hard cast shadows on any container.
-
-- **Surface tiers**: Void Black (#040508) → Absolute Black (overlay) → Deep Surface (#0c0c0c) → Dark Card (#111111) → Faint White (rgba(255,255,255, 0.03-0.06)). Each step up the hierarchy gets lighter.
-- **Glass effect**: `backdrop-filter: blur(12px)` with `background: rgba(0,0,0,0.4)` for overlay menus and floating elements. Glass line: `rgba(255,255,255, 0.18)` border.
-- **No shadows**: Zero box-shadow anywhere. Depth = opacity + blur, never shadow.
-- **Text as depth**: Headings can be dropped to `color: #434343` to recede into the background, creating a layered text effect without opacity.
-
-## 5. Components
-
-### Buttons
-- **Shape**: Fully rounded (9999px). Simple border with transparent background.
-- **Primary CTA**: `border: 1px solid rgba(216,216,216,0.5)`, `background: transparent`, `color: #d8d8d8`, uppercase, Familjen Grotesk. Padding: 6px 15px.
-- **Hover**: Border brightens to white, text to white.
-- **No fill buttons**: All buttons are outlined. The studio ethos rejects heavy filled buttons.
-
-### Navigation
-- **Desktop**: Horizontal inline links. Uppercase, Familjen Grotesk, 1.175rem, -0.04em tracking, white on dark bg.
-- **Mobile**: Full-screen overlay (bg: Absolute Black, `backdrop-filter: blur`). Links in body copy style.
-- **Position**: Fixed top, transparent background.
-
-### Cards / Containers
-- **Background**: `rgba(255,255,255,0.03)` or `#111111` for darker cards.
-- **Radius**: 8-12px.
-- **Border**: No visible borders. Use background layering instead.
-- **Padding**: 24-32px depending on content.
-
-### Pill / Chip Elements
-- **Style**: `border-radius: 9999px`, `border: 1px solid rgba(216,216,216,0.5)`, transparent bg.
-- **Typography**: Familjen Grotesk, uppercase, tight tracking.
-- **Hover**: Border to white.
+## 4. Layout System
 
 ### Grid
-- **12-column grid** with `gap: 22.5px` (standard) or `37.5px` (wider spacing).
-- Consistent column structure across all sections.
+- **Max width:** `1400px` (CSS variable `--max-width`)
+- **Gutter:** `clamp(1.25rem, 4vw, 3rem)` (CSS variable `--gutter`)
+- **Sections:** Full-width backgrounds, content max-width constrained
 
-### Logo
-- SVG wordmark in white. Clean geometric sans. Width: 94px, Height: 25px. Placed top-left in nav.
+### Spacing Philosophy
+- **Vertical rhythm:** Large section padding (`py-32 md:py-40`)
+- **Asymmetric layouts:** About section uses `45vh 4rem 40vh` padding
+- **Breathing room:** Services cards use `space-y-3 md:space-y-4`
+- **Content blocks:** Contact section uses `px-6 md:px-16` with generous top padding
 
-## 6. Section Patterns
+### Responsive Breakpoints
+- Mobile: `< 768px`
+- Tablet: `768px–1024px`
+- Desktop: `> 1024px`
 
-### Hero
-- Full-viewport height. Monochromatic. Massive display text (93.75px).
-- Subtitle line: "Inspire·Innovate·Impact" with interpunct separators.
-- "Start a Project" CTA + interactive element ("blast" animation).
-- Est. 2012 + "14+ years shaping digital direction" as secondary text.
+---
 
-### About Section (Key Facts)
-- Large headline (89px) with subdued color (#434343) for an elegant ghost-text effect.
-- Fact grid with large numbers + labels.
-- Award logos in horizontal scroll/row.
-- Partner logos in scrolling marquee.
+## 5. Animation System
 
-### Work / Projects
-- Grid of project cards. Each has a large project title.
-- "Explore project" link in subdued style.
+### Core Principles
+- **Scrub-based:** All animations tied to scroll position, not time
+- **Blur-to-sharp:** Signature reveal pattern (blur 8–24px → 0px)
+- **Staggered reveals:** Words and elements appear sequentially
+- **No bounce/spring on scroll** — cinematic easing only
 
-### Services
-- Service cards with Familjen Grotesk titles in white on dark.
-- 6 service categories listed.
+### GSAP Easings (Custom)
+```javascript
+CustomEase.create("cinematicSilk", "0.45, 0.05, 0.55, 0.95");
+CustomEase.create("cinematicSmooth", "0.25, 0.1, 0.25, 1");
+CustomEase.create("cinematicFlow", "0.33, 0, 0.2, 1");
+CustomEase.create("cinematicLinear", "0.4, 0, 0.6, 1");
+```
 
-### Testimonials / Client Stories
-- Large quotation-style text in Familjen Grotesk.
-- Author attribution below.
+### Animation Patterns
 
-### Footer
-- Large heading: "Ready to build something bold?" (90px).
-- Contact information (email, phone).
-- Social links (LinkedIn, Facebook, Dribbble, Instagram).
-- "start a collaboration" CTA.
+**Hero Expand:**
+- Video wrapper: `35vw × 22vh` → `100vw × 100vh` with `borderRadius: 12px → 0`
+- Text slides outward (`x: ±25vw`) and fades
+- Subtext fades in at 65% of timeline
+- Plus marks fade out at 70%
 
-## 7. Layout Principles
+**About Section:**
+- Photo blur: `blur(20px) → blur(0px)` over full scroll range
+- Words: `opacity: 0, blur(8px)` → `opacity: 1, blur(0px)` staggered at 0.02
+- Sub-text: Reveals at 60% of timeline
 
-- **12-column grid** with 22.5px column gap. Column widths scale fluidly.
-- **Whitespace is a design element** — generous spacing between sections (75px-112px+).
-- **Content width**: max-width around 1280px, centered.
-- **Typography-first**: text is the primary visual. Images are secondary.
-- **No decorative illustrations** — no icons, no abstract shapes, no ornamentation.
+**Services:**
+- Heading: `opacity: 0, y: 80, blur(24px), rotateX: 12` → `opacity: 1, y: 0, blur(0), rotateX: 0`
+- Cards: Staggered entrance with `delay: i * 0.08`
+- Accordion: `height: 0 → auto` with `ease: [0.32, 0.72, 0, 1]`
 
-## 8. Do's and Don'ts
+**Cinematic Cylinder:**
+- WebGL 3D cylinder with OGL
+- Camera path: 5 waypoints with cinematic easing
+- Particle system reacting to rotation velocity
+- Text overlays fade in/out per perspective
 
-### Do:
-- **Do** let typography be the dominant visual element. The design is type-driven.
-- **Do** use extreme size contrast — display text at 150px next to 16px body creates drama.
-- **Do** keep the palette strictly monochrome. No hues, no accent colors.
-- **Do** use uppercase with tight negative tracking for navigation and pills.
-- **Do** use Familjen Grotesk for all headings — never Neue Haas for headings.
-- **Do** use transparency and surface layering instead of shadows for depth.
-- **Do** respect the 12-column grid with consistent 22.5px gaps.
-- **Do** keep whitespace generous. Don't crowd the void.
+### Scroll System
+- **Lenis** for smooth scroll (`lerp: 0.1, duration: 1.2`)
+- **ScrollTrigger** proxy for Lenis integration
+- **`pin: true`** on Hero section
+- **`scrub: 1–1.2`** on all scroll-triggered animations
 
-### Don't:
-- **Don't** introduce an accent color. No blue, red, green, gold — nothing. If something needs emphasis, make it bigger or bolder.
-- **Don't** use box-shadows on any container. Depth comes from tonal layering.
-- **Don't** use filled buttons. All CTAs are outlined with transparent backgrounds.
-- **Don't** use icons, emojis, or decorative illustrations. The typography is the decoration.
-- **Don't** use gradients, gradient text, or colorful backgrounds.
-- **Don't** use sentence case for navigation links — always uppercase.
-- **Don't** use images as decorative filler. If an image appears, it's content.
-- **Don't** use glassmorphism as a default effect — use only for overlay menus.
-- **Don't** use numbered section markers (01/02/03).
-- **Don't** use card grids with identical icon+heading+text patterns.
-- **Don't** use side-stripe borders or colored left/right borders.
+---
+
+## 6. Component Architecture
+
+### Layout Components
+| Component | Purpose |
+|-----------|---------|
+| `SmoothScroll` | Lenis wrapper with ScrollTrigger sync |
+| `Header` | Animated menu (100px → 480px), hides during cylinder section |
+| `CustomCursor` | Dual-element cursor (dot + ring), 4 states |
+| `LightRaysOverlay` | Fixed atmospheric effect, screen blend, scroll-linked opacity |
+
+### Section Components
+| Component | Animation | Key Feature |
+|-----------|-----------|-------------|
+| `Hero` | GSAP pin + scrub | Expanding video card, massive typography |
+| `About` | Blur reveal | Word-by-word text animation, photo blur-in |
+| `CinematicCylinder` | OGL + GSAP | 3D rotating cylinder with images, 500vh scroll |
+| `ServicesShowcase` | Staggered reveal | Double-bezel accordion, gold accent |
+| `Testimonials` | Auto-scroll marquee | 5-column infinite scroll, hover-to-pause |
+| `ContactForm` | Blur reveal | Full-screen video background, CTA |
+| `AnimatedFooter` | Canvas + GSAP | ASCII art hands, character reveal |
+
+### UI Components
+| Component | Purpose |
+|-----------|---------|
+| `SVGPart1/2` | Flowing gold SVG paths, scroll-linked `pathLength` |
+| `TestimonialsColumn` | Infinite scroll with velocity physics |
+| `LightRays` | WebGL shader-based light effect |
+
+---
+
+## 7. Interaction Patterns
+
+### Custom Cursor
+- **Default:** 28px ring, 1px border, transparent
+- **Pointer:** 48px ring, 0.6 opacity border, inner dot shrinks to 40%
+- **View:** 72px ring, backdrop blur, no inner dot
+- **Close:** 48px ring, 50% inner dot
+- **Spring config:** `damping: 40, stiffness: 300, mass: 0.4`
+
+### Service Accordion
+- **Double-bezel:** Outer `p-[2px]` gradient border + inner rounded card
+- **Expand indicator:** Chevron rotates 180°
+- **Gold glow on active:** `bg-[#c8a84b]/15 ring-2 ring-[#c8a84b]/30`
+- **Pricing footer:** Gradient card with "Inquire Now" CTA
+
+### Header Menu
+- **Closed:** 100px × 40px pill
+- **Open:** 480px × 650px card
+- **Easing:** `[0.76, 0, 0.24, 1]` (aggressive ease-in-out)
+- **Auto-hide:** When in CinematicCylinder section
+
+---
+
+## 8. Visual Effects
+
+### LightRays Overlay
+- **Position:** Fixed, full viewport, z-index 45
+- **Blend mode:** `screen` (only shows on dark areas)
+- **Opacity:** Scroll-linked (0 when hero visible → 1 when hero scrolled out)
+- **Color:** Cyan (`#00ffff`)
+- **Parameters:** `raysSpeed: 1.5, lightSpread: 0.8, rayLength: 1.2`
+
+### SVG Path Drawing
+- Two flowing paths in gold (`#c8a84b`)
+- Primary: 6px stroke, full reveal 0→50% scroll
+- Secondary: 3px stroke, 60% opacity, reveal 5→55% scroll
+- `pathLength` transform driven by `scrollYProgress`
+
+### Video Backgrounds
+- **Hero:** Muted loop, `opacity: 70%`, `object-fit: cover`
+- **Contact:** Full-screen background with `bg-black/50` overlay
+- **Autoplay:** All videos `autoPlay muted loop playsInline`
+
+---
 
 ## 9. Responsive Behavior
 
-- **Desktop (1280px+)**: 12-column grid, full typographic scale, fixed nav.
-- **Tablet (768-1280px)**: Typography scales down via clamp values. Grid maintains 12 columns with reduced gap.
-- **Mobile (<768px)**: Typography reduces significantly (display text ~4rem). Navigation collapses to hamburger → full-screen overlay. Single-column layout for cards. Grid reduces to 2 or 1 columns.
+### Mobile (< 768px)
+- Hero text: `12vw` (not `13vw`)
+- About photo: Full width, no border-radius
+- Services: Single column, reduced padding
+- Cylinder: `cameraZ: 6`, `fov: 50`, smaller radius
+- Header: Hamburger menu
 
-## 10. Agent Prompt Guide
+### Tablet (768–1024px)
+- Cylinder: `cameraZ: 7`, `fov: 45`, medium radius
+- Services: 2-column grid for deliverables
 
+### Desktop (> 1024px)
+- Full layout with asymmetric spacing
+- 5-column testimonials
+- Cylinder: `cameraZ: 8`, `fov: 45`, full radius
+
+---
+
+## 10. Performance Notes
+
+- **WebGL:** OGL renderer with `dpr: min(devicePixelRatio, 2)`
+- **Images:** `priority` on above-fold, `will-change: clip-path` globally
+- **Fonts:** Next.js font loader with `display: swap`
+- **Scroll:** Lenis with `autoRaf: true` for smooth 60fps
+- **Animations:** All scrub-based, no time-based loops (except testimonials)
+- **Cleanup:** GSAP contexts with `ctx.revert()`, OGL resource disposal
+
+---
+
+## 11. SEO & Schema
+
+- **Person schema:** Rahul Chanda, Commercial Product Photographer
+- **LocalBusiness:** Dehradun, India, ₹12,000–₹2,00,000+ price range
+- **ProfessionalService:** Full service catalog
+- **FAQPage:** 5 common questions
+- **ImageGallery:** Portfolio archive
+- **Canonical:** `https://rahulchandaphotography.com`
+- **OG/Twitter:** Summary large image
+
+---
+
+## 12. Design Tokens Summary
+
+```css
+:root {
+  --background: #070707;
+  --foreground: #f0f0f0;
+  --font-editorial: var(--font-playfair), "Playfair Display", Georgia, serif;
+  --font-sans: var(--font-outfit), "Outfit", system-ui, sans-serif;
+  --gold: #c8a84b;
+  --gold-light: #f0cc70;
+  --red-accent: #e83b2c;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --max-width: 1400px;
+}
 ```
-You are designing for TRIONN, a creative digital studio. Follow these rules:
-- Background: near-black (#040508). NEVER use dark gray.
-- Text: #d8d8d8 body, white for emphasis.
-- NO accent colors. NO gradients. NO shadows. Monochrome only.
-- Headings: Familjen Grotesk. Body: Neue Haas Grotesk.
-- Display text can be very large (up to 12.5rem).
-- Navigation is always uppercase with tight letter-spacing.
-- Buttons are outlined (border, transparent bg), never filled.
-- Use a 12-column grid with 22.5px gaps.
-- No icons, no emojis, no decorative elements.
-- Generous whitespace between sections.
-```
+
+---
+
+*Design system documented from source analysis of `new-design` project.*
+*Last updated: 2026-07-31*

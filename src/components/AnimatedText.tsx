@@ -47,7 +47,7 @@ export default function AnimatedText({
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'scale(1)' : 'scale(0.3)',
-            transition: `opacity ${duration}s ease-out ${index * staggerDelay}s, transform ${duration}s cubic-bezier(0.34, 1.56, 0.64, 1) ${index * staggerDelay}s`,
+            transition: `opacity ${duration}s ease-out ${index * staggerDelay}s, transform ${duration}s cubic-bezier(0.25, 1, 0.5, 1) ${index * staggerDelay}s`,
             marginRight: '0.3em'
           }}
         >

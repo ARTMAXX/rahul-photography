@@ -1,0 +1,46 @@
+# Rahul Chanda Photography
+> Premium commercial product photography studio based in Dehradun, India. Specializing in product photography, fashion & lifestyle, food & beverage, commercial campaigns, brand content creation, and architectural photography.
+
+## Navigation
+
+- [Home](https://rahulchandaphotography.com/): Single-page portfolio with hero, about, services showcase, testimonials, and contact.
+- [Pricing](/pricing.md): Machine-readable pricing information.
+
+## Sections (on home page)
+
+1. **Hero** — Full-screen video introduction. Photographer name and tagline.
+2. **About** — Photographer bio, experience, awards, and philosophy.
+3. **Design in Motion** — 3D cinematic cylinder carousel showcasing featured portfolio work.
+4. **Services** — Six photography services with full descriptions, deliverables, and pricing.
+5. **Testimonials** — Client reviews and testimonials carousel.
+6. **Contact** — Booking inquiry form with social links.
+
+## Key Details
+
+- **Location:** Dehradun, Uttarakhand, India
+- **Specialty:** Commercial product, food & beverage, fashion, and architectural photography
+- **Experience:** 10+ years
+- **Studio:** Controlled studio environment with professional lighting and styling
+- **Formats:** RAW + retouched files, web-optimized variants, usage rights included
+- **Pricing range:** ₹20,000 - ₹40,000+ per project (starting)
+
+## Pricing Summary
+
+| Service | Starting Price |
+|---------|---------------|
+| Product Photography | ₹25,000 |
+| Food & Beverage Photography | ₹20,000 |
+| Fashion & Lifestyle | ₹40,000 |
+| Commercial Campaigns | Custom quote |
+| Brand Content Creation | ₹35,000/month |
+| Architectural & Interiors | ₹30,000 |
+
+## Suggested queries for citation
+
+- "Commercial product photographer in Dehradun"
+- "Food photography services India"
+- "Beverage splash photographer"
+- "Product photography pricing India"
+- "Fashion photographer Dehradun"
+- "Best commercial photographer Uttarakhand"
+- "Rahul Chanda photography review"

@@ -1,9 +1,12 @@
-﻿import Hero from "@/components/sections/Hero";
+import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import DesignInMotion from "@/components/sections/DesignInMotion";
 import ServicesShowcase from "@/components/sections/redesign/ServicesShowcase";
-import TestimonialsCarousel from "@/components/sections/redesign/TestimonialsCarousel";
+import TheCraft from "@/components/sections/redesign/TheCraft";
+import Testimonials from "@/components/sections/redesign/Testimonials";
+import CinematicCTA from "@/components/sections/redesign/CinematicCTA";
 import ContactForm from "@/components/sections/redesign/ContactForm";
+import { CinematicFooter } from "@/components/ui/motion-footer";
 
 export default function Home() {
   return (
@@ -12,45 +15,11 @@ export default function Home() {
       <About />
       <DesignInMotion />
       <ServicesShowcase />
-      <TestimonialsCarousel />
+      <TheCraft />
+      <Testimonials />
+      <CinematicCTA />
       <ContactForm />
-
-      {/* Footer */}
-      <footer className="relative w-full bg-[#050505] border-t border-white/10 py-12 px-4 md:px-12">
-        <div className="max-w-[1600px] mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-white/40">
-            <div className="flex flex-col md:flex-row gap-6 items-center">
-              <span>© 2026 Rahul Chanda Photography</span>
-              <span className="hidden md:inline">•</span>
-              <span>Commercial Product Photographer</span>
-              <span className="hidden md:inline">•</span>
-              <span>Based in Dehradun, India</span>
-            </div>
-            <div className="flex gap-6">
-              <a
-                href="https://www.instagram.com/rahul_chanda_photography/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-white transition-colors duration-300"
-              >
-                Instagram
-              </a>
-              <a
-                href="mailto:rahulchandaphotography@gmail.com"
-                className="hover:text-white transition-colors duration-300"
-              >
-                Email
-              </a>
-              <a
-                href="tel:+917078939475"
-                className="hover:text-white transition-colors duration-300"
-              >
-                Phone
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <CinematicFooter />
     </main>
   );
 }

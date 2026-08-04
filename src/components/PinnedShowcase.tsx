@@ -1,7 +1,7 @@
-﻿"use client";
+"use client";
 
 /**
- * PinnedShowcase â€” Awwwards-style pinned portfolio showcase.
+ * PinnedShowcase — Awwwards-style pinned portfolio showcase.
  *
  * Reconstructed from the lukebaffait.fr reference video:
  *   - Full-viewport pinned section.
@@ -13,9 +13,9 @@
  *     animates as the user scrolls from the projects pinned
  *     section into the contact section. Same motion, same flow.
  *   - RIGHT: a preview image with "MM YYYY" date + "PREVIEW" label
- *     above. Active image crossfades in (scale 0.96â†’1, blur 8â†’0).
+ *     above. Active image crossfades in (scale 0.96→1, blur 8→0).
  *   - RIGHT EDGE: small vertical progress line + section label
- *     rotated 90Â° (e.g. "Projects", "Gallery").
+ *     rotated 90° (e.g. "Projects", "Gallery").
  *   - LEFT EDGE: counter in parens, e.g. "(34)", increments with
  *     scroll progress.
  *
@@ -136,7 +136,7 @@ export default function PinnedShowcase({
       },
     });
 
-    // Right-edge progress fill (top â†’ bottom over scroll)
+    // Right-edge progress fill (top → bottom over scroll)
     tl.to(
       progress,
       {
@@ -232,7 +232,7 @@ export default function PinnedShowcase({
       );
     });
 
-    /* Counter â€” increments by `total` over the full scroll */
+    /* Counter — increments by `total` over the full scroll */
     const counterObj = { val: counterStart };
     tl.to(
       counterObj,

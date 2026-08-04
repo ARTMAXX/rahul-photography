@@ -148,14 +148,23 @@ export default function RipplePortrait({
     return () => window.removeEventListener("resize", check);
   }, []);
 
+  const initRef = useRef(false);
+
   useEffect(() => {
+    // In StrictMode, the first run's cleanup disposes everything.
+    // Guard so only the re-run (after cleanup) actually initializes.
+    if (initRef.current) {
+      initRef.current = false;
+      return; // skip — cleanup from prior run just ran
+    }
+
     if (isMobile) return;
     const canvas = canvasRef.current;
     const container = containerRef.current;
     if (!canvas || !container) return;
 
     /* ── Constants ── */
-    const RES = 512; // Higher res for smoother waves
+    const RES = 512;
     const DAMPING = 0.97;
     const imgAspect = width / height;
 
@@ -216,7 +225,6 @@ export default function RipplePortrait({
       new THREE.Mesh(new THREE.PlaneGeometry(2, 2), simMat)
     );
 
-    // Display plane — defer creation until container has valid dimensions
     let dispMesh: THREE.Mesh | null = null;
     const dispScene = new THREE.Scene();
 
@@ -231,7 +239,6 @@ export default function RipplePortrait({
       const planeW = (imgAspect / canvasPixelAspect) * planeH;
       if (!isFinite(planeW) || !isFinite(planeH) || planeW <= 0) return false;
 
-      // Remove old mesh if any
       while (dispScene.children.length) {
         const child = dispScene.children[0] as THREE.Mesh;
         dispScene.remove(child);
@@ -243,8 +250,6 @@ export default function RipplePortrait({
       return true;
     }
 
-    // Try building the plane; if the container is hidden (0×0), the
-    // ResizeObserver below will rebuild it as soon as dimensions appear.
     rebuildDisplayPlane();
 
     /* ── State ── */
@@ -258,15 +263,16 @@ export default function RipplePortrait({
     const drop = { cx: 0.5, cy: 0.5, r: 0, s: 0 };
     let textureLoaded = false;
     const clock = new THREE.Clock();
+    let disposed = false;
 
     /* ── Resize ── */
     function resize() {
+      if (disposed) return;
       const rect = container.getBoundingClientRect();
       const w = Math.floor(rect.width);
       const h = Math.floor(rect.height);
       if (w === 0 || h === 0) return;
       renderer.setSize(w, h, false);
-      // Rebuild display plane if container was hidden at init (e.g. <lg breakpoint)
       rebuildDisplayPlane();
     }
     resize();
@@ -274,16 +280,23 @@ export default function RipplePortrait({
     ro.observe(container);
 
     /* ── Load texture ── */
-    new THREE.TextureLoader().load(src, (tex) => {
-      tex.minFilter = THREE.LinearFilter;
-      tex.magFilter = THREE.LinearFilter;
-      tex.colorSpace = THREE.SRGBColorSpace;
-      dispMat.uniforms.uImage.value = tex;
-      textureLoaded = true;
-    });
+    new THREE.TextureLoader().load(
+      src,
+      (tex) => {
+        if (disposed) return; // texture arrived after cleanup — ignore
+        tex.minFilter = THREE.LinearFilter;
+        tex.magFilter = THREE.LinearFilter;
+        tex.colorSpace = THREE.SRGBColorSpace;
+        dispMat.uniforms.uImage.value = tex;
+        textureLoaded = true;
+      },
+      undefined,
+      () => {} // silently ignore load errors
+    );
 
     /* ── Pointer events ── */
     function onMove(e: PointerEvent) {
+      if (disposed) return;
       const rect = canvas.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width;
       const y = 1.0 - (e.clientY - rect.top) / rect.height;
@@ -295,13 +308,8 @@ export default function RipplePortrait({
       );
       pointer.active = true;
     }
-    function onEnter() {
-      pointer.active = true;
-    }
-    function onLeave() {
-      pointer.active = false;
-      pointer.velocity = 0;
-    }
+    function onEnter() { pointer.active = true; }
+    function onLeave() { pointer.active = false; pointer.velocity = 0; }
     canvas.addEventListener("pointermove", onMove);
     canvas.addEventListener("pointerenter", onEnter);
     canvas.addEventListener("pointerleave", onLeave);
@@ -310,9 +318,8 @@ export default function RipplePortrait({
     let raf: number;
     function animate() {
       raf = requestAnimationFrame(animate);
-      if (!textureLoaded || !dispMesh) return;
+      if (disposed || !textureLoaded || !dispMesh) return;
 
-      // Velocity-based drop injection
       if (pointer.active && pointer.velocity > 0.005) {
         drop.cx = pointer.uv.x;
         drop.cy = pointer.uv.y;
@@ -328,7 +335,6 @@ export default function RipplePortrait({
       const readRT = isA ? rtA : rtB;
       const writeRT = isA ? rtB : rtA;
 
-      // ── Pass 1: Ripple simulation → writeRT ──
       simMat.uniforms.uPrev.value = readRT.texture;
       simMat.uniforms.uCenter.value.set(drop.cx, drop.cy);
       simMat.uniforms.uRadius.value = drop.r;
@@ -336,7 +342,6 @@ export default function RipplePortrait({
       renderer.setRenderTarget(writeRT);
       renderer.render(simScene, simCam);
 
-      // ── Pass 2: Display → screen ──
       dispMat.uniforms.uRipple.value = writeRT.texture;
       dispMat.uniforms.uTime.value = clock.elapsedTime;
       renderer.setRenderTarget(null);
@@ -348,6 +353,7 @@ export default function RipplePortrait({
 
     /* ── Cleanup ── */
     return () => {
+      disposed = true;
       cancelAnimationFrame(raf);
       ro.disconnect();
       renderer.dispose();
@@ -358,6 +364,8 @@ export default function RipplePortrait({
       canvas.removeEventListener("pointermove", onMove);
       canvas.removeEventListener("pointerenter", onEnter);
       canvas.removeEventListener("pointerleave", onLeave);
+      // Tell the next effect run that cleanup just happened
+      initRef.current = true;
     };
   }, [src, width, height, isMobile]);
 

@@ -390,6 +390,10 @@ export default function CinematicCylinder() {
             window.addEventListener("resize", handleResize);
 
             const animate = () => {
+              // Stop immediately if component has been cleaned up
+              if (!rendererRef.current || !sceneRef.current || !cameraRef.current) {
+                return;
+              }
               rafIdRef.current = requestAnimationFrame(animate);
 
               camera.position.set(
@@ -449,7 +453,9 @@ export default function CinematicCylinder() {
                 });
               }
 
-              renderer.render({ scene, camera });
+              if (cylinderRef.current && sceneRef.current && cameraRef.current && rendererRef.current) {
+                rendererRef.current.render({ scene: sceneRef.current, camera: cameraRef.current });
+              }
             };
             animate();
           }
@@ -463,18 +469,25 @@ export default function CinematicCylinder() {
     }, containerRef);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      // Cancel the render loop FIRST to prevent any further draw calls
       if (rafIdRef.current !== null) {
         cancelAnimationFrame(rafIdRef.current);
+        rafIdRef.current = null;
       }
-      gsapCtx.revert();
-      // Free WebGL resources
+
+      window.removeEventListener("resize", handleResize);
+
+      // Free WebGL resources before reverting GSAP (which may trigger re-renders)
       particlesRef.current.forEach((p) => {
         try { p.geometry?.remove?.(); } catch {}
         try { p.program?.remove?.(); } catch {}
       });
-      try { geometry?.remove?.(); } catch {}
+      try { cylinderRef.current?.geometry?.remove?.(); } catch {}
       try { cylinderRef.current?.program?.remove?.(); } catch {}
+      try { geometry?.remove?.(); } catch {}
+
+      gsapCtx.revert();
+
       rendererRef.current = null;
       sceneRef.current = null;
       cameraRef.current = null;
@@ -487,7 +500,7 @@ export default function CinematicCylinder() {
     <section
       ref={containerRef}
       id="design-in-motion"
-      className="relative w-full bg-black"
+      className="relative z-[1] w-full text-white min-h-screen"
       style={{ height: "500svh" }}
     >
       <div className="sticky top-0 h-svh w-full overflow-hidden">
@@ -521,8 +534,7 @@ export default function CinematicCylinder() {
         </div>
 
         {/* Scroll cue */}
-        <div className="pointer-events-none absolute bottom-8 right-8 z-10">
-          <div className="flex flex-col items-center gap-2 animate-bounce">
+        <div className="pointer-events-none absolute bottom-8 right-8 z-10 animate-[float_2.6s_cubic-bezier(0.25,1,0.5,1)_infinite]">
             <svg
               width="24"
               height="24"
@@ -536,7 +548,6 @@ export default function CinematicCylinder() {
             </svg>
             <span className="text-m text-white/40">Scroll</span>
           </div>
-        </div>
 
         {/* Minimal loading veil */}
         {isLoading && (

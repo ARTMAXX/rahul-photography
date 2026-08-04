@@ -4,6 +4,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { BreathingText } from "@/components/ui/breathing-text";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -78,38 +79,55 @@ export default function Hero() {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} id="hero-section" className="relative h-screen w-full bg-[#0a0a0a] overflow-hidden">
+    <section ref={containerRef} id="hero-section" className="relative z-[1] h-screen 
+w-full overflow-hidden">
       {/* Background Gradient Layer */}
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#0a0a0a] via-[#8c1c13] to-[#0a0a0a] opacity-80 mix-blend-screen blur-[100px]" />
 
       {/* Top Left Text */}
       <div className="absolute top-24 left-8 md:top-32 md:left-12 z-20 text-white max-w-[280px] mix-blend-difference">
         <p className="text-xs md:text-sm font-sans tracking-wide leading-relaxed">
-          Creating high-impact <span className="italic">visual identities</span>, <br />
-          that connect brands with their audience.
+          Dehradun-based commercial product photographer, <br />
+          crafting high-impact <span className="italic text-[#e83b2c]">visual identities</span> for brands worldwide.
         </p>
       </div>
 
-      {/* Massive Text (Bottom) */}
-      <div className="absolute bottom-16 md:bottom-12 left-0 w-full z-10 flex justify-center items-baseline gap-4 md:gap-8 mix-blend-difference px-4 md:px-8 overflow-hidden select-none whitespace-nowrap">
-        <span ref={leftTextRef} className="text-[14vw] md:text-[16vw] font-serif leading-[0.8] tracking-tighter text-[#F4EFE7]">
-          Rahul
+      {/* Massive Text (Bottom) — Primary H1 with Breathing Effect */}
+      <h1 className="absolute bottom-16 md:bottom-12 left-0 w-full z-10 flex justify-center items-baseline gap-2 md:gap-4 mix-blend-difference px-4 md:px-8 select-none whitespace-nowrap">
+        <span ref={leftTextRef} className="text-[12vw] md:text-[13vw] font-serif leading-[0.8] tracking-tighter text-[#F4EFE7] inline-flex">
+          <BreathingText
+            label="Rahul"
+            scaleRange={[1, 1.12]}
+            opacityRange={[0.75, 1]}
+            duration={2.5}
+            staggerDuration={0.12}
+            staggerFrom="first"
+            repeatDelay={0.3}
+          />
         </span>
-        <span ref={rightTextRef} className="text-[14vw] md:text-[16vw] font-serif italic leading-[0.8] tracking-tighter text-neutral-300">
-          Chanda
+        <span ref={rightTextRef} className="text-[12vw] md:text-[13vw] font-serif italic leading-[0.8] tracking-tighter text-neutral-300 inline-flex">
+          <BreathingText
+            label="Chanda"
+            scaleRange={[1, 1.12]}
+            opacityRange={[0.75, 1]}
+            duration={2.5}
+            staggerDuration={0.1}
+            staggerFrom="center"
+            repeatDelay={0.3}
+          />
         </span>
-      </div>
+      </h1>
 
       {/* Bottom Nav / Lines */}
       <div className="absolute bottom-0 w-full z-20 flex justify-between items-center px-4 md:px-8 pb-4 md:pb-6 border-b border-white/20 mix-blend-difference text-white">
-        <span className="text-[10px] md:text-xs font-sans tracking-widest uppercase">→ V3.0</span>
+        <span className="text-[10px] md:text-xs font-sans tracking-widest uppercase">Dehradun, India</span>
         <div className="flex gap-2 md:gap-4 text-[8px] md:text-[10px] font-sans tracking-widest uppercase">
           <a href="https://www.instagram.com/rahul_chanda_photography/" target="_blank" className="hover:opacity-70 transition-opacity">INSTAGRAM</a> /
           <a href="mailto:rahulchandaphotography@gmail.com" className="hover:opacity-70 transition-opacity">EMAIL</a> /
           <a href="tel:+917078939475" className="hover:opacity-70 transition-opacity">PHONE</a>
         </div>
         <div className="hidden md:flex gap-6 text-[10px] font-sans tracking-widest uppercase">
-          <a href="#archive" className="hover:opacity-70 transition-opacity">WORK</a>
+          <a href="#design-in-motion" className="hover:opacity-70 transition-opacity">WORK</a>
           <a href="#about" className="hover:opacity-70 transition-opacity">INFO</a>
           <a href="#contact" className="hover:opacity-70 transition-opacity">CONTACT</a>
         </div>
@@ -137,9 +155,9 @@ export default function Hero() {
         <span className="plus-mark absolute bottom-4 right-4 text-white text-lg font-light select-none z-40 pointer-events-none">+</span>
 
         <div ref={subTextRef} className="absolute inset-0 flex items-center justify-center pointer-events-none px-4">
-          <h2 className="text-3xl md:text-6xl font-serif italic text-white mix-blend-difference drop-shadow-2xl text-center">
+          <p className="text-3xl md:text-6xl font-serif italic text-white mix-blend-difference drop-shadow-2xl text-center">
             Basically, I make images.
-          </h2>
+          </p>
         </div>
       </div>
     </section>
