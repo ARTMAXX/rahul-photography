@@ -71,6 +71,7 @@ export function createCylinderGeometry(gl: WebGLRenderingContext, config: Cylind
 
   const positions: number[] = [];
   const uvs: number[] = [];
+  const normals: number[] = [];
   const indices: number[] = [];
 
   for (let y = 0; y <= heightSegments; y++) {
@@ -86,6 +87,8 @@ export function createCylinderGeometry(gl: WebGLRenderingContext, config: Cylind
 
       positions.push(xPos, yPos, zPos);
       uvs.push(u, 1 - v);
+      // Radial outward normal so the shader can tell front vs back faces.
+      normals.push(Math.cos(theta), 0, Math.sin(theta));
     }
   }
 
@@ -104,6 +107,7 @@ export function createCylinderGeometry(gl: WebGLRenderingContext, config: Cylind
   return new Geometry(gl as unknown as OGLRenderingContext, {
     position: { size: 3, data: new Float32Array(positions) },
     uv: { size: 2, data: new Float32Array(uvs) },
+    normal: { size: 3, data: new Float32Array(normals) },
     index: { data: new Uint16Array(indices) },
   });
 }

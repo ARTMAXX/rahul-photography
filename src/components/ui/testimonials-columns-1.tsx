@@ -115,12 +115,12 @@ export const TestimonialsColumn = (props: {
                 className="p-8 rounded-3xl border border-white/[0.08] bg-black/25 backdrop-blur-md max-w-xs w-full hover:bg-black/40 hover:border-white/[0.14] transition-colors duration-300"
                 key={i}
               >
-                <div className="text-sm text-white/60 leading-relaxed">{text}</div>
+                <div className="text-sm text-white/80 leading-relaxed">{text}</div>
                 <div className="flex items-center gap-3 mt-5">
                   <Avatar name={name} index={(props.startIndex || 0) + i} />
                   <div className="flex flex-col">
                     <div className="font-medium tracking-tight leading-5 text-white text-sm">{name}</div>
-                    <div className="leading-5 opacity-50 tracking-tight text-white text-xs">{role}</div>
+                    <div className="leading-5 opacity-70 tracking-tight text-white text-xs">{role}</div>
                   </div>
                 </div>
               </div>

@@ -1,449 +1,412 @@
 "use client";
 
 import * as React from "react";
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { cn } from "@/lib/utils";
-
-// Register ScrollTrigger safely for React
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 // -------------------------------------------------------------------------
-// 1. THEME-ADAPTIVE INLINE STYLES
+// 1. STYLES — Morphic-exact + animations
 // -------------------------------------------------------------------------
 const STYLES = `
 .cinematic-footer-wrapper {
-  font-family: var(--font-sans), sans-serif;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
-
-  /* Dynamic Variables using standard shadcn/tailwind v4 tokens */
-  --pill-bg-1: color-mix(in oklch, var(--foreground) 3%, transparent);
-  --pill-bg-2: color-mix(in oklch, var(--foreground) 1%, transparent);
-  --pill-shadow: color-mix(in oklch, var(--background) 50%, transparent);
-  --pill-highlight: color-mix(in oklch, var(--foreground) 10%, transparent);
-  --pill-inset-shadow: color-mix(in oklch, var(--background) 80%, transparent);
-  --pill-border: color-mix(in oklch, var(--foreground) 8%, transparent);
-
-  --pill-bg-1-hover: color-mix(in oklch, var(--foreground) 8%, transparent);
-  --pill-bg-2-hover: color-mix(in oklch, var(--foreground) 2%, transparent);
-  --pill-border-hover: color-mix(in oklch, var(--foreground) 20%, transparent);
-  --pill-shadow-hover: color-mix(in oklch, var(--background) 70%, transparent);
-  --pill-highlight-hover: color-mix(in oklch, var(--foreground) 20%, transparent);
+  background: #000000;
 }
 
-@keyframes footer-breathe {
-  0% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
-  100% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+/* Giant Watermark — positioned lower, much more visible like Morphic */
+.footer-watermark {
+  position: absolute;
+  left: 50%;
+  bottom: 80px;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  opacity: 0;
+  animation: watermarkReveal 2s 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-
-@keyframes footer-scroll-marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-@keyframes footer-heartbeat {
-  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 5px color-mix(in oklch, var(--destructive) 50%, transparent)); }
-  15%, 45% { transform: scale(1.2); filter: drop-shadow(0 0 10px color-mix(in oklch, var(--destructive) 80%, transparent)); }
-  30% { transform: scale(1); }
-}
-
-.animate-footer-breathe {
-  animation: footer-breathe 8s ease-in-out infinite alternate;
-}
-
-.animate-footer-scroll-marquee {
-  animation: footer-scroll-marquee 40s linear infinite;
-}
-
-.animate-footer-heartbeat {
-  animation: footer-heartbeat 2s cubic-bezier(0.25, 1, 0.5, 1) infinite;
-}
-
-/* Theme-adaptive Grid Background */
-.footer-bg-grid {
-  background-size: 60px 60px;
-  background-image:
-    linear-gradient(to right, color-mix(in oklch, var(--foreground) 3%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in oklch, var(--foreground) 3%, transparent) 1px, transparent 1px);
-  mask-image: linear-gradient(to bottom, transparent, black 30%, black 70%, transparent);
-  -webkit-mask-image: linear-gradient(to bottom, transparent, black 30%, black 70%, transparent);
-}
-
-/* Theme-adaptive Aurora Glow */
-.footer-aurora {
-  background: radial-gradient(
-    circle at 50% 50%,
-    color-mix(in oklch, var(--primary) 15%, transparent) 0%,
-    color-mix(in oklch, var(--secondary) 15%, transparent) 40%,
-    transparent 70%
-  );
-}
-
-/* Glass Pill Theming */
-.footer-glass-pill {
-  background: linear-gradient(145deg, var(--pill-bg-1) 0%, var(--pill-bg-2) 100%);
-  box-shadow:
-      0 10px 30px -10px var(--pill-shadow),
-      inset 0 1px 1px var(--pill-highlight),
-      inset 0 -1px 2px var(--pill-inset-shadow);
-  border: 1px solid var(--pill-border);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.footer-glass-pill:hover {
-  background: linear-gradient(145deg, var(--pill-bg-1-hover) 0%, var(--pill-bg-2-hover) 100%);
-  border-color: var(--pill-border-hover);
-  box-shadow:
-      0 20px 40px -10px var(--pill-shadow-hover),
-      inset 0 1px 1px var(--pill-highlight-hover);
-  color: var(--foreground);
-}
-
-/* Giant Background Text Masking */
-.footer-giant-bg-text {
-  font-size: 26vw;
-  line-height: 0.75;
+.footer-watermark-text {
+  font-size: clamp(200px, 32vw, 480px);
+  line-height: 0.82;
   font-weight: 900;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.04em;
   color: transparent;
-  -webkit-text-stroke: 1px color-mix(in oklch, var(--foreground) 5%, transparent);
-  background: linear-gradient(180deg, color-mix(in oklch, var(--foreground) 10%, transparent) 0%, transparent 60%);
-  -webkit-background-clip: text;
-  background-clip: text;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.09);
+  white-space: nowrap;
+}
+@keyframes watermarkReveal {
+  0%   { opacity: 0; transform: translateX(-50%) scale(1.03); }
+  100% { opacity: 1; transform: translateX(-50%) scale(1); }
 }
 
-/* Metallic Text Glow */
-.footer-text-glow {
-  background: linear-gradient(180deg, var(--foreground) 0%, color-mix(in oklch, var(--foreground) 40%, transparent) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  filter: drop-shadow(0px 0px 20px color-mix(in oklch, var(--foreground) 15%, transparent));
+/* Pills — auto-width, matching Morphic's wider padding */
+.footer-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #888888;
+  white-space: nowrap;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.01em;
+}
+.footer-pill::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255,255,255,0.08) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.footer-pill:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.06);
+}
+.footer-pill:hover::before {
+  opacity: 1;
+}
+
+/* Timeline ruler — ticks hang DOWN from border-top like Morphic */
+.footer-ruler {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 0;
+}
+.footer-ruler-inner {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.footer-ruler-tick {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+  opacity: 0;
+  transform: translateY(-6px);
+  animation: tickFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.footer-ruler-line {
+  width: 1px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.18);
+  margin-top: 4px;
+  transition: height 0.3s ease, background 0.3s ease;
+}
+.footer-ruler-tick:hover .footer-ruler-line {
+  height: 14px;
+  background: rgba(255, 255, 255, 0.4);
+}
+.footer-ruler-label {
+  font-size: 11px;
+  color: #666666;
+  line-height: 1;
+  padding-top: 4px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  transition: color 0.3s ease;
+}
+.footer-ruler-tick:hover .footer-ruler-label {
+  color: #aaaaaa;
+}
+@keyframes tickFadeIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Bottom bar */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #666666;
+  font-size: 14px;
+  opacity: 0;
+  animation: bottomBarReveal 0.8s 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes bottomBarReveal {
+  0%   { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.footer-divider-v {
+  width: 1.5px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 100px;
+  flex-shrink: 0;
+}
+.footer-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666666;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+.footer-social-icon:hover {
+  color: #ffffff;
+  transform: translateY(-2px) scale(1.1);
+}
+
+/* Logo waveform bars — staggered pulse animation */
+.footer-logo-bar {
+  display: block;
+  width: 3px;
+  border-radius: 2px;
+  background: white;
+  animation: barPulse 2.5s ease-in-out infinite alternate;
+}
+.footer-logo-bar:nth-child(1) { animation-delay: 0s; }
+.footer-logo-bar:nth-child(2) { animation-delay: 0.2s; }
+.footer-logo-bar:nth-child(3) { animation-delay: 0.4s; }
+@keyframes barPulse {
+  0%   { transform: scaleY(0.55); opacity: 0.45; }
+  100% { transform: scaleY(1); opacity: 1; }
+}
+.group:hover .footer-logo-bar {
+  animation-duration: 0.5s;
+}
+
+/* Pill row staggered entry */
+.footer-pill-row {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: pillRowReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.footer-pill-row:nth-child(1) { animation-delay: 0.3s; }
+.footer-pill-row:nth-child(2) { animation-delay: 0.45s; }
+@keyframes pillRowReveal {
+  0%   { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* EN button */
+.footer-en-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #666666;
+  transition: color 0.25s ease;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 13px;
+}
+.footer-en-btn:hover {
+  color: #ffffff;
+}
+.footer-en-btn svg {
+  transition: transform 0.25s ease;
+}
+.footer-en-btn:hover svg {
+  transform: rotate(180deg);
 }
 `;
 
 // -------------------------------------------------------------------------
-// 2. MAGNETIC BUTTON PRIMITIVE (Zero Dependency)
-// -------------------------------------------------------------------------
-export type MagneticButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
-  React.AnchorHTMLAttributes<HTMLAnchorElement> & {
-    as?: React.ElementType;
-  };
-
-const MagneticButton = React.forwardRef<HTMLElement, MagneticButtonProps>(
-  ({ className, children, as: Component = "button", ...props }, forwardedRef) => {
-    const localRef = useRef<HTMLElement>(null);
-
-    useEffect(() => {
-      if (typeof window === "undefined") return;
-      const element = localRef.current;
-      if (!element) return;
-
-      const ctx = gsap.context(() => {
-        const handleMouseMove = (e: MouseEvent) => {
-          const rect = element.getBoundingClientRect();
-          const h = rect.width / 2;
-          const w = rect.height / 2;
-          const x = e.clientX - rect.left - h;
-          const y = e.clientY - rect.top - w;
-
-          gsap.to(element, {
-            x: x * 0.4,
-            y: y * 0.4,
-            rotationX: -y * 0.15,
-            rotationY: x * 0.15,
-            scale: 1.05,
-            ease: "power2.out",
-            duration: 0.4,
-          });
-        };
-
-        const handleMouseLeave = () => {
-          gsap.to(element, {
-            x: 0,
-            y: 0,
-            rotationX: 0,
-            rotationY: 0,
-            scale: 1,
-            ease: "elastic.out(1, 0.3)",
-            duration: 1.2,
-          });
-        };
-
-        element.addEventListener("mousemove", handleMouseMove as any);
-        element.addEventListener("mouseleave", handleMouseLeave);
-
-        return () => {
-          element.removeEventListener("mousemove", handleMouseMove as any);
-          element.removeEventListener("mouseleave", handleMouseLeave);
-        };
-      }, element);
-
-      return () => ctx.revert();
-    }, []);
-
-    const Tag = Component as any;
-
-    return (
-      <Tag
-        ref={(node: HTMLElement) => {
-          (localRef as any).current = node;
-          if (typeof forwardedRef === "function") forwardedRef(node);
-          else if (forwardedRef) (forwardedRef as any).current = node;
-        }}
-        className={cn("cursor-pointer", className)}
-        {...props}
-      >
-        {children}
-      </Tag>
-    );
-  }
-);
-MagneticButton.displayName = "MagneticButton";
-
-// -------------------------------------------------------------------------
-// 3. MAIN COMPONENT
+// 2. DATA
 // -------------------------------------------------------------------------
 const WHATSAPP_NUMBER = "917078939475";
-const EMAIL = "rahulchandaphotography@gmail.com";
 
-const MarqueeItem = () => (
-  <div className="flex items-center space-x-12 px-6">
-    <span>Product Photography</span> <span className="text-[#e83b2c]/60">✦</span>
-    <span>Beverage Splash</span> <span className="text-[#e83b2c]/60">✦</span>
-    <span>Food & Styling</span> <span className="text-[#e83b2c]/60">✦</span>
-    <span>Fashion & Footwear</span> <span className="text-[#e83b2c]/60">✦</span>
-    <span>High-End Retouching</span> <span className="text-[#e83b2c]/60">✦</span>
-  </div>
+const NAV_ROW_1: { label: string; href: string; external?: boolean }[] = [
+  { label: "Portfolio", href: "/gallery" },
+  { label: "Services", href: "/services" },
+  { label: "About", href: "/about" },
+  { label: "Blog", href: "/blog" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Contact", href: "/contact" },
+];
+
+const NAV_ROW_2: { label: string; href: string; external?: boolean }[] = [
+  { label: "Help Center", href: "/faq" },
+  {
+    label: "Contact Us",
+    href: `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+      "Hi Rahul, I'd like to discuss a photography project."
+    )}`,
+    external: true,
+  },
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Terms of Use", href: "/terms" },
+];
+
+// Inline SVG icons
+const XIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M4 4l6.5 8L4 20h2l5.5-6.8L16 20h4l-6.8-8.5L20 4h-2l-5.2 6.4L8 4H4z" />
+  </svg>
 );
 
+const InstagramIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+  </svg>
+);
+
+const LinkedInIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect width="4" height="12" x="2" y="9" />
+    <circle cx="4" cy="4" r="2" />
+  </svg>
+);
+
+const SOCIALS: { label: string; href: string; Icon: React.ComponentType<React.SVGProps<SVGSVGElement>> }[] = [
+  { label: "X (Twitter)", href: "https://x.com", Icon: XIcon },
+  { label: "Instagram", href: "https://www.instagram.com/rahul_chanda_photography/", Icon: InstagramIcon },
+  { label: "LinkedIn", href: "https://linkedin.com", Icon: LinkedInIcon },
+];
+
+// -------------------------------------------------------------------------
+// 3. TIMELINE COMPONENT — ticks hang DOWN like Morphic
+// -------------------------------------------------------------------------
+const TimelineRuler = () => {
+  const ticks = Array.from({ length: 16 }, (_, i) => i); // 0..15
+  return (
+    <div className="footer-ruler">
+      <div className="footer-ruler-inner">
+        {ticks.map((t) => (
+          <div
+            key={t}
+            className="footer-ruler-tick"
+            style={{ animationDelay: `${0.15 + t * 0.03}s` }}
+          >
+            <div className="footer-ruler-line" />
+            <span className="footer-ruler-label">
+              {t === 0 ? "0" : `${t}s`}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+// -------------------------------------------------------------------------
+// 4. MAIN COMPONENT — Morphic-exact layout + micro/macro animations
+// -------------------------------------------------------------------------
 export function CinematicFooter() {
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const giantTextRef = useRef<HTMLDivElement>(null);
-  const headingRef = useRef<HTMLHeadingElement>(null);
-  const linksRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    if (!wrapperRef.current) return;
-
-    // React strict mode compatible GSAP context cleanup
-    const ctx = gsap.context(() => {
-      // Background Parallax
-      gsap.fromTo(
-        giantTextRef.current,
-        { y: "10vh", scale: 0.8, opacity: 0 },
-        {
-          y: "0vh",
-          scale: 1,
-          opacity: 1,
-          ease: "power1.out",
-          scrollTrigger: {
-            trigger: wrapperRef.current,
-            start: "top 80%",
-            end: "bottom bottom",
-            scrub: 1,
-          },
-        }
-      );
-
-      // Staggered Content Reveal
-      gsap.fromTo(
-        [headingRef.current, linksRef.current],
-        { y: 50, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          stagger: 0.15,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: wrapperRef.current,
-            start: "top 40%",
-            end: "bottom bottom",
-            scrub: 1,
-          },
-        }
-      );
-    }, wrapperRef);
-
-    return () => ctx.revert();
+  const handlePillMouseMove = React.useCallback((e: React.MouseEvent<HTMLAnchorElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    e.currentTarget.style.setProperty("--mouse-x", `${x}%`);
+    e.currentTarget.style.setProperty("--mouse-y", `${y}%`);
   }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
 
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: STYLES }} />
 
-      {/*
-        The "Curtain Reveal" Wrapper:
-        It sits in standard flow. Because it has clip-path, its contents
-        are ONLY visible within its bounding box.
-      */}
-      <div
-        ref={wrapperRef}
-        className="relative h-screen w-full"
-        style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
-      >
-        {/* The actual footer stays fixed to the viewport underneath everything */}
-        <footer className="fixed bottom-0 left-0 flex h-screen w-full flex-col justify-between overflow-hidden bg-background text-foreground cinematic-footer-wrapper">
+      <footer className="cinematic-footer-wrapper relative w-full overflow-hidden">
+        {/* Giant watermark — positioned lower, large and visible */}
+        <div className="footer-watermark" aria-hidden="true">
+          <span className="footer-watermark-text">CHANDA</span>
+        </div>
 
-          {/* Ambient Light & Grid Background */}
-          <div className="footer-aurora absolute left-1/2 top-1/2 h-[60vh] w-[80vw] -translate-x-1/2 -translate-y-1/2 animate-footer-breathe rounded-[50%] blur-[80px] pointer-events-none z-0" />
-          <div className="footer-bg-grid absolute inset-0 z-0 pointer-events-none" />
+        {/* Layer 1: Logo — top-left with animated waveform bars */}
+        <div className="relative z-10 px-6 pt-10 md:px-10">
+          <a href="/" className="inline-flex items-center gap-3 group" data-cursor="pointer">
+            <span className="flex h-6 items-end gap-[3px]">
+              <span className="footer-logo-bar h-3" />
+              <span className="footer-logo-bar h-5" />
+              <span className="footer-logo-bar h-2" />
+            </span>
+            <span className="text-[17px] font-semibold tracking-tight text-white group-hover:opacity-70 transition-opacity duration-300">
+              Rahul Chanda
+            </span>
+          </a>
+        </div>
 
-          {/* Giant background text */}
-          <div
-            ref={giantTextRef}
-            className="footer-giant-bg-text absolute -bottom-[5vh] left-1/2 -translate-x-1/2 whitespace-nowrap z-0 pointer-events-none select-none"
-          >
-            CHANDA
+        {/* Layer 2: Timeline ruler — ticks hang DOWN from border-top */}
+        <div className="relative z-10 mx-4 mt-8">
+          <TimelineRuler />
+        </div>
+
+        {/* Layer 3: Pill buttons — centered, auto-width, wider padding */}
+        <nav className="relative z-[11] mx-auto mt-6 max-w-[955px]" aria-label="Footer">
+          <div className="footer-pill-row flex items-center justify-center gap-[6px]">
+            {NAV_ROW_1.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                data-cursor="pointer"
+                className="footer-pill"
+                onMouseMove={handlePillMouseMove}
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+          <div className="footer-pill-row flex items-center justify-center gap-[6px] mt-[8px]">
+            {NAV_ROW_2.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                data-cursor="pointer"
+                className="footer-pill"
+                onMouseMove={handlePillMouseMove}
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </nav>
+
+        {/* Layer 4: Bottom bar — copyright | certification left, EN | socials right */}
+        <div className="relative z-10 mx-20 mt-[220px] mb-6 footer-bottom">
+          {/* Left side */}
+          <div className="flex items-center gap-3">
+            <span>© {new Date().getFullYear()} Rahul Chanda Photography. All rights reserved.</span>
+            <span className="footer-divider-v" />
+            <span className="text-[13px]">AICPA SOC 2 Type 1 certified</span>
           </div>
 
-          {/* 1. Diagonal Sleek Marquee (Top of footer) */}
-          <div className="absolute top-12 left-0 w-full overflow-hidden border-y border-border/50 bg-background/60 backdrop-blur-md py-4 z-10 -rotate-2 scale-110 shadow-2xl">
-            <div className="flex w-max animate-footer-scroll-marquee text-xs md:text-sm font-bold tracking-[0.3em] text-muted-foreground uppercase">
-              <MarqueeItem />
-              <MarqueeItem />
-            </div>
-          </div>
-
-          {/* 2. Main Center Content */}
-          <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 mt-20 w-full max-w-5xl mx-auto">
-            <h2
-              ref={headingRef}
-              className="text-5xl md:text-8xl font-bold footer-text-glow tracking-tighter mb-12 text-center font-serif"
-            >
-              Let&apos;s create something <em className="not-italic text-[#e83b2c]">timeless</em>.
-            </h2>
-
-            {/* Interactive Magnetic Pills Layout */}
-            <div ref={linksRef} className="flex flex-col items-center gap-6 w-full">
-              {/* Primary Actions */}
-              <div className="flex flex-wrap justify-center gap-4 w-full">
-                <MagneticButton
-                  as="a"
-                  href={`mailto:${EMAIL}?subject=New%20Project%20Enquiry`}
-                  className="footer-glass-pill px-10 py-5 rounded-full text-foreground font-bold text-sm md:text-base flex items-center gap-3 group"
-                  data-cursor="pointer"
-                >
-                  <svg className="w-6 h-6 text-muted-foreground group-hover:text-foreground transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-                  </svg>
-                  Start a Project
-                </MagneticButton>
-
-                <MagneticButton
-                  as="a"
-                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-                    "Hi Rahul, I'd like to discuss a photography project."
-                  )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="footer-glass-pill px-10 py-5 rounded-full text-foreground font-bold text-sm md:text-base flex items-center gap-3 group"
-                  data-cursor="pointer"
-                >
-                  <svg className="w-6 h-6 text-muted-foreground group-hover:text-foreground transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
-                  </svg>
-                  Chat on WhatsApp
-                </MagneticButton>
-              </div>
-
-              {/* Secondary Text Links */}
-              <div className="flex flex-wrap justify-center gap-3 md:gap-6 w-full mt-2">
-                <MagneticButton as="a" href="/gallery" className="footer-glass-pill px-6 py-3 rounded-full text-muted-foreground font-medium text-xs md:text-sm hover:text-foreground" data-cursor="pointer">
-                  View Portfolio
-                </MagneticButton>
-                <MagneticButton as="a" href="https://www.instagram.com/rahul_chanda_photography/" target="_blank" rel="noopener noreferrer" className="footer-glass-pill px-6 py-3 rounded-full text-muted-foreground font-medium text-xs md:text-sm hover:text-foreground" data-cursor="pointer">
-                  Instagram
-                </MagneticButton>
-                <MagneticButton as="a" href="/contact" className="footer-glass-pill px-6 py-3 rounded-full text-muted-foreground font-medium text-xs md:text-sm hover:text-foreground" data-cursor="pointer">
-                  Book a Shoot
-                </MagneticButton>
-              </div>
-            </div>
-          </div>
-
-          {/* 3. Bottom Bar / Credits */}
-          <div className="relative z-20 w-full pb-8 px-6 md:px-12 flex flex-col gap-6">
-
-            {/* Trust badges strip */}
-            <div className="flex flex-wrap items-center justify-center md:justify-between gap-x-8 gap-y-3 border-t border-border/50 pt-6">
-              <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
-                {[
-                  ["500+", "Brands delivered"],
-                  ["24h", "Turnaround on request"],
-                  ["∞", "Retouch revisions"],
-                  ["100%", "Commercial licensing"],
-                ].map(([stat, label]) => (
-                  <div key={label} className="flex items-baseline gap-2">
-                    <span className="text-[#e83b2c] text-sm md:text-base font-bold tracking-tight">{stat}</span>
-                    <span className="text-muted-foreground text-[10px] md:text-xs font-medium tracking-wide uppercase">{label}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="flex items-center gap-2 text-muted-foreground">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                </svg>
-                <span className="text-[10px] md:text-xs font-semibold tracking-widest uppercase">Studio-grade color, every delivery</span>
-              </div>
-            </div>
-
-            {/* Bottom row */}
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-
-            {/* Copyright + Legal Links */}
-            <div className="flex flex-col md:flex-row items-center gap-3 md:gap-6 order-2 md:order-1">
-              <div className="text-muted-foreground text-[10px] md:text-xs font-semibold tracking-widest uppercase">
-                © {new Date().getFullYear()} Rahul Chanda Photography. All rights reserved.
-              </div>
-              <div className="flex items-center gap-4">
-                <a href="/terms" className="text-muted-foreground text-[10px] md:text-xs font-semibold tracking-widest uppercase hover:text-[#e83b2c] transition-colors" data-cursor="pointer">
-                  Terms
-                </a>
-                <a href="/privacy" className="text-muted-foreground text-[10px] md:text-xs font-semibold tracking-widest uppercase hover:text-[#e83b2c] transition-colors" data-cursor="pointer">
-                  Privacy
-                </a>
-                <a href="/faq" className="text-muted-foreground text-[10px] md:text-xs font-semibold tracking-widest uppercase hover:text-[#e83b2c] transition-colors" data-cursor="pointer">
-                  FAQ
-                </a>
-              </div>
-            </div>
-
-            {/* "Made with Love" Badge */}
-            <div className="footer-glass-pill px-6 py-3 rounded-full flex items-center gap-2 order-1 md:order-2 cursor-default border-border/50">
-              <span className="text-muted-foreground text-[10px] md:text-xs font-bold uppercase tracking-widest">Crafted with</span>
-              <span className="animate-footer-heartbeat text-sm md:text-base text-destructive">❤</span>
-              <span className="text-muted-foreground text-[10px] md:text-xs font-bold uppercase tracking-widest">by</span>
-              <span className="text-foreground font-bold text-xs md:text-sm tracking-normal ml-1">Rahul Chanda</span>
-            </div>
-
-            {/* Back to top */}
-            <MagneticButton
-              as="button"
-              onClick={scrollToTop}
-              aria-label="Back to top"
-              className="w-12 h-12 rounded-full footer-glass-pill flex items-center justify-center text-muted-foreground hover:text-foreground group order-3"
-              data-cursor="pointer"
-            >
-              <svg className="w-5 h-5 transform group-hover:-translate-y-1.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+          {/* Right side */}
+          <div className="flex items-center gap-3">
+            <button className="footer-en-btn" data-cursor="pointer">
+              EN
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
               </svg>
-            </MagneticButton>
+            </button>
 
-            </div>
+            <span className="footer-divider-v" />
+
+            {SOCIALS.map(({ label, href, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                aria-label={label}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cursor="pointer"
+                className="footer-social-icon"
+              >
+                <Icon className="w-4 h-[18px]" />
+              </a>
+            ))}
           </div>
-        </footer>
-      </div>
+        </div>
+      </footer>
     </>
   );
 }

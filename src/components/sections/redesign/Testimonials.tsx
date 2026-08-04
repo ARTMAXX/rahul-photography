@@ -121,7 +121,7 @@ const Testimonials = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-16 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[740px] overflow-hidden justify-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-16 [mask-image:linear-gradient(to_bottom,black_0%,black_78%,transparent)] max-h-[740px] overflow-hidden justify-items-center">
           <TestimonialsColumn testimonials={firstColumn} duration={30} startIndex={0} />
           <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={35} startIndex={4} />
           <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:block" duration={32} startIndex={8} />

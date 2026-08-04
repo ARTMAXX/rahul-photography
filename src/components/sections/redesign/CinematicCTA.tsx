@@ -25,6 +25,8 @@ export default function CinematicCTA() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#070707] via-[#070707]/60 to-[#070707]" />
         <div className="absolute inset-0 bg-[#ffffff]/[0.04] mix-blend-screen" />
+        {/* Solid bottom edge so the next section (contact video) can't bleed up */}
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-[#070707]" />
       </div>
 
       {/* Copper streak accents */}

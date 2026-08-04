@@ -308,23 +308,45 @@ export default function ServicesShowcase() {
       />
 
       <div className="relative z-10 max-w-[1600px] mx-auto">
-        {/* Section header ✦ clean, no numbered marker */}
-        <div className="mb-24 md:mb-32">
-          <h2
-            ref={headingRef}
-            className="text-[clamp(3rem,10vw,8rem)] font-serif leading-[0.85] tracking-[-0.03em] text-white max-w-[16ch]"
-          >
-            <span className="text-[#e83b2c]">Services</span>
-            <br />
-            tailored to your
-            <br />
-            vision.
-          </h2>
-          <p className="text-lg md:text-xl text-white/50 max-w-[50ch] mt-8 leading-relaxed">
-            Specialized photography services tailored to your brand&apos;s
-            unique needs. Click any service to explore details, deliverables,
-            and pricing.
-          </p>
+        {/* Section header ✦ two-column: headline left, intro + proof right */}
+        <div className="mb-24 md:mb-32 grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-24 items-end">
+          <div>
+            <h2
+              ref={headingRef}
+              className="text-[clamp(3rem,10vw,8rem)] font-serif leading-[0.85] tracking-[-0.03em] text-white max-w-[16ch]"
+            >
+              <span className="text-[#e83b2c]">Services</span>
+              <br />
+              tailored to your
+              <br />
+              vision.
+            </h2>
+          </div>
+
+          <div className="lg:pb-3">
+            <p className="text-lg md:text-xl text-white/60 max-w-[46ch] leading-relaxed">
+              Specialized photography services tailored to your brand&apos;s
+              unique needs. Click any service to explore details, deliverables,
+              and pricing.
+            </p>
+
+            <div className="mt-8 grid grid-cols-3 gap-6 max-w-[46ch]">
+              {[
+                { value: "6+", label: "Years behind the lens" },
+                { value: "120+", label: "Brands shot & delivered" },
+                { value: "2,000+", label: "Images edited & graded" },
+              ].map((stat) => (
+                <div key={stat.label} className="border-l border-white/10 pl-4">
+                  <div className="text-2xl md:text-3xl font-serif text-white">
+                    {stat.value}
+                  </div>
+                  <div className="mt-1 text-[10px] uppercase tracking-[0.2em] text-white/40 leading-relaxed">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Services List */}

@@ -92,8 +92,16 @@ w-full overflow-hidden">
         </p>
       </div>
 
+      {/* Vertical scroll cue — fills the left-middle void */}
+      <div className="absolute left-8 md:left-12 top-1/2 -translate-y-1/2 z-10 hidden lg:flex flex-col items-center gap-4 mix-blend-difference">
+        <span className="text-[9px] font-sans tracking-[0.35em] uppercase text-white/60 [writing-mode:vertical-rl]">
+          Scroll to explore
+        </span>
+        <span className="w-px h-24 bg-gradient-to-b from-white/60 to-transparent" />
+      </div>
+
       {/* Massive Text (Bottom) — Primary H1 with Breathing Effect */}
-      <h1 className="absolute bottom-16 md:bottom-12 left-0 w-full z-10 flex justify-center items-baseline gap-2 md:gap-4 mix-blend-difference px-4 md:px-8 select-none whitespace-nowrap">
+      <h1 className="absolute bottom-24 md:bottom-20 left-0 w-full z-10 flex justify-center items-baseline gap-2 md:gap-4 mix-blend-difference px-4 md:px-8 select-none whitespace-nowrap">
         <span ref={leftTextRef} className="text-[12vw] md:text-[13vw] font-serif leading-[0.8] tracking-tighter text-[#F4EFE7] inline-flex">
           <BreathingText
             label="Rahul"
