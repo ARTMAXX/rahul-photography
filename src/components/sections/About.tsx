@@ -137,6 +137,15 @@ export default function About() {
       className="relative w-full text-white min-h-screen"
       style={{ padding: "45vh 4rem 40vh" }}
     >
+      {/* ══════ Ambient radial glow — matches the Services section ══════ */}
+      <div
+        aria-hidden="true"
+        className="absolute top-1/4 right-0 w-[1200px] h-[1200px] rounded-full opacity-10 blur-3xl pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(140,28,19,0.6) 0%, transparent 70%)",
+        }}
+      />
       {/* ---------- Text column (direct child of section, like Luke's) ---------- */}
       <div ref={textRef} className="relative z-20 w-full md:w-[55%]">
         {/* Wide heading ✦ words animate in via blur reveal */}

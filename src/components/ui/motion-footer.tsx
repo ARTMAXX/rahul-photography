@@ -12,12 +12,12 @@ const STYLES = `
   background: #000000;
 }
 
-/* Giant Watermark — positioned lower, much more visible like Morphic */
+/* Giant Watermark — centered like Morphic reference */
 .footer-watermark {
   position: absolute;
   left: 50%;
-  bottom: 80px;
-  transform: translateX(-50%);
+  top: 55%;
+  transform: translate(-50%, -50%);
   white-space: nowrap;
   pointer-events: none;
   user-select: none;
@@ -26,29 +26,29 @@ const STYLES = `
   animation: watermarkReveal 2s 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 .footer-watermark-text {
-  font-size: clamp(200px, 32vw, 480px);
+  font-size: clamp(140px, 24vw, 350px);
   line-height: 0.82;
   font-weight: 900;
   letter-spacing: -0.04em;
   color: transparent;
-  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.09);
+  -webkit-text-stroke: 0.8px rgba(255, 255, 255, 0.05);
   white-space: nowrap;
 }
 @keyframes watermarkReveal {
-  0%   { opacity: 0; transform: translateX(-50%) scale(1.03); }
-  100% { opacity: 1; transform: translateX(-50%) scale(1); }
+  0%   { opacity: 0; transform: translate(-50%, -50%) scale(1.02); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 }
 
-/* Pills — auto-width, matching Morphic's wider padding */
+/* Rectangular buttons — matching Morphic's style */
 .footer-pill {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   height: 32px;
-  padding: 6px 14px;
-  background: rgba(255, 255, 255, 0.05);
+  padding: 6px 16px;
+  background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
+  border-radius: 4px;
   font-size: 13px;
   font-weight: 500;
   color: #888888;
@@ -58,7 +58,7 @@ const STYLES = `
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
 }
 .footer-pill::before {
   content: '';
@@ -71,71 +71,125 @@ const STYLES = `
 .footer-pill:hover {
   background: rgba(255, 255, 255, 0.1);
   color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.18);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.06);
+  border-color: rgba(255, 255, 255, 0.15);
 }
 .footer-pill:hover::before {
   opacity: 1;
 }
 
-/* Timeline ruler — ticks hang DOWN from border-top like Morphic */
+/* Timeline ruler — editing timeline style like Morphic */
 .footer-ruler {
-  display: flex;
-  align-items: flex-start;
+  position: relative;
   width: 100%;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  padding-top: 0;
+  padding: 0 40px;
+  opacity: 0;
+  animation: rulerFadeIn 0.6s 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-.footer-ruler-inner {
+@keyframes rulerFadeIn {
+  to { opacity: 1; }
+}
+
+/* Main horizontal line */
+.footer-ruler-track {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Playhead scrubber */
+.footer-ruler-playhead {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  z-index: 5;
+  cursor: grab;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.footer-ruler-playhead:hover {
+  transform: translate(-50%, -50%) scale(1.2);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+}
+
+/* Tick container - ticks hang DOWN from the line */
+.footer-ruler-ticks {
+  position: relative;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  margin-top: 0;
 }
+
+/* Individual tick wrapper */
 .footer-ruler-tick {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 1;
-  min-width: 0;
+  position: relative;
   opacity: 0;
-  transform: translateY(-6px);
-  animation: tickFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: tickFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-.footer-ruler-line {
+
+/* The vertical tick line - hangs DOWN from the horizontal track */
+.footer-ruler-tick-line {
   width: 1px;
   height: 10px;
   background: rgba(255, 255, 255, 0.18);
-  margin-top: 4px;
-  transition: height 0.3s ease, background 0.3s ease;
+  margin-top: 0;
+  transition: height 0.2s ease, background 0.2s ease;
 }
-.footer-ruler-tick:hover .footer-ruler-line {
+
+/* Major ticks (every 5 seconds) are taller */
+.footer-ruler-tick.major .footer-ruler-tick-line {
   height: 14px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.footer-ruler-tick:hover .footer-ruler-tick-line {
+  height: 16px;
   background: rgba(255, 255, 255, 0.4);
 }
-.footer-ruler-label {
-  font-size: 11px;
-  color: #666666;
+
+/* Time labels below ticks */
+.footer-ruler-tick-label {
+  font-size: 10px;
+  color: #555555;
   line-height: 1;
-  padding-top: 4px;
+  padding-top: 6px;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.02em;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
+  white-space: nowrap;
 }
-.footer-ruler-tick:hover .footer-ruler-label {
+
+.footer-ruler-tick:hover .footer-ruler-tick-label {
   color: #aaaaaa;
 }
-@keyframes tickFadeIn {
-  to { opacity: 1; transform: translateY(0); }
+
+/* Major tick labels are slightly larger */
+.footer-ruler-tick.major .footer-ruler-tick-label {
+  font-size: 10.5px;
+  color: #666666;
 }
+
+@keyframes tickFadeIn {
+  to { opacity: 1; }
+}
+
 
 /* Bottom bar */
 .footer-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #666666;
-  font-size: 14px;
+  color: #4a4a4a;
+  font-size: 11.5px;
   opacity: 0;
   animation: bottomBarReveal 0.8s 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
@@ -144,9 +198,9 @@ const STYLES = `
   100% { opacity: 1; transform: translateY(0); }
 }
 .footer-divider-v {
-  width: 1.5px;
-  height: 16px;
-  background: rgba(255, 255, 255, 0.12);
+  width: 1px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 100px;
   flex-shrink: 0;
 }
@@ -154,7 +208,7 @@ const STYLES = `
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #666666;
+  color: #555555;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
 }
@@ -166,8 +220,8 @@ const STYLES = `
 /* Logo waveform bars — staggered pulse animation */
 .footer-logo-bar {
   display: block;
-  width: 3px;
-  border-radius: 2px;
+  width: 2.5px;
+  border-radius: 1.5px;
   background: white;
   animation: barPulse 2.5s ease-in-out infinite alternate;
 }
@@ -175,7 +229,7 @@ const STYLES = `
 .footer-logo-bar:nth-child(2) { animation-delay: 0.2s; }
 .footer-logo-bar:nth-child(3) { animation-delay: 0.4s; }
 @keyframes barPulse {
-  0%   { transform: scaleY(0.55); opacity: 0.45; }
+  0%   { transform: scaleY(0.6); opacity: 0.5; }
   100% { transform: scaleY(1); opacity: 1; }
 }
 .group:hover .footer-logo-bar {
@@ -185,13 +239,13 @@ const STYLES = `
 /* Pill row staggered entry */
 .footer-pill-row {
   opacity: 0;
-  transform: translateY(10px);
-  animation: pillRowReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform: translateY(8px);
+  animation: pillRowReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 .footer-pill-row:nth-child(1) { animation-delay: 0.3s; }
-.footer-pill-row:nth-child(2) { animation-delay: 0.45s; }
+.footer-pill-row:nth-child(2) { animation-delay: 0.4s; }
 @keyframes pillRowReveal {
-  0%   { opacity: 0; transform: translateY(10px); }
+  0%   { opacity: 0; transform: translateY(8px); }
   100% { opacity: 1; transform: translateY(0); }
 }
 
@@ -200,12 +254,12 @@ const STYLES = `
   display: flex;
   align-items: center;
   gap: 4px;
-  color: #666666;
+  color: #555555;
   transition: color 0.25s ease;
   cursor: pointer;
   background: none;
   border: none;
-  font-size: 13px;
+  font-size: 12px;
 }
 .footer-en-btn:hover {
   color: #ffffff;
@@ -275,21 +329,28 @@ const SOCIALS: { label: string; href: string; Icon: React.ComponentType<React.SV
 ];
 
 // -------------------------------------------------------------------------
-// 3. TIMELINE COMPONENT — ticks hang DOWN like Morphic
+// 3. TIMELINE COMPONENT — editing timeline style like Morphic
 // -------------------------------------------------------------------------
 const TimelineRuler = () => {
   const ticks = Array.from({ length: 16 }, (_, i) => i); // 0..15
   return (
     <div className="footer-ruler">
-      <div className="footer-ruler-inner">
+      {/* Main horizontal track line */}
+      <div className="footer-ruler-track">
+        {/* Playhead scrubber */}
+        <div className="footer-ruler-playhead" />
+      </div>
+      
+      {/* Ticks container - hangs below the line */}
+      <div className="footer-ruler-ticks">
         {ticks.map((t) => (
           <div
             key={t}
-            className="footer-ruler-tick"
-            style={{ animationDelay: `${0.15 + t * 0.03}s` }}
+            className={`footer-ruler-tick ${t % 5 === 0 ? 'major' : ''}`}
+            style={{ animationDelay: `${0.3 + t * 0.025}s` }}
           >
-            <div className="footer-ruler-line" />
-            <span className="footer-ruler-label">
+            <div className="footer-ruler-tick-line" />
+            <span className="footer-ruler-tick-label">
               {t === 0 ? "0" : `${t}s`}
             </span>
           </div>
@@ -315,33 +376,33 @@ export function CinematicFooter() {
     <>
       <style dangerouslySetInnerHTML={{ __html: STYLES }} />
 
-      <footer className="cinematic-footer-wrapper relative w-full overflow-hidden">
-        {/* Giant watermark — positioned lower, large and visible */}
+      <footer className="cinematic-footer-wrapper relative w-full overflow-hidden min-h-[540px]">
+        {/* Giant watermark — centered, subtle stroke like Morphic */}
         <div className="footer-watermark" aria-hidden="true">
           <span className="footer-watermark-text">CHANDA</span>
         </div>
 
         {/* Layer 1: Logo — top-left with animated waveform bars */}
-        <div className="relative z-10 px-6 pt-10 md:px-10">
-          <a href="/" className="inline-flex items-center gap-3 group" data-cursor="pointer">
-            <span className="flex h-6 items-end gap-[3px]">
-              <span className="footer-logo-bar h-3" />
-              <span className="footer-logo-bar h-5" />
+        <div className="relative z-10 px-8 pt-7 md:px-10">
+          <a href="/" className="inline-flex items-center gap-2 group" data-cursor="pointer">
+            <span className="flex h-4 items-end gap-[2px]">
               <span className="footer-logo-bar h-2" />
+              <span className="footer-logo-bar h-3.5" />
+              <span className="footer-logo-bar h-1.5" />
             </span>
-            <span className="text-[17px] font-semibold tracking-tight text-white group-hover:opacity-70 transition-opacity duration-300">
+            <span className="text-[14px] font-semibold tracking-tight text-white group-hover:opacity-70 transition-opacity duration-300">
               Rahul Chanda
             </span>
           </a>
         </div>
 
-        {/* Layer 2: Timeline ruler — ticks hang DOWN from border-top */}
-        <div className="relative z-10 mx-4 mt-8">
+        {/* Layer 2: Timeline ruler — editing timeline style */}
+        <div className="relative z-10 mt-4">
           <TimelineRuler />
         </div>
 
-        {/* Layer 3: Pill buttons — centered, auto-width, wider padding */}
-        <nav className="relative z-[11] mx-auto mt-6 max-w-[955px]" aria-label="Footer">
+        {/* Layer 3: Rectangular buttons — centered, matching Morphic's grid */}
+        <nav className="relative z-[11] mx-auto mt-5 max-w-[900px]" aria-label="Footer">
           <div className="footer-pill-row flex items-center justify-center gap-[6px]">
             {NAV_ROW_1.map((link) => (
               <a
@@ -372,7 +433,7 @@ export function CinematicFooter() {
         </nav>
 
         {/* Layer 4: Bottom bar — copyright | certification left, EN | socials right */}
-        <div className="relative z-10 mx-20 mt-[220px] mb-6 footer-bottom">
+        <div className="absolute bottom-0 left-0 right-0 z-10 mx-10 mb-4 footer-bottom">
           {/* Left side */}
           <div className="flex items-center gap-3">
             <span>© {new Date().getFullYear()} Rahul Chanda Photography. All rights reserved.</span>
