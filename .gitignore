@@ -72,6 +72,9 @@ docs/
 # Stray nested repo accidentally tracked as a gitlink (breaks Netlify checkout)
 /website
 
+# Stale pnpm lock (project uses npm; a pnpm lock makes Netlify pick pnpm and fail)
+pnpm-lock.yaml
+
 # Project-specific analysis & exported assets
 ANALYSIS.md
 /services-section.png
