@@ -60,8 +60,12 @@ trae-page.txt
 providers-list.txt
 providers.txt
 
-# Videos (too large for GitHub — host separately)
-*.mp4
+# Videos — committed ones stay; huge/unused ones are ignored.
+# hero-video.mp4 (222MB) exceeds GitHub's 100MB/file limit, so it is compressed
+# for the deployed site and any 200MB+ originals are kept out of Git.
+public/main hero shots/hero-video.mp4
+public/main-hero-shots/hero-video.mp4
+public/best shots/*.mp4
 
 # Reference materials (not source code)
 ai-website-cloner-template/
