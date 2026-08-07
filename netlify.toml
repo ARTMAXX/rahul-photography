@@ -1,0 +1,10 @@
+# Netlify build configuration for Next.js (rahul-photography)
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  # Pin a stable Node LTS the Netlify build image actually ships.
+  # (Your machine runs v26; the Netlify image may not have it yet.)
+  NODE_VERSION = "22"
+  NEXT_TELEMETRY_DISABLED = "1"
