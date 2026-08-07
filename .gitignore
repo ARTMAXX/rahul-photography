@@ -61,9 +61,8 @@ providers-list.txt
 providers.txt
 
 # Videos — committed ones stay; huge/unused ones are ignored.
-# hero-video.mp4 (222MB) exceeds GitHub's 100MB/file limit, so it is compressed
-# for the deployed site and any 200MB+ originals are kept out of Git.
-public/main hero shots/hero-video.mp4
+# hero-video.mp4 was 222MB/4K -> compressed to 4.4MB/1080p for the deployed
+# site, so it is now committed. The unused 222MB copy and best-shots clips stay out.
 public/main-hero-shots/hero-video.mp4
 public/best shots/*.mp4
 
