@@ -8,3 +8,6 @@
   # (Your machine runs v26; the Netlify image may not have it yet.)
   NODE_VERSION = "22"
   NEXT_TELEMETRY_DISABLED = "1"
+  # Lenient dependency install: ignore audit/funding and skip strict
+  # peer-dep failures that can kill `npm install` on the build image.
+  NPM_FLAGS = "--no-audit --no-fund --legacy-peer-deps"
