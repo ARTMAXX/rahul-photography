@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { LegalFooter } from "@/components/ui/legal-footer";
+import { absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
     "How Rahul Chanda Photography collects, uses, and protects your personal information.",
+  alternates: { canonical: "/privacy" },
+  openGraph: {
+    title: "Privacy Policy — Rahul Chanda Photography",
+    description:
+      "How Rahul Chanda Photography collects, uses, and protects your personal information.",
+    url: absoluteUrl("/privacy"),
+  },
 };
 
 const sections = [

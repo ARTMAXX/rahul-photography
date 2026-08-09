@@ -36,13 +36,33 @@ This is a design project in `C:\Users\Rahul\Downloads\data\New folder\new-design
 **The main session model (`deepseek-v4-flash-free`) CANNOT read images.** Pasting an image into chat fails with
 "this model does not support image input." Do NOT just tell the user you can't see it — use the bridge instead.
 
-**When the user sends an image, says "look at this", "see this", "clipboard", or pastes an image:**
-1. First CHECK the OS clipboard for an image and analyze it:
+**Two tools:**
+1. `see-image.ps1` — quick look. Clipboard image or `-Path <file>`. For "what is this?", idle screenshots, debug.
+2. `dev-utils/vision-review.ps1` — **design-grade QA for every design artifact we produce** (og cards, logos, section mockups).
+   `.\dev-utils\vision-review.ps1 -Path public\og-image.png -Thumbs -Gate -Strict`
+   - Hard rubric (legibility / feed scale / hierarchy / spacing / brand coherence / no placeholders).
+   - `-Gate` runs an independent pixel check for edge clipping; **the gate wins over the model's verdict.**
+   - `-Thumbs` attaches the 600×315 feed thumbnail so the reviewer judges what platforms actually render.
+   - Verdicts are argument-required: `APPROVED/REJECTED`, never vague praise.
+
+**HARD DESIGN POLICY (applies to every future task — do not skip):**
+- **The vision model is a second opinion, not a decision. A passing `APPROVED` is never sufficient.** Always:
+  1. Run the objective gate (`-Gate`) and reconcile every flagged edge/contrast line.
+  2. Reason from the deterministic layout we control (fonts, coordinates, canvas size) before trusting a verdict.
+  3. If any legibility dimension is sub-threshold, it is REJECTED — no approval-by-mood.
+- **The user's preferences are input, not a pass.** If the design is not production-grade we say so with **proof**:
+  a measured, specific list (which line clips, which contrast ratio, which margin). We never ship a weak layout because
+  someone said they liked it, and we never weaken a design to please a rubber-stamp.
+- **Disagree when wrong.** If the user requests something that damages the brand (clipping, generic stocky feel,
+  low-contrast text, confused hierarchy), push back with evidence FIRST, then comply only if they confirm after seeing proof.
+- Never generate or keep repeated generic “permission” answers. Every card/logo/mock must survive this loop:
+  generate → gate → vision rubric → our re-check of the layout math → ship.
+
+**Quick-look workflow (user pastes/copies an image):**
+1. If they want analysis of a *produced artifact*, use the vision-review may path above.
+2. If it's a random screenshot/clipboard (Win+Shift+S, Copy image), use `see-image.ps1`:
    `& "E:\old data\website data\data\New folder\new-design\see-image.ps1"`
-2. `see-image.ps1` grabs the clipboard bitmap → saves a temp PNG → calls
-   `opencode run --model opencode/mimo-v2.5-free "…" "@<temp.png>"` (MiMo V2.5 Free, OpenCode Zen — vision-capable, already authenticated).
-3. Relay MiMo's full description back to the user as the "seen" result.
-4. If the user provides a real file path instead, use: `.\see-image.ps1 -Path <file>` or `-Prompt "custom question"`.
+3. Relay MiMo's full description back as the "seen" result.
 
 **Hard dependency (explain to the user):** The bridge ONLY works when the image is actually **copied onto the OS clipboard**
 (Win+Shift+S screenshot, right-click → "Copy image", or Ctrl+C on an image). Images **attached/uploaded into the chat box

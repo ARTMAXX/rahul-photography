@@ -2,6 +2,23 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CinematicFooter } from "@/components/ui/motion-footer";
+import { siteConfig, absoluteUrl } from "@/lib/site";
+
+// ISO publish date per post slug (also used by the sitemap).
+const postISO: Record<string, string> = {
+  "preparing-for-a-product-shoot": "2026-07-15",
+  "why-beverage-splash-photography-is-hard": "2026-06-20",
+  "lighting-patterns-for-product-photography": "2026-05-27",
+  "food-styling-for-menus": "2026-05-08",
+  "footwear-photography-angles": "2026-04-19",
+  "luxury-watch-campaign": "2026-04-03",
+  "beverage-photography-glass": "2026-03-22",
+  "color-science-ecommerce": "2026-03-05",
+  "dark-vs-white-backgrounds": "2026-02-18",
+  "retouching-101": "2026-02-02",
+  "how-to-brief-a-photographer": "2026-01-19",
+  "campaign-photography-process": "2026-01-05",
+};
 
 const posts = [
   {
@@ -203,9 +220,20 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const post = posts.find((p) => p.slug === slug);
+  if (!post) return { title: "Blog" };
   return {
-    title: post ? post.title : "Blog",
-    description: post ? post.excerpt : undefined,
+    title: post.title,
+    description: post.excerpt,
+    alternates: { canonical: `/blog/${post.slug}` },
+    openGraph: {
+      type: "article",
+      title: post.title,
+      description: post.excerpt,
+      url: absoluteUrl(`/blog/${post.slug}`),
+      publishedTime: postISO[post.slug],
+      authors: [siteConfig.contact.name],
+      images: [absoluteUrl(siteConfig.ogImagePath)],
+    },
   };
 }
 
@@ -218,8 +246,36 @@ export default async function BlogPostPage({
   const post = posts.find((p) => p.slug === slug);
   if (!post) notFound();
 
+  const postSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "description": post.excerpt,
+    "datePublished": postISO[slug],
+    "dateModified": postISO[slug],
+    "author": {
+      "@type": "Person",
+      "name": "Rahul Chanda",
+      "url": absoluteUrl("/"),
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": siteConfig.name,
+      "logo": {
+        "@type": "ImageObject",
+        "url": absoluteUrl("/icon.svg"),
+      },
+    },
+    "mainEntityOfPage": absoluteUrl(`/blog/${slug}`),
+    "image": absoluteUrl(siteConfig.ogImagePath),
+  };
+
   return (
     <main className="w-full bg-[#070707] text-[#f0f0f0]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(postSchema) }}
+      />
       <section className="relative w-full px-4 md:px-12 pt-44 pb-24">
         <div className="max-w-[760px] mx-auto">
           <Link

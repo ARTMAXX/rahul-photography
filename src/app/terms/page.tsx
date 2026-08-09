@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { LegalFooter } from "@/components/ui/legal-footer";
+import { absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
   description:
     "Terms governing photography services provided by Rahul Chanda Photography.",
+  alternates: { canonical: "/terms" },
+  openGraph: {
+    title: "Terms of Service — Rahul Chanda Photography",
+    description:
+      "Terms governing photography services provided by Rahul Chanda Photography.",
+    url: absoluteUrl("/terms"),
+  },
 };
 
 const sections = [

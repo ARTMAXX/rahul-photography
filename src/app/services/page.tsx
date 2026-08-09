@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
 import ServicesShowcase from "@/components/sections/redesign/ServicesShowcase";
 import { CinematicFooter } from "@/components/ui/motion-footer";
+import { absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Services",
   description:
     "Commercial photography services — product, food & beverage, fashion, footwear, campaigns, brand content, and interiors. Based in Dehradun, India, shooting nationwide.",
+  alternates: { canonical: "/services" },
+  openGraph: {
+    title: "Services — Rahul Chanda Photography",
+    description:
+      "Commercial photography services — product, food & beverage, footwear, campaigns and brand content. Based in Dehradun, India.",
+    url: absoluteUrl("/services"),
+  },
 };
 
 export default function ServicesPage() {

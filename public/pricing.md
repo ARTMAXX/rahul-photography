@@ -74,4 +74,4 @@ Studio based in Dehradun, Uttarakhand, India. Available for on-location shoots a
 
 ## Contact
 
-https://rahulchandaphotography.com/
+https://rahulchandaphotography.netlify.app/

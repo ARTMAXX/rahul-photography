@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { CinematicFooter } from "@/components/ui/motion-footer";
+import { absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About",
   description:
     "Rahul Chanda — high-end commercial product photographer based in Dehradun, India. Crafting premium visual identities for brands worldwide.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About — Rahul Chanda Photography",
+    description:
+      "Rahul Chanda — high-end commercial product photographer based in Dehradun, India. Crafting premium visual identities for brands worldwide.",
+    url: absoluteUrl("/about"),
+  },
 };
 
 const stats = [
