@@ -22,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const core = [
     { path: "/", priority: 1.0, freq: "weekly" as const },
     { path: "/services", priority: 0.9, freq: "monthly" as const },
+    { path: "/dehradun", priority: 0.9, freq: "weekly" as const },
     { path: "/gallery", priority: 0.9, freq: "monthly" as const },
     { path: "/about", priority: 0.8, freq: "monthly" as const },
     { path: "/blog", priority: 0.8, freq: "weekly" as const },

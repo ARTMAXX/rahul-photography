@@ -3,6 +3,7 @@ export const links = [
   { title: "Work", href: "/#design-in-motion" },
   { title: "Gallery", href: "/gallery" },
   { title: "Services", href: "/services" },
+  { title: "Dehradun", href: "/dehradun" },
   { title: "About", href: "/about" },
   { title: "Blog", href: "/blog" },
   { title: "Contact", href: "/contact" },

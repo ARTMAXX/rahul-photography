@@ -280,6 +280,7 @@ const WHATSAPP_NUMBER = "917078939475";
 const NAV_ROW_1: { label: string; href: string; external?: boolean }[] = [
   { label: "Portfolio", href: "/gallery" },
   { label: "Services", href: "/services" },
+  { label: "Dehradun", href: "/dehradun" },
   { label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/faq" },
