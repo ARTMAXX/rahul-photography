@@ -4,12 +4,12 @@ import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About — Photographer in Dehradun",
   description:
     "Rahul Chanda — high-end commercial product photographer based in Dehradun, India. Crafting premium visual identities for brands worldwide.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About — Rahul Chanda Photography",
+    title: "About Rahul Chanda — Commercial Photographer in Dehradun",
     description:
       "Rahul Chanda — high-end commercial product photographer based in Dehradun, India. Crafting premium visual identities for brands worldwide.",
     url: absoluteUrl("/about"),

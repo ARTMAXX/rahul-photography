@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Gallery",
+  title: "Photography Portfolio — Dehradun",
   description:
     "Commercial photography portfolio — product, food & beverage, footwear, and campaign imagery by Rahul Chanda Photography.",
   alternates: { canonical: "/gallery" },
   openGraph: {
-    title: "Gallery — Rahul Chanda Photography",
+    title: "Commercial Photography Portfolio — Dehradun, India",
     description:
       "Commercial photography portfolio — product, food & beverage, footwear, and campaign imagery by Rahul Chanda.",
     url: absoluteUrl("/gallery"),

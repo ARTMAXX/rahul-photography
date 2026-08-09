@@ -4,12 +4,12 @@ import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Photography Tips from Dehradun",
   description:
     "Field notes on commercial photography — lighting, styling, retouching, and behind-the-scenes guides from Rahul Chanda's studio.",
   alternates: { canonical: "/blog" },
   openGraph: {
-    title: "Blog — Rahul Chanda Photography",
+    title: "Photography Field Notes & Tips — Dehradun, India",
     description:
       "Field notes on commercial photography — lighting, styling, retouching, and behind-the-scenes guides from Rahul Chanda's studio.",
     url: absoluteUrl("/blog"),

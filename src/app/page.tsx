@@ -35,7 +35,7 @@ const personSchema = {
   "name": "Rahul Chanda",
   "jobTitle": "Commercial Product Photographer",
   "url": absoluteUrl("/"),
-  "sameAs": [siteConfig.contact.instagram],
+  "sameAs": [siteConfig.contact.instagram, siteConfig.contact.googleBusiness],
   "knowsAbout": [
     "Product Photography",
     "Beverage Splash Photography",
@@ -59,6 +59,8 @@ const businessSchema = {
   "priceRange": siteConfig.contact.priceRange,
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": siteConfig.contact.streetAddress,
+    "postalCode": siteConfig.contact.postalCode,
     "addressLocality": siteConfig.contact.addressLocality,
     "addressRegion": siteConfig.contact.addressRegion,
     "addressCountry": siteConfig.contact.addressCountry,
@@ -68,8 +70,13 @@ const businessSchema = {
     "latitude": siteConfig.contact.latitude,
     "longitude": siteConfig.contact.longitude,
   },
-  "openingHours": "Mo-Sa 10:00-19:00",
-  "sameAs": [siteConfig.contact.instagram],
+  "areaServed": [
+    { "@type": "City", "name": "Dehradun" },
+    { "@type": "State", "name": "Uttarakhand" },
+    { "@type": "Country", "name": "India" },
+  ],
+  "openingHours": siteConfig.contact.openingHours,
+  "sameAs": [siteConfig.contact.instagram, siteConfig.contact.googleBusiness],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Photography Services",

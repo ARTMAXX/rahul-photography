@@ -21,13 +21,20 @@ export const siteConfig = {
     name: "Rahul Chanda",
     email: "rahulchandaphotography@gmail.com",
     telephone: "+917078939475",
+    /** Mirrors the Google Business Profile address — keep NAP consistent across Google, site, and directories. */
+    streetAddress: "GMS Rd, near EPF Office, Vyomprasth, Kanwali",
+    postalCode: "248001",
     addressLocality: "Dehradun",
     addressRegion: "Uttarakhand",
     addressCountry: "IN",
     latitude: 30.3165,
     longitude: 78.0322,
+    /** Matches the GBP hours (9 AM – 5 PM, all days). */
+    openingHours: "Mo-Su 09:00-17:00",
     priceRange: "₹12,000 – ₹2,00,000+",
     instagram: "https://www.instagram.com/rahul_chanda_photography/",
+    /** Google Business Profile (via Maps CID). */
+    googleBusiness: "https://maps.google.com/?cid=2875568559570212542",
   },
 } as const;
 
