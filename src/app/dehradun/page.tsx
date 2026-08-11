@@ -5,20 +5,15 @@ import { siteConfig, absoluteUrl } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Commercial Photographer in Dehradun",
   description:
-    "Commercial product, food & beverage, footwear, and campaign photography for brands in Dehradun and across Uttarakhand. Shot in a dedicated Kanwali studio with in-house retouching.",
+    "Freelance commercial product, food & beverage, footwear, and campaign photography for brands in Dehradun and across Uttarakhand. On-location shoots with professional retouching.",
   alternates: { canonical: "/dehradun" },
   openGraph: {
-    title: "Commercial Photography in Dehradun — Kanwali Studio",
+    title: "Commercial Photography in Dehradun — Rahul Chanda",
     description:
-      "Commercial product, food & beverage, footwear, and campaign photography for brands in Dehradun and across Uttarakhand, India.",
+      "Freelance commercial product, food & beverage, footwear, and campaign photography for brands in Dehradun and across Uttarakhand, India.",
     url: absoluteUrl("/dehradun"),
   },
 };
-
-const STUDIO_ADDRESS = [
-  "GMS Rd, near EPF Office, Vyomprasth",
-  "Kanwali, Dehradun, Uttarakhand 248001",
-];
 
 // "Where we shoot" — coverage areas around Dehradun and Uttarakhand.
 const SERVICE_AREAS = [
@@ -44,7 +39,7 @@ const LOCAL_SERVICES = [
   },
   {
     t: "Footwear & Fashion",
-    d: "Studio and on-location shoots for footwear labels and apparel brands based in the Doon Valley and beyond.",
+    d: "On-location shoots for footwear labels and apparel brands based in the Doon Valley and beyond.",
   },
   {
     t: "Commercial Campaigns",
@@ -63,26 +58,26 @@ const LOCAL_SERVICES = [
 const LOCAL_FAQ = [
   {
     q: "Do you travel outside Dehradun for shoots?",
-    a: "Yes. The studio is based in Kanwali, Dehradun, and shoots happen at the studio or on location across Uttarakhand — Mussoorie, Rishikesh, Haridwar — as well as Delhi NCR when travel is planned in.",
+    a: "Yes. Based in Dehradun, I shoot on location across Uttarakhand — Mussoorie, Rishikesh, Haridwar — as well as Delhi NCR when travel is planned in.",
   },
   {
-    q: "Can I see the studio before booking?",
-    a: "Absolutely. The studio is at GMS Rd, near EPF Office, Vyomprasth, Kanwali, Dehradun 248001. Call +91 70789 39475 to fix a visit or a camera test before committing to a project.",
+    q: "Where do shoots take place?",
+    a: "Shoots happen at your location — your office, store, restaurant, home, or any venue that fits the brief. I bring all professional lighting and equipment to you.",
   },
   {
     q: "Do you shoot e-commerce catalogue volumes?",
-    a: "Yes. Batch catalogue work is a core part of the studio — 20 to 200+ SKUs with consistent lighting, standards, and retouch so your product pages look uniform.",
+    a: "Yes. Batch catalogue work is a core part of my workflow — 20 to 200+ SKUs with consistent lighting, standards, and retouch so your product pages look uniform.",
   },
   {
-    q: "When is the studio open?",
-    a: "Studio hours are 9:00 AM to 5:00 PM, all days of the week. Enquiries are answered within 24 hours.",
+    q: "How do I book a shoot?",
+    a: "Call +91 70789 39475 or send a WhatsApp message. Enquiries are answered within 24 hours. We'll discuss your brief, timeline, and get you a clear quote.",
   },
 ];
 
-// LocalBusiness schema — mirrors the Google Business Profile NAP exactly.
+// LocalBusiness schema — uses city-level address since this is a freelance on-location service.
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "ProfessionalService",
   "@id": absoluteUrl("/dehradun#localbusiness"),
   name: siteConfig.name,
   url: absoluteUrl("/dehradun"),
@@ -92,8 +87,6 @@ const localBusinessJsonLd = {
   priceRange: siteConfig.contact.priceRange,
   address: {
     "@type": "PostalAddress",
-    streetAddress: siteConfig.contact.streetAddress,
-    postalCode: siteConfig.contact.postalCode,
     addressLocality: siteConfig.contact.addressLocality,
     addressRegion: siteConfig.contact.addressRegion,
     addressCountry: siteConfig.contact.addressCountry,
@@ -103,22 +96,6 @@ const localBusinessJsonLd = {
     latitude: siteConfig.contact.latitude,
     longitude: siteConfig.contact.longitude,
   },
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday",
-      ],
-      opens: "09:00",
-      closes: "17:00",
-    },
-  ],
   areaServed: [
     { "@type": "City", name: "Dehradun" },
     { "@type": "City", name: "Mussoorie" },
@@ -152,7 +129,7 @@ export default function DehradunPage() {
         />
         <div className="relative z-10 max-w-[1600px] mx-auto w-full">
           <div className="inline-flex border border-[#e83b2c]/20 py-1 px-4 rounded-full text-xs text-[#e83b2c]/70 uppercase tracking-widest">
-            Dehradun · Kanwali Studio
+            Dehradun · On-Location
           </div>
           <h1 className="text-[clamp(2.6rem,8vw,6rem)] font-serif leading-[0.9] tracking-[-0.03em] text-white mt-6 max-w-[18ch]">
             Commercial photography,
@@ -161,9 +138,9 @@ export default function DehradunPage() {
             <span className="italic text-[#e83b2c]">Dehradun</span>.
           </h1>
           <p className="text-lg md:text-xl text-white/50 max-w-[60ch] mt-8 leading-relaxed">
-            A professional studio in Kanwali for brands across Uttarakhand —
-            product, food &amp; beverage, footwear, campaign, and brand content —
-            with retouching done in-house. No travel overhead, no outsourcing.
+            A freelance commercial photographer based in Dehradun — product,
+            food &amp; beverage, footwear, campaign, and brand content — with
+            professional retouching. I come to your location with full gear.
           </p>
           <div className="flex flex-wrap items-center gap-6 mt-10">
             <a
@@ -175,84 +152,52 @@ export default function DehradunPage() {
               <span aria-hidden="true">→</span>
             </a>
             <a
-              href={siteConfig.contact.googleBusiness}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`tel:${siteConfig.contact.telephone}`}
               className="inline-flex items-center gap-2 text-white/60 hover:text-white text-sm transition-colors duration-300"
               data-cursor="pointer"
             >
-              Find the studio on Google Maps
+              Call +91 70789 39475
             </a>
           </div>
         </div>
       </section>
 
-      {/* Studio + map + NAP */}
-      <section className="relative w-full px-4 md:px-12 py-24 md:py-32">
-        <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-          <div>
-            <div className="text-[#e83b2c] text-sm font-medium uppercase tracking-widest">
-              The Studio
-            </div>
-            <h2 className="text-3xl md:text-5xl font-serif text-white mt-4 leading-tight">
-              A dedicated shoot space,
-              <br />
-              <span className="italic text-[#e83b2c]">ten minutes</span> from
-              GMS Road.
-            </h2>
-            <p className="text-white/50 mt-6 leading-relaxed max-w-[55ch]">
-              Built for brands that can&apos;t afford to lose a production day.
-              The Kanwali studio runs controlled lighting, cyc-friendly
-              sets, food and beverage rigs, and a retouching desk — so the
-              deliverables that arrive on your desk are already finished.
-            </p>
-            <address className="not-italic mt-8 space-y-1 border-l border-white/10 pl-6">
-              <p className="text-white/70 font-medium">
-                {siteConfig.name}
-              </p>
-              {STUDIO_ADDRESS.map((line) => (
-                <p key={line} className="text-white/50">
-                  {line}
-                </p>
-              ))}
-              <p className="text-white/50 pt-3">
-                <span className="text-white/70">Hours</span> · Mon–Sun, 9:00 AM
-                – 5:00 PM
-              </p>
-            </address>
-            <div className="flex flex-wrap gap-3 mt-8">
-              <a
-                href={`tel:${siteConfig.contact.telephone}`}
-                className="inline-flex items-center gap-2 border border-white/15 py-2.5 px-5 rounded-full text-sm text-white/70 hover:text-white hover:border-white/40 transition-colors duration-300"
-                data-cursor="pointer"
-              >
-                +91 70789 39475
-              </a>
-              <a
-                href={`https://wa.me/917078939475?text=${encodeURIComponent(
-                  "Hi Rahul, I run a brand in Dehradun and want to discuss a shoot."
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border border-white/15 py-2.5 px-5 rounded-full text-sm text-white/70 hover:text-white hover:border-white/40 transition-colors duration-300"
-                data-cursor="pointer"
-              >
-                WhatsApp the studio
-              </a>
-            </div>
+      {/* About — On-Location Service */}
+      <section className="relative w-full px-4 md:px-12 py-24 md:py-32 border-t border-white/5">
+        <div className="max-w-[1600px] mx-auto">
+          <div className="text-[#e83b2c] text-sm font-medium uppercase tracking-widest">
+            On-Location Service
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-white/10">
-            <iframe
-              title="Rahul Chanda Photography studio — Kanwali, Dehradun"
-              src={`https://maps.google.com/maps?q=${encodeURIComponent(
-                "Rahul Chanda Photography, GMS Rd, near EPF Office, Vyomprasth, Kanwali, Dehradun 248001"
-              )}&z=15&output=embed`}
-              className="absolute inset-0 w-full h-full grayscale contrast-125"
-              style={{ border: 0, filter: "grayscale(1) invert(0.9) hue-rotate(180deg) contrast(0.9)" }}
-              loading="lazy"
-              allowFullScreen
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+          <h2 className="text-3xl md:text-5xl font-serif text-white mt-4 leading-tight max-w-[30ch]">
+            Professional shoots,
+            <br />
+            <span className="italic text-[#e83b2c]">wherever you are</span>.
+          </h2>
+          <p className="text-white/50 mt-6 leading-relaxed max-w-[60ch]">
+            No studio needed. I bring professional lighting, backgrounds, and
+            all equipment to your office, store, restaurant, home, or any
+            location that fits the brief. The result is the same — polished,
+            production-ready imagery with retouching done in-house.
+          </p>
+          <div className="flex flex-wrap gap-3 mt-8">
+            <a
+              href={`tel:${siteConfig.contact.telephone}`}
+              className="inline-flex items-center gap-2 border border-white/15 py-2.5 px-5 rounded-full text-sm text-white/70 hover:text-white hover:border-white/40 transition-colors duration-300"
+              data-cursor="pointer"
+            >
+              +91 70789 39475
+            </a>
+            <a
+              href={`https://wa.me/917078939475?text=${encodeURIComponent(
+                "Hi Rahul, I run a brand in Dehradun and want to discuss a shoot."
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border border-white/15 py-2.5 px-5 rounded-full text-sm text-white/70 hover:text-white hover:border-white/40 transition-colors duration-300"
+              data-cursor="pointer"
+            >
+              WhatsApp me
+            </a>
           </div>
         </div>
       </section>
@@ -264,8 +209,8 @@ export default function DehradunPage() {
             Services
           </div>
           <h2 className="text-3xl md:text-5xl font-serif text-white mt-4 leading-tight max-w-[20ch]">
-            What brands book from a{" "}
-            <span className="italic text-[#e83b2c]">Dehradun studio</span>.
+            What brands book in{" "}
+            <span className="italic text-[#e83b2c]">Dehradun</span>.
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12 mt-14">
             {LOCAL_SERVICES.map((s) => (
@@ -285,7 +230,7 @@ export default function DehradunPage() {
             Coverage
           </div>
           <h2 className="text-3xl md:text-5xl font-serif text-white mt-4 leading-tight">
-            Where we <span className="italic text-[#e83b2c]">shoot</span>.
+            Where I <span className="italic text-[#e83b2c]">shoot</span>.
           </h2>
           <div className="flex flex-wrap gap-3 mt-10">
             {SERVICE_AREAS.map((area) => (
@@ -298,10 +243,9 @@ export default function DehradunPage() {
             ))}
           </div>
           <p className="text-white/50 mt-10 max-w-[60ch] leading-relaxed">
-            Studio work is based in Kanwali; location shoots are planned around
-            the season across the Doon Valley, Mussoorie, Rishikesh, and
-            Haridwar. For clients outside Uttarakhand, Delhi NCR travel is
-            routinely scheduled — ask for a production plan.
+            Based in Dehradun, I shoot on location across the Doon Valley,
+            Mussoorie, Rishikesh, and Haridwar. For clients outside Uttarakhand,
+            Delhi NCR travel is routinely scheduled — ask for a production plan.
           </p>
         </div>
       </section>
@@ -318,7 +262,7 @@ export default function DehradunPage() {
             {
               n: "02",
               t: "Shoot day",
-              d: "A focused production at the Kanwali studio or on location — lighting, styling, and art direction handled end to end.",
+              d: "A focused on-location production — I bring all lighting, styling, and art direction to your space or any venue that fits the brief.",
             },
             {
               n: "03",

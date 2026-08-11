@@ -59,8 +59,6 @@ const businessSchema = {
   "priceRange": siteConfig.contact.priceRange,
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": siteConfig.contact.streetAddress,
-    "postalCode": siteConfig.contact.postalCode,
     "addressLocality": siteConfig.contact.addressLocality,
     "addressRegion": siteConfig.contact.addressRegion,
     "addressCountry": siteConfig.contact.addressCountry,
@@ -75,7 +73,6 @@ const businessSchema = {
     { "@type": "State", "name": "Uttarakhand" },
     { "@type": "Country", "name": "India" },
   ],
-  "openingHours": siteConfig.contact.openingHours,
   "sameAs": [siteConfig.contact.instagram, siteConfig.contact.googleBusiness],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
