@@ -24,11 +24,12 @@
 
 @media (max-width: 768px) {
   .header {
-    right: 15px;
-    top: 15px;
+    right: 10px;
+    top: 10px;
 
     .menu {
-      width: 340px;
+      width: calc(100vw - 20px);
+      max-width: 340px;
       height: 500px;
     }
   }

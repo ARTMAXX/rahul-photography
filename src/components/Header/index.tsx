@@ -7,26 +7,38 @@ import styles from "./style.module.scss";
 
 const EASE = [0.76, 0, 0.24, 1] as [number, number, number, number];
 
-const menu: Variants = {
-  open: {
-    width: "480px",
-    height: "650px",
-    top: "-25px",
-    right: "-25px",
-    transition: { duration: 0.75, type: "tween", ease: EASE },
-  },
-  closed: {
-    width: "100px",
-    height: "40px",
-    top: "0px",
-    right: "0px",
-    transition: { duration: 0.75, delay: 0.35, type: "tween", ease: EASE },
-  },
-};
+function getMenuVariants(): Variants {
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+  return {
+    open: {
+      width: isMobile ? "calc(100vw - 20px)" : "480px",
+      maxWidth: isMobile ? "340px" : "480px",
+      height: isMobile ? "500px" : "650px",
+      top: isMobile ? "-10px" : "-25px",
+      right: isMobile ? "-5px" : "-25px",
+      transition: { duration: 0.75, type: "tween", ease: EASE },
+    },
+    closed: {
+      width: "100px",
+      height: "40px",
+      top: "0px",
+      right: "0px",
+      transition: { duration: 0.75, delay: 0.35, type: "tween", ease: EASE },
+    },
+  };
+}
 
 export default function Header() {
   const [isActive, setIsActive] = useState(false);
   const [inCylinderSection, setInCylinderSection] = useState(false);
+  const [menuVariants, setMenuVariants] = useState<Variants>(getMenuVariants());
+
+  useEffect(() => {
+    setMenuVariants(getMenuVariants());
+    const handleResize = () => setMenuVariants(getMenuVariants());
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const section = document.getElementById("design-in-motion");
@@ -48,7 +60,7 @@ export default function Header() {
     >
       <motion.div
         className={styles.menu}
-        variants={menu}
+        variants={menuVariants}
         animate={isActive ? "open" : "closed"}
         initial="closed"
       >
