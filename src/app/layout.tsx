@@ -1,10 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Outfit } from "next/font/google";
 import { siteConfig, absoluteUrl } from "../lib/site";
-import SmoothScroll from "../components/SmoothScroll";
+import PageShell from "../components/PageShell";
 import CustomCursor from "../components/CustomCursor";
-import ColorBends from "../components/ColorBends";
-
 import Header from "../components/Header";
 import "./globals.css";
 
@@ -20,6 +18,12 @@ const outfit = Outfit({
   variable: "--font-outfit",
   weight: ["300", "400", "500", "600", "700"],
 });
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -89,29 +93,11 @@ export default function RootLayout({
       <body
         className={`${playfair.variable} ${outfit.variable} antialiased`}
       >
-        <SmoothScroll>
-          <ColorBends
-            colors={["#0d0506", "#160809", "#260d0e", "#571610"]}
-            rotation={90}
-            speed={0.15}
-            scale={1.05}
-            frequency={1.2}
-            warpStrength={0.9}
-            mouseInfluence={1}
-            noise={0.08}
-            parallax={0.5}
-            iterations={2}
-            intensity={0.55}
-            bandWidth={3}
-            transparent={false}
-            className="fixed inset-0 z-0 h-screen w-screen"
-          />
-          <div className="relative z-10">
-            <CustomCursor />
-            <Header />
-            {children}
-          </div>
-        </SmoothScroll>
+        <PageShell>
+          <CustomCursor />
+          <Header />
+          {children}
+        </PageShell>
       </body>
     </html>
   );

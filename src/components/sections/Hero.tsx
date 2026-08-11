@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -14,12 +14,16 @@ export default function Hero() {
   const leftTextRef = useRef<HTMLSpanElement>(null);
   const rightTextRef = useRef<HTMLSpanElement>(null);
   const subTextRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
 
   useGSAP(() => {
     const isMobile = window.innerWidth < 768;
 
-    // Set initial state of video wrapper: centered card aspect ratio
-    // On mobile, start larger so the video isn't a tiny cropped box
+    // Set initial state of video wrapper: centered card
     gsap.set(videoWrapperRef.current, {
       width: isMobile ? "75vw" : "35vw",
       height: isMobile ? "45vh" : "22vh",
@@ -37,7 +41,7 @@ export default function Hero() {
       },
     });
 
-    // Expand video wrapper from center card to full screen
+    // Expand wrapper from center card to full screen
     tl.to(videoWrapperRef.current, {
       width: "100vw",
       height: "100vh",
@@ -46,14 +50,14 @@ export default function Hero() {
       duration: 1,
     }, 0);
 
-    // Fade out plus marks near the end of the expand animation
+    // Fade out plus marks
     tl.to(".plus-mark", {
       opacity: 0,
       duration: 0.3,
       ease: "none",
     }, 0.7);
 
-    // Slide text outward horizontally and fade out
+    // Slide text outward and fade out
     tl.to(leftTextRef.current, {
       x: "-25vw",
       opacity: 0,
@@ -68,7 +72,7 @@ export default function Hero() {
       duration: 0.8,
     }, 0);
 
-    // Fade in center subtext over the video
+    // Fade in center subtext
     tl.fromTo(subTextRef.current, {
       opacity: 0,
       y: 20,
@@ -95,7 +99,7 @@ w-full overflow-hidden">
         </p>
       </div>
 
-      {/* Vertical scroll cue — fills the left-middle void */}
+      {/* Vertical scroll cue — desktop only */}
       <div className="absolute left-8 md:left-12 top-1/2 -translate-y-1/2 z-10 hidden lg:flex flex-col items-center gap-4 mix-blend-difference">
         <span className="text-[9px] font-sans tracking-[0.35em] uppercase text-white/60 [writing-mode:vertical-rl]">
           Scroll to explore
@@ -106,58 +110,77 @@ w-full overflow-hidden">
       {/* Massive Text (Bottom) — Primary H1 with Breathing Effect */}
       <h1 className="absolute bottom-24 md:bottom-20 left-0 w-full z-10 flex justify-center items-baseline gap-2 md:gap-4 mix-blend-difference px-4 md:px-8 select-none whitespace-nowrap">
         <span ref={leftTextRef} className="text-[12vw] md:text-[13vw] font-serif leading-[0.8] tracking-tighter text-[#F4EFE7] inline-flex">
-          <BreathingText
-            label="Rahul"
-            scaleRange={[1, 1.12]}
-            opacityRange={[0.75, 1]}
-            duration={2.5}
-            staggerDuration={0.12}
-            staggerFrom="first"
-            repeatDelay={0.3}
-          />
+          {isMobile ? (
+            <span>Rahul</span>
+          ) : (
+            <BreathingText
+              label="Rahul"
+              scaleRange={[1, 1.12]}
+              opacityRange={[0.75, 1]}
+              duration={2.5}
+              staggerDuration={0.12}
+              staggerFrom="first"
+              repeatDelay={0.3}
+            />
+          )}
         </span>
         <span ref={rightTextRef} className="text-[12vw] md:text-[13vw] font-serif italic leading-[0.8] tracking-tighter text-neutral-300 inline-flex">
-          <BreathingText
-            label="Chanda"
-            scaleRange={[1, 1.12]}
-            opacityRange={[0.75, 1]}
-            duration={2.5}
-            staggerDuration={0.1}
-            staggerFrom="center"
-            repeatDelay={0.3}
-          />
+          {isMobile ? (
+            <span>Chanda</span>
+          ) : (
+            <BreathingText
+              label="Chanda"
+              scaleRange={[1, 1.12]}
+              opacityRange={[0.75, 1]}
+              duration={2.5}
+              staggerDuration={0.1}
+              staggerFrom="center"
+              repeatDelay={0.3}
+            />
+          )}
         </span>
       </h1>
 
       {/* Bottom Nav / Lines */}
-      <div className="absolute bottom-0 w-full z-20 flex justify-between items-center px-4 md:px-8 pb-4 md:pb-6 border-b border-white/20 mix-blend-difference text-white">
-        <span className="text-[10px] md:text-xs font-sans tracking-widest uppercase">Dehradun, India</span>
-        <div className="flex gap-2 md:gap-4 text-[8px] md:text-[10px] font-sans tracking-widest uppercase">
-          <a href="https://www.instagram.com/rahul_chanda_photography/" target="_blank" className="hover:opacity-70 transition-opacity">INSTAGRAM</a> /
-          <a href="mailto:rahulchandaphotography@gmail.com" className="hover:opacity-70 transition-opacity">EMAIL</a> /
-          <a href="tel:+917078939475" className="hover:opacity-70 transition-opacity">PHONE</a>
+      <div className="absolute bottom-0 w-full z-20 flex justify-between items-end px-4 md:px-8 pb-4 md:pb-6 border-b border-white/20 mix-blend-difference text-white">
+        <span className="text-[11px] md:text-xs font-sans tracking-widest uppercase pb-1">Dehradun, India</span>
+        <div className="flex items-center gap-1 md:gap-4 text-[11px] md:text-[11px] font-sans tracking-widest uppercase">
+          <a href="https://www.instagram.com/rahul_chanda_photography/" target="_blank" className="py-2 px-2 -mx-2 min-h-[44px] flex items-center hover:opacity-70 transition-opacity">INSTAGRAM</a>
+          <span className="text-white/30">/</span>
+          <a href="mailto:rahulchandaphotography@gmail.com" className="py-2 px-2 -mx-2 min-h-[44px] flex items-center hover:opacity-70 transition-opacity">EMAIL</a>
+          <span className="text-white/30">/</span>
+          <a href="tel:+917078939475" className="py-2 px-2 -mx-2 min-h-[44px] flex items-center hover:opacity-70 transition-opacity">PHONE</a>
         </div>
-        <div className="hidden md:flex gap-6 text-[10px] font-sans tracking-widest uppercase">
-          <a href="#design-in-motion" className="hover:opacity-70 transition-opacity">WORK</a>
-          <a href="#about" className="hover:opacity-70 transition-opacity">INFO</a>
-          <a href="#contact" className="hover:opacity-70 transition-opacity">CONTACT</a>
+        <div className="hidden md:flex gap-6 text-[11px] font-sans tracking-widest uppercase">
+          <a href="#design-in-motion" className="py-2 hover:opacity-70 transition-opacity">WORK</a>
+          <a href="#about" className="py-2 hover:opacity-70 transition-opacity">INFO</a>
+          <a href="#contact" className="py-2 hover:opacity-70 transition-opacity">CONTACT</a>
         </div>
       </div>
       <div className="absolute bottom-10 md:bottom-12 w-full h-px bg-white/20 z-20 mix-blend-difference" />
 
-      {/* Centered Expanding Video Wrapper */}
+      {/* Centered Expanding Video/Image Wrapper */}
       <div
         ref={videoWrapperRef}
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-30 flex items-center justify-center bg-black overflow-hidden"
       >
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover opacity-70"
-          src="/main hero shots/hero-video.mp4"
-        />
+        {/* Only ONE media: image on mobile, video on desktop */}
+        {isMobile ? (
+          <img
+            src="/hero-mobile.png"
+            alt="Rahul Chanda — product photographer"
+            className="w-full h-full object-cover opacity-80"
+          />
+        ) : (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover opacity-70"
+            src="/main hero shots/hero-video.mp4"
+          />
+        )}
 
         {/* 4 Corner Plus Marks */}
         <span className="plus-mark absolute top-4 left-4 text-white text-lg font-light select-none z-40 pointer-events-none">+</span>

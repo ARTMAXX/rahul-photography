@@ -37,7 +37,7 @@ export default function ContactPage() {
           <div className="flex flex-wrap gap-3 mt-8">
             <a
               href={`tel:${siteConfig.contact.telephone}`}
-              className="inline-flex items-center gap-2 border border-white/15 py-2.5 px-5 rounded-full text-sm text-white/70 hover:text-white hover:border-white/40 transition-colors duration-300"
+              className="inline-flex items-center gap-2 border border-white/15 py-3 px-6 min-h-[48px] rounded-full text-base text-white/70 hover:text-white hover:border-white/40 transition-colors duration-300"
               data-cursor="pointer"
             >
               +91 70789 39475
@@ -48,7 +48,7 @@ export default function ContactPage() {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border border-white/15 py-2.5 px-5 rounded-full text-sm text-white/70 hover:text-white hover:border-white/40 transition-colors duration-300"
+              className="inline-flex items-center gap-2 border border-white/15 py-3 px-6 min-h-[48px] rounded-full text-base text-white/70 hover:text-white hover:border-white/40 transition-colors duration-300"
               data-cursor="pointer"
             >
               WhatsApp me
@@ -57,7 +57,7 @@ export default function ContactPage() {
               href={siteConfig.contact.googleBusiness}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border border-white/15 py-2.5 px-5 rounded-full text-sm text-white/70 hover:text-white hover:border-white/40 transition-colors duration-300"
+              className="inline-flex items-center gap-2 border border-white/15 py-3 px-6 min-h-[48px] rounded-full text-base text-white/70 hover:text-white hover:border-white/40 transition-colors duration-300"
               data-cursor="pointer"
             >
               View on Google Maps

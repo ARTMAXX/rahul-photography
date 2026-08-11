@@ -310,10 +310,12 @@ export default function ContactForm() {
                   <input
                     id="cf-name"
                     type="text"
+                    inputMode="text"
+                    autoComplete="name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Your name"
-                    className="w-full bg-white/[0.04] border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/50 focus:outline-none focus:border-[#e83b2c]/60 focus:bg-white/[0.06] transition-colors duration-300"
+                    className="w-full bg-white/[0.04] border border-white/15 rounded-xl px-4 py-3.5 min-h-[48px] text-base text-white placeholder:text-white/50 focus:outline-none focus:border-[#e83b2c]/60 focus:bg-white/[0.06] transition-colors duration-300"
                     data-cursor="pointer"
                   />
                   {errors.name && (
@@ -330,10 +332,12 @@ export default function ContactForm() {
                   <input
                     id="cf-contact"
                     type="text"
+                    inputMode="email"
+                    autoComplete="email"
                     value={contact}
                     onChange={(e) => setContact(e.target.value)}
-                    placeholder="you@brand.com / +91✦"
-                    className="w-full bg-white/[0.04] border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/50 focus:outline-none focus:border-[#e83b2c]/60 focus:bg-white/[0.06] transition-colors duration-300"
+                    placeholder="you@brand.com / +91"
+                    className="w-full bg-white/[0.04] border border-white/15 rounded-xl px-4 py-3.5 min-h-[48px] text-base text-white placeholder:text-white/50 focus:outline-none focus:border-[#e83b2c]/60 focus:bg-white/[0.06] transition-colors duration-300"
                     data-cursor="pointer"
                   />
                   {errors.contact && (
@@ -353,7 +357,7 @@ export default function ContactForm() {
                   id="cf-service"
                   value={service}
                   onChange={(e) => setService(e.target.value)}
-className={`w-full bg-white/[0.04] border rounded-xl px-4 py-3 text-sm appearance-none focus:outline-none focus:bg-white/[0.06] transition-colors duration-300 ${
+                  className={`w-full bg-white/[0.04] border rounded-xl px-4 py-3.5 min-h-[48px] text-base appearance-none focus:outline-none focus:bg-white/[0.06] transition-colors duration-300 ${
                       service
                         ? "text-white border-white/15 focus:border-[#ffffff]/60"
                         : "text-white/50 border-white/15"
@@ -388,7 +392,7 @@ className={`w-full bg-white/[0.04] border rounded-xl px-4 py-3 text-sm appearanc
                   onChange={(e) => setMessage(e.target.value)}
                   rows={4}
                   placeholder="Tell me about the product, timeline, and where you'd like the shoot."
-                  className="w-full bg-white/[0.04] border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/50 focus:outline-none focus:border-[#e83b2c]/60 focus:bg-white/[0.06] transition-colors duration-300 resize-none"
+                  className="w-full bg-white/[0.04] border border-white/15 rounded-xl px-4 py-3.5 min-h-[100px] text-base text-white placeholder:text-white/50 focus:outline-none focus:border-[#e83b2c]/60 focus:bg-white/[0.06] transition-colors duration-300 resize-none"
                   data-cursor="pointer"
                 />
               </div>
@@ -396,7 +400,7 @@ className={`w-full bg-white/[0.04] border rounded-xl px-4 py-3 text-sm appearanc
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="group relative mt-6 w-full inline-flex items-center justify-center gap-3 rounded-full bg-[#e83b2c] px-8 py-4 text-sm font-medium text-white transition-all duration-300 hover:bg-[#f0523f] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed shadow-[0_10px_40px_-10px_rgba(232,59,44,0.5)]"
+                className="group relative mt-6 w-full inline-flex items-center justify-center gap-3 rounded-full bg-[#e83b2c] px-8 py-4 min-h-[52px] text-base font-medium text-white transition-all duration-300 hover:bg-[#f0523f] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed shadow-[0_10px_40px_-10px_rgba(232,59,44,0.5)]"
                 data-cursor="pointer"
               >
                 {status === "sending" ? (

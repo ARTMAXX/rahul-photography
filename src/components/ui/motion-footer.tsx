@@ -16,7 +16,7 @@ const STYLES = `
 .footer-watermark {
   position: absolute;
   left: 50%;
-  top: 55%;
+  top: 88%;
   transform: translate(-50%, -50%);
   white-space: nowrap;
   pointer-events: none;
@@ -26,12 +26,12 @@ const STYLES = `
   animation: watermarkReveal 2s 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 .footer-watermark-text {
-  font-size: clamp(140px, 24vw, 350px);
+  font-size: clamp(60px, 15vw, 220px);
   line-height: 0.82;
   font-weight: 900;
   letter-spacing: -0.04em;
-  color: transparent;
-  -webkit-text-stroke: 0.8px rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.025);
+  -webkit-text-stroke: 1.2px rgba(255, 255, 255, 0.08);
   white-space: nowrap;
 }
 @keyframes watermarkReveal {
@@ -77,109 +77,107 @@ const STYLES = `
   opacity: 1;
 }
 
-/* Timeline ruler — editing timeline style like Morphic */
+/* Timeline ruler — DaVinci Resolve style */
 .footer-ruler {
   position: relative;
   width: 100%;
-  padding: 0 40px;
+  padding: 0;
+  background: #0d0d0d;
+  border-top: 1px solid #1a1a1a;
+  border-bottom: 1px solid #1a1a1a;
   opacity: 0;
   animation: rulerFadeIn 0.6s 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  overflow: hidden;
 }
 @keyframes rulerFadeIn {
   to { opacity: 1; }
 }
 
-/* Main horizontal line */
-.footer-ruler-track {
+.footer-ruler-inner {
   position: relative;
   width: 100%;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.2);
+  padding: 0 8px;
 }
 
-/* Playhead scrubber */
+/* Red playhead — triangle + vertical line */
 .footer-ruler-playhead {
   position: absolute;
-  top: 50%;
-  left: 15%;
-  transform: translate(-50%, -50%);
-  width: 12px;
-  height: 12px;
-  background: white;
-  border-radius: 50%;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  top: 0;
+  left: 18%;
   z-index: 5;
   cursor: grab;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.footer-ruler-playhead:hover {
-  transform: translate(-50%, -50%) scale(1.2);
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+.footer-ruler-playhead::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid #e83b2c;
+}
+.footer-ruler-playhead::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 22px;
+  background: #e83b2c;
+  box-shadow: 0 0 4px rgba(232, 59, 44, 0.5);
 }
 
-/* Tick container - ticks hang DOWN from the line */
-.footer-ruler-ticks {
-  position: relative;
-  width: 100%;
+/* Continuous tick strip — dense like real timeline */
+.footer-ruler-strip {
+  display: flex;
+  align-items: flex-end;
+  gap: 0;
+  height: 14px;
+  padding-top: 2px;
+  border-bottom: 1px solid #222;
+}
+
+/* Individual tick */
+.footer-ruler-tick {
+  flex: 1;
+  min-width: 1px;
+  background: #2a2a2a;
+  transition: background 0.1s ease;
+}
+
+/* Default: tiny tick */
+.footer-ruler-tick {
+  height: 4px;
+}
+
+/* Medium tick */
+.footer-ruler-tick.medium {
+  height: 7px;
+  background: #333;
+}
+
+/* Major tick */
+.footer-ruler-tick.major {
+  height: 12px;
+  background: #444;
+}
+
+.footer-ruler-tick:hover {
+  background: #e83b2c !important;
+}
+
+/* Timecode labels row */
+.footer-ruler-labels {
   display: flex;
   justify-content: space-between;
-  margin-top: 0;
+  padding: 4px 0 2px;
 }
 
-/* Individual tick wrapper */
-.footer-ruler-tick {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  opacity: 0;
-  animation: tickFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* The vertical tick line - hangs DOWN from the horizontal track */
-.footer-ruler-tick-line {
-  width: 1px;
-  height: 10px;
-  background: rgba(255, 255, 255, 0.18);
-  margin-top: 0;
-  transition: height 0.2s ease, background 0.2s ease;
-}
-
-/* Major ticks (every 5 seconds) are taller */
-.footer-ruler-tick.major .footer-ruler-tick-line {
-  height: 14px;
-  background: rgba(255, 255, 255, 0.25);
-}
-
-.footer-ruler-tick:hover .footer-ruler-tick-line {
-  height: 16px;
-  background: rgba(255, 255, 255, 0.4);
-}
-
-/* Time labels below ticks */
-.footer-ruler-tick-label {
-  font-size: 10px;
-  color: #555555;
-  line-height: 1;
-  padding-top: 6px;
+.footer-ruler-label {
+  font-size: 8px;
+  color: #444;
+  font-family: 'SF Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
   font-variant-numeric: tabular-nums;
-  letter-spacing: 0.02em;
-  transition: color 0.2s ease;
+  letter-spacing: 0.06em;
   white-space: nowrap;
-}
-
-.footer-ruler-tick:hover .footer-ruler-tick-label {
-  color: #aaaaaa;
-}
-
-/* Major tick labels are slightly larger */
-.footer-ruler-tick.major .footer-ruler-tick-label {
-  font-size: 10.5px;
-  color: #666666;
-}
-
-@keyframes tickFadeIn {
-  to { opacity: 1; }
 }
 
 
@@ -333,29 +331,38 @@ const SOCIALS: { label: string; href: string; Icon: React.ComponentType<React.SV
 // 3. TIMELINE COMPONENT — editing timeline style like Morphic
 // -------------------------------------------------------------------------
 const TimelineRuler = () => {
-  const ticks = Array.from({ length: 16 }, (_, i) => i); // 0..15
+  // Generate dense ticks like a real timeline: 60 ticks for 15 seconds
+  const totalTicks = 60;
+  const ticks = Array.from({ length: totalTicks }, (_, i) => i);
+  
   return (
     <div className="footer-ruler">
-      {/* Main horizontal track line */}
-      <div className="footer-ruler-track">
-        {/* Playhead scrubber */}
+      <div className="footer-ruler-inner">
+        {/* Red playhead */}
         <div className="footer-ruler-playhead" />
-      </div>
-      
-      {/* Ticks container - hangs below the line */}
-      <div className="footer-ruler-ticks">
-        {ticks.map((t) => (
-          <div
-            key={t}
-            className={`footer-ruler-tick ${t % 5 === 0 ? 'major' : ''}`}
-            style={{ animationDelay: `${0.3 + t * 0.025}s` }}
-          >
-            <div className="footer-ruler-tick-line" />
-            <span className="footer-ruler-tick-label">
-              {t === 0 ? "0" : `${t}s`}
+        
+        {/* Continuous tick strip */}
+        <div className="footer-ruler-strip">
+          {ticks.map((i) => {
+            const isMajor = i % 4 === 0; // every 4th tick = major
+            const isMedium = i % 2 === 0; // every 2nd tick = medium
+            return (
+              <div
+                key={i}
+                className={`footer-ruler-tick ${isMajor ? 'major' : ''} ${isMedium && !isMajor ? 'medium' : ''}`}
+              />
+            );
+          })}
+        </div>
+        
+        {/* Timecode labels below */}
+        <div className="footer-ruler-labels">
+          {[0, 3, 6, 9, 12, 15].map((sec) => (
+            <span key={sec} className="footer-ruler-label">
+              {String(Math.floor(sec / 60)).padStart(2, '0')}:{String(sec % 60).padStart(2, '0')};00
             </span>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -380,11 +387,11 @@ export function CinematicFooter() {
       <footer className="cinematic-footer-wrapper relative w-full overflow-hidden min-h-[540px]">
         {/* Giant watermark — centered, subtle stroke like Morphic */}
         <div className="footer-watermark" aria-hidden="true">
-          <span className="footer-watermark-text">CHANDA</span>
+          <span className="footer-watermark-text">RAHUL</span>
         </div>
 
         {/* Layer 1: Logo — top-left with animated waveform bars */}
-        <div className="relative z-10 px-8 pt-7 md:px-10">
+        <div className="relative z-10 px-4 md:px-8 pt-7 md:px-10">
           <a href="/" className="inline-flex items-center gap-2 group" data-cursor="pointer">
             <span className="flex h-4 items-end gap-[2px]">
               <span className="footer-logo-bar h-2" />
@@ -403,8 +410,8 @@ export function CinematicFooter() {
         </div>
 
         {/* Layer 3: Rectangular buttons — centered, matching Morphic's grid */}
-        <nav className="relative z-[11] mx-auto mt-5 max-w-[900px]" aria-label="Footer">
-          <div className="footer-pill-row flex items-center justify-center gap-[6px]">
+        <nav className="relative z-[11] mx-auto mt-5 max-w-[900px] px-4 bg-gradient-to-b from-black via-black/80 to-transparent pb-6" aria-label="Footer">
+          <div className="footer-pill-row flex flex-wrap items-center justify-center gap-[6px]">
             {NAV_ROW_1.map((link) => (
               <a
                 key={link.label}
@@ -417,7 +424,7 @@ export function CinematicFooter() {
               </a>
             ))}
           </div>
-          <div className="footer-pill-row flex items-center justify-center gap-[6px] mt-[8px]">
+          <div className="footer-pill-row flex flex-wrap items-center justify-center gap-[6px] mt-[8px]">
             {NAV_ROW_2.map((link) => (
               <a
                 key={link.label}
@@ -434,12 +441,12 @@ export function CinematicFooter() {
         </nav>
 
         {/* Layer 4: Bottom bar — copyright | certification left, EN | socials right */}
-        <div className="absolute bottom-0 left-0 right-0 z-10 mx-10 mb-4 footer-bottom">
+        <div className="absolute bottom-0 left-0 right-0 z-10 mx-4 md:mx-10 mb-4 footer-bottom">
           {/* Left side */}
-          <div className="flex items-center gap-3">
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-3">
             <span>© {new Date().getFullYear()} Rahul Chanda Photography. All rights reserved.</span>
-            <span className="footer-divider-v" />
-            <span className="text-[13px]">AICPA SOC 2 Type 1 certified</span>
+            <span className="footer-divider-v hidden md:block" />
+            <span className="text-[11px] md:text-[13px]">AICPA SOC 2 Type 1 certified</span>
           </div>
 
           {/* Right side */}
