@@ -549,6 +549,14 @@ export default function CinematicCylinder() {
               <p className="mt-2 text-2xl font-[300] opacity-50 max-md:text-base">
                 {perspective.description}
               </p>
+              {index === perspectives.length - 1 && (
+                <a
+                  href="/gallery"
+                  className="pointer-events-auto mt-8 inline-block border border-white/30 bg-white/5 px-8 py-3 text-sm uppercase tracking-[0.25em] text-white/80 backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:text-white hover:border-white/50"
+                >
+                  View Gallery
+                </a>
+              )}
             </div>
           ))}
         </div>
