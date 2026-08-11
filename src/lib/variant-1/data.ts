@@ -22,26 +22,27 @@ export const images = [
 
 /**
  * Captions that fade in/out as the cylinder rotates. Photography-portfolio
- * voice to match the rest of the site.
+ * voice — short, confident, specific to Rahul's work.
  */
 export const perspectives: Perspective[] = [
   {
-    title: "Immersive Frames",
-    description: "Where light meets story",
+    title: "Food & Beverage",
+    description: "Styled, lit, and shot to make you hungry",
     position: "top",
   },
   {
-    title: "Infinite Perspective",
-    description: "A 360° view of the craft",
+    title: "Product & Lifestyle",
+    description: "Every surface, every reflection — intentional",
     position: "center",
   },
   {
-    title: "Inside the Portfolio",
-    description: "Every angle, considered",
+    title: "Behind the Lens",
+    description: "Dehradun-based, available worldwide",
     position: "center",
   },
   {
-    title: "Cinematic Scroll Showcase",
+    title: "Selected Work",
+    description: "A closer look at the craft",
     position: "bottom",
   },
 ];
