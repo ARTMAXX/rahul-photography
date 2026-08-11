@@ -140,7 +140,7 @@ export default function CinematicCylinder() {
     const heightOriginal = imageConfig.height;
     const scale = Math.min(1, safeLimit / totalWidthOriginal);
 
-    canvas.width = Math.floor(totalWidthOriginal * scale);
+    canvas.width = Math.floor(totalWidthOriginal * scale) + 1;
     canvas.height = Math.floor(heightOriginal * scale);
 
     let loadedImages = 0;
@@ -223,6 +223,16 @@ export default function CinematicCylinder() {
 
               drawImageCover(ctx, loadedImg, xPos, 0, drawWidthActual, canvasHeight);
             });
+
+            // Seam fix: draw a 1-pixel strip of the first image at the very end
+            // so the texture wraps seamlessly when mapped onto the cylinder.
+            {
+              const firstImg = imageElements[0];
+              const stripSrcX = 0;
+              const stripSrcW = 1;
+              const stripDstX = totalCanvasWidth;
+              ctx.drawImage(firstImg, stripSrcX, 0, stripSrcW, heightOriginal, stripDstX, 0, 1, canvasHeight);
+            }
 
             const texture = new Texture(gl, {
               wrapS: gl.CLAMP_TO_EDGE,
