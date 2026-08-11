@@ -29,11 +29,6 @@
       "command": ["npx", "-y", "@playwright/mcp"],
       "enabled": true
     },
-    "vercel": {
-      "type": "local",
-      "command": ["powershell", "-NoProfile", "-Command", "$env:VERCEL_API_KEY='vcp_6148ZOg7LYi8jMqHp5qqj4xO3B7mXFFAF15Q9IlEuEORKmAE7d0ZGFga'; npx -y @mistertk/vercel-mcp"],
-      "enabled": true
-    },
     "webwright": {
       "type": "local",
       "command": [
