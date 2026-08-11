@@ -57,17 +57,16 @@ export function getCylinderConfig() {
   return {
     radius: isWide ? 2.5 : 2.2,
     height: isWide ? 2 : 1.2,
-    radialSegments: isWide ? 64 : 32,
+    radialSegments: 64,
     heightSegments: 1,
   };
 }
 
 export function getParticleConfig() {
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
   return {
-    numParticles: isMobile ? 6 : 12,
+    numParticles: 12,
     particleRadius: 3.3,
-    segments: isMobile ? 12 : 20,
+    segments: 20,
     angleSpan: 0.3,
   };
 }
