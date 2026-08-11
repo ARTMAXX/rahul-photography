@@ -16,10 +16,13 @@ export default function Hero() {
   const subTextRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
+    const isMobile = window.innerWidth < 768;
+
     // Set initial state of video wrapper: centered card aspect ratio
+    // On mobile, start larger so the video isn't a tiny cropped box
     gsap.set(videoWrapperRef.current, {
-      width: "35vw",
-      height: "22vh",
+      width: isMobile ? "75vw" : "35vw",
+      height: isMobile ? "45vh" : "22vh",
       borderRadius: "12px",
     });
 

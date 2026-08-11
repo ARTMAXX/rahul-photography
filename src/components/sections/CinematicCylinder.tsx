@@ -11,7 +11,7 @@ import {
   images,
   perspectives,
   getCylinderConfig,
-  particleConfig,
+  getParticleConfig,
   imageConfig,
 } from "@/lib/variant-1/data";
 import {
@@ -77,6 +77,7 @@ export default function CinematicCylinder() {
     }
 
     const cylinderConfig = getCylinderConfig();
+    const particleConfig = getParticleConfig();
 
     const renderer = new Renderer({
       canvas: canvasRef.current,
