@@ -153,6 +153,8 @@ w-full overflow-hidden">
         </div>
         <div className="hidden md:flex gap-6 text-[11px] font-sans tracking-widest uppercase">
           <a href="#design-in-motion" className="py-2 hover:opacity-70 transition-opacity">WORK</a>
+          <a href="/dehradun" className="py-2 hover:opacity-70 transition-opacity">DEHRADUN</a>
+          <a href="/blog" className="py-2 hover:opacity-70 transition-opacity">BLOG</a>
           <a href="#about" className="py-2 hover:opacity-70 transition-opacity">INFO</a>
           <a href="#contact" className="py-2 hover:opacity-70 transition-opacity">CONTACT</a>
         </div>

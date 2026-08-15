@@ -3,12 +3,20 @@ import { CinematicFooter } from "@/components/ui/motion-footer";
 import { siteConfig, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Commercial Photographer in Dehradun",
+  title: "Dehradun Photographer — Commercial Product & Brand Photography",
   description:
-    "Freelance commercial product, food & beverage, footwear, and campaign photography for brands in Dehradun and across Uttarakhand. On-location shoots with professional retouching.",
+    "Looking for a commercial photographer in Dehradun? Rahul Chanda is a freelance product, food & beverage, footwear, and campaign photographer shooting on location across Uttarakhand, with professional retouching.",
   alternates: { canonical: "/dehradun" },
+  keywords: [
+    "dehradun photographer",
+    "commercial photographer dehradun",
+    "product photographer dehradun",
+    "food photographer dehradun",
+    "photographer in dehradun",
+    "uttarakhand photographer",
+  ],
   openGraph: {
-    title: "Commercial Photography in Dehradun — Rahul Chanda",
+    title: "Dehradun Photographer — Commercial Product & Brand Photography",
     description:
       "Freelance commercial product, food & beverage, footwear, and campaign photography for brands in Dehradun and across Uttarakhand, India.",
     url: absoluteUrl("/dehradun"),
@@ -110,12 +118,30 @@ const localBusinessJsonLd = {
   ],
 };
 
+// FAQPage schema — mirrors the visible LOCAL_FAQ accordion so Google can surface rich results.
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: LOCAL_FAQ.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
+
 export default function DehradunPage() {
   return (
     <main className="w-full bg-[#070707] text-[#f0f0f0]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
       {/* Hero */}
@@ -132,9 +158,9 @@ export default function DehradunPage() {
             Dehradun · On-Location
           </div>
           <h1 className="text-[clamp(2.6rem,8vw,6rem)] font-serif leading-[0.9] tracking-[-0.03em] text-white mt-6 max-w-[18ch]">
-            Commercial photography,
+            The commercial
             <br />
-            shot in{" "}
+            photographer in{" "}
             <span className="italic text-[#e83b2c]">Dehradun</span>.
           </h1>
           <p className="text-lg md:text-xl text-white/50 max-w-[60ch] mt-8 leading-relaxed">

@@ -4,6 +4,44 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  // 301 redirects for blog slugs removed from the sitemap (2026-08-15).
+  // Google had already queued these from the old sitemap — redirecting to the
+  // closest live page kills the 404s, preserves link equity, and keeps crawl
+  // budget clean instead of burning it on "resource not found".
+  async redirects() {
+    return [
+      {
+        source: "/blog/preparing-for-a-product-shoot",
+        destination: "/blog/ai-commercial-product-photography",
+        permanent: true,
+      },
+      {
+        source: "/blog/food-styling-for-menus",
+        destination: "/blog/why-beverage-splash-photography-is-hard",
+        permanent: true,
+      },
+      {
+        source: "/blog/luxury-watch-campaign",
+        destination: "/gallery",
+        permanent: true,
+      },
+      {
+        source: "/blog/dark-vs-white-backgrounds",
+        destination: "/blog/color-science-ecommerce",
+        permanent: true,
+      },
+      {
+        source: "/blog/how-to-brief-a-photographer",
+        destination: "/services",
+        permanent: true,
+      },
+      {
+        source: "/blog/campaign-photography-process",
+        destination: "/blog/ai-commercial-product-photography",
+        permanent: true,
+      },
+    ];
+  },
   // Turbopack root — resolves lockfile ambiguity warning
   turbopack: {
     root: process.cwd(),

@@ -163,8 +163,16 @@ export default function About() {
             className="text-sm md:text-base font-sans leading-[1.7] md:leading-[1.6] tracking-[-0.005em] text-neutral-400 md:text-neutral-300 mt-8 md:mt-[12vh] md:w-[55%] md:ml-[45%]"
           >
             My name is Rahul Chanda. A high-end commercial product photographer
-            based in Dehradun, I build high-impact visual identities that connect
-            brands with their audience.
+            based in{" "}
+            <a
+              href="/dehradun"
+              className="underline decoration-[#e83b2c]/40 underline-offset-4 hover:decoration-[#e83b2c] transition-colors"
+              data-cursor="pointer"
+            >
+              Dehradun
+            </a>
+            , I build high-impact visual identities that connect brands with
+            their audience.
           </p>
 
           <div className="mt-10 md:mt-14 md:ml-[45%]">

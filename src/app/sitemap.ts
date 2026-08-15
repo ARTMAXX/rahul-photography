@@ -2,20 +2,21 @@ import type { MetadataRoute } from "next";
 import { siteConfig, absoluteUrl } from "../lib/site";
 
 // Publication date of every blog post, used for sitemap lastmod + BlogPosting schema.
-// Format: yyyy-mm-dd (newest first).
+// Format: yyyy-mm-dd (newest first). MUST stay in sync with src/app/blog/[slug]/page.tsx postISO.
 export const blogPostsSEO: { slug: string; date: string }[] = [
-  { slug: "preparing-for-a-product-shoot", date: "2026-07-15" },
+  { slug: "ai-photoshop-retouching-techniques", date: "2026-08-15" },
+  { slug: "ai-commercial-product-photography", date: "2026-08-05" },
+  { slug: "ai-video-editing-tools-2026", date: "2026-07-22" },
   { slug: "why-beverage-splash-photography-is-hard", date: "2026-06-20" },
+  { slug: "generative-ai-product-backgrounds", date: "2026-06-10" },
   { slug: "lighting-patterns-for-product-photography", date: "2026-05-27" },
-  { slug: "food-styling-for-menus", date: "2026-05-08" },
-  { slug: "footwear-photography-angles", date: "2026-04-19" },
-  { slug: "luxury-watch-campaign", date: "2026-04-03" },
-  { slug: "beverage-photography-glass", date: "2026-03-22" },
-  { slug: "color-science-ecommerce", date: "2026-03-05" },
-  { slug: "dark-vs-white-backgrounds", date: "2026-02-18" },
-  { slug: "retouching-101", date: "2026-02-02" },
-  { slug: "how-to-brief-a-photographer", date: "2026-01-19" },
-  { slug: "campaign-photography-process", date: "2026-01-05" },
+  { slug: "ai-retouching-workflow", date: "2026-05-14" },
+  { slug: "footwear-photography-angles", date: "2026-04-28" },
+  { slug: "ai-color-grading-scene-detection", date: "2026-04-15" },
+  { slug: "beverage-photography-glass", date: "2026-03-24" },
+  { slug: "ai-upscaling-ecommerce", date: "2026-03-10" },
+  { slug: "color-science-ecommerce", date: "2026-03-08" },
+  { slug: "retouching-101", date: "2026-02-06" },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

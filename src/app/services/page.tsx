@@ -4,7 +4,7 @@ import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Commercial Photographer in Dehradun",
+  title: "Commercial Photography Services — Product, Food & Brand",
   description:
     "Commercial photography services — product, food & beverage, fashion, footwear, campaigns, brand content, and interiors. Based in Dehradun, India, shooting nationwide.",
   alternates: { canonical: "/services" },

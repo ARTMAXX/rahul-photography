@@ -3,6 +3,16 @@ import { LazyImage } from "./lazy-image";
 
 const blogs = [
 	{
+		title: "New AI retouching techniques in Photoshop: the 2026 workflow",
+		slug: "/blog/ai-photoshop-retouching-techniques",
+		description:
+			"Adobe has quietly turned Photoshop's retouching stack inside out. The exact AI-first workflow I use now — Generative Fill, the Remove tool, Neural Filters, and where I still reach for a brush.",
+		image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200&auto=format&fit=crop",
+		createdAt: "2026-08-15",
+		author: "Rahul Chanda",
+		readTime: "11 min read",
+	},
+	{
 		title: "How AI is changing commercial product photography",
 		slug: "/blog/ai-commercial-product-photography",
 		description:
