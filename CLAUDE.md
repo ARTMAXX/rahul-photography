@@ -1,5 +1,32 @@
 # New Design Project — Claude Code Guide
 
+## 🚀 DEPLOYMENT WORKFLOW (READ THIS FIRST — MANDATORY)
+
+**Live site:** https://rahulchandaphotography.com (Cloudflare Workers, OpenNext)
+**GitHub:** https://github.com/ARTMAXX/rahul-photography (branch: `main`)
+**Dev server:** `npm run dev` → http://localhost:3001
+
+**THE ONLY CORRECT DEPLOY CHAIN — never skip a step:**
+
+```
+edit on localhost → user approves → git commit → git push origin main
+→ npx opennextjs-cloudflare build → npx wrangler deploy → verify live site
+```
+
+**HISTORY (Aug 2026 incident):** A past session deployed via `wrangler deploy` WITHOUT
+committing/pushing first. This made GitHub (old), Live (middle snapshot), and localhost
+(newest) three divergent versions — very confusing. It was fixed by syncing all three.
+**NEVER deploy without pushing to GitHub first. GitHub must ALWAYS match what is live.**
+
+**Rules:**
+1. NEVER run `wrangler deploy` on uncommitted changes.
+2. NEVER deploy without asking the user first.
+3. Custom domains (rahulchandaphotography.com + www) are configured in the Cloudflare
+   dashboard and persist across deploys — do not touch domain config in wrangler.toml.
+4. `.dev.vars`, `.open-next/`, `.wrangler/`, logs are gitignored — keep it that way.
+5. When writing files, ALWAYS save as UTF-8 (a past session saved
+   `src/app/about/page.tsx` as UTF-16 and broke the production build).
+
 ## Available Commands
 - `/plan` — Start planning mode (structured product thinking)
 - `/build` — Execute implementation with full context
