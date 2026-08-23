@@ -1,6 +1,6 @@
 "use client";
-import React, { useState, useRef, useCallback, useEffect } from "react";
-import { motion, useMotionValue, useAnimationFrame } from "motion/react";
+import React, { useState, useRef, useEffect } from "react";
+import { motion, useMotionValue } from "motion/react";
 
 const accents = [
   { bg: "bg-[#ffffff]/10", border: "border-[#ffffff]/20", text: "text-[#ffffff]" },
@@ -38,28 +38,41 @@ export const TestimonialsColumn = (props: {
   const [isHovered, setIsHovered] = useState(false);
   const columnRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  const halfHeightRef = useRef(0);
+  const maxScrollRef = useRef(0);
   const y = useMotionValue(0);
   const velocityRef = useRef(0);
   const rafRef = useRef<number>(0);
   const lastTimeRef = useRef(0);
 
-  // Measure content height
+  // Measure content vs container height to know the scrollable range
   useEffect(() => {
     const measure = () => {
-      if (contentRef.current) {
-        halfHeightRef.current = contentRef.current.scrollHeight / 2;
+      if (contentRef.current && columnRef.current) {
+        maxScrollRef.current = Math.max(
+          0,
+          contentRef.current.scrollHeight - columnRef.current.clientHeight
+        );
       }
     };
     measure();
     const t = setTimeout(measure, 200);
-    const ro = typeof ResizeObserver !== "undefined" && contentRef.current
-      ? new ResizeObserver(measure) : null;
-    if (ro && contentRef.current) ro.observe(contentRef.current);
-    return () => { clearTimeout(t); ro?.disconnect(); };
+    const ro =
+      typeof ResizeObserver !== "undefined" &&
+      contentRef.current &&
+      columnRef.current
+        ? new ResizeObserver(measure)
+        : null;
+    if (ro && contentRef.current && columnRef.current) {
+      ro.observe(contentRef.current);
+      ro.observe(columnRef.current);
+    }
+    return () => {
+      clearTimeout(t);
+      ro?.disconnect();
+    };
   }, [props.testimonials]);
 
-  // Simple requestAnimationFrame loop — no motion/react overhead
+  // Gentle auto-scroll to the end — NO duplicated content, pauses on hover
   useEffect(() => {
     const speed = 40 / (props.duration || 10);
     lastTimeRef.current = performance.now();
@@ -67,7 +80,6 @@ export const TestimonialsColumn = (props: {
     const tick = (now: number) => {
       const dt = Math.min((now - lastTimeRef.current) / 1000, 0.1);
       lastTimeRef.current = now;
-      const hh = halfHeightRef.current;
 
       let current = y.get();
 
@@ -81,11 +93,10 @@ export const TestimonialsColumn = (props: {
         current -= speed * dt * 60;
       }
 
-      // Seamless loop
-      if (hh > 0) {
-        if (current <= -hh) current += hh;
-        else if (current > 0) current -= hh;
-      }
+      // Clamp: content stops cleanly at the end (no seam jump, no repeats)
+      const maxScroll = maxScrollRef.current;
+      if (current <= -maxScroll) current = -maxScroll;
+      else if (current > 0) current = 0;
 
       y.set(current);
       rafRef.current = requestAnimationFrame(tick);
@@ -98,34 +109,38 @@ export const TestimonialsColumn = (props: {
   return (
     <div
       ref={columnRef}
-      className={props.className}
+      className={`h-full max-h-[740px] overflow-hidden ${props.className || ""}`}
       onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => { setIsHovered(false); velocityRef.current = 0; }}
+      onMouseLeave={() => {
+        setIsHovered(false);
+        velocityRef.current = 0;
+      }}
     >
       <motion.div
         ref={contentRef}
         style={{ y }}
         className="flex flex-col items-center gap-6 pb-6"
       >
-        {[0, 1].map((index) => (
-          <React.Fragment key={index}>
-            {props.testimonials.map(({ text, name, role }, i) => (
-              <div
-                aria-hidden={index === 1}
-                className="p-8 rounded-3xl border border-white/[0.08] bg-black/25 backdrop-blur-md max-w-xs w-full hover:bg-black/40 hover:border-white/[0.14] transition-colors duration-300"
-                key={i}
-              >
-                <div className="text-sm text-white/80 leading-relaxed">{text}</div>
-                <div className="flex items-center gap-3 mt-5">
-                  <Avatar name={name} index={(props.startIndex || 0) + i} />
-                  <div className="flex flex-col">
-                    <div className="font-medium tracking-tight leading-5 text-white text-sm">{name}</div>
-                    <div className="leading-5 opacity-70 tracking-tight text-white text-xs">{role}</div>
-                  </div>
+        {props.testimonials.map((testimonial, i) => (
+          <div
+            key={testimonial.name}
+            className="p-8 rounded-3xl border border-white/[0.08] bg-black/25 backdrop-blur-md max-w-xs w-full hover:bg-black/40 hover:border-white/[0.14] transition-colors duration-300"
+          >
+            <div className="text-sm text-white/80 leading-relaxed">
+              {testimonial.text}
+            </div>
+            <div className="flex items-center gap-3 mt-5">
+              <Avatar name={testimonial.name} index={(props.startIndex || 0) + i} />
+              <div className="flex flex-col">
+                <div className="font-medium tracking-tight leading-5 text-white text-sm">
+                  {testimonial.name}
+                </div>
+                <div className="leading-5 opacity-70 tracking-tight text-white text-xs">
+                  {testimonial.role}
                 </div>
               </div>
-            ))}
-          </React.Fragment>
+            </div>
+          </div>
         ))}
       </motion.div>
     </div>

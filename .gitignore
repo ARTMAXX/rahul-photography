@@ -84,3 +84,21 @@ ANALYSIS.md
 # bun archive
 bun-canary.zip
 .vercel
+
+# ============================================================
+# CLOUDFLARE DEPLOY SETUP (added 2026-08)
+# Deploy workflow: localhost -> commit -> push GitHub -> `npx opennextjs-cloudflare build` -> `npx wrangler deploy`
+# ============================================================
+
+# Cloudflare local config & build artifacts (NEVER commit)
+.dev.vars
+.open-next/
+.wrangler/
+
+# Dev server logs & audit output
+dev-server.log*
+.dev-audit/
+temp_seo_report/
+
+# Root-level screenshots (QA artifacts — real site images live in public/)
+/*.png

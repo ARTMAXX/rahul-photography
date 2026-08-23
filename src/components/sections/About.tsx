@@ -152,9 +152,9 @@ export default function About() {
             ref={aboutTextRef}
             className="text-[26px] md:text-5xl font-serif leading-[1.35] md:leading-[1.45] tracking-[-0.01em] w-full text-balance"
           >
-            As a{" "}
-            <span className="italic font-bold">commercial photographer</span>, I
-            craft tailor-made visual experiences, blending technical precision and{" "}
+            I don&apos;t just photograph products. I{" "}
+            <span className="italic font-bold">make them worth choosing</span>{" "}
+            — with technical precision and{" "}
             <span className="italic font-bold">emotion</span>.
           </h2>
 
@@ -162,7 +162,7 @@ export default function About() {
             ref={aboutSubRef}
             className="text-sm md:text-base font-sans leading-[1.7] md:leading-[1.6] tracking-[-0.005em] text-neutral-400 md:text-neutral-300 mt-8 md:mt-[12vh] md:w-[55%] md:ml-[45%]"
           >
-            My name is Rahul Chanda. A high-end commercial product photographer
+            My name is Rahul Chanda. A commercial product photographer
             based in{" "}
             <a
               href="/dehradun"
@@ -171,8 +171,8 @@ export default function About() {
             >
               Dehradun
             </a>
-            , I build high-impact visual identities that connect brands with
-            their audience.
+            , I don&apos;t just photograph products — I light, style, and retouch
+            every frame until the product looks like the obvious choice.
           </p>
 
           <div className="mt-10 md:mt-14 md:ml-[45%]">

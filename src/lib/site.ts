@@ -6,13 +6,13 @@
  * references resolve through this file — nothing else needs touching.
  */
 export const siteConfig = {
-  /** Current live URL — the site is deployed on Netlify's default domain. */
-  url: "https://rahulchandaphotography.netlify.app",
+  /** Current live URL — production site on Cloudflare (rahulchandaphotography.com). */
+  url: "https://rahulchandaphotography.com",
 
   name: "Rahul Chanda Photography",
   title: "Rahul Chanda — Commercial Product Photographer | Dehradun, India",
   description:
-    "Rahul Chanda is a high-end commercial product photographer based in Dehradun, India. Specialising in product, food, beverage splash, and footwear photography for premium brands.",
+    "Rahul Chanda is a commercial product photographer in Dehradun, India, who makes products look worth choosing — product, food & beverage, footwear, and campaign photography, shot and retouched in-house.",
 
   /** Path to the social share image (must be a raster format — JPG/PNG). */
   ogImagePath: "/og-image.png",

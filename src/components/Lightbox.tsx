@@ -7,9 +7,14 @@ import { X, ZoomIn } from "lucide-react";
 interface LightboxProps {
   imageUrl: string | null;
   onClose: () => void;
+  caption?: { title: string; brief: string; outcome: string } | null;
 }
 
-export default function Lightbox({ imageUrl, onClose }: LightboxProps) {
+export default function Lightbox({
+  imageUrl,
+  onClose,
+  caption = null,
+}: LightboxProps) {
   // Lock body scroll when lightbox is open
   useEffect(() => {
     if (imageUrl) {
@@ -60,7 +65,7 @@ export default function Lightbox({ imageUrl, onClose }: LightboxProps) {
             exit={{ scale: 0.95, y: 15 }}
             transition={{ type: "spring", damping: 25, stiffness: 180 }}
             onClick={(e) => e.stopPropagation()}
-            className="relative max-h-[90vh] max-w-[95vw] rounded-sm bg-[#1C1C1C] shadow-2xl border border-[#F4EFE7]/5 flex items-center justify-center"
+            className="relative max-h-[94vh] max-w-[95vw] rounded-sm bg-[#1C1C1C] shadow-2xl border border-[#F4EFE7]/5 flex flex-col items-center justify-center overflow-hidden"
           >
             {imageUrl.endsWith(".mp4") ? (
               <video
@@ -68,14 +73,29 @@ export default function Lightbox({ imageUrl, onClose }: LightboxProps) {
                 controls
                 autoPlay
                 playsInline
-                className="max-h-[85vh] max-w-[90vw] object-contain select-none"
+                className="max-h-[78vh] max-w-[90vw] object-contain select-none"
               />
             ) : (
               <img
                 src={imageUrl}
                 alt="High-resolution gallery capture"
-                className="max-h-[85vh] w-auto object-contain select-none pointer-events-none"
+                className="max-h-[78vh] w-auto object-contain select-none pointer-events-none"
               />
+            )}
+
+            {/* Case-study caption */}
+            {caption && (
+              <div className="w-full px-5 py-4 border-t border-[#F4EFE7]/10 bg-[#141414]">
+                <p className="text-[#F4EFE7] text-sm font-medium font-serif">
+                  {caption.title}
+                </p>
+                <p className="text-[#F4EFE7]/60 text-xs mt-1 font-sans leading-relaxed">
+                  {caption.brief}
+                </p>
+                <p className="text-[#9D8B74] text-xs mt-1.5 font-sans leading-relaxed">
+                  {caption.outcome}
+                </p>
+              </div>
             )}
           </motion.div>
         </motion.div>

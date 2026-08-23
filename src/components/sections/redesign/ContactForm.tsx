@@ -210,9 +210,9 @@ export default function ContactForm() {
         <div className="flex-1 flex flex-col justify-center px-6 md:px-16 pt-32 md:pt-44 pb-16 md:pb-24 max-w-[1400px] mx-auto w-full">
           <div ref={headingRef}>
             <h2 className="text-[clamp(2.5rem,8vw,6rem)] font-serif leading-[0.9] tracking-[-0.03em] text-white/90 max-w-[20ch] mb-12">
-              Ready to build
+              Ready to make your product
               <br />
-              something <span className="italic text-[#e83b2c]">bold</span>?
+              <span className="italic text-[#e83b2c]">worth choosing?</span>
             </h2>
           </div>
 

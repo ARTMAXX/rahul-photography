@@ -109,7 +109,7 @@ export default function MobileBentoGrid() {
           Selected Work
         </h2>
         <p className="mt-2 text-sm text-white/40 uppercase tracking-[0.2em]">
-          A closer look at the craft
+          Work, in brief
         </p>
       </div>
 

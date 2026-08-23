@@ -2,11 +2,16 @@ import type { Metadata } from "next";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import DesignInMotion from "@/components/sections/DesignInMotion";
+import WorkProof from "@/components/sections/redesign/WorkProof";
+import ClientProblem from "@/components/sections/redesign/ClientProblem";
 import ServicesShowcase from "@/components/sections/redesign/ServicesShowcase";
+import CaseStudies from "@/components/sections/redesign/CaseStudies";
 import TheCraft from "@/components/sections/redesign/TheCraft";
 import Testimonials from "@/components/sections/redesign/Testimonials";
+import FAQSection from "@/components/sections/redesign/FAQSection";
 import CinematicCTA from "@/components/sections/redesign/CinematicCTA";
 import ContactForm from "@/components/sections/redesign/ContactForm";
+import { SelectedWorkParallax } from "@/components/ui/selected-work-parallax";
 import { CinematicFooter } from "@/components/ui/motion-footer";
 import { siteConfig, absoluteUrl } from "@/lib/site";
 
@@ -15,6 +20,7 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   alternates: { canonical: "/" },
   openGraph: {
+    type: "website",
     title: siteConfig.title,
     description: siteConfig.description,
     url: absoluteUrl("/"),
@@ -51,7 +57,7 @@ const businessSchema = {
   "name": siteConfig.name,
   "image": absoluteUrl("/about%20me%20photo/1me.webp"),
   "description":
-    "High-end commercial product photography, food photography, beverage splash photography, and footwear photography based in Dehradun, India.",
+    "Rahul Chanda is a commercial product photographer in Dehradun, India, who makes products look worth choosing — product, food & beverage, footwear, and campaign photography, shot and retouched in-house.",
   "@id": absoluteUrl("/"),
   "url": absoluteUrl("/"),
   "telephone": siteConfig.contact.telephone,
@@ -98,11 +104,16 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
       />
       <Hero />
-      <About />
+      <WorkProof />
       <DesignInMotion />
+      <ClientProblem />
       <ServicesShowcase />
+      <CaseStudies />
+      <SelectedWorkParallax />
       <TheCraft />
       <Testimonials />
+      <About />
+      <FAQSection />
       <CinematicCTA />
       <ContactForm />
       <CinematicFooter />

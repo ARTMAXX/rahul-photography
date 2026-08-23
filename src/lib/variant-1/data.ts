@@ -42,7 +42,7 @@ export const perspectives: Perspective[] = [
   },
   {
     title: "Selected Work",
-    description: "A closer look at the craft",
+    description: "Work, in brief",
     position: "bottom",
   },
 ];

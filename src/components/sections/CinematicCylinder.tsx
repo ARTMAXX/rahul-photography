@@ -316,7 +316,9 @@ export default function CinematicCylinder() {
             tl.to(
               cylinderRef.current.rotation,
               {
-                y: "+=28.27",
+                // 3.5 full turns per section (was 4.5) — slower, calmer spin
+                // while the camera pushes through its choreography.
+                y: "+=21.99",
                 duration: 8.5,
                 ease: "none",
               },

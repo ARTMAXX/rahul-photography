@@ -1,6 +1,6 @@
 export const links = [
   { title: "Home", href: "/" },
-  { title: "Work", href: "/#design-in-motion" },
+  { title: "Work", href: "/#work" },
   { title: "Gallery", href: "/gallery" },
   { title: "Services", href: "/services" },
   { title: "Dehradun", href: "/dehradun" },

@@ -43,7 +43,7 @@ const services: Service[] = [
       "Retouching & color correction",
       "Web-optimized versions",
     ],
-    pricing: "Starting at ?25,000",
+    pricing: "Starting at ₹25,000",
   },
   {
     id: 2,
@@ -59,7 +59,7 @@ const services: Service[] = [
       "Location scouting & setup",
       "Post-production & retouching",
     ],
-    pricing: "Starting at ?40,000",
+    pricing: "Starting at ₹40,000",
   },
   {
     id: 3,
@@ -75,7 +75,7 @@ const services: Service[] = [
       "Multiple compositions",
       "Menu-ready files",
     ],
-    pricing: "Starting at ?20,000",
+    pricing: "Starting at ₹20,000",
   },
   {
     id: 4,
@@ -108,7 +108,7 @@ const services: Service[] = [
       "Priority scheduling",
       "Quick turnaround (48-72hrs)",
     ],
-    pricing: "?35,000/month",
+    pricing: "₹35,000/month",
   },
   {
     id: 6,
@@ -125,7 +125,7 @@ const services: Service[] = [
       "Floor plan integration (optional)",
       "Virtual staging consultation",
     ],
-    pricing: "Starting at ?30,000",
+    pricing: "Starting at ₹30,000",
   },
 ];
 
@@ -157,7 +157,7 @@ export default function ServicesShowcase() {
           "name": "How much does commercial photography cost?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Pricing varies by service: Product Photography starts at ?25,000, Food & Beverage at ?20,000, Fashion & Lifestyle at ?40,000, and Architectural at ?30,000. Custom campaigns and monthly retainers are quoted individually."
+            "text": "Pricing varies by service: Product Photography starts at ₹25,000, Food & Beverage at ₹20,000, Fashion & Lifestyle at ₹40,000, and Architectural at ₹30,000. Custom campaigns and monthly retainers are quoted individually."
           }
         },
         {
@@ -173,7 +173,7 @@ export default function ServicesShowcase() {
           "name": "How long does a typical photoshoot take?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A typical product shoot takes 4✦6 hours. Larger campaigns or multi-scene shoots may require a full day or multiple days depending on complexity."
+            "text": "A typical product shoot takes 4–6 hours. Larger campaigns or multi-scene shoots may require a full day or multiple days depending on complexity."
           }
         },
         {

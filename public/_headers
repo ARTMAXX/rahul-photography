@@ -1,0 +1,30 @@
+# Cloudflare Workers static assets headers
+# https://developers.cloudflare.com/workers/static-assets/headers
+# https://opennext.js.org/cloudflare/caching#static-assets-caching
+
+# Next.js hashed build assets — immutable forever
+/_next/static/*
+  Cache-Control: public,max-age=31536000,immutable
+
+# Portfolio imagery (webp/jpg/png/gif/svg/ico) — cache at edge + browser for 30 days
+# Content-addressed by hand; 30d balances edge hits with occasional art updates.
+/*.webp
+  Cache-Control: public,max-age=2592000
+/*.jpg
+  Cache-Control: public,max-age=2592000
+/*.jpeg
+  Cache-Control: public,max-age=2592000
+/*.png
+  Cache-Control: public,max-age=2592000
+/*.gif
+  Cache-Control: public,max-age=2592000
+/*.svg
+  Cache-Control: public,max-age=2592000
+/*.ico
+  Cache-Control: public,max-age=2592000
+
+# Video showreel assets — large files, heavy bandwidth; cache for 30 days
+/*.mp4
+  Cache-Control: public,max-age=2592000
+/*.webm
+  Cache-Control: public,max-age=2592000

@@ -4,7 +4,6 @@ import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { BreathingText } from "@/components/ui/breathing-text";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -95,7 +94,7 @@ w-full overflow-hidden">
       <div className="absolute top-24 left-8 md:top-32 md:left-12 z-20 text-white max-w-[280px] mix-blend-difference">
         <p className="text-xs md:text-sm font-sans tracking-wide leading-relaxed">
           Dehradun-based commercial product photographer, <br />
-          crafting high-impact <span className="italic text-[#e83b2c]">visual identities</span> for brands worldwide.
+          making products look <span className="italic text-[#e83b2c]">worth choosing</span> for brands worldwide.
         </p>
       </div>
 
@@ -107,37 +106,13 @@ w-full overflow-hidden">
         <span className="w-px h-24 bg-gradient-to-b from-white/60 to-transparent" />
       </div>
 
-      {/* Massive Text (Bottom) — Primary H1 with Breathing Effect */}
+      {/* Massive Text (Bottom) — Primary H1 */}
       <h1 className="absolute bottom-24 md:bottom-20 left-0 w-full z-10 flex justify-center items-baseline gap-2 md:gap-4 mix-blend-difference px-4 md:px-8 select-none whitespace-nowrap">
         <span ref={leftTextRef} className="text-[12vw] md:text-[13vw] font-serif leading-[0.8] tracking-tighter text-[#F4EFE7] inline-flex">
-          {isMobile ? (
-            <span>Rahul</span>
-          ) : (
-            <BreathingText
-              label="Rahul"
-              scaleRange={[1, 1.12]}
-              opacityRange={[0.75, 1]}
-              duration={2.5}
-              staggerDuration={0.12}
-              staggerFrom="first"
-              repeatDelay={0.3}
-            />
-          )}
+          I Make Products
         </span>
         <span ref={rightTextRef} className="text-[12vw] md:text-[13vw] font-serif italic leading-[0.8] tracking-tighter text-neutral-300 inline-flex">
-          {isMobile ? (
-            <span>Chanda</span>
-          ) : (
-            <BreathingText
-              label="Chanda"
-              scaleRange={[1, 1.12]}
-              opacityRange={[0.75, 1]}
-              duration={2.5}
-              staggerDuration={0.1}
-              staggerFrom="center"
-              repeatDelay={0.3}
-            />
-          )}
+          Look Worth Choosing.
         </span>
       </h1>
 

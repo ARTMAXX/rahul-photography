@@ -36,7 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const pages: MetadataRoute.Sitemap = core.map((p) => ({
     url: absoluteUrl(p.path),
     lastModified: new Date(),
-    changeFrequency: p.change,
+    changeFrequency: p.freq,
     priority: Number(p.priority),
   }));
 

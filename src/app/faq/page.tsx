@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     q: "How many images are included per project?",
-    a: "This depends on the scope agreed in the project brief. A typical product shoot includes 10–20 final retouched images. We'll define the exact count before the shoot begins.",
+    a: "This depends on the scope agreed in the project brief — Product Photography includes 20–50 edited high-res images and Food & Beverage includes 15–30 hero shots. The exact count is defined before the shoot begins.",
   },
   {
     q: "Do you travel for shoots?",
@@ -41,6 +41,14 @@ const faqs = [
   {
     q: "Can I use the images for commercial purposes?",
     a: "Yes — delivered images come with a commercial use license as defined in the project brief. Extended or additional usage beyond the agreed scope requires a separate license.",
+  },
+  {
+    q: "How long are quotes valid for?",
+    a: "Written quotes are valid for 14 days from the date of issue. Final pricing is confirmed in writing before any shoot begins.",
+  },
+  {
+    q: "What happens if I need to cancel a booked shoot?",
+    a: "Deposits are non-refundable for cancellations made within 7 days of the scheduled shoot date — that production time is reserved exclusively for you.",
   },
   {
     q: "Do you work with small businesses or only large brands?",

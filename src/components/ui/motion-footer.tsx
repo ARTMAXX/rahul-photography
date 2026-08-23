@@ -445,8 +445,6 @@ export function CinematicFooter() {
           {/* Left side */}
           <div className="flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-3">
             <span>© {new Date().getFullYear()} Rahul Chanda Photography. All rights reserved.</span>
-            <span className="footer-divider-v hidden md:block" />
-            <span className="text-[11px] md:text-[13px]">AICPA SOC 2 Type 1 certified</span>
           </div>
 
           {/* Right side */}

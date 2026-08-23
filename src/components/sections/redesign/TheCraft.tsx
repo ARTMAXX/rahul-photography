@@ -10,23 +10,23 @@ import { useRef } from "react";
 const steps = [
   {
     num: "01",
-    title: "Capture",
-    desc: "Every frame is lit deliberately — glass, liquid, metal and fabric each get their own treatment on set.",
+    title: "Discovery",
+    desc: "Brief, references and art direction settle exactly how your product should feel — before a frame is shot.",
   },
   {
     num: "02",
-    title: "Select & Grade",
-    desc: "The strongest angles are chosen, then colour-graded to match your brand's exact tone and palette.",
+    title: "Production",
+    desc: "Every frame is lit deliberately — glass, liquid, metal and fabric each get their own treatment on set.",
   },
   {
     num: "03",
-    title: "Retouch",
-    desc: "Pixel-level cleanup — reflections, surfaces and details refined until the image feels effortless.",
+    title: "Post",
+    desc: "The strongest angles are selected, colour-graded to your brand's palette, then retouched to the pixel.",
   },
   {
     num: "04",
-    title: "Deliver",
-    desc: "Consistent, high-res finals with licensing and usage rights agreed before the camera ever comes out.",
+    title: "Delivery",
+    desc: "Consistent, high-res finals in print and digital formats — with licensing and usage rights agreed upfront.",
   },
 ];
 

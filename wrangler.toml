@@ -1,0 +1,13 @@
+name = "rahul-photography"
+main = ".open-next/worker.js"
+compatibility_date = "2026-08-15"
+compatibility_flags = ["nodejs_compat", "global_fetch_strictly_public"]
+account_id = "94c6a8cbaf0496c5dc637910f4efeec7"
+
+# Static assets from the OpenNext build
+[assets]
+directory = ".open-next/assets"
+binding = "ASSETS"
+
+# Keep unbound routes config empty — custom domains are configured in the
+# Cloudflare dashboard (rahulchandaphotography.com + www) and persist across deploys.

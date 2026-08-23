@@ -42,18 +42,19 @@ export default function CinematicCTA() {
         >
           {/* Director's-cue framing */}
           <div className="inline-flex items-center gap-3 border border-[#e83b2c]/20 bg-black/30 backdrop-blur px-5 py-2 rounded-full text-white/60 text-xs uppercase tracking-[0.3em]">
-            <span className="text-[#e83b2c]">●</span> Action. Lights. Camera.
+            <span className="text-[#e83b2c]">●</span> Ready when you are
           </div>
 
           <h2 className="mt-8 text-5xl md:text-7xl font-serif tracking-tight text-white leading-[1.05]">
-            Bring your stories
+            Have a product
             <br />
-            <span className="text-[#e83b2c] italic">to life.</span>
+            <span className="text-[#e83b2c] italic">worth showing?</span>
           </h2>
 
           <p className="mt-6 max-w-xl mx-auto text-white/45 text-sm md:text-base leading-relaxed" style={{ fontFamily: "Outfit, system-ui" }}>
-            Every brand has a world waiting to be seen. Let&apos;s build the visual version of
-            yours — shot, graded and retouched to feel unmistakably <em className="not-italic text-[#e83b2c]">premium</em>.
+            Tell me about your product and I&apos;ll show you what it can look like —
+            commercial photography and visual content, shot, graded and retouched so it
+            finally looks <em className="not-italic text-[#e83b2c]">worth choosing</em>.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -68,7 +69,7 @@ export default function CinematicCTA() {
             </a>
             <a
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-                "Hi Rahul, I'd like to bring my product/food story to life."
+                "Hi Rahul, I have a product worth showing. Let's talk."
               )}`}
               target="_blank"
               rel="noopener noreferrer"
