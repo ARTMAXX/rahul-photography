@@ -12,37 +12,20 @@ const nextConfig: NextConfig = {
   //   (max-age 6 months+, includeSubDomains; add preload only later)
   // Optional hardening via a Response Header Transform Rule:
   //   X-Content-Type-Options: nosniff / Referrer-Policy: strict-origin-when-cross-origin
+  //
+  // HOST CANONICALIZATION (SEO fix Aug 2026): Moved to Cloudflare Dashboard
+  // Redirect Rules because @opennextjs/cloudflare does NOT support `has`
+  // conditions in next.config.ts redirects — the `:path*` param is never
+  // interpolated, producing broken Location headers like "/:path*".
+  //   CF Dashboard → Rules → Redirect Rules:
+  //     Rule 1: www.rahulchandaphotography.com/* → https://rahulchandaphotography.com/$1 (301)
+  //     Rule 2: http://rahulchandaphotography.com/* → https://rahulchandaphotography.com/$1 (301)
   // 301 redirects for blog slugs removed from the sitemap (2026-08-15).
   // Google had already queued these from the old sitemap — redirecting to the
   // closest live page kills the 404s, preserves link equity, and keeps crawl
   // budget clean instead of burning it on "resource not found".
-  //
-  // HOST CANONICALIZATION (SEO fix Aug 2026): GSC showed http:// and www://
-  // variants earning their own impressions because every host variant served
-  // 200 OK. These two rules force everything onto ONE canonical host:
-  //   https://rahulchandaphotography.com
-  // Host/header conditions never match localhost, so dev stays safe.
-  // (Implemented as config redirects instead of proxy.ts because
-  // @opennextjs/cloudflare supports neither Node nor Edge middleware.)
   async redirects() {
     return [
-      // www → apex (any scheme)
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.rahulchandaphotography.com" }],
-        destination: "https://rahulchandaphotography.com/:path*",
-        permanent: true,
-      },
-      // plain-http apex → https (Cloudflare sets x-forwarded-proto)
-      {
-        source: "/:path*",
-        has: [
-          { type: "host", value: "rahulchandaphotography.com" },
-          { type: "header", key: "x-forwarded-proto", value: "http" },
-        ],
-        destination: "https://rahulchandaphotography.com/:path*",
-        permanent: true,
-      },
       {
         source: "/blog/preparing-for-a-product-shoot",
         destination: "/blog/ai-commercial-product-photography",
