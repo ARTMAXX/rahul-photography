@@ -151,7 +151,7 @@ export default function AboutPage() {
           >
             <span className="italic text-[#e83b2c]">Let&apos;s make something iconic</span>
             <span className="w-10 h-px bg-[#e83b2c]/30 group-hover:bg-[#e83b2c] transition-colors duration-300" />
-            <span className="text-[#e83b2c]">ÔåÆ</span>
+            <span className="text-[#e83b2c]">&rarr;</span>
           </a>
         </div>
       </section>
