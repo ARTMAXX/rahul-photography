@@ -12,11 +12,11 @@ const STYLES = `
   background: #000000;
 }
 
-/* Giant Watermark — centered like Morphic reference */
+/* Giant Watermark — outline-only, anchored below the nav (no overlap) */
 .footer-watermark {
   position: absolute;
   left: 50%;
-  top: 88%;
+  top: 74%;
   transform: translate(-50%, -50%);
   white-space: nowrap;
   pointer-events: none;
@@ -26,158 +26,179 @@ const STYLES = `
   animation: watermarkReveal 2s 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 .footer-watermark-text {
-  font-size: clamp(60px, 15vw, 220px);
-  line-height: 0.82;
-  font-weight: 900;
-  letter-spacing: -0.04em;
-  color: rgba(255, 255, 255, 0.025);
-  -webkit-text-stroke: 1.2px rgba(255, 255, 255, 0.08);
+  font-size: clamp(80px, 20vw, 390px);
+  line-height: 0.8;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: rgba(255, 255, 255, 0.015);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.09);
   white-space: nowrap;
+  animation: watermarkGlow 5s ease-in-out infinite alternate;
+}
+/* Breathing outline glow — white → brand red */
+@keyframes watermarkGlow {
+  0%   { filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.02)); }
+  100% { filter: drop-shadow(0 0 22px rgba(232, 59, 44, 0.14)); }
+}
+
+/* Shine sweep — VengenceUI AnimatedButton style: a light band travels
+   along the outline stroke every few seconds */
+.footer-watermark-shine {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.55);
+  -webkit-mask-image: linear-gradient(
+    -75deg,
+    transparent 40%,
+    rgba(0, 0, 0, 1) 50%,
+    transparent 60%
+  );
+  mask-image: linear-gradient(
+    -75deg,
+    transparent 40%,
+    rgba(0, 0, 0, 1) 50%,
+    transparent 60%
+  );
+  -webkit-mask-size: 300% 100%;
+  mask-size: 300% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: 130% 0;
+  mask-position: 130% 0;
+  animation: watermarkShine 5s linear infinite;
+  pointer-events: none;
+}
+@keyframes watermarkShine {
+  0%   { -webkit-mask-position: 130% 0; mask-position: 130% 0; }
+  40%  { -webkit-mask-position: -30% 0; mask-position: -30% 0; }
+  100% { -webkit-mask-position: -30% 0; mask-position: -30% 0; }
 }
 @keyframes watermarkReveal {
   0%   { opacity: 0; transform: translate(-50%, -50%) scale(1.02); }
   100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 }
 
-/* Rectangular buttons — matching Morphic's style */
+/* Wide grid-cell pills — Morphic layout + React-Bits circle-rise hover */
 .footer-pill {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  height: 32px;
-  padding: 6px 16px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 4px;
+  height: 34px;
+  padding: 0 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 6px;
   font-size: 13px;
-  font-weight: 500;
-  color: #888888;
+  font-weight: 400;
+  color: #8a8a8a;
   white-space: nowrap;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  letter-spacing: 0.02em;
+  isolation: isolate;
+  letter-spacing: 0.01em;
+  width: 100%;
 }
+
+/* Rising circle fill — bubbles up from the bottom on hover */
 .footer-pill::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255,255,255,0.08) 0%, transparent 60%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-.footer-pill:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.15);
+  left: 50%;
+  top: 50%;
+  width: 260%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: #e83b2c;
+  transform: translate(-50%, calc(-50% + 112%));
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 0;
+  will-change: transform;
+  pointer-events: none;
 }
 .footer-pill:hover::before {
-  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+.footer-pill:hover {
+  border-color: rgba(232, 59, 44, 0.4);
 }
 
-/* Timeline ruler — DaVinci Resolve style */
-.footer-ruler {
+/* Label stack — old label exits up, white label enters from below */
+.pill-label-stack {
   position: relative;
+  display: inline-block;
+  overflow: hidden;
+  line-height: 1.2;
+  z-index: 1;
+}
+.footer-pill .pill-label {
+  display: inline-block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.footer-pill .pill-label-hover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateY(115%);
+  color: #ffffff;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.footer-pill:hover .pill-label {
+  transform: translateY(-115%);
+}
+.footer-pill:hover .pill-label-hover {
+  transform: translateY(0);
+}
+
+/* Morphic-style timeline ruler — subtle seconds labels + fine ticks */
+.footer-ruler {
   width: 100%;
-  padding: 0;
-  background: #0d0d0d;
-  border-top: 1px solid #1a1a1a;
-  border-bottom: 1px solid #1a1a1a;
+  padding: 0 8px;
   opacity: 0;
   animation: rulerFadeIn 0.6s 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  overflow: hidden;
 }
 @keyframes rulerFadeIn {
   to { opacity: 1; }
 }
 
-.footer-ruler-inner {
-  position: relative;
-  width: 100%;
-  padding: 0 8px;
-}
-
-/* Red playhead — triangle + vertical line */
-.footer-ruler-playhead {
-  position: absolute;
-  top: 0;
-  left: 18%;
-  z-index: 5;
-  cursor: grab;
-}
-.footer-ruler-playhead::before {
-  content: '';
-  display: block;
-  width: 0;
-  height: 0;
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-top: 5px solid #e83b2c;
-}
-.footer-ruler-playhead::after {
-  content: '';
-  display: block;
-  width: 1px;
-  height: 22px;
-  background: #e83b2c;
-  box-shadow: 0 0 4px rgba(232, 59, 44, 0.5);
-}
-
-/* Continuous tick strip — dense like real timeline */
-.footer-ruler-strip {
-  display: flex;
-  align-items: flex-end;
-  gap: 0;
-  height: 14px;
-  padding-top: 2px;
-  border-bottom: 1px solid #222;
-}
-
-/* Individual tick */
-.footer-ruler-tick {
-  flex: 1;
-  min-width: 1px;
-  background: #2a2a2a;
-  transition: background 0.1s ease;
-}
-
-/* Default: tiny tick */
-.footer-ruler-tick {
-  height: 4px;
-}
-
-/* Medium tick */
-.footer-ruler-tick.medium {
-  height: 7px;
-  background: #333;
-}
-
-/* Major tick */
-.footer-ruler-tick.major {
-  height: 12px;
-  background: #444;
-}
-
-.footer-ruler-tick:hover {
-  background: #e83b2c !important;
-}
-
-/* Timecode labels row */
 .footer-ruler-labels {
   display: flex;
   justify-content: space-between;
-  padding: 4px 0 2px;
+  padding: 0 0 7px;
 }
 
 .footer-ruler-label {
-  font-size: 8px;
-  color: #444;
-  font-family: 'SF Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
+  font-size: 10px;
+  line-height: 1;
+  color: #3d3d3d;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-variant-numeric: tabular-nums;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   white-space: nowrap;
+}
+
+.footer-ruler-track {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 10px;
+}
+
+/* Thin 1px ticks — fine marks, not blocks */
+.footer-ruler-tick {
+  flex: none;
+  width: 1px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.footer-ruler-tick.major {
+  height: 10px;
+  background: rgba(255, 255, 255, 0.16);
 }
 
 
@@ -328,41 +349,33 @@ const SOCIALS: { label: string; href: string; Icon: React.ComponentType<React.SV
 ];
 
 // -------------------------------------------------------------------------
-// 3. TIMELINE COMPONENT — editing timeline style like Morphic
+// 3. TIMELINE RULER — Morphic-style: subtle seconds + fine ticks (no playhead)
 // -------------------------------------------------------------------------
+const TIMELINE_SECONDS = 15;
+const TICKS_PER_SECOND = 8; // fine minor ticks
+
 const TimelineRuler = () => {
-  // Generate dense ticks like a real timeline: 60 ticks for 15 seconds
-  const totalTicks = 60;
-  const ticks = Array.from({ length: totalTicks }, (_, i) => i);
-  
+  const totalTicks = TIMELINE_SECONDS * TICKS_PER_SECOND;
   return (
-    <div className="footer-ruler">
-      <div className="footer-ruler-inner">
-        {/* Red playhead */}
-        <div className="footer-ruler-playhead" />
-        
-        {/* Continuous tick strip */}
-        <div className="footer-ruler-strip">
-          {ticks.map((i) => {
-            const isMajor = i % 4 === 0; // every 4th tick = major
-            const isMedium = i % 2 === 0; // every 2nd tick = medium
-            return (
-              <div
-                key={i}
-                className={`footer-ruler-tick ${isMajor ? 'major' : ''} ${isMedium && !isMajor ? 'medium' : ''}`}
-              />
-            );
-          })}
-        </div>
-        
-        {/* Timecode labels below */}
-        <div className="footer-ruler-labels">
-          {[0, 3, 6, 9, 12, 15].map((sec) => (
-            <span key={sec} className="footer-ruler-label">
-              {String(Math.floor(sec / 60)).padStart(2, '0')}:{String(sec % 60).padStart(2, '0')};00
-            </span>
-          ))}
-        </div>
+    <div className="footer-ruler" aria-hidden="true">
+      {/* Seconds labels: 0, 1s, 2s ... 15s */}
+      <div className="footer-ruler-labels">
+        {Array.from({ length: TIMELINE_SECONDS + 1 }, (_, s) => (
+          <span key={s} className="footer-ruler-label">
+            {s === 0 ? "0" : `${s}s`}
+          </span>
+        ))}
+      </div>
+      {/* Fine tick strip hanging below the hairline */}
+      <div className="footer-ruler-track">
+        {Array.from({ length: totalTicks }, (_, i) => (
+          <span
+            key={i}
+            className={`footer-ruler-tick${
+              i % TICKS_PER_SECOND === 0 ? " major" : ""
+            }`}
+          />
+        ))}
       </div>
     </div>
   );
@@ -372,26 +385,21 @@ const TimelineRuler = () => {
 // 4. MAIN COMPONENT — Morphic-exact layout + micro/macro animations
 // -------------------------------------------------------------------------
 export function CinematicFooter() {
-  const handlePillMouseMove = React.useCallback((e: React.MouseEvent<HTMLAnchorElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-    e.currentTarget.style.setProperty("--mouse-x", `${x}%`);
-    e.currentTarget.style.setProperty("--mouse-y", `${y}%`);
-  }, []);
-
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: STYLES }} />
 
-      <footer className="cinematic-footer-wrapper relative w-full overflow-hidden min-h-[540px]">
-        {/* Giant watermark — centered, subtle stroke like Morphic */}
+      <footer className="cinematic-footer-wrapper relative w-full overflow-hidden min-h-[500px]">
+        {/* Giant watermark — outline-only, anchored below the nav (no overlap) */}
         <div className="footer-watermark" aria-hidden="true">
           <span className="footer-watermark-text">RAHUL</span>
+          <span className="footer-watermark-text footer-watermark-shine">
+            RAHUL
+          </span>
         </div>
 
         {/* Layer 1: Logo — top-left with animated waveform bars */}
-        <div className="relative z-10 px-4 md:px-8 pt-7 md:px-10">
+        <div className="relative z-10 px-4 md:px-20 pt-8">
           <a href="/" className="inline-flex items-center gap-2 group" data-cursor="pointer">
             <span className="flex h-4 items-end gap-[2px]">
               <span className="footer-logo-bar h-2" />
@@ -404,27 +412,31 @@ export function CinematicFooter() {
           </a>
         </div>
 
-        {/* Layer 2: Timeline ruler — editing timeline style */}
-        <div className="relative z-10 mt-4">
+        {/* Layer 2: Morphic-style timeline ruler */}
+        <div className="relative z-10 mt-5">
           <TimelineRuler />
         </div>
 
-        {/* Layer 3: Rectangular buttons — centered, matching Morphic's grid */}
-        <nav className="relative z-[11] mx-auto mt-5 max-w-[900px] px-4 bg-gradient-to-b from-black via-black/80 to-transparent pb-6" aria-label="Footer">
-          <div className="footer-pill-row flex flex-wrap items-center justify-center gap-[6px]">
+        {/* Layer 3: Grid pills — equal-width cells like Morphic */}
+        <nav className="relative z-[11] mx-auto mt-6 w-full max-w-[960px] px-4" aria-label="Footer">
+          <div className="footer-pill-row grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-2">
             {NAV_ROW_1.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 data-cursor="pointer"
                 className="footer-pill"
-                onMouseMove={handlePillMouseMove}
               >
-                {link.label}
+                <span className="pill-label-stack">
+                  <span className="pill-label">{link.label}</span>
+                  <span className="pill-label-hover" aria-hidden="true">
+                    {link.label}
+                  </span>
+                </span>
               </a>
             ))}
           </div>
-          <div className="footer-pill-row flex flex-wrap items-center justify-center gap-[6px] mt-[8px]">
+          <div className="footer-pill-row grid grid-cols-2 md:grid-cols-4 gap-2 mt-2">
             {NAV_ROW_2.map((link) => (
               <a
                 key={link.label}
@@ -432,16 +444,20 @@ export function CinematicFooter() {
                 {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 data-cursor="pointer"
                 className="footer-pill"
-                onMouseMove={handlePillMouseMove}
               >
-                {link.label}
+                <span className="pill-label-stack">
+                  <span className="pill-label">{link.label}</span>
+                  <span className="pill-label-hover" aria-hidden="true">
+                    {link.label}
+                  </span>
+                </span>
               </a>
             ))}
           </div>
         </nav>
 
-        {/* Layer 4: Bottom bar — copyright | certification left, EN | socials right */}
-        <div className="absolute bottom-0 left-0 right-0 z-10 mx-4 md:mx-10 mb-4 footer-bottom">
+        {/* Layer 4: Bottom bar — copyright left, EN | socials right */}
+        <div className="absolute bottom-0 left-0 right-0 z-10 mx-4 md:mx-20 mb-5 footer-bottom">
           {/* Left side */}
           <div className="flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-3">
             <span>© {new Date().getFullYear()} Rahul Chanda Photography. All rights reserved.</span>

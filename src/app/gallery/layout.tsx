@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Photography Portfolio — Dehradun",
+  title: "Photography Portfolio — Commercial Photographer in Dehradun",
   description:
-    "Commercial photography portfolio — product, food & beverage, footwear, and campaign imagery by Rahul Chanda Photography.",
+    "Browse commercial photography work by Rahul Chanda — product, food & beverage, splash, footwear, and campaign imagery shot on location in Dehradun and across India.",
   alternates: { canonical: "/gallery" },
   openGraph: {
     title: "Commercial Photography Portfolio — Dehradun, India",

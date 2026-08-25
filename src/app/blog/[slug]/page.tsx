@@ -623,6 +623,17 @@ export function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }));
 }
 
+/** Related posts: same-tag posts first, then most recent others. Max 3. */
+function getRelatedPosts(slug: string, count = 3) {
+  const current = posts.find((p) => p.slug === slug);
+  const others = posts.filter((p) => p.slug !== slug);
+  const sameTag = current
+    ? others.filter((p) => p.tag === current.tag)
+    : [];
+  const rest = others.filter((p) => !sameTag.includes(p));
+  return [...sameTag, ...rest].slice(0, count);
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -731,6 +742,33 @@ export default async function BlogPostPage({
                 </p>
               )
             )}
+          </div>
+
+          {/* ===== RELATED READING — internal link cluster (SEO) ===== */}
+          <div className="mt-16">
+            <h2 className="text-xs uppercase tracking-widest text-white/40">
+              Related reading
+            </h2>
+            <div className="mt-6 space-y-0">
+              {getRelatedPosts(slug).map((rel) => (
+                <Link
+                  key={rel.slug}
+                  href={`/blog/${rel.slug}`}
+                  className="group block border-t border-white/10 py-5 last:border-b hover:bg-white/[0.02] transition-colors"
+                  data-cursor="pointer"
+                >
+                  <span className="text-[10px] uppercase tracking-widest text-[#e83b2c]">
+                    {rel.tag}
+                  </span>
+                  <h3 className="font-serif text-lg md:text-xl text-white mt-1.5 group-hover:text-[#e83b2c] transition-colors">
+                    {rel.title}
+                  </h3>
+                  <p className="text-white/40 text-sm mt-1.5 leading-relaxed line-clamp-2">
+                    {rel.excerpt}
+                  </p>
+                </Link>
+              ))}
+            </div>
           </div>
 
           <div className="border-t border-white/10 mt-16 pt-10">

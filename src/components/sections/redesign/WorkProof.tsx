@@ -1,13 +1,15 @@
 "use client";
 
+/* ════════════════════════════════════════════════════════════════════
+   WorkProof – "Selected Work"
+   Aceternity-style scroll timeline: brand-red beam draws down the left
+   as you scroll; each campaign sticks its title while its proof card
+   (image, brief, result) scrolls past. 6 curated campaigns.
+   ════════════════════════════════════════════════════════════════════ */
+
 import { motion } from "motion/react";
 import Image from "next/image";
-
-/* ════════════════════════════════════════════════════════════════════
-   WorkProof – "Proof through work"
-   A curated proof strip of 6 campaigns (no thumbnail wall). Alternating
-   editorial rows with index numbers, brief, and outcome per project.
-   ════════════════════════════════════════════════════════════════════ */
+import { Timeline } from "@/components/ui/timeline";
 
 interface Project {
   src: string;
@@ -62,9 +64,67 @@ const projects: Project[] = [
   },
 ];
 
+function ProjectCard({
+  project,
+  index,
+}: {
+  project: Project;
+  index: number;
+}) {
+  return (
+    <div>
+      {/* Image */}
+      <div className="group relative overflow-hidden rounded-2xl bg-white/[0.03] aspect-[4/3] md:aspect-[16/10]">
+        <Image
+          src={project.src}
+          alt={project.title}
+          fill
+          sizes="(max-width: 768px) 100vw, 58vw"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+          loading={index < 2 ? "eager" : "lazy"}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+        {/* Category chip */}
+        <div className="absolute top-4 left-4 flex items-center gap-2">
+          <span
+            className="text-[10px] uppercase tracking-[0.25em] text-white/80 bg-black/40 backdrop-blur px-3 py-1.5 rounded-full border border-white/15"
+            style={{ fontFamily: "Outfit, system-ui" }}
+          >
+            {project.category}
+          </span>
+        </div>
+      </div>
+
+      {/* Brief */}
+      <p
+        className="mt-6 text-white/60 text-sm md:text-base leading-relaxed max-w-[52ch]"
+        style={{ fontFamily: "Outfit, system-ui" }}
+      >
+        {project.brief}
+      </p>
+
+      {/* Result */}
+      <div className="mt-5 pt-5 border-t border-white/10">
+        <p
+          className="text-[10px] uppercase tracking-[0.25em] text-[#e83b2c]/60"
+          style={{ fontFamily: "Outfit, system-ui" }}
+        >
+          Result
+        </p>
+        <p className="mt-2 text-white/70 text-sm md:text-base italic leading-relaxed max-w-[52ch]">
+          {project.outcome}
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export default function WorkProof() {
   return (
-    <section id="work" className="relative w-full py-24 md:py-36 px-4 md:px-12 overflow-hidden bg-[#070707]">
+    <section
+      id="work"
+      className="relative w-full py-24 md:py-36 px-4 md:px-12 overflow-hidden bg-[#070707]"
+    >
       {/* Copper ambient */}
       <div
         aria-hidden="true"
@@ -87,66 +147,29 @@ export default function WorkProof() {
           <h2 className="text-[clamp(2.6rem,7vw,5.5rem)] font-serif leading-[0.9] tracking-[-0.02em] text-white uppercase">
             Selected Work
           </h2>
+          <p
+            className="mt-4 text-white/50 text-sm md:text-base max-w-[52ch] leading-relaxed"
+            style={{ fontFamily: "Outfit, system-ui" }}
+          >
+            Six assignments, one throughline — the product comes first, and it
+            has to look like the obvious choice.
+          </p>
         </motion.div>
 
-        {/* Campaign rows */}
-        <div className="space-y-20 md:space-y-28">
-          {projects.map((project, i) => {
-            const flip = i % 2 === 1;
-            return (
-              <motion.article
-                key={project.title}
-                initial={{ opacity: 0, y: 48 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-                viewport={{ once: true, margin: "-12% 0px" }}
-                className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 items-center"
-              >
-                {/* Image */}
-                <div className={`md:col-span-7 ${flip ? "md:order-2" : "md:order-1"}`}>
-                  <div className="group relative overflow-hidden rounded-2xl bg-white/[0.03] aspect-[4/3] md:aspect-[16/10]">
-                    <Image
-                      src={project.src}
-                      alt={project.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 58vw"
-                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
-                      loading={i < 2 ? "eager" : "lazy"}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                    {/* Index plate */}
-                    <div className="absolute top-4 left-4 flex items-center gap-2">
-                      <span className="text-[10px] uppercase tracking-[0.25em] text-white/80 bg-black/40 backdrop-blur px-3 py-1.5 rounded-full border border-white/15" style={{ fontFamily: "Outfit, system-ui" }}>
-                        {project.category}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Copy */}
-                <div className={`md:col-span-5 ${flip ? "md:order-1 md:text-right" : "md:order-2"}`}>
-                  <div className={`font-serif text-6xl md:text-7xl text-white/[0.08] leading-none select-none ${flip ? "md:text-right" : ""}`}>
-                    {String(i + 1).padStart(2, "0")}
-                  </div>
-                  <h3 className={`mt-4 text-2xl md:text-4xl font-serif text-white leading-tight tracking-tight ${flip ? "md:text-right" : ""}`}>
-                    {project.title}
-                  </h3>
-                  <p className={`mt-4 text-white/60 text-sm md:text-base leading-relaxed ${flip ? "md:ml-auto md:text-right" : ""}`} style={{ fontFamily: "Outfit, system-ui" }}>
-                    {project.brief}
-                  </p>
-                  <div className={`mt-5 pt-5 border-t border-white/10 ${flip ? "md:ml-auto md:text-right" : ""}`}>
-                    <p className="text-[10px] uppercase tracking-[0.25em] text-[#e83b2c]/60" style={{ fontFamily: "Outfit, system-ui" }}>
-                      Result
-                    </p>
-                    <p className="mt-2 text-white/70 text-sm md:text-base italic leading-relaxed">
-                      {project.outcome}
-                    </p>
-                  </div>
-                </div>
-              </motion.article>
-            );
-          })}
-        </div>
+        {/* Scroll timeline */}
+        <Timeline
+          data={projects.map((project, i) => ({
+            title: (
+              <span className="inline-flex items-baseline gap-3">
+                <span className="text-base md:text-lg text-[#e83b2c]/70 font-sans tracking-widest">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                {project.title}
+              </span>
+            ),
+            content: <ProjectCard project={project} index={i} />,
+          }))}
+        />
 
         {/* Gallery CTA */}
         <motion.div
@@ -162,8 +185,19 @@ export default function WorkProof() {
             style={{ fontFamily: "Outfit, system-ui" }}
           >
             View the full gallery
-            <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+            <svg
+              className="w-4 h-4 transition-transform group-hover:translate-x-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+              />
             </svg>
           </a>
         </motion.div>

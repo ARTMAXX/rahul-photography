@@ -644,6 +644,63 @@ export default function DehradunPage() {
         </div>
       </section>
 
+      {/* ===== FROM THE JOURNAL — internal links into blog cluster (SEO) ===== */}
+      <section className="relative w-full px-4 md:px-12 py-24 md:py-28 border-t border-white/5">
+        <div className="max-w-[1600px] mx-auto">
+          <div className="text-[#e83b2c] text-sm font-medium uppercase tracking-widest">
+            From the Journal
+          </div>
+          <h2 className="text-3xl md:text-5xl font-serif text-white mt-4 leading-tight max-w-[30ch]">
+            How the work gets{" "}
+            <span className="italic text-[#e83b2c]">made</span>.
+          </h2>
+          <p className="text-white/50 mt-6 max-w-[65ch] leading-relaxed">
+            Field notes from real commercial shoots — the technique and
+            judgment behind every delivery.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 mt-12">
+            {[
+              {
+                href: "/blog/why-beverage-splash-photography-is-hard",
+                title: "Why beverage splash photography is harder than it looks",
+                desc: "Timing, viscosity, lighting — what goes into that hero splash frame.",
+              },
+              {
+                href: "/blog/beverage-photography-glass",
+                title: "Glass, liquid, and light: photographing premium beverages",
+                desc: "Backlight, glycerin condensation, and controlled reflections.",
+              },
+              {
+                href: "/blog/lighting-patterns-for-product-photography",
+                title: "Three lighting patterns every product shoot needs",
+                desc: "Key light, rim light, and negative fill — build any product mood.",
+              },
+              {
+                href: "/blog/retouching-101",
+                title: "Retouching 101: from raw files to deliverables",
+                desc: "The four-stage pipeline behind every consistent delivery.",
+              },
+            ].map((post) => (
+              <Link
+                key={post.href}
+                href={post.href}
+                className="group border-t border-white/10 py-6 hover:border-t-[#e83b2c]/50 transition-colors duration-300"
+              >
+                <h3 className="text-lg font-serif text-white group-hover:text-[#e83b2c] transition-colors duration-300">
+                  {post.title}
+                </h3>
+                <p className="text-white/50 mt-2 text-sm leading-relaxed">
+                  {post.desc}
+                  <span className="inline-block ml-3 text-[#e83b2c]/80 text-xs uppercase tracking-wide">
+                    Read →
+                  </span>
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ===== REVIEW GENERATION CTA — Soft prompt for GBP ===== */}
       <section className="relative w-full px-4 md:px-12 py-24 md:py-28 border-t border-white/5 bg-gradient-to-b from-transparent via-[#e83b2c]/5 to-transparent">
         <div className="max-w-[900px] mx-auto text-center">

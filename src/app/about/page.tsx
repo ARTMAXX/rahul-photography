@@ -4,14 +4,14 @@ import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About ÔÇö Photographer in Dehradun",
+  title: "About Rahul Chanda — Commercial Photographer Dehradun",
   description:
-    "Rahul Chanda ÔÇö high-end commercial product photographer based in Dehradun, India. Crafting premium visual identities for brands worldwide.",
+    "Rahul Chanda — high-end commercial product photographer based in Dehradun, India. Crafting premium visual identities for brands worldwide.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About Rahul Chanda ÔÇö Commercial Photographer in Dehradun",
+    title: "About Rahul Chanda — Commercial Photographer in Dehradun",
     description:
-      "Rahul Chanda ÔÇö high-end commercial product photographer based in Dehradun, India. Crafting premium visual identities for brands worldwide.",
+      "Rahul Chanda — high-end commercial product photographer based in Dehradun, India. Crafting premium visual identities for brands worldwide.",
     url: absoluteUrl("/about"),
   },
 };
@@ -26,7 +26,7 @@ const stats = [
 const approach = [
   {
     t: "Precision",
-    d: "Every frame is engineered ÔÇö light, surface, and composition are controlled down to the pixel.",
+    d: "Every frame is engineered — light, surface, and composition are controlled down to the pixel.",
   },
   {
     t: "Story",
@@ -34,7 +34,7 @@ const approach = [
   },
   {
     t: "Partnership",
-    d: "You work directly with me ÔÇö no account managers, no hand-offs. One creative owner from brief to delivery.",
+    d: "You work directly with me — no account managers, no hand-offs. One creative owner from brief to delivery.",
   },
 ];
 
@@ -67,7 +67,7 @@ export default function AboutPage() {
           <div className="relative">
             <Image
               src="/about me photo/1me.webp"
-              alt="Rahul Chanda ÔÇö commercial product photographer"
+              alt="Rahul Chanda — commercial product photographer"
               width={1200}
               height={1490}
               quality={100}
@@ -90,7 +90,7 @@ export default function AboutPage() {
               </p>
               <p>
                 My work sits at the intersection of technical precision and
-                cinematic emotion ÔÇö whether it&apos;s the quiet luxury of a
+                cinematic emotion — whether it&apos;s the quiet luxury of a
                 watch on black glass, the choreography of a beverage splash,
                 or the texture of a perfectly styled dish. Every frame is
                 engineered to make your product impossible to ignore.
