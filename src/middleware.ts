@@ -1,8 +1,24 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { getMarkdownForPath } from "@/lib/markdown-generator";
 
 const BASE = "https://rahulchandaphotography.com";
+
+/**
+ * Paths that support Markdown content negotiation (Accept: text/markdown).
+ * Any path NOT in this list will never trigger the markdown-generator import,
+ * keeping middleware lightweight for normal HTML and static requests.
+ */
+const MARKDOWN_PATHS = new Set([
+  "/",
+  "/blog",
+  "/services",
+  "/gallery",
+  "/about",
+  "/contact",
+  "/faq",
+  "/dehradun",
+]);
+const MARKDOWN_PATH_PREFIXES = ["/blog/"];
 
 /**
  * Link header values per RFC 8288 / RFC 9727 §3
@@ -78,9 +94,10 @@ const API_CATALOG_PAYLOAD = JSON.stringify(
   2
 );
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const acceptHeader = request.headers.get("accept") || "";
   const pathname = request.nextUrl.pathname;
+  const cleanPath = pathname.replace(/\/$/, "") || "/";
 
   // 1. API Catalog (RFC 9727) — return application/linkset+json
   if (pathname === "/.well-known/api-catalog") {
@@ -120,24 +137,34 @@ export function middleware(request: NextRequest) {
 
   // 3. Content Negotiation for AI Agents (Accept: text/markdown)
   // Ref: https://developers.cloudflare.com/fundamentals/reference/markdown-for-agents/
+  // Guard: only import markdown-generator when (a) Accept matches AND (b) path is known.
+  // This prevents the blog posts dataset from loading into V8 on every request.
   if (
     acceptHeader.includes("text/markdown") ||
     acceptHeader.includes("text/x-markdown")
   ) {
-    const result = getMarkdownForPath(pathname);
+    const isKnownPath =
+      MARKDOWN_PATHS.has(cleanPath) ||
+      MARKDOWN_PATH_PREFIXES.some((p) => cleanPath.startsWith(p));
 
-    if (result) {
-      return new NextResponse(result.markdown, {
-        status: 200,
-        headers: {
-          "Content-Type": "text/markdown; charset=utf-8",
-          "X-Markdown-Tokens": result.tokens.toString(),
-          Vary: "Accept",
-          "Cache-Control": "public, max-age=3600, s-maxage=86400",
-          Link: LINK_HEADERS,
-        },
-      });
+    if (isKnownPath) {
+      const { getMarkdownForPath } = await import("@/lib/markdown-generator");
+      const result = getMarkdownForPath(pathname);
+
+      if (result) {
+        return new NextResponse(result.markdown, {
+          status: 200,
+          headers: {
+            "Content-Type": "text/markdown; charset=utf-8",
+            "X-Markdown-Tokens": result.tokens.toString(),
+            Vary: "Accept",
+            "Cache-Control": "public, max-age=3600, s-maxage=86400",
+            Link: LINK_HEADERS,
+          },
+        });
+      }
     }
+    // Unknown path with Accept: text/markdown — fall through to normal HTML
   }
 
   // 4. Standard HTML and static responses — attach Link discovery headers
