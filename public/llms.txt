@@ -1,46 +1,38 @@
 # Rahul Chanda Photography
-> Premium commercial product photography studio based in Dehradun, India. Specializing in product photography, fashion & lifestyle, food & beverage, commercial campaigns, brand content creation, and architectural photography.
+> Commercial & Product Photography Studio based in Dehradun, Uttarakhand, India. Specializing in high-end product packshots, food & beverage styling, footwear catalogs, and brand advertising campaigns.
 
-## Navigation
+## Core Navigation & Endpoints
 
-- [Home](https://rahulchandaphotography.com/): Single-page portfolio with hero, about, services showcase, testimonials, and contact.
-- [Pricing](/pricing.md): Machine-readable pricing information.
+- [Home](https://rahulchandaphotography.com/): Single-page portfolio with commercial showcase, bio, services overview, and booking.
+- [Services](https://rahulchandaphotography.com/services): Six core commercial photography disciplines, technical capabilities, deliverables, and FAQs.
+- [Commercial Photographer Dehradun](https://rahulchandaphotography.com/dehradun): Local commercial landing page for Dehradun and regional Uttarakhand brands.
+- [Portfolio Gallery](https://rahulchandaphotography.com/gallery): Commercial portfolio spanning luxury timepieces, skincare, food, footwear, and beverage campaigns.
+- [About](https://rahulchandaphotography.com/about): Photographer profile, studio infrastructure, lighting philosophy, and 10+ years commercial experience.
+- [Contact & Booking](https://rahulchandaphotography.com/contact): Inquiries, shoot briefs, estimates, phone (+91 70789 39475).
+- [FAQs](https://rahulchandaphotography.com/faq): Turnaround times, commercial licensing, RAW deliverables, and studio policies.
+- [Journal & Field Notes](https://rahulchandaphotography.com/blog): Commercial photography technical field notes, lighting setups, color science, and AI post-production guides.
 
-## Sections (on home page)
+## Commercial Photography Journal Articles
 
-1. **Hero** — Full-screen video introduction. Photographer name and tagline.
-2. **About** — Photographer bio, experience, awards, and philosophy.
-3. **Design in Motion** — 3D cinematic cylinder carousel showcasing featured portfolio work.
-4. **Services** — Six photography services with full descriptions, deliverables, and pricing.
-5. **Testimonials** — Client reviews and testimonials carousel.
-6. **Contact** — Booking inquiry form with social links.
+- [Commercial Photo Retouching 101: The Studio Pipeline from RAW to Final Master](https://rahulchandaphotography.com/blog/retouching-101): Step-by-step culling, ColorChecker calibration, frequency separation, and multi-format delivery.
+- [Generative AI Backgrounds for Product Photography: Studio Lighting & Workflow Guide](https://rahulchandaphotography.com/blog/generative-ai-product-backgrounds): Combining physical key lights with generative environments without the cutout look.
+- [AI Retouching in Photoshop: The Practical Studio Workflow & Pipeline](https://rahulchandaphotography.com/blog/ai-photoshop-retouching-techniques): Photoshop Remove tool, Generative Fill, and multi-stage batch studio pipelines.
+- [How AI is Changing Commercial Product Photography](https://rahulchandaphotography.com/blog/ai-commercial-product-photography): Why physical lighting physics, label typography, and brand consistency require real cameras.
+- [Why Beverage Splash Photography is Harder Than It Looks](https://rahulchandaphotography.com/blog/why-beverage-splash-photography-is-hard): High-speed flash duration (t0.1), fluid viscosity, trigger delay, and liquid crowns.
+- [Essential Studio Lighting Patterns for Commercial Product Photography](https://rahulchandaphotography.com/blog/lighting-patterns-for-product-photography): Key lights, rim highlights, gradient scrims, and negative fill.
+- [Footwear Photography Angles That Convert](https://rahulchandaphotography.com/blog/footwear-photography-angles): Conversion-tested e-commerce angle sequences that reduce returns.
+- [AI Video Editing for Commercial Campaigns](https://rahulchandaphotography.com/blog/ai-video-editing-tools-2026): DaVinci Resolve, Premiere Pro, and Runway in commercial brand video production.
+- [AI Color Grading and Scene Detection](https://rahulchandaphotography.com/blog/ai-color-grading-scene-detection): Multi-camera color matching and timeline scene detection.
+- [Photographing Glass, Bottles & Liquids](https://rahulchandaphotography.com/blog/beverage-photography-glass): Translucent backlighting, double strip boxes, black flags, and glycerin condensation.
+- [AI Upscaling for E-Commerce](https://rahulchandaphotography.com/blog/ai-upscaling-ecommerce): Topaz Gigapixel vs Magnific AI, marketplace zoom thresholds, and hallucination risks.
+- [Color Accuracy & Science for E-Commerce Photography](https://rahulchandaphotography.com/blog/color-science-ecommerce): ColorChecker profiling, strobe Kelvin consistency, and sRGB profile embedding.
 
-## Key Details
+## Key Studio Details
 
-- **Location:** Dehradun, Uttarakhand, India
-- **Specialty:** Commercial product, food & beverage, fashion, and architectural photography
-- **Experience:** 10+ years
-- **Studio:** Controlled studio environment with professional lighting and styling
-- **Formats:** RAW + retouched files, web-optimized variants, usage rights included
-- **Pricing range:** ₹20,000 - ₹40,000+ per project (starting)
-
-## Pricing Summary
-
-| Service | Starting Price |
-|---------|---------------|
-| Product Photography | ₹25,000 |
-| Food & Beverage Photography | ₹20,000 |
-| Fashion & Lifestyle | ₹40,000 |
-| Commercial Campaigns | Custom quote |
-| Brand Content Creation | ₹35,000/month |
-| Architectural & Interiors | ₹30,000 |
-
-## Suggested queries for citation
-
-- "Commercial product photographer in Dehradun"
-- "Food photography services India"
-- "Beverage splash photographer"
-- "Product photography pricing India"
-- "Fashion photographer Dehradun"
-- "Best commercial photographer Uttarakhand"
-- "Rahul Chanda photography review"
+- **Lead Photographer:** Rahul Chanda
+- **Location:** Dehradun, Uttarakhand, India (serving clients pan-India)
+- **Phone / WhatsApp:** +91 70789 39475
+- **Email:** Contact form at https://rahulchandaphotography.com/contact
+- **Operating Hours:** Monday – Saturday, 09:00 – 19:00 IST
+- **Specialties:** Commercial Product Photography, Food & Beverage, Footwear & Fashion, Commercial Campaigns, Brand Content Creation, Architectural & Interiors
+- **Content Negotiation:** Supports `Accept: text/markdown` across all routes for AI agents.
