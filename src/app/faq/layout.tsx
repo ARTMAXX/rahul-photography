@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import { absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "FAQ — Photography in Dehradun",
+  title: "Frequently Asked Questions | Commercial Photography Dehradun",
   description:
-    "Answers about booking, pricing, timelines, revisions, and delivery for commercial photography with Rahul Chanda Photography.",
+    "Answers about booking, pricing, timelines, revisions, and delivery for commercial photography with Rahul Chanda in Dehradun, Uttarakhand.",
   alternates: { canonical: "/faq" },
   openGraph: {
-    title: "FAQ — Commercial Photography in Dehradun",
+    title: "FAQ — Commercial Photography in Dehradun — Rahul Chanda",
     description:
       "Answers about booking, pricing, timelines, revisions, and delivery for commercial photography with Rahul Chanda.",
     url: absoluteUrl("/faq"),
@@ -16,8 +16,28 @@ export const metadata: Metadata = {
 
 const faqSchema = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": absoluteUrl("/"),
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "FAQ",
+          "item": absoluteUrl("/faq"),
+        },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      "@id": absoluteUrl("/faq#faqpage"),
+      "mainEntity": [
     {
       "@type": "Question",
       "name": "What types of photography do you offer?",
@@ -58,13 +78,15 @@ const faqSchema = {
         "text": "Two rounds of revisions are included with every project. Additional revision rounds can be arranged if needed.",
       },
     },
-    {
-      "@type": "Question",
-      "name": "Do you provide raw or unedited files?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Raw files are not delivered. Every final image goes through my retouching pipeline to ensure consistency and quality that matches the portfolio standard.",
-      },
+        {
+          "@type": "Question",
+          "name": "Do you provide raw or unedited files?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Raw files are not delivered. Every final image goes through my retouching pipeline to ensure consistency and quality that matches the portfolio standard.",
+          },
+        },
+      ],
     },
   ],
 };

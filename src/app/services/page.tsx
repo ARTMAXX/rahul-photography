@@ -1,66 +1,95 @@
 import type { Metadata } from "next";
 import ServicesShowcase from "@/components/sections/redesign/ServicesShowcase";
+import FAQSection from "@/components/sections/redesign/FAQSection";
 import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Commercial Photography Services — Product, Food & Brand",
+  title: "Commercial Photography Services Dehradun | Product, Food & Brand",
   description:
-    "Commercial photography services — product, food & beverage, fashion, footwear, campaigns, brand content, and interiors. Based in Dehradun, India, shooting nationwide.",
+    "Professional commercial photography services in Dehradun, India — product packshots, food & beverage, fashion & footwear, campaigns, brand content, and interiors. In-house retouching.",
   alternates: { canonical: "/services" },
   openGraph: {
-    title: "Commercial Photography Services in Dehradun",
+    title: "Commercial Photography Services in Dehradun — Rahul Chanda",
     description:
       "Commercial photography services — product, food & beverage, footwear, campaigns and brand content. Based in Dehradun, India.",
     url: absoluteUrl("/services"),
   },
 };
 
-// FAQPage JSON-LD — server-rendered (was client-injected inside
-// ServicesShowcase, which is less reliable for crawlers).
-const servicesFaqSchema = {
+const servicesSchema = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
+  "@graph": [
     {
-      "@type": "Question",
-      name: "What photography services do you offer?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Product photography, fashion & lifestyle, food & beverage, commercial campaigns, brand content creation, and architectural & interiors photography based in Dehradun, India.",
-      },
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": absoluteUrl("/"),
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": absoluteUrl("/services"),
+        },
+      ],
     },
     {
-      "@type": "Question",
-      name: "How much does commercial photography cost?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Pricing varies by service: Product Photography starts at ₹25,000, Food & Beverage at ₹20,000, Fashion & Lifestyle at ₹40,000, and Architectural at ₹30,000. Custom campaigns and monthly retainers are quoted individually.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do you travel for shoots outside Dehradun?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, travel is available within Uttarakhand and across India for commercial projects. Travel costs are quoted as part of the project estimate.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How long does a typical photoshoot take?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A typical product shoot takes 4–6 hours. Larger campaigns or multi-scene shoots may require a full day or multiple days depending on complexity.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do you provide edited/retouched images?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, all images are professionally color-graded, retouched, and delivered in multiple formats optimized for print and digital use.",
-      },
+      "@type": "FAQPage",
+      "@id": absoluteUrl("/services#faq"),
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the typical turnaround time?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Standard delivery is 5–10 business days after the shoot. Rush delivery (24–48 hours) is available on request for an additional fee.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "How many images are included per project?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on the scope agreed in the project brief — Product Photography includes 20–50 edited high-res images and Food & Beverage includes 15–30 hero shots. The exact count is defined before the shoot begins.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "What are the payment terms?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A 50% booking deposit secures your date. The remaining balance is due before final image delivery. Payments can be made via bank transfer or UPI.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "How long are quotes valid for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Written quotes are valid for 14 days from the date of issue. Final pricing is confirmed in writing before any shoot begins.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if I need to cancel a booked shoot?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Deposits are non-refundable for cancellations made within 7 days of the scheduled shoot date — that production time is reserved exclusively for you.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "Can I request revisions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Two rounds of revisions are included with every project. Additional revision rounds can be arranged if needed.",
+          },
+        },
+      ],
     },
   ],
 };
@@ -70,7 +99,7 @@ export default function ServicesPage() {
     <main className="w-full bg-[#070707] text-[#f0f0f0]">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesFaqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
       />
       {/* Page hero */}
       <section className="relative w-full min-h-[70vh] flex flex-col justify-end px-4 md:px-12 pb-20 pt-40 overflow-hidden">
@@ -132,6 +161,9 @@ export default function ServicesPage() {
           ))}
         </div>
       </section>
+
+      {/* FAQ section */}
+      <FAQSection />
 
       {/* CTA band */}
       <section className="relative w-full px-4 md:px-12 pb-28">

@@ -33,16 +33,6 @@ export const metadata: Metadata = {
     template: "%s — Rahul Chanda Photography",
   },
   description: siteConfig.description,
-  keywords: [
-    "Rahul Chanda",
-    "Commercial Photography Dehradun",
-    "Product Photographer India",
-    "Beverage Splash Photography",
-    "High-End Retouching",
-    "Editorial Portfolio",
-    "Food Photographer",
-    "Footwear Photography",
-  ],
   authors: [{ name: "Rahul Chanda" }],
   creator: "Rahul Chanda",
   icons: {

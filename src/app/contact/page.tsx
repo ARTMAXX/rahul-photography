@@ -3,9 +3,9 @@ import ContactForm from "@/components/sections/redesign/ContactForm";
 import { siteConfig, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact — Photographer in Dehradun",
+  title: "Contact Rahul Chanda | Commercial Photographer in Dehradun",
   description:
-    "Start a photography project with Rahul Chanda. Enquire about product, food & beverage, footwear, and campaign shoots — replies within 24 hours.",
+    "Start a commercial photography project with Rahul Chanda in Dehradun. Product, food & beverage, footwear, and brand advertising shoots. Replies within 24 hours.",
   alternates: { canonical: "/contact" },
   openGraph: {
     title: "Contact Rahul Chanda — Photographer in Dehradun",
@@ -15,9 +15,56 @@ export const metadata: Metadata = {
   },
 };
 
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": absoluteUrl("/"),
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Contact",
+          "item": absoluteUrl("/contact"),
+        },
+      ],
+    },
+    {
+      "@type": "ContactPage",
+      "@id": absoluteUrl("/contact#webpage"),
+      "url": absoluteUrl("/contact"),
+      "name": "Contact Rahul Chanda Photography",
+      "description":
+        "Enquire about commercial and product photography shoots with Rahul Chanda in Dehradun, Uttarakhand.",
+      "mainEntity": {
+        "@type": "ProfessionalService",
+        "name": siteConfig.name,
+        "telephone": siteConfig.contact.telephone,
+        "email": siteConfig.contact.email,
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": siteConfig.contact.addressLocality,
+          "addressRegion": siteConfig.contact.addressRegion,
+          "addressCountry": siteConfig.contact.addressCountry,
+        },
+      },
+    },
+  ],
+};
+
 export default function ContactPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
+      />
       <ContactForm headingLevel="h1" />
 
       {/* Contact info — no studio, freelance on-location */}

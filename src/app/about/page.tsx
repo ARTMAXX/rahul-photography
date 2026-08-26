@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { CinematicFooter } from "@/components/ui/motion-footer";
-import { absoluteUrl } from "@/lib/site";
+import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About Rahul Chanda — Commercial Photographer Dehradun",
@@ -14,6 +14,56 @@ export const metadata: Metadata = {
       "Rahul Chanda — high-end commercial product photographer based in Dehradun, India. Crafting premium visual identities for brands worldwide.",
     url: absoluteUrl("/about"),
   },
+};
+
+const aboutSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": absoluteUrl("/"),
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About",
+          "item": absoluteUrl("/about"),
+        },
+      ],
+    },
+    {
+      "@type": "Person",
+      "@id": absoluteUrl("/#person"),
+      "name": "Rahul Chanda",
+      "jobTitle": "Commercial Product Photographer",
+      "url": absoluteUrl("/about"),
+      "image": absoluteUrl("/opt/about%20me%20photo/1me.webp"),
+      "description":
+        "Rahul Chanda is a commercial product photographer based in Dehradun, India, specializing in product, beverage splash, food, and advertising photography.",
+      "sameAs": [
+        siteConfig.contact.instagram,
+        siteConfig.contact.googleBusiness,
+      ],
+      "knowsAbout": [
+        "Commercial Photography",
+        "Product Photography",
+        "Beverage Splash Photography",
+        "Food Photography",
+        "High-End Retouching",
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": siteConfig.contact.addressLocality,
+        "addressRegion": siteConfig.contact.addressRegion,
+        "addressCountry": siteConfig.contact.addressCountry,
+      },
+    },
+  ],
 };
 
 const stats = [
@@ -41,6 +91,10 @@ const approach = [
 export default function AboutPage() {
   return (
     <main className="w-full bg-[#070707] text-[#f0f0f0]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
+      />
       {/* Hero */}
       <section className="relative w-full min-h-[85vh] flex flex-col justify-end px-4 md:px-12 pb-20 pt-40 overflow-hidden">
         <div

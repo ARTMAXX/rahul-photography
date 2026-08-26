@@ -11,3 +11,24 @@
   # Lenient dependency install: ignore audit/funding and skip strict
   # peer-dep failures that can kill `npm install` on the build image.
   NPM_FLAGS = "--no-audit --no-fund --legacy-peer-deps"
+
+# ── Canonical redirect: www → non-www (301 permanent) ──────────────────────
+# Fixes the 50/50 GSC crawl split between www and non-www variants.
+[[redirects]]
+  from   = "https://www.rahulchandaphotography.com/*"
+  to     = "https://rahulchandaphotography.com/:splat"
+  status = 301
+  force  = true
+
+# HTTP → HTTPS (belt-and-suspenders; Netlify also handles this via Force HTTPS)
+[[redirects]]
+  from   = "http://www.rahulchandaphotography.com/*"
+  to     = "https://rahulchandaphotography.com/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "http://rahulchandaphotography.com/*"
+  to     = "https://rahulchandaphotography.com/:splat"
+  status = 301
+  force  = true

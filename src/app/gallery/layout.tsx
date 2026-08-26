@@ -16,16 +16,43 @@ export const metadata: Metadata = {
 
 const gallerySchema = {
   "@context": "https://schema.org",
-  "@type": "ImageGallery",
-  "name": "Rahul Chanda Studio Portfolio Archive",
-  "description":
-    "Premium commercial photography portfolio — product, food, beverage splash, and footwear imagery.",
-  "url": absoluteUrl("/gallery"),
-  "about": {
-    "@type": "Organization",
-    "name": siteConfig.name,
-    "url": absoluteUrl("/"),
-  },
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": absoluteUrl("/"),
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Portfolio Gallery",
+          "item": absoluteUrl("/gallery"),
+        },
+      ],
+    },
+    {
+      "@type": "ImageGallery",
+      "@id": absoluteUrl("/gallery#gallery"),
+      "name": "Rahul Chanda Commercial Photography Portfolio",
+      "description":
+        "Curated commercial photography portfolio — product, food & beverage, splash, and footwear imagery.",
+      "url": absoluteUrl("/gallery"),
+      "author": {
+        "@type": "Person",
+        "name": "Rahul Chanda",
+        "url": absoluteUrl("/"),
+      },
+      "about": {
+        "@type": "ProfessionalService",
+        "name": siteConfig.name,
+        "url": absoluteUrl("/"),
+      },
+    },
+  ],
 };
 
 export default function GalleryLayout({

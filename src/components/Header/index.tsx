@@ -47,7 +47,7 @@ export default function Header() {
   // Wire Lenis into the shared scroll-lock (mobile has no Lenis; lock still
   // works through native overflow).
   useEffect(() => {
-    registerLenisForLock(lenis);
+    registerLenisForLock(lenis ?? null);
     return () => registerLenisForLock(null);
   }, [lenis]);
 

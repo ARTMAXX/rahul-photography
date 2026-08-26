@@ -11,22 +11,6 @@ export const metadata: Metadata = {
   description:
     "Rahul Chanda — Dehradun-based commercial photographer for product, food & beverage, cafe/restaurant, footwear, and brand campaigns. On-location across Uttarakhand with in-house retouching. Book a shoot: +91 70789 39475.",
   alternates: { canonical: "/dehradun" },
-  keywords: [
-    "commercial photographer dehradun",
-    "product photographer dehradun",
-    "food photographer dehradun",
-    "cafe photographer dehradun",
-    "restaurant photography dehradun",
-    "product photography dehradun",
-    "beverage photography dehradun",
-    "footwear photographer dehradun",
-    "brand photographer dehradun",
-    "ecommerce photography dehradun",
-    "commercial product photography uttarakhand",
-    "advertising photographer dehradun",
-    "freelance photographer dehradun",
-    "rahul chanda photography",
-  ],
   openGraph: {
     title: "Commercial Photographer Dehradun — Product, Food & Cafe Photography",
     description:

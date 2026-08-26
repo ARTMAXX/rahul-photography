@@ -437,7 +437,9 @@ export default function CinematicCylinder() {
               // small margin so brief edge-scrolls don't thrash the loop
               { rootMargin: "10% 0px" }
             );
-            io.observe(containerRef.current);
+            if (containerRef.current) {
+              io.observe(containerRef.current);
+            }
             ioRef.current = io;
 
             const onVisChange = () => {

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { LazyImage } from "./lazy-image";
 
 const blogs = [
@@ -7,7 +8,7 @@ const blogs = [
 		slug: "/blog/ai-photoshop-retouching-techniques",
 		description:
 			"Adobe has quietly turned Photoshop's retouching stack inside out. The exact AI-first workflow I use now — Generative Fill, the Remove tool, Neural Filters, and where I still reach for a brush.",
-		image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200&auto=format&fit=crop",
+		image: "/opt/best shots/Product image/product-watch-luxury.webp",
 		createdAt: "2026-08-15",
 		author: "Rahul Chanda",
 		readTime: "11 min read",
@@ -17,7 +18,7 @@ const blogs = [
 		slug: "/blog/ai-commercial-product-photography",
 		description:
 			"I have spent the last twelve months integrating AI into every stage of my commercial workflow. Here is what actually works, what is still broken, and why the photographer's judgment matters more than ever.",
-		image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&auto=format&fit=crop",
+		image: "/opt/best shots/Product image/product-molton-brown.webp",
 		createdAt: "2026-08-05",
 		author: "Rahul Chanda",
 		readTime: "8 min read",
@@ -27,7 +28,7 @@ const blogs = [
 		slug: "/blog/ai-video-editing-tools-2026",
 		description:
 			"I tested every major AI video editing tool over the last six months. Here is the honest breakdown — no affiliate links, no sponsored takes, just what I use and why.",
-		image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1200&auto=format&fit=crop",
+		image: "/opt/cinematic-assets/bts-watch-poster.webp",
 		createdAt: "2026-07-22",
 		author: "Rahul Chanda",
 		readTime: "7 min read",
@@ -37,7 +38,7 @@ const blogs = [
 		slug: "/blog/why-beverage-splash-photography-is-hard",
 		description:
 			"That single frozen splash — the crown of liquid, the droplets suspended mid-air — is one of the most technically demanding images in commercial photography.",
-		image: "https://images.unsplash.com/photo-1551024506-0bccd828d307?q=80&w=1200&auto=format&fit=crop",
+		image: "/opt/best shots/Beverage images/beverage-macro.webp",
 		createdAt: "2026-06-26",
 		author: "Rahul Chanda",
 		readTime: "5 min read",
@@ -47,7 +48,7 @@ const blogs = [
 		slug: "/blog/generative-ai-product-backgrounds",
 		description:
 			"I have replaced seventy percent of my practical set builds with AI-generated backgrounds. Here is the exact workflow, the tools that work, and the products where AI still cannot compete with a real set.",
-		image: "https://images.unsplash.com/photo-1684163761883-8cba5e030730?q=80&w=1200&auto=format&fit=crop",
+		image: "/opt/best shots/new-images/new-product-blast.webp",
 		createdAt: "2026-06-10",
 		author: "Rahul Chanda",
 		readTime: "6 min read",
@@ -57,7 +58,7 @@ const blogs = [
 		slug: "/blog/lighting-patterns-for-product-photography",
 		description:
 			"Key light, rim light, and negative fill — three tools that build almost any product mood. Here is how I use each one.",
-		image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1200&auto=format&fit=crop",
+		image: "/opt/best shots/Product image/product-headphone.webp",
 		createdAt: "2026-05-30",
 		author: "Rahul Chanda",
 		readTime: "4 min read",
@@ -67,7 +68,7 @@ const blogs = [
 		slug: "/blog/ai-retouching-workflow",
 		description:
 			"The exact tools, the exact workflow, and the exact decisions I make at each stage of retouching — from AI first pass to human final review.",
-		image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200&auto=format&fit=crop",
+		image: "/opt/best shots/Product image/product-serum.webp",
 		createdAt: "2026-05-14",
 		author: "Rahul Chanda",
 		readTime: "6 min read",
@@ -77,7 +78,7 @@ const blogs = [
 		slug: "/blog/footwear-photography-angles",
 		description:
 			"From the three-quarter hero to the sole detail — which footwear angles actually move units in e-commerce.",
-		image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop",
+		image: "/opt/best shots/mens shoe/shoe-mens-duo.webp",
 		createdAt: "2026-04-28",
 		author: "Rahul Chanda",
 		readTime: "6 min read",
@@ -87,7 +88,7 @@ const blogs = [
 		slug: "/blog/ai-color-grading-scene-detection",
 		description:
 			"DaVinci Resolve, Premiere Pro, and CapCut have shipped AI features that genuinely work. Here is which ones I use daily and which ones are still marketing demos.",
-		image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1200&auto=format&fit=crop",
+		image: "/opt/best shots/ADs/ad-culinary.webp",
 		createdAt: "2026-04-15",
 		author: "Rahul Chanda",
 		readTime: "7 min read",
@@ -97,7 +98,7 @@ const blogs = [
 		slug: "/blog/beverage-photography-glass",
 		description:
 			"Backlight, glycerin condensation, and controlled reflections — the techniques that make glass bottles look crystal-clear and impossible to scroll past.",
-		image: "https://images.unsplash.com/photo-1546039907-7fa05f864c02?q=80&w=1200&auto=format&fit=crop",
+		image: "/opt/best shots/Beverage images/bev-iced.webp",
 		createdAt: "2026-03-24",
 		author: "Rahul Chanda",
 		readTime: "5 min read",
@@ -107,7 +108,7 @@ const blogs = [
 		slug: "/blog/ai-upscaling-ecommerce",
 		description:
 			"Topaz Gigapixel, Magnific, and neural upscalers — when AI enlargement helps and when it creates artifacts that kill conversions.",
-		image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?q=80&w=1200&auto=format&fit=crop",
+		image: "/opt/best shots/Product image/product-bodywash.webp",
 		createdAt: "2026-03-10",
 		author: "Rahul Chanda",
 		readTime: "6 min read",
@@ -117,7 +118,7 @@ const blogs = [
 		slug: "/blog/color-science-ecommerce",
 		description:
 			"A color reference card in every setup, repeatable lighting notes, and a pre-delivery review — the three habits that separate professional catalogs from inconsistent photo dumps.",
-		image: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1200&auto=format&fit=crop",
+		image: "/opt/best shots/Food photo/food-biriyani.webp",
 		createdAt: "2026-03-08",
 		author: "Rahul Chanda",
 		readTime: "6 min read",
@@ -127,7 +128,7 @@ const blogs = [
 		slug: "/blog/retouching-101",
 		description:
 			"Culling, grading, detail retouching, and format delivery — the four stages of a retouching pipeline that produces consistent, professional results.",
-		image: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?q=80&w=1200&auto=format&fit=crop",
+		image: "/opt/best shots/ladies shoe/High-end-shoe.webp",
 		createdAt: "2026-02-06",
 		author: "Rahul Chanda",
 		readTime: "7 min read",
@@ -138,7 +139,7 @@ export function BlogSection() {
 	return (
 		<div className="mx-auto w-full max-w-[1600px] px-4 md:px-12 py-24 md:py-32">
 			<div className="text-[#e83b2c] text-sm font-medium uppercase tracking-widest">
-				Blog
+				Journal
 			</div>
 			<h1 className="text-3xl md:text-5xl font-serif text-white mt-4 leading-tight">
 				Field notes on{" "}
@@ -151,7 +152,7 @@ export function BlogSection() {
 
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 mt-14">
 				{blogs.map((blog) => (
-					<a
+					<Link
 						href={blog.slug}
 						key={blog.title}
 						className="group border-t border-white/10 pt-6 flex flex-col gap-4"
@@ -160,7 +161,7 @@ export function BlogSection() {
 						<div className="relative aspect-[16/9] overflow-hidden rounded-lg">
 							<LazyImage
 								src={blog.image}
-								fallback="https://placehold.co/640x360?text=fallback-image"
+								fallback="/opt/og-image.jpg"
 								inView={true}
 								alt={blog.title}
 								ratio={16 / 9}
@@ -178,7 +179,7 @@ export function BlogSection() {
 						<p className="text-white/50 text-sm leading-relaxed line-clamp-3">
 							{blog.description}
 						</p>
-					</a>
+					</Link>
 				))}
 			</div>
 		</div>

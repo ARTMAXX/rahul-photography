@@ -17,80 +17,151 @@ import { CinematicFooter } from "@/components/ui/motion-footer";
 import { siteConfig, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Rahul Chanda — Commercial Product Photographer | Dehradun, India",
-  description: siteConfig.description,
+  title: "Rahul Chanda — Commercial & Product Photographer in Dehradun, India",
+  description:
+    "Rahul Chanda is a commercial & product photographer in Dehradun, India, delivering high-end product, food & beverage, footwear, and advertising campaigns with in-house retouching.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    title: siteConfig.title,
-    description: siteConfig.description,
+    title: "Rahul Chanda — Commercial & Product Photographer in Dehradun",
+    description:
+      "High-end commercial and product photographer based in Dehradun, India. Specializing in product, food & beverage, footwear, and brand advertising campaigns.",
     url: absoluteUrl("/"),
     images: [
       {
         url: absoluteUrl(siteConfig.ogImagePath),
         width: 1200,
         height: 630,
-        alt: "Rahul Chanda — Commercial Product Photographer",
+        alt: "Rahul Chanda — Commercial & Product Photographer in Dehradun",
       },
     ],
   },
 };
 
-const personSchema = {
+const homeSchema = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Rahul Chanda",
-  "jobTitle": "Commercial Product Photographer",
-  "url": absoluteUrl("/"),
-  "sameAs": [siteConfig.contact.instagram, siteConfig.contact.googleBusiness],
-  "knowsAbout": [
-    "Product Photography",
-    "Beverage Splash Photography",
-    "Food Photography",
-    "Footwear Photography",
-    "High-End Retouching",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": absoluteUrl("/#website"),
+      "url": absoluteUrl("/"),
+      "name": siteConfig.name,
+      "description": siteConfig.description,
+      "publisher": {
+        "@id": absoluteUrl("/#business"),
+      },
+      "inLanguage": "en-IN",
+    },
+    {
+      "@type": "Person",
+      "@id": absoluteUrl("/#person"),
+      "name": "Rahul Chanda",
+      "jobTitle": "Commercial & Product Photographer",
+      "url": absoluteUrl("/"),
+      "image": absoluteUrl("/opt/about%20me%20photo/1me.webp"),
+      "sameAs": [
+        siteConfig.contact.instagram,
+        siteConfig.contact.googleBusiness,
+      ],
+      "knowsAbout": [
+        "Commercial Photography",
+        "Product Photography",
+        "Beverage & Splash Photography",
+        "Food & Restaurant Photography",
+        "Footwear & Fashion Photography",
+        "E-commerce Packshots",
+        "High-End Photoshop Retouching",
+        "Color Science & Color Grading",
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": siteConfig.contact.addressLocality,
+        "addressRegion": siteConfig.contact.addressRegion,
+        "addressCountry": siteConfig.contact.addressCountry,
+      },
+    },
+    {
+      "@type": ["ProfessionalService", "LocalBusiness"],
+      "@id": absoluteUrl("/#business"),
+      "name": siteConfig.name,
+      "legalName": "Rahul Chanda Photography",
+      "url": absoluteUrl("/"),
+      "logo": absoluteUrl("/icon.svg"),
+      "image": absoluteUrl(siteConfig.ogImagePath),
+      "description":
+        "Commercial and product photography studio based in Dehradun, India. Specializing in product, food & beverage, footwear, and advertising campaigns with professional in-house retouching.",
+      "telephone": siteConfig.contact.telephone,
+      "email": siteConfig.contact.email,
+      "priceRange": siteConfig.contact.priceRange,
+      "currenciesAccepted": "INR",
+      "paymentAccepted": "Cash, Credit Card, Bank Transfer, UPI",
+      "founder": {
+        "@id": absoluteUrl("/#person"),
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": siteConfig.contact.addressLocality,
+        "addressRegion": siteConfig.contact.addressRegion,
+        "addressCountry": siteConfig.contact.addressCountry,
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": siteConfig.contact.latitude,
+        "longitude": siteConfig.contact.longitude,
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Dehradun" },
+        { "@type": "City", "name": "Mussoorie" },
+        { "@type": "City", "name": "Rishikesh" },
+        { "@type": "City", "name": "Haridwar" },
+        { "@type": "State", "name": "Uttarakhand" },
+        { "@type": "AdministrativeArea", "name": "Delhi NCR" },
+        { "@type": "Country", "name": "India" },
+      ],
+      "sameAs": [
+        siteConfig.contact.instagram,
+        siteConfig.contact.googleBusiness,
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Commercial Photography Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Product Photography",
+              "description": "E-commerce packshots, white background cutouts, and creative product hero imagery.",
+            },
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Food & Beverage Photography",
+              "description": "Restaurant menu shoots, beverage splash, and cafe atmosphere photography.",
+            },
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Footwear & Fashion Photography",
+              "description": "Apparel lookbooks, footwear details, and editorial fashion campaigns.",
+            },
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Commercial Advertising Campaigns",
+              "description": "Art-directed advertising shoots from concept to final retouched deliverables.",
+            },
+          },
+        ],
+      },
+    },
   ],
-};
-
-const businessSchema = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": siteConfig.name,
-  "image": absoluteUrl("/about%20me%20photo/1me.webp"),
-  "description":
-    "Rahul Chanda is a commercial product photographer in Dehradun, India, who makes products look worth choosing — product, food & beverage, footwear, and campaign photography, shot and retouched in-house.",
-  "@id": absoluteUrl("/"),
-  "url": absoluteUrl("/"),
-  "telephone": siteConfig.contact.telephone,
-  "email": siteConfig.contact.email,
-  "priceRange": siteConfig.contact.priceRange,
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": siteConfig.contact.addressLocality,
-    "addressRegion": siteConfig.contact.addressRegion,
-    "addressCountry": siteConfig.contact.addressCountry,
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": siteConfig.contact.latitude,
-    "longitude": siteConfig.contact.longitude,
-  },
-  "areaServed": [
-    { "@type": "City", "name": "Dehradun" },
-    { "@type": "State", "name": "Uttarakhand" },
-    { "@type": "Country", "name": "India" },
-  ],
-  "sameAs": [siteConfig.contact.instagram, siteConfig.contact.googleBusiness],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Photography Services",
-    "itemListElement": [
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Product Photography" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Beverage & Splash Photography" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Food Photography" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fashion & Footwear Photography" } },
-    ],
-  },
 };
 
 export default function Home() {
@@ -98,11 +169,7 @@ export default function Home() {
     <main className="w-full">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema) }}
       />
       <Hero />
       <WorkProof />

@@ -669,26 +669,57 @@ export default async function BlogPostPage({
 
   const postSchema = {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: post.title,
-    description: post.excerpt,
-    datePublished: postISO[slug],
-    dateModified: postISO[slug],
-    author: {
-      "@type": "Person",
-      name: "Rahul Chanda",
-      url: absoluteUrl("/"),
-    },
-    publisher: {
-      "@type": "Organization",
-      name: siteConfig.name,
-      logo: {
-        "@type": "ImageObject",
-        url: absoluteUrl("/icon.svg"),
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": absoluteUrl("/"),
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Journal",
+            "item": absoluteUrl("/blog"),
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": post.title,
+            "item": absoluteUrl(`/blog/${slug}`),
+          },
+        ],
       },
-    },
-    mainEntityOfPage: absoluteUrl(`/blog/${slug}`),
-    image: absoluteUrl(siteConfig.ogImagePath),
+      {
+        "@type": "BlogPosting",
+        "@id": absoluteUrl(`/blog/${slug}#article`),
+        "headline": post.title,
+        "description": post.excerpt,
+        "datePublished": postISO[slug],
+        "dateModified": postISO[slug],
+        "inLanguage": "en-IN",
+        "author": {
+          "@type": "Person",
+          "@id": absoluteUrl("/#person"),
+          "name": "Rahul Chanda",
+          "url": absoluteUrl("/"),
+        },
+        "publisher": {
+          "@type": "ProfessionalService",
+          "@id": absoluteUrl("/#business"),
+          "name": siteConfig.name,
+          "logo": {
+            "@type": "ImageObject",
+            "url": absoluteUrl("/icon.svg"),
+          },
+        },
+        "mainEntityOfPage": absoluteUrl(`/blog/${slug}`),
+        "image": absoluteUrl(siteConfig.ogImagePath),
+      },
+    ],
   };
 
   return (
