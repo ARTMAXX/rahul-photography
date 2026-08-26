@@ -66,13 +66,14 @@ export default function AboutPage() {
         <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20 items-start">
           <div className="relative">
             <Image
-              src="/about me photo/1me.webp"
-              alt="Rahul Chanda — commercial product photographer"
+              src="/opt/about me photo/1me.webp"
+              alt="Rahul Chanda, commercial product photographer from Dehradun, in his studio"
               width={1200}
               height={1490}
-              quality={100}
+              quality={80}
               loading="eager"
               priority
+              sizes="(max-width: 1024px) 100vw, 45vw"
               className="w-full h-auto"
               style={{ borderRadius: "420px 0 0 420px" }}
             />

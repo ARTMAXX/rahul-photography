@@ -1,6 +1,7 @@
 "use client";
 import { TestimonialsColumn } from "@/components/ui/testimonials-columns-1";
 import { motion } from "motion/react";
+import LazyVideo from "@/components/ui/LazyVideo";
 
 const testimonials = [
   // ── PRODUCT — LOCAL ──
@@ -79,14 +80,11 @@ const Testimonials = () => {
     <section className="py-20 md:py-28 relative overflow-hidden">
       {/* ── Cinematic video backdrop (BTS footage playing behind quotes) ── */}
       <div className="absolute inset-0 z-0" aria-hidden="true">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
+        <LazyVideo
+          src="/opt/cinematic-assets/bts-watch.mp4"
+          poster="/opt/cinematic-assets/bts-watch-poster.webp"
           className="w-full h-full object-cover opacity-30 scale-105"
-          src="/cinematic-assets/bts-watch.mp4"
+          decorative
         />
         {/* Cinematic grade: darken + silver tint so text stays readable */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#070707]/90 via-[#070707]/60 to-[#070707]/95" />

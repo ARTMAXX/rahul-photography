@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import LazyVideo from "@/components/ui/LazyVideo";
 import {
   ArrowRight,
   CheckCircle2,
@@ -48,9 +49,15 @@ const SERVICES = [
   "Something else",
 ];
 
-export default function ContactForm() {
+export default function ContactForm({
+  headingLevel = "h2",
+}: {
+  /** "h1" on the standalone /contact page (its only H1); "h2" on the homepage. */
+  headingLevel?: "h1" | "h2";
+}) {
   const containerRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
+  const HeadingTag = headingLevel;
 
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
@@ -122,7 +129,10 @@ export default function ContactForm() {
       );
     }
 
-    return () => ScrollTrigger.getAll().forEach((st) => st.kill());
+    // NOTE: no global ScrollTrigger kill — the gsap context reverts only
+    // this component's triggers (global kills broke sibling sections).
+
+    return undefined;
   }, { scope: containerRef });
 
   const validate = () => {
@@ -185,22 +195,15 @@ export default function ContactForm() {
       id="contact"
       className="relative w-full min-h-screen overflow-hidden bg-[#070707]"
     >
-      {/* -- Full-resolution video background -- */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
+      {/* -- Full-resolution video background (IO-gated; poster-only on mobile) -- */}
+      <LazyVideo
+        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260622_204221_5339e40b-e73d-4ab0-9c65-79c18c66fd50.mp4"
+        poster="/opt/main hero shots/main hero landing page.webp"
         className="absolute inset-0 w-full h-full"
         style={{ objectFit: "cover", objectPosition: "70% center" }}
         preload="metadata"
-        poster="/main hero shots/main hero landing page.webp"
-      >
-        <source
-          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260622_204221_5339e40b-e73d-4ab0-9c65-79c18c66fd50.mp4"
-          type="video/mp4"
-        />
-      </video>
+        alt="Rahul Chanda photographing products in the studio"
+      />
 
       {/* -- Dark overlay for text readability -- */}
       <div className="absolute inset-0 bg-black/55" />
@@ -209,11 +212,11 @@ export default function ContactForm() {
       <div className="relative z-10 flex flex-col min-h-screen">
         <div className="flex-1 flex flex-col justify-center px-6 md:px-16 pt-32 md:pt-44 pb-16 md:pb-24 max-w-[1400px] mx-auto w-full">
           <div ref={headingRef}>
-            <h2 className="text-[clamp(2.5rem,8vw,6rem)] font-serif leading-[0.9] tracking-[-0.03em] text-white/90 max-w-[20ch] mb-12">
+            <HeadingTag className="text-[clamp(2.5rem,8vw,6rem)] font-serif leading-[0.9] tracking-[-0.03em] text-white/90 max-w-[20ch] mb-12">
               Ready to make your product
               <br />
               <span className="italic text-[#e83b2c]">worth choosing?</span>
-            </h2>
+            </HeadingTag>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-20 items-start">

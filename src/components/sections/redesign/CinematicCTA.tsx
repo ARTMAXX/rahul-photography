@@ -1,9 +1,10 @@
 "use client";
 import { motion } from "motion/react";
+import LazyVideo from "@/components/ui/LazyVideo";
 
 /* ════════════════════════════════════════════════════════════════════
-   CinematicCTA – "Bring your stories to life" emotional band
-   BTS studio footage as a visual anchor behind the call to action
+    CinematicCTA – "Bring your stories to life" emotional band
+    BTS studio footage as a visual anchor behind the call to action
    ════════════════════════════════════════════════════════════════════ */
 
 const WHATSAPP_NUMBER = "917078939475";
@@ -14,14 +15,11 @@ export default function CinematicCTA() {
     <section className="relative py-24 md:py-36 overflow-hidden">
       {/* Studio footage anchor */}
       <div className="absolute inset-0 z-0" aria-hidden="true">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
+        <LazyVideo
+          src="/opt/cinematic-assets/photographer-studio.mp4"
+          poster="/opt/cinematic-assets/photographer-studio-poster.webp"
           className="w-full h-full object-cover opacity-25"
-          src="/cinematic-assets/photographer-studio.mp4"
+          decorative
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#070707] via-[#070707]/60 to-[#070707]" />
         <div className="absolute inset-0 bg-[#ffffff]/[0.04] mix-blend-screen" />

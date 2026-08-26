@@ -16,9 +16,62 @@ export const metadata: Metadata = {
   },
 };
 
+// FAQPage JSON-LD — server-rendered (was client-injected inside
+// ServicesShowcase, which is less reliable for crawlers).
+const servicesFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What photography services do you offer?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Product photography, fashion & lifestyle, food & beverage, commercial campaigns, brand content creation, and architectural & interiors photography based in Dehradun, India.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How much does commercial photography cost?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Pricing varies by service: Product Photography starts at ₹25,000, Food & Beverage at ₹20,000, Fashion & Lifestyle at ₹40,000, and Architectural at ₹30,000. Custom campaigns and monthly retainers are quoted individually.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you travel for shoots outside Dehradun?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, travel is available within Uttarakhand and across India for commercial projects. Travel costs are quoted as part of the project estimate.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How long does a typical photoshoot take?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A typical product shoot takes 4–6 hours. Larger campaigns or multi-scene shoots may require a full day or multiple days depending on complexity.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you provide edited/retouched images?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, all images are professionally color-graded, retouched, and delivered in multiple formats optimized for print and digital use.",
+      },
+    },
+  ],
+};
+
 export default function ServicesPage() {
   return (
     <main className="w-full bg-[#070707] text-[#f0f0f0]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesFaqSchema) }}
+      />
       {/* Page hero */}
       <section className="relative w-full min-h-[70vh] flex flex-col justify-end px-4 md:px-12 pb-20 pt-40 overflow-hidden">
         {/* Ambient glow */}

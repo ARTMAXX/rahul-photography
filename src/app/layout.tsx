@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { Playfair_Display, Outfit } from "next/font/google";
 import { siteConfig, absoluteUrl } from "../lib/site";
 import PageShell from "../components/PageShell";
@@ -98,6 +99,12 @@ export default function RootLayout({
           <Header />
           {children}
         </PageShell>
+        {/* Ahrefs Web Analytics */}
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="TiJZdymXtkHehsEBZqxbkg"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

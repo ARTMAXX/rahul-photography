@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useState } from 'react';
+import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -122,11 +123,13 @@ export default function MobileBentoGrid() {
             className={`relative overflow-hidden rounded-lg bg-white/5 ${item.span} group`}
             onClick={() => setActiveIdx(activeIdx === i ? null : i)}
           >
-            <img
+            <Image
               src={images[item.idx]}
-              alt={LABELS[item.idx]}
-              className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-              loading="lazy"
+              alt={`${LABELS[item.idx]} — commercial photography by Rahul Chanda`}
+              fill
+              sizes="(max-width: 768px) 33vw"
+              quality={72}
+              className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
             />
             {/* Gradient overlay — always subtle, intensifies on hover/tap */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-transparent transition-opacity duration-500" />

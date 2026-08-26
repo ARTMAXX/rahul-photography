@@ -7,11 +7,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function LenisScrollSync() {
+function LenisScrollSync({ enabled }: { enabled: boolean }) {
   const lenis = useLenis();
 
   useEffect(() => {
-    if (!lenis) return;
+    // Mobile / reduced-motion: Lenis is mounted but inert — native scroll
+    // drives everything and ScrollTrigger listens to the window directly.
+    if (!enabled || !lenis) return;
 
     /* Tell ScrollTrigger that Lenis is the real scroll driver.
        Without this proxy, long-range triggers can't compute progress
@@ -41,22 +43,35 @@ function LenisScrollSync() {
     return () => {
       lenis.off("scroll", ScrollTrigger.update);
     };
-  }, [lenis]);
+  }, [lenis, enabled]);
 
   return null;
 }
 
-export default function SmoothScroll({ children }: { children: React.ReactNode }) {
+interface SmoothScrollProps {
+  children: React.ReactNode;
+  /**
+   * false = Lenis mounts inertly (no smoothing, no rAF loop, native scroll).
+   * Used on mobile so the tree stays stable without hijacking touch scroll.
+   */
+  enabled?: boolean;
+}
+
+export default function SmoothScroll({
+  children,
+  enabled = true,
+}: SmoothScrollProps) {
   return (
     <ReactLenis
       root
       options={{
         lerp: 0.1,
         duration: 1.2,
-        autoRaf: true,
+        autoRaf: enabled,
+        smoothWheel: enabled,
       }}
     >
-      <LenisScrollSync />
+      <LenisScrollSync enabled={enabled} />
       {children}
     </ReactLenis>
   );

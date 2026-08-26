@@ -14,8 +14,10 @@ export const siteConfig = {
   description:
     "Rahul Chanda is a commercial product photographer in Dehradun, India, who makes products look worth choosing — product, food & beverage, footwear, and campaign photography, shot and retouched in-house.",
 
-  /** Path to the social share image (must be a raster format — JPG/PNG). */
-  ogImagePath: "/og-image.png",
+  /** Path to the social share image (must be a raster format — JPG/PNG).
+   *  Optimized 1200×630 JPEG derivative (63 KB) — the old /og-image.png
+   *  was 482 KB and slowed every share unfurl. */
+  ogImagePath: "/opt/og-image.jpg",
 
   contact: {
     name: "Rahul Chanda",

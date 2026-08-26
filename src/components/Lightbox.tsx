@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ZoomIn } from "lucide-react";
+import { useScrollLock } from "@/lib/scroll-lock";
 
 interface LightboxProps {
   imageUrl: string | null;
@@ -15,17 +15,8 @@ export default function Lightbox({
   onClose,
   caption = null,
 }: LightboxProps) {
-  // Lock body scroll when lightbox is open
-  useEffect(() => {
-    if (imageUrl) {
-      document.documentElement.classList.add("lenis-stopped");
-    } else {
-      document.documentElement.classList.remove("lenis-stopped");
-    }
-    return () => {
-      document.documentElement.classList.remove("lenis-stopped");
-    };
-  }, [imageUrl]);
+  // Lock body scroll while open (works with AND without Lenis)
+  useScrollLock(!!imageUrl);
 
   return (
     <AnimatePresence>

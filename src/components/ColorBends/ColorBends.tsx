@@ -215,6 +215,7 @@ export default function ColorBends({
 
     const startTime = performance.now();
     let lastTime = startTime;
+    let isTabVisible = !document.hidden;
 
     const handleResize = () => {
       const w = container.clientWidth || 1;
@@ -234,6 +235,12 @@ export default function ColorBends({
     }
 
     const loop = (currentTime: number) => {
+      // Park when the tab is hidden — resume cleanly on return
+      if (!isTabVisible) {
+        lastTime = currentTime;
+        rafRef.current = requestAnimationFrame(loop);
+        return;
+      }
       const dt = (currentTime - lastTime) / 1000;
       lastTime = currentTime;
       const elapsed = (currentTime - startTime) / 1000;
@@ -255,7 +262,13 @@ export default function ColorBends({
     };
     rafRef.current = requestAnimationFrame(loop);
 
+    const onVisibility = () => {
+      isTabVisible = !document.hidden;
+    };
+    document.addEventListener("visibilitychange", onVisibility);
+
     return () => {
+      document.removeEventListener("visibilitychange", onVisibility);
       if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
       if (resizeObserverRef.current) resizeObserverRef.current.disconnect();
       else window.removeEventListener("resize", handleResize);

@@ -133,13 +133,13 @@ export default function About() {
           className="mb-8 w-[55%] max-w-[260px] md:absolute md:right-0 md:top-0 md:w-[min(50vw,720px)] md:max-w-none md:mb-0"
         >
           <Image
-            src="/about me photo/1me.webp"
-            alt="Rahul Chanda"
-            width={3712}
-            height={4608}
-            quality={90}
+            src="/opt/about me photo/1me.webp"
+            alt="Rahul Chanda, commercial product photographer from Dehradun, in his studio"
+            width={1400}
+            height={1738}
+            quality={80}
+            sizes="(max-width: 768px) 55vw, (max-width: 1280px) 40vw, 720px"
             className="about-photo block w-full h-auto rounded-[20px] md:rounded-none md:rounded-l-[420px]"
-            priority
           />
         </div>
 

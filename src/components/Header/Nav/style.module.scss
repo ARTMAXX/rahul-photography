@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 100px 40px 50px 40px;
+  padding: 80px 40px 36px 40px;
   height: 100%;
   box-sizing: border-box;
   position: relative;
@@ -10,7 +10,7 @@
 
   .body {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     flex-direction: column;
 
     .linkContainer {
@@ -21,7 +21,9 @@
     a {
       text-decoration: none;
       color: rgba(255, 255, 255, 0.85);
-      font-size: 46px;
+      /* 9 links must fit the panel: 38px keeps the editorial feel while
+         leaving room for the social row below */
+      font-size: 38px;
     }
   }
 
@@ -39,6 +41,21 @@
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+    }
+  }
+}
+
+/* Short laptop screens: shrink type so the panel never overflows */
+@media (max-height: 720px) {
+  .nav {
+    padding: 64px 40px 28px 40px;
+
+    .body {
+      gap: 6px;
+
+      a {
+        font-size: 30px;
+      }
     }
   }
 }

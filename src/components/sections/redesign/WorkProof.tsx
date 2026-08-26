@@ -1,11 +1,11 @@
-"use client";
+﻿"use client";
 
-/* ════════════════════════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    WorkProof – "Selected Work"
    Aceternity-style scroll timeline: brand-red beam draws down the left
    as you scroll; each campaign sticks its title while its proof card
    (image, brief, result) scrolls past. 6 curated campaigns.
-   ════════════════════════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 import { motion } from "motion/react";
 import Image from "next/image";
@@ -21,42 +21,42 @@ interface Project {
 
 const projects: Project[] = [
   {
-    src: "/best%20shots/Product%20image/product-watch-luxury.webp",
+    src: "/opt/best%20shots/Product%20image/product-watch-luxury.webp",
     category: "Product",
     title: "Luxury Watch — Campaign Hero",
     brief: "Macro metallic detail for a premium timepiece launch.",
     outcome: "Adopted as the campaign hero across paid media.",
   },
   {
-    src: "/best%20shots/Food%20photo/food-biriyani.webp",
+    src: "/opt/best%20shots/Food%20photo/food-biriyani.webp",
     category: "Food & Beverage",
     title: "Biriyani — Menu Hero",
     brief: "Texture-forward hero for a restaurant menu refresh.",
     outcome: "Menu update that lifted the dish's orders.",
   },
   {
-    src: "/best%20shots/mens%20shoe/shoe-mens-white.webp",
+    src: "/opt/best%20shots/mens%20shoe/shoe-mens-white.webp",
     category: "Footwear",
     title: "White Sneaker — Clean Cutout",
     brief: "Studio cutout on white for marketplace use.",
     outcome: "Amazon/Flipkart-ready asset delivered same week.",
   },
   {
-    src: "/best%20shots/mens%20shoe/shoe-mens-campaign.webp",
+    src: "/opt/best%20shots/mens%20shoe/shoe-mens-campaign.webp",
     category: "Campaigns",
     title: "Sneaker Campaign — Scene",
     brief: "Lifestyle campaign scene for a footwear brand.",
     outcome: "Seasonal campaign across retail + social.",
   },
   {
-    src: "/best%20shots/Product%20image/product-serum.webp",
+    src: "/opt/best%20shots/Product%20image/product-serum.webp",
     category: "Product",
     title: "Bloom Skincare Serum",
     brief: "Glass-and-liquid study for a D2C serum launch.",
     outcome: "Used across launch email, ads and PDP.",
   },
   {
-    src: "/best%20shots/Beverage%20images/bev-iced.webp",
+    src: "/opt/best%20shots/Beverage%20images/bev-iced.webp",
     category: "Food & Beverage",
     title: "Iced Beverage — Condensation",
     brief: "Chilled glass with condensation detail.",
@@ -106,7 +106,7 @@ function ProjectCard({
       {/* Result */}
       <div className="mt-5 pt-5 border-t border-white/10">
         <p
-          className="text-[10px] uppercase tracking-[0.25em] text-[#e83b2c]/60"
+            className="text-[10px] uppercase tracking-[0.25em] text-[#e83b2c]"
           style={{ fontFamily: "Outfit, system-ui" }}
         >
           Result
@@ -161,7 +161,7 @@ export default function WorkProof() {
           data={projects.map((project, i) => ({
             title: (
               <span className="inline-flex items-baseline gap-3">
-                <span className="text-base md:text-lg text-[#e83b2c]/70 font-sans tracking-widest">
+                <span className="text-base md:text-lg text-[#e83b2c] font-sans tracking-widest">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 {project.title}

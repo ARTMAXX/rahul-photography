@@ -70,8 +70,9 @@ const nextConfig: NextConfig = {
     formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 31536000,
     unoptimized: false,
-    // Required in Next.js 16
-    qualities: [75, 100],
+    // Quality ladder actually requested by components (Next 16 rejects
+    // any quality not listed here with a 400 on /_next/image).
+    qualities: [70, 72, 74, 75, 76, 78, 80],
   },
 };
 

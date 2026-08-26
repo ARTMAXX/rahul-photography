@@ -72,12 +72,28 @@ export const TestimonialsColumn = (props: {
     };
   }, [props.testimonials]);
 
-  // Gentle auto-scroll to the end — NO duplicated content, pauses on hover
+  // Gentle auto-scroll to the end — NO duplicated content, pauses on hover.
+  // The rAF loop runs ONLY while the column is on screen; hidden columns
+  // (display:none via responsive classes) never start it at all.
   useEffect(() => {
+    const col = columnRef.current;
+    if (!col) return;
+
+    // display:none check — off-screen responsive columns cost nothing
+    if (col.getClientRects().length === 0) return;
+
+    let inView = false;
+    let isTabVisible = !document.hidden;
     const speed = 40 / (props.duration || 10);
     lastTimeRef.current = performance.now();
 
     const tick = (now: number) => {
+      if (!inView || !isTabVisible) {
+        // Parked — do no work, but stay subscribed so IO can wake us
+        rafRef.current = requestAnimationFrame(tick);
+        lastTimeRef.current = now;
+        return;
+      }
       const dt = Math.min((now - lastTimeRef.current) / 1000, 0.1);
       lastTimeRef.current = now;
 
@@ -102,8 +118,25 @@ export const TestimonialsColumn = (props: {
       rafRef.current = requestAnimationFrame(tick);
     };
 
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        inView = entry.isIntersecting;
+      },
+      { rootMargin: "80px 0px" }
+    );
+    io.observe(col);
+
+    const onVis = () => {
+      isTabVisible = !document.hidden;
+    };
+    document.addEventListener("visibilitychange", onVis);
+
     rafRef.current = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(rafRef.current);
+    return () => {
+      cancelAnimationFrame(rafRef.current);
+      io.disconnect();
+      document.removeEventListener("visibilitychange", onVis);
+    };
   }, [isHovered, props.duration, y]);
 
   return (

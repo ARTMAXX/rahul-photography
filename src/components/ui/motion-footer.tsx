@@ -126,6 +126,14 @@ const STYLES = `
   border-color: rgba(232, 59, 44, 0.4);
 }
 
+/* Touch: 44px minimum target (WCAG 2.5.5 / Apple HIG) — desktop keeps
+   the original slim 34px pill */
+@media (pointer: coarse) {
+  .footer-pill {
+    height: 44px;
+  }
+}
+
 /* Label stack — old label exits up, white label enters from below */
 .pill-label-stack {
   position: relative;
@@ -173,7 +181,8 @@ const STYLES = `
 .footer-ruler-label {
   font-size: 10px;
   line-height: 1;
-  color: #3d3d3d;
+  /* #767676 = 4.54:1 on black (WCAG AA); still reads as a faint ruler */
+  color: #767676;
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.04em;
@@ -207,7 +216,8 @@ const STYLES = `
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #4a4a4a;
+  /* #8a8a8a ≈ 5.3:1 on black — WCAG AA for small legal text */
+  color: #8a8a8a;
   font-size: 11.5px;
   opacity: 0;
   animation: bottomBarReveal 0.8s 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -227,7 +237,7 @@ const STYLES = `
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #555555;
+  color: #8a8a8a;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
 }
@@ -273,7 +283,7 @@ const STYLES = `
   display: flex;
   align-items: center;
   gap: 4px;
-  color: #555555;
+  color: #8a8a8a;
   transition: color 0.25s ease;
   cursor: pointer;
   background: none;

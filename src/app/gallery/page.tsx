@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useMemo, useCallback } from "react";
 import Image from "next/image";
@@ -22,9 +22,9 @@ interface GalleryItem {
 }
 
 const items: GalleryItem[] = [
-  // ── PRODUCT ──
+  // ──── PRODUCT ────
   {
-    src: "/best%20shots/Product%20image/product-watch-luxury.webp",
+    src: "/opt/best%20shots/Product%20image/product-watch-luxury.webp",
     category: "Product",
     ratio: "aspect-[4/5]",
     title: "Luxury Watch — Campaign Hero",
@@ -32,7 +32,7 @@ const items: GalleryItem[] = [
     outcome: "Adopted as the campaign hero across paid media.",
   },
   {
-    src: "/best%20shots/Product%20image/product-headphone.webp",
+    src: "/opt/best%20shots/Product%20image/product-headphone.webp",
     category: "Product",
     ratio: "aspect-square",
     title: "AudioTech Headphones",
@@ -40,7 +40,7 @@ const items: GalleryItem[] = [
     outcome: "Became the PDP hero image for the launch.",
   },
   {
-    src: "/best%20shots/Product%20image/product-serum.webp",
+    src: "/opt/best%20shots/Product%20image/product-serum.webp",
     category: "Product",
     ratio: "aspect-[4/5]",
     title: "Bloom Skincare Serum",
@@ -48,7 +48,7 @@ const items: GalleryItem[] = [
     outcome: "Used across launch email, ads and PDP.",
   },
   {
-    src: "/best%20shots/Product%20image/product-molton-brown.webp",
+    src: "/opt/best%20shots/Product%20image/product-molton-brown.webp",
     category: "Product",
     ratio: "aspect-[3/4]",
     title: "Molton Brown — Packaging",
@@ -56,7 +56,7 @@ const items: GalleryItem[] = [
     outcome: "Consistent marketplace + D2C product pages.",
   },
   {
-    src: "/best%20shots/Product%20image/product-bodywash.webp",
+    src: "/opt/best%20shots/Product%20image/product-bodywash.webp",
     category: "Product",
     ratio: "aspect-square",
     title: "Body Wash — Studio Cutout",
@@ -64,7 +64,7 @@ const items: GalleryItem[] = [
     outcome: "Marketplace-compliant asset delivered same week.",
   },
   {
-    src: "/best%20shots/Product%20image/product-hairspray.webp",
+    src: "/opt/best%20shots/Product%20image/product-hairspray.webp",
     category: "Product",
     ratio: "aspect-[4/5]",
     title: "Hairspray — Detail Series",
@@ -72,7 +72,7 @@ const items: GalleryItem[] = [
     outcome: "Fed the brand's social and PDP content library.",
   },
   {
-    src: "/best%20shots/Product%20image/product-energy-shot.webp",
+    src: "/opt/best%20shots/Product%20image/product-energy-shot.webp",
     category: "Product",
     ratio: "aspect-square",
     title: "Energy Shot — Bold Bottle",
@@ -80,7 +80,7 @@ const items: GalleryItem[] = [
     outcome: "Anchor visual for the new-can announcement.",
   },
   {
-    src: "/best%20shots/Product%20image/product-watch-dark.webp",
+    src: "/opt/best%20shots/Product%20image/product-watch-dark.webp",
     category: "Product",
     ratio: "aspect-[4/5]",
     title: "Watch — Dark Glass",
@@ -88,7 +88,7 @@ const items: GalleryItem[] = [
     outcome: "Editorial asset for the evening campaign.",
   },
   {
-    src: "/best%20shots/Product%20image/headphone-jbl.webp",
+    src: "/opt/best%20shots/Product%20image/headphone-jbl.webp",
     category: "Product",
     ratio: "aspect-square",
     title: "JBL Headphones — Lifestyle",
@@ -96,7 +96,7 @@ const items: GalleryItem[] = [
     outcome: "Used on PDP, social and retailer listings.",
   },
   {
-    src: "/best%20shots/Product%20image/energy-drink-design.webp",
+    src: "/opt/best%20shots/Product%20image/energy-drink-design.webp",
     category: "Product",
     ratio: "aspect-[3/4]",
     title: "Energy Drink — Design Series",
@@ -104,9 +104,9 @@ const items: GalleryItem[] = [
     outcome: "Launch visual system rolled out across platforms.",
   },
 
-  // ── FOOD & BEVERAGE ──
+  // ──── FOOD & BEVERAGE ────
   {
-    src: "/best%20shots/Food%20photo/food-biriyani.webp",
+    src: "/opt/best%20shots/Food%20photo/food-biriyani.webp",
     category: "Food & Beverage",
     ratio: "aspect-[4/5]",
     title: "Biriyani — Menu Hero",
@@ -114,7 +114,7 @@ const items: GalleryItem[] = [
     outcome: "Menu update that lifted the dish's orders.",
   },
   {
-    src: "/best%20shots/Food%20photo/food-buffet.webp",
+    src: "/opt/best%20shots/Food%20photo/food-buffet.webp",
     category: "Food & Beverage",
     ratio: "aspect-[16/10]",
     title: "Buffet — Wide Staging",
@@ -122,7 +122,7 @@ const items: GalleryItem[] = [
     outcome: "Campaign imagery for website and booking ads.",
   },
   {
-    src: "/best%20shots/Food%20photo/food-cream-macro.webp",
+    src: "/opt/best%20shots/Food%20photo/food-cream-macro.webp",
     category: "Food & Beverage",
     ratio: "aspect-square",
     title: "Cream — Macro Texture",
@@ -130,7 +130,7 @@ const items: GalleryItem[] = [
     outcome: "Social-first asset for the pastry launch.",
   },
   {
-    src: "/best%20shots/Food%20photo/food-mutton.webp",
+    src: "/opt/best%20shots/Food%20photo/food-mutton.webp",
     category: "Food & Beverage",
     ratio: "aspect-[4/5]",
     title: "Mutton — Rustic Styling",
@@ -138,7 +138,7 @@ const items: GalleryItem[] = [
     outcome: "Menu + Instagram asset for the kitchen.",
   },
   {
-    src: "/best%20shots/Food%20photo/food-curry.webp",
+    src: "/opt/best%20shots/Food%20photo/food-curry.webp",
     category: "Food & Beverage",
     ratio: "aspect-square",
     title: "Curry — Steam & Colour",
@@ -146,7 +146,7 @@ const items: GalleryItem[] = [
     outcome: "Hero for the restaurant's delivery listing.",
   },
   {
-    src: "/best%20shots/Beverage%20images/bev-iced.webp",
+    src: "/opt/best%20shots/Beverage%20images/bev-iced.webp",
     category: "Food & Beverage",
     ratio: "aspect-[4/5]",
     title: "Iced Beverage — Condensation",
@@ -154,7 +154,7 @@ const items: GalleryItem[] = [
     outcome: "Refresh-launch asset for the bar menu.",
   },
   {
-    src: "/best%20shots/Beverage%20images/bev-macro.webp",
+    src: "/opt/best%20shots/Beverage%20images/bev-macro.webp",
     category: "Food & Beverage",
     ratio: "aspect-square",
     title: "Beverage Macro — Bubbles",
@@ -162,7 +162,7 @@ const items: GalleryItem[] = [
     outcome: "Texture library for the brand's creative team.",
   },
   {
-    src: "/best%20shots/Beverage%20images/beverage-macro.png",
+    src: "/opt/best%20shots/Beverage%20images/beverage-macro.webp",
     category: "Food & Beverage",
     ratio: "aspect-[3/4]",
     title: "Splash Macro — Orange",
@@ -170,7 +170,7 @@ const items: GalleryItem[] = [
     outcome: "Hero visual for the beverage campaign.",
   },
   {
-    src: "/best%20shots/Beverage%20images/iced-drinks.png",
+    src: "/opt/best%20shots/Beverage%20images/iced-drinks.webp",
     category: "Food & Beverage",
     ratio: "aspect-[16/10]",
     title: "Iced Drinks — Lineup",
@@ -178,9 +178,9 @@ const items: GalleryItem[] = [
     outcome: "Website + social set for the cafe brand.",
   },
 
-  // ── FOOTWEAR ──
+  // ──── FOOTWEAR ────
   {
-    src: "/best%20shots/ladies%20shoe/shoe-ladies-mule.webp",
+    src: "/opt/best%20shots/ladies%20shoe/shoe-ladies-mule.webp",
     category: "Footwear",
     ratio: "aspect-[4/5]",
     title: "Ladies Mule — Side Study",
@@ -188,7 +188,7 @@ const items: GalleryItem[] = [
     outcome: "PDP hero for the D2C shoe label.",
   },
   {
-    src: "/best%20shots/ladies%20shoe/shoe-ladies-heels.webp",
+    src: "/opt/best%20shots/ladies%20shoe/shoe-ladies-heels.webp",
     category: "Footwear",
     ratio: "aspect-square",
     title: "Heels — High Angle",
@@ -196,7 +196,7 @@ const items: GalleryItem[] = [
     outcome: "Campaign image for the seasonal drop.",
   },
   {
-    src: "/best%20shots/ladies%20shoe/High-end-shoe.webp",
+    src: "/opt/best%20shots/ladies%20shoe/High-end-shoe.webp",
     category: "Footwear",
     ratio: "aspect-[3/4]",
     title: "Premium Loafer — Editorial",
@@ -204,7 +204,7 @@ const items: GalleryItem[] = [
     outcome: "Luxury-positioning asset for the brand.",
   },
   {
-    src: "/best%20shots/mens%20shoe/shoe-mens-white.webp",
+    src: "/opt/best%20shots/mens%20shoe/shoe-mens-white.webp",
     category: "Footwear",
     ratio: "aspect-[4/5]",
     title: "White Sneaker — Clean Cutout",
@@ -212,7 +212,7 @@ const items: GalleryItem[] = [
     outcome: "Amazon/Flipkart-ready asset.",
   },
   {
-    src: "/best%20shots/mens%20shoe/shoe-mens-duo.webp",
+    src: "/opt/best%20shots/mens%20shoe/shoe-mens-duo.webp",
     category: "Footwear",
     ratio: "aspect-square",
     title: "Sneaker Duo — Packshot",
@@ -220,7 +220,7 @@ const items: GalleryItem[] = [
     outcome: "Product-page set for the launch.",
   },
   {
-    src: "/best%20shots/mens%20shoe/modern-athletic-sneaker.webp",
+    src: "/opt/best%20shots/mens%20shoe/modern-athletic-sneaker.webp",
     category: "Footwear",
     ratio: "aspect-[16/10]",
     title: "Athletic Sneaker — Motion",
@@ -228,9 +228,9 @@ const items: GalleryItem[] = [
     outcome: "Launch visual across social and PDP.",
   },
 
-  // ── CAMPAIGNS ──
+  // ──── CAMPAIGNS ────
   {
-    src: "/best%20shots/ADs/ad-culinary.webp",
+    src: "/opt/best%20shots/ADs/ad-culinary.webp",
     category: "Campaigns",
     ratio: "aspect-square",
     title: "Culinary Campaign — Flat Lay",
@@ -238,7 +238,7 @@ const items: GalleryItem[] = [
     outcome: "Multi-platform campaign assets.",
   },
   {
-    src: "/best%20shots/ADs/ad-popout.webp",
+    src: "/opt/best%20shots/ADs/ad-popout.webp",
     category: "Campaigns",
     ratio: "aspect-[4/5]",
     title: "Pop-Out Product Ad",
@@ -246,7 +246,7 @@ const items: GalleryItem[] = [
     outcome: "Static ad creative that held up at scale.",
   },
   {
-    src: "/best%20shots/Food%20photo/food-chicken.webp",
+    src: "/opt/best%20shots/Food%20photo/food-chicken.webp",
     category: "Campaigns",
     ratio: "aspect-[3/4]",
     title: "Chicken — Campaign Hero",
@@ -254,7 +254,7 @@ const items: GalleryItem[] = [
     outcome: "Hero for menu, ads and delivery listings.",
   },
   {
-    src: "/best%20shots/mens%20shoe/shoe-mens-campaign.webp",
+    src: "/opt/best%20shots/mens%20shoe/shoe-mens-campaign.webp",
     category: "Campaigns",
     ratio: "aspect-[16/10]",
     title: "Sneaker Campaign — Scene",
@@ -401,7 +401,8 @@ export default function GalleryPage() {
                 fill
                 sizes="(max-width: 768px) 50vw, 33vw"
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
-                loading={i < 6 ? "eager" : "lazy"}
+                loading={i < 2 ? "eager" : "lazy"}
+                decoding="async"
               />
               {/* Hover overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-start justify-end p-4">

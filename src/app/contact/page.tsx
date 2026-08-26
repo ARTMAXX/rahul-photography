@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <ContactForm />
+      <ContactForm headingLevel="h1" />
 
       {/* Contact info — no studio, freelance on-location */}
       <section className="relative w-full px-4 md:px-12 py-24 md:py-32 border-t border-white/5 bg-[#070707]">

@@ -1,11 +1,11 @@
-"use client";
+﻿"use client";
 
 import { motion } from "motion/react";
 import Image from "next/image";
 
-/* ════════════════════════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    CaseStudies – three flagship assignments, framed as challenge → work → result
-   ════════════════════════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 interface Study {
   src: string;
@@ -17,7 +17,7 @@ interface Study {
 
 const studies: Study[] = [
   {
-    src: "/best%20shots/Product%20image/product-watch-luxury.webp",
+    src: "/opt/best%20shots/Product%20image/product-watch-luxury.webp",
     category: "Product · Campaign",
     title: "Luxury Watch — Campaign Hero",
     brief:
@@ -26,7 +26,7 @@ const studies: Study[] = [
       "The final frame became the campaign hero across paid media — the single asset the brand bet the launch on.",
   },
   {
-    src: "/best%20shots/Food%20photo/food-biriyani.webp",
+    src: "/opt/best%20shots/Food%20photo/food-biriyani.webp",
     category: "Food & Beverage · Menu",
     title: "Biriyani — Menu Hero",
     brief:
@@ -35,7 +35,7 @@ const studies: Study[] = [
       "The updated menu lifted the dish's orders — the image did the selling, not the description.",
   },
   {
-    src: "/best%20shots/mens%20shoe/shoe-mens-white.webp",
+    src: "/opt/best%20shots/mens%20shoe/shoe-mens-white.webp",
     category: "Footwear · Marketplace",
     title: "White Sneaker — Clean Cutout",
     brief:

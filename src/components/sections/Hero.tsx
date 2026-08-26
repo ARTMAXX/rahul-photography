@@ -1,10 +1,13 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { BreathingText } from "@/components/ui/breathing-text";
+import LazyVideo from "@/components/ui/LazyVideo";
+import { useIsMobile } from "@/lib/hooks";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,11 +17,9 @@ export default function Hero() {
   const leftTextRef = useRef<HTMLSpanElement>(null);
   const rightTextRef = useRef<HTMLSpanElement>(null);
   const subTextRef = useRef<HTMLDivElement>(null);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    setIsMobile(window.innerWidth < 768);
-  }, []);
+  // SSR-safe: server + first paint assume mobile (lightest markup); the
+  // matchMedia listener corrects desktop after hydration.
+  const isMobile = useIsMobile();
 
   useGSAP(() => {
     const isMobile = window.innerWidth < 768;
@@ -166,21 +167,24 @@ w-full overflow-hidden">
         ref={videoWrapperRef}
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-30 flex items-center justify-center bg-black overflow-hidden"
       >
-        {/* Only ONE media: image on mobile, video on desktop */}
+        {/* Only ONE media: optimized image on mobile, IO-gated video on desktop */}
         {isMobile ? (
-          <img
-            src="/hero-mobile.png"
-            alt="Rahul Chanda — product photographer"
-            className="w-full h-full object-cover opacity-80"
+          <Image
+            src="/opt/hero-mobile.webp"
+            alt="Dramatic studio product photograph by Rahul Chanda — commercial product photographer in Dehradun"
+            fill
+            priority
+            quality={80}
+            sizes="100vw"
+            className="object-cover opacity-80"
           />
         ) : (
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
+          <LazyVideo
+            src="/opt/main hero shots/hero-video.mp4"
+            poster="/opt/main hero shots/hero-video-poster.webp"
             className="w-full h-full object-cover opacity-70"
-            src="/main hero shots/hero-video.mp4"
+            preload="auto"
+            alt="Cinematic showreel of Rahul Chanda's commercial product photography"
           />
         )}
 

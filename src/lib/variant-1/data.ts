@@ -1,23 +1,23 @@
 import type { Perspective } from "./types";
 
 /**
- * 12 curated images from /public/best shots — mapped onto the rotating
- * WebGL cylinder. Mix of product, food, beverage and fashion work so the
- * carousel reads as a portfolio reel.
+ * 12 curated images from /public/opt/best shots — mapped onto the rotating
+ * WebGL cylinder (desktop) and the mobile bento grid. Re-encoded ~1024px
+ * WebP derivatives (~20–80 KB each) instead of the multi-MB masters.
  */
 export const images = [
-  "/best shots/Product image/product-headphone.webp",
-  "/best shots/Product image/product-watch-luxury.webp",
-  "/best shots/Product image/product-bodywash.webp",
-  "/best shots/Product image/product-serum.webp",
-  "/best shots/Product image/product-molton-brown.webp",
-  "/best shots/Beverage images/bev-iced.webp",
-  "/best shots/Beverage images/bev-macro.webp",
-  "/best shots/Food photo/food-biriyani.webp",
-  "/best shots/Food photo/food-chicken.webp",
-  "/best shots/mens shoe/shoe-mens-campaign.webp",
-  "/best shots/ladies shoe/High-end-shoe.webp",
-  "/best shots/ADs/ad-culinary.webp",
+  "/opt/best shots/Product image/product-headphone.webp",
+  "/opt/best shots/Product image/product-watch-luxury.webp",
+  "/opt/best shots/Product image/product-bodywash.webp",
+  "/opt/best shots/Product image/product-serum.webp",
+  "/opt/best shots/Product image/product-molton-brown.webp",
+  "/opt/best shots/Beverage images/bev-iced.webp",
+  "/opt/best shots/Beverage images/bev-macro.webp",
+  "/opt/best shots/Food photo/food-biriyani.webp",
+  "/opt/best shots/Food photo/food-chicken.webp",
+  "/opt/best shots/mens shoe/shoe-mens-campaign.webp",
+  "/opt/best shots/ladies shoe/High-end-shoe.webp",
+  "/opt/best shots/ADs/ad-culinary.webp",
 ];
 
 /**

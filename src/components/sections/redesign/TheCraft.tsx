@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "motion/react";
 import { useRef } from "react";
+import LazyVideo from "@/components/ui/LazyVideo";
 
 /* ════════════════════════════════════════════════════════════════════
    TheCraft – Behind-the-scenes "how the editing works" section
@@ -117,14 +118,11 @@ export default function TheCraft() {
 
               {/* Video area */}
               <div className="relative aspect-[16/9] overflow-hidden bg-black">
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="auto"
+                <LazyVideo
+                  src="/opt/cinematic-assets/editing-video.mp4"
+                  poster="/opt/cinematic-assets/editing-video-poster.webp"
                   className="w-full h-full object-cover"
-                  src="/cinematic-assets/editing-video.mp4"
+                  alt="Behind-the-scenes retouching session in Photoshop"
                 />
                 {/* Screen-grade overlay so it reads as "the work" */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#070707]/70 via-transparent to-[#ffffff]/10 mix-blend-multiply" />

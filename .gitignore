@@ -102,3 +102,8 @@ temp_seo_report/
 
 # Root-level screenshots (QA artifacts — real site images live in public/)
 /*.png
+
+# Deploy-session test artifacts (NOT site content)
+prod-*.log
+.review/
+videos/

@@ -66,6 +66,8 @@ export default function CinematicCylinder() {
   const velocityRef = useRef(0);
   const momentumRef = useRef(0);
   const rafIdRef = useRef<number | null>(null);
+  const ioRef = useRef<IntersectionObserver | null>(null);
+  const visHandlerRef = useRef<(() => void) | null>(null);
 
   useEffect(() => {
     if (
@@ -402,12 +404,58 @@ export default function CinematicCylinder() {
 
             window.addEventListener("resize", handleResize);
 
+            /* ── Render-loop gating ──────────────────────────────────
+               The RAF loop only runs while the 500svh section is actually
+               on screen AND the tab is visible. Scrolling past it (or
+               switching tabs) stops all GL work; returning resumes. */
+            let sectionVisible = true;
+            let tabVisible = !document.hidden;
+            let loopRunning = false;
+
+            const startLoop = () => {
+              if (loopRunning || !rendererRef.current) return;
+              loopRunning = true;
+              rafIdRef.current = requestAnimationFrame(animate);
+            };
+            const stopLoop = () => {
+              loopRunning = false;
+              if (rafIdRef.current !== null) {
+                cancelAnimationFrame(rafIdRef.current);
+                rafIdRef.current = null;
+              }
+            };
+            const syncLoop = () => {
+              if (sectionVisible && tabVisible) startLoop();
+              else stopLoop();
+            };
+
+            const io = new IntersectionObserver(
+              ([entry]) => {
+                sectionVisible = entry.isIntersecting;
+                syncLoop();
+              },
+              // small margin so brief edge-scrolls don't thrash the loop
+              { rootMargin: "10% 0px" }
+            );
+            io.observe(containerRef.current);
+            ioRef.current = io;
+
+            const onVisChange = () => {
+              tabVisible = !document.hidden;
+              syncLoop();
+            };
+            document.addEventListener("visibilitychange", onVisChange);
+            visHandlerRef.current = onVisChange;
+
             const animate = () => {
               // Stop immediately if component has been cleaned up
               if (!rendererRef.current || !sceneRef.current || !cameraRef.current) {
                 return;
               }
-              rafIdRef.current = requestAnimationFrame(animate);
+              // Gate-aware continuation: only re-queue while allowed
+              if (loopRunning) {
+                rafIdRef.current = requestAnimationFrame(animate);
+              }
 
               camera.position.set(
                 cameraAnimRef.current.x,
@@ -470,7 +518,8 @@ export default function CinematicCylinder() {
                 rendererRef.current.render({ scene: sceneRef.current, camera: cameraRef.current });
               }
             };
-            animate();
+            // Kick off (IO/visibility gate decides whether the loop runs)
+            syncLoop();
           }
         };
         img.onerror = () => {
@@ -489,6 +538,12 @@ export default function CinematicCylinder() {
       }
 
       window.removeEventListener("resize", handleResize);
+      if (visHandlerRef.current) {
+        document.removeEventListener("visibilitychange", visHandlerRef.current);
+        visHandlerRef.current = null;
+      }
+      ioRef.current?.disconnect();
+      ioRef.current = null;
 
       // Free WebGL resources before reverting GSAP (which may trigger re-renders)
       particlesRef.current.forEach((p) => {

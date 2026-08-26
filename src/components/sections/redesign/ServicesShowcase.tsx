@@ -132,62 +132,9 @@ const services: Service[] = [
 export default function ServicesShowcase() {
   const [expandedService, setExpandedService] = useState<number | null>(null);
   const containerRef = useRef<HTMLElement>(null);
-
-  // Inject FAQPage JSON-LD schema
-  useEffect(() => {
-    const existing = document.getElementById("faq-schema");
-    if (existing) return;
-    const script = document.createElement("script");
-    script.id = "faq-schema";
-    script.type = "application/ld+json";
-    script.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What photography services do you offer?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Product photography, fashion & lifestyle, food & beverage, commercial campaigns, brand content creation, and architectural & interiors photography based in Dehradun, India."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How much does commercial photography cost?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Pricing varies by service: Product Photography starts at ₹25,000, Food & Beverage at ₹20,000, Fashion & Lifestyle at ₹40,000, and Architectural at ₹30,000. Custom campaigns and monthly retainers are quoted individually."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you travel for shoots outside Dehradun?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, travel is available within Uttarakhand and across India for commercial projects. Travel costs are quoted as part of the project estimate."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How long does a typical photoshoot take?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A typical product shoot takes 4–6 hours. Larger campaigns or multi-scene shoots may require a full day or multiple days depending on complexity."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you provide edited/retouched images?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, all images are professionally color-graded, retouched, and delivered in multiple formats optimized for print and digital use."
-          }
-        }
-      ]
-    });
-    document.head.appendChild(script);
-  }, []);
+  // NOTE: the FAQPage JSON-LD for this section is server-rendered in
+  // src/app/services/page.tsx — client-injected schema is less reliable
+  // for crawlers and duplicated work on every mount.
   const stickerRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const servicesRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -256,7 +203,11 @@ export default function ServicesShowcase() {
       );
     });
 
-    return () => ScrollTrigger.getAll().forEach((st) => st.kill());
+    // NOTE: no global ScrollTrigger kill here — useGSAP's context revert
+    // already cleans up ONLY the triggers this component created. Killing
+    // getAll() would destroy Hero/About/etc. triggers on unmount.
+
+    return undefined;
   }, { scope: containerRef });
 
   // Stagger reset when expanded service changes
