@@ -1,0 +1,83 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Rahul Chanda Photography API",
+    "version": "1.0.0",
+    "description": "API endpoints and machine-readable resources for Rahul Chanda Photography commercial photography studio in Dehradun, India."
+  },
+  "servers": [
+    {
+      "url": "https://rahulchandaphotography.com",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/api/health": {
+      "get": {
+        "summary": "Service health check",
+        "operationId": "getHealth",
+        "responses": {
+          "200": {
+            "description": "Service is healthy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": { "type": "string", "example": "ok" },
+                    "service": { "type": "string", "example": "rahul-chanda-photography" },
+                    "timestamp": { "type": "string", "format": "date-time" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/gallery": {
+      "get": {
+        "summary": "Commercial photography portfolio gallery",
+        "operationId": "getGallery",
+        "parameters": [
+          {
+            "name": "category",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["product", "beverage", "footwear", "fashion", "food", "lifestyle"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Gallery webpage or markdown representation (via Accept: text/markdown)"
+          }
+        }
+      }
+    },
+    "/services": {
+      "get": {
+        "summary": "Commercial photography services and packages",
+        "operationId": "getServices",
+        "responses": {
+          "200": {
+            "description": "Services list and pricing guidance"
+          }
+        }
+      }
+    },
+    "/blog": {
+      "get": {
+        "summary": "Commercial photography technical journal and field guides",
+        "operationId": "getBlog",
+        "responses": {
+          "200": {
+            "description": "Blog hub listing 12 active technical photography articles"
+          }
+        }
+      }
+    }
+  }
+}
