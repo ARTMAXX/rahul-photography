@@ -29,10 +29,12 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Netlify
+## Deployment
 
-This project deploys via Netlify (see `netlify.toml`). Pushing to `main` on GitHub triggers an automatic build and deploy.
+This project deploys to **Cloudflare Workers** via OpenNext (`wrangler.toml`).
 
-Live site: https://rahulchandaphotography.netlify.app
+Live site: https://rahulchandaphotography.com
+
+Deploy chain: edit → user approves → `git push origin main` → `npx opennextjs-cloudflare build` → `npx wrangler deploy`. Never deploy uncommitted changes — GitHub must always match what is live (see CLAUDE.md).
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

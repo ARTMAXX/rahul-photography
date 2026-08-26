@@ -245,7 +245,7 @@ CustomEase.create("cinematicLinear", "0.4, 0, 0.6, 1");
 - **ProfessionalService:** Full service catalog
 - **FAQPage:** 5 common questions
 - **ImageGallery:** Portfolio archive
-- **Canonical:** `https://rahulchandaphotography.netlify.app`
+- **Canonical:** `https://rahulchandaphotography.com`
 - **OG/Twitter:** Summary large image
 
 ---

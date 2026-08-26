@@ -86,7 +86,7 @@ $g.DrawString("PRODUCT  |  FOOD & BEVERAGE  |  FOOTWEAR", $fSmall, $muteBr, 92, 
 
 $fUrl  = [System.Drawing.Font]::new("Arial", 12.0, [System.Drawing.FontStyle]::Regular, [System.Drawing.GraphicsUnit]::Pixel)
 $dimBr = [System.Drawing.SolidBrush]::new([System.Drawing.Color]::FromArgb(205, 255, 255, 255))
-$g.DrawString("rahulchandaphotography.netlify.app", $fUrl, $dimBr, 92, 598)
+$g.DrawString("rahulchandaphotography.com", $fUrl, $dimBr, 92, 598)
 
 foreach ($o in @($bgBrush, $pen, $fMono, $sfMono, $goldBr, $fN1, $fN2, $line, $fTag, $redBr, $fSmall, $muteBr, $fUrl, $dimBr, $veil, $fade, $rim)) { try { $o.Dispose() } catch {} }
 $g.Dispose()

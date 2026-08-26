@@ -3,7 +3,7 @@
 
 ## Navigation
 
-- [Home](https://rahulchandaphotography.netlify.app/): Single-page portfolio with hero, about, services showcase, testimonials, and contact.
+- [Home](https://rahulchandaphotography.com/): Single-page portfolio with hero, about, services showcase, testimonials, and contact.
 - [Pricing](/pricing.md): Machine-readable pricing information.
 
 ## Sections (on home page)
