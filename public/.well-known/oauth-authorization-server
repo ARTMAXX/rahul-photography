@@ -24,6 +24,7 @@
   "agent_auth": {
     "skill": "https://rahulchandaphotography.com/auth.md",
     "register_uri": "https://rahulchandaphotography.com/agent/auth",
+    "claim_uri": "https://rahulchandaphotography.com/agent/auth",
     "supported_methods": [
       "anonymous",
       "identity_assertion"
@@ -43,6 +44,12 @@
         "urn:ietf:params:oauth:token-type:id-jag",
         "verified_email"
       ],
+      "credential_types_supported": [
+        "bearer"
+      ],
+      "claim_uri": "https://rahulchandaphotography.com/agent/auth"
+    },
+    "verified_email": {
       "credential_types_supported": [
         "bearer"
       ],

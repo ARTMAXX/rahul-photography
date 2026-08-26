@@ -1,5 +1,5 @@
 {
-  "$schema": "https://schemas.agentready.dev/ai-catalog/1.0.0/schema.json",
+  "specVersion": "1.0.0",
   "name": "Rahul Chanda Photography",
   "description": "Commercial and product photography portfolio, technical journal, and photoshoot booking services in Dehradun, India.",
   "version": "1.0.0",
