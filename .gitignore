@@ -47,6 +47,7 @@ next-env.d.ts
 .superpowers
 .agents
 agent-skills
+!public/.well-known/agent-skills/**
  .fallow
  .kilo
 

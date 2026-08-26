@@ -1,0 +1,47 @@
+{
+  "name": "Rahul Chanda Photography Agent",
+  "version": "1.0.0",
+  "description": "AI agent interface for Rahul Chanda Photography — commercial product photographer based in Dehradun, India. Enables agents to search the portfolio, retrieve service information, and guide users through booking inquiries.",
+  "url": "https://rahulchandaphotography.com",
+  "provider": {
+    "organization": "Rahul Chanda Photography",
+    "url": "https://rahulchandaphotography.com"
+  },
+  "supportedInterfaces": [
+    {
+      "url": "https://rahulchandaphotography.com",
+      "protocol": "HTTP",
+      "description": "HTTP with content negotiation (Accept: text/markdown) for agent-optimised responses"
+    }
+  ],
+  "capabilities": {
+    "contentNegotiation": true,
+    "markdownRepresentation": true,
+    "streaming": false,
+    "authentication": false
+  },
+  "skills": [
+    {
+      "id": "portfolio-search",
+      "name": "Portfolio Search",
+      "description": "Search and browse the commercial photography portfolio by category (product, beverage, footwear, fashion, food) or campaign style.",
+      "url": "https://rahulchandaphotography.com/.well-known/agent-skills/portfolio-search/SKILL.md"
+    },
+    {
+      "id": "booking-inquiry",
+      "name": "Booking Inquiry",
+      "description": "Collect project requirements and guide users to submit a commercial photoshoot inquiry via the contact form or WhatsApp.",
+      "url": "https://rahulchandaphotography.com/.well-known/agent-skills/booking-inquiry/SKILL.md"
+    },
+    {
+      "id": "markdown-negotiation",
+      "name": "Markdown Content Negotiation",
+      "description": "Retrieve any site page as structured markdown by sending Accept: text/markdown.",
+      "url": "https://rahulchandaphotography.com/.well-known/agent-skills/markdown-negotiation/SKILL.md"
+    }
+  ],
+  "contact": {
+    "phone": "+91 70789 39475",
+    "url": "https://rahulchandaphotography.com/contact"
+  }
+}

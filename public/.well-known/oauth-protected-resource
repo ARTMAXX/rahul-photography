@@ -1,0 +1,8 @@
+{
+  "resource": "https://rahulchandaphotography.com",
+  "authorization_servers": [],
+  "scopes_supported": [],
+  "bearer_methods_supported": ["header"],
+  "resource_documentation": "https://rahulchandaphotography.com/.well-known/api-catalog",
+  "resource_signing_alg_values_supported": []
+}

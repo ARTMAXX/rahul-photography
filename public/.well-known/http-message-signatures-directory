@@ -1,0 +1,12 @@
+{
+  "keys": [
+    {
+      "kty": "RSA",
+      "n": "xiyy8U72DNCVY7a2XxFP_2VEXguU65Avi_dCD38AM6DLQ6SOBnZMX6tMTftEqiwqbf_hiaJuTAW3POVKWmIyTx5cwJKIZl-DCmEdOMowSlxOB17RnZ_0ctQFUtR5AifqWBXHKtEU7n5b9m2ZmSIeohl0zPZlm1BxYkJ7ma6eW2uus2iquLfUk9a6CTOW_dyPY1AzPu2Kc_JEOlHn7hbks8S6awlKX1loh4OiN8_y7B7SEOSoeJ4bDnbstz8z3NF41gpnO4MACQtQ9_yBZGnYzb8484DiHet-7lCKlS0KsxTw-QZ4R7-qlPWjmFqexJwYB_-jayZVj6U_Ze5Vd_0dSw",
+      "e": "AQAB",
+      "kid": "rahulchanda-bot-auth-2026",
+      "use": "sig",
+      "alg": "RS256"
+    }
+  ]
+}

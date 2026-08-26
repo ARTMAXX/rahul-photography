@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "portfolio-search",
+      "type": "skill-md",
+      "description": "Search and browse the Rahul Chanda Photography commercial portfolio by category, product type, or campaign style.",
+      "url": "https://rahulchandaphotography.com/.well-known/agent-skills/portfolio-search/SKILL.md",
+      "digest": "sha256:107958bc93763a8b3b9ee7eeb02dab1b4728e395923714c07d804bfb872c3df7"
+    },
+    {
+      "name": "booking-inquiry",
+      "type": "skill-md",
+      "description": "Submit a commercial photoshoot inquiry with project requirements, shot counts, timeline, and budget.",
+      "url": "https://rahulchandaphotography.com/.well-known/agent-skills/booking-inquiry/SKILL.md",
+      "digest": "sha256:508d75599587e3d1d432f3a391e36ff6f45b6b2a9310f9ff2b2461c6f6403991"
+    },
+    {
+      "name": "markdown-negotiation",
+      "type": "skill-md",
+      "description": "Request any page as clean markdown by sending Accept: text/markdown. Returns structured content with X-Markdown-Tokens header.",
+      "url": "https://rahulchandaphotography.com/.well-known/agent-skills/markdown-negotiation/SKILL.md",
+      "digest": "sha256:8bd1d1c92e5b48bb3a6b1416c4db7a0d08cbd84d0b61d811842a8456b42a9016"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "serverInfo": {
+    "name": "Rahul Chanda Photography",
+    "version": "1.0.0",
+    "description": "MCP server for commercial photography portfolio browsing, service discovery, and booking inquiry guidance."
+  },
+  "transport": {
+    "endpoint": "https://rahulchandaphotography.com",
+    "protocol": "http"
+  },
+  "capabilities": {
+    "tools": true,
+    "resources": true,
+    "prompts": false
+  },
+  "tools": [
+    {
+      "name": "get_portfolio",
+      "description": "Retrieve portfolio items and gallery content from the commercial photography portfolio.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string",
+            "enum": ["product", "beverage", "footwear", "fashion", "food", "lifestyle"],
+            "description": "Portfolio category to filter by"
+          }
+        }
+      }
+    },
+    {
+      "name": "get_services",
+      "description": "Retrieve the list of commercial photography services, pricing guidance, and turnaround times.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "get_page_markdown",
+      "description": "Retrieve any page on rahulchandaphotography.com as clean markdown via content negotiation.",
+      "inputSchema": {
+        "type": "object",
+        "required": ["path"],
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "Page path to retrieve, e.g. /services or /blog/retouching-101"
+          }
+        }
+      }
+    }
+  ],
+  "resources": [
+    {
+      "name": "Portfolio Gallery",
+      "uri": "https://rahulchandaphotography.com/gallery",
+      "description": "Commercial photography portfolio"
+    },
+    {
+      "name": "Services",
+      "uri": "https://rahulchandaphotography.com/services",
+      "description": "Photography services and packages"
+    },
+    {
+      "name": "Blog",
+      "uri": "https://rahulchandaphotography.com/blog",
+      "description": "Technical articles on commercial and product photography"
+    }
+  ]
+}

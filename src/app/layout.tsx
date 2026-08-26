@@ -95,7 +95,64 @@ export default function RootLayout({
           data-key="TiJZdymXtkHehsEBZqxbkg"
           strategy="afterInteractive"
         />
+        {/* WebMCP — expose site tools to browser-based AI agents
+            Ref: https://webmachinelearning.github.io/webmcp/ */}
+        <Script id="webmcp-tools" strategy="afterInteractive">{`
+          (function () {
+            if (!("modelContext" in navigator) || typeof navigator.modelContext.registerTool !== "function") return;
+            const ac = new AbortController();
+            navigator.modelContext.registerTool({
+              name: "search_portfolio",
+              description: "Search Rahul Chanda Photography commercial portfolio by category or style. Returns portfolio items with image references.",
+              inputSchema: {
+                type: "object",
+                properties: {
+                  category: {
+                    type: "string",
+                    description: "Portfolio category: product, beverage, footwear, fashion, food, lifestyle",
+                    enum: ["product", "beverage", "footwear", "fashion", "food", "lifestyle"]
+                  }
+                }
+              },
+              execute: async function(params) {
+                const url = new URL("https://rahulchandaphotography.com/gallery");
+                if (params && params.category) url.searchParams.set("category", params.category);
+                const res = await fetch(url.toString(), { headers: { "Accept": "text/markdown" } });
+                return res.text();
+              },
+              signal: ac.signal
+            });
+            navigator.modelContext.registerTool({
+              name: "get_services",
+              description: "Get the list of commercial photography services offered by Rahul Chanda Photography including pricing guidance and turnaround times.",
+              inputSchema: { type: "object", properties: {} },
+              execute: async function() {
+                const res = await fetch("https://rahulchandaphotography.com/services", { headers: { "Accept": "text/markdown" } });
+                return res.text();
+              },
+              signal: ac.signal
+            });
+            navigator.modelContext.registerTool({
+              name: "get_page_markdown",
+              description: "Get any page on rahulchandaphotography.com as clean markdown. Supported paths: /, /services, /gallery, /about, /contact, /faq, /blog, /blog/{slug}",
+              inputSchema: {
+                type: "object",
+                required: ["path"],
+                properties: {
+                  path: { type: "string", description: "Page path, e.g. /services or /blog/retouching-101" }
+                }
+              },
+              execute: async function(params) {
+                const safePath = (params.path || "/").replace(/[^a-zA-Z0-9/_-]/g, "");
+                const res = await fetch("https://rahulchandaphotography.com" + safePath, { headers: { "Accept": "text/markdown" } });
+                return res.text();
+              },
+              signal: ac.signal
+            });
+            window.addEventListener("beforeunload", function() { ac.abort(); });
+          })();
+        `}</Script>
       </body>
     </html>
   );
-}
+}
