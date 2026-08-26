@@ -22,7 +22,7 @@
     "client_secret_post"
   ],
   "agent_auth": {
-    "skill": "https://rahulchandaphotography.com/.well-known/agent-skills/index.json",
+    "skill": "https://rahulchandaphotography.com/auth.md",
     "register_uri": "https://rahulchandaphotography.com/agent/auth",
     "supported_methods": [
       "anonymous",

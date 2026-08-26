@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schemas.agentready.dev/ai-catalog/1.0.0/schema.json",
+  "name": "Rahul Chanda Photography",
+  "description": "Commercial and product photography portfolio, technical journal, and photoshoot booking services in Dehradun, India.",
+  "version": "1.0.0",
+  "homepage": "https://rahulchandaphotography.com",
+  "endpoints": {
+    "apiCatalog": "https://rahulchandaphotography.com/.well-known/api-catalog",
+    "agentCard": "https://rahulchandaphotography.com/.well-known/agent-card.json",
+    "mcpServerCard": "https://rahulchandaphotography.com/.well-known/mcp/server-card.json",
+    "skillsIndex": "https://rahulchandaphotography.com/.well-known/agent-skills/index.json",
+    "authMd": "https://rahulchandaphotography.com/auth.md",
+    "llms": "https://rahulchandaphotography.com/llms.txt",
+    "oauthProtectedResource": "https://rahulchandaphotography.com/.well-known/oauth-protected-resource",
+    "oauthAuthorizationServer": "https://rahulchandaphotography.com/.well-known/oauth-authorization-server"
+  },
+  "search": {
+    "portfolio": {
+      "url": "https://rahulchandaphotography.com/gallery",
+      "type": "text/html",
+      "markdownUrl": "https://rahulchandaphotography.com/gallery"
+    },
+    "services": {
+      "url": "https://rahulchandaphotography.com/services",
+      "type": "text/html"
+    }
+  }
+}
