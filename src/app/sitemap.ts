@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteConfig, absoluteUrl } from "../lib/site";
 
-// Publication date of every blog post, used for sitemap lastmod + BlogPosting schema.
+// Publication date of every active blog post, used for sitemap lastmod + BlogPosting schema.
 // Format: yyyy-mm-dd (newest first). MUST stay in sync with src/app/blog/[slug]/page.tsx postISO.
 export const blogPostsSEO: { slug: string; date: string }[] = [
   { slug: "ai-photoshop-retouching-techniques", date: "2026-08-15" },
@@ -10,7 +10,6 @@ export const blogPostsSEO: { slug: string; date: string }[] = [
   { slug: "why-beverage-splash-photography-is-hard", date: "2026-06-20" },
   { slug: "generative-ai-product-backgrounds", date: "2026-06-10" },
   { slug: "lighting-patterns-for-product-photography", date: "2026-05-27" },
-  { slug: "ai-retouching-workflow", date: "2026-05-14" },
   { slug: "footwear-photography-angles", date: "2026-04-28" },
   { slug: "ai-color-grading-scene-detection", date: "2026-04-15" },
   { slug: "beverage-photography-glass", date: "2026-03-24" },

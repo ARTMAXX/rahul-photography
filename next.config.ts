@@ -1,4 +1,4 @@
-﻿import type { NextConfig } from "next";
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   typescript: {
@@ -49,6 +49,11 @@ const nextConfig: NextConfig = {
       {
         source: "/blog/how-to-brief-a-photographer",
         destination: "/services",
+        permanent: true,
+      },
+      {
+        source: "/blog/ai-retouching-workflow",
+        destination: "/blog/ai-photoshop-retouching-techniques",
         permanent: true,
       },
       {
