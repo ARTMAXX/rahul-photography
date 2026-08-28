@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { Renderer, Camera, Transform, Texture, Program, Mesh } from "ogl";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -605,19 +606,11 @@ export default function CinematicCylinder() {
             >
               <h2 className="text-7xl font-[300] leading-[0.8] max-md:text-3xl">
                 {perspective.title}
-              </h2>
-              <p className="mt-2 text-2xl font-[300] opacity-50 max-md:text-base">
-                {perspective.description}
-              </p>
-              {index === perspectives.length - 1 && (
-                <a
-                  href="/gallery"
-                  className="pointer-events-auto mt-8 inline-block border border-white/30 bg-white/5 px-8 py-3 text-sm uppercase tracking-[0.25em] text-white/80 backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:text-white hover:border-white/50"
-                >
-                  View Gallery
-                </a>
-              )}
-            </div>
+               </h2>
+               <p className="mt-2 text-2xl font-[300] opacity-50 max-md:text-base">
+                 {perspective.description}
+               </p>
+             </div>
           ))}
         </div>
 
@@ -636,6 +629,28 @@ export default function CinematicCylinder() {
             </svg>
             <span className="text-m text-white/40">Scroll</span>
           </div>
+
+        {/* View Gallery CTA */}
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10">
+          <Link
+            href="/gallery"
+            className="group flex items-center gap-3 px-6 py-3 border border-white/20 rounded-full text-white/70 hover:text-white hover:border-white/50 transition-all duration-300 backdrop-blur-sm bg-white/5 hover:bg-white/10"
+            data-cursor="pointer"
+          >
+            <span className="text-xs uppercase tracking-[0.2em] font-medium">View Gallery</span>
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              className="transition-transform duration-300 group-hover:translate-x-1"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </Link>
+        </div>
 
         {/* Minimal loading veil */}
         {isLoading && (

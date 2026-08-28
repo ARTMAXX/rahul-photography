@@ -294,7 +294,7 @@ const localBusinessJsonLd = {
 
 const faqSchema = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
+  "@type": "QAPage",
   mainEntity: LOCAL_FAQ.map((item) => ({
     "@type": "Question",
     name: item.q,

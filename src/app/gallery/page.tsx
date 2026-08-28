@@ -1,289 +1,165 @@
 ﻿"use client";
 
-import { useState, useMemo, useCallback } from "react";
-import Image from "next/image";
+import { useState, useEffect } from "react";
+import { InView } from "@/components/ui/in-view";
 import { motion } from "framer-motion";
-import Script from "next/script";
-import Lightbox from "@/components/Lightbox";
-import { absoluteUrl } from "@/lib/site";
+import { CinematicFooter } from "@/components/ui/motion-footer";
 
-type Category =
-  | "All"
-  | "Product"
-  | "Food & Beverage"
-  | "Footwear"
-  | "Campaigns";
-
-interface GalleryItem {
-  src: string;
-  category: Exclude<Category, "All">;
-  ratio: string;
+interface GalleryImage {
+  id: number;
+  url: string;
   title: string;
-  brief: string;
-  outcome: string;
-  alt: string;
+  category: string;
 }
 
-const items: GalleryItem[] = [
-  // ──── PRODUCT ────
-  {
-    src: "/opt/best%20shots/Product%20image/product-watch-luxury.webp",
-    category: "Product",
-    ratio: "aspect-[4/5]",
-    title: "Luxury Watch — Campaign Hero",
-    brief: "Macro metallic detail for a premium timepiece launch.",
-    outcome: "Adopted as the campaign hero across paid media.",
-    alt: "Luxury watch macro detail shot with studio lighting by Rahul Chanda - commercial product photographer",
-  },
-  {
-    src: "/opt/best%20shots/Product%20image/product-headphone.webp",
-    category: "Product",
-    ratio: "aspect-square",
-    title: "AudioTech Headphones",
-    brief: "Flagship e-commerce hero for a premium audio brand.",
-    outcome: "Became the PDP hero image for the launch.",
-    alt: "Premium audio headphones product photography - high-end commercial packshot",
-  },
-  {
-    src: "/opt/best%20shots/Product%20image/product-serum.webp",
-    category: "Product",
-    ratio: "aspect-[4/5]",
-    title: "Bloom Skincare Serum",
-    brief: "Glass-and-liquid study for a D2C serum launch.",
-    outcome: "Used across launch email, ads and PDP.",
-    alt: "Skincare serum bottle product photography - glass and liquid macro detail",
-  },
-  {
-    src: "/opt/best%20shots/Product%20image/product-molton-brown.webp",
-    category: "Product",
-    ratio: "aspect-[3/4]",
-    title: "Molton Brown — Packaging",
-    brief: "Luxury body-care packaging, hero cutouts.",
-    outcome: "Consistent marketplace + D2C product pages.",
-    alt: "Luxury body care product packaging photography - premium e-commerce cutout",
-  },
-
-  // ──── FOOD & BEVERAGE ────
-  {
-    src: "/opt/best%20shots/Food%20photo/food-biriyani.webp",
-    category: "Food & Beverage",
-    ratio: "aspect-[4/5]",
-    title: "Biriyani — Menu Hero",
-    brief: "Texture-forward hero for a restaurant menu refresh.",
-    outcome: "Menu update that lifted the dish's orders.",
-    alt: "Biryani food photography with steaming rice texture detail - restaurant menu hero shot",
-  },
-  {
-    src: "/opt/best%20shots/Food%20photo/food-coffee.webp",
-    category: "Food & Beverage",
-    ratio: "aspect-square",
-    title: "Café Morning — Atmosphere",
-    brief: "Moody coffee setup for a Landour café's social presence.",
-    outcome: "Posted once, drove foot traffic for an entire season.",
-    alt: "Coffee shop morning photography - steaming beverage with morning light atmosphere",
-  },
-  {
-    src: "/opt/best%20shots/Food%20photo/food-sourdough.webp",
-    category: "Food & Beverage",
-    ratio: "aspect-[5/4]",
-    title: "Sourdough Cross-Section",
-    brief: "Artisanal bread detail for a bakery brand.",
-    outcome: "Featured on all packaging and marketing collateral.",
-    alt: "Artisanal sourdough bread cross-section photography - texture and crumb detail",
-  },
-
-  // ──── FOOTWEAR ────
-  {
-    src: "/opt/best%20shots/mens%20shoe/shoe-mens-white.webp",
-    category: "Footwear",
-    ratio: "aspect-square",
-    title: "White Sneaker — Clean Cutout",
-    brief: "Studio cutout on white for marketplace use.",
-    outcome: "Amazon/Flipkart-ready asset delivered same week.",
-    alt: "White sneaker shoe product photography - e-commerce clean white background cutout",
-  },
-  {
-    src: "/opt/best%20shots/footwear/shoe-heel-black.webp",
-    category: "Footwear",
-    ratio: "aspect-[3/4]",
-    title: "Black Heel — Fashion Detail",
-    brief: "Close-up for a luxury footwear lookbook.",
-    outcome: "Feature image for seasonal campaign.",
-    alt: "Black heel shoe luxury product photography - fashion footwear macro detail",
-  },
-
-  // ──── CAMPAIGNS ────
-  {
-    src: "/opt/best%20shots/campaigns/campaign-watch.webp",
-    category: "Campaigns",
-    ratio: "aspect-[16/9]",
-    title: "Timepiece Campaign — Hero",
-    brief: "Art-directed hero for a luxury watch brand launch.",
-    outcome: "Used across print, digital, and OOH.",
-    alt: "Luxury watch advertising campaign photography - premium brand hero image",
-  },
-  {
-    src: "/opt/best%20shots/campaigns/campaign-lifestyle.webp",
-    category: "Campaigns",
-    ratio: "aspect-[4/5]",
-    title: "Lifestyle Brand Campaign",
-    brief: "Lifestyle scene for an e-commerce brand identity.",
-    outcome: "Homepage hero and paid media primary visual.",
-    alt: "Lifestyle product campaign photography - brand advertising hero scene",
-  },
+const galleryImages: GalleryImage[] = [
+  { id: 1, url: "/opt/best shots/Product image/product-watch-luxury.webp", title: "Luxury Watch — Campaign Hero", category: "Product" },
+  { id: 2, url: "/opt/best shots/Product image/product-headphone.webp", title: "AudioTech Headphones", category: "Product" },
+  { id: 3, url: "/opt/best shots/Product image/product-serum.webp", title: "Bloom Skincare Serum", category: "Product" },
+  { id: 4, url: "/opt/best shots/Product image/product-molton-brown.webp", title: "Molton Brown — Packaging", category: "Product" },
+  { id: 5, url: "/opt/best shots/Product image/product-energy-shot.webp", title: "Energy Drink Splash", category: "Product" },
+  { id: 6, url: "/opt/best shots/Product image/product-bodywash.webp", title: "Body Wash Product", category: "Product" },
+  { id: 7, url: "/opt/best shots/Product image/energy-drink-design.webp", title: "Energy Drink Design", category: "Product" },
+  { id: 8, url: "/opt/best shots/Product image/product-hairspray.webp", title: "Hair Spray Product", category: "Product" },
+  { id: 9, url: "/opt/best shots/Product image/product-watch-dark.webp", title: "Dark Watch Detail", category: "Product" },
+  { id: 10, url: "/opt/best shots/Food photo/food-biriyani.webp", title: "Biriyani — Menu Hero", category: "Food" },
+  { id: 11, url: "/opt/best shots/Food photo/food-chicken.webp", title: "Crispy Chicken", category: "Food" },
+  { id: 12, url: "/opt/best shots/Food photo/food-curry.webp", title: "Traditional Curry", category: "Food" },
+  { id: 13, url: "/opt/best shots/Food photo/food-mutton.webp", title: "Mutton Special", category: "Food" },
+  { id: 14, url: "/opt/best shots/Food photo/food-buffet.webp", title: "Food Buffet", category: "Food" },
+  { id: 15, url: "/opt/best shots/Food photo/food-cream-macro.webp", title: "Cream Macro Detail", category: "Food" },
+  { id: 16, url: "/opt/best shots/Beverage images/bev-iced.webp", title: "Iced Beverage — Condensation", category: "Beverage" },
+  { id: 17, url: "/opt/best shots/Beverage images/bev-macro.webp", title: "Beverage Macro Detail", category: "Beverage" },
+  { id: 18, url: "/opt/best shots/Beverage images/bev-toast.webp", title: "Celebration Toast", category: "Beverage" },
+  { id: 19, url: "/opt/best shots/Beverage images/beverage-macro.webp", title: "Drink Detail Shot", category: "Beverage" },
+  { id: 20, url: "/opt/best shots/Beverage images/iced-drinks.webp", title: "Iced Drinks Lineup", category: "Beverage" },
+  { id: 21, url: "/opt/best shots/Beverage images/three-iced-drinks.webp", title: "Three Iced Beverages", category: "Beverage" },
+  { id: 22, url: "/opt/best shots/mens shoe/shoe-mens-white.webp", title: "White Sneaker — Clean Cutout", category: "Footwear" },
+  { id: 23, url: "/opt/best shots/mens shoe/shoe-mens-campaign.webp", title: "Sneaker Campaign Scene", category: "Footwear" },
+  { id: 24, url: "/opt/best shots/mens shoe/modern-athletic-sneaker.webp", title: "Modern Athletic Sneaker", category: "Footwear" },
+  { id: 25, url: "/opt/best shots/ladies shoe/High-end-shoe.webp", title: "High-End Ladies Shoe", category: "Footwear" },
+  { id: 26, url: "/opt/best shots/ladies shoe/shoe-ladies-heels.webp", title: "Ladies Heels", category: "Footwear" },
+  { id: 27, url: "/opt/best shots/ladies shoe/shoe-ladies-mule.webp", title: "Ladies Mule", category: "Footwear" },
+  { id: 28, url: "/opt/best shots/ADs/ad-culinary.webp", title: "Culinary Campaign", category: "Campaigns" },
+  { id: 29, url: "/opt/best shots/ADs/ad-popout.webp", title: "Pop-out Ad Design", category: "Campaigns" },
+  { id: 30, url: "/opt/best shots/new-images/new-product-bold.webp", title: "Bold Product Shot", category: "Campaigns" },
+  { id: 31, url: "/opt/best shots/new-images/new-product-blast.webp", title: "Dynamic Blast", category: "Campaigns" },
+  { id: 32, url: "/opt/best shots/new-images/new-juice-01.webp", title: "Fresh Juice Campaign", category: "Campaigns" },
 ];
 
-// ════════════════════════════════════════════════════════════════════
-// GALLERY PAGE SCHEMA (ImageGallery + CollectionPage)
-// ════════════════════════════════════════════════════════════════════
-const gallerySchema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": absoluteUrl("/"),
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Gallery",
-          "item": absoluteUrl("/gallery"),
-        },
-      ],
-    },
-    {
-      "@type": "CollectionPage",
-      "@id": absoluteUrl("/gallery"),
-      "name": "Commercial Photography Portfolio - Rahul Chanda",
-      "description":
-        "Gallery of commercial product, food & beverage, footwear, and campaign photography by Rahul Chanda. Professional high-end photography for brands worldwide.",
-      "image": items.slice(0, 4).map((item) => ({
-        "@type": "ImageObject",
-        "url": absoluteUrl(item.src),
-        "name": item.title,
-        "description": item.brief,
-      })),
-    },
-    {
-      "@type": "ImageGallery",
-      "@id": absoluteUrl("/gallery#gallery"),
-      "name": "Photography Portfolio",
-      "associatedMedia": items.map((item) => ({
-        "@type": "ImageObject",
-        "url": absoluteUrl(item.src),
-        "name": item.title,
-        "description": item.brief,
-        "encodingFormat": "image/webp",
-      })),
-    },
-  ],
-};
-
 export default function GalleryPage() {
-  const [activeCategory, setActiveCategory] = useState<Category>("All");
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [filter, setFilter] = useState<string>("All");
+  const [columns, setColumns] = useState(2);
+  const categories = ["All", ...new Set(galleryImages.map((img) => img.category))];
 
-  const filteredItems = useMemo(() => {
-    return activeCategory === "All"
-      ? items
-      : items.filter((item) => item.category === activeCategory);
-  }, [activeCategory]);
+  // Responsive column count
+  useEffect(() => {
+    const updateColumns = () => {
+      const w = window.innerWidth;
+      if (w >= 1024) setColumns(3);
+      else if (w >= 640) setColumns(2);
+      else setColumns(1);
+    };
+    updateColumns();
+    window.addEventListener("resize", updateColumns);
+    return () => window.removeEventListener("resize", updateColumns);
+  }, []);
 
-  const categories: Category[] = ["All", "Product", "Food & Beverage", "Footwear", "Campaigns"];
+  const filteredImages =
+    filter === "All"
+      ? galleryImages
+      : galleryImages.filter((img) => img.category === filter);
 
   return (
-    <main className="min-h-screen bg-black text-white">
-      <Script
-        id="gallery-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(gallerySchema) }}
-        strategy="afterInteractive"
-      />
-
-      {/* HERO SECTION */}
-      <section className="pt-32 md:pt-48 pb-20 px-4 md:px-8">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold leading-[0.9] tracking-[-0.03em] mb-6">
-            Commercial <span className="italic text-[#e83b2c]">Portfolio</span>
+    <main className="w-full bg-[#070707] text-[#f0f0f0]">
+      {/* Hero */}
+      <section className="relative w-full min-h-[50vh] flex flex-col justify-end px-4 md:px-12 pb-16 pt-36 overflow-hidden">
+        <div
+          className="absolute top-0 right-0 w-[800px] h-[800px] rounded-full opacity-15 blur-3xl pointer-events-none"
+          style={{
+            background: "radial-gradient(circle, rgba(232,59,44,0.5) 0%, transparent 70%)",
+          }}
+        />
+        <div className="relative z-10 max-w-[1600px] mx-auto w-full">
+          <h1 className="text-[clamp(3rem,10vw,7rem)] font-serif leading-[0.85] tracking-[-0.03em] text-white max-w-[16ch]">
+            Gallery
           </h1>
-          <p className="text-lg md:text-xl text-white/60 max-w-2xl">
-            A curated collection of commercial product, food & beverage, footwear, and campaign photography for brands across India and internationally.
+          <p className="text-lg md:text-xl text-white/50 max-w-[55ch] mt-6 leading-relaxed">
+            Six assignments, one throughline — the product comes first, and it has to look like the obvious choice.
           </p>
         </div>
       </section>
 
-      {/* CATEGORY FILTER */}
-      <section className="py-8 px-4 md:px-8 border-b border-white/10">
-        <div className="max-w-7xl mx-auto flex gap-4 flex-wrap">
+      {/* Filter buttons */}
+      <div className="px-4 md:px-12 mb-12">
+        <div className="flex flex-wrap gap-2 justify-center">
           {categories.map((category) => (
             <button
               key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`px-6 py-2 rounded-full transition-colors ${
-                activeCategory === category
-                  ? "bg-white text-black"
-                  : "bg-white/10 text-white hover:bg-white/20"
+              onClick={() => setFilter(category)}
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                filter === category
+                  ? "bg-[#e83b2c] text-white"
+                  : "bg-white/5 text-white/60 hover:bg-white/10 hover:text-white border border-white/10"
               }`}
-              aria-pressed={activeCategory === category}
             >
               {category}
             </button>
           ))}
         </div>
-      </section>
+      </div>
 
-      {/* GALLERY GRID */}
-      <section className="py-20 px-4 md:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            layout
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
-            {filteredItems.map((item, index) => (
+      {/* ─── MASONRY IMAGE GRID using 21st.dev InView component ─── */}
+      <div className="px-4 md:px-12 pb-24">
+        <InView
+          key={filter}
+          viewOptions={{ once: true, margin: "0px 0px -200px 0px" }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.08 },
+            },
+          }}
+        >
+          <div style={{ columnCount: columns, columnGap: "16px" }}>
+            {filteredImages.map((image, index) => (
               <motion.div
-                key={`${item.title}-${index}`}
-                layout
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className={`group cursor-pointer overflow-hidden rounded-lg ${item.ratio}`}
-                onClick={() => setSelectedIndex(index)}
+                key={image.id}
+                variants={{
+                  hidden: { opacity: 0, scale: 0.85, filter: "blur(8px)" },
+                  visible: { opacity: 1, scale: 1, filter: "blur(0px)" },
+                }}
+                transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+                style={{ breakInside: "avoid", marginBottom: "16px" }}
+                className="group relative overflow-hidden rounded-lg cursor-pointer"
               >
-                <div className="relative w-full h-full bg-white/5">
-                  <Image
-                    src={item.src}
-                    alt={item.alt}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-end p-6">
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <p className="text-sm text-white/60 mb-2">{item.category}</p>
-                      <h3 className="text-lg font-serif text-white">{item.title}</h3>
-                    </div>
-                  </div>
+                <img
+                  src={image.url}
+                  alt={image.title}
+                  loading="lazy"
+                  className="w-full h-auto block rounded-lg transition-transform duration-500 group-hover:scale-[1.04]"
+                />
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-end p-4 rounded-lg">
+                  <h3 className="text-white font-medium text-sm mb-2 text-center drop-shadow-md">{image.title}</h3>
+                  <span className="inline-block px-3 py-1 bg-[#e83b2c] text-white text-[10px] uppercase tracking-wider rounded-full">
+                    {image.category}
+                  </span>
                 </div>
               </motion.div>
             ))}
-          </motion.div>
-        </div>
-      </section>
+          </div>
+        </InView>
+      </div>
 
-      {/* LIGHTBOX */}
-      {selectedIndex !== null && (
-        <Lightbox
-          items={filteredItems}
-          startIndex={selectedIndex}
-          onClose={() => setSelectedIndex(null)}
-        />
+      {filteredImages.length === 0 && (
+        <div className="text-center py-20">
+          <p className="text-white/40 text-sm">No images found in this category</p>
+        </div>
       )}
+
+      <CinematicFooter />
     </main>
   );
 }

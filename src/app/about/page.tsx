@@ -160,6 +160,113 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Story & Background */}
+      <section className="relative w-full px-4 md:px-12 py-16 md:py-24 border-t border-white/5">
+        <div className="max-w-[1600px] mx-auto">
+          <h2 className="text-[clamp(2rem,5vw,4rem)] font-serif leading-[0.9] tracking-[-0.03em] text-white max-w-[20ch] mb-12">
+            The <span className="italic text-[#e83b2c]">journey</span>.
+          </h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+            <div className="space-y-6 text-lg text-white/60 leading-relaxed max-w-[60ch]">
+              <p>
+                I picked up a camera professionally in 2019 after years of studying light,
+                colour science, and the way commercial imagery shapes consumer behaviour.
+                What started as a fascination with product textures and beverage splash
+                physics turned into a full-time studio practice serving brands across
+                India.
+              </p>
+              <p>
+                Today, I shoot product packshots, food and beverage imagery, footwear
+                campaigns, and brand advertising from my studio in Dehradun, Uttarakhand.
+                Every assignment — whether it&apos;s a single hero shot for a D2C startup
+                or a 200-SKU catalogue for an established brand — gets the same
+                engineering-first approach: calibrated lighting, calibrated colour, and
+                retouching that preserves material truth while making the product look
+                like the obvious choice.
+              </p>
+              <p>
+                I&apos;ve worked with brands in cosmetics, watches, packaged food, spirits,
+                sneakers, and fashion. The common thread is always the same: the product
+                has to look worth choosing, and the image has to be technically bulletproof
+                enough to work at any scale — from a 400×400 e-commerce thumbnail to a
+                12-foot retail banner.
+              </p>
+            </div>
+            <div className="space-y-6 text-lg text-white/60 leading-relaxed max-w-[60ch]">
+              <p>
+                My studio infrastructure is built for precision. I use Calibrite
+                ColorChecker targets on every scene, shoot tethered into Capture One
+                for real-time feedback, and deliver in multiple formats — uncompressed
+                TIFFs for print, colour-managed WebP/AVIF for web, and structured SKU
+                naming so your marketing team can ingest assets immediately.
+              </p>
+              <p>
+                Post-production happens entirely in-house. Frequency separation for
+                fashion and cosmetics, dodge-and-burn sculpting for product dimensionality,
+                and AI-accelerated cleanup for high-volume catalogue work. No outsourcing,
+                no quality surprises.
+              </p>
+              <p>
+                When I&apos;m not behind the camera, I&apos;m writing about lighting
+                techniques, colour science, and post-production workflows on this blog —
+                sharing the exact processes that make commercial imagery work. If you&apos;re
+                a fellow photographer or a brand looking to understand the craft, those
+                guides are a good place to start.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Equipment & Specialties */}
+      <section className="relative w-full px-4 md:px-12 py-16 md:py-24 border-t border-white/5">
+        <div className="max-w-[1600px] mx-auto">
+          <h2 className="text-[clamp(2rem,5vw,4rem)] font-serif leading-[0.9] tracking-[-0.03em] text-white max-w-[20ch] mb-12">
+            What I <span className="italic text-[#e83b2c]">use</span>.
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Camera & Lenses",
+                items: ["Full-frame mirrorless system", "Macro lenses for extreme close-ups", "Tilt-shift for architectural control"],
+              },
+              {
+                title: "Lighting",
+                items: ["High-speed flash sync for liquid freeze", "Colour-calibrated studio strobes", "Translucent backlighting rigs"],
+              },
+              {
+                title: "Colour Management",
+                items: ["Calibrite ColorChecker Passport", "Hardware-calibrated monitors", "ICC profile-accurate soft proofing"],
+              },
+              {
+                title: "Post-Production",
+                items: ["Capture One tethered shooting", "Photoshop frequency separation", "DaVinci Resolve for video colour"],
+              },
+              {
+                title: "Delivery Formats",
+                items: ["16-bit ProPhoto RGB masters", "sRGB WebP/AVIF for web", "CMYK for print production"],
+              },
+              {
+                title: "Specialities",
+                items: ["Beverage splash & liquid freeze", "E-commerce packshots at scale", "Food styling & menu photography"],
+              },
+            ].map((group) => (
+              <div key={group.title} className="border-t border-white/10 pt-6">
+                <h3 className="text-xl font-serif text-white mb-4">{group.title}</h3>
+                <ul className="space-y-2">
+                  {group.items.map((item) => (
+                    <li key={item} className="text-white/50 text-sm flex items-start gap-2">
+                      <span className="text-[#e83b2c] mt-1.5 text-[8px]">✦</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Stats */}
       <section className="relative w-full px-4 md:px-12 py-16 md:py-24">
         <div className="max-w-[1600px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-10 border-y border-white/10 py-12">

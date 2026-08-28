@@ -4,6 +4,13 @@ import { siteConfig, absoluteUrl } from "../lib/site";
 // Publication date of every active blog post, used for sitemap lastmod + BlogPosting schema.
 // Format: yyyy-mm-dd (newest first). MUST stay in sync with src/app/blog/[slug]/page.tsx postISO.
 export const blogPostsSEO: { slug: string; date: string }[] = [
+  // Standalone blog posts (own page.tsx files)
+  { slug: "food-photography-restaurants", date: "2026-08-30" },
+  { slug: "product-photography-small-business-india", date: "2026-08-28" },
+  { slug: "product-photography-lighting-setup", date: "2026-08-25" },
+  { slug: "how-to-photograph-products-ecommerce", date: "2026-08-22" },
+  { slug: "beverage-photography-glass-splash", date: "2026-08-20" },
+  // Dynamic [slug] blog posts
   { slug: "ai-photoshop-retouching-techniques", date: "2026-08-15" },
   { slug: "ai-commercial-product-photography", date: "2026-08-05" },
   { slug: "ai-video-editing-tools-2026", date: "2026-07-22" },
@@ -16,6 +23,14 @@ export const blogPostsSEO: { slug: string; date: string }[] = [
   { slug: "ai-upscaling-ecommerce", date: "2026-03-10" },
   { slug: "color-science-ecommerce", date: "2026-03-08" },
   { slug: "retouching-101", date: "2026-02-06" },
+];
+
+// Service sub-pages
+const servicePages = [
+  { path: "/services/product-photography", priority: 0.8, freq: "monthly" as const },
+  { path: "/services/food-beverage-photography", priority: 0.8, freq: "monthly" as const },
+  { path: "/services/footwear-fashion-photography", priority: 0.8, freq: "monthly" as const },
+  { path: "/services/commercial-campaigns", priority: 0.8, freq: "monthly" as const },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -32,7 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/privacy", priority: 0.2, freq: "yearly" as const },
   ];
 
-  const pages: MetadataRoute.Sitemap = core.map((p) => ({
+  const pages: MetadataRoute.Sitemap = [...core, ...servicePages].map((p) => ({
     url: absoluteUrl(p.path),
     lastModified: new Date(),
     changeFrequency: p.freq,

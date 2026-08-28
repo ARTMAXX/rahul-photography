@@ -37,59 +37,78 @@ const servicesSchema = {
         },
       ],
     },
+    // QAPage schemas (Google deprecated FAQPage rich results May 2026)
     {
-      "@type": "FAQPage",
-      "@id": absoluteUrl("/services#faq"),
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is the typical turnaround time?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Standard delivery is 5–10 business days after the shoot. Rush delivery (24–48 hours) is available on request for an additional fee.",
-          },
+      "@type": "QAPage",
+      "@id": absoluteUrl("/services#q-turnaround"),
+      "mainEntity": {
+        "@type": "Question",
+        "name": "What is the typical turnaround time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard delivery is 5–10 business days after the shoot. Rush delivery (24–48 hours) is available on request for an additional fee.",
         },
-        {
-          "@type": "Question",
-          "name": "How many images are included per project?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "It depends on the scope agreed in the project brief — Product Photography includes 20–50 edited high-res images and Food & Beverage includes 15–30 hero shots. The exact count is defined before the shoot begins.",
-          },
+      },
+    },
+    {
+      "@type": "QAPage",
+      "@id": absoluteUrl("/services#q-images"),
+      "mainEntity": {
+        "@type": "Question",
+        "name": "How many images are included per project?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on the scope agreed in the project brief — Product Photography includes 20–50 edited high-res images and Food & Beverage includes 15–30 hero shots. The exact count is defined before the shoot begins.",
         },
-        {
-          "@type": "Question",
-          "name": "What are the payment terms?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A 50% booking deposit secures your date. The remaining balance is due before final image delivery. Payments can be made via bank transfer or UPI.",
-          },
+      },
+    },
+    {
+      "@type": "QAPage",
+      "@id": absoluteUrl("/services#q-payment"),
+      "mainEntity": {
+        "@type": "Question",
+        "name": "What are the payment terms?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A 50% booking deposit secures your date. The remaining balance is due before final image delivery. Payments can be made via bank transfer or UPI.",
         },
-        {
-          "@type": "Question",
-          "name": "How long are quotes valid for?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Written quotes are valid for 14 days from the date of issue. Final pricing is confirmed in writing before any shoot begins.",
-          },
+      },
+    },
+    {
+      "@type": "QAPage",
+      "@id": absoluteUrl("/services#q-quotes"),
+      "mainEntity": {
+        "@type": "Question",
+        "name": "How long are quotes valid for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Written quotes are valid for 14 days from the date of issue. Final pricing is confirmed in writing before any shoot begins.",
         },
-        {
-          "@type": "Question",
-          "name": "What happens if I need to cancel a booked shoot?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Deposits are non-refundable for cancellations made within 7 days of the scheduled shoot date — that production time is reserved exclusively for you.",
-          },
+      },
+    },
+    {
+      "@type": "QAPage",
+      "@id": absoluteUrl("/services#q-cancel"),
+      "mainEntity": {
+        "@type": "Question",
+        "name": "What happens if I need to cancel a booked shoot?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Deposits are non-refundable for cancellations made within 7 days of the scheduled shoot date — that production time is reserved exclusively for you.",
         },
-        {
-          "@type": "Question",
-          "name": "Can I request revisions?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Two rounds of revisions are included with every project. Additional revision rounds can be arranged if needed.",
-          },
+      },
+    },
+    {
+      "@type": "QAPage",
+      "@id": absoluteUrl("/services#q-revisions"),
+      "mainEntity": {
+        "@type": "Question",
+        "name": "Can I request revisions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Two rounds of revisions are included with every project. Additional revision rounds can be arranged if needed.",
         },
-      ],
+      },
     },
   ],
 };

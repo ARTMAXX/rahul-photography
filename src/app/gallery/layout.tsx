@@ -1,16 +1,31 @@
 import type { Metadata } from "next";
-import { absoluteUrl, siteConfig } from "@/lib/site";
+import { absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Photography Portfolio — Commercial Photographer in Dehradun",
+  title: "Photography Gallery — Product, Food, Beverage & Footwear | Rahul Chanda",
   description:
-    "Browse commercial photography work by Rahul Chanda — product, food & beverage, splash, footwear, and campaign imagery shot on location in Dehradun and across India.",
+    "Browse Rahul Chanda's commercial photography gallery — product packshots, beverage splash, food styling, footwear campaigns, and brand advertising from Dehradun, India.",
   alternates: { canonical: "/gallery" },
   openGraph: {
-    title: "Commercial Photography Portfolio — Dehradun, India",
+    title: "Photography Gallery — Rahul Chanda Photography",
     description:
-      "Commercial photography portfolio — product, food & beverage, footwear, and campaign imagery by Rahul Chanda.",
+      "Commercial photography portfolio: product, food, beverage, footwear, and campaign imagery shot in Dehradun, India.",
     url: absoluteUrl("/gallery"),
+    images: [
+      {
+        url: absoluteUrl("/opt/og-image.jpg"),
+        width: 1200,
+        height: 630,
+        alt: "Rahul Chanda — Commercial Photography Gallery",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Photography Gallery — Rahul Chanda Photography",
+    description:
+      "Commercial photography portfolio: product, food, beverage, footwear, and campaign imagery.",
+    images: [absoluteUrl("/opt/og-image.jpg")],
   },
 };
 
@@ -19,47 +34,37 @@ const gallerySchema = {
   "@graph": [
     {
       "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": absoluteUrl("/"),
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Portfolio Gallery",
-          "item": absoluteUrl("/gallery"),
-        },
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: absoluteUrl("/") },
+        { "@type": "ListItem", position: 2, name: "Gallery", item: absoluteUrl("/gallery") },
       ],
     },
     {
       "@type": "ImageGallery",
-      "@id": absoluteUrl("/gallery#gallery"),
-      "name": "Rahul Chanda Commercial Photography Portfolio",
-      "description":
-        "Curated commercial photography portfolio — product, food & beverage, splash, and footwear imagery.",
-      "url": absoluteUrl("/gallery"),
-      "author": {
+      name: "Rahul Chanda — Commercial Photography Gallery",
+      description:
+        "Portfolio of commercial product, food, beverage, footwear, and campaign photography by Rahul Chanda, Dehradun, India.",
+      url: absoluteUrl("/gallery"),
+      creator: {
         "@type": "Person",
-        "name": "Rahul Chanda",
-        "url": absoluteUrl("/"),
+        name: "Rahul Chanda",
+        url: absoluteUrl("/about"),
       },
-      "about": {
-        "@type": "ProfessionalService",
-        "name": siteConfig.name,
-        "url": absoluteUrl("/"),
+      about: {
+        "@type": ["ProfessionalService", "LocalBusiness"],
+        "@id": absoluteUrl("/#business"),
       },
+      image: [
+        absoluteUrl("/opt/best shots/Product image/product-watch-luxury.webp"),
+        absoluteUrl("/opt/best shots/Food photo/food-biriyani.webp"),
+        absoluteUrl("/opt/best shots/Beverage images/bev-iced.webp"),
+        absoluteUrl("/opt/best shots/mens shoe/shoe-mens-white.webp"),
+      ],
     },
   ],
 };
 
-export default function GalleryLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function GalleryLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <script

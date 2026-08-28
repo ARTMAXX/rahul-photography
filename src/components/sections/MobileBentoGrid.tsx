@@ -2,6 +2,7 @@
 
 import { useRef, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -157,12 +158,13 @@ export default function MobileBentoGrid() {
 
       {/* Gallery CTA */}
       <div ref={ctaRef} className="mt-10 text-center">
-        <a
+        <Link
           href="/gallery"
           className="inline-block border border-white/20 bg-white/5 px-8 py-3 text-xs uppercase tracking-[0.25em] text-white/70 transition-all duration-300 hover:bg-white/10 hover:text-white hover:border-white/40 active:scale-95"
+          data-cursor="pointer"
         >
           View Full Gallery
-        </a>
+        </Link>
       </div>
     </section>
   );

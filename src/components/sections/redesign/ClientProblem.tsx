@@ -23,7 +23,6 @@ export default function ClientProblem() {
 
       {/* Hairlines */}
       <div className="absolute left-6 md:left-12 top-0 h-px w-[calc(100%-3rem)] md:w-[calc(100%-6rem)] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      <div className="absolute left-6 md:left-12 bottom-0 h-px w-[calc(100%-3rem)] md:w-[calc(100%-6rem)] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       <div className="relative z-10 max-w-[1500px] mx-auto text-center">
         <motion.div

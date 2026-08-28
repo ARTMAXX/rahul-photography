@@ -20,7 +20,7 @@ const securityHeaders = [
       "img-src 'self' data: blob: https://rahulchandaphotography.com https://*.rahulchandaphotography.com https://www.google-analytics.com",
       "font-src 'self' https://fonts.gstatic.com",
       "connect-src 'self' https://analytics.ahrefs.com https://www.google-analytics.com https://vitals.vercel-insights.com",
-      "media-src 'self' https://rahulchandaphotography.com",
+      "media-src 'self' https://rahulchandaphotography.com https://d8j0ntlcm91z4.cloudfront.net",
       "frame-ancestors 'none'",
       "base-uri 'self'",
       "form-action 'self'",
@@ -46,13 +46,14 @@ const nextConfig: NextConfig = {
           { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
         ],
       },
-      {
-        // Cache Next.js static files
-        source: "/_next/static/(.*)",
-        headers: [
-          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
-        ],
-      },
+      // NOTE: Removed aggressive caching for /_next/static/ to prevent Turbopack
+      // module resolution issues in development. Next.js handles this internally.
+      // {
+      //   source: "/_next/static/(.*)",
+      //   headers: [
+      //     { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+      //   ],
+      // },
       {
         // Cache fonts
         source: "/(.*)\\.(woff|woff2|ttf|otf|eot)",

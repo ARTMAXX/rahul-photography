@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import Hero from "@/components/sections/Hero";
-import WorkProof from "@/components/sections/redesign/WorkProof";
 import ClientProblem from "@/components/sections/redesign/ClientProblem";
 import CaseStudies from "@/components/sections/redesign/CaseStudies";
 import TheCraft from "@/components/sections/redesign/TheCraft";
@@ -220,12 +219,11 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema) }}
       />
       <Hero />
-      <WorkProof />
       <DesignInMotion />
       <ClientProblem />
+      <SelectedWorkParallax />
       <ServicesShowcase />
       <CaseStudies />
-      <SelectedWorkParallax />
       <TheCraft />
       <Testimonials />
       <About />
