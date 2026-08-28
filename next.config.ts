@@ -1,29 +1,74 @@
 import type { NextConfig } from "next";
 
+const securityHeaders = [
+  { key: "X-Content-Type-Options", value: "nosniff" },
+  { key: "X-Frame-Options", value: "DENY" },
+  { key: "X-XSS-Protection", value: "1; mode=block" },
+  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+  { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), interest-cohort=()" },
+  { key: "X-DNS-Prefetch-Control", value: "on" },
+  {
+    key: "Strict-Transport-Security",
+    value: "max-age=63072000; includeSubDomains; preload",
+  },
+  {
+    key: "Content-Security-Policy",
+    value: [
+      "default-src 'self'",
+      "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://analytics.ahrefs.com https://www.googletagmanager.com https://www.google-analytics.com https://vercel.live",
+      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+      "img-src 'self' data: blob: https://rahulchandaphotography.com https://*.rahulchandaphotography.com https://www.google-analytics.com",
+      "font-src 'self' https://fonts.gstatic.com",
+      "connect-src 'self' https://analytics.ahrefs.com https://www.google-analytics.com https://vitals.vercel-insights.com",
+      "media-src 'self' https://rahulchandaphotography.com",
+      "frame-ancestors 'none'",
+      "base-uri 'self'",
+      "form-action 'self'",
+    ].join("; "),
+  },
+];
+
 const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  // SECURITY HEADERS (HSTS / nosniff / referrer-policy):
-  // Next 16's Turbopack build does not compile next.config headers() into the
-  // output (verified Aug 2026 — redirects() compile, headers() do not).
-  // These must be enabled at the Cloudflare edge instead:
-  //   Dashboard → SSL/TLS → Edge Certificates → Enable HSTS
-  //   (max-age 6 months+, includeSubDomains; add preload only later)
-  // Optional hardening via a Response Header Transform Rule:
-  //   X-Content-Type-Options: nosniff / Referrer-Policy: strict-origin-when-cross-origin
-  //
-  // HOST CANONICALIZATION (SEO fix Aug 2026): Moved to Cloudflare Dashboard
-  // Redirect Rules because @opennextjs/cloudflare does NOT support `has`
-  // conditions in next.config.ts redirects — the `:path*` param is never
-  // interpolated, producing broken Location headers like "/:path*".
-  //   CF Dashboard → Rules → Redirect Rules:
-  //     Rule 1: www.rahulchandaphotography.com/* → https://rahulchandaphotography.com/$1 (301)
-  //     Rule 2: http://rahulchandaphotography.com/* → https://rahulchandaphotography.com/$1 (301)
-  // 301 redirects for blog slugs removed from the sitemap (2026-08-15).
-  // Google had already queued these from the old sitemap — redirecting to the
-  // closest live page kills the 404s, preserves link equity, and keeps crawl
-  // budget clean instead of burning it on "resource not found".
+  // SECURITY HEADERS — now handled directly in Next.js config
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: securityHeaders,
+      },
+      {
+        // Cache static assets for 1 year
+        source: "/opt/(.*)",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+        ],
+      },
+      {
+        // Cache Next.js static files
+        source: "/_next/static/(.*)",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+        ],
+      },
+      {
+        // Cache fonts
+        source: "/(.*)\\.(woff|woff2|ttf|otf|eot)",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+        ],
+      },
+      {
+        // Cache images
+        source: "/(.*)\\.(jpg|jpeg|png|gif|ico|svg|webp|avif)",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
+        ],
+      },
+    ];
+  },
   async redirects() {
     return [
       {

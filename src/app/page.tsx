@@ -1,20 +1,23 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import Hero from "@/components/sections/Hero";
-import About from "@/components/sections/About";
-import DesignInMotion from "@/components/sections/DesignInMotion";
 import WorkProof from "@/components/sections/redesign/WorkProof";
 import ClientProblem from "@/components/sections/redesign/ClientProblem";
-import ServicesShowcase from "@/components/sections/redesign/ServicesShowcase";
 import CaseStudies from "@/components/sections/redesign/CaseStudies";
 import TheCraft from "@/components/sections/redesign/TheCraft";
 import Testimonials from "@/components/sections/redesign/Testimonials";
-import FAQSection from "@/components/sections/redesign/FAQSection";
 import CinematicCTA from "@/components/sections/redesign/CinematicCTA";
-import ContactForm from "@/components/sections/redesign/ContactForm";
-import { SelectedWorkParallax } from "@/components/ui/selected-work-parallax";
-import { CinematicFooter } from "@/components/ui/motion-footer";
 import { siteConfig, absoluteUrl } from "@/lib/site";
+
+// Dynamic imports for below-the-fold heavy components (reduces initial JS bundle)
+const About = dynamic(() => import("@/components/sections/About"), { ssr: true });
+const DesignInMotion = dynamic(() => import("@/components/sections/DesignInMotion"), { ssr: true });
+const ServicesShowcase = dynamic(() => import("@/components/sections/redesign/ServicesShowcase"), { ssr: true });
+const FAQSection = dynamic(() => import("@/components/sections/redesign/FAQSection"), { ssr: true });
+const ContactForm = dynamic(() => import("@/components/sections/redesign/ContactForm"), { ssr: true });
+const SelectedWorkParallax = dynamic(() => import("@/components/ui/selected-work-parallax").then(m => ({ default: m.SelectedWorkParallax })), { ssr: true });
+const CinematicFooter = dynamic(() => import("@/components/ui/motion-footer").then(m => ({ default: m.CinematicFooter })), { ssr: true });
 
 export const metadata: Metadata = {
   title: "Rahul Chanda — Commercial & Product Photographer in Dehradun, India",
