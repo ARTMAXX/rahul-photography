@@ -120,7 +120,7 @@ const nextConfig: NextConfig = {
     // Maximum quality - no compression
     formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 31536000,
-    unoptimized: false,
+    unoptimized: true,
     // Quality ladder actually requested by components (Next 16 rejects
     // any quality not listed here with a 400 on /_next/image).
     qualities: [70, 72, 74, 75, 76, 78, 80],
