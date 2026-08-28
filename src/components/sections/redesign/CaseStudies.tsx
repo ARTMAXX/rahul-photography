@@ -79,14 +79,14 @@ export default function CaseStudies() {
             >
               {/* Image */}
               <div className="md:col-span-7 group relative overflow-hidden rounded-2xl bg-white/[0.03] aspect-[4/3] md:aspect-[16/11]">
-                <Image
-                  src={study.src}
-                  alt={study.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 58vw"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
-                  loading={i === 0 ? "eager" : "lazy"}
-                />
+               <Image
+                   src={study.src}
+                   alt={`${study.title} - ${study.category} photography by Rahul Chanda`}
+                   fill
+                   sizes="(max-width: 768px) 100vw, 58vw"
+                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+                   loading={i === 0 ? "eager" : "lazy"}
+                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 flex items-center gap-2">
                   <span className="text-[10px] uppercase tracking-[0.25em] text-white/80 bg-black/40 backdrop-blur px-3 py-1.5 rounded-full border border-white/15" style={{ fontFamily: "Outfit, system-ui" }}>

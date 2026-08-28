@@ -9,6 +9,12 @@ import TheCraft from "@/components/sections/redesign/TheCraft";
 import Testimonials from "@/components/sections/redesign/Testimonials";
 import CinematicCTA from "@/components/sections/redesign/CinematicCTA";
 import { siteConfig, absoluteUrl } from "@/lib/site";
+import { 
+  generateBreadcrumbSchema, 
+  generateQAPageSchema,
+  generateReviewSchema,
+  generateWebsiteGraphSchema 
+} from "@/lib/schemas";
 
 // Dynamic imports for below-the-fold heavy components (reduces initial JS bundle)
 const About = dynamic(() => import("@/components/sections/About"), { ssr: true });
@@ -40,6 +46,43 @@ export const metadata: Metadata = {
     ],
   },
 };
+
+// FAQ data for QAPage schema
+const faqs = [
+  {
+    q: "What is the typical turnaround time?",
+    a: "Standard delivery is 5–10 business days after the shoot. Rush delivery (24–48 hours) is available on request for an additional fee.",
+  },
+  {
+    q: "How many images are included per project?",
+    a: "It depends on the scope agreed in the project brief — Product Photography includes 20–50 edited high-res images and Food & Beverage includes 15–30 hero shots. The exact count is defined before the shoot begins.",
+  },
+  {
+    q: "What are the payment terms?",
+    a: "A 50% booking deposit secures your date. The remaining balance is due before final image delivery. Payments can be made via bank transfer or UPI.",
+  },
+  {
+    q: "How long are quotes valid for?",
+    a: "Written quotes are valid for 14 days from the date of issue. Final pricing is confirmed in writing before any shoot begins.",
+  },
+  {
+    q: "What happens if I need to cancel a booked shoot?",
+    a: "Deposits are non-refundable for cancellations made within 7 days of the scheduled shoot date — that production time is reserved exclusively for you.",
+  },
+  {
+    q: "Can I request revisions?",
+    a: "Two rounds of revisions are included with every project. Additional revision rounds can be arranged if needed.",
+  },
+  {
+    q: "Do you work with small businesses or only large brands?",
+    a: "I work with brands of all sizes — from early-stage startups to established companies. Every project gets the same attention to craft and detail.",
+  },
+];
+
+// Homepage breadcrumb schema
+const breadcrumbs = [
+  { label: "Home", url: absoluteUrl("/") },
+];
 
 const homeSchema = {
   "@context": "https://schema.org",
@@ -164,6 +207,8 @@ const homeSchema = {
         ],
       },
     },
+    generateBreadcrumbSchema(breadcrumbs),
+    generateQAPageSchema(faqs),
   ],
 };
 

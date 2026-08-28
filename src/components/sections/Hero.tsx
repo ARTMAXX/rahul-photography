@@ -108,9 +108,9 @@ w-full overflow-hidden">
         <span className="w-px h-24 bg-gradient-to-b from-white/60 to-transparent" />
       </div>
 
-      {/* Massive Text (Bottom) — Primary H1 with Breathing Effect */}
-      <h1 className="absolute bottom-24 md:bottom-20 left-0 w-full z-10 flex justify-center items-baseline gap-2 md:gap-4 mix-blend-difference px-4 md:px-8 select-none whitespace-nowrap">
-        <span ref={leftTextRef} className="text-[12vw] md:text-[13vw] font-serif leading-[0.8] tracking-tighter text-[#F4EFE7] inline-flex">
+      {/* Massive Text (Bottom) — SEMANTIC FIX: Use strong instead of duplicate H1 */}
+      <div className="absolute bottom-24 md:bottom-20 left-0 w-full z-10 flex justify-center items-baseline gap-2 md:gap-4 mix-blend-difference px-4 md:px-8 select-none whitespace-nowrap">
+        <strong ref={leftTextRef} className="text-[12vw] md:text-[13vw] font-serif leading-[0.8] tracking-tighter text-[#F4EFE7] inline-flex">
           {isMobile ? (
             <span>Rahul</span>
           ) : (
@@ -124,8 +124,8 @@ w-full overflow-hidden">
               repeatDelay={0.3}
             />
           )}
-        </span>
-        <span ref={rightTextRef} className="text-[12vw] md:text-[13vw] font-serif italic leading-[0.8] tracking-tighter text-neutral-300 inline-flex">
+        </strong>
+        <strong ref={rightTextRef} className="text-[12vw] md:text-[13vw] font-serif italic leading-[0.8] tracking-tighter text-neutral-300 inline-flex">
           {isMobile ? (
             <span>Chanda</span>
           ) : (
@@ -139,8 +139,8 @@ w-full overflow-hidden">
               repeatDelay={0.3}
             />
           )}
-        </span>
-      </h1>
+        </strong>
+      </div>
 
       {/* Bottom Nav / Lines */}
       <div className="absolute bottom-0 w-full z-20 flex justify-between items-end px-4 md:px-8 pb-4 md:pb-6 border-b border-white/20 mix-blend-difference text-white">
@@ -171,10 +171,10 @@ w-full overflow-hidden">
         {isMobile ? (
           <Image
             src="/opt/hero-mobile.webp"
-            alt="Dramatic studio product photograph by Rahul Chanda — commercial product photographer in Dehradun"
+            alt="Dramatic luxury watch product photograph with metallic studio lighting by Rahul Chanda — premium commercial product photographer in Dehradun, India"
             fill
             priority
-            quality={80}
+            quality={85}
             sizes="100vw"
             className="object-cover opacity-80"
           />
@@ -184,7 +184,7 @@ w-full overflow-hidden">
             poster="/opt/main hero shots/hero-video-poster.webp"
             className="w-full h-full object-cover opacity-70"
             preload="auto"
-            alt="Cinematic showreel of Rahul Chanda's commercial product photography"
+            alt="Cinematic showreel of Rahul Chanda's commercial product photography - luxury watches, food & beverage, footwear, and advertising campaigns"
           />
         )}
 
