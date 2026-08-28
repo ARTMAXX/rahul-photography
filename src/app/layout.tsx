@@ -85,7 +85,7 @@ export default function RootLayout({
         {/* Preload hero poster for LCP optimization */}
         <link
           rel="preload"
-          href="/opt/main hero shots/hero-video-poster.webp"
+          href="/opt/hero-shots/hero-video-poster.webp"
           as="image"
           fetchPriority="high"
         />

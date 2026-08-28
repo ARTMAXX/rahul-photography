@@ -18,103 +18,72 @@ export interface CollectionItem {
 
 export type CollectionSurferVariant = "magnetic" | "uplift" | "simple";
 
-// Default items for the component in case none are provided
+// Default items — Rahul Chanda's actual photography work (replaced Unsplash stock)
 const ITEMS: CollectionItem[] = [
   {
     id: 1,
-    image:
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80",
-    title: "HERITAGE 01",
+    image: "/opt/best shots/Product image/product-watch-luxury.webp",
+    title: "PRODUCT 01",
   },
   {
     id: 2,
-    image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=80",
-    title: "HERITAGE 02",
+    image: "/opt/best shots/Product image/product-headphone.webp",
+    title: "PRODUCT 02",
   },
   {
     id: 3,
-    image:
-      "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80",
-    title: "HERITAGE 03",
+    image: "/opt/best shots/Product image/product-serum.webp",
+    title: "PRODUCT 03",
   },
   {
     id: 4,
-    image:
-      "https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?w=800&q=80",
-    title: "HERITAGE 04",
+    image: "/opt/best shots/Product image/product-molton-brown.webp",
+    title: "PRODUCT 04",
   },
   {
     id: 5,
-    image:
-      "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=800&q=80",
-    title: "HERITAGE 05",
+    image: "/opt/best shots/Product image/product-bodywash.webp",
+    title: "PRODUCT 05",
   },
   {
     id: 6,
-    image:
-      "https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?w=800&q=80",
-    title: "HERITAGE 06",
+    image: "/opt/best shots/Food photo/food-biriyani.webp",
+    title: "FOOD 01",
   },
   {
     id: 7,
-    image:
-      "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=800&q=80",
-    title: "HERITAGE 07",
+    image: "/opt/best shots/Food photo/food-chicken.webp",
+    title: "FOOD 02",
   },
   {
     id: 8,
-    image:
-      "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&q=80",
-    title: "HERITAGE 08",
+    image: "/opt/best shots/Beverage images/bev-iced.webp",
+    title: "BEVERAGE 01",
   },
   {
     id: 9,
-    image:
-      "https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?w=800&q=80",
-    title: "HERITAGE 09",
+    image: "/opt/best shots/Beverage images/bev-macro.webp",
+    title: "BEVERAGE 02",
   },
   {
     id: 10,
-    image:
-      "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=800&q=80",
-    title: "HERITAGE 10",
+    image: "/opt/best shots/mens shoe/shoe-mens-campaign.webp",
+    title: "FOOTWEAR 01",
   },
   {
     id: 11,
-    image:
-      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&q=80",
-    title: "HERITAGE 11",
+    image: "/opt/best shots/ladies shoe/High-end-shoe.webp",
+    title: "FOOTWEAR 02",
   },
   {
     id: 12,
-    image:
-      "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80",
-    title: "HERITAGE 12",
+    image: "/opt/best shots/ADs/ad-culinary.webp",
+    title: "CAMPAIGN 01",
   },
   {
     id: 13,
-    image:
-      "https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=800&q=80",
-    title: "HERITAGE 13",
-  },
-  {
-    id: 14,
-    image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&q=80",
-    title: "HERITAGE 14",
-  },
-  {
-    id: 15,
-    image:
-      "https://images.unsplash.com/photo-1496217590455-aa63a8350eea?w=800&q=80",
-    title: "HERITAGE 15",
-  },
-  {
-    id: 16,
-    image:
-      "https://images.unsplash.com/photo-1571513722275-4b41940f54b8?w=800&q=80",
-    title: "HERITAGE 16",
+    image: "/opt/best shots/ADs/ad-popout.webp",
+    title: "CAMPAIGN 02",
   },
 ];
 

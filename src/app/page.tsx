@@ -103,7 +103,7 @@ const homeSchema = {
       "name": "Rahul Chanda",
       "jobTitle": "Commercial & Product Photographer",
       "url": absoluteUrl("/"),
-      "image": absoluteUrl("/opt/about%20me%20photo/1me.webp"),
+      "image": absoluteUrl("/opt/about-photo/rahul-chanda-portrait.webp"),
       "sameAs": [
         siteConfig.contact.instagram,
         siteConfig.contact.googleBusiness,

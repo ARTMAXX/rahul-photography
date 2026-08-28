@@ -333,7 +333,7 @@ const personSchema = {
   alternateName: "Rahul Chanda Photography",
   jobTitle: "Commercial Product Photographer",
   url: absoluteUrl("/"),
-  image: absoluteUrl("/about%20me%20photo/1me.webp"),
+  image: absoluteUrl("/opt/about-photo/rahul-chanda-portrait.webp"),
   sameAs: [
     siteConfig.contact.instagram,
     siteConfig.contact.googleBusiness,

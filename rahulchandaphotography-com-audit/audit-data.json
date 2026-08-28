@@ -1,0 +1,281 @@
+{
+  "summary": {
+    "health_score": 74,
+    "business_type": "Commercial & Product Photography Studio (Local Service — Dehradun, Uttarakhand, India)",
+    "top_findings": [
+      "CRITICAL: Cloudflare robots.txt overrides block GPTBot, ClaudeBot, Google-Extended — AI search visibility is zero",
+      "HIGH: 4 blog posts missing from sitemap.xml — orphaned from index discovery",
+      "HIGH: BlogPosting schema missing datePublished/dateModified — no article rich results",
+      "HIGH: Gallery page is client-only — no server-rendered SEO metadata for 32 images",
+      "MEDIUM: Contact page has thin meta description (5 words)"
+    ],
+    "quick_wins": [
+      "Disable Cloudflare AI bot blocking rule (5 min)",
+      "Add 4 missing blog posts to sitemap.ts (15 min)",
+      "Add datePublished to BlogPosting schema (30 min)",
+      "Write specific Contact page meta description (5 min)",
+      "Add BreadcrumbList to service sub-pages (30 min)"
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 80,
+      "what_works": [
+        "Server-side rendered Next.js on Cloudflare with OpenNext",
+        "Comprehensive security headers (HSTS, CSP, X-Frame-Options, etc.)",
+        "Canonical URLs via absoluteUrl() helper",
+        "Excellent llms.txt with full navigation and content",
+        "robots.ts correctly allows AI crawlers"
+      ],
+      "findings": [
+        {
+          "title": "robots.txt Cloudflare Override Blocks AI Crawlers",
+          "severity": "Critical",
+          "description": "Cloudflare-managed rules append Disallow for GPTBot, ClaudeBot, Google-Extended, Bytespider, CCBot, Applebot-Extended, meta-externalagent — overriding the site's own Allow: /. AI search visibility is effectively zero.",
+          "recommendation": "Disable Cloudflare's AI Scrapers and Crawlers blocking rule in Security → Bots → Configure Bot Management."
+        },
+        {
+          "title": "4 Blog Posts Missing from Sitemap",
+          "severity": "High",
+          "description": "sitemap.xml has 13 blog posts but codebase has 17 URLs. Missing: product-photography-small-business-india, product-photography-lighting-setup, how-to-photograph-products-ecommerce, food-photography-restaurants.",
+          "recommendation": "Add 4 missing URLs to blogPostsSEO array in src/app/sitemap.ts."
+        },
+        {
+          "title": "No Custom 404 Page",
+          "severity": "Medium",
+          "description": "No src/app/not-found.tsx file. Default Next.js 404 provides no helpful navigation or SEO signal.",
+          "recommendation": "Create custom 404 page with metadata, links to key pages, and helpful message."
+        },
+        {
+          "title": "CSP Header Contains Stale Vercel Reference",
+          "severity": "Info",
+          "description": "Content-Security-Policy includes https://vercel.live but site runs on Cloudflare Workers. Minor hygiene issue.",
+          "recommendation": "Remove https://vercel.live from CSP script-src directive."
+        }
+      ]
+    },
+    {
+      "name": "Content Quality",
+      "score": 76,
+      "what_works": [
+        "12+ long-form technical blog articles (300-800 words each)",
+        "Comprehensive service pages (200-360 lines each)",
+        "737-line Dehradun landing page with locally-targeted content",
+        "Strong E-E-A-T signals on About page",
+        "Legal pages (Terms/Privacy) present and linked"
+      ],
+      "findings": [
+        {
+          "title": "BlogPosting Schema Missing Date Fields",
+          "severity": "High",
+          "description": "generateBlogPostingSchema() in schemas.ts does not include datePublished or dateModified. Google requires these for article rich results.",
+          "recommendation": "Add datePublished and dateModified to schema generator and pass dates from blog post data."
+        },
+        {
+          "title": "Gallery Page Client-Only — Limited Metadata",
+          "severity": "High",
+          "description": "gallery/page.tsx is 'use client' — cannot export metadata. All 32 images load via client JS. Layout metadata is generic.",
+          "recommendation": "Convert to SSR+client hybrid. Enhance layout metadata with location keywords and specific image descriptions."
+        },
+        {
+          "title": "Contact Page Thin Meta Description",
+          "severity": "Medium",
+          "description": "Meta description is only 'Have a project in mind?' — 5 words, no keywords, no location context.",
+          "recommendation": "Write 120-160 char description with keywords: product photography, Dehradun, quote, commercial."
+        },
+        {
+          "title": "Terms/Privacy Pages — No Schema, No Internal Links",
+          "severity": "Medium",
+          "description": "Both pages lack WebPage schema and have no internal links to service or blog pages.",
+          "recommendation": "Add WebPage schema, expand descriptions, add related links section."
+        }
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "score": 78,
+      "what_works": [
+        "Consistent title pattern: '%s — Rahul Chanda Photography'",
+        "Descriptive H1 tags on all pages",
+        "Natural keyword targeting ('Product Photography Dehradun')",
+        "Internal linking between blog and services"
+      ],
+      "findings": [
+        {
+          "title": "Missing Breadcrumb Schema on Service Sub-Pages",
+          "severity": "Medium",
+          "description": "4 service sub-pages have Service schema but no BreadcrumbList. generateBreadcrumbSchema exists but is not applied.",
+          "recommendation": "Import and render generateBreadcrumbSchema on all service sub-pages."
+        },
+        {
+          "title": "No OpenGraph Article Tags on Blog Posts",
+          "severity": "Medium",
+          "description": "Blog posts don't include og:type='article' with article:published_time, article:author, article:section tags.",
+          "recommendation": "Add openGraph.type='article' with temporal metadata to blog post pages."
+        },
+        {
+          "title": "Inconsistent Image Alt Text",
+          "severity": "Low",
+          "description": "Portfolio images have varying alt text quality — some specific, some generic. Not all images have descriptive alt text.",
+          "recommendation": "Audit all img tags and ensure alt text is descriptive and keyword-relevant."
+        }
+      ]
+    },
+    {
+      "name": "Schema & Structured Data",
+      "score": 72,
+      "what_works": [
+        "JSON-LD on most pages (LocalBusiness, ProfessionalService, Service, Person, BlogPosting, QAPage)",
+        "Correctly uses QAPage (not deprecated FAQPage)",
+        "AggregateRating + Review on homepage",
+        "BreadcrumbList on homepage and blog"
+      ],
+      "findings": [
+        {
+          "title": "BlogPosting Missing Date and Publisher",
+          "severity": "High",
+          "description": "Schema lacks datePublished, dateModified, and publisher fields. Cannot appear in Google article rich results.",
+          "recommendation": "Add datePublished, dateModified, and publisher to generateBlogPostingSchema."
+        },
+        {
+          "title": "No WebSite + SearchAction Schema",
+          "severity": "Medium",
+          "description": "Missing sitelinks searchbox potential. WebSite schema exists but lacks potentialAction.SearchAction.",
+          "recommendation": "Add SearchAction with target URL template for blog search."
+        },
+        {
+          "title": "No VideoObject Schema for Hero Video",
+          "severity": "Medium",
+          "description": "Homepage hero video has no VideoObject schema. Cannot appear in Google Video search results.",
+          "recommendation": "Add VideoObject schema with thumbnailUrl, contentUrl, duration."
+        },
+        {
+          "title": "No ImageObject Schema on Portfolio Images",
+          "severity": "Low",
+          "description": "Gallery and portfolio images lack individual ImageObject schema with caption, license, and creditText.",
+          "recommendation": "Add ImageObject schema for high-value portfolio images."
+        }
+      ]
+    },
+    {
+      "name": "Performance",
+      "score": 70,
+      "what_works": [
+        "Dynamic imports with { ssr: false } for all major sections",
+        "Font optimization via next/font with display: swap",
+        "Video lazy loading with IntersectionObserver",
+        "Aggressive CDN caching (s-maxage=31536000)"
+      ],
+      "findings": [
+        {
+          "title": "Hero Video Missing Poster Image",
+          "severity": "High",
+          "description": "poster={undefined} in Hero.tsx — no placeholder while video loads. Causes blank frame and potential CLS.",
+          "recommendation": "Generate 1200x675 WebP poster from video first frame and add poster attribute."
+        },
+        {
+          "title": "No Modern Image Formats (WebP/AVIF)",
+          "severity": "Medium",
+          "description": "Portfolio images use standard JPEG format. No picture elements or Next.js Image with format negotiation.",
+          "recommendation": "Use Next.js Image component with formats=['image/avif', 'image/webp'] for automatic format negotiation."
+        },
+        {
+          "title": "Gallery Client-Side Rendering Impact",
+          "severity": "Medium",
+          "description": "All 32 gallery images load via client JavaScript. No server-rendered img tags in initial HTML.",
+          "recommendation": "Convert to SSR+client hybrid. Server-render first 6 images, client-load rest."
+        },
+        {
+          "title": "Inconsistent Lazy Loading",
+          "severity": "Medium",
+          "description": "Gallery and portfolio images lack consistent loading='lazy' attribute. Below-fold images may load eagerly.",
+          "recommendation": "Add loading='lazy' to all below-fold images, priority to above-fold images."
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness",
+      "score": 65,
+      "what_works": [
+        "Comprehensive llms.txt with navigation, articles, and studio details",
+        "Content negotiation support (Accept: text/markdown)",
+        "robots.ts correctly allows all major AI crawlers",
+        "Rich structured data across all pages"
+      ],
+      "findings": [
+        {
+          "title": "Cloudflare Blocks All Major AI Crawlers",
+          "severity": "Critical",
+          "description": "Cloudflare-managed Disallow rules block GPTBot, ClaudeBot, Google-Extended, Bytespider, CCBot, Applebot-Extended, meta-externalagent. Only PerplexityBot is unblocked.",
+          "recommendation": "Disable Cloudflare AI Scrapers blocking rule immediately. 5-minute fix."
+        },
+        {
+          "title": "No llms-full.txt",
+          "severity": "Medium",
+          "description": "Site has llms.txt but no llms-full.txt (extended version with full page content for deeper AI ingestion).",
+          "recommendation": "Generate public/llms-full.txt with expanded content from all pages."
+        },
+        {
+          "title": "Content Negotiation Unverified",
+          "severity": "Medium",
+          "description": "llms.txt claims Accept: text/markdown support across routes, but this was not verified during audit.",
+          "recommendation": "Test with curl -H 'Accept: text/markdown' and verify markdown response. If not working, implement or remove claim."
+        }
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1: Critical Fixes",
+        "timeframe": "Week 1",
+        "items": [
+          "Disable Cloudflare AI bot blocking rule (Cloudflare Dashboard → Security → Bots)",
+          "Add 4 missing blog posts to sitemap.ts blogPostsSEO array",
+          "Add datePublished + dateModified to BlogPosting schema in schemas.ts",
+          "Write specific Contact page meta description (120-160 chars)"
+        ]
+      },
+      {
+        "name": "Phase 2: High-Impact Improvements",
+        "timeframe": "Weeks 2-3",
+        "items": [
+          "Add BreadcrumbList schema to 4 service sub-pages",
+          "Add poster attribute to hero video (generate WebP from video frame)",
+          "Add og:type='article' with temporal metadata to blog posts",
+          "Convert gallery to SSR+client hybrid for server-rendered images",
+          "Add VideoObject schema to homepage for hero video",
+          "Create custom 404 page with metadata and helpful navigation"
+        ]
+      },
+      {
+        "name": "Phase 3: Content & Authority",
+        "timeframe": "Month 2",
+        "items": [
+          "Add WebSite + SearchAction schema for sitelinks searchbox",
+          "Audit and improve all image alt text across portfolio",
+          "Add WebPage schema to Terms and Privacy pages",
+          "Generate llms-full.txt with expanded page content",
+          "Add ImageObject schema to high-value portfolio images",
+          "Expand Terms/Privacy content with internal links to services"
+        ]
+      },
+      {
+        "name": "Phase 4: Monitoring & Iteration",
+        "timeframe": "Ongoing",
+        "items": [
+          "Monitor Google Search Console for crawl errors and indexation",
+          "Track AI search citations (ChatGPT, Perplexity, Claude) monthly",
+          "Re-audit after deploying each phase of fixes",
+          "Update blog content freshness (add dates, refresh outdated info)",
+          "Test content negotiation (Accept: text/markdown) after deployment"
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "screenshots_dir": "screenshots/"
+  }
+}

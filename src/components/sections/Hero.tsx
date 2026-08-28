@@ -108,8 +108,13 @@ w-full overflow-hidden">
         <span className="w-px h-24 bg-gradient-to-b from-white/60 to-transparent" />
       </div>
 
-      {/* Massive Text (Bottom) — SEMANTIC FIX: Use strong instead of duplicate H1 */}
-      <div className="absolute bottom-24 md:bottom-20 left-0 w-full z-10 flex justify-center items-baseline gap-2 md:gap-4 mix-blend-difference px-4 md:px-8 select-none whitespace-nowrap">
+      {/* SEO: Semantic H1 — visually hidden for screen readers & crawlers */}
+      <h1 className="sr-only">
+        Rahul Chanda — Commercial & Product Photographer in Dehradun, India
+      </h1>
+
+      {/* Massive Text (Bottom) — decorative visual name reveal */}
+      <div className="absolute bottom-24 md:bottom-20 left-0 w-full z-10 flex justify-center items-baseline gap-2 md:gap-4 mix-blend-difference px-4 md:px-8 select-none whitespace-nowrap" aria-hidden="true">
         <strong ref={leftTextRef} className="text-[12vw] md:text-[13vw] font-serif leading-[0.8] tracking-tighter text-[#F4EFE7] inline-flex">
           {isMobile ? (
             <span>Rahul</span>
@@ -180,8 +185,8 @@ w-full overflow-hidden">
           />
         ) : (
           <LazyVideo
-            src="/opt/main hero shots/hero-video.mp4"
-            poster="/opt/main hero shots/hero-video-poster.webp"
+            src="/opt/hero-shots/hero-video.mp4"
+            poster="/opt/hero-shots/hero-video-poster.webp"
             className="w-full h-full object-cover opacity-70"
             preload="auto"
             alt="Cinematic showreel of Rahul Chanda's commercial product photography - luxury watches, food & beverage, footwear, and advertising campaigns"

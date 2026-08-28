@@ -585,11 +585,13 @@ export default function CinematicCylinder() {
           }}
         />
 
-        {/* WebGL canvas */}
+        {/* WebGL canvas — aria-label for accessibility since images are rendered via JS */}
         <canvas
           ref={canvasRef}
           className="block h-full w-full"
           style={{ display: "block" }}
+          aria-label="Rotating 3D gallery showcasing Rahul Chanda's commercial photography: product, food, beverage, footwear, and advertising campaign work"
+          role="img"
         />
 
         {/* Caption overlays — fade in/out as the cylinder rotates */}

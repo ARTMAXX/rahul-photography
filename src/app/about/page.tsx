@@ -42,7 +42,7 @@ const aboutSchema = {
       "name": "Rahul Chanda",
       "jobTitle": "Commercial Product Photographer",
       "url": absoluteUrl("/about"),
-      "image": absoluteUrl("/opt/about%20me%20photo/1me.webp"),
+      "image": absoluteUrl("/opt/about-photo/rahul-chanda-portrait.webp"),
       "description":
         "Rahul Chanda is a commercial product photographer based in Dehradun, India, specializing in product, beverage splash, food, and advertising photography.",
       "sameAs": [
@@ -120,7 +120,7 @@ export default function AboutPage() {
         <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20 items-start">
           <div className="relative">
             <Image
-              src="/opt/about me photo/1me.webp"
+              src="/opt/about-photo/rahul-chanda-portrait.webp"
               alt="Rahul Chanda, commercial product photographer from Dehradun, in his studio"
               width={1200}
               height={1490}

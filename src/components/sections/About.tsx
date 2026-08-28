@@ -133,7 +133,7 @@ export default function About() {
           className="mb-8 w-[55%] max-w-[260px] md:absolute md:right-0 md:top-0 md:w-[min(50vw,720px)] md:max-w-none md:mb-0"
         >
           <Image
-            src="/opt/about me photo/1me.webp"
+            src="/opt/about-photo/rahul-chanda-portrait.webp"
             alt="Rahul Chanda, commercial product photographer from Dehradun, in his studio"
             width={1400}
             height={1738}

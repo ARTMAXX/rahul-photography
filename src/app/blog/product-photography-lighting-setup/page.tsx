@@ -55,7 +55,7 @@ const lightingSchema = {
         "@type": "Person",
         "name": "Rahul Chanda",
         "url": absoluteUrl("/about"),
-        "image": absoluteUrl("/opt/about%20me%20photo/1me.webp"),
+        "image": absoluteUrl("/opt/about-photo/rahul-chanda-portrait.webp"),
       },
       "publisher": {
         "@type": "Organization",

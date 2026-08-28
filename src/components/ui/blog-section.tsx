@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { LazyImage } from "./lazy-image";
+import Image from "next/image";
 
 interface BlogCard {
 	title: string;
@@ -158,13 +158,13 @@ export function BlogSection() {
 						data-cursor="pointer"
 					>
 						<div className="relative aspect-[16/9] overflow-hidden rounded-lg bg-white/5">
-							<LazyImage
+							<Image
 								src={blog.image}
-								fallback="/opt/og-image.jpg"
-								inView={true}
 								alt={blog.title}
-								ratio={16 / 9}
-								className="transition-all duration-700 group-hover:scale-105"
+								fill
+								sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+								className="object-cover transition-all duration-700 group-hover:scale-105"
+								loading="lazy"
 							/>
 						</div>
 						<div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-white/40">

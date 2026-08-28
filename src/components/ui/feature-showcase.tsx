@@ -6,7 +6,7 @@ const selectedWorkItems: CollectionItem[] = [
   {
     id: 1,
     title: "Gourmet Biriyani",
-    image: "/best shots/Food photo/Biriyani photo.webp",
+    image: "/best shots/Food photo/food-biriyani-hero.webp",
   },
   {
     id: 2,

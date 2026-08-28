@@ -6,7 +6,7 @@ import { CollectionSurfer, CollectionItem } from "@/components/ui/collection-sur
 const portfolioFrames = [
   {
     id: 1,
-    image: "/best shots/Food photo/Biriyani photo.webp",
+    image: "/best shots/Food photo/food-biriyani-hero.webp",
     alt: "Gourmet Biriyani - Fine Dining Food Photography",
     defaultPos: { x: 0, y: 0, w: 4, h: 4 },
     mediaSize: 1,
@@ -82,7 +82,7 @@ const portfolioFrames = [
 const collectionItems: CollectionItem[] = [
   {
     id: 1,
-    image: "/best shots/Food photo/Biriyani photo.webp",
+    image: "/best shots/Food photo/food-biriyani-hero.webp",
     title: "HERITAGE 01",
   },
   {
