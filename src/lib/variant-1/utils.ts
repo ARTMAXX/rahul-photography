@@ -53,7 +53,7 @@ export function getPositionClasses(position: Perspective["position"]): string {
     case "right":
       return "right-20 top-1/2 -translate-y-1/2";
     case "bottom":
-      return "bottom-20 left-1/2 -translate-x-1/2 text-center max-md:px-6";
+      return "bottom-36 left-1/2 -translate-x-1/2 text-center max-md:px-6";
     case "bottom-left":
       return "bottom-20 left-20 max-md:bottom-[10vh] max-md:left-6 flex flex-col items-start text-left";
     case "bottom-right":
