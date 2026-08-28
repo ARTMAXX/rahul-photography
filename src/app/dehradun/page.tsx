@@ -292,18 +292,7 @@ const localBusinessJsonLd = {
   },
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "QAPage",
-  mainEntity: LOCAL_FAQ.map((item) => ({
-    "@type": "Question",
-    name: item.q,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.a,
-    },
-  })),
-};
+
 
 // Breadcrumb schema for the page hierarchy
 const breadcrumbSchema = {
@@ -372,10 +361,7 @@ export default function DehradunPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}

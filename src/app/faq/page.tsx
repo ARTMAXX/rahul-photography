@@ -75,7 +75,7 @@ const faqSchema = {
       ],
     },
     {
-      "@type": "QAPage",
+      "@type": "FAQPage",
       "@id": absoluteUrl("/faq"),
       "mainEntity": faqs.map((faq) => ({
         "@type": "Question",
