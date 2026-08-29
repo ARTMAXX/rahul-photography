@@ -103,6 +103,8 @@ export default function RootLayout({
           fetchPriority="high"
           media="(min-width: 768px)"
         />
+        <link rel="manifest" href="/manifest.webmanifest" />
+        <meta name="theme-color" content="#070707" />
       </head>
       <body
         className={`${playfair.variable} ${outfit.variable} antialiased`}

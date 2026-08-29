@@ -1,0 +1,13 @@
+{
+  "name": "Rahul Chanda Photography",
+  "short_name": "Rahul Chanda",
+  "description": "Commercial & product photography studio in Dehradun, India.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#070707",
+  "theme_color": "#070707",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/apple-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}
