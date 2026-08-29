@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import LazyVideo from "@/components/ui/LazyVideo";
 
 const testimonials = [
-  // ── PRODUCT — LOCAL ──
+  // — PRODUCT — LOCAL —
   {
     text: "Bhai Rahul ne hamare copper bottles ko itna sundar banaya ki Mussoorie ki dukaan mein baith ke photos dekh ke hi log order kar rahe hain. Sales almost double ho gayi.",
     name: "Ankit Rawat",
@@ -26,7 +26,7 @@ const testimonials = [
     role: "Artisan, Bhimtal Handicrafts",
   },
 
-  // ── FOOD & BEVERAGE ──
+  // — FOOD & BEVERAGE —
   {
     text: "Those misty morning shots with steaming coffee cups from our Landour cafe — Rahul posted them and people started driving up from Dehradun just for the vibes.",
     name: "Meera Bhatt",
@@ -48,7 +48,7 @@ const testimonials = [
     role: "Owner, Street Food Stories, Delhi",
   },
 
-  // ── PRODUCT — STUDIO / INTERNATIONAL ──
+  // — PRODUCT — STUDIO / INTERNATIONAL —
   {
     text: "He made our headphones look way more premium than the price tag. Metallic reflections, shadow work — every detail was intentional. The new imagery paid for itself in weeks.",
     name: "Rohan Gupta",
@@ -78,7 +78,7 @@ const thirdColumn = testimonials.slice(8, 12);
 const Testimonials = () => {
   return (
     <section className="py-20 md:py-28 relative overflow-hidden">
-      {/* ── Cinematic video backdrop (BTS footage playing behind quotes) ── */}
+      {/* — Cinematic video backdrop (BTS footage playing behind quotes) — */}
       <div className="absolute inset-0 z-0" aria-hidden="true">
         <LazyVideo
           src="/opt/cinematic-assets/bts-watch.mp4"

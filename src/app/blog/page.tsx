@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { BlogSection } from "@/components/ui/blog-section";
 import { CinematicFooter } from "@/components/ui/motion-footer";
-import { absoluteUrl } from "@/lib/site";
+import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Commercial Photography Blog & Field Notes | Rahul Chanda",
@@ -13,6 +13,15 @@ export const metadata: Metadata = {
     description:
       "Field notes on commercial photography — lighting, styling, retouching, AI tools, and behind-the-scenes guides from Rahul Chanda.",
     url: absoluteUrl("/blog"),
+    type: "website",
+    images: [
+      {
+        url: absoluteUrl(siteConfig.ogImagePath),
+        width: 1200,
+        height: 630,
+        alt: "Commercial Photography Blog — Rahul Chanda",
+      },
+    ],
   },
 };
 

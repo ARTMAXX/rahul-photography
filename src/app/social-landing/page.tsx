@@ -4,12 +4,12 @@ import Link from "next/link";
 import { absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Rahul Chanda Photography — Commercial & Product Photographer Dehradun",
+  title: "Rahul Chanda Photography \u2014 Commercial & Product Photographer Dehradun",
   description:
     "Professional commercial photography for products, food, footwear & brands. Based in Dehradun, India. Book your shoot today.",
   alternates: { canonical: "/social-landing" },
   openGraph: {
-    title: "Rahul Chanda Photography — Dehradun, India",
+    title: "Rahul Chanda Photography \u2014 Dehradun, India",
     description:
       "Product, food, footwear & commercial photography. Book your shoot today.",
     url: absoluteUrl("/social-landing"),
@@ -67,7 +67,7 @@ export default function SocialLandingPage() {
         <section className="relative h-[70vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
           <Image
             src="/best shots/new-images/new-product-bold.jpg"
-            alt="Rahul Chanda — Commercial Photographer"
+            alt="Rahul Chanda \u2014 Commercial Photographer"
             fill
             className="object-cover opacity-40"
             priority
@@ -122,7 +122,7 @@ export default function SocialLandingPage() {
                 href="/gallery"
                 className="text-sm tracking-widest uppercase text-neutral-400 hover:text-white transition-colors"
               >
-                See All Work →
+                See All Work  ââ„¢
               </Link>
             </div>
           </div>

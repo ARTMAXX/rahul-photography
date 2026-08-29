@@ -6,7 +6,7 @@ import { useIsMobile } from "@/lib/hooks";
 interface LazyVideoProps {
   /** Video file (mp4). */
   src: string;
-  /** Poster frame (webp) — also THE rendering on mobile. */
+  /** Poster frame (webp)  —  also THE rendering on mobile. */
   poster: string;
   className?: string;
   style?: CSSProperties;
@@ -22,10 +22,10 @@ interface LazyVideoProps {
 }
 
 /**
- * LazyVideo — viewport-gated background/inline video.
+ * LazyVideo  —  viewport-gated background/inline video.
  *
  * - Mobile (<768px): renders ONLY the poster image. No video element is
- *   created at all — saves data, battery, and decode work on phones while
+ *   created at all  —  saves data, battery, and decode work on phones while
  *   keeping the same visual composition.
  * - Desktop: renders the video but plays it only while intersecting the
  *   viewport; pauses (and releases decode) when scrolled away or when the
@@ -54,7 +54,7 @@ export default function LazyVideo({
     const sync = () => {
       if (isVisible && isTabVisible) {
         video.play().catch(() => {
-          /* autoplay policies — stay paused silently */
+          /* autoplay policies  —  stay paused silently */
         });
       } else {
         video.pause();
@@ -83,7 +83,7 @@ export default function LazyVideo({
     };
   }, [isMobile, src]);
 
-  /* ── Mobile: premium static frame, zero video cost ── */
+  /* "" Mobile: premium static frame, zero video cost "" */
   if (isMobile) {
     return (
       // eslint-disable-next-line @next/next/no-img-element
@@ -100,7 +100,7 @@ export default function LazyVideo({
     );
   }
 
-  /* ── Desktop: real video, IO-gated playback ── */
+  /* "" Desktop: real video, IO-gated playback "" */
   return (
     <video
       ref={videoRef}

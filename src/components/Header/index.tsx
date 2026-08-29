@@ -80,7 +80,7 @@ export default function Header() {
 
   return (
     <>
-      {/* Mobile fullscreen overlay — rendered OUTSIDE the header element.
+      {/* Mobile fullscreen overlay  —  rendered OUTSIDE the header element.
           The header creates its own stacking context (fixed + z-9999); a
           nav inside it could never paint ABOVE the header, so the overlay
           swallowed the logo and CLOSE button, leaving no way back. As a
@@ -100,7 +100,7 @@ export default function Header() {
         }`}
         data-menu-open={isActive || undefined}
       >
-        {/* Brand — always-visible wordmark. No aria-label override: the
+        {/* Brand  —  always-visible wordmark. No aria-label override: the
             accessible name then equals the visible content, which satisfies
             axe label-content-name-mismatch (href="/" carries the context). */}
         <Link

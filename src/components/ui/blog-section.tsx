@@ -133,19 +133,67 @@ const blogs: BlogCard[] = [
 		tag: "Guides",
 		readTime: "8 min read",
 	},
+	// --- Orphan blog posts added below ---
+	{
+		title: "How to Photograph Products for E-Commerce: A Complete Guide for Indian Brands",
+		slug: "/blog/how-to-photograph-products-ecommerce",
+		description:
+			"From camera angles and white backgrounds to lighting setups and post-processing — the complete e-commerce product photography workflow for D2C Indian brands.",
+		image: "/opt/best shots/Product image/product-watch-luxury.webp",
+		createdAt: "2026-08-22",
+		tag: "Guides",
+		readTime: "10 min read",
+	},
+	{
+		title: "Product Photography for Small Businesses in India: A Practical Guide",
+		slug: "/blog/product-photography-small-business-india",
+		description:
+			"Affordable studio setups, DIY lighting hacks, and smartphone-to-slr workflows for small Indian brands that need professional-looking product photography on a budget.",
+		image: "/opt/best shots/new-images/new-product-blast.webp",
+		createdAt: "2026-08-28",
+		tag: "Guides",
+		readTime: "9 min read",
+	},
+	{
+		title: "Studio Lighting Setups for Product Photography: From Basic to Advanced",
+		slug: "/blog/product-photography-lighting-setup",
+		description:
+			"One-light, two-light, three-light setups — understanding modifier distance, ratio, and quality to achieve anything from clean white backgrounds to dramatic editorial product shots.",
+		image: "/opt/best shots/Product image/product-headphone.webp",
+		createdAt: "2026-08-25",
+		tag: "Technique",
+		readTime: "8 min read",
+	},
+	{
+		title: "Food Photography for Restaurants: Menu, Atmosphere & Plate Shots",
+		slug: "/blog/food-photography-restaurants",
+		description:
+			"Restaurant photography for digital menus, social media, and Google Business profiles — the lighting, styling, and camera setup for appetizing food imagery.",
+		image: "/opt/best shots/Food photo/food-biriyani.webp",
+		createdAt: "2026-08-30",
+		tag: "Technique",
+		readTime: "7 min read",
+	},
+	{
+		title: "Beverage Photography: Glass & Splash Photography Techniques",
+		slug: "/blog/beverage-photography-glass-splash",
+		description:
+			"High-speed splash photography for beverages — trigger systems, flash duration, exposure settings, and the physics of freezing liquid action at 1/8000s.",
+		image: "/opt/best shots/Beverage images/beverage-macro.webp",
+		createdAt: "2026-08-20",
+		tag: "Behind the scenes",
+		readTime: "9 min read",
+	},
 ];
 
 export function BlogSection() {
 	return (
 		<div className="mx-auto w-full max-w-[1600px] px-4 md:px-12 py-24 md:py-32">
-			<div className="text-[#e83b2c] text-sm font-medium uppercase tracking-widest">
-				Journal & Field Notes
-			</div>
-			<h1 className="text-3xl md:text-5xl font-serif text-white mt-4 leading-tight">
-				Field notes on{" "}
-				<span className="italic text-[#e83b2c]">commercial photography</span>.
+			<div className="h-eyebrow">Journal & Field Notes</div>
+			<h1 className="h-display">
+				Field notes on <span className="h-accent">commercial photography</span>.
 			</h1>
-			<p className="text-white/50 mt-4 max-w-[65ch] leading-relaxed text-base">
+			<p className="t-lede mt-6">
 				Lighting setups, color science, high-speed fluid dynamics, AI post-production workflows, and technical field guides from commercial shoots across Dehradun and regional brand campaigns.
 			</p>
 
@@ -174,7 +222,7 @@ export function BlogSection() {
 							<span>·</span>
 							<span>{blog.readTime}</span>
 						</div>
-						<h2 className="text-lg font-serif text-white group-hover:text-[#e83b2c] transition-colors duration-300 leading-snug">
+						<h2 className="h-card group-hover:text-[#e83b2c] transition-colors duration-300">
 							{blog.title}
 						</h2>
 						<p className="text-white/50 text-sm leading-relaxed line-clamp-3">

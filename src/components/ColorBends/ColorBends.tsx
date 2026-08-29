@@ -235,7 +235,7 @@ export default function ColorBends({
     }
 
     const loop = (currentTime: number) => {
-      // Park when the tab is hidden — resume cleanly on return
+      // Park when the tab is hidden  —  resume cleanly on return
       if (!isTabVisible) {
         lastTime = currentTime;
         rafRef.current = requestAnimationFrame(loop);

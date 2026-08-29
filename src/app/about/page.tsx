@@ -4,7 +4,7 @@ import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About Rahul Chanda — Commercial Photographer Dehradun",
+  title: "About Rahul Chanda — Commercial Photographer in Dehradun",
   description:
     "Rahul Chanda — high-end commercial product photographer based in Dehradun, India. Crafting premium visual identities for brands worldwide.",
   alternates: { canonical: "/about" },
@@ -13,6 +13,15 @@ export const metadata: Metadata = {
     description:
       "Rahul Chanda — high-end commercial product photographer based in Dehradun, India. Crafting premium visual identities for brands worldwide.",
     url: absoluteUrl("/about"),
+    type: "website",
+    images: [
+      {
+        url: absoluteUrl(siteConfig.ogImagePath),
+        width: 1200,
+        height: 630,
+        alt: "About Rahul Chanda — Commercial Photographer",
+      },
+    ],
   },
 };
 
@@ -76,7 +85,7 @@ const stats = [
 const approach = [
   {
     t: "Precision",
-    d: "Every frame is engineered — light, surface, and composition are controlled down to the pixel.",
+    d: "Every frame is engineered — light, surface, and composition are controlled down to the pixel."
   },
   {
     t: "Story",
@@ -84,7 +93,7 @@ const approach = [
   },
   {
     t: "Partnership",
-    d: "You work directly with me — no account managers, no hand-offs. One creative owner from brief to delivery.",
+    d: "You work directly with me — no account managers, no hand-offs. One creative owner from brief to delivery."
   },
 ];
 
@@ -108,9 +117,8 @@ export default function AboutPage() {
           <div className="inline-flex border border-[#e83b2c]/20 py-1 px-4 rounded-full text-xs text-[#e83b2c]/70 uppercase tracking-widest">
             About
           </div>
-          <h1 className="text-[clamp(2.75rem,9vw,7.5rem)] font-serif leading-[0.9] tracking-[-0.03em] text-white mt-6 max-w-[18ch]">
-            The photographer behind{" "}
-            <span className="italic text-[#e83b2c]">the images</span>.
+          <h1 className="h-display">
+            The photographer behind <span className="italic text-[#e83b2c]">the images</span>.
           </h1>
         </div>
       </section>
@@ -139,7 +147,7 @@ export default function AboutPage() {
             <div className="text-lg md:text-xl text-white/70 leading-relaxed space-y-6 max-w-[60ch]">
               <p>
                 My name is Rahul Chanda. I&apos;m a high-end commercial
-                product photographer crafting{" "}
+                product photographer crafting 
                 <span className="text-[#e83b2c]">visual identities</span> for
                 brands that refuse to look ordinary.
               </p>
@@ -163,7 +171,7 @@ export default function AboutPage() {
       {/* Story & Background */}
       <section className="relative w-full px-4 md:px-12 py-16 md:py-24 border-t border-white/5">
         <div className="max-w-[1600px] mx-auto">
-          <h2 className="text-[clamp(2rem,5vw,4rem)] font-serif leading-[0.9] tracking-[-0.03em] text-white max-w-[20ch] mb-12">
+          <h2 className="h-section mb-12">
             The <span className="italic text-[#e83b2c]">journey</span>.
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
@@ -221,7 +229,7 @@ export default function AboutPage() {
       {/* Equipment & Specialties */}
       <section className="relative w-full px-4 md:px-12 py-16 md:py-24 border-t border-white/5">
         <div className="max-w-[1600px] mx-auto">
-          <h2 className="text-[clamp(2rem,5vw,4rem)] font-serif leading-[0.9] tracking-[-0.03em] text-white max-w-[20ch] mb-12">
+          <h2 className="h-section mb-12">
             What I <span className="italic text-[#e83b2c]">use</span>.
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -256,7 +264,7 @@ export default function AboutPage() {
                 <ul className="space-y-2">
                   {group.items.map((item) => (
                     <li key={item} className="text-white/50 text-sm flex items-start gap-2">
-                      <span className="text-[#e83b2c] mt-1.5 text-[8px]">✦</span>
+                      <span className="text-[#e83b2c] mt-1.5 text-[8px]">•</span>
                       {item}
                     </li>
                   ))}
@@ -286,7 +294,7 @@ export default function AboutPage() {
       {/* Approach */}
       <section className="relative w-full px-4 md:px-12 py-16 md:py-24">
         <div className="max-w-[1600px] mx-auto">
-          <h2 className="text-[clamp(2.5rem,7vw,5.5rem)] font-serif leading-[0.9] tracking-[-0.03em] text-white max-w-[14ch] mb-16">
+          <h2 className="h-section max-w-\[14ch\] mb-12">
             How I <span className="italic text-[#e83b2c]">work</span>.
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">

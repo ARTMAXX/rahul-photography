@@ -72,14 +72,14 @@ export const TestimonialsColumn = (props: {
     };
   }, [props.testimonials]);
 
-  // Gentle auto-scroll to the end — NO duplicated content, pauses on hover.
+  // Gentle auto-scroll to the end  —  NO duplicated content, pauses on hover.
   // The rAF loop runs ONLY while the column is on screen; hidden columns
   // (display:none via responsive classes) never start it at all.
   useEffect(() => {
     const col = columnRef.current;
     if (!col) return;
 
-    // display:none check — off-screen responsive columns cost nothing
+    // display:none check  —  off-screen responsive columns cost nothing
     if (col.getClientRects().length === 0) return;
 
     let inView = false;
@@ -89,7 +89,7 @@ export const TestimonialsColumn = (props: {
 
     const tick = (now: number) => {
       if (!inView || !isTabVisible) {
-        // Parked — do no work, but stay subscribed so IO can wake us
+        // Parked  —  do no work, but stay subscribed so IO can wake us
         rafRef.current = requestAnimationFrame(tick);
         lastTimeRef.current = now;
         return;

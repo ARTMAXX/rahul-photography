@@ -76,17 +76,17 @@ export default function BeveragePhotographyBlog() {
       <section className="relative w-full min-h-[60vh] flex flex-col justify-end px-4 md:px-12 pb-20 pt-40">
         <div className="max-w-[900px] mx-auto">
           <span className="text-xs uppercase tracking-widest text-[#e83b2c]">Beverage Photography</span>
-          <h1 className="text-5xl md:text-6xl font-serif text-white mt-6 mb-6 leading-tight">
+          <h1 className="h-display">
             Beverage Product Photography: Glass, Condensation & Splash
           </h1>
-          <p className="text-lg text-white/60 mb-8">
+          <p className="t-lede mt-6 mb-8">
             Advanced guide to professional beverage photography. Master glass lighting, condensation effects, and splash photography for commercial work.
           </p>
           <div className="flex gap-6 text-sm text-white/50">
             <span>August 31, 2026</span>
-            <span>•</span>
+            <span>' </span>
             <span>15 min read</span>
-            <span>•</span>
+            <span>' </span>
             <span>By Rahul Chanda</span>
           </div>
         </div>
@@ -94,7 +94,7 @@ export default function BeveragePhotographyBlog() {
 
       <article className="max-w-[900px] mx-auto px-4 md:px-12 py-24">
         <section className="mb-16">
-          <h2 className="text-3xl font-serif text-white mb-6">Why Beverage Photography is Uniquely Challenging</h2>
+          <h2 className="h-section mt-16 mb-6">Why Beverage Photography is Uniquely Challenging</h2>
           <p className="text-lg text-white/70 leading-relaxed mb-4">
             Beverage photography is one of the hardest product photography disciplines. Unlike solid products, beverages have three unique challenges:
           </p>
@@ -112,7 +112,7 @@ export default function BeveragePhotographyBlog() {
         </section>
 
         <section className="mb-16">
-          <h2 className="text-3xl font-serif text-white mb-6">Glass Lighting: The Foundation</h2>
+          <h2 className="h-section mt-16 mb-6">Glass Lighting: The Foundation</h2>
           <p className="text-lg text-white/70 leading-relaxed mb-4">
             Lighting glass beverages requires precision and control.
           </p>
@@ -121,9 +121,9 @@ export default function BeveragePhotographyBlog() {
             <p className="text-white/70 mb-3">Place a bright light behind the glass to illuminate the beverage liquid and create transparency. This creates:
             </p>
             <ul className="space-y-2 text-white/70 ml-4">
-              <li>• Visible liquid color (for teas, juices, sodas)</li>
-              <li>• Edge separation from background</li>
-              <li>• Glow effect that shows freshness</li>
+              <li>'  Visible liquid color (for teas, juices, sodas)</li>
+              <li>'  Edge separation from background</li>
+              <li>'  Glow effect that shows freshness</li>
             </ul>
           </div>
           <div className="border-l-4 border-[#e83b2c] pl-6 py-4 bg-white/5">
@@ -133,7 +133,7 @@ export default function BeveragePhotographyBlog() {
         </section>
 
         <section className="mb-16">
-          <h2 className="text-3xl font-serif text-white mb-6">Creating Realistic Condensation</h2>
+          <h2 className="h-section mt-16 mb-6">Creating Realistic Condensation</h2>
           <p className="text-lg text-white/70 leading-relaxed mb-4">
             Condensation signals a cold, fresh drink. It's essential for beverage photography appeal.
           </p>
@@ -161,18 +161,18 @@ export default function BeveragePhotographyBlog() {
         </section>
 
         <section className="mb-16">
-          <h2 className="text-3xl font-serif text-white mb-6">Beverage Splash Photography</h2>
+          <h2 className="h-section mt-16 mb-6">Beverage Splash Photography</h2>
           <p className="text-lg text-white/70 leading-relaxed mb-4">
             Splash photography requires timing, technique, and many attempts.
           </p>
           <div className="border-l-4 border-[#e83b2c] pl-6 py-4 bg-white/5 mb-6">
             <h4 className="text-lg font-serif text-white mb-3">Setup for Splash:</h4>
             <ul className="space-y-2 text-white/70">
-              <li>• High-speed flash (1/500-1/1000s shutter) to freeze motion</li>
-              <li>• Clean background (white or dark, depending on beverage)</li>
-              <li>• Protective barriers (plastic sheets to contain splashing liquid)</li>
-              <li>• Camera positioned to capture peak splash moment</li>
-              <li>• Multiple attempts (spray bottles, drop methods, hand tosses)</li>
+              <li>'  High-speed flash (1/500-1/1000s shutter) to freeze motion</li>
+              <li>'  Clean background (white or dark, depending on beverage)</li>
+              <li>'  Protective barriers (plastic sheets to contain splashing liquid)</li>
+              <li>'  Camera positioned to capture peak splash moment</li>
+              <li>'  Multiple attempts (spray bottles, drop methods, hand tosses)</li>
             </ul>
           </div>
           <p className="text-lg text-white/70 leading-relaxed">
@@ -181,7 +181,7 @@ export default function BeveragePhotographyBlog() {
         </section>
 
         <section className="mb-16">
-          <h2 className="text-3xl font-serif text-white mb-6">Managing Reflections & Highlights</h2>
+          <h2 className="h-section mt-16 mb-6">Managing Reflections & Highlights</h2>
           <p className="text-lg text-white/70 leading-relaxed mb-4">
             Unwanted reflections kill beverage shots. Precise control prevents them.
           </p>
@@ -198,16 +198,16 @@ export default function BeveragePhotographyBlog() {
         </section>
 
         <section className="mb-16">
-          <h2 className="text-3xl font-serif text-white mb-6">Post-Production for Beverage Photography</h2>
+          <h2 className="h-section mt-16 mb-6">Post-Production for Beverage Photography</h2>
           <p className="text-lg text-white/70 leading-relaxed mb-4">
             Retouching is essential for beverage shots.
           </p>
           <ul className="space-y-3 text-lg text-white/70 leading-relaxed">
-            <li>• <strong>Color correction:</strong> Bring out beverage liquid color. Increase vibrancy and saturation</li>
-            <li>• <strong>Condensation enhancement:</strong> Sharpen and brighten real condensation droplets</li>
-            <li>• <strong>Highlight control:</strong> Reduce harsh highlights, enhance subtle ones</li>
-            <li>• <strong>Background cleanup:</strong> Remove unwanted reflections or dust</li>
-            <li>• <strong>Bubble/foam enhancement:</strong> For carbonated beverages, enhance bubble detail</li>
+            <li>'  <strong>Color correction:</strong> Bring out beverage liquid color. Increase vibrancy and saturation</li>
+            <li>'  <strong>Condensation enhancement:</strong> Sharpen and brighten real condensation droplets</li>
+            <li>'  <strong>Highlight control:</strong> Reduce harsh highlights, enhance subtle ones</li>
+            <li>'  <strong>Background cleanup:</strong> Remove unwanted reflections or dust</li>
+            <li>'  <strong>Bubble/foam enhancement:</strong> For carbonated beverages, enhance bubble detail</li>
           </ul>
         </section>
 
@@ -221,7 +221,7 @@ export default function BeveragePhotographyBlog() {
               href="/services/food-beverage-photography"
               className="inline-flex items-center gap-2 text-[#e83b2c] hover:text-[#e83b2c]/80 transition-colors"
             >
-              Book Beverage Photography →
+              Book Beverage Photography ®
             </Link>
           </div>
         </section>

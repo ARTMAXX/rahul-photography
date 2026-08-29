@@ -3,7 +3,7 @@
 import * as React from "react";
 
 // -------------------------------------------------------------------------
-// 1. STYLES — Morphic-exact + animations
+// 1. STYLES  —  Morphic-exact + animations
 // -------------------------------------------------------------------------
 const STYLES = `
 .cinematic-footer-wrapper {
@@ -12,7 +12,7 @@ const STYLES = `
   background: #000000;
 }
 
-/* Giant Watermark — outline-only, anchored below the nav (no overlap) */
+/* Giant Watermark  —  outline-only, anchored below the nav (no overlap) */
 .footer-watermark {
   position: absolute;
   left: 50%;
@@ -35,52 +35,57 @@ const STYLES = `
   white-space: nowrap;
   animation: watermarkGlow 5s ease-in-out infinite alternate;
 }
-/* Breathing outline glow — white → brand red */
+/* Breathing outline glow  —  white " ' brand red */
 @keyframes watermarkGlow {
   0%   { filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.02)); }
   100% { filter: drop-shadow(0 0 22px rgba(232, 59, 44, 0.14)); }
 }
 
-/* Shine sweep — VengenceUI AnimatedButton style: a light band travels
-   along the outline stroke every few seconds */
+/* Shine sweep  —  VengenceUI AnimatedButton style: a light band travels
+   along the outline stroke every few seconds.
+   This version runs CONTINUOUSLY (no pause)  —  the band loops end-to-end
+   in a fixed interval, so the glow never sits still. */
 .footer-watermark-shine {
   position: absolute;
   left: 0;
   top: 0;
   color: transparent;
-  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.55);
+  -webkit-text-stroke: 1.5px rgba(232, 59, 44, 0.85);
   -webkit-mask-image: linear-gradient(
     -75deg,
-    transparent 40%,
+    transparent 35%,
     rgba(0, 0, 0, 1) 50%,
-    transparent 60%
+    transparent 65%
   );
   mask-image: linear-gradient(
     -75deg,
-    transparent 40%,
+    transparent 35%,
     rgba(0, 0, 0, 1) 50%,
-    transparent 60%
+    transparent 65%
   );
-  -webkit-mask-size: 300% 100%;
-  mask-size: 300% 100%;
+  -webkit-mask-size: 250% 100%;
+  mask-size: 250% 100%;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-  -webkit-mask-position: 130% 0;
-  mask-position: 130% 0;
-  animation: watermarkShine 5s linear infinite;
+  -webkit-mask-position: 100% 0;
+  mask-position: 100% 0;
+  animation: watermarkShine 3.2s linear infinite;
   pointer-events: none;
+  will-change: mask-position, -webkit-mask-position;
 }
 @keyframes watermarkShine {
-  0%   { -webkit-mask-position: 130% 0; mask-position: 130% 0; }
-  40%  { -webkit-mask-position: -30% 0; mask-position: -30% 0; }
-  100% { -webkit-mask-position: -30% 0; mask-position: -30% 0; }
+  0%   { -webkit-mask-position: 100% 0;  mask-position: 100% 0;  }
+  100% { -webkit-mask-position: -50% 0;  mask-position: -50% 0;  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .footer-watermark-shine { animation: none; opacity: 0; }
 }
 @keyframes watermarkReveal {
   0%   { opacity: 0; transform: translate(-50%, -50%) scale(1.02); }
   100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 }
 
-/* Wide grid-cell pills — Morphic layout + React-Bits circle-rise hover */
+/* Wide grid-cell pills  —  Morphic layout + React-Bits circle-rise hover */
 .footer-pill {
   display: flex;
   align-items: center;
@@ -103,7 +108,7 @@ const STYLES = `
   width: 100%;
 }
 
-/* Rising circle fill — bubbles up from the bottom on hover */
+/* Rising circle fill  —  bubbles up from the bottom on hover */
 .footer-pill::before {
   content: '';
   position: absolute;
@@ -126,7 +131,7 @@ const STYLES = `
   border-color: rgba(232, 59, 44, 0.4);
 }
 
-/* Touch: 44px minimum target (WCAG 2.5.5 / Apple HIG) — desktop keeps
+/* Touch: 44px minimum target (WCAG 2.5.5 / Apple HIG)  —  desktop keeps
    the original slim 34px pill */
 @media (pointer: coarse) {
   .footer-pill {
@@ -134,7 +139,7 @@ const STYLES = `
   }
 }
 
-/* Label stack — old label exits up, white label enters from below */
+/* Label stack  —  old label exits up, white label enters from below */
 .pill-label-stack {
   position: relative;
   display: inline-block;
@@ -161,7 +166,7 @@ const STYLES = `
   transform: translateY(0);
 }
 
-/* Morphic-style timeline ruler — subtle seconds labels + fine ticks */
+/* Morphic-style timeline ruler  —  subtle seconds labels + fine ticks */
 .footer-ruler {
   width: 100%;
   padding: 0 8px;
@@ -197,7 +202,7 @@ const STYLES = `
   height: 10px;
 }
 
-/* Thin 1px ticks — fine marks, not blocks */
+/* Thin 1px ticks  —  fine marks, not blocks */
 .footer-ruler-tick {
   flex: none;
   width: 1px;
@@ -216,7 +221,7 @@ const STYLES = `
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* #8a8a8a ≈ 5.3:1 on black — WCAG AA for small legal text */
+  /* #8a8a8a "°Ë† 5.3:1 on black  —  WCAG AA for small legal text */
   color: #8a8a8a;
   font-size: 11.5px;
   opacity: 0;
@@ -246,7 +251,7 @@ const STYLES = `
   transform: translateY(-2px) scale(1.1);
 }
 
-/* Logo waveform bars — staggered pulse animation */
+/* Logo waveform bars  —  staggered pulse animation */
 .footer-logo-bar {
   display: block;
   width: 2.5px;
@@ -359,7 +364,7 @@ const SOCIALS: { label: string; href: string; Icon: React.ComponentType<React.SV
 ];
 
 // -------------------------------------------------------------------------
-// 3. TIMELINE RULER — Morphic-style: subtle seconds + fine ticks (no playhead)
+// 3. TIMELINE RULER  —  Morphic-style: subtle seconds + fine ticks (no playhead)
 // -------------------------------------------------------------------------
 const TIMELINE_SECONDS = 15;
 const TICKS_PER_SECOND = 8; // fine minor ticks
@@ -392,7 +397,7 @@ const TimelineRuler = () => {
 };
 
 // -------------------------------------------------------------------------
-// 4. MAIN COMPONENT — Morphic-exact layout + micro/macro animations
+// 4. MAIN COMPONENT  —  Morphic-exact layout + micro/macro animations
 // -------------------------------------------------------------------------
 export function CinematicFooter() {
   return (
@@ -400,7 +405,7 @@ export function CinematicFooter() {
       <style dangerouslySetInnerHTML={{ __html: STYLES }} />
 
       <footer className="cinematic-footer-wrapper relative w-full overflow-hidden min-h-[500px]">
-        {/* Giant watermark — outline-only, anchored below the nav (no overlap) */}
+        {/* Giant watermark  —  outline-only, anchored below the nav (no overlap) */}
         <div className="footer-watermark" aria-hidden="true">
           <span className="footer-watermark-text">RAHUL</span>
           <span className="footer-watermark-text footer-watermark-shine">
@@ -408,7 +413,7 @@ export function CinematicFooter() {
           </span>
         </div>
 
-        {/* Layer 1: Logo — top-left with animated waveform bars */}
+        {/* Layer 1: Logo  —  top-left with animated waveform bars */}
         <div className="relative z-10 px-4 md:px-20 pt-8">
           <a href="/" className="inline-flex items-center gap-2 group" data-cursor="pointer">
             <span className="flex h-4 items-end gap-[2px]">
@@ -427,7 +432,7 @@ export function CinematicFooter() {
           <TimelineRuler />
         </div>
 
-        {/* Layer 3: Grid pills — equal-width cells like Morphic */}
+        {/* Layer 3: Grid pills  —  equal-width cells like Morphic */}
         <nav className="relative z-[11] mx-auto mt-6 w-full max-w-[960px] px-4" aria-label="Footer">
           <div className="footer-pill-row grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-2">
             {NAV_ROW_1.map((link) => (
@@ -466,7 +471,7 @@ export function CinematicFooter() {
           </div>
         </nav>
 
-        {/* Layer 4: Bottom bar — copyright left, EN | socials right */}
+        {/* Layer 4: Bottom bar  —  copyright left, EN | socials right */}
         <div className="absolute bottom-0 left-0 right-0 z-10 mx-4 md:mx-20 mb-5 footer-bottom">
           {/* Left side */}
           <div className="flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-3">

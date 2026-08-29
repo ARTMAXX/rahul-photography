@@ -117,7 +117,7 @@ export default function CommercialCampaignsPage() {
       {/* What is Commercial Photography */}
       <section className="relative w-full px-4 md:px-12 py-24">
         <div className="max-w-[1600px] mx-auto">
-          <h2 className="text-4xl md:text-5xl font-serif text-white mb-12">
+          <h2 className="h-section mb-12">
             What is Commercial Campaign Photography?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -150,7 +150,7 @@ export default function CommercialCampaignsPage() {
       {/* Campaign Types */}
       <section className="relative w-full px-4 md:px-12 py-24 border-t border-white/10">
         <div className="max-w-[1600px] mx-auto">
-          <h2 className="text-4xl md:text-5xl font-serif text-white mb-16">
+          <h2 className="h-section mb-16">
             Types of Commercial Campaigns We Shoot
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -192,7 +192,7 @@ export default function CommercialCampaignsPage() {
       {/* Campaign Process */}
       <section className="relative w-full px-4 md:px-12 py-24 border-t border-white/10">
         <div className="max-w-[1600px] mx-auto">
-          <h2 className="text-4xl md:text-5xl font-serif text-white mb-16">
+          <h2 className="h-section mb-16">
             Campaign Photography Process
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -228,6 +228,37 @@ export default function CommercialCampaignsPage() {
         </div>
       </section>
 
+      {/* Blog Links */}
+      <section className="relative w-full px-4 md:px-12 py-24 border-t border-white/10">
+        <div className="max-w-[1600px] mx-auto">
+          <h2 className="h-section mb-12">
+            Learn More About Commercial Production
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Link
+              href="/blog/ai-video-editing-tools-2026"
+              className="group border border-white/10 p-8 hover:border-[#e83b2c]/50 transition-colors"
+            >
+              <span className="text-xs uppercase tracking-widest text-[#e83b2c]">AI & Video</span>
+              <h3 className="text-xl font-serif text-white mt-3 group-hover:text-[#e83b2c] transition-colors">
+                AI Video Editing for Commercial Campaigns
+              </h3>
+              <p className="text-white/50 mt-3">Production tools and workflows for brand content</p>
+            </Link>
+            <Link
+              href="/blog/ai-color-grading-scene-detection"
+              className="group border border-white/10 p-8 hover:border-[#e83b2c]/50 transition-colors"
+            >
+              <span className="text-xs uppercase tracking-widest text-[#e83b2c]">AI & Video</span>
+              <h3 className="text-xl font-serif text-white mt-3 group-hover:text-[#e83b2c] transition-colors">
+                AI Color Grading & Scene Detection
+              </h3>
+              <p className="text-white/50 mt-3">Post-production consistency for commercial video</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="relative w-full px-4 md:px-12 pb-28 pt-24 border-t border-white/10">
         <div className="max-w-[1600px] mx-auto">
@@ -237,7 +268,7 @@ export default function CommercialCampaignsPage() {
           >
             <span className="italic text-[#e83b2c]">Plan your campaign shoot</span>
             <span className="w-10 h-px bg-[#e83b2c]/30 group-hover:bg-[#e83b2c] transition-colors duration-300" />
-            <span className="text-[#e83b2c]">→</span>
+            <span className="text-[#e83b2c]">—®</span>
           </a>
         </div>
       </section>

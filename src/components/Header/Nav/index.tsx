@@ -64,9 +64,9 @@ export default function Nav({ variant = "panel", onNavigate }: NavProps) {
       setTimeout(() => onNavigate?.(), 100);
     };
 
-  /* ──────────────────────────────────────────────────────────── */
-  /* MOBILE — full-screen overlay                                  */
-  /* ──────────────────────────────────────────────────────────── */
+  /* """""""""""""""""""""""""""""""""""""""""""""""""""""""""""" */
+  /* MOBILE  —  full-screen overlay                                  */
+  /* """""""""""""""""""""""""""""""""""""""""""""""""""""""""""" */
   if (variant === "fullscreen") {
     // Home + the six primary destinations stay in the big list;
     // Dehradun/Blog drop to the pill row.
@@ -119,7 +119,7 @@ export default function Nav({ variant = "panel", onNavigate }: NavProps) {
           ))}
         </div>
 
-        {/* Primary conversion — WHATSAPP */}
+        {/* Primary conversion  —  WHATSAPP */}
         <a
           href={`https://wa.me/917078939475?text=${encodeURIComponent(
             "Hi Rahul, I'd like to discuss a photography project."
@@ -140,9 +140,9 @@ export default function Nav({ variant = "panel", onNavigate }: NavProps) {
     );
   }
 
-  /* ──────────────────────────────────────────────────────────── */
-  /* DESKTOP — original corner-panel nav                           */
-  /* ──────────────────────────────────────────────────────────── */
+  /* """""""""""""""""""""""""""""""""""""""""""""""""""""""""""" */
+  /* DESKTOP  —  original corner-panel nav                           */
+  /* """""""""""""""""""""""""""""""""""""""""""""""""""""""""""" */
   return (
     <div className={styles.nav}>
       <div className={styles.body}>

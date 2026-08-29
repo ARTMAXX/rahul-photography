@@ -18,7 +18,7 @@ export interface CollectionItem {
 
 export type CollectionSurferVariant = "magnetic" | "uplift" | "simple";
 
-// Default items — Rahul Chanda's actual photography work (replaced Unsplash stock)
+// Default items  —  Rahul Chanda's actual photography work (replaced Unsplash stock)
 const ITEMS: CollectionItem[] = [
   {
     id: 1,
@@ -260,7 +260,7 @@ function Card({
     const rect = ref.current.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
-    const dist = Math.sqrt(Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2));
+    const dist = Math.sqrt(Math.pow(x as number - centerX, 2) + Math.pow(y as number - centerY, 2));
     return dist;
   });
 

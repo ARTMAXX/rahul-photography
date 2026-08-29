@@ -56,7 +56,7 @@ export default function MobileBentoGrid() {
       }
     );
 
-    // Staggered card reveal — cards slide up + fade in with slight scale
+    // Staggered card reveal  —  cards slide up + fade in with slight scale
     const validCards = cardsRef.current.filter(Boolean);
     gsap.fromTo(
       validCards,
@@ -126,15 +126,15 @@ export default function MobileBentoGrid() {
           >
             <Image
               src={images[item.idx]}
-              alt={`${LABELS[item.idx]} — commercial photography by Rahul Chanda`}
+              alt={`${LABELS[item.idx]}  —  commercial photography by Rahul Chanda`}
               fill
               sizes="(max-width: 768px) 33vw"
               quality={72}
               className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
             />
-            {/* Gradient overlay — always subtle, intensifies on hover/tap */}
+            {/* Gradient overlay  —  always subtle, intensifies on hover/tap */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-transparent transition-opacity duration-500" />
-            {/* Label — slides up on hover/tap */}
+            {/* Label  —  slides up on hover/tap */}
             <div
               className={`absolute inset-x-0 bottom-0 p-3 transition-all duration-500 ease-out ${
                 activeIdx === i

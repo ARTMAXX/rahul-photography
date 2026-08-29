@@ -129,7 +129,7 @@ export default function ContactForm({
       );
     }
 
-    // NOTE: no global ScrollTrigger kill — the gsap context reverts only
+    // NOTE: no global ScrollTrigger kill  —  the gsap context reverts only
     // this component's triggers (global kills broke sibling sections).
 
     return undefined;
@@ -272,15 +272,14 @@ export default function ContactForm({
                   <li className="flex gap-3 text-sm text-white/75">
                     <span className="mt-[7px] w-1 h-1 rounded-full bg-[#e83b2c] shrink-0" />
                     <span>
-                      I reply within{" "}
-                      <span className="text-white">24 hours</span> with a
+                      I reply within <span className="text-white">24 hours</span> with a
                       tailored quote and shoot plan.
                     </span>
                   </li>
                   <li className="flex gap-3 text-sm text-white/75">
                     <span className="mt-[7px] w-1 h-1 rounded-full bg-[#e83b2c] shrink-0" />
                     <span>
-                      No calls-shopping ✦ you work{" "}
+                      No calls-shopping Å“Â¦ you work 
                       <span className="text-white">directly with me</span>, not a
                       sales team.
                     </span>
@@ -288,7 +287,7 @@ export default function ContactForm({
                   <li className="flex gap-3 text-sm text-white/75">
                     <span className="mt-[7px] w-1 h-1 rounded-full bg-[#e83b2c] shrink-0" />
                     <span>
-                      Retouching, license, and delivery terms are agreed{" "}
+                      Retouching, license, and delivery terms are agreed 
                       <span className="text-white">upfront</span>, in writing.
                     </span>
                   </li>
@@ -368,7 +367,7 @@ export default function ContactForm({
                   data-cursor="pointer"
                 >
                   <option value="" disabled className="bg-[#111] text-white/50">
-                    Select a service✦
+                    Select a serviceÅ“Â¦
                   </option>
                   {SERVICES.map((s) => (
                     <option key={s} value={s} className="bg-[#111] text-white">
@@ -386,7 +385,7 @@ export default function ContactForm({
                   htmlFor="cf-message"
                   className="block text-[10px] uppercase tracking-[0.2em] text-white/50 mb-2"
                 >
-                  Project Details{" "}
+                  Project Details 
                   <span className="text-white/50 normal-case tracking-normal">(optional)</span>
                 </label>
                 <textarea
@@ -409,7 +408,7 @@ export default function ContactForm({
                 {status === "sending" ? (
                   <>
                     <Loader2 className="w-4 h-4 animate-spin" />
-                    <span>Opening WhatsApp✦</span>
+                    <span>Opening WhatsAppÅ“Â¦</span>
                   </>
                 ) : status === "sent" ? (
                   <>
@@ -424,7 +423,7 @@ export default function ContactForm({
                 )}
               </button>
               <p className="mt-3 text-center text-xs text-white/60">
-                Sends instantly via WhatsApp ✦ no account needed.
+                Sends instantly via WhatsApp Å“Â¦ no account needed.
               </p>
             </form>
           </div>

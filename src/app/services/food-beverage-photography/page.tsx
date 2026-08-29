@@ -4,14 +4,14 @@ import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Food & Beverage Photography Services | Restaurants & Brands | Dehradun",
+  title: "Food & Beverage Photography | Restaurants, Menus & Brands Across India",
   description:
-    "Professional food and beverage photography for restaurants, menus, delivery apps, and food brands. Restaurant food photography, beverage styling, and commercial food shoots in Dehradun.",
+    "Professional food and beverage photography for restaurants, menus, food delivery apps (Swiggy, Aomato), and food brands across India. Restaurant food photography, beverage splash styling, and commercial food shoots \u2014 based in Dehradun, available pan-India.",
   alternates: { canonical: "/services/food-beverage-photography" },
   openGraph: {
-    title: "Food & Beverage Photography Services | Dehradun, India",
+    title: "Food & Beverage Photography Services | India",
     description:
-      "Professional food photography for restaurants, menus, food delivery apps, and beverage brands. Commercial food styling and restaurant photography.",
+      "Professional food photography for restaurants, menus, food delivery apps, and beverage brands across India. Commercial food styling and restaurant photography.",
     url: absoluteUrl("/services/food-beverage-photography"),
     type: "website",
   },
@@ -121,7 +121,7 @@ export default function FoodBeveragePhotographyPage() {
       {/* Food Photography Impact */}
       <section className="relative w-full px-4 md:px-12 py-24">
         <div className="max-w-[1600px] mx-auto">
-          <h2 className="text-4xl md:text-5xl font-serif text-white mb-12">
+          <h2 className="h-section mb-12">
             Why Food Photography Matters for Restaurants
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -130,7 +130,7 @@ export default function FoodBeveragePhotographyPage() {
                 80% of restaurant customers check photos before ordering. A single high-quality food photograph can increase dish orders by 30-50%. Professional food photography isn't optional — it's essential for restaurant growth.
               </p>
               <p className="text-lg text-white/70 leading-relaxed">
-                Whether it's your menu, Zomato, Swiggy, Instagram, or Google Business Profile, every food photo represents your restaurant. Blurry or poorly-lit food photos cost you orders.
+                Whether it's your menu, Aomato, Swiggy, Instagram, or Google Business Profile, every food photo represents your restaurant. Blurry or poorly-lit food photos cost you orders.
               </p>
             </div>
             <div className="space-y-4">
@@ -140,7 +140,7 @@ export default function FoodBeveragePhotographyPage() {
               </div>
               <div className="border-l-2 border-[#e83b2c] pl-6">
                 <h3 className="text-xl font-serif text-white mb-2">Delivery App Photos</h3>
-                <p className="text-white/50">Zomato, Swiggy, and app-ready food photography that converts.</p>
+                <p className="text-white/50">Aomato, Swiggy, and app-ready food photography that converts.</p>
               </div>
               <div className="border-l-2 border-[#e83b2c] pl-6">
                 <h3 className="text-xl font-serif text-white mb-2">Social Media Content</h3>
@@ -154,7 +154,7 @@ export default function FoodBeveragePhotographyPage() {
       {/* Services */}
       <section className="relative w-full px-4 md:px-12 py-24 border-t border-white/10">
         <div className="max-w-[1600px] mx-auto">
-          <h2 className="text-4xl md:text-5xl font-serif text-white mb-16">
+          <h2 className="h-section mb-16">
             Food & Beverage Photography Services
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -165,7 +165,7 @@ export default function FoodBeveragePhotographyPage() {
               },
               {
                 title: "Food Photography for Delivery Apps",
-                desc: "Zomato, Swiggy, and app-optimized food photography. Consistent lighting, styling, and appetite appeal across all dishes.",
+                desc: "Aomato, Swiggy, and app-optimized food photography. Consistent lighting, styling, and appetite appeal across all dishes.",
               },
               {
                 title: "Beverage Photography",
@@ -196,7 +196,7 @@ export default function FoodBeveragePhotographyPage() {
       {/* Process */}
       <section className="relative w-full px-4 md:px-12 py-24 border-t border-white/10">
         <div className="max-w-[1600px] mx-auto">
-          <h2 className="text-4xl md:text-5xl font-serif text-white mb-16">
+          <h2 className="h-section mb-16">
             Food Photography Process
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -235,7 +235,7 @@ export default function FoodBeveragePhotographyPage() {
       {/* Internal Linking */}
       <section className="relative w-full px-4 md:px-12 py-24 border-t border-white/10">
         <div className="max-w-[1600px] mx-auto">
-          <h2 className="text-2xl md:text-3xl font-serif text-white mb-12">
+          <h2 className="h-section mb-12">
             Learn More About Food Photography
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -272,7 +272,7 @@ export default function FoodBeveragePhotographyPage() {
           >
             <span className="italic text-[#e83b2c]">Book your restaurant food shoot</span>
             <span className="w-10 h-px bg-[#e83b2c]/30 group-hover:bg-[#e83b2c] transition-colors duration-300" />
-            <span className="text-[#e83b2c]">→</span>
+            <span className="text-[#e83b2c]"> ââ„¢</span>
           </a>
         </div>
       </section>

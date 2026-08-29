@@ -2,11 +2,11 @@
 
 import { motion } from "motion/react";
 
-/* ════════════════════════════════════════════════════════════════════
-   ClientProblem – "YOUR PRODUCT IS GOOD. DOES IT LOOK GOOD ENOUGH?"
+/* "¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½
+   ClientProblem  —  "YOUR PRODUCT IS GOOD. DOES IT LOOK GOOD ENOUGH?"
    The desire/relevance beat: name the client's real pain in big type,
    then offer the way out.
-   ════════════════════════════════════════════════════════════════════ */
+   "¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½ */
 
 export default function ClientProblem() {
   return (
@@ -59,7 +59,7 @@ export default function ClientProblem() {
           style={{ fontFamily: "Outfit, system-ui" }}
         >
           Online, nobody tastes, touches or tries your product. They look at a
-          photo — and in about a second they decide whether it&apos;s worth their
+          photo  —  and in about a second they decide whether it&apos;s worth their
           money. If your visuals look ordinary, you lose the sale before the
           comparison even starts.
         </motion.p>

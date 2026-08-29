@@ -48,7 +48,7 @@ const galleryImages: GalleryImage[] = [
   { id: 32, url: "/opt/best shots/new-images/new-juice-01.webp",             title: "Fresh Juice Campaign",          category: "Campaigns" },
 ];
 
-/* ─── Individual gallery item with scroll-triggered fade-in ─── */
+/* — Individual gallery item with scroll-triggered fade-in — */
 function GalleryItem({
   image,
   index,

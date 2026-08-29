@@ -6,7 +6,7 @@ export const links = [
   { title: "Gallery", href: "/gallery" },
   { title: "FAQ", href: "/faq" },
   { title: "Contact", href: "/contact" },
-  // Secondary destinations — still reachable, lower in the hierarchy
+  // Secondary destinations  —  still reachable, lower in the hierarchy
   { title: "Dehradun", href: "/dehradun" },
   { title: "Blog", href: "/blog" },
 ];

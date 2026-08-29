@@ -21,7 +21,7 @@ const MARKDOWN_PATHS = new Set([
 const MARKDOWN_PATH_PREFIXES = ["/blog/"];
 
 /**
- * Link header values per RFC 8288 / RFC 9727 §3
+ * Link header values per RFC 8288 / RFC 9727 Ã‚Â§3
  * Added to page responses so AI agents can auto-discover machine-readable resources.
  */
 const LINK_HEADERS = [
@@ -99,7 +99,7 @@ export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   const cleanPath = pathname.replace(/\/$/, "") || "/";
 
-  // 1. API Catalog (RFC 9727) — return application/linkset+json
+  // 1. API Catalog (RFC 9727)  —  return application/linkset+json
   if (pathname === "/.well-known/api-catalog") {
     return new NextResponse(API_CATALOG_PAYLOAD, {
       status: 200,
@@ -112,7 +112,7 @@ export async function middleware(request: NextRequest) {
     });
   }
 
-  // 2. Health endpoint — /api/health
+  // 2. Health endpoint  —  /api/health
   if (pathname === "/api/health") {
     return new NextResponse(
       JSON.stringify(
@@ -164,10 +164,10 @@ export async function middleware(request: NextRequest) {
         });
       }
     }
-    // Unknown path with Accept: text/markdown — fall through to normal HTML
+    // Unknown path with Accept: text/markdown  —  fall through to normal HTML
   }
 
-  // 4. Standard HTML and static responses — attach Link discovery headers
+  // 4. Standard HTML and static responses  —  attach Link discovery headers
   const response = NextResponse.next();
   response.headers.set("Link", LINK_HEADERS);
   return response;

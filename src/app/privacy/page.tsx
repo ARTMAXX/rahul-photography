@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { LegalFooter } from "@/components/ui/legal-footer";
-import { absoluteUrl } from "@/lib/site";
+import { CinematicFooter } from "@/components/ui/motion-footer";
+import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -13,7 +13,53 @@ export const metadata: Metadata = {
     description:
       "How Rahul Chanda Photography collects, uses, and protects your personal information.",
     url: absoluteUrl("/privacy"),
+    type: "website",
+    images: [
+      {
+        url: absoluteUrl(siteConfig.ogImagePath),
+        width: 1200,
+        height: 630,
+        alt: "Privacy Policy — Rahul Chanda Photography",
+      },
+    ],
   },
+};
+
+const privacySchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": absoluteUrl("/"),
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Privacy Policy",
+          "item": absoluteUrl("/privacy"),
+        },
+      ],
+    },
+    {
+      "@type": "WebPage",
+      "@id": absoluteUrl("/privacy#webpage"),
+      "url": absoluteUrl("/privacy"),
+      "name": "Privacy Policy",
+      "description":
+        "How Rahul Chanda Photography collects, uses, and protects your personal information.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": siteConfig.name,
+        "url": absoluteUrl("/"),
+      },
+      "inLanguage": "en-IN",
+    },
+  ],
 };
 
 const sections = [
@@ -53,7 +99,7 @@ const sections = [
   {
     h: "Contact",
     body: [
-      "Rahul Chanda Photography, Dehradun, Uttarakhand, India. Email: rahulchandaphotography@gmail.com · Phone: +91 70789 39475.",
+      "Rahul Chanda Photography, Dehradun, Uttarakhand, India. Email: rahulchandaphotography@gmail.com Phone: +91 70789 39475.",
     ],
   },
 ];
@@ -61,13 +107,16 @@ const sections = [
 export default function PrivacyPage() {
   return (
     <main className="w-full bg-[#070707] text-[#f0f0f0]">
-      {/* ── Hero ── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(privacySchema) }}
+      />
+      {/* // Hero // */}
       <section className="relative px-4 md:px-12 pt-36 md:pt-44 pb-16 md:pb-24 max-w-[1200px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start">
           <div>
-            <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl tracking-tight leading-[0.9]">
-              Privacy{" "}
-              <span className="italic text-[#e83b2c]">Policy</span>
+            <h1 className="h-display">
+              Privacy <span className="h-accent">Policy</span>
             </h1>
             <p className="text-white/40 text-sm mt-4">Last updated: July 2026</p>
           </div>
@@ -80,16 +129,16 @@ export default function PrivacyPage() {
         </div>
       </section>
 
-      {/* ── Divider ── */}
+      {/* // Divider // */}
       <div className="max-w-[1200px] mx-auto px-4 md:px-12">
         <div className="h-px bg-white/10" />
       </div>
 
-      {/* ── Content ── */}
+      {/* // Content // */}
       <section className="px-4 md:px-12 py-16 md:py-24 max-w-[1200px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-12 md:gap-20">
           <div>
-            <h2 className="text-2xl md:text-3xl font-serif tracking-tight">
+            <h2 className="h-section mt-12">
               Privacy
             </h2>
             <p className="text-sm text-white/40 mt-3 leading-relaxed">
@@ -116,10 +165,10 @@ export default function PrivacyPage() {
         </div>
       </section>
 
-      {/* ── CTA ── */}
+      {/* // CTA // */}
       <section className="px-4 md:px-12 py-16 md:py-24">
         <div className="max-w-[600px] mx-auto text-center">
-          <h2 className="text-2xl md:text-4xl font-serif tracking-tight leading-tight mb-4">
+          <h2 className="h-section mt-12 mb-6">
             Questions about your data?
           </h2>
           <p className="text-sm text-white/40 mb-8 max-w-[36ch] mx-auto leading-relaxed">
@@ -144,7 +193,7 @@ export default function PrivacyPage() {
         </div>
       </section>
 
-      <LegalFooter />
+      <CinematicFooter />
     </main>
   );
 }

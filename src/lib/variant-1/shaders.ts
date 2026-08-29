@@ -29,7 +29,7 @@ export const cylinderFragment = /* glsl */ `
 
   void main() {
     // In view space the camera looks down -Z. A fragment whose normal points
-    // toward +Z is the far/inner surface of the cylinder — its texture must be
+    // toward +Z is the far/inner surface of the cylinder  —  its texture must be
     // mirrored back so labels read correctly instead of appearing reversed.
     vec2 uv = vUv;
     if (vNormal.z > 0.0) {

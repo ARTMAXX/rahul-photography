@@ -4,14 +4,14 @@ import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Product Photography Services for E-commerce & Brands | Dehradun, India",
+  title: "Product Photography Services | E-commerce, Amazon, Flipkart & Shopify India",
   description:
-    "Professional product photography in Dehradun for e-commerce, brands, and businesses. High-end product packshots, cosmetics, watches, jewelry, footwear photography with in-house retouching.",
+    "Professional product photography in India for e-commerce, brands, and D2C businesses \u2014 Amazon, Flipkart & Shopify-ready packshots, cosmetics, watches, jewelry, and footwear, with in-house retouching. Based in Dehradun, shoots pan-India.",
   alternates: { canonical: "/services/product-photography" },
   openGraph: {
-    title: "Product Photography Services | Dehradun, India",
+    title: "Product Photography Services | India \u2014 Amazon, Flipkart & Shopify Ready",
     description:
-      "Commercial product photography for e-commerce brands, startups, and established companies. Product packshots, cosmetics, watches, jewelry, and footwear photography.",
+      "Commercial product photography for e-commerce brands, startups, and established companies across India. Platform-compliant packshots, cosmetics, watches, jewelry, and footwear photography.",
     url: absoluteUrl("/services/product-photography"),
     type: "website",
   },
@@ -160,7 +160,7 @@ export default function ProductPhotographyPage() {
       {/* What is Product Photography */}
       <section className="relative w-full px-4 md:px-12 py-24">
         <div className="max-w-[1600px] mx-auto">
-          <h2 className="text-4xl md:text-5xl font-serif text-white mb-12">
+          <h2 className="h-section mb-12">
             What is Professional Product Photography?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -193,7 +193,7 @@ export default function ProductPhotographyPage() {
       {/* Service Categories */}
       <section className="relative w-full px-4 md:px-12 py-24 border-t border-white/10">
         <div className="max-w-[1600px] mx-auto">
-          <h2 className="text-4xl md:text-5xl font-serif text-white mb-16">
+          <h2 className="h-section mb-16">
             Product Photography Services We Offer
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -235,7 +235,7 @@ export default function ProductPhotographyPage() {
       {/* Why Product Photography Matters */}
       <section className="relative w-full px-4 md:px-12 py-24 border-t border-white/10">
         <div className="max-w-[1600px] mx-auto">
-          <h2 className="text-4xl md:text-5xl font-serif text-white mb-12">
+          <h2 className="h-section mb-12">
             Why Product Photography Matters for Your Business
           </h2>
           <div className="space-y-8">
@@ -274,7 +274,7 @@ export default function ProductPhotographyPage() {
       {/* Our Process */}
       <section className="relative w-full px-4 md:px-12 py-24 border-t border-white/10">
         <div className="max-w-[1600px] mx-auto">
-          <h2 className="text-4xl md:text-5xl font-serif text-white mb-16">
+          <h2 className="h-section mb-16">
             Product Photography Process
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -313,7 +313,7 @@ export default function ProductPhotographyPage() {
       {/* Internal Linking to Blog */}
       <section className="relative w-full px-4 md:px-12 py-24 border-t border-white/10">
         <div className="max-w-[1600px] mx-auto">
-          <h2 className="text-2xl md:text-3xl font-serif text-white mb-12">
+          <h2 className="h-section mb-12">
             Learn More About Product Photography
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -350,7 +350,7 @@ export default function ProductPhotographyPage() {
           >
             <span className="italic text-[#e83b2c]">Ready to photograph your products?</span>
             <span className="w-10 h-px bg-[#e83b2c]/30 group-hover:bg-[#e83b2c] transition-colors duration-300" />
-            <span className="text-[#e83b2c]">→</span>
+            <span className="text-[#e83b2c]"> ââ„¢</span>
           </a>
         </div>
       </section>

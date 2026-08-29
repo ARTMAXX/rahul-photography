@@ -11,7 +11,7 @@ function LenisScrollSync({ enabled }: { enabled: boolean }) {
   const lenis = useLenis();
 
   useEffect(() => {
-    // Mobile / reduced-motion: Lenis is mounted but inert — native scroll
+    // Mobile / reduced-motion: Lenis is mounted but inert  —  native scroll
     // drives everything and ScrollTrigger listens to the window directly.
     if (!enabled || !lenis) return;
 

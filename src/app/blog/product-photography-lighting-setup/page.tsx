@@ -104,17 +104,17 @@ export default function ProductPhotographyLightingBlog() {
       <section className="relative w-full min-h-[60vh] flex flex-col justify-end px-4 md:px-12 pb-20 pt-40">
         <div className="max-w-[900px] mx-auto">
           <span className="text-xs uppercase tracking-widest text-[#e83b2c]">Product Photography</span>
-          <h1 className="text-5xl md:text-6xl font-serif text-white mt-6 mb-6 leading-tight">
+          <h1 className="h-display">
             Product Photography Lighting: Key Light, Rim Light & Negative Fill
           </h1>
-          <p className="text-lg text-white/60 mb-8">
+          <p className="t-lede mt-6 mb-8">
             Master three professional lighting setups that every e-commerce and commercial product photographer needs to know.
           </p>
           <div className="flex gap-6 text-sm text-white/50">
             <span>August 28, 2026</span>
-            <span>•</span>
+            <span>' </span>
             <span>12 min read</span>
-            <span>•</span>
+            <span>' </span>
             <span>By Rahul Chanda</span>
           </div>
         </div>
@@ -123,7 +123,7 @@ export default function ProductPhotographyLightingBlog() {
       {/* Content */}
       <article className="max-w-[900px] mx-auto px-4 md:px-12 py-24">
         <section className="mb-16">
-          <h2 className="text-3xl font-serif text-white mb-6">Why Lighting Matters in Product Photography</h2>
+          <h2 className="h-section mt-16 mb-6">Why Lighting Matters in Product Photography</h2>
           <p className="text-lg text-white/70 leading-relaxed mb-4">
             The difference between amateur and professional product photography is 90% lighting. You can have a premium product, perfect camera settings, and great composition — but without proper lighting, your product photos will look flat, unconvincing, and fail to convert.
           </p>
@@ -133,7 +133,7 @@ export default function ProductPhotographyLightingBlog() {
         </section>
 
         <section className="mb-16">
-          <h2 className="text-3xl font-serif text-white mb-6">Setup 01: Key Light (Main Light)</h2>
+          <h2 className="h-section mt-16 mb-6">Setup 01: Key Light (Main Light)</h2>
           <p className="text-lg text-white/70 leading-relaxed mb-4">
             The key light is your primary light source. It defines the shape, form, and volume of your product.
           </p>
@@ -150,7 +150,7 @@ export default function ProductPhotographyLightingBlog() {
         </section>
 
         <section className="mb-16">
-          <h2 className="text-3xl font-serif text-white mb-6">Setup 02: Rim Light (Back Light)</h2>
+          <h2 className="h-section mt-16 mb-6">Setup 02: Rim Light (Back Light)</h2>
           <p className="text-lg text-white/70 leading-relaxed mb-4">
             The rim light is a secondary light that separates your product from the background and creates visual interest.
           </p>
@@ -167,7 +167,7 @@ export default function ProductPhotographyLightingBlog() {
         </section>
 
         <section className="mb-16">
-          <h2 className="text-3xl font-serif text-white mb-6">Setup 03: Negative Fill (Shadow Control)</h2>
+          <h2 className="h-section mt-16 mb-6">Setup 03: Negative Fill (Shadow Control)</h2>
           <p className="text-lg text-white/70 leading-relaxed mb-4">
             Negative fill isn't a light — it's the strategic blocking of ambient light to create contrast and shape.
           </p>
@@ -184,7 +184,7 @@ export default function ProductPhotographyLightingBlog() {
         </section>
 
         <section className="mb-16">
-          <h2 className="text-3xl font-serif text-white mb-6">Common Lighting Mistakes</h2>
+          <h2 className="h-section mt-16 mb-6">Common Lighting Mistakes</h2>
           <div className="space-y-4">
             {[
               {
@@ -209,7 +209,7 @@ export default function ProductPhotographyLightingBlog() {
               },
             ].map((item, idx) => (
               <div key={idx} className="border border-white/10 p-6">
-                <h4 className="text-lg font-serif text-[#e83b2c] mb-2">❌ {item.mistake}</h4>
+                <h4 className="text-lg font-serif text-[#e83b2c] mb-2">' {item.mistake}</h4>
                 <p className="text-white/60 mb-2">
                   <strong>Why:</strong> {item.why}
                 </p>
@@ -222,7 +222,7 @@ export default function ProductPhotographyLightingBlog() {
         </section>
 
         <section className="mb-16">
-          <h2 className="text-3xl font-serif text-white mb-6">When to Use Each Setup</h2>
+          <h2 className="h-section mt-16 mb-6">When to Use Each Setup</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
@@ -265,7 +265,7 @@ export default function ProductPhotographyLightingBlog() {
               href="/services/product-photography"
               className="inline-flex items-center gap-2 text-[#e83b2c] hover:text-[#e83b2c]/80 transition-colors"
             >
-              Explore Product Photography Services →
+              Explore Product Photography Services ®
             </Link>
           </div>
         </section>

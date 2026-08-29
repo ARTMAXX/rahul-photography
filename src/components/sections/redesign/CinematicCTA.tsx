@@ -2,10 +2,10 @@
 import { motion } from "motion/react";
 import LazyVideo from "@/components/ui/LazyVideo";
 
-/* ════════════════════════════════════════════════════════════════════
-    CinematicCTA – "Bring your stories to life" emotional band
+/* "¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½
+    CinematicCTA  —  "Bring your stories to life" emotional band
     BTS studio footage as a visual anchor behind the call to action
-   ════════════════════════════════════════════════════════════════════ */
+   "¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½ */
 
 const WHATSAPP_NUMBER = "917078939475";
 const EMAIL = "rahulchandaphotography@gmail.com";
@@ -40,7 +40,7 @@ export default function CinematicCTA() {
         >
           {/* Director's-cue framing */}
           <div className="inline-flex items-center gap-3 border border-[#e83b2c]/20 bg-black/30 backdrop-blur px-5 py-2 rounded-full text-white/60 text-xs uppercase tracking-[0.3em]">
-            <span className="text-[#e83b2c]">●</span> Ready when you are
+            <span className="text-[#e83b2c]">"”½</span> Ready when you are
           </div>
 
           <h2 className="mt-8 text-5xl md:text-7xl font-serif tracking-tight text-white leading-[1.05]">
@@ -50,14 +50,14 @@ export default function CinematicCTA() {
           </h2>
 
           <p className="mt-6 max-w-xl mx-auto text-white/45 text-sm md:text-base leading-relaxed" style={{ fontFamily: "Outfit, system-ui" }}>
-            Tell me about your product and I&apos;ll show you what it can look like —
+            Tell me about your product and I&apos;ll show you what it can look like  — 
             commercial photography and visual content, shot, graded and retouched so it
             finally looks <em className="not-italic text-[#e83b2c]">worth choosing</em>.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <a
-              href={`mailto:${EMAIL}?subject=Shoot%20Enquiry`}
+              href="#contact"
               className="group inline-flex items-center gap-2 bg-[#e83b2c] text-white font-semibold text-sm md:text-base px-8 py-4 rounded-full hover:bg-[#f0523f] transition-colors shadow-[0_10px_40px_-10px_rgba(232,59,44,0.5)]"
             >
               Start a project

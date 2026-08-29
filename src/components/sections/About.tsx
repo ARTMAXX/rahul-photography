@@ -122,12 +122,12 @@ export default function About() {
         }}
       />
 
-      {/* ══════ Content wrapper ══════ */}
+      {/* "¢½"¢½"¢½"¢½"¢½"¢½ Content wrapper "¢½"¢½"¢½"¢½"¢½"¢½ */}
       <div
         className="relative z-10 w-full"
         style={{ padding: "30vh 1.5rem 20vh" }}
       >
-        {/* Photo — top of about section */}
+        {/* Photo  —  top of about section */}
         <div
           ref={imageRef}
           className="mb-8 w-[55%] max-w-[260px] md:absolute md:right-0 md:top-0 md:w-[min(50vw,720px)] md:max-w-none md:mb-0"
@@ -152,18 +152,17 @@ export default function About() {
             ref={aboutTextRef}
             className="text-[26px] md:text-5xl font-serif leading-[1.35] md:leading-[1.45] tracking-[-0.01em] w-full text-balance"
           >
-            I don&apos;t just photograph products. I{" "}
-            <span className="italic font-bold">make them worth choosing</span>{" "}
-            — with technical precision and{" "}
-            <span className="italic font-bold">emotion</span>.
-          </h2>
+            I don&apos;t just photograph products. I 
+            <span className="italic font-bold">make them worth choosing</span> 
+             —  with technical precision and 
+            <span className="italic font-bold">emotion</span>.          </h2>
 
           <p
             ref={aboutSubRef}
             className="text-sm md:text-base font-sans leading-[1.7] md:leading-[1.6] tracking-[-0.005em] text-neutral-400 md:text-neutral-300 mt-8 md:mt-[12vh] md:w-[55%] md:ml-[45%]"
           >
             My name is Rahul Chanda. A commercial product photographer
-            based in{" "}
+            based in 
             <a
               href="/dehradun"
               className="underline decoration-[#e83b2c]/40 underline-offset-4 hover:decoration-[#e83b2c] transition-colors"
@@ -171,7 +170,7 @@ export default function About() {
             >
               Dehradun
             </a>
-            , I don&apos;t just photograph products — I light, style, and retouch
+            , I don&apos;t just photograph products  —  I light, style, and retouch
             every frame until the product looks like the obvious choice.
           </p>
 
@@ -185,13 +184,13 @@ export default function About() {
           </div>
         </div>
 
-        {/* Version tag — desktop only */}
+        {/* Version tag  —  desktop only */}
         <div
           ref={aboutVersionRef}
           className="hidden md:flex absolute right-[32%] bottom-[22vh] z-20 text-5xl font-serif leading-[1.45] tracking-[-0.01em] items-baseline justify-end gap-2"
         >
           <span className="inline-block">?</span>
-          <span>✦ 2026</span>
+          <span>Å“Â¦ 2026</span>
         </div>
       </div>
     </section>

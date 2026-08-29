@@ -4,14 +4,14 @@ import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Footwear & Fashion Photography | E-commerce & Brand Shoots | Dehradun",
+  title: "Footwear & Fashion Photography | E-commerce & Brand Shoots in India",
   description:
-    "Professional footwear and fashion photography for e-commerce and brands. Shoe photography, apparel lookbooks, and fashion product photography in Dehradun, India.",
+    "Professional footwear and fashion photography for e-commerce and brands across India. Amazon/Flipkart-ready shoe photography, apparel lookbooks, and fashion product photography \u2014 based in Dehradun, shoots pan-India.",
   alternates: { canonical: "/services/footwear-fashion-photography" },
   openGraph: {
-    title: "Footwear & Fashion Photography Services | Dehradun",
+    title: "Footwear & Fashion Photography Services | India",
     description:
-      "Professional shoe and fashion photography. Footwear e-commerce, lookbook photography, and commercial fashion product shoots.",
+      "Professional shoe and fashion photography across India. Footwear e-commerce, lookbook photography, and commercial fashion product shoots.",
     url: absoluteUrl("/services/footwear-fashion-photography"),
     type: "website",
   },
@@ -117,17 +117,17 @@ export default function FootwearFashionPhotographyPage() {
       {/* What We Offer */}
       <section className="relative w-full px-4 md:px-12 py-24">
         <div className="max-w-[1600px] mx-auto">
-          <h2 className="text-4xl md:text-5xl font-serif text-white mb-16">
+          <h2 className="h-section mb-16">
             Footwear & Fashion Photography Services
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {[
               {
-                title: "Shoe Photography — Studio",
+                title: "Shoe Photography \u2014 Studio",
                 desc: "Clean, white-background shoe photography for e-commerce. Studio packshots for Amazon, Flipkart, and marketplace listings.",
               },
               {
-                title: "Footwear Photography — Lifestyle",
+                title: "Footwear Photography \u2014 Lifestyle",
                 desc: "Lifestyle shoe photography in natural contexts. On-location shooting for brand campaigns and social media.",
               },
               {
@@ -159,7 +159,7 @@ export default function FootwearFashionPhotographyPage() {
       {/* Process */}
       <section className="relative w-full px-4 md:px-12 py-24 border-t border-white/10">
         <div className="max-w-[1600px] mx-auto">
-          <h2 className="text-4xl md:text-5xl font-serif text-white mb-16">
+          <h2 className="h-section mb-16">
             Footwear & Fashion Photography Process
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -204,7 +204,7 @@ export default function FootwearFashionPhotographyPage() {
           >
             <span className="italic text-[#e83b2c]">Photograph your footwear collection</span>
             <span className="w-10 h-px bg-[#e83b2c]/30 group-hover:bg-[#e83b2c] transition-colors duration-300" />
-            <span className="text-[#e83b2c]">→</span>
+            <span className="text-[#e83b2c]"> ââ„¢</span>
           </a>
         </div>
       </section>

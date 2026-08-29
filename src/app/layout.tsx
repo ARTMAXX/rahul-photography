@@ -5,6 +5,7 @@ import { siteConfig, absoluteUrl } from "../lib/site";
 import PageShell from "../components/PageShell";
 import CustomCursor from "../components/CustomCursor";
 import Header from "../components/Header";
+import ScrollToTop from "../components/ScrollToTop";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -80,14 +81,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en-IN" suppressHydrationWarning>
       <head>
-        {/* Preload hero poster for LCP optimization */}
+        {/* Unified typography system — loaded as a side-channel stylesheet
+            so Tailwind v4's PostCSS pipeline doesn't purge the rules. */}
+        <link rel="stylesheet" href="/css/typography.css" />
+        {/* Preload hero assets for LCP. Mobile uses the lightweight static
+            hero-mobile.webp (the actual LCP element); desktop preloads the
+            video poster. Media queries keep each device from fetching both. */}
+        <link
+          rel="preload"
+          href="/opt/hero-mobile.webp"
+          as="image"
+          fetchPriority="high"
+          media="(max-width: 767px)"
+        />
         <link
           rel="preload"
           href="/opt/hero-shots/hero-video-poster.webp"
           as="image"
           fetchPriority="high"
+          media="(min-width: 768px)"
         />
       </head>
       <body
@@ -96,6 +110,7 @@ export default function RootLayout({
         <PageShell>
           <CustomCursor />
           <Header />
+          <ScrollToTop />
           {children}
         </PageShell>
         {/* Ahrefs Web Analytics */}

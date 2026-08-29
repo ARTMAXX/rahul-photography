@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { absoluteUrl } from "@/lib/site";
+import { generateQAPageSchema, generateBreadcrumbSchema } from "@/lib/schemas";
 import FAQContent from "./faq-content";
 
-// ─── FAQ Data with Schema Ready ────────────────────────────────────
+// â—â—â— FAQ Data with Schema Ready â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—
 const faqs = [
   {
     q: "What types of photography do you offer?",
@@ -15,11 +16,11 @@ const faqs = [
   },
   {
     q: "What is the typical turnaround time?",
-    a: "Standard delivery is 5–10 business days after the shoot. Rush delivery (24–48 hours) is available on request for an additional fee.",
+    a: "Standard delivery is 5—10 business days after the shoot. Rush delivery (24—48 hours) is available on request for an additional fee.",
   },
   {
     q: "How many images are included per project?",
-    a: "This depends on the scope agreed in the project brief — Product Photography includes 20–50 edited high-res images and Food & Beverage includes 15–30 hero shots. The exact count is defined before the shoot begins.",
+    a: "This depends on the scope agreed in the project brief â— Product Photography includes 20—50 edited high-res images and Food & Beverage includes 15—30 hero shots. The exact count is defined before the shoot begins.",
   },
   {
     q: "Do you travel for shoots?",
@@ -39,11 +40,11 @@ const faqs = [
   },
   {
     q: "What happens if I need to cancel a booked shoot?",
-    a: "Deposits are non-refundable for cancellations made within 7 days of the scheduled shoot date — that production time is reserved exclusively for you.",
+    a: "Deposits are non-refundable for cancellations made within 7 days of the scheduled shoot date â— that production time is reserved exclusively for you.",
   },
   {
     q: "Can you work with tight deadlines?",
-    a: "Yes. Rush turnaround (24–48 hours) is available. Contact me directly to discuss your timeline and any additional rush fees.",
+    a: "Yes. Rush turnaround (24—48 hours) is available. Contact me directly to discuss your timeline and any additional rush fees.",
   },
   {
     q: "Do you offer package deals or retainers?",
@@ -51,51 +52,29 @@ const faqs = [
   },
 ];
 
-// ═══════════════════════════════════════════════════════════════════
-// FAQ PAGE SCHEMA (QAPage for Google)
-// ═══════════════════════════════════════════════════════════════════
+// â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢
+// FAQ PAGE SCHEMA (FAQPage for Google)
+// â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢â"¢
+// NOTE: FAQPage rich results were retired by Google on 7 May 2026.
+// FAQPage is the correct Schema.org type for FAQ content lists.
 const faqSchema = {
   "@context": "https://schema.org",
   "@graph": [
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": absoluteUrl("/"),
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "FAQ",
-          "item": absoluteUrl("/faq"),
-        },
-      ],
-    },
-    {
-      "@type": "FAQPage",
-      "@id": absoluteUrl("/faq"),
-      "mainEntity": faqs.map((faq) => ({
-        "@type": "Question",
-        "name": faq.q,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": faq.a,
-        },
-      })),
-    },
+    generateBreadcrumbSchema([
+      { label: "Home", url: absoluteUrl("/") },
+      { label: "FAQ", url: absoluteUrl("/faq") },
+    ]),
+    generateQAPageSchema(faqs.map((f) => ({ q: f.q, a: f.a }))),
   ],
 };
 
 export const metadata: Metadata = {
-  title: "FAQ — Commercial Photography by Rahul Chanda",
+  title: "FAQ â— Commercial Photography by Rahul Chanda",
   description:
     "Common questions about commercial photography services, pricing, turnaround times, and booking process with Rahul Chanda.",
   alternates: { canonical: "/faq" },
   openGraph: {
-    title: "FAQ — Commercial Photography Services",
+    title: "FAQ â— Commercial Photography Services",
     description: "Questions answered about product, food & beverage, and commercial photography services.",
     url: absoluteUrl("/faq"),
   },

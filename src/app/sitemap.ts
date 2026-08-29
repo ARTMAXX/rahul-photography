@@ -25,12 +25,12 @@ export const blogPostsSEO: { slug: string; date: string }[] = [
   { slug: "retouching-101", date: "2026-02-06" },
 ];
 
-// Service sub-pages
+// Service sub-pages  —  primary national/India-wide ranking targets
 const servicePages = [
-  { path: "/services/product-photography", priority: 0.8, freq: "monthly" as const },
-  { path: "/services/food-beverage-photography", priority: 0.8, freq: "monthly" as const },
-  { path: "/services/footwear-fashion-photography", priority: 0.8, freq: "monthly" as const },
-  { path: "/services/commercial-campaigns", priority: 0.8, freq: "monthly" as const },
+  { path: "/services/product-photography", priority: 0.9, freq: "monthly" as const },
+  { path: "/services/food-beverage-photography", priority: 0.9, freq: "monthly" as const },
+  { path: "/services/footwear-fashion-photography", priority: 0.9, freq: "monthly" as const },
+  { path: "/services/commercial-campaigns", priority: 0.9, freq: "monthly" as const },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

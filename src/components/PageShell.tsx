@@ -5,19 +5,19 @@ import SmoothScroll from "./SmoothScroll";
 import ColorBends from "./ColorBends";
 
 /**
- * PageShell — ONE stable tree for every viewport.
+ * PageShell  —  ONE stable tree for every viewport.
  *
  * The old version swapped between two different trees (mobile: bare div,
  * desktop: SmoothScroll+ColorBends+div), which forced React to unmount and
- * remount the ENTIRE page right after hydration on desktop — a measurable
+ * remount the ENTIRE page right after hydration on desktop  —  a measurable
  * LCP/TBT cost and a flash of unstyled state.
  *
  * Now the tree shape never changes:
  *  - <SmoothScroll> always wraps (it adds no DOM); on mobile it runs Lenis
  *    inertly (no smoothing, no rAF) so native scrolling stays butter-smooth.
- *  - ColorBends (Three.js shader background) only MOUNTS on ≥768px.
+ *  - ColorBends (Three.js shader background) only MOUNTS on "°768px.
  *
- * Result: crossing the breakpoint toggles at most the WebGL canvas —
+ * Result: crossing the breakpoint toggles at most the WebGL canvas  — 
  * page content is never destroyed.
  */
 export default function PageShell({ children }: { children: ReactNode }) {

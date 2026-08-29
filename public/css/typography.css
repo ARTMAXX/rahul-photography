@@ -1,0 +1,79 @@
+/* ========================================================================
+   UNIFIED TYPOGRAPHY SYSTEM
+   Imported as a side-effect from layout.tsx via raw <link> tag — bypasses
+   Tailwind v4's PostCSS plugin which would otherwise strip these rules
+   from the bundle. Treat as the single source of truth for h-display,
+   h-section, h-card, h-eyebrow, h-accent, t-body, t-lede.
+
+   Font fallbacks inlined because this file loads before globals.css
+   (which is where --font-editorial / --font-sans are declared) and we
+   don't want a flash of unstyled text.
+   ======================================================================== */
+
+:root {
+  --red: #e83b2c;
+  --font-editorial: "Playfair Display", Georgia, serif;
+  --font-sans: "Outfit", system-ui, sans-serif;
+}
+
+.h-display {
+  font-family: var(--font-editorial);
+  font-weight: 700;
+  font-size: clamp(2.6rem, 8vw, 6rem);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  max-width: 20ch;
+  margin-top: 1.5rem;
+}
+
+.h-section {
+  font-family: var(--font-editorial);
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  max-width: 24ch;
+}
+
+.h-card {
+  font-family: var(--font-editorial);
+  font-weight: 600;
+  font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+.h-eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 1;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(232, 59, 44, 0.85);
+}
+
+.h-accent {
+  color: var(--red);
+  font-style: italic;
+}
+
+.t-body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: clamp(1rem, 1.1vw, 1.125rem);
+  line-height: 1.7;
+  color: rgba(240, 240, 240, 0.6);
+}
+
+.t-lede {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: clamp(1.125rem, 1.4vw, 1.375rem);
+  line-height: 1.55;
+  color: rgba(240, 240, 240, 0.7);
+  max-width: 65ch;
+}

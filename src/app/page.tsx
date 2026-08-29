@@ -18,22 +18,23 @@ import {
 const About = dynamic(() => import("@/components/sections/About"), { ssr: true });
 const DesignInMotion = dynamic(() => import("@/components/sections/DesignInMotion"), { ssr: true });
 const ServicesShowcase = dynamic(() => import("@/components/sections/redesign/ServicesShowcase"), { ssr: true });
+const ServicesGrid = dynamic(() => import("@/components/sections/redesign/ServicesGrid"), { ssr: true });
 const FAQSection = dynamic(() => import("@/components/sections/redesign/FAQSection"), { ssr: true });
 const ContactForm = dynamic(() => import("@/components/sections/redesign/ContactForm"), { ssr: true });
 const SelectedWorkParallax = dynamic(() => import("@/components/ui/selected-work-parallax").then(m => ({ default: m.SelectedWorkParallax })), { ssr: true });
 const CinematicFooter = dynamic(() => import("@/components/ui/motion-footer").then(m => ({ default: m.CinematicFooter })), { ssr: true });
 
 export const metadata: Metadata = {
-  title: "Rahul Chanda — Commercial & Product Photographer in Dehradun, India",
+  title: "Rahul Chanda — Commercial & Product Photographer in Dehradun",
   description:
-    "Rahul Chanda is a commercial & product photographer in Dehradun, India, delivering high-end product, food & beverage, footwear, and advertising campaigns with in-house retouching.",
+    "High-end commercial and product photographer based in Dehradun, India. Specializing in product, food & beverage, footwear, and brand advertising campaigns.",
   alternates: { canonical: "/" },
   openGraph: {
-    type: "website",
     title: "Rahul Chanda — Commercial & Product Photographer in Dehradun",
     description:
       "High-end commercial and product photographer based in Dehradun, India. Specializing in product, food & beverage, footwear, and brand advertising campaigns.",
     url: absoluteUrl("/"),
+    type: "website",
     images: [
       {
         url: absoluteUrl(siteConfig.ogImagePath),
@@ -107,6 +108,13 @@ const homeSchema = {
       "telephone": siteConfig.contact.telephone,
       "email": siteConfig.contact.email,
       "priceRange": siteConfig.contact.priceRange,
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "24",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
       "currenciesAccepted": "INR",
       "paymentAccepted": "Cash, Credit Card, Bank Transfer, UPI",
       "founder": {
@@ -175,6 +183,26 @@ const homeSchema = {
         ],
       },
     },
+    {
+      "@type": "Organization",
+      "@id": absoluteUrl("/#organization"),
+      "name": siteConfig.name,
+      "url": absoluteUrl("/"),
+      "logo": absoluteUrl("/icon.svg"),
+      "image": absoluteUrl(siteConfig.ogImagePath),
+      "description": siteConfig.description,
+      "sameAs": [
+        siteConfig.contact.instagram,
+        siteConfig.contact.googleBusiness,
+        "https://www.behance.net/rahulchandaphotography",
+      ],
+      "areaServed": [
+        { "@type": "Country", "name": "India" },
+        { "@type": "State", "name": "Uttarakhand" },
+        { "@type": "AdministrativeArea", "name": "Delhi NCR" },
+      ],
+      "founder": { "@id": absoluteUrl("/#person") },
+    },
     generateBreadcrumbSchema(breadcrumbs),
   ],
 };
@@ -191,6 +219,7 @@ export default function Home() {
       <ClientProblem />
       <SelectedWorkParallax />
       <ServicesShowcase />
+      <ServicesGrid />
       <CaseStudies />
       <TheCraft />
       <Testimonials />
@@ -200,7 +229,7 @@ export default function Home() {
       <section aria-label="From the journal" className="relative w-full px-4 md:px-12 py-20 md:py-24 border-t border-white/5">
         <div className="max-w-[1600px] mx-auto">
           <div className="flex items-end justify-between gap-6 flex-wrap">
-            <h2 className="text-2xl md:text-4xl font-serif text-white leading-tight">
+            <h2 className="h-section leading-tight">
               From the <span className="italic text-[#e83b2c]">journal</span>.
             </h2>
             <Link
@@ -208,7 +237,7 @@ export default function Home() {
               className="text-xs uppercase tracking-widest text-white/50 hover:text-[#e83b2c] transition-colors"
               data-cursor="pointer"
             >
-              All articles →
+              All articles —
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-x-10 mt-10">

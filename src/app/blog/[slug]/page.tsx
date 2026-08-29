@@ -45,11 +45,11 @@ export const posts: BlogPost[] = [
     read: "9 min",
     cta: {
       text: "Explore our commercial photography & retouching services",
-      href: "/services",
+      href: "/services/product-photography",
       subtext: "Need high-end post-production for your catalog or brand campaign?",
     },
     body: [
-      "In commercial photography, the shoot is only half the battle. What happens after the lights are packed away determines whether an image reads as an amateur snapshot or a high-converting commercial asset. Post-production is not about slapping filters on a raw file — it is a deliberate, multi-stage engineering pipeline designed to ensure absolute color accuracy, surface perfection, and brand consistency across hundreds of frames.",
+      "In commercial photography, the shoot is only half the battle. What happens after the lights are packed away determines whether an image reads as an amateur snapshot or a high-converting commercial asset. Post-production is not about slapping filters on a raw file ' — it is a deliberate, multi-stage engineering pipeline designed to ensure absolute color accuracy, surface perfection, and brand consistency across hundreds of frames.",
       "",
       "Whether producing e-commerce packshots for national brands or campaign visuals for regional businesses in Uttarakhand, here is the exact four-stage post-production pipeline used in our studio to turn raw sensor captures into deliverable masters.",
       "",
@@ -57,7 +57,7 @@ export const posts: BlogPost[] = [
       "",
       "A typical commercial day produces 400 to 800 captures. Culling is the discipline of filtering out everything except the definitive hero frames. We evaluate captures in Lightroom Classic or Capture One tethering sessions using three strict criteria:",
       "",
-      "1. **Critical Sharpness at 100% Zoom:** For product work, focus on the primary branding, texture, or label must be tack-sharp. Any frame with micro-shake or slight depth-of-field falloff across key details is immediately rejected.",
+      "1. **Critical Sharpness at 100% Aoom:** For product work, focus on the primary branding, texture, or label must be tack-sharp. Any frame with micro-shake or slight depth-of-field falloff across key details is immediately rejected.",
       "2. **Specular and Geometry Alignment:** We check that key reflections, label horizons, and structural lines sit cleanly within the composition.",
       "3. **Story and Emotion:** For lifestyle or food photography, we select the frame where the liquid splash peaks, the steam curls naturally, or the fabric fold catches the rim light perfectly.",
       "",
@@ -95,23 +95,23 @@ export const posts: BlogPost[] = [
     slug: "generative-ai-product-backgrounds",
     title: "Generative AI Backgrounds for Product Photography: Studio Lighting & Workflow Guide",
     excerpt:
-      "How to combine physical studio key lighting with generative background compositing for e-commerce and lifestyle campaigns — without the artificial cutout look.",
+      "How to combine physical studio key lighting with generative background compositing for e-commerce and lifestyle campaigns ' — without the artificial cutout look.",
     tag: "AI & Photography",
     date: "June 2026",
     read: "8 min",
     cta: {
       text: "Book a commercial product shoot with custom environments",
-      href: "/services",
+      href: "/services/product-photography",
       subtext: "Looking for premium product imagery with lifestyle context?",
     },
     body: [
-      "Generative AI background replacement has moved from an experimental novelty to a practical studio technique. For brands that need multiple lifestyle scenes without building half a dozen expensive physical sets, generative environments offer incredible flexibility. However, 90% of AI-generated product images online look cheap and artificial. The culprit is almost never the AI tool itself — it is a failure of physical lighting physics.",
+      "Generative AI background replacement has moved from an experimental novelty to a practical studio technique. For brands that need multiple lifestyle scenes without building half a dozen expensive physical sets, generative environments offer incredible flexibility. However, 90% of AI-generated product images online look cheap and artificial. The culprit is almost never the AI tool itself ' — it is a failure of physical lighting physics.",
       "",
       "An AI background can generate a hyper-realistic marble countertop or sun-drenched Scandinavian kitchen in seconds. But if the physical product was lit with flat, diffuse front-light while the background has a sharp, warm directional sunset, the composite instantly screams fake. Here is how we bridge physical studio craft with generative post-production.",
       "",
       "## The Non-Negotiable Rule: Lighting Direction and Color Temperature",
       "",
-      "Before pressing the shutter in our studio, the intended background environment must already be planned. If the product will live in a morning sun lifestyle scene:",
+      "Before pressing the shutter in our studio, the intended background environment must already be planned. For commercial product photography with custom environments, see our [product photography services](/services/product-photography). If the product will live in a morning sun lifestyle scene:",
       "",
       "1. **Match Key Light Angle:** We position our primary studio strobe at 45 degrees high camera-left, mirroring the angle of the intended window light.",
       "2. **Match Light Hardness:** We use a focused beauty dish or silver reflector to create defined specular edges rather than a massive diffuse softbox.",
@@ -121,9 +121,9 @@ export const posts: BlogPost[] = [
       "",
       "## The Three-Pass Composite Pipeline",
       "",
-      "- **Pass 1 — Studio Capture on Neutral Sweep:** The product is photographed on a neutral grey or color-matched sweep with calibrated studio lighting. We capture a clean contact shadow frame using a transparent acrylic riser or polarizing filter to preserve base contact.",
-      "- **Pass 2 — Controlled Background Generation:** Using tools like Adobe Firefly or Midjourney v6 with strict camera perspective prompts (e.g., *'shallow depth of field, 85mm lens at f/2.8, soft morning light from left, out of focus luxury bathroom countertop'*).",
-      "- **Pass 3 — Atmospheric Blending in Photoshop:** We composite the product, blend the native contact shadow onto the new surface, and add subtle light wrap and ambient color bounce around the product edges.",
+      "- **Pass 1 ' — Studio Capture on Neutral Sweep:** The product is photographed on a neutral grey or color-matched sweep with calibrated studio lighting. We capture a clean contact shadow frame using a transparent acrylic riser or polarizing filter to preserve base contact.",
+      "- **Pass 2 ' — Controlled Background Generation:** Using tools like Adobe Firefly or Midjourney v6 with strict camera perspective prompts (e.g., *'shallow depth of field, 85mm lens at f/2.8, soft morning light from left, out of focus luxury bathroom countertop'*).",
+      "- **Pass 3 ' — Atmospheric Blending in Photoshop:** We composite the product, blend the native contact shadow onto the new surface, and add subtle light wrap and ambient color bounce around the product edges.",
       "",
       "## Where AI Backgrounds Excel vs Where Real Sets Are Mandatory",
       "",
@@ -138,17 +138,17 @@ export const posts: BlogPost[] = [
     slug: "ai-photoshop-retouching-techniques",
     title: "AI Retouching in Photoshop: The Practical Studio Workflow & Pipeline",
     excerpt:
-      "From Photoshop's Remove tool and Generative Fill to multi-stage batch cleanup with Retouch4me and manual finishing — here is the exact post-production pipeline I use for commercial work.",
+      "From Photoshop's Remove tool and Generative Fill to multi-stage batch cleanup with Retouch4me and manual finishing ' — here is the exact post-production pipeline I use for commercial work.",
     tag: "Retouching",
     date: "August 2026",
     read: "12 min",
     cta: {
       text: "View commercial retouching in our portfolio",
-      href: "/gallery",
+      href: "/services/product-photography",
       subtext: "See high-resolution commercial campaign and product results.",
     },
     body: [
-      "Photoshop's retouching capabilities have evolved dramatically with neural models and generative tooling. But in a commercial studio handling hundreds of deliverables every month, the question is never 'what can the AI do?' — it is 'which tools deliver repeatable, artifact-free quality without compromising client branding?'",
+      "Photoshop's retouching capabilities have evolved dramatically with neural models and generative tooling. But in a commercial studio handling hundreds of deliverables every month, the question is never 'what can the AI do?' ' — it is 'which tools deliver repeatable, artifact-free quality without compromising client branding?'",
       "",
       "After hundreds of commercial shoots across Dehradun and Northern India, we have synthesized a hybrid retouching pipeline that marries automated cleanup speed with uncompromising human art direction.",
       "",
@@ -165,10 +165,10 @@ export const posts: BlogPost[] = [
       "",
       "To handle high-volume e-commerce catalogs and luxury campaign hero shots efficiently, our studio runs a structured four-stage process:",
       "",
-      "1. **First Pass — Color Sync & Lens Correction:** RAW files are balanced against ColorChecker targets in Lightroom Classic. Lens chromatic aberrations and perspective distortions are corrected.",
-      "2. **Second Pass — Automated Batch Dust & Masking:** Batch cleanup tools like Retouch4me run at 50% intensity to strip baseline surface dust across entire sets without softening genuine product textures.",
-      "3. **Third Pass — Photoshop Precision Crafting:** Hero shots receive manual frequency separation, dodge and burn for dimensional shaping, and precise label cleanup. Learn more in our [Retouching 101 guide](/blog/retouching-101).",
-      "4. **Fourth Pass — 100% Quality Assurance:** Every image is inspected at 100% magnification on calibrated monitors for color drift, haloing around masks, and texture authenticity.",
+      "1. **First Pass ' — Color Sync & Lens Correction:** RAW files are balanced against ColorChecker targets in Lightroom Classic. Lens chromatic aberrations and perspective distortions are corrected.",
+      "2. **Second Pass ' — Automated Batch Dust & Masking:** Batch cleanup tools like Retouch4me run at 50% intensity to strip baseline surface dust across entire sets without softening genuine product textures.",
+      "3. **Third Pass ' — Photoshop Precision Crafting:** Hero shots receive manual frequency separation, dodge and burn for dimensional shaping, and precise label cleanup. Learn more in our [Retouching 101 guide](/blog/retouching-101).",
+      "4. **Fourth Pass ' — 100% Quality Assurance:** Every image is inspected at 100% magnification on calibrated monitors for color drift, haloing around masks, and texture authenticity.",
       "",
       "## Where AI Still Requires Human Intervention",
       "",
@@ -191,9 +191,9 @@ export const posts: BlogPost[] = [
       subtext: "Serving brands across Dehradun, Uttarakhand, and pan-India.",
     },
     body: [
-      "There is no shortage of headlines claiming that artificial intelligence will replace commercial photography entirely. Type a prompt into an image generator, and a slick image appears. But anyone running an actual retail, food, or e-commerce brand quickly discovers the fatal flaw: generative models do not photograph your physical product — they imagine an approximation of it.",
+      "There is no shortage of headlines claiming that artificial intelligence will replace commercial photography entirely. Type a prompt into an image generator, and a slick image appears. But anyone running an actual retail, food, or e-commerce brand quickly discovers the fatal flaw: generative models do not photograph your physical product ' — they imagine an approximation of it.",
       "",
-      "A cosmetics brand cannot ship an image where the bottle pump is shaped differently or the ingredient typography is subtly garbled. An apparel brand cannot use an image where the seam stitching does not match the actual garment. In commercial advertising, accuracy is not a preference — it is a legal and commercial requirement.",
+      "A cosmetics brand cannot ship an image where the bottle pump is shaped differently or the ingredient typography is subtly garbled. An apparel brand cannot use an image where the seam stitching does not match the actual garment. In commercial advertising, accuracy is not a preference ' — it is a legal and commercial requirement.",
       "",
       "Over the past year, we have integrated AI deeply into our studio workflow across Dehradun and Uttarakhand. Here is an honest assessment of how AI empowers commercial photography, and why the physical studio remains essential.",
       "",
@@ -217,23 +217,23 @@ export const posts: BlogPost[] = [
     slug: "why-beverage-splash-photography-is-hard",
     title: "Why Beverage Splash Photography is Harder Than It Looks: High-Speed Physics & Technique",
     excerpt:
-      "High-speed flash duration (t0.1), fluid viscosity, trigger delay, and hundreds of frames for one hero crown — the engineering and lighting behind commercial liquid action.",
+      "High-speed flash duration (t0.1), fluid viscosity, trigger delay, and hundreds of frames for one hero crown ' — the engineering and lighting behind commercial liquid action.",
     tag: "Behind the scenes",
     date: "June 2026",
     read: "8 min",
     cta: {
       text: "See beverage & food photography in our portfolio",
-      href: "/gallery",
+      href: "/services/food-beverage-photography",
       subtext: "Explore dynamic liquid splashes and beverage campaign imagery.",
     },
     body: [
-      "That dynamic, razor-sharp commercial shot of an iced beverage splashing around fresh mint, or a juice bottle suspended in a crown of liquid droplets, is one of the most technically demanding captures in commercial advertising. What looks like an effortless, refreshing instant is actually the culmination of precise fluid dynamics, microsecond timing, and specialized studio strobes.",
+      "That dynamic, razor-sharp commercial shot of an iced beverage splashing around fresh mint, or a juice bottle suspended in a crown of liquid droplets, is one of the most technically demanding captures in commercial advertising. What looks like an effortless, refreshing instant is actually the culmination of precise fluid dynamics, microsecond timing, and specialized studio strobes. For commercial beverage campaigns, see our [food & beverage photography services](/services/food-beverage-photography).",
       "",
       "Here is a look behind the scenes at the physics, lighting, and engineering required to capture commercial beverage splashes in the studio.",
       "",
       "## 1. Flash Duration vs. Shutter Speed (The t0.1 Factor)",
       "",
-      "A common misconception among beginner photographers is that a high camera shutter speed (like 1/8000s) freezes high-speed liquid. In studio photography with strobes, the camera shutter only syncs up to 1/200s or 1/250s. The real action-freezing mechanism is **flash duration** — specifically the **t0.1 rating** of the strobe.",
+      "A common misconception among beginner photographers is that a high camera shutter speed (like 1/8000s) freezes high-speed liquid. In studio photography with strobes, the camera shutter only syncs up to 1/200s or 1/250s. The real action-freezing mechanism is **flash duration** ' — specifically the **t0.1 rating** of the strobe.",
       "",
       "Standard studio lights may have a flash duration of 1/800s, which leaves liquid droplets with noticeable motion blur streaks. To freeze microscopic water beads in mid-air, we utilize specialized strobes firing at **1/8,000s to 1/15,000s (t0.1)** at lower power outputs in a completely blacked-out studio.",
       "",
@@ -241,7 +241,7 @@ export const posts: BlogPost[] = [
       "",
       "Plain water splashes violently and collapses in milliseconds, often creating thin, chaotic spray rather than beautiful, sculptured sheets. In commercial beverage photography, we often adjust fluid viscosity depending on the brand brief:",
       "",
-      "- **Water & Sodas:** Rapid, crisp droplet crowns requiring precise trigger timing down to 2–5 milliseconds.",
+      "- **Water & Sodas:** Rapid, crisp droplet crowns requiring precise trigger timing down to 2\u20135 milliseconds.",
       "- **Syrups & Coffee:** Slower, thicker ribbons that hold architectural shapes longer but require powerful backlighting to prevent them from looking heavy or muddy.",
       "- **Condensation Beads:** Real ice water drips and runs uncontrollably under studio lights. We craft lasting, photogenic condensation beads using a custom water and glycerin formulation applied with fine atomizers. Learn more in our [glass and beverage lighting guide](/blog/beverage-photography-glass).",
       "",
@@ -260,17 +260,17 @@ export const posts: BlogPost[] = [
     slug: "lighting-patterns-for-product-photography",
     title: "Essential Studio Lighting Patterns for Commercial Product Photography",
     excerpt:
-      "Key lights, rim highlights, gradient scrims, and negative fill — how to sculpt form, control specular reflections, and create editorial depth for packshots.",
+      "Key lights, rim highlights, gradient scrims, and negative fill ' — how to sculpt form, control specular reflections, and create editorial depth for packshots.",
     tag: "Technique",
     date: "May 2026",
     read: "7 min",
     cta: {
       text: "Book a professional studio product shoot",
-      href: "/services",
+      href: "/services/product-photography",
       subtext: "Elevate your brand catalog with precision studio lighting.",
     },
     body: [
-      "In product photography, light does not simply illuminate an object — it defines its shape, communicates its material quality, and establishes brand value. A matte ceramic cosmetic jar requires completely different light modifiers than a brushed titanium wristwatch or a glossy wine bottle. Mastering core studio lighting patterns is what separates flat, amateur packshots from high-end editorial imagery.",
+      "In product photography, light does not simply illuminate an object ' — it defines its shape, communicates its material quality, and establishes brand value. A matte ceramic cosmetic jar requires completely different light modifiers than a brushed titanium wristwatch or a glossy wine bottle. Mastering core studio lighting patterns is what separates flat, amateur packshots from high-end editorial imagery. See our [product photography services](/services/product-photography) for commercial studio work.",
       "",
       "Here are the four foundational lighting patterns and modifier techniques we rely on for commercial client work.",
       "",
@@ -303,19 +303,19 @@ export const posts: BlogPost[] = [
     slug: "footwear-photography-angles",
     title: "Footwear Photography Angles That Convert: The E-Commerce Catalog & Campaign Guide",
     excerpt:
-      "From the three-quarter hero and medial profile to tread macro details — the angle sequence that communicates build quality, reduces return rates, and drives conversions.",
+      "From the three-quarter hero and medial profile to tread macro details ' — the angle sequence that communicates build quality, reduces return rates, and drives conversions.",
     tag: "Technique",
     date: "April 2026",
     read: "8 min",
     cta: {
       text: "Explore footwear & fashion commercial photography",
-      href: "/services",
+      href: "/services/footwear-fashion-photography",
       subtext: "Catalog and campaign photography tailored for footwear brands.",
     },
     body: [
       "Footwear is one of the most visually competitive and return-sensitive categories in digital commerce. When shoppers purchase shoes online, they cannot touch the leather, test the cushioning, or inspect the sole grip. The product photography must answer every sensory question in a matter of seconds.",
       "",
-      "Studies consistently show that listings with comprehensive, standardized angle coverage achieve significantly higher conversion rates and lower return rates. Here is the definitive sequence of footwear photography angles we shoot for e-commerce and brand lookbooks.",
+      "Studies consistently show that listings with comprehensive, standardized angle coverage achieve significantly higher conversion rates and lower return rates. For professional footwear photography, see our [footwear & fashion photography services](/services/footwear-fashion-photography). Here is the definitive sequence of footwear photography angles we shoot for e-commerce and brand lookbooks.",
       "",
       "## 1. The Three-Quarter Lateral Hero (The Primary Conversion Angle)",
       "",
@@ -337,7 +337,7 @@ export const posts: BlogPost[] = [
       "",
       "## 5. The Asymmetrical Pair Composition (Context & Balance)",
       "",
-      "Arranging the left and right shoes together — one in lateral profile and one in three-quarter view — confirms the pair as a cohesive set and creates an eye-catching hero banner for category pages and social media ads.",
+      "Arranging the left and right shoes together ' — one in lateral profile and one in three-quarter view ' — confirms the pair as a cohesive set and creates an eye-catching hero banner for category pages and social media ads.",
       "",
       "Explore our [gallery](/gallery) to see footwear and leather goods photographed with studio precision, or [get in touch with our Dehradun studio](/contact) to schedule a product shoot.",
     ],
@@ -346,19 +346,19 @@ export const posts: BlogPost[] = [
     slug: "ai-video-editing-tools-2026",
     title: "AI Video Editing for Commercial Campaigns: Production Tools That Actually Work",
     excerpt:
-      "A field review of AI video tools for commercial brand content — from Runway Gen-3 and Premiere Pro to DaVinci Resolve color workflows. What saves production hours versus marketing hype.",
+      "A field review of AI video tools for commercial brand content ' — from Runway Gen-3 and Premiere Pro to DaVinci Resolve color workflows. What saves production hours versus marketing hype.",
     tag: "AI & Video",
     date: "July 2026",
     read: "9 min",
     cta: {
       text: "Plan a brand content & video shoot",
-      href: "/services",
+      href: "/services/commercial-campaigns",
       subtext: "Commercial video, social reels, and brand campaign production.",
     },
     body: [
       "Short-form video and commercial brand reels have become essential companions to still product photography. But post-producing high-volume video content across multiple aspect ratios (9:16 vertical, 16:9 widescreen, 1:1 feed) can bottleneck studio turnaround times.",
       "",
-      "Over the past six months, we evaluated leading AI-assisted video editing tools during live commercial campaign productions across Uttarakhand. Here is our breakdown of where AI video tooling genuinely delivers studio ROI, and where professional NLEs remain mandatory.",
+      "Over the past six months, we evaluated leading AI-assisted video editing tools during live commercial campaign productions across Uttarakhand. Here is our breakdown of where AI video tooling genuinely delivers studio ROI, and where professional NLEs remain mandatory. For brand video campaigns, see our [commercial campaign services](/services/commercial-campaigns).",
       "",
       "## 1. DaVinci Resolve Studio (Neural Engine Color & Isolation)",
       "",
@@ -374,7 +374,7 @@ export const posts: BlogPost[] = [
       "",
       "## The Takeaway for Brands",
       "",
-      "AI video tools accelerate the mechanical friction of video editing — transcription, rotoscoping, reframing, and color matching. But pacing, visual storytelling, and brand voice remain human arts. Learn more about automated color workflows in our [AI color grading guide](/blog/ai-color-grading-scene-detection), or explore our [commercial video and brand services](/services).",
+      "AI video tools accelerate the mechanical friction of video editing ' — transcription, rotoscoping, reframing, and color matching. But pacing, visual storytelling, and brand voice remain human arts. Learn more about automated color workflows in our [AI color grading guide](/blog/ai-color-grading-scene-detection), or explore our [commercial video and brand services](/services).",
     ],
   },
   {
@@ -391,7 +391,7 @@ export const posts: BlogPost[] = [
       subtext: "Consistent color science across still photography and video campaigns.",
     },
     body: [
-      "Maintaining color consistency across multi-camera commercial shoots is one of the most time-consuming challenges in post-production. An A-cam Sony FX3 shooting S-Log3 and a B-cam drone or secondary angle under changing natural light often produce disparate color shifts. When cut together in a commercial reel, inconsistent skin tones or drifting product colors immediately undermine production quality.",
+      "Maintaining color consistency across multi-camera commercial shoots is one of the most time-consuming challenges in post-production. For consistent product photography, see our [commercial studio services](/services/product-photography). An A-cam Sony FX3 shooting S-Log3 and a B-cam drone or secondary angle under changing natural light often produce disparate color shifts. When cut together in a commercial reel, inconsistent skin tones or drifting product colors immediately undermine production quality.",
       "",
       "Modern AI color grading and scene analysis tools have transformed this process from manual correction into an automated, precise workflow.",
       "",
@@ -401,7 +401,7 @@ export const posts: BlogPost[] = [
       "",
       "## 2. Scene Edit Detection for Campaign Repurposing",
       "",
-      "When adapting a 60-second brand film into rapid 15-second cutdowns for Instagram and YouTube ads, Premiere Pro's AI scene detection identifies cut transitions automatically. This eliminates manual timeline scrubbing and allows editors to immediately begin re-sequencing high-impact hooks.",
+      "When adapting a 60-second brand film into rapid 15-second cutdowns for Instagram and YouTube ads, see our [commercial campaign services](/services/commercial-campaigns), Premiere Pro's AI scene detection identifies cut transitions automatically. This eliminates manual timeline scrubbing and allows editors to immediately begin re-sequencing high-impact hooks.",
       "",
       "Read our broader review of [AI video tools for commercial campaigns](/blog/ai-video-editing-tools-2026) or explore our [commercial photography and content services](/services).",
     ],
@@ -416,13 +416,13 @@ export const posts: BlogPost[] = [
     read: "8 min",
     cta: {
       text: "Book a commercial beverage or food shoot",
-      href: "/services",
+      href: "/services/food-beverage-photography",
       subtext: "Premium liquid, bottle, and restaurant photography in Dehradun.",
     },
     body: [
       "Glass bottles and liquids present a unique optical paradox: glass is completely transparent, yet it reflects everything in the studio. A novice photographer pointing a strobe directly at a wine or liquor bottle will produce an ugly, blown-out white flash reflection that obscures the label and flattens the liquid.",
       "",
-      "Professional beverage photography is not about lighting the glass — it is about lighting the reflections and the liquid within. Here is our studio formula for photographing glass bottles and translucent drinks.",
+      "Professional beverage photography is not about lighting the glass ' — it is about lighting the reflections and the liquid within. Here is our studio formula for photographing glass bottles and translucent drinks.",
       "",
       "## 1. The Magic of Backlighting Transparent Liquids",
       "",
@@ -445,13 +445,13 @@ export const posts: BlogPost[] = [
     slug: "ai-upscaling-ecommerce",
     title: "AI Upscaling for E-Commerce: When Neural Resampling Helps and When It Kills Trust",
     excerpt:
-      "Comparing Topaz Gigapixel, Magnific AI, and optical resolution — understanding marketplace compliance, texture hallucinations, and catalog zoom standards.",
+      "Comparing Topaz Gigapixel, Magnific AI, and optical resolution ' — understanding marketplace compliance, texture hallucinations, and catalog zoom standards.",
     tag: "AI & Photography",
     date: "March 2026",
     read: "8 min",
     cta: {
       text: "Get crisp, native high-resolution commercial images",
-      href: "/services",
+      href: "/services/product-photography",
       subtext: "Shot on high-megapixel medium format and full-frame systems.",
     },
     body: [
@@ -460,11 +460,11 @@ export const posts: BlogPost[] = [
       "## The Upscaling Landscape: Upscaling vs Hallucination",
       "",
       "- **Topaz Gigapixel AI (Deterministic Upscaling):** Uses neural models trained on noise reduction and edge interpolation. At 2x scaling, it cleans up minor compression artifacts and sharpens clean edges without inventing fictional detail. This is safe for e-commerce crop recovery.",
-      "- **Generative Upscalers (e.g., Magnific AI):** These do not simply enlarge — they synthesize brand new micro-textures based on prompts. On a sweater, it may generate a fictional wool knit; on a cosmetic cream, it might hallucinate pores that do not exist on the packaging. When a customer receives a physical product that does not match these generated textures, return rates spike.",
+      "- **Generative Upscalers (e.g., Magnific AI):** These do not simply enlarge ' — they synthesize brand new micro-textures based on prompts. On a sweater, it may generate a fictional wool knit; on a cosmetic cream, it might hallucinate pores that do not exist on the packaging. When a customer receives a physical product that does not match these generated textures, return rates spike.",
       "",
       "## The Golden Rule for E-Commerce Catalogs",
       "",
-      "There is no substitute for high native optical resolution captured with calibrated lenses and studio strobes. Use AI upscalers as an emergency safety net for legacy asset rescue — never as a primary production strategy. Learn more about catalog standards in our [color science guide](/blog/color-science-ecommerce) or explore our [commercial product photography services](/services).",
+      "There is no substitute for high native optical resolution captured with calibrated lenses and studio strobes. For professional product photography, see our [commercial product photography service](/services/product-photography). Use AI upscalers as an emergency safety net for legacy asset rescue ' — never as a primary production strategy. Learn more about catalog standards in our [color science guide](/blog/color-science-ecommerce) or explore our [commercial product photography services](/services).",
     ],
   },
   {
@@ -682,10 +682,10 @@ export default async function BlogPostPage({
             <span>{post.read} read</span>
           </div>
 
-          <h1 className="font-serif text-3xl md:text-5xl leading-tight tracking-tight text-white mt-6">
+          <h1 className="h-display">
             {post.title}
           </h1>
-          <p className="text-white/50 text-lg mt-6 leading-relaxed italic">
+          <p className="t-lede mt-6 italic">
             {post.excerpt}
           </p>
 
@@ -694,14 +694,14 @@ export default async function BlogPostPage({
               p.startsWith("## ") ? (
                 <h2
                   key={i}
-                  className="font-serif text-2xl text-white mt-10 mb-4"
+                  className="h-section mt-12 mb-4"
                 >
                   {p.replace("## ", "")}
                 </h2>
               ) : p.startsWith("### ") ? (
                 <h3
                   key={i}
-                  className="font-serif text-xl text-white/90 mt-8 mb-3"
+                  className="h-card mt-8 mb-3"
                 >
                   {p.replace("### ", "")}
                 </h3>
@@ -710,7 +710,7 @@ export default async function BlogPostPage({
               ) : (
                 <p
                   key={i}
-                  className="text-white/70 leading-relaxed text-[16px]"
+                  className="t-body"
                 >
                   {renderFormattedText(p)}
                 </p>
@@ -718,7 +718,7 @@ export default async function BlogPostPage({
             )}
           </div>
 
-          {/* ===== RELATED READING — internal link cluster (SEO) ===== */}
+          {/* ===== RELATED READING ' — internal link cluster (SEO) ===== */}
           <div className="mt-16">
             <h2 className="text-xs uppercase tracking-widest text-white/40">
               Related reading

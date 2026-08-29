@@ -77,17 +77,17 @@ export default function EcommercePhotographyBlog() {
       <section className="relative w-full min-h-[60vh] flex flex-col justify-end px-4 md:px-12 pb-20 pt-40">
         <div className="max-w-[900px] mx-auto">
           <span className="text-xs uppercase tracking-widest text-[#e83b2c]">E-commerce Photography</span>
-          <h1 className="text-5xl md:text-6xl font-serif text-white mt-6 mb-6 leading-tight">
+          <h1 className="h-display">
             How to Photograph Products for E-commerce: 7-Step Process
           </h1>
-          <p className="text-lg text-white/60 mb-8">
+          <p className="t-lede mt-6 mb-8">
             Complete step-by-step guide to professional e-commerce product photography for Amazon, Shopify, and online stores.
           </p>
           <div className="flex gap-6 text-sm text-white/50">
             <span>August 29, 2026</span>
-            <span>•</span>
+            <span>' </span>
             <span>14 min read</span>
-            <span>•</span>
+            <span>' </span>
             <span>By Rahul Chanda</span>
           </div>
         </div>
@@ -95,17 +95,17 @@ export default function EcommercePhotographyBlog() {
 
       <article className="max-w-[900px] mx-auto px-4 md:px-12 py-24">
         <section className="mb-16">
-          <h2 className="text-3xl font-serif text-white mb-6">Why Professional Product Photography Matters for E-commerce</h2>
+          <h2 className="h-section mt-16 mb-6">Why Professional Product Photography Matters for E-commerce</h2>
           <p className="text-lg text-white/70 leading-relaxed mb-4">
             70% of e-commerce purchasing decisions are influenced by product photography. On Amazon, Flipkart, and Shopify, your product photos are your sales tool. Poor photos mean lost sales. Professional photos mean conversions.
           </p>
           <p className="text-lg text-white/70 leading-relaxed">
-            This guide breaks down the exact 7-step process I use for every e-commerce product shoot — from background selection through final retouching. Follow these steps, and your product photos will be marketplace-ready and conversion-optimized.
+            This guide breaks down the exact 7-step process I use for every e-commerce product shoot "''  from background selection through final retouching. Follow these steps, and your product photos will be marketplace-ready and conversion-optimized.
           </p>
         </section>
 
         <section className="mb-16">
-          <h2 className="text-3xl font-serif text-white mb-6">Step 01: Background Selection</h2>
+          <h2 className="h-section mt-16 mb-6">Step 01: Background Selection</h2>
           <p className="text-lg text-white/70 leading-relaxed mb-4">
             Your background sets the tone for how your product is perceived.
           </p>
@@ -126,16 +126,16 @@ export default function EcommercePhotographyBlog() {
         </section>
 
         <section className="mb-16">
-          <h2 className="text-3xl font-serif text-white mb-6">Step 02: Professional Lighting Setup</h2>
+          <h2 className="h-section mt-16 mb-6">Step 02: Professional Lighting Setup</h2>
           <p className="text-lg text-white/70 leading-relaxed mb-4">
             Lighting is 90% of product photography quality.
           </p>
           <div className="border-l-4 border-[#e83b2c] pl-6 py-4 bg-white/5 mb-6">
             <h4 className="text-lg font-serif text-white mb-3">Three-Light Setup (Professional):</h4>
             <ul className="space-y-3 text-white/70">
-              <li>• <strong>Key Light:</strong> Large softbox at 45°, 30-45° elevated. Primary light defining product form.</li>
-              <li>• <strong>Rim Light:</strong> Smaller light behind/to the side. Creates edge separation and depth.</li>
-              <li>• <strong>Fill Light/Reflector:</strong> Soft fill to catch shadows without harshness.</li>
+              <li>'  <strong>Key Light:</strong> Large softbox at 45°, 30-45° elevated. Primary light defining product form.</li>
+              <li>'  <strong>Rim Light:</strong> Smaller light behind/to the side. Creates edge separation and depth.</li>
+              <li>'  <strong>Fill Light/Reflector:</strong> Soft fill to catch shadows without harshness.</li>
             </ul>
           </div>
           <p className="text-lg text-white/70 leading-relaxed">
@@ -144,7 +144,7 @@ export default function EcommercePhotographyBlog() {
         </section>
 
         <section className="mb-16">
-          <h2 className="text-3xl font-serif text-white mb-6">Step 03: Camera Angle & Composition</h2>
+          <h2 className="h-section mt-16 mb-6">Step 03: Camera Angle & Composition</h2>
           <p className="text-lg text-white/70 leading-relaxed mb-4">
             Multiple angles show different product perspectives and increase trust.
           </p>
@@ -172,50 +172,50 @@ export default function EcommercePhotographyBlog() {
         </section>
 
         <section className="mb-16">
-          <h2 className="text-3xl font-serif text-white mb-6">Step 04: Product Positioning & Styling</h2>
+          <h2 className="h-section mt-16 mb-6">Step 04: Product Positioning & Styling</h2>
           <p className="text-lg text-white/70 leading-relaxed mb-4">
             How you position your product signals quality and intent.
           </p>
           <ul className="space-y-3 text-lg text-white/70 leading-relaxed mb-6">
-            <li>• <strong>Center alignment:</strong> Product centered in frame for clean composition.</li>
-            <li>• <strong>Props & scale:</strong> Show actual size with subtle context (coin, hand, surface).</li>
-            <li>• <strong>Materials:</strong> Feature product materials (metal, glass, fabric) with appropriate lighting.</li>
-            <li>• <strong>Stability:</strong> Ensure product sits naturally. Use fishing line or adhesive if necessary (remove in retouching).</li>
+            <li>'  <strong>Center alignment:</strong> Product centered in frame for clean composition.</li>
+            <li>'  <strong>Props & scale:</strong> Show actual size with subtle context (coin, hand, surface).</li>
+            <li>'  <strong>Materials:</strong> Feature product materials (metal, glass, fabric) with appropriate lighting.</li>
+            <li>'  <strong>Stability:</strong> Ensure product sits naturally. Use fishing line or adhesive if necessary (remove in retouching).</li>
           </ul>
         </section>
 
         <section className="mb-16">
-          <h2 className="text-3xl font-serif text-white mb-6">Step 05: Consistency Across Your Catalog</h2>
+          <h2 className="h-section mt-16 mb-6">Step 05: Consistency Across Your Catalog</h2>
           <p className="text-lg text-white/70 leading-relaxed mb-4">
             Amazon customers judge all your products together. Inconsistency looks unprofessional.
           </p>
           <div className="bg-white/5 border border-white/10 p-6 mb-6">
             <h4 className="text-white font-serif mb-3">Consistency Rules:</h4>
             <ul className="space-y-2 text-white/70">
-              <li>✓ Same lighting for all products</li>
-              <li>✓ Same background (white, gray, etc.)</li>
-              <li>✓ Same camera angle for similar products</li>
-              <li>✓ Same composition frame for all variants</li>
-              <li>✓ Same file size and resolution</li>
+              <li> — Same lighting for all products</li>
+              <li> — Same background (white, gray, etc.)</li>
+              <li> — Same camera angle for similar products</li>
+              <li> — Same composition frame for all variants</li>
+              <li> — Same file size and resolution</li>
             </ul>
           </div>
         </section>
 
         <section className="mb-16">
-          <h2 className="text-3xl font-serif text-white mb-6">Step 06: Professional Retouching</h2>
+          <h2 className="h-section mt-16 mb-6">Step 06: Professional Retouching</h2>
           <p className="text-lg text-white/70 leading-relaxed mb-4">
             Retouching transforms good photos into marketplace-ready ones.
           </p>
           <div className="space-y-3 mb-6">
             {[
-              "Color correction — white balance, exposure, vibrancy",
-              "Background cleanup — pure white, no shadows or dust",
-              "Product enhancement — brightness, contrast, clarity",
-              "Spot removal — dust, marks, imperfections",
-              "Reflection control — manage highlights on reflective surfaces",
+              "Color correction \u2014 white balance, exposure, vibrancy",
+              "Background cleanup \u2014 pure white, no shadows or dust",
+              "Product enhancement \u2014 brightness, contrast, clarity",
+              "Spot removal \u2014 dust, marks, imperfections",
+              "Reflection control \u2014 manage highlights on reflective surfaces",
             ].map((task, idx) => (
               <div key={idx} className="flex gap-4">
-                <span className="text-[#e83b2c] flex-shrink-0">→</span>
+                <span className="text-[#e83b2c] flex-shrink-0">\u2014</span>
                 <span className="text-white/70">{task}</span>
               </div>
             ))}
@@ -223,7 +223,7 @@ export default function EcommercePhotographyBlog() {
         </section>
 
         <section className="mb-16">
-          <h2 className="text-3xl font-serif text-white mb-6">Step 07: Amazon/Shopify-Ready Export</h2>
+          <h2 className="h-section mt-16 mb-6">Step 07: Amazon/Shopify-Ready Export</h2>
           <p className="text-lg text-white/70 leading-relaxed mb-4">
             File format and size matter for marketplace optimization.
           </p>
@@ -231,21 +231,21 @@ export default function EcommercePhotographyBlog() {
             <div className="border border-white/10 p-6">
               <h4 className="text-white font-serif mb-3">Amazon Requirements</h4>
               <ul className="space-y-2 text-white/70 text-sm">
-                <li>• Format: JPEG or TIFF</li>
-                <li>• Minimum 1600px (long edge)</li>
-                <li>• File size: Under 10MB</li>
-                <li>• Background: 85%+ white</li>
-                <li>• Product occupies 85% of frame</li>
+                <li>'  Format: JPEG or TIFF</li>
+                <li>'  Minimum 1600px (long edge)</li>
+                <li>'  File size: Under 10MB</li>
+                <li>'  Background: 85%+ white</li>
+                <li>'  Product occupies 85% of frame</li>
               </ul>
             </div>
             <div className="border border-white/10 p-6">
               <h4 className="text-white font-serif mb-3">Shopify/DTC Requirements</h4>
               <ul className="space-y-2 text-white/70 text-sm">
-                <li>• Format: JPEG or WebP</li>
-                <li>• Recommended 2400px+</li>
-                <li>• Optimized for web (100-200KB)</li>
-                <li>• Mobile-friendly aspect ratio</li>
-                <li>• Alternative backgrounds acceptable</li>
+                <li>'  Format: JPEG or WebP</li>
+                <li>'  Recommended 2400px+</li>
+                <li>'  Optimized for web (100-200KB)</li>
+                <li>'  Mobile-friendly aspect ratio</li>
+                <li>'  Alternative backgrounds acceptable</li>
               </ul>
             </div>
           </div>
@@ -261,7 +261,7 @@ export default function EcommercePhotographyBlog() {
               href="/services/product-photography"
               className="inline-flex items-center gap-2 text-[#e83b2c] hover:text-[#e83b2c]/80 transition-colors"
             >
-              Book E-commerce Product Photography →
+              Book E-commerce Product Photography -Â ' â„¢
             </Link>
           </div>
         </section>

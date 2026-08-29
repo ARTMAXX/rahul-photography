@@ -28,7 +28,7 @@ export const siteConfig = {
     addressCountry: "IN",
     latitude: 30.3165,
     longitude: 78.0322,
-    priceRange: "₹12,000 – ₹2,00,000+",
+    priceRange: "₹12,000 — ₹2,00,000+",
     instagram: "https://www.instagram.com/rahul_chanda_photography/",
     /** Google Business Profile (via Maps CID). */
     googleBusiness: "https://maps.google.com/?cid=2875568559570212542",

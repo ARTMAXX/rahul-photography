@@ -97,7 +97,7 @@ export function getMarkdownForPath(pathname: string): MarkdownResponse | null {
 
 ## Frequently Asked Questions (FAQ)
 
-- **Turnaround Time:** Standard delivery is 5–10 business days after the shoot. Rush delivery (24–48 hours) is available upon request.
+- **Turnaround Time:** Standard delivery is 5 — 10 business days after the shoot. Rush delivery (24 — 48 hours) is available upon request.
 - **Location:** Based in Dehradun, Uttarakhand, India. Available for on-location production pan-India.
 - **Deliverables:** Full-resolution uncompressed master files (print-ready) plus web-optimized WebP/JPEG assets formatted strictly by SKU.
 - **Usage Rights:** Standard commercial licensing included for digital advertising, website, social, and print collateral.
@@ -182,7 +182,7 @@ Commercial photography is where artistic vision meets commercial precision. Ever
 - **Primary Location:** Dehradun, Uttarakhand, India (available pan-India for on-location productions)
 - **Phone / Direct Call:** +91 70789 39475
 - **Booking Inquiries:** Direct online booking form available at https://rahulchandaphotography.com/contact
-- **Operating Hours:** Monday – Saturday, 09:00 – 19:00 IST
+- **Operating Hours:** Monday  —  Saturday, 09:00  —  19:00 IST
 
 ## How to Prepare a Commercial Brief
 To receive an accurate estimate and timeline, please include:
@@ -203,7 +203,7 @@ To receive an accurate estimate and timeline, please include:
 - **Q: Where is the studio located?**
   A: The studio is based in Dehradun, Uttarakhand. We also travel with full mobile lighting setups across India for on-location productions.
 - **Q: What is the typical delivery timeframe?**
-  A: Standard turnaround is 5–10 business days following the shoot. Rush turnaround (24–48 hours) is available upon request.
+  A: Standard turnaround is 5 — 10 business days following the shoot. Rush turnaround (24 — 48 hours) is available upon request.
 - **Q: How are files delivered?**
   A: Secure digital cloud delivery with full-resolution 16-bit master files (TIFF/PSD/JPEG) alongside optimized web formats (WebP/sRGB) structured strictly by SKU.
 - **Q: Do you provide retouching?**

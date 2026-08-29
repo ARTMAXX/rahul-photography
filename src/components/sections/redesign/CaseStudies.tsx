@@ -1,11 +1,11 @@
-﻿"use client";
+"use client";
 
 import { motion } from "motion/react";
 import Image from "next/image";
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   CaseStudies – three flagship assignments, framed as challenge → work → result
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½
+   CaseStudies  —  three flagship assignments, framed as challenge " ' work " ' result
+   Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½ */
 
 interface Study {
   src: string;
@@ -18,7 +18,7 @@ interface Study {
 const studies: Study[] = [
   {
     src: "/opt/best%20shots/Product%20image/product-watch-luxury.webp",
-    category: "Product · Campaign",
+    category: "Product Ã‚Â· Campaign",
     title: "Luxury Watch — Campaign Hero",
     brief:
       "A premium timepiece launching into a crowded market needed a hero image with the weight of the product itself. The brief: make metal look expensive, macro-level.",
@@ -27,7 +27,7 @@ const studies: Study[] = [
   },
   {
     src: "/opt/best%20shots/Food%20photo/food-biriyani.webp",
-    category: "Food & Beverage · Menu",
+    category: "Food & Beverage Ã‚Â· Menu",
     title: "Biriyani — Menu Hero",
     brief:
       "A restaurant refresh needed a menu image that made a 15-year-old dish look ordered-again. The ask was simple: texture you can almost smell.",
@@ -36,7 +36,7 @@ const studies: Study[] = [
   },
   {
     src: "/opt/best%20shots/mens%20shoe/shoe-mens-white.webp",
-    category: "Footwear · Marketplace",
+    category: "Footwear Ã‚Â· Marketplace",
     title: "White Sneaker — Clean Cutout",
     brief:
       "A D2C shoe label needed Amazon/Flipkart-ready assets: studio cutouts with flawless edges, consistent angle, and zero retouch-tell.",
@@ -61,8 +61,7 @@ export default function CaseStudies() {
             Case Studies
           </div>
           <h2 className="mt-5 text-[clamp(2.6rem,7vw,5.5rem)] font-serif leading-[0.9] tracking-[-0.02em] text-white max-w-[14ch]">
-            From brief to{" "}
-            <span className="text-[#e83b2c] italic">result.</span>
+            From brief to <span className="text-[#e83b2c] italic">result.</span>
           </h2>
         </motion.div>
 

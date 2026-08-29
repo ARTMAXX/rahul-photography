@@ -3,7 +3,7 @@ import type { Perspective } from "./types";
 /**
  * 12 curated images from /public/opt/best shots — mapped onto the rotating
  * WebGL cylinder (desktop) and the mobile bento grid. Re-encoded ~1024px
- * WebP derivatives (~20–80 KB each) instead of the multi-MB masters.
+ * WebP derivatives (~20 — 80 KB each) instead of the multi-MB masters.
  */
 export const images = [
   "/opt/best shots/Product image/product-headphone.webp",

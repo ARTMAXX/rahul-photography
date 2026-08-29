@@ -24,10 +24,9 @@ export default function Hero() {
   useGSAP(() => {
     const isMobile = window.innerWidth < 768;
 
-    // Set initial state of video wrapper: centered card
+    // Initial size is now provided by CSS (so the priority hero image paints
+    // before JS). GSAP only restores the radius and animates expansion.
     gsap.set(videoWrapperRef.current, {
-      width: isMobile ? "75vw" : "35vw",
-      height: isMobile ? "45vh" : "22vh",
       borderRadius: "12px",
     });
 
@@ -167,10 +166,12 @@ w-full overflow-hidden">
       </div>
       <div className="absolute bottom-10 md:bottom-12 w-full h-px bg-white/20 z-20 mix-blend-difference" />
 
-      {/* Centered Expanding Video/Image Wrapper */}
+      {/* Centered Expanding Video/Image Wrapper.
+          Size is set in CSS (not JS) so the priority LCP image has a box to
+          paint into on first paint — GSAP only animates it after hydration. */}
       <div
         ref={videoWrapperRef}
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-30 flex items-center justify-center bg-black overflow-hidden"
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-30 flex items-center justify-center bg-black overflow-hidden h-[45vh] w-[75vw] md:h-[22vh] md:w-[35vw]"
       >
         {/* Only ONE media: optimized image on mobile, IO-gated video on desktop */}
         {isMobile ? (

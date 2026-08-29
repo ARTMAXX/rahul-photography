@@ -15,6 +15,7 @@ import {
   Shirt,
   type LucideIcon,
 } from "lucide-react";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -26,6 +27,8 @@ interface Service {
   fullDesc: string;
   deliverables: string[];
   pricing: string;
+  /** URL of the dedicated service subpage, if one exists. */
+  subpageHref?: string;
 }
 
 const services: Service[] = [
@@ -36,6 +39,7 @@ const services: Service[] = [
     shortDesc: "High-end commercial product shots that showcase every detail.",
     fullDesc:
       "Professional product photography for e-commerce, marketing campaigns, and brand identity. From small accessories to large furniture pieces, I create images that sell.",
+    subpageHref: "/services/product-photography",
     deliverables: [
       "20-50 edited high-res images",
       "White background & lifestyle shots",
@@ -43,7 +47,7 @@ const services: Service[] = [
       "Retouching & color correction",
       "Web-optimized versions",
     ],
-    pricing: "Starting at ₹25,000",
+    pricing: "Starting at \u20B925,000",
   },
   {
     id: 2,
@@ -59,7 +63,7 @@ const services: Service[] = [
       "Location scouting & setup",
       "Post-production & retouching",
     ],
-    pricing: "Starting at ₹40,000",
+    pricing: "Starting at \u20B940,000",
   },
   {
     id: 3,
@@ -68,6 +72,7 @@ const services: Service[] = [
     shortDesc: "Mouth-watering food photography for restaurants and brands.",
     fullDesc:
       "Make your menu items irresistible with photography that captures texture, color, and appetite appeal. Perfect for menus, social media, and marketing.",
+    subpageHref: "/services/food-beverage-photography",
     deliverables: [
       "15-30 hero shots per session",
       "Styled & natural light setups",
@@ -75,7 +80,7 @@ const services: Service[] = [
       "Multiple compositions",
       "Menu-ready files",
     ],
-    pricing: "Starting at ₹20,000",
+    pricing: "Starting at \u20B920,000",
   },
   {
     id: 4,
@@ -85,6 +90,7 @@ const services: Service[] = [
       "Full-scale campaign photography from concept to delivery.",
     fullDesc:
       "Complete visual campaigns tailored to your brand's goals. Includes creative direction, production, and a comprehensive suite of assets for all platforms.",
+    subpageHref: "/services/commercial-campaigns",
     deliverables: [
       "50-150+ campaign images",
       "Creative concepting & storyboarding",
@@ -108,7 +114,7 @@ const services: Service[] = [
       "Priority scheduling",
       "Quick turnaround (48-72hrs)",
     ],
-    pricing: "₹35,000/month",
+    pricing: "\u20B935,000/month",
   },
   {
     id: 6,
@@ -125,7 +131,7 @@ const services: Service[] = [
       "Floor plan integration (optional)",
       "Virtual staging consultation",
     ],
-    pricing: "Starting at ₹30,000",
+    pricing: "Starting at \u20B930,000",
   },
 ];
 
@@ -133,14 +139,14 @@ export default function ServicesShowcase() {
   const [expandedService, setExpandedService] = useState<number | null>(null);
   const containerRef = useRef<HTMLElement>(null);
   // NOTE: the FAQPage JSON-LD for this section is server-rendered in
-  // src/app/services/page.tsx — client-injected schema is less reliable
+  // src/app/services/page.tsx â— client-injected schema is less reliable
   // for crawlers and duplicated work on every mount.
   const stickerRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const servicesRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useGSAP(() => {
-    // Heading reveal ✦ cinematic blur to sharp
+    // Heading reveal âÅ“Â¦ cinematic blur to sharp
     if (headingRef.current) {
       gsap
         .timeline({
@@ -165,7 +171,7 @@ export default function ServicesShowcase() {
         );
     }
 
-    // Sticker parallax ✦ follows scroll
+    // Sticker parallax âÅ“Â¦ follows scroll
     if (stickerRef.current) {
       gsap.to(stickerRef.current, {
         y: -200,
@@ -180,7 +186,7 @@ export default function ServicesShowcase() {
       });
     }
 
-    // Each service card ✦ staggered entrance
+    // Each service card âÅ“Â¦ staggered entrance
     servicesRef.current.forEach((card, i) => {
       if (!card) return;
       gsap.fromTo(
@@ -203,7 +209,7 @@ export default function ServicesShowcase() {
       );
     });
 
-    // NOTE: no global ScrollTrigger kill here — useGSAP's context revert
+    // NOTE: no global ScrollTrigger kill here â— useGSAP's context revert
     // already cleans up ONLY the triggers this component created. Killing
     // getAll() would destroy Hero/About/etc. triggers on unmount.
 
@@ -226,7 +232,7 @@ export default function ServicesShowcase() {
   // Scroll to the enquiry form and pre-select the service they asked about.
   const inquireAbout = (serviceTitle: string) => {
     // On the homepage: dispatch + smooth-scroll to the in-page contact section.
-    // On a standalone /services page: navigate to /contact?service=✦
+    // On a standalone /services page: navigate to /contact?service=âÅ“Â¦
     if (window.location.pathname === "/") {
       window.dispatchEvent(
         new CustomEvent("inquire-service", { detail: serviceTitle })
@@ -259,7 +265,7 @@ export default function ServicesShowcase() {
       />
 
       <div className="relative z-10 max-w-[1600px] mx-auto">
-        {/* Section header ✦ two-column: headline left, intro + proof right */}
+        {/* Section header âÅ“Â¦ two-column: headline left, intro + proof right */}
         <div className="mb-24 md:mb-32 grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-24 items-end">
           <div>
             <h2
@@ -323,7 +329,7 @@ export default function ServicesShowcase() {
                       isExpanded ? "ring-1 ring-[#e83b2c]/30" : ""
                     }`}
                   >
-                    {/* Header ✦ Always Visible */}
+                    {/* Header âÅ“Â¦ Always Visible */}
                     <button
                       onClick={() => toggleService(service.id)}
                       className="w-full p-6 md:p-8 text-left transition-all duration-300"
@@ -444,22 +450,35 @@ export default function ServicesShowcase() {
                                 </span>
                               </div>
 
-                              <button
-                                onClick={() => inquireAbout(service.title)}
-                                className="group relative"
-                                aria-label={`Inquire about ${service.title}`}
-                              >
-                                <div className="p-[1.5px] rounded-full bg-gradient-to-br from-[#e83b2c]/40 to-[#e83b2c]/10 transition-all duration-500 group-hover:from-[#e83b2c]/70 group-hover:to-[#e83b2c]/30 active:scale-[0.97]">
-                                  <div className="px-6 py-3 md:px-8 md:py-3.5 rounded-full bg-black flex items-center gap-3 transition-all duration-300">
-                                    <span className="text-sm font-medium text-white/90 group-hover:text-white">
-                                      Inquire Now
-                                    </span>
-                                    <div className="w-5 h-5 rounded-full bg-[#e83b2c]/20 flex items-center justify-center text-[#e83b2c] text-xs transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-[2px]">
-                                      <ArrowUpRight className="w-3 h-3" />
+                              <div className="flex items-center gap-3 flex-wrap">
+                                {service.subpageHref && (
+                                  <Link
+                                    href={service.subpageHref}
+                                    className="group/sub inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-white/70 hover:text-[#e83b2c] transition-colors duration-300"
+                                    data-cursor="pointer"
+                                    aria-label={`Read the full ${service.title} service page`}
+                                  >
+                                    <span>Full service page</span>
+                                    <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover/sub:translate-x-0.5 group-hover/sub:-translate-y-0.5" />
+                                  </Link>
+                                )}
+                                <button
+                                  onClick={() => inquireAbout(service.title)}
+                                  className="group relative"
+                                  aria-label={`Inquire about ${service.title}`}
+                                >
+                                  <div className="p-[1.5px] rounded-full bg-gradient-to-br from-[#e83b2c]/40 to-[#e83b2c]/10 transition-all duration-500 group-hover:from-[#e83b2c]/70 group-hover:to-[#e83b2c]/30 active:scale-[0.97]">
+                                    <div className="px-6 py-3 md:px-8 md:py-3.5 rounded-full bg-black flex items-center gap-3 transition-all duration-300">
+                                      <span className="text-sm font-medium text-white/90 group-hover:text-white">
+                                        Inquire Now
+                                      </span>
+                                      <div className="w-5 h-5 rounded-full bg-[#e83b2c]/20 flex items-center justify-center text-[#e83b2c] text-xs transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-[2px]">
+                                        <ArrowUpRight className="w-3 h-3" />
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
-                              </button>
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </motion.div>

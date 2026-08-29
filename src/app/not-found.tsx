@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { LegalFooter } from "@/components/ui/legal-footer";
+import { CinematicFooter } from "@/components/ui/motion-footer";
 
 export const metadata: Metadata = {
   title: "404 — Page Not Found | Rahul Chanda Photography",
@@ -27,9 +27,9 @@ export default function NotFound() {
 
         <div className="relative z-10">
           <div className="inline-flex border border-[#e83b2c]/20 py-1 px-4 rounded-full text-xs text-[#e83b2c] uppercase tracking-widest mb-6">
-            404 · Error
+            404 — Error
           </div>
-          <h1 className="text-[clamp(3rem,8vw,7rem)] font-serif leading-[0.9] tracking-tight text-white mb-6">
+          <h1 className="h-display mb-6">
             Frame <span className="italic text-[#e83b2c]">not found</span>.
           </h1>
           <p className="text-white/50 text-base md:text-lg max-w-[50ch] mx-auto leading-relaxed mb-10">
@@ -44,25 +44,25 @@ export default function NotFound() {
                 title: "Home",
                 desc: "Return to homepage",
                 href: "/",
-                icon: "✦",
+                icon: "△",
               },
               {
                 title: "Portfolio",
                 desc: "Explore selected work",
                 href: "/gallery",
-                icon: "📸",
+                icon: "◇",
               },
               {
                 title: "Services",
                 desc: "Pricing & deliverables",
                 href: "/services",
-                icon: "⚙️",
+                icon: "○",
               },
               {
                 title: "Dehradun",
                 desc: "Local photography service",
                 href: "/dehradun",
-                icon: "📍",
+                icon: "◉",
               },
             ].map((item) => (
               <Link
@@ -84,7 +84,7 @@ export default function NotFound() {
               href="/contact"
               className="inline-flex items-center gap-2 bg-[#e83b2c] text-white text-sm font-semibold px-7 py-3.5 rounded-full hover:bg-[#d63426] transition-colors"
             >
-              Contact Rahul →
+              Contact Rahul —
             </Link>
             <a
               href="https://wa.me/917078939475"
@@ -98,7 +98,7 @@ export default function NotFound() {
         </div>
       </section>
 
-      <LegalFooter />
+      <CinematicFooter />
     </main>
   );
 }

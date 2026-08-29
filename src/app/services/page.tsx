@@ -2,18 +2,27 @@ import type { Metadata } from "next";
 import ServicesShowcase from "@/components/sections/redesign/ServicesShowcase";
 import FAQSection from "@/components/sections/redesign/FAQSection";
 import { CinematicFooter } from "@/components/ui/motion-footer";
-import { absoluteUrl } from "@/lib/site";
+import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Commercial Photography Services Dehradun | Product, Food & Brand",
+  title: "Commercial Photography Services | Rahul Chanda Dehradun",
   description:
-    "Professional commercial photography services in Dehradun, India — product packshots, food & beverage, fashion & footwear, campaigns, brand content, and interiors. In-house retouching.",
+    "Professional commercial photography in Dehradun — product packshots, food & beverage, fashion, campaigns, and brand content. In-house retouching.",
   alternates: { canonical: "/services" },
   openGraph: {
     title: "Commercial Photography Services in Dehradun — Rahul Chanda",
     description:
-      "Commercial photography services — product, food & beverage, footwear, campaigns and brand content. Based in Dehradun, India.",
+      "Professional commercial photography in Dehradun — product, food & beverage, fashion, campaigns and brand content.",
     url: absoluteUrl("/services"),
+    type: "website",
+    images: [
+      {
+        url: absoluteUrl(siteConfig.ogImagePath),
+        width: 1200,
+        height: 630,
+        alt: "Commercial Photography Services — Rahul Chanda",
+      },
+    ],
   },
 };
 
@@ -36,6 +45,40 @@ const servicesSchema = {
           "item": absoluteUrl("/services"),
         },
       ],
+    },
+    {
+      "@type": "Service",
+      "name": "Commercial Photography",
+      "description":
+        "Professional commercial photography services including product packshots, food & beverage photography, fashion and footwear campaigns, brand content, and interior photography.",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": siteConfig.name,
+        "telephone": siteConfig.contact.telephone,
+        "email": siteConfig.contact.email,
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": siteConfig.contact.addressLocality,
+          "addressRegion": siteConfig.contact.addressRegion,
+          "addressCountry": siteConfig.contact.addressCountry,
+        },
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Dehradun" },
+        { "@type": "State", "name": "Uttarakhand" },
+        { "@type": "Country", "name": "India" },
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Photography Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Product Photography" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Food & Beverage Photography" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fashion & Footwear Photography" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Advertising Campaigns" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Interior & Architecture Photography" } },
+        ],
+      },
     },
   ],
 };
@@ -61,7 +104,7 @@ export default function ServicesPage() {
           <div className="inline-flex border border-[#e83b2c]/20 py-1 px-4 rounded-full text-xs text-[#e83b2c]/70 uppercase tracking-widest">
             Services
           </div>
-          <h1 className="text-[clamp(3rem,10vw,8rem)] font-serif leading-[0.85] tracking-[-0.03em] text-white mt-6 max-w-[16ch]">
+          <h1 className="h-display">
             Tailored to
             <br />
             your <span className="italic text-[#e83b2c]">vision</span>.
@@ -101,7 +144,7 @@ export default function ServicesPage() {
               <span className="text-[#e83b2c] text-sm font-medium">
                 {s.n}
               </span>
-              <h2 className="text-2xl font-serif text-white mt-3">{s.t}</h2>
+              <h2 className="h-card mt-3">{s.t}</h2>
               <p className="text-white/50 mt-3 leading-relaxed">{s.d}</p>
             </div>
           ))}

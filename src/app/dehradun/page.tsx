@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CinematicFooter } from "@/components/ui/motion-footer";
 import { siteConfig, absoluteUrl } from "@/lib/site";
+import { generateQAPageSchema } from "@/lib/schemas";
 
 // ============================================================================
 // METADATA — Targeted for commercial photography intent in Dehradun

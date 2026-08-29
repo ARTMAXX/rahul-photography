@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/sections/redesign/ContactForm";
+import { CinematicFooter } from "@/components/ui/motion-footer";
 import { siteConfig, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -8,10 +9,19 @@ export const metadata: Metadata = {
     "Start a commercial photography project with Rahul Chanda in Dehradun. Product, food & beverage, footwear, and brand advertising shoots. Replies within 24 hours.",
   alternates: { canonical: "/contact" },
   openGraph: {
-    title: "Contact Rahul Chanda — Photographer in Dehradun",
+    title: "Contact Rahul Chanda — Commercial Photographer in Dehradun",
     description:
       "Start a photography project with Rahul Chanda. Enquire about product, beverage, footwear, and campaign shoots — replies within 24 hours.",
     url: absoluteUrl("/contact"),
+    type: "website",
+    images: [
+      {
+        url: absoluteUrl(siteConfig.ogImagePath),
+        width: 1200,
+        height: 630,
+        alt: "Contact Rahul Chanda Photography",
+      },
+    ],
   },
 };
 
@@ -73,9 +83,9 @@ export default function ContactPage() {
           <div className="text-[#e83b2c] text-sm font-medium uppercase tracking-widest">
             Get in touch
           </div>
-          <h2 className="text-3xl md:text-5xl font-serif text-white mt-4 leading-tight">
-            Let&apos;s talk about your{" "}
-            <span className="italic text-[#e83b2c]">project</span>.
+          <h2 className="h-section mt-4">
+            Let&apos;s talk about your
+            <span className="h-accent"> project</span>.
           </h2>
           <p className="text-white/50 mt-6 leading-relaxed max-w-[60ch]">
             Based in Dehradun, shooting on location across Uttarakhand and
@@ -112,6 +122,8 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      <CinematicFooter />
     </>
   );
 }

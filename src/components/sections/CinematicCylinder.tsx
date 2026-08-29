@@ -39,7 +39,7 @@ if (typeof window !== "undefined") {
 }
 
 /**
- * Cinematic 3D cylinder carousel — ported from Codrops
+ * Cinematic 3D cylinder carousel  —  ported from Codrops
  * (https://github.com/JosephASG/codrops-cinematic-scroll-animations, demo 1).
  *
  * Adaptations for this Next.js site:
@@ -163,7 +163,7 @@ export default function CinematicCylinder() {
         const newDimensions = getResponsiveDimensions();
 
         // Mobile address-bar jump prevention: if width unchanged, only the URL
-        // bar toggled — bail to avoid a camera zoom/crop.
+        // bar toggled  —  bail to avoid a camera zoom/crop.
         if (newDimensions.isMobile && currentWidth === lastWidth) {
           return;
         }
@@ -319,7 +319,7 @@ export default function CinematicCylinder() {
             tl.to(
               cylinderRef.current.rotation,
               {
-                // 3.5 full turns per section (was 4.5) — slower, calmer spin
+                // 3.5 full turns per section (was 4.5)  —  slower, calmer spin
                 // while the camera pushes through its choreography.
                 y: "+=21.99",
                 duration: 8.5,
@@ -405,7 +405,7 @@ export default function CinematicCylinder() {
 
             window.addEventListener("resize", handleResize);
 
-            /* ── Render-loop gating ──────────────────────────────────
+            /* "" Render-loop gating """"""""""""""""""""""""""""""""""
                The RAF loop only runs while the 500svh section is actually
                on screen AND the tab is visible. Scrolling past it (or
                switching tabs) stops all GL work; returning resumes. */
@@ -575,7 +575,7 @@ export default function CinematicCylinder() {
       style={{ height: "500svh" }}
     >
       <div className="sticky top-0 h-svh w-full overflow-hidden">
-        {/* ══════ Ambient radial glow — matches the Services section ══════ */}
+        {/* "¢½"¢½"¢½"¢½"¢½"¢½ Ambient radial glow  —  matches the Services section "¢½"¢½"¢½"¢½"¢½"¢½ */}
         <div
           aria-hidden="true"
           className="absolute top-1/4 right-0 w-[1200px] h-[1200px] rounded-full opacity-10 blur-3xl pointer-events-none"
@@ -585,7 +585,7 @@ export default function CinematicCylinder() {
           }}
         />
 
-        {/* WebGL canvas — aria-label for accessibility since images are rendered via JS */}
+        {/* WebGL canvas  —  aria-label for accessibility since images are rendered via JS */}
         <canvas
           ref={canvasRef}
           className="block h-full w-full"
@@ -594,7 +594,7 @@ export default function CinematicCylinder() {
           role="img"
         />
 
-        {/* Caption overlays — fade in/out as the cylinder rotates */}
+        {/* Caption overlays  —  fade in/out as the cylinder rotates */}
         <div className="pointer-events-none absolute inset-0 z-10 text-white">
           {perspectives.map((perspective, index) => (
             <div

@@ -57,7 +57,7 @@ export function LegalFooter() {
         {/* Bottom bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-[10px] md:text-xs text-white/30 font-medium tracking-wide">
-            © {new Date().getFullYear()} Rahul Chanda Photography. All rights reserved.
+            \u00A9 {new Date().getFullYear()} Rahul Chanda Photography. All rights reserved.
           </div>
           <div className="flex items-center gap-6">
             <Link href="/" className="text-[10px] md:text-xs text-white/30 hover:text-white/60 transition-colors font-medium tracking-wide">
