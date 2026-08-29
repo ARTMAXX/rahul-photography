@@ -1,3 +1,9 @@
+# INACTIVE — superseded by Cloudflare (see wrangler.toml and CLAUDE.md).
+# This file is kept only for historical reference. The live site is deployed
+# via `npx wrangler deploy` against the OpenNext build output. Do not wire
+# any Netlify deploy to this repo without first coordinating with the
+# Cloudflare configuration.
+
 # Netlify build configuration for Next.js (rahul-photography)
 [build]
   command = "npm run build"
