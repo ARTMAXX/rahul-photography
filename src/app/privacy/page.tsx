@@ -64,42 +64,85 @@ const privacySchema = {
 
 const sections = [
   {
-    h: "Information We Collect",
+    h: "Disclaimer",
     body: [
-      "When you contact us via the website form, WhatsApp, email, or phone, we collect the details you provide: your name, contact information (email or phone number), the service you are interested in, and the project details you share.",
-      "We may also receive technical data automatically, such as browser type, device, and pages visited, via analytics tools.",
+      "This Privacy Policy is a draft and is not legal advice. It is provided for transparency with current and prospective clients. Please review it with a qualified lawyer before relying on it for compliance purposes.",
     ],
   },
   {
-    h: "How We Use Your Information",
+    h: "Data Controller",
     body: [
-      "Your information is used solely to respond to your enquiry, prepare quotes, schedule shoots, and deliver photography services.",
-      "We do not sell, rent, or trade your personal information to third parties.",
+      "Rahul Chanda, trading as Rahul Chanda Photography, is the data controller for personal information collected through this website. We are based in Dehradun, Uttarakhand, India. You can reach us at rahulchandaphotography@gmail.com or +91 70789 39475.",
+      "For purposes of the Digital Personal Data Protection Act 2023, you can contact our grievance officer at the same email address; we aim to acknowledge grievance communications within 7 days and resolve them within 30 days, as required by the Act.",
     ],
   },
   {
-    h: "Data Sharing",
+    h: "What We Collect",
     body: [
-      "We share your details only with service providers necessary to operate the business — such as email or messaging platforms — and only to the extent needed to fulfil your request.",
-      "We may disclose information where required by law or to protect our legal rights.",
+      "When you contact us through the website form, WhatsApp, email, or phone, we collect the details you provide: your name, contact information (email or phone), the service you are interested in, and the project details you share.",
+      "We also receive technical data automatically when you browse the site, via third-party analytics tools described below. This includes browser type, device, pages visited, referrer, and (for some sessions) interactions recorded for usability analysis.",
+    ],
+  },
+  {
+    h: "Why We Collect It and Legal Basis",
+    body: [
+      "We process your enquiry data on the legal basis of taking steps at your request prior to entering into a contract (Section 7(g) of the Digital Personal Data Protection Act 2023). This means: responding to your enquiry, preparing a quote, scheduling a shoot, and delivering the photography service you have requested.",
+      "We process technical and analytics data on the legal basis of consent. By continuing to use this site, you consent to the processing described in this policy. You may withdraw consent at any time by emailing us; we will honour your request within 30 days.",
+    ],
+  },
+  {
+    h: "Third-Party Processors",
+    body: [
+      "We use a small number of trusted third-party services to operate this site. Each has its own privacy practices:",
+      "Microsoft Clarity (USA) — session recording and heatmaps for usability research. Captures anonymised mouse movements, scroll depth, and click patterns. Default retention 30 days. See Microsoft's privacy policy for full details.",
+      "Ahrefs Web Analytics (USA) — anonymous, cookieless page-view analytics. No personal data is collected; all data is aggregated. See Ahrefs' privacy policy.",
+      "Google Search Console (USA) — search-performance and indexing data. See Google's privacy policy.",
+      "Cloudflare (USA / EU) — hosting, content delivery, and DDoS protection. Cloudflare may process request metadata (IP address, user agent, requested URL) as part of serving the site. See Cloudflare's privacy policy.",
+    ],
+  },
+  {
+    h: "Cookies and Similar Technologies",
+    body: [
+      "This site does not set any first-party cookies. Some of the third-party tools listed above (notably Microsoft Clarity) may set their own cookies or use similar identifiers. We do not use advertising cookies and we do not perform cross-site tracking.",
     ],
   },
   {
     h: "Data Retention",
     body: [
-      "Enquiry details are retained for as long as needed to complete your project and to maintain business records, after which they are securely deleted.",
+      "Enquiry data: retained for the lifetime of our engagement with you, plus 7 years for Indian tax and corporate record-keeping requirements, then permanently deleted.",
+      "Project files (deliverable images, RAW files, working files): retained for 12 months after final delivery, then permanently deleted. After 12 months, recovery is not possible. See our Terms of Service for details.",
+      "Analytics data: retained per the third-party processor's own retention policy, summarised above.",
     ],
   },
   {
-    h: "Your Rights",
+    h: "Your Rights Under the DPDP Act 2023",
     body: [
-      "You may request access to, correction of, or deletion of your personal data at any time by contacting us at rahulchandaphotography@gmail.com.",
+      "You have the right to: (a) access a copy of the personal data we hold about you; (b) request correction of inaccurate or incomplete data; (c) request erasure of data where we no longer have a legal basis to retain it; (d) lodge a grievance with us and have it resolved; and (e) complain to the Data Protection Board of India if you believe your rights have been infringed.",
+      "To exercise any of these rights, email rahulchandaphotography@gmail.com. We will acknowledge your request within 7 days and respond substantively within 30 days, as required by the Act.",
+    ],
+  },
+  {
+    h: "Children's Data",
+    body: [
+      "This site is intended for adult commercial enquirers. We do not knowingly collect personal data from anyone under 18. If you believe a child has submitted data through this site, please contact us and we will delete it.",
+    ],
+  },
+  {
+    h: "International Data Transfers",
+    body: [
+      "Some of our third-party processors are headquartered in the United States. By using this site, you understand that your data may be transferred to and processed in the United States. We rely on each processor's own compliance with applicable data-protection law, including Standard Contractual Clauses or equivalent safeguards where required.",
+    ],
+  },
+  {
+    h: "Changes to This Policy",
+    body: [
+      "We may update this policy from time to time. Material changes will be announced via a notice on the homepage for at least 30 days. The 'Last updated' date below reflects the most recent change.",
     ],
   },
   {
     h: "Contact",
     body: [
-      "Rahul Chanda Photography, Dehradun, Uttarakhand, India. Email: rahulchandaphotography@gmail.com Phone: +91 70789 39475.",
+      "Rahul Chanda Photography, Dehradun, Uttarakhand, India. Email: rahulchandaphotography@gmail.com. Phone: +91 70789 39475.",
     ],
   },
 ];
@@ -118,7 +161,7 @@ export default function PrivacyPage() {
             <h1 className="h-display">
               Privacy <span className="h-accent">Policy</span>
             </h1>
-            <p className="text-white/40 text-sm mt-4">Last updated: July 2026</p>
+            <p className="text-white/40 text-sm mt-4">Last updated: August 2026</p>
           </div>
           <div className="md:pt-4">
             <p className="text-white/50 text-sm md:text-base leading-relaxed max-w-[40ch]">

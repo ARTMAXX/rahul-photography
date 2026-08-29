@@ -64,46 +64,113 @@ const termsSchema = {
 
 const sections = [
   {
-    h: "Services & Estimates",
+    h: "Disclaimer",
     body: [
-      "Quotes are valid for 14 days from the date of issue. Final pricing is confirmed in writing before any shoot begins. Changes to scope after confirmation may incur additional charges.",
+      "These Terms of Service are a draft and are not legal advice. They are provided to set clear expectations between Rahul Chanda Photography and our clients. Please review them with a qualified lawyer before relying on them in a commercial engagement.",
     ],
   },
   {
-    h: "Booking & Deposits",
+    h: "Parties and Acceptance",
     body: [
-      "A booking deposit (typically 50% of the project fee) secures your shoot date. The balance is due before final delivery of images. Deposits are non-refundable for cancellations within 7 days of the scheduled shoot.",
+      "These terms govern photography services provided by Rahul Chanda, trading as Rahul Chanda Photography ('the Photographer'). 'The Client' is the individual or entity booking a shoot. Acceptance is by either (a) written agreement (email counts) referencing these terms, or (b) payment of the booking deposit.",
+    ],
+  },
+  {
+    h: "Services and Estimates",
+    body: [
+      "Written quotes are valid for 14 days from the date of issue. Final scope, deliverables, and fees are confirmed in writing before any shoot begins. Changes to scope after confirmation may incur additional charges at the Photographer's then-current rate.",
+    ],
+  },
+  {
+    h: "Booking, Deposits, and Kill Fees",
+    body: [
+      "A booking deposit of typically 50% of the project fee secures the shoot date. The balance is due before final delivery of the images.",
+      "If the Client cancels within 7 days of the scheduled shoot, the deposit is non-refundable. If the Photographer cancels, the deposit is returned in full and the Photographer will, at the Client's option, either reschedule at no charge or help source an alternative photographer at comparable rates.",
+      "Reschedules requested within 7 days of the shoot incur a 25% rebooking fee, deducted from the deposit.",
+    ],
+  },
+  {
+    h: "Late Payment",
+    body: [
+      "Balances unpaid 14 days after the date of invoice accrue interest at the rate of 1.5% per month (or the maximum permitted by applicable law, whichever is lower). Final masters are not delivered until the balance is cleared in full.",
     ],
   },
   {
     h: "Image Licensing",
     body: [
-      "Unless otherwise agreed in writing, delivered images are licensed for the specific commercial use described in the project brief. Additional usage, extended durations, or new media require a separate license and fee.",
-      "Full copyright and moral rights remain with the photographer. The photographer retains the right to display work in portfolio and promotional materials unless a confidentiality agreement is in place.",
+      "Unless otherwise agreed in writing, delivered images are licensed for the specific commercial use described in the project brief, on a non-exclusive, worldwide, perpetual basis. Extended territory, longer duration, exclusivity, sub-licensing, resale, or use in new media require a separate license and fee.",
+      "Editorial use, internal use, and agency portfolio use are not included in the default commercial license and must be agreed separately.",
+    ],
+  },
+  {
+    h: "Copyright and IP",
+    body: [
+      "The Photographer retains full copyright and moral rights in all images. The Client retains the licence described above but does not acquire the underlying copyright.",
+      "The Client warrants that any client-supplied material (product designs, packaging artwork, location signage, model likeness) does not infringe any third-party intellectual property rights. The Client indemnifies the Photographer against any IP claim arising from client-supplied material.",
     ],
   },
   {
     h: "Client Responsibilities",
     body: [
-      "The client is responsible for providing accurate product details, agreed props, and on-time availability of subjects and locations. Shoot delays caused by the client may extend the timeline or incur additional fees.",
+      "The Client is responsible for: (a) providing accurate product details and agreed props; (b) on-time availability of subjects and locations on the shoot day; (c) securing signed model releases for any identifiable person in the imagery; (d) securing signed property releases for any recognisable private location; and (e) any permits required for commercial photography in regulated spaces (heritage sites, airports, malls, government property).",
+      "Shoot delays caused by the Client may extend the timeline or incur additional fees at the Photographer's then-current rate.",
     ],
   },
   {
-    h: "Delivery & Revisions",
+    h: "Delivery and Revisions",
     body: [
-      "Standard delivery is 5–10 business days after the shoot. Minor color corrections are included; major retouching beyond the agreed scope is quoted separately. Two revision rounds are included per project.",
+      "Standard delivery is 5–10 business days after the shoot date. 'Minor color corrections' (white balance, exposure, basic contrast, and crop adjustments) are included in the project fee. 'Major retouching' (compositing, generative background replacement, body reshaping, label redesign, product recreation, and any other work that materially alters the captured image) is quoted separately.",
+      "Two rounds of revisions are included per project. Further revisions are billed at an hourly rate as stated in the quote.",
     ],
   },
   {
-    h: "Liability",
+    h: "RAW and Source Files",
     body: [
-      "To the maximum extent permitted by law, Rahul Chanda Photography's liability is limited to the total fees paid for the specific project.",
+      "RAW files, working Photoshop files, and project archives are not delivered by default. They are retained by the Photographer for 12 months after final delivery and then permanently deleted. After 12 months, recovery is not possible.",
+      "Clients who require RAW or working files may purchase an archive handover for a fee stated in the quote.",
+    ],
+  },
+  {
+    h: "Confidentiality",
+    body: [
+      "Both parties keep project details, unreleased imagery, and client identity confidential by default. The Photographer may display the work in portfolio and promotional materials unless (a) the Client requests confidentiality in writing, or (b) a separate non-disclosure agreement is in place.",
+    ],
+  },
+  {
+    h: "Force Majeure",
+    body: [
+      "Neither party is liable for failure to perform due to events outside reasonable control, including natural disaster, government action, pandemic, transport failure, or studio damage. In such cases, the Photographer will offer the Client the choice between rescheduling at no charge or a full refund of the deposit.",
+    ],
+  },
+  {
+    h: "Limitation of Liability",
+    body: [
+      "To the maximum extent permitted by law, the Photographer's total liability for any claim arising from a specific project is limited to the total fees paid for that project. Neither party is liable for indirect, consequential, incidental, special, or punitive damages, including lost profits, lost business opportunity, or loss of goodwill.",
+    ],
+  },
+  {
+    h: "Indemnification",
+    body: [
+      "Each party indemnifies the other against third-party claims arising from its own breach of these terms or its own negligent or wilful misconduct.",
+    ],
+  },
+  {
+    h: "Governing Law and Disputes",
+    body: [
+      "These terms are governed by the laws of India. The parties submit to the exclusive jurisdiction of the competent courts in Dehradun, Uttarakhand, India.",
+      "Before commencing any formal dispute proceedings, the parties will attempt in good faith to resolve the dispute through direct negotiation for a period of at least 30 days.",
+    ],
+  },
+  {
+    h: "Changes to These Terms",
+    body: [
+      "We may update these terms from time to time. Material changes will be notified by email to active clients and announced on the homepage for at least 30 days. The 'Last updated' date below reflects the most recent change.",
     ],
   },
   {
     h: "Contact",
     body: [
-      "For any questions about these terms: rahulchandaphotography@gmail.com +91 70789 39475.",
+      "Rahul Chanda Photography, Dehradun, Uttarakhand, India. Email: rahulchandaphotography@gmail.com. Phone: +91 70789 39475.",
     ],
   },
 ];
@@ -123,7 +190,7 @@ export default function TermsPage() {
               Terms of
               <span className="h-accent">Service</span>
             </h1>
-            <p className="text-white/40 text-sm mt-4">Last updated: July 2026</p>
+            <p className="text-white/40 text-sm mt-4">Last updated: August 2026</p>
           </div>
           <div className="md:pt-4">
             <p className="text-white/50 text-sm md:text-base leading-relaxed max-w-[40ch]">

@@ -29,6 +29,9 @@ export const metadata: Metadata = {
   description:
     "High-end commercial and product photographer based in Dehradun, India. Specializing in product, food & beverage, footwear, and brand advertising campaigns.",
   alternates: { canonical: "/" },
+  // NOTE: product-serum.webp is 1024×1024 (square). The OG spec recommends
+  // 1200×630 — platforms will letterbox or crop this image. A 1200×630
+  // variant should be added later if social CTR becomes a priority.
   openGraph: {
     title: "Rahul Chanda — Commercial & Product Photographer in Dehradun",
     description:
@@ -37,12 +40,19 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: absoluteUrl(siteConfig.ogImagePath),
+        url: absoluteUrl("/opt/best shots/Product image/product-serum.webp"),
         width: 1200,
         height: 630,
-        alt: "Rahul Chanda — Commercial & Product Photographer in Dehradun",
+        alt: "Bloom Skincare Serum — high-end product photography by Rahul Chanda, commercial photographer in Dehradun",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rahul Chanda — Commercial & Product Photographer in Dehradun",
+    description:
+      "High-end commercial and product photographer based in Dehradun, India. Specializing in product, food & beverage, footwear, and brand advertising campaigns.",
+    images: [absoluteUrl("/opt/best shots/Product image/product-serum.webp")],
   },
 };
 
