@@ -3,21 +3,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CinematicFooter } from "@/components/ui/motion-footer";
 import { siteConfig, absoluteUrl } from "@/lib/site";
+import { generateBlogPostSchema } from "@/lib/schemas";
+import { postISO } from "@/lib/blog-posts";
 
-export const postISO: Record<string, string> = {
-  "ai-photoshop-retouching-techniques": "2026-08-15",
-  "ai-commercial-product-photography": "2026-08-05",
-  "ai-video-editing-tools-2026": "2026-07-22",
-  "why-beverage-splash-photography-is-hard": "2026-06-20",
-  "generative-ai-product-backgrounds": "2026-06-10",
-  "lighting-patterns-for-product-photography": "2026-05-27",
-  "footwear-photography-angles": "2026-04-28",
-  "ai-color-grading-scene-detection": "2026-04-15",
-  "beverage-photography-glass": "2026-03-24",
-  "ai-upscaling-ecommerce": "2026-03-10",
-  "color-science-ecommerce": "2026-03-08",
-  "retouching-101": "2026-02-06",
-};
+export { postISO } from "@/lib/blog-posts";
 
 export interface BlogPost {
   slug: string;
@@ -629,32 +618,11 @@ export default async function BlogPostPage({
           },
         ],
       },
-      {
-        "@type": "BlogPosting",
-        "@id": absoluteUrl(`/blog/${slug}#article`),
-        "headline": post.title,
-        "description": post.excerpt,
-        "datePublished": postISO[slug],
-        "dateModified": postISO[slug],
-        "inLanguage": "en-IN",
-        "author": {
-          "@type": "Person",
-          "@id": absoluteUrl("/#person"),
-          "name": "Rahul Chanda",
-          "url": absoluteUrl("/"),
-        },
-        "publisher": {
-          "@type": "ProfessionalService",
-          "@id": absoluteUrl("/#business"),
-          "name": siteConfig.name,
-          "logo": {
-            "@type": "ImageObject",
-            "url": absoluteUrl("/icon.svg"),
-          },
-        },
-        "mainEntityOfPage": absoluteUrl(`/blog/${slug}`),
-        "image": absoluteUrl(siteConfig.ogImagePath),
-      },
+      generateBlogPostSchema(
+        post,
+        postISO[slug],
+        absoluteUrl(siteConfig.ogImagePath)
+      ),
     ],
   };
 

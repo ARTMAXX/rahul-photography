@@ -42,55 +42,6 @@ export function generateReviewSchema(
   };
 }
 
-// Individual review objects
-export function generateIndividualReviews(
-  testimonials: Array<{
-    text: string;
-    name: string;
-    role: string;
-  }>
-) {
-  return testimonials.map((testimonial) => ({
-    "@context": "https://schema.org",
-    "@type": "Review",
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": "5",
-      "bestRating": "5",
-      "worstRating": "1",
-    },
-    "author": {
-      "@type": "Person",
-      "name": testimonial.name,
-      "jobTitle": testimonial.role.split(",")[0], // Extract job title
-    },
-    "reviewBody": testimonial.text,
-    "datePublished": new Date().toISOString().split('T')[0],
-  }));
-}
-
-// "¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½
-// IMAGE OBJECT SCHEMA  —  For portfolio/product images
-// "¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½
-export function generateImageSchema(
-  imageUrl: string,
-  imageAlt: string,
-  imageWidth?: number,
-  imageHeight?: number
-) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "ImageObject",
-    "url": imageUrl,
-    "name": imageAlt,
-    "description": imageAlt,
-    ...(imageWidth && imageHeight && {
-      "width": imageWidth,
-      "height": imageHeight,
-    }),
-  };
-}
-
 // "¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½
 // QA PAGE SCHEMA  —  For FAQ section (replaced deprecated FAQPage)
 // Note: FAQ rich results were retired May 7, 2026 by Google
@@ -117,48 +68,24 @@ export function generateQAPageSchema(
 }
 
 // "¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½
-// SERVICE SCHEMA  —  For services pages
-// "¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½
-export function generateServiceSchema(
-  serviceName: string,
-  description: string,
-  priceRange?: string
-) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": serviceName,
-    "description": description,
-    "provider": {
-      "@type": ["ProfessionalService", "LocalBusiness"],
-      "@id": absoluteUrl("/#business"),
-    },
-    ...(priceRange && { "priceRange": priceRange }),
-  };
-}
-
-// "¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½
 // ARTICLE / BLOG POST SCHEMA  —  For blog pages
 // "¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½
 export function generateBlogPostSchema(
-  title: string,
-  description: string,
+  post: { title: string; excerpt: string; slug: string },
   datePublished: string,
-  dateModified: string,
-  imageUrl: string,
-  slug: string
+  imageUrl: string
 ) {
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": title,
-    "description": description,
+    "headline": post.title,
+    "description": post.excerpt,
     "image": {
       "@type": "ImageObject",
       "url": imageUrl,
     },
     "datePublished": datePublished,
-    "dateModified": dateModified,
+    "dateModified": datePublished,
     "author": {
       "@type": "Person",
       "name": "Rahul Chanda",
@@ -174,7 +101,7 @@ export function generateBlogPostSchema(
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": absoluteUrl(`/blog/${slug}`),
+      "@id": absoluteUrl(`/blog/${post.slug}`),
     },
   };
 }

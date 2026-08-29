@@ -1,29 +1,37 @@
 import type { MetadataRoute } from "next";
 import { siteConfig, absoluteUrl } from "../lib/site";
+import { postDates } from "../lib/blog-posts";
 
-// Publication date of every active blog post, used for sitemap lastmod + BlogPosting schema.
-// Format: yyyy-mm-dd (newest first). MUST stay in sync with src/app/blog/[slug]/page.tsx postISO.
-export const blogPostsSEO: { slug: string; date: string }[] = [
-  // Standalone blog posts (own page.tsx files)
-  { slug: "food-photography-restaurants", date: "2026-08-30" },
-  { slug: "product-photography-small-business-india", date: "2026-08-28" },
-  { slug: "product-photography-lighting-setup", date: "2026-08-25" },
-  { slug: "how-to-photograph-products-ecommerce", date: "2026-08-22" },
-  { slug: "beverage-photography-glass-splash", date: "2026-08-20" },
-  // Dynamic [slug] blog posts
-  { slug: "ai-photoshop-retouching-techniques", date: "2026-08-15" },
-  { slug: "ai-commercial-product-photography", date: "2026-08-05" },
-  { slug: "ai-video-editing-tools-2026", date: "2026-07-22" },
-  { slug: "why-beverage-splash-photography-is-hard", date: "2026-06-20" },
-  { slug: "generative-ai-product-backgrounds", date: "2026-06-10" },
-  { slug: "lighting-patterns-for-product-photography", date: "2026-05-27" },
-  { slug: "footwear-photography-angles", date: "2026-04-28" },
-  { slug: "ai-color-grading-scene-detection", date: "2026-04-15" },
-  { slug: "beverage-photography-glass", date: "2026-03-24" },
-  { slug: "ai-upscaling-ecommerce", date: "2026-03-10" },
-  { slug: "color-science-ecommerce", date: "2026-03-08" },
-  { slug: "retouching-101", date: "2026-02-06" },
-];
+// Standalone blog posts that have their own page.tsx — listed in the sitemap
+// with lastModified derived from their own page file, not from postDates
+// (postDates still holds their publish date for JSON-LD).
+const standaloneBlogSlugs = new Set<string>([
+  "food-photography-restaurants",
+  "product-photography-small-business-india",
+  "product-photography-lighting-setup",
+  "how-to-photograph-products-ecommerce",
+  "beverage-photography-glass-splash",
+]);
+
+// Per-page lastModified values for core pages. Set from git history of the
+// relevant page file when known. Edit these as pages get updated — do not
+// stamp new Date() here.
+const corePageDates: Record<string, string> = {
+  "/":          "2026-08-29",
+  "/services":  "2026-08-29",
+  "/dehradun":  "2026-08-29",
+  "/gallery":   "2026-08-29",
+  "/about":     "2026-08-29",
+  "/blog":      "2026-08-29",
+  "/contact":   "2026-08-29",
+  "/faq":       "2026-08-29",
+  "/terms":     "2026-08-29",
+  "/privacy":   "2026-08-29",
+  "/services/product-photography":          "2026-08-29",
+  "/services/food-beverage-photography":    "2026-08-29",
+  "/services/footwear-fashion-photography": "2026-08-29",
+  "/services/commercial-campaigns":         "2026-08-29",
+};
 
 // Service sub-pages  —  primary national/India-wide ranking targets
 const servicePages = [
@@ -49,17 +57,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const pages: MetadataRoute.Sitemap = [...core, ...servicePages].map((p) => ({
     url: absoluteUrl(p.path),
-    lastModified: new Date(),
+    ...(corePageDates[p.path] && { lastModified: new Date(corePageDates[p.path]) }),
     changeFrequency: p.freq,
     priority: Number(p.priority),
   }));
 
-  const posts: MetadataRoute.Sitemap = blogPostsSEO.map((post) => ({
-    url: absoluteUrl(`/blog/${post.slug}`),
-    lastModified: new Date(post.date),
-    changeFrequency: "monthly",
-    priority: 0.6,
-  }));
+  const standalonePosts: MetadataRoute.Sitemap = [...standaloneBlogSlugs].map(
+    (slug) => ({
+      url: absoluteUrl(`/blog/${slug}`),
+      lastModified: new Date(postDates[slug]),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    })
+  );
 
-  return [...pages, ...posts];
+  const dynamicPosts: MetadataRoute.Sitemap = Object.entries(postDates)
+    .filter(([slug]) => !standaloneBlogSlugs.has(slug))
+    .map(([slug, date]) => ({
+      url: absoluteUrl(`/blog/${slug}`),
+      lastModified: new Date(date),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    }));
+
+  return [...pages, ...standalonePosts, ...dynamicPosts];
 }
