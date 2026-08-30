@@ -31,7 +31,7 @@ export const posts: BlogPost[] = [
     title: "Commercial Photo Retouching 101: The Studio Pipeline from RAW to Final Master",
     seoTitle: "Photo Retouching 101: RAW to Master",
     excerpt:
-      "Culling standards, color balancing, non-destructive cleanup, frequency separation, and multi-format delivery: the step-by-step post-production process for commercial campaigns.",
+      "Culling, color balancing, non-destructive cleanup, frequency separation, multi-format delivery: the commercial retouching pipeline.",
     tag: "Guides",
     date: "February 2026",
     read: "9 min",
@@ -176,7 +176,7 @@ export const posts: BlogPost[] = [
     title: "How AI is Changing Commercial Product Photography (And What It Cannot Replace)",
     seoTitle: "How AI Is Changing Product Photography",
     excerpt:
-      "Twelve months of integrating AI tools into commercial shoots across Dehradun and regional brands: what actually accelerates production, where physics still demands a studio, and why art direction matters.",
+      "Twelve months of AI tool integration in commercial shoots: what accelerates production and where physics still demands a studio.",
     tag: "AI & Photography",
     date: "August 2026",
     read: "10 min",
@@ -474,7 +474,7 @@ export const posts: BlogPost[] = [
     title: "Color Accuracy & Science for E-Commerce Photography: Preventing Catalog Return Rates",
     seoTitle: "Color Accuracy for E-Commerce",
     excerpt:
-      "ColorChecker calibration, repeatable lighting documentation, and display profile management: the quality control pipeline that keeps product colors true to life.",
+      "ColorChecker calibration and display profile management: the quality control pipeline that keeps product colors true to life.",
     tag: "Guides",
     date: "March 2026",
     read: "8 min",

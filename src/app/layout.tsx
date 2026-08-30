@@ -6,6 +6,7 @@ import PageShell from "../components/PageShell";
 import CustomCursor from "../components/CustomCursor";
 import Header from "../components/Header";
 import ScrollToTop from "../components/ScrollToTop";
+import GoogleAnalytics from "../components/GoogleAnalytics";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -124,6 +125,8 @@ export default function RootLayout({
           <ScrollToTop />
           {children}
         </PageShell>
+        {/* Google Analytics 4 — page views + client-side route changes */}
+        <GoogleAnalytics />
         {/* Microsoft Clarity — heatmaps and session recording */}
         <Script strategy="beforeInteractive">{`
           (function(c,l,a,r,i,t,y){

@@ -4,7 +4,7 @@ import { absoluteUrl } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Photography Gallery | Rahul Chanda",
   description:
-    "Browse Rahul Chanda's commercial photography gallery — product packshots, beverage splash, food styling, footwear campaigns, and brand advertising from Dehradun, India.",
+    "Commercial photography gallery: product, beverage, food, footwear, and brand advertising work by Rahul Chanda, Dehradun.",
   alternates: { canonical: "/gallery" },
   openGraph: {
     title: "Photography Gallery — Rahul Chanda Photography",

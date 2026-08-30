@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   // Short meta title; the H1 inside the article still uses the long form.
   title: "Product Photography for Small Businesses",
   description:
-    "Product photography guide for small businesses in India. Learn when to DIY vs hire a professional, pricing, and ROI. Get your products professionally photographed.",
+    "Product photography guide for small businesses in India: when to DIY vs hire a pro, pricing, and ROI. Get your products professionally photographed.",
   alternates: { canonical: "/blog/product-photography-small-business-india" },
   keywords: "product photography for small business, product photography for small business India, ecommerce photography, professional product photos, small business photography",
   openGraph: {

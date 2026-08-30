@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   // Short meta title; the H1 inside the article still uses the long form.
   title: "How to Photograph Products for E-commerce",
   description:
-    "Complete guide to photographing products for e-commerce. 7-step process from background selection to retouching. Professional e-commerce product photography for Amazon, Shopify, and online stores.",
+    "7-step process for photographing products for e-commerce: lighting, background, retouching. For Amazon, Shopify, online stores.d online stores.",
   alternates: { canonical: "/blog/how-to-photograph-products-ecommerce" },
   keywords: "how to photograph products, ecommerce product photography, product photography for ecommerce, product photos for online store, product photography tips",
   openGraph: {

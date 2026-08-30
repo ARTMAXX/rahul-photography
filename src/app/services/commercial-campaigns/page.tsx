@@ -6,7 +6,7 @@ import { absoluteUrl, siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Commercial & Advertising Photography",
   description:
-    "Professional commercial and advertising photography for brand campaigns. Art-directed campaign shoots, advertising photography, and brand content creation in Dehradun, India.",
+    "Commercial and advertising photography for brand campaigns. Art-directed shoots and brand content in Dehradun, India.",
   alternates: { canonical: "/services/commercial-campaigns" },
   openGraph: {
     title: "Commercial & Advertising Photography Services | Dehradun",

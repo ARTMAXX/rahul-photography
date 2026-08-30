@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   // Short meta title; the H1 inside the article still uses the long form.
   title: "Beverage Product Photography",
   description:
-    "Professional beverage photography guide. Learn glass product photography, condensation techniques, splash photography, and beverage lighting for product shoots and campaigns.",
+    "Beverage photography guide: glass, condensation, splash, and beverage lighting for product shoots and campaigns.",
   alternates: { canonical: "/blog/beverage-photography-glass-splash" },
   keywords: "beverage product photography, glass product photography, beverage splash photography, beverage photography techniques, glass bottle lighting",
   openGraph: {

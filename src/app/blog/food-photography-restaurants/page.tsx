@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   // Short meta title; the H1 inside the article still uses the long form.
   title: "Food Photography for Restaurants",
   description:
-    "Professional food photography guide for restaurants. Learn how to photograph menu items for restaurants, delivery apps, and social media. Restaurant food photography that increases orders.",
+    "Food photography guide for restaurants: menu items, delivery apps, and social media. Photography that increases orders. orders.",
   alternates: { canonical: "/blog/food-photography-restaurants" },
   keywords: "restaurant food photography, food photography for restaurants, restaurant menu photography, food photographer, how to photograph food",
   openGraph: {
