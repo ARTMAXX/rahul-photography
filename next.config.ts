@@ -15,7 +15,7 @@ const securityHeaders = [
     key: "Content-Security-Policy",
     value: [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://analytics.ahrefs.com https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://c.clarity.ms https://static.cloudflareinsights.com",
+      "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://analytics.ahrefs.com https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://c.clarity.ms https://*.clarity.ms https://static.cloudflareinsights.com",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "img-src 'self' data: blob: https://rahulchandaphotography.com https://*.rahulchandaphotography.com https://www.google-analytics.com https://c.clarity.ms https://*.clarity.ms https://c.bing.com",
       "font-src 'self' https://fonts.gstatic.com",
