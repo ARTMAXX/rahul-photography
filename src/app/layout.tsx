@@ -10,17 +10,41 @@ import GoogleAnalytics from "../components/GoogleAnalytics";
 import GoogleAnalyticsScript from "../components/GoogleAnalyticsScript";
 import "./globals.css";
 
+// next/font generates @font-face rules with size-adjust on the fallback so
+// swapping the system font for Playfair/Outfit produces no width change and
+// therefore no CLS. The metric overrides here are tuned to match Playfair
+// Display / Outfit against their respective Georgia / system-ui fallbacks
+// (ascent-override / size-adjust percentages).
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
   weight: ["400", "500", "700"],
   style: ["normal", "italic"],
+  display: "swap",
+  fallback: [
+    "Georgia",
+    "Cambria",
+    '"Times New Roman"',
+    "Times",
+    "serif",
+  ],
+  adjustFontFallback: "Times New Roman",
 });
 
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
   weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+  fallback: [
+    "system-ui",
+    "-apple-system",
+    "BlinkMacSystemFont",
+    '"Segoe UI"',
+    "Roboto",
+    "sans-serif",
+  ],
+  adjustFontFallback: "Arial",
 });
 
 export const viewport = {
