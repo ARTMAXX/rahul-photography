@@ -36,6 +36,11 @@
         "C:\\Users\\Rahul\\Downloads\\data\\Webwright\\mcp_bridge.py"
       ],
       "enabled": true
+    },
+    "cloudflare-ai-search": {
+      "type": "remote",
+      "url": "https://133947d0-8106-481e-b824-ccc6712e768d.search.ai.cloudflare.com/mcp",
+      "enabled": true
     }
   }
 }
