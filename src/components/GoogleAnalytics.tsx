@@ -3,45 +3,41 @@
 import Script from "next/script";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, Suspense } from "react";
-import { GA_MEASUREMENT_ID, GA_SCRIPT_SRC, pageview } from "../lib/gtag";
+import { GA_MEASUREMENT_ID, pageview } from "../lib/gtag";
 
 /**
  * Google Analytics 4 — client-side loader.
  *
- * - Injects gtag.js and configures the Measurement ID on mount.
- * - Initializes `window.dataLayer` and `window.gtag` queue BEFORE the remote
- *   script finishes loading, so events fired in the first paint are queued.
- * - Sends a `page_view` on the initial load AND on every client-side route
- *   change (Next.js App Router does not auto-fire page views).
+ * Uses the canonical GA4 install pattern (single inline script that:
+ *   1. creates the dataLayer + gtag queue
+ *   2. appends the gtag.js bundle to <head>
+ * ).
+ * This matches Google's official snippet, so we avoid the dynamic-script
+ * teardown issue that happens with separate <Script src=...> in App Router.
  *
- * Loaded via `next/script` with `afterInteractive` so the gtag.js request
- * does not block first paint.
+ * Page-view tracking on client-side route changes is wired below via
+ * `usePathname` / `useSearchParams`.
  */
 export default function GoogleAnalytics() {
-  // Suspense boundary is required by Next.js when using useSearchParams()
-  // during static rendering. We split the route-change tracker out so the
-  // outer component can still render.
   return (
     <>
       {GA_MEASUREMENT_ID ? (
-        <>
-          {/* Initialize dataLayer + gtag queue inline so any calls made
-              before the remote script loads are buffered, not dropped. */}
-          <Script id="ga4-init" strategy="afterInteractive">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              window.gtag = function gtag(){ window.dataLayer.push(arguments); };
-              window.gtag('js', new Date());
-              window.gtag('config', '${GA_MEASUREMENT_ID}', { send_page_view: true });
-            `}
-          </Script>
-          {/* Load the gtag.js bundle. */}
-          <Script
-            id="ga4-loader"
-            src={GA_SCRIPT_SRC(GA_MEASUREMENT_ID)}
-            strategy="afterInteractive"
-          />
-        </>
+        <Script id="ga4-loader" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){
+              w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+              var f=d.getElementsByTagName(s)[0],
+                  j=d.createElement(s),
+                  dl=l!='dataLayer'?'&l='+l:'';
+              j.async=true;
+              j.src='https://www.googletagmanager.com/gtag/js?id='+i+dl;
+              f.parentNode.insertBefore(j,f);
+
+              w.dataLayer = w.dataLayer || [];
+              w.gtag = function(){ w.dataLayer.push(arguments); };
+              w.gtag('js', new Date());
+              w.gtag('config', i, { send_page_view: true });
+          })(window,document,'script','dataLayer','${GA_MEASUREMENT_ID}');`}
+        </Script>
       ) : null}
       <Suspense fallback={null}>
         <RouteChangeTracker />
