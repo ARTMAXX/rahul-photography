@@ -261,7 +261,7 @@ export default function EcommercePhotographyBlog() {
               href="/services/product-photography"
               className="inline-flex items-center gap-2 text-[#e83b2c] hover:text-[#e83b2c]/80 transition-colors"
             >
-              Book E-commerce Product Photography -Â ' â„¢
+              Book E-commerce Product Photography - —
             </Link>
           </div>
         </section>

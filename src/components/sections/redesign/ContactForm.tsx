@@ -279,7 +279,7 @@ export default function ContactForm({
                   <li className="flex gap-3 text-sm text-white/75">
                     <span className="mt-[7px] w-1 h-1 rounded-full bg-[#e83b2c] shrink-0" />
                     <span>
-                      No calls-shopping Å“Â¦ you work 
+                      No calls-shopping … you work 
                       <span className="text-white">directly with me</span>, not a
                       sales team.
                     </span>
@@ -367,7 +367,7 @@ export default function ContactForm({
                   data-cursor="pointer"
                 >
                   <option value="" disabled className="bg-[#111] text-white/50">
-                    Select a serviceÅ“Â¦
+                    Select a service…
                   </option>
                   {SERVICES.map((s) => (
                     <option key={s} value={s} className="bg-[#111] text-white">
@@ -408,7 +408,7 @@ export default function ContactForm({
                 {status === "sending" ? (
                   <>
                     <Loader2 className="w-4 h-4 animate-spin" />
-                    <span>Opening WhatsAppÅ“Â¦</span>
+                    <span>Opening WhatsApp…</span>
                   </>
                 ) : status === "sent" ? (
                   <>
@@ -423,7 +423,7 @@ export default function ContactForm({
                 )}
               </button>
               <p className="mt-3 text-center text-xs text-white/60">
-                Sends instantly via WhatsApp Å“Â¦ no account needed.
+                Sends instantly via WhatsApp … no account needed.
               </p>
             </form>
           </div>

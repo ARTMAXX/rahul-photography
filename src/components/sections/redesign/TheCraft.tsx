@@ -151,7 +151,7 @@ export default function TheCraft() {
 
             {/* Floating caption card */}
             <div className="absolute -bottom-6 -left-4 md:-left-8 bg-[#0d0d0d]/95 backdrop-blur border border-white/10 rounded-2xl px-5 py-4 shadow-xl shadow-black/50 flex items-center gap-4">
-              <div className="text-[#e83b2c] text-2xl leading-none">Å“Â¦</div>
+              <div className="text-[#e83b2c] text-2xl leading-none">…</div>
               <div>
                 <p className="text-white text-sm font-semibold tracking-tight">High-end retouching included</p>
                 <p className="text-white/40 text-xs mt-0.5" style={{ fontFamily: "Outfit, system-ui" }}>Every deliverable, pixel-perfect.</p>

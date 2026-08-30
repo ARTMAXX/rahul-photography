@@ -146,7 +146,7 @@ export default function ServicesShowcase() {
   const servicesRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useGSAP(() => {
-    // Heading reveal âÅ“Â¦ cinematic blur to sharp
+    // Heading reveal â… cinematic blur to sharp
     if (headingRef.current) {
       gsap
         .timeline({
@@ -171,7 +171,7 @@ export default function ServicesShowcase() {
         );
     }
 
-    // Sticker parallax âÅ“Â¦ follows scroll
+    // Sticker parallax â… follows scroll
     if (stickerRef.current) {
       gsap.to(stickerRef.current, {
         y: -200,
@@ -186,7 +186,7 @@ export default function ServicesShowcase() {
       });
     }
 
-    // Each service card âÅ“Â¦ staggered entrance
+    // Each service card â… staggered entrance
     servicesRef.current.forEach((card, i) => {
       if (!card) return;
       gsap.fromTo(
@@ -232,7 +232,7 @@ export default function ServicesShowcase() {
   // Scroll to the enquiry form and pre-select the service they asked about.
   const inquireAbout = (serviceTitle: string) => {
     // On the homepage: dispatch + smooth-scroll to the in-page contact section.
-    // On a standalone /services page: navigate to /contact?service=âÅ“Â¦
+    // On a standalone /services page: navigate to /contact?service=â…
     if (window.location.pathname === "/") {
       window.dispatchEvent(
         new CustomEvent("inquire-service", { detail: serviceTitle })
@@ -265,7 +265,7 @@ export default function ServicesShowcase() {
       />
 
       <div className="relative z-10 max-w-[1600px] mx-auto">
-        {/* Section header âÅ“Â¦ two-column: headline left, intro + proof right */}
+        {/* Section header â… two-column: headline left, intro + proof right */}
         <div className="mb-24 md:mb-32 grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-24 items-end">
           <div>
             <h2
@@ -329,7 +329,7 @@ export default function ServicesShowcase() {
                       isExpanded ? "ring-1 ring-[#e83b2c]/30" : ""
                     }`}
                   >
-                    {/* Header âÅ“Â¦ Always Visible */}
+                    {/* Header â… Always Visible */}
                     <button
                       onClick={() => toggleService(service.id)}
                       className="w-full p-6 md:p-8 text-left transition-all duration-300"

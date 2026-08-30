@@ -204,7 +204,7 @@ export default function FootwearFashionPhotographyPage() {
           >
             <span className="italic text-[#e83b2c]">Photograph your footwear collection</span>
             <span className="w-10 h-px bg-[#e83b2c]/30 group-hover:bg-[#e83b2c] transition-colors duration-300" />
-            <span className="text-[#e83b2c]"> ââ„¢</span>
+            <span className="text-[#e83b2c]"> —</span>
           </a>
         </div>
       </section>

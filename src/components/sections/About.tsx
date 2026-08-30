@@ -189,8 +189,8 @@ export default function About() {
           ref={aboutVersionRef}
           className="hidden md:flex absolute right-[32%] bottom-[22vh] z-20 text-5xl font-serif leading-[1.45] tracking-[-0.01em] items-baseline justify-end gap-2"
         >
-          <span className="inline-block">?</span>
-          <span>Å“Â¦ 2026</span>
+          <span className="inline-block">©</span>
+          <span>… 2026</span>
         </div>
       </div>
     </section>

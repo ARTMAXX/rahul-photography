@@ -335,7 +335,7 @@ export default function SmallBusinessPhotographyBlog() {
               {
                 step: "03",
                 action: "Get Budget Approval",
-                detail: "Calculate ROI. -₹5,000 spend -Â ' â„¢ -₹50,000+ extra revenue in month 1.",
+                detail: "Calculate ROI. -₹5,000 spend - — -₹50,000+ extra revenue in month 1.",
               },
               {
                 step: "04",
@@ -384,7 +384,7 @@ export default function SmallBusinessPhotographyBlog() {
               href="/services/product-photography"
               className="inline-flex items-center gap-2 text-[#e83b2c] hover:text-[#e83b2c]/80 transition-colors"
             >
-              Get Professional Product Photography -Â ' â„¢
+              Get Professional Product Photography - —
             </Link>
           </div>
         </section>

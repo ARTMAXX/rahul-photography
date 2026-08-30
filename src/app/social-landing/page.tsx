@@ -122,7 +122,7 @@ export default function SocialLandingPage() {
                 href="/gallery"
                 className="text-sm tracking-widest uppercase text-neutral-400 hover:text-white transition-colors"
               >
-                See All Work  ââ„¢
+                See All Work  —
               </Link>
             </div>
           </div>
