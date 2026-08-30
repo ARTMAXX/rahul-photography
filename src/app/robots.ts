@@ -23,9 +23,9 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: "ClaudeBot", allow: "/" },
       { userAgent: "Anthropic-ai", allow: "/" },
       { userAgent: "Amazonbot", allow: "/" },
-      // Block aggressive SEO scrapers
+      // Block aggressive SEO scrapers (other than AhrefsBot, which we use for
+      // Site Audit and want to allow so the audit can see the whole site).
       { userAgent: "SemrushBot", disallow: "/" },
-      { userAgent: "AhrefsBot", disallow: "/" },
       { userAgent: "MJ12bot", disallow: "/" },
     ],
     sitemap: absoluteUrl("sitemap.xml"),
