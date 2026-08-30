@@ -2,14 +2,18 @@ import type { MetadataRoute } from "next";
 import { absoluteUrl } from "../lib/site";
 
 /**
- * robots.ts  —  Next.js generates /robots.txt from this at build time.
+ * robots.ts — Next.js generates /robots.txt from this at build time.
  * The static public/robots.txt is IGNORED when this file exists.
  *
- * Policy (Aug 2026): one wildcard rule. This implicitly allows every
- * legitimate crawler (Googlebot, Bingbot, GPTBot, ChatGPT-User, ClaudeBot,
- * Google-Extended, PerplexityBot, Amazonbot, anthropic-ai, Bytespider,
- * CCBot, AhrefsBot, etc.) without any conflicting per-bot rules.
- * Only /api/ and /_next/ are disallowed (application / build-internal).
+ * Policy (Aug 2026):
+ *  - One wildcard rule allows every legitimate crawler (search engines,
+ *    AI search/reference crawlers, AI training crawlers).
+ *  - Only /api/ and /_next/ are disallowed (application / build-internal).
+ *  - Content-Signal header declares AI usage preferences for crawlers that
+ *    respect it (Cloudflare AI Crawl Control, isitagentready, etc.):
+ *      ai-train=yes   — allow training on this content
+ *      search=yes     — allow indexing for search engines
+ *      ai-input=yes   — allow content as LLM context/grounding
  */
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -19,5 +23,6 @@ export default function robots(): MetadataRoute.Robots {
       disallow: ["/api/", "/_next/"],
     },
     sitemap: absoluteUrl("sitemap.xml"),
+    host: absoluteUrl("/"),
   };
 }
