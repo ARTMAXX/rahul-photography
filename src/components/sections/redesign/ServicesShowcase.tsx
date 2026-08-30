@@ -139,7 +139,7 @@ export default function ServicesShowcase() {
   const [expandedService, setExpandedService] = useState<number | null>(null);
   const containerRef = useRef<HTMLElement>(null);
   // NOTE: the FAQPage JSON-LD for this section is server-rendered in
-  // src/app/services/page.tsx â— client-injected schema is less reliable
+  // src/app/services/page.tsx — client-injected schema is less reliable
   // for crawlers and duplicated work on every mount.
   const stickerRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -209,7 +209,7 @@ export default function ServicesShowcase() {
       );
     });
 
-    // NOTE: no global ScrollTrigger kill here â— useGSAP's context revert
+    // NOTE: no global ScrollTrigger kill here — useGSAP's context revert
     // already cleans up ONLY the triggers this component created. Killing
     // getAll() would destroy Hero/About/etc. triggers on unmount.
 

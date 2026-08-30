@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     q: "How many images are included per project?",
-    a: "It depends on the scope agreed in the project brief â— Product Photography includes 20—50 edited high-res images and Food & Beverage includes 15—30 hero shots. The exact count is defined before the shoot begins.",
+    a: "It depends on the scope agreed in the project brief — Product Photography includes 20—50 edited high-res images and Food & Beverage includes 15—30 hero shots. The exact count is defined before the shoot begins.",
   },
   {
     q: "What are the payment terms?",
@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     q: "What happens if I need to cancel a booked shoot?",
-    a: "Deposits are non-refundable for cancellations made within 7 days of the scheduled shoot date â— that production time is reserved exclusively for you.",
+    a: "Deposits are non-refundable for cancellations made within 7 days of the scheduled shoot date — that production time is reserved exclusively for you.",
   },
   {
     q: "Can I request revisions?",
@@ -35,7 +35,7 @@ const faqs = [
   },
   {
     q: "Do you work with small businesses or only large brands?",
-    a: "I work with brands of all sizes â— from early-stage startups to established companies. Every project gets the same attention to craft and detail.",
+    a: "I work with brands of all sizes — from early-stage startups to established companies. Every project gets the same attention to craft and detail.",
   },
 ];
 
@@ -72,7 +72,7 @@ export default function FAQSection() {
               <span className="text-[#e83b2c] italic">answered.</span>
             </h2>
             <p className="mt-6 text-white/50 text-sm md:text-base leading-relaxed max-w-[36ch]" style={{ fontFamily: "Outfit, system-ui" }}>
-              Straight answers â— no fine print hiding. Anything else, just ask
+              Straight answers — no fine print hiding. Anything else, just ask
               and I&apos;ll reply within 24 hours.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3">

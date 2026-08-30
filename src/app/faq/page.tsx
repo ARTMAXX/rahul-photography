@@ -4,7 +4,7 @@ import { absoluteUrl } from "@/lib/site";
 import { generateQAPageSchema, generateBreadcrumbSchema } from "@/lib/schemas";
 import FAQContent from "./faq-content";
 
-// â—â—â— FAQ Data with Schema Ready â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—
+// ——— FAQ Data with Schema Ready ————————————————————————————————————
 const faqs = [
   {
     q: "What types of photography do you offer?",
@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     q: "How many images are included per project?",
-    a: "This depends on the scope agreed in the project brief â— Product Photography includes 20—50 edited high-res images and Food & Beverage includes 15—30 hero shots. The exact count is defined before the shoot begins.",
+    a: "This depends on the scope agreed in the project brief — Product Photography includes 20—50 edited high-res images and Food & Beverage includes 15—30 hero shots. The exact count is defined before the shoot begins.",
   },
   {
     q: "Do you travel for shoots?",
@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     q: "What happens if I need to cancel a booked shoot?",
-    a: "Deposits are non-refundable for cancellations made within 7 days of the scheduled shoot date â— that production time is reserved exclusively for you.",
+    a: "Deposits are non-refundable for cancellations made within 7 days of the scheduled shoot date — that production time is reserved exclusively for you.",
   },
   {
     q: "Can you work with tight deadlines?",
@@ -69,12 +69,12 @@ const faqSchema = {
 };
 
 export const metadata: Metadata = {
-  title: "FAQ â— Commercial Photography by Rahul Chanda",
+  title: "FAQ — Commercial Photography by Rahul Chanda",
   description:
     "Common questions about commercial photography services, pricing, turnaround times, and booking process with Rahul Chanda.",
   alternates: { canonical: "/faq" },
   openGraph: {
-    title: "FAQ â— Commercial Photography Services",
+    title: "FAQ — Commercial Photography Services",
     description: "Questions answered about product, food & beverage, and commercial photography services.",
     url: absoluteUrl("/faq"),
   },

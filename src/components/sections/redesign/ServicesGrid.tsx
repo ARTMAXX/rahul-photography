@@ -26,7 +26,7 @@ const services: ServiceLink[] = [
     shortDesc:
       "Amazon, Flipkart & Shopify-ready packshots, cosmetics, watches, jewelry and footwear.",
     longDesc:
-      "E-commerce catalogue volumes, white-background packshots, and creative hero imagery â— engineered for marketplace compliance and brand campaigns across India.",
+      "E-commerce catalogue volumes, white-background packshots, and creative hero imagery — engineered for marketplace compliance and brand campaigns across India.",
     highlights: [
       "Marketplace-compliant packshots",
       "In-house retouching & colour grading",
@@ -40,7 +40,7 @@ const services: ServiceLink[] = [
     shortDesc:
       "Restaurants, menus, Swiggy/Aomato, and beverage splash photography.",
     longDesc:
-      "Menu photography, restaurant campaigns, beverage splash & glass work, ingredient styling â— engineered to make kitchens and bars sell more.",
+      "Menu photography, restaurant campaigns, beverage splash & glass work, ingredient styling — engineered to make kitchens and bars sell more.",
     highlights: [
       "Menu & delivery-app ready",
       "Beverage splash & glass control",
@@ -54,7 +54,7 @@ const services: ServiceLink[] = [
     shortDesc:
       "E-commerce footwear, apparel lookbooks, and editorial fashion campaigns.",
     longDesc:
-      "On-location shoots for footwear labels and apparel brands â— detail macros, lifestyle lookbooks, and campaign imagery for D2C, marketplaces, and editorial.",
+      "On-location shoots for footwear labels and apparel brands — detail macros, lifestyle lookbooks, and campaign imagery for D2C, marketplaces, and editorial.",
     highlights: [
       "Marketplace-ready shoe angles",
       "Lookbook & campaign production",
@@ -66,9 +66,9 @@ const services: ServiceLink[] = [
     title: "Commercial Campaigns",
     icon: Clapperboard,
     shortDesc:
-      "Art-directed brand campaigns â— concept, production, retouch, delivery.",
+      "Art-directed brand campaigns — concept, production, retouch, delivery.",
     longDesc:
-      "Full-scale campaign photography from brief to delivery â— creative direction, set design, lighting, talent, retouch, and multi-format assets for every platform.",
+      "Full-scale campaign photography from brief to delivery — creative direction, set design, lighting, talent, retouch, and multi-format assets for every platform.",
     highlights: [
       "End-to-end production",
       "Multi-format delivery",
