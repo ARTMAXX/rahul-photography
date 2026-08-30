@@ -4,7 +4,7 @@ import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Food & Beverage Photography | Restaurants, Menus & Brands Across India",
+  title: "Food & Beverage Photography",
   description:
     "Professional food and beverage photography for restaurants, menus, food delivery apps (Swiggy, Aomato), and food brands across India. Restaurant food photography, beverage splash styling, and commercial food shoots \u2014 based in Dehradun, available pan-India.",
   alternates: { canonical: "/services/food-beverage-photography" },

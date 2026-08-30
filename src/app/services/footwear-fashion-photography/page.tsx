@@ -4,7 +4,7 @@ import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Footwear & Fashion Photography | E-commerce & Brand Shoots in India",
+  title: "Footwear & Fashion Photography",
   description:
     "Professional footwear and fashion photography for e-commerce and brands across India. Amazon/Flipkart-ready shoe photography, apparel lookbooks, and fashion product photography \u2014 based in Dehradun, shoots pan-India.",
   alternates: { canonical: "/services/footwear-fashion-photography" },

@@ -4,7 +4,7 @@ import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Product Photography Services | E-commerce, Amazon, Flipkart & Shopify India",
+  title: "Product Photography — Amazon, Flipkart, Shopify",
   description:
     "Professional product photography in India for e-commerce, brands, and D2C businesses \u2014 Amazon, Flipkart & Shopify-ready packshots, cosmetics, watches, jewelry, and footwear, with in-house retouching. Based in Dehradun, shoots pan-India.",
   alternates: { canonical: "/services/product-photography" },
