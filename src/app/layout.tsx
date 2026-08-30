@@ -21,13 +21,7 @@ const playfair = Playfair_Display({
   weight: ["400", "500", "700"],
   style: ["normal", "italic"],
   display: "swap",
-  fallback: [
-    "Georgia",
-    "Cambria",
-    '"Times New Roman"',
-    "Times",
-    "serif",
-  ],
+  fallback: ["Georgia", "Cambria", "Times New Roman", "Times", "serif"],
   adjustFontFallback: "Times New Roman",
 });
 
@@ -40,7 +34,7 @@ const outfit = Outfit({
     "system-ui",
     "-apple-system",
     "BlinkMacSystemFont",
-    '"Segoe UI"',
+    "Segoe UI",
     "Roboto",
     "sans-serif",
   ],
