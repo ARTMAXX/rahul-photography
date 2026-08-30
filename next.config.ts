@@ -19,7 +19,7 @@ const securityHeaders = [
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "img-src 'self' data: blob: https://rahulchandaphotography.com https://*.rahulchandaphotography.com https://www.google-analytics.com https://c.clarity.ms https://*.clarity.ms https://c.bing.com",
       "font-src 'self' https://fonts.gstatic.com",
-      "connect-src 'self' https://analytics.ahrefs.com https://www.google-analytics.com https://c.clarity.ms https://cloudflareinsights.com",
+      "connect-src 'self' https://analytics.ahrefs.com https://www.google-analytics.com https://c.clarity.ms https://www.clarity.ms https://*.clarity.ms https://cloudflareinsights.com",
       "media-src 'self' https://rahulchandaphotography.com https://d8j0ntlcm91z4.cloudfront.net",
       "frame-ancestors 'none'",
       "base-uri 'self'",
