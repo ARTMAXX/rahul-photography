@@ -8,7 +8,7 @@ import { generateQAPageSchema } from "@/lib/schemas";
 // METADATA — Targeted for commercial photography intent in Dehradun
 // ============================================================================
 export const metadata: Metadata = {
-  title: "Commercial Photographer Dehradun | Product, Food & Cafe Photography",
+  title: "Commercial Photographer in Dehradun, India",
   description:
     "Rahul Chanda — Dehradun-based commercial photographer for product, food & beverage, cafe/restaurant, footwear, and brand campaigns. On-location across Uttarakhand with in-house retouching. Book a shoot: +91 70789 39475.",
   alternates: { canonical: "/dehradun" },

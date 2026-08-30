@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Photography Gallery — Product, Food, Beverage & Footwear | Rahul Chanda",
+  title: "Photography Gallery | Rahul Chanda",
   description:
     "Browse Rahul Chanda's commercial photography gallery — product packshots, beverage splash, food styling, footwear campaigns, and brand advertising from Dehradun, India.",
   alternates: { canonical: "/gallery" },

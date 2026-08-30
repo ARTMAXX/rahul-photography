@@ -25,7 +25,8 @@ const SelectedWorkParallax = dynamic(() => import("@/components/ui/selected-work
 const CinematicFooter = dynamic(() => import("@/components/ui/motion-footer").then(m => ({ default: m.CinematicFooter })), { ssr: true });
 
 export const metadata: Metadata = {
-  title: "Rahul Chanda — Commercial & Product Photographer in Dehradun",
+  // Short meta title; the H1 inside the page still uses the longer form.
+  title: "Rahul Chanda Photography | Dehradun, India",
   description:
     "High-end commercial and product photographer based in Dehradun, India. Specializing in product, food & beverage, footwear, and brand advertising campaigns.",
   alternates: { canonical: "/" },
@@ -33,7 +34,8 @@ export const metadata: Metadata = {
   // 1200×630 — platforms will letterbox or crop this image. A 1200×630
   // variant should be added later if social CTR becomes a priority.
   openGraph: {
-    title: "Rahul Chanda — Commercial & Product Photographer in Dehradun",
+    // Match the short meta title so link previews match the browser tab.
+    title: "Rahul Chanda Photography | Dehradun, India",
     description:
       "High-end commercial and product photographer based in Dehradun, India. Specializing in product, food & beverage, footwear, and brand advertising campaigns.",
     url: absoluteUrl("/"),
@@ -49,7 +51,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rahul Chanda — Commercial & Product Photographer in Dehradun",
+    // Match the short meta title.
+    title: "Rahul Chanda Photography | Dehradun, India",
     description:
       "High-end commercial and product photographer based in Dehradun, India. Specializing in product, food & beverage, footwear, and brand advertising campaigns.",
     images: [absoluteUrl("/opt/best shots/Product image/product-serum.webp")],
