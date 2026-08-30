@@ -31,7 +31,16 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.title,
-    template: "%s — Rahul Chanda Photography",
+    // No template suffix. Each page's title is used as-is. The previous
+    // template ("%s — Rahul Chanda Photography") added a 28-char suffix
+    // to every page, which made every page's effective title longer than
+    // its source string, pushed many pages over Google's 60-char truncation
+    // threshold, and double-branded pages that already had "Rahul Chanda"
+    // in the title (e.g., "Rahul Chanda — Commercial Photographer in
+    // Dehradun — Rahul Chanda Photography" rendered as the page title).
+    // The default title below carries the brand for the home page; every
+    // other page sets its own title in its own metadata block.
+    template: "%s",
   },
   description: siteConfig.description,
   authors: [{ name: "Rahul Chanda" }],

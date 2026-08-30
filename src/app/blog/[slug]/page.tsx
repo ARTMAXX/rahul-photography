@@ -568,7 +568,12 @@ export async function generateMetadata({
   const post = posts.find((p) => p.slug === slug);
   if (!post) return { title: "Blog" };
   return {
-    title: `${post.title} | Rahul Chanda`,
+    // No suffix: post.title is used as-is. The previous template
+    // (${post.title} | Rahul Chanda) added a brand suffix on top of the
+    // root layout's own template suffix, producing a double-brand title
+    // on every blog post. With the root layout's template now set to
+    // "%s" (no auto-suffix), we just use the post title directly here.
+    title: post.title,
     description: post.excerpt,
     alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {
