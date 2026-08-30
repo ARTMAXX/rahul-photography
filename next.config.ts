@@ -15,11 +15,11 @@ const securityHeaders = [
     key: "Content-Security-Policy",
     value: [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://analytics.ahrefs.com https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms",
+      "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://analytics.ahrefs.com https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://static.cloudflareinsights.com",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "img-src 'self' data: blob: https://rahulchandaphotography.com https://*.rahulchandaphotography.com https://www.google-analytics.com",
       "font-src 'self' https://fonts.gstatic.com",
-      "connect-src 'self' https://analytics.ahrefs.com https://www.google-analytics.com https://c.clarity.ms",
+      "connect-src 'self' https://analytics.ahrefs.com https://www.google-analytics.com https://c.clarity.ms https://cloudflareinsights.com",
       "media-src 'self' https://rahulchandaphotography.com https://d8j0ntlcm91z4.cloudfront.net",
       "frame-ancestors 'none'",
       "base-uri 'self'",
