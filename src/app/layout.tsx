@@ -128,7 +128,7 @@ export default function RootLayout({
         <Script
           id="clarity"
           src="https://www.clarity.ms/tag/ya0waul2ro"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
         />
         {/* Ahrefs Web Analytics */}
         <Script
