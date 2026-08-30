@@ -251,10 +251,11 @@ const localBusinessJsonLd = {
     { "@type": "State", name: "Uttarakhand" },
     { "@type": "AdministrativeArea", name: "Delhi NCR" },
   ],
-  availableChannel: {
-    "@type": "ServiceChannel",
-    serviceUrl: absoluteUrl("/contact"),
-    servicePhone: siteConfig.contact.telephone,
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer service",
+    url: absoluteUrl("/contact"),
+    telephone: siteConfig.contact.telephone,
     availableLanguage: ["English", "Hindi"],
     hoursAvailable: {
       "@type": "OpeningHoursSpecification",
