@@ -117,10 +117,17 @@ const nextConfig: NextConfig = {
     // Support up to 4K resolutions
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2560, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384, 512, 720, 1080, 1440, 1920, 2560],
-    // Maximum quality - no compression
-    formats: ['image/webp', 'image/avif'],
+    // Modern formats: AVIF first (best compression), WebP fallback.
+    formats: ['image/avif', 'image/webp'],
+    // Cache optimized variants at the edge for 1 year.
     minimumCacheTTL: 31536000,
-    unoptimized: true,
+    // Enable next/image responsive srcset generation.
+    // The /_next/image endpoint serves appropriately sized WebP/AVIF
+    // variants to each device, preventing mobile from downloading
+    // desktop-sized originals. unoptimized: true was bypassing this
+    // entire pipeline (Apr 2026 — we have stable Cloudflare cache and
+    // 4K originals that are wasteful on mobile).
+    unoptimized: false,
     // Quality ladder actually requested by components (Next 16 rejects
     // any quality not listed here with a 400 on /_next/image).
     qualities: [70, 72, 74, 75, 76, 78, 80],

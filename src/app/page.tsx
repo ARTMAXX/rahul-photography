@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   // Short meta title; the H1 inside the page still uses the longer form.
   title: "Rahul Chanda Photography | Dehradun, India",
   description:
-    "High-end commercial and product photographer based in Dehradun, India. Specializing in product, food & beverage, footwear, and brand advertising campaigns.",
+    "Commercial and product photographer in Dehradun, India. Product, food & beverage, footwear, and brand campaigns shot and retouched in-house.",
   alternates: { canonical: "/" },
   // NOTE: product-serum.webp is 1024×1024 (square). The OG spec recommends
   // 1200×630 — platforms will letterbox or crop this image. A 1200×630

@@ -89,7 +89,7 @@ export default function LazyVideo({
       // eslint-disable-next-line @next/next/no-img-element
       <img
         src={poster}
-        alt={decorative ? "" : alt}
+        alt={decorative ? "decorative background" : alt}
         aria-hidden={decorative || undefined}
         className={`${className} select-none`}
         style={style}
