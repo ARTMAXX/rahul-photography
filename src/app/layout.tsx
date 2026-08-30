@@ -7,6 +7,7 @@ import CustomCursor from "../components/CustomCursor";
 import Header from "../components/Header";
 import ScrollToTop from "../components/ScrollToTop";
 import GoogleAnalytics from "../components/GoogleAnalytics";
+import GoogleAnalyticsScript from "../components/GoogleAnalyticsScript";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -115,6 +116,8 @@ export default function RootLayout({
         />
         <link rel="manifest" href="/manifest.webmanifest" />
         <meta name="theme-color" content="#070707" />
+        {/* Google Analytics 4 — gtag.js loader (server-rendered, in <head>) */}
+        <GoogleAnalyticsScript />
       </head>
       <body
         className={`${playfair.variable} ${outfit.variable} antialiased`}
