@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CinematicFooter } from "@/components/ui/motion-footer";
-import { absoluteUrl } from "@/lib/site";
+import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Product Photography for Small Businesses in India | Getting Started Guide",
@@ -15,6 +15,14 @@ export const metadata: Metadata = {
       "Complete guide to affordable product photography for small Indian businesses. DIY vs professional, pricing, ROI.",
     url: absoluteUrl("/blog/product-photography-small-business-india"),
     type: "article",
+    images: [
+      {
+        url: absoluteUrl(siteConfig.ogImagePath),
+        width: 1200,
+        height: 630,
+        alt: "Product Photography for Small Businesses in India",
+      },
+    ],
   },
 };
 

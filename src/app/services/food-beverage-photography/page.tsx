@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CinematicFooter } from "@/components/ui/motion-footer";
-import { absoluteUrl } from "@/lib/site";
+import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Food & Beverage Photography | Restaurants, Menus & Brands Across India",
@@ -14,6 +14,14 @@ export const metadata: Metadata = {
       "Professional food photography for restaurants, menus, food delivery apps, and beverage brands across India. Commercial food styling and restaurant photography.",
     url: absoluteUrl("/services/food-beverage-photography"),
     type: "website",
+    images: [
+      {
+        url: absoluteUrl(siteConfig.ogImagePath),
+        width: 1200,
+        height: 630,
+        alt: "Food & Beverage Photography — Restaurants & Brands India",
+      },
+    ],
   },
 };
 

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CinematicFooter } from "@/components/ui/motion-footer";
-import { absoluteUrl } from "@/lib/site";
+import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Footwear & Fashion Photography | E-commerce & Brand Shoots in India",
@@ -14,6 +14,14 @@ export const metadata: Metadata = {
       "Professional shoe and fashion photography across India. Footwear e-commerce, lookbook photography, and commercial fashion product shoots.",
     url: absoluteUrl("/services/footwear-fashion-photography"),
     type: "website",
+    images: [
+      {
+        url: absoluteUrl(siteConfig.ogImagePath),
+        width: 1200,
+        height: 630,
+        alt: "Footwear & Fashion Photography — E-commerce & Brands",
+      },
+    ],
   },
 };
 

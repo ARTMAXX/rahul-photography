@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CinematicFooter } from "@/components/ui/motion-footer";
-import { absoluteUrl } from "@/lib/site";
+import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Product Photography Services | E-commerce, Amazon, Flipkart & Shopify India",
@@ -14,6 +14,14 @@ export const metadata: Metadata = {
       "Commercial product photography for e-commerce brands, startups, and established companies across India. Platform-compliant packshots, cosmetics, watches, jewelry, and footwear photography.",
     url: absoluteUrl("/services/product-photography"),
     type: "website",
+    images: [
+      {
+        url: absoluteUrl(siteConfig.ogImagePath),
+        width: 1200,
+        height: 630,
+        alt: "Product Photography — E-commerce, Amazon, Flipkart, Shopify India",
+      },
+    ],
   },
 };
 

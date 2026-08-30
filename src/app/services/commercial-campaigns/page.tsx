@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CinematicFooter } from "@/components/ui/motion-footer";
-import { absoluteUrl } from "@/lib/site";
+import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Commercial & Advertising Photography | Campaign Photography | Dehradun",
@@ -14,6 +14,14 @@ export const metadata: Metadata = {
       "Commercial campaign photography and advertising photography for brands. Art-directed shoots from concept to final retouched deliverables.",
     url: absoluteUrl("/services/commercial-campaigns"),
     type: "website",
+    images: [
+      {
+        url: absoluteUrl(siteConfig.ogImagePath),
+        width: 1200,
+        height: 630,
+        alt: "Commercial & Advertising Photography — Campaign Shoots",
+      },
+    ],
   },
 };
 

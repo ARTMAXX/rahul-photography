@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { absoluteUrl } from "@/lib/site";
+import { absoluteUrl, siteConfig } from "@/lib/site";
 import { generateQAPageSchema, generateBreadcrumbSchema } from "@/lib/schemas";
 import FAQContent from "./faq-content";
 
@@ -77,6 +77,14 @@ export const metadata: Metadata = {
     title: "FAQ — Commercial Photography Services",
     description: "Questions answered about product, food & beverage, and commercial photography services.",
     url: absoluteUrl("/faq"),
+    images: [
+      {
+        url: absoluteUrl(siteConfig.ogImagePath),
+        width: 1200,
+        height: 630,
+        alt: "FAQ — Commercial Photography Services",
+      },
+    ],
   },
 };
 

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CinematicFooter } from "@/components/ui/motion-footer";
-import { absoluteUrl } from "@/lib/site";
+import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "How to Photograph Products for E-commerce: 7-Step Process | Complete Guide",
@@ -15,6 +15,14 @@ export const metadata: Metadata = {
       "Master e-commerce product photography. Step-by-step process from lighting to retouching.",
     url: absoluteUrl("/blog/how-to-photograph-products-ecommerce"),
     type: "article",
+    images: [
+      {
+        url: absoluteUrl(siteConfig.ogImagePath),
+        width: 1200,
+        height: 630,
+        alt: "E-commerce Product Photography — 7-Step Process",
+      },
+    ],
   },
 };
 

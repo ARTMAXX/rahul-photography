@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CinematicFooter } from "@/components/ui/motion-footer";
-import { absoluteUrl } from "@/lib/site";
+import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Food Photography for Restaurants: How to Photograph Your Menu | Complete Guide",
@@ -15,6 +15,14 @@ export const metadata: Metadata = {
       "Professional restaurant food photography guide. Photograph your menu, Zomato, Swiggy, and social media content.",
     url: absoluteUrl("/blog/food-photography-restaurants"),
     type: "article",
+    images: [
+      {
+        url: absoluteUrl(siteConfig.ogImagePath),
+        width: 1200,
+        height: 630,
+        alt: "Food Photography for Restaurants — Menu, Delivery Apps & Social",
+      },
+    ],
   },
 };
 

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { absoluteUrl } from "@/lib/site";
+import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Frequently Asked Questions | Commercial Photography Dehradun",
@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     description:
       "Answers about booking, pricing, timelines, revisions, and delivery for commercial photography with Rahul Chanda.",
     url: absoluteUrl("/faq"),
+    images: [
+      {
+        url: absoluteUrl(siteConfig.ogImagePath),
+        width: 1200,
+        height: 630,
+        alt: "FAQ — Commercial Photography, Dehradun",
+      },
+    ],
   },
 };
 

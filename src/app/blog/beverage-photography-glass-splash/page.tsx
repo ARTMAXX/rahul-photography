@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CinematicFooter } from "@/components/ui/motion-footer";
-import { absoluteUrl } from "@/lib/site";
+import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Beverage Product Photography: Glass, Condensation & Splash | Complete Guide",
@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     description: "Master beverage photography. Learn glass lighting, condensation, and splash techniques.",
     url: absoluteUrl("/blog/beverage-photography-glass-splash"),
     type: "article",
+    images: [
+      {
+        url: absoluteUrl(siteConfig.ogImagePath),
+        width: 1200,
+        height: 630,
+        alt: "Beverage Product Photography — Glass, Condensation & Splash",
+      },
+    ],
   },
 };
 

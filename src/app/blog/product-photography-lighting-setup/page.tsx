@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CinematicFooter } from "@/components/ui/motion-footer";
-import { absoluteUrl } from "@/lib/site";
+import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Product Photography Lighting: Key Light, Rim Light & Negative Fill | Setup Guide",
@@ -15,6 +15,14 @@ export const metadata: Metadata = {
       "Master product photography lighting. Learn key light, rim light, and negative fill for professional product shots.",
     url: absoluteUrl("/blog/product-photography-lighting-setup"),
     type: "article",
+    images: [
+      {
+        url: absoluteUrl(siteConfig.ogImagePath),
+        width: 1200,
+        height: 630,
+        alt: "Product Photography Lighting — Key Light, Rim Light & Negative Fill",
+      },
+    ],
   },
 };
 
