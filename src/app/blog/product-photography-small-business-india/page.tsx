@@ -4,13 +4,15 @@ import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Product Photography for Small Businesses in India | Getting Started Guide",
+  // Short meta title; the H1 inside the article still uses the long form.
+  title: "Product Photography for Small Businesses",
   description:
     "Product photography guide for small businesses in India. Learn when to DIY vs hire a professional, pricing, and ROI. Get your products professionally photographed.",
   alternates: { canonical: "/blog/product-photography-small-business-india" },
   keywords: "product photography for small business, product photography for small business India, ecommerce photography, professional product photos, small business photography",
   openGraph: {
-    title: "Product Photography for Small Businesses in India: Getting Started",
+    // Match the short meta title so link previews match the browser tab.
+    title: "Product Photography for Small Businesses",
     description:
       "Complete guide to affordable product photography for small Indian businesses. DIY vs professional, pricing, ROI.",
     url: absoluteUrl("/blog/product-photography-small-business-india"),

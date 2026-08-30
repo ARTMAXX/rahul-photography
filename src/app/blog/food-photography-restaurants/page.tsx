@@ -4,13 +4,15 @@ import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Food Photography for Restaurants: How to Photograph Your Menu | Complete Guide",
+  // Short meta title; the H1 inside the article still uses the long form.
+  title: "Food Photography for Restaurants",
   description:
     "Professional food photography guide for restaurants. Learn how to photograph menu items for restaurants, delivery apps, and social media. Restaurant food photography that increases orders.",
   alternates: { canonical: "/blog/food-photography-restaurants" },
   keywords: "restaurant food photography, food photography for restaurants, restaurant menu photography, food photographer, how to photograph food",
   openGraph: {
-    title: "Food Photography for Restaurants: Complete Menu Photography Guide",
+    // Match the short meta title so link previews match the browser tab.
+    title: "Food Photography for Restaurants",
     description:
       "Professional restaurant food photography guide. Photograph your menu, Zomato, Swiggy, and social media content.",
     url: absoluteUrl("/blog/food-photography-restaurants"),

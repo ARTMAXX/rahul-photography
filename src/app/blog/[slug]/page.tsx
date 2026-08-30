@@ -16,6 +16,8 @@ export interface BlogPost {
   date: string;
   read: string;
   body: string[];
+  /** Short meta title for SEO/browser tab. Falls back to `title` if absent. */
+  seoTitle?: string;
   cta?: {
     text: string;
     href: string;
@@ -27,6 +29,7 @@ export const posts: BlogPost[] = [
   {
     slug: "retouching-101",
     title: "Commercial Photo Retouching 101: The Studio Pipeline from RAW to Final Master",
+    seoTitle: "Photo Retouching 101: RAW to Master",
     excerpt:
       "Culling standards, color balancing, non-destructive cleanup, frequency separation, and multi-format delivery: the step-by-step post-production process for commercial campaigns.",
     tag: "Guides",
@@ -83,6 +86,7 @@ export const posts: BlogPost[] = [
   {
     slug: "generative-ai-product-backgrounds",
     title: "Generative AI Backgrounds for Product Photography: Studio Lighting & Workflow Guide",
+    seoTitle: "AI Backgrounds for Product Photography",
     excerpt:
       "How to combine physical studio key lighting with generative background compositing for e-commerce and lifestyle campaigns ' — without the artificial cutout look.",
     tag: "AI & Photography",
@@ -126,6 +130,7 @@ export const posts: BlogPost[] = [
   {
     slug: "ai-photoshop-retouching-techniques",
     title: "AI Retouching in Photoshop: The Practical Studio Workflow & Pipeline",
+    seoTitle: "AI Retouching in Photoshop",
     excerpt:
       "From Photoshop's Remove tool and Generative Fill to multi-stage batch cleanup with Retouch4me and manual finishing ' — here is the exact post-production pipeline I use for commercial work.",
     tag: "Retouching",
@@ -169,6 +174,7 @@ export const posts: BlogPost[] = [
   {
     slug: "ai-commercial-product-photography",
     title: "How AI is Changing Commercial Product Photography (And What It Cannot Replace)",
+    seoTitle: "How AI Is Changing Product Photography",
     excerpt:
       "Twelve months of integrating AI tools into commercial shoots across Dehradun and regional brands: what actually accelerates production, where physics still demands a studio, and why art direction matters.",
     tag: "AI & Photography",
@@ -205,6 +211,7 @@ export const posts: BlogPost[] = [
   {
     slug: "why-beverage-splash-photography-is-hard",
     title: "Why Beverage Splash Photography is Harder Than It Looks: High-Speed Physics & Technique",
+    seoTitle: "Beverage Splash Photography: Physics & Technique",
     excerpt:
       "High-speed flash duration (t0.1), fluid viscosity, trigger delay, and hundreds of frames for one hero crown ' — the engineering and lighting behind commercial liquid action.",
     tag: "Behind the scenes",
@@ -248,6 +255,7 @@ export const posts: BlogPost[] = [
   {
     slug: "lighting-patterns-for-product-photography",
     title: "Essential Studio Lighting Patterns for Commercial Product Photography",
+    seoTitle: "Studio Lighting Patterns for Product Photography",
     excerpt:
       "Key lights, rim highlights, gradient scrims, and negative fill ' — how to sculpt form, control specular reflections, and create editorial depth for packshots.",
     tag: "Technique",
@@ -291,6 +299,7 @@ export const posts: BlogPost[] = [
   {
     slug: "footwear-photography-angles",
     title: "Footwear Photography Angles That Convert: The E-Commerce Catalog & Campaign Guide",
+    seoTitle: "Footwear Photography Angles That Convert",
     excerpt:
       "From the three-quarter hero and medial profile to tread macro details ' — the angle sequence that communicates build quality, reduces return rates, and drives conversions.",
     tag: "Technique",
@@ -334,6 +343,7 @@ export const posts: BlogPost[] = [
   {
     slug: "ai-video-editing-tools-2026",
     title: "AI Video Editing for Commercial Campaigns: Production Tools That Actually Work",
+    seoTitle: "AI Video Editing for Brand Campaigns",
     excerpt:
       "A field review of AI video tools for commercial brand content ' — from Runway Gen-3 and Premiere Pro to DaVinci Resolve color workflows. What saves production hours versus marketing hype.",
     tag: "AI & Video",
@@ -369,6 +379,7 @@ export const posts: BlogPost[] = [
   {
     slug: "ai-color-grading-scene-detection",
     title: "AI Color Grading and Scene Detection: Automating Post-Production Consistency",
+    seoTitle: "AI Color Grading & Scene Detection",
     excerpt:
       "How neural color matching in DaVinci Resolve and automated scene edit detection in Premiere Pro speed up multi-camera delivery for commercial video campaigns.",
     tag: "AI & Video",
@@ -398,6 +409,7 @@ export const posts: BlogPost[] = [
   {
     slug: "beverage-photography-glass",
     title: "Photographing Glass, Bottles & Liquids: Reflection Control and Backlighting",
+    seoTitle: "Photographing Glass, Bottles & Liquids",
     excerpt:
       "Controlling specular reflections, building translucent backlights, and crafting custom condensation formulas for premium beverage and spirits photography.",
     tag: "Technique",
@@ -433,6 +445,7 @@ export const posts: BlogPost[] = [
   {
     slug: "ai-upscaling-ecommerce",
     title: "AI Upscaling for E-Commerce: When Neural Resampling Helps and When It Kills Trust",
+    seoTitle: "AI Upscaling for E-Commerce",
     excerpt:
       "Comparing Topaz Gigapixel, Magnific AI, and optical resolution ' — understanding marketplace compliance, texture hallucinations, and catalog zoom standards.",
     tag: "AI & Photography",
@@ -459,6 +472,7 @@ export const posts: BlogPost[] = [
   {
     slug: "color-science-ecommerce",
     title: "Color Accuracy & Science for E-Commerce Photography: Preventing Catalog Return Rates",
+    seoTitle: "Color Accuracy for E-Commerce",
     excerpt:
       "ColorChecker calibration, repeatable lighting documentation, and display profile management: the quality control pipeline that keeps product colors true to life.",
     tag: "Guides",
@@ -568,17 +582,20 @@ export async function generateMetadata({
   const post = posts.find((p) => p.slug === slug);
   if (!post) return { title: "Blog" };
   return {
-    // No suffix: post.title is used as-is. The previous template
-    // (${post.title} | Rahul Chanda) added a brand suffix on top of the
-    // root layout's own template suffix, producing a double-brand title
-    // on every blog post. With the root layout's template now set to
-    // "%s" (no auto-suffix), we just use the post title directly here.
-    title: post.title,
+    // No suffix: post.seoTitle (if set) or post.title is used as-is. The
+    // previous template (${post.title} | Rahul Chanda) added a brand suffix
+    // on top of the root layout's own template suffix, producing a double-brand
+    // title on every blog post. With the root layout's template now set to
+    // "%s" (no auto-suffix), and the per-post optional seoTitle providing a
+    // short form when the post title is over 60 chars, we use whichever the
+    // post author has provided.
+    title: post.seoTitle ?? post.title,
     description: post.excerpt,
     alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {
       type: "article",
-      title: post.title,
+      // Match the meta title so link previews match the browser tab.
+      title: post.seoTitle ?? post.title,
       description: post.excerpt,
       url: absoluteUrl(`/blog/${post.slug}`),
       publishedTime: postISO[post.slug],

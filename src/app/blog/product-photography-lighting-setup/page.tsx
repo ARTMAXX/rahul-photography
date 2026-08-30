@@ -4,13 +4,15 @@ import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Product Photography Lighting: Key Light, Rim Light & Negative Fill | Setup Guide",
+  // Short meta title; the H1 inside the article still uses the long form.
+  title: "Product Photography Lighting Setups",
   description:
     "Professional product photography lighting setups. Learn key light, rim light, and negative fill techniques for e-commerce and commercial product photography. Setup guide with examples.",
   alternates: { canonical: "/blog/product-photography-lighting-setup" },
   keywords: "product photography lighting, product lighting setup, key light, rim light, negative fill, ecommerce product photography lighting",
   openGraph: {
-    title: "Product Photography Lighting: 3 Essential Setups",
+    // Match the short meta title so link previews match the browser tab.
+    title: "Product Photography Lighting Setups",
     description:
       "Master product photography lighting. Learn key light, rim light, and negative fill for professional product shots.",
     url: absoluteUrl("/blog/product-photography-lighting-setup"),

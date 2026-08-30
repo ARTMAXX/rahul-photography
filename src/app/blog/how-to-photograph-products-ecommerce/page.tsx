@@ -4,13 +4,15 @@ import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "How to Photograph Products for E-commerce: 7-Step Process | Complete Guide",
+  // Short meta title; the H1 inside the article still uses the long form.
+  title: "How to Photograph Products for E-commerce",
   description:
     "Complete guide to photographing products for e-commerce. 7-step process from background selection to retouching. Professional e-commerce product photography for Amazon, Shopify, and online stores.",
   alternates: { canonical: "/blog/how-to-photograph-products-ecommerce" },
   keywords: "how to photograph products, ecommerce product photography, product photography for ecommerce, product photos for online store, product photography tips",
   openGraph: {
-    title: "How to Photograph Products for E-commerce: Complete 7-Step Guide",
+    // Match the short meta title so link previews match the browser tab.
+    title: "How to Photograph Products for E-commerce",
     description:
       "Master e-commerce product photography. Step-by-step process from lighting to retouching.",
     url: absoluteUrl("/blog/how-to-photograph-products-ecommerce"),
