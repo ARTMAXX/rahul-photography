@@ -142,10 +142,27 @@ export default function ProductPhotographyLightingBlog() {
             <span>' </span>
             <span>By Rahul Chanda</span>
           </div>
+
+          <div className="mt-10 border-l-4 border-[#e83b2c] pl-6 py-4 bg-white/[0.04]">
+            <p className="text-[10px] uppercase tracking-widest text-[#e83b2c] mb-4 font-medium">
+              Key Takeaways
+            </p>
+            <ul className="space-y-2">
+              {[
+                "The key light establishes primary exposure and direction; diffusion scrims wrapped close to the product create smooth, graduated gradients.",
+                "Rim lights (strip boxes with grids) placed behind the product separate it from the background with crisp silhouette highlights.",
+                "Negative fill (black foam core) absorbs scattered light and deepens side shadows, creating the rich contrast associated with luxury product photography.",
+                "Overhead boom lighting clarifies top surfaces, lid contours, and upper packaging typography for e-commerce catalog completeness.",
+              ].map((point, i) => (
+                <li key={i} className="text-white/70 text-sm leading-relaxed pl-2 border-l border-white/10">
+                  {point}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
-      {/* Content */}
       <article className="max-w-[900px] mx-auto px-4 md:px-12 py-24">
         <section className="mb-16">
           <h2 className="h-section mt-16 mb-6">Why Lighting Matters in Product Photography</h2>

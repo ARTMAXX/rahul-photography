@@ -180,7 +180,7 @@ w-full overflow-hidden">
             alt="Dramatic luxury watch product photograph with metallic studio lighting by Rahul Chanda — premium commercial product photographer in Dehradun, India"
             fill
             priority
-            quality={85}
+            quality={80}
             sizes="100vw"
             className="object-cover opacity-80"
           />
@@ -189,7 +189,7 @@ w-full overflow-hidden">
             src="/opt/hero-shots/hero-video.mp4"
             poster="/opt/hero-shots/hero-video-poster.webp"
             className="w-full h-full object-cover opacity-70"
-            preload="auto"
+            preload="metadata"
             alt="Cinematic showreel of Rahul Chanda's commercial product photography - luxury watches, food & beverage, footwear, and advertising campaigns"
           />
         )}

@@ -115,6 +115,24 @@ export default function SmallBusinessPhotographyBlog() {
             <span>' </span>
             <span>By Rahul Chanda</span>
           </div>
+
+          <div className="mt-10 border-l-4 border-[#e83b2c] pl-6 py-4 bg-white/[0.04]">
+            <p className="text-[10px] uppercase tracking-widest text-[#e83b2c] mb-4 font-medium">
+              Key Takeaways
+            </p>
+            <ul className="space-y-2">
+              {[
+                "Professional product photos increase conversions by 40-70% — product photography is a direct sales investment, not an optional expense.",
+                "DIY phone photography is acceptable only for social media; marketplace listings, e-commerce stores, and brand campaigns require studio-lit images.",
+                "Budget lighting setups using desk lamps, white foam boards, and window light can produce decent results for small products at near-zero cost.",
+                "For brands competing on Amazon, Flipkart, or Shopify, consistent white-background hero images with accurate color are the minimum professional standard.",
+              ].map((point, i) => (
+                <li key={i} className="text-white/70 text-sm leading-relaxed pl-2 border-l border-white/10">
+                  {point}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 

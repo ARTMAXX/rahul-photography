@@ -113,6 +113,24 @@ export default function BeveragePhotographyBlog() {
             <span>' </span>
             <span>By Rahul Chanda</span>
           </div>
+
+          <div className="mt-10 border-l-4 border-[#e83b2c] pl-6 py-4 bg-white/[0.04]">
+            <p className="text-[10px] uppercase tracking-widest text-[#e83b2c] mb-4 font-medium">
+              Key Takeaways
+            </p>
+            <ul className="space-y-2">
+              {[
+                "Glass is transparent — light must pass through the beverage toward the camera to make liquids glow with saturated color.",
+                "Backlighting creates the luminous internal glow; strip boxes define outer glass contours without room reflections.",
+                "Custom glycerin-water condensation formulas create lasting, photogenic droplets that real ice cannot maintain under studio lights.",
+                "Commercial splash images are multi-plate composites: hero bottle, splash action, and post-production blend — never a single capture.",
+              ].map((point, i) => (
+                <li key={i} className="text-white/70 text-sm leading-relaxed pl-2 border-l border-white/10">
+                  {point}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 

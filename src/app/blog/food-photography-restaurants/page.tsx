@@ -115,6 +115,24 @@ export default function FoodRestaurantPhotographyBlog() {
             <span>' </span>
             <span>By Rahul Chanda</span>
           </div>
+
+          <div className="mt-10 border-l-4 border-[#e83b2c] pl-6 py-4 bg-white/[0.04]">
+            <p className="text-[10px] uppercase tracking-widest text-[#e83b2c] mb-4 font-medium">
+              Key Takeaways
+            </p>
+            <ul className="space-y-2">
+              {[
+                "Food photography for delivery apps must work at small thumbnail sizes — steam, contrast, and sharp edges carry more impact than color.",
+                "Use directional light to carve texture and depth: raking light reveals surface details like crispy skin, glaze drips, and garnish.",
+                "Consistent angle, aspect ratio, and color temperature across all menu items builds a professional, trustworthy brand impression.",
+                "Dark moody backgrounds make colorful food pop; white backgrounds read better on delivery app cards where UI competes for attention.",
+              ].map((point, i) => (
+                <li key={i} className="text-white/70 text-sm leading-relaxed pl-2 border-l border-white/10">
+                  {point}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 

@@ -1,8 +1,18 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import * as THREE from "three";
+import type { WebGLRenderer, ShaderMaterial, Vector2, Vector3 } from "three";
 import "./ColorBends.css";
+
+type ThreeInstance = typeof import("three");
+
+// Lazy-load THREE only when the ColorBends canvas actually mounts on desktop.
+// This shaves ~600 KB off the critical-path JS bundle.
+let _threeLoader: Promise<ThreeInstance> | null = null;
+const loadThree = (): Promise<ThreeInstance> => {
+  if (!_threeLoader) _threeLoader = import("three");
+  return _threeLoader;
+};
 
 const MAX_COLORS = 8;
 
@@ -147,19 +157,28 @@ export default function ColorBends({
   bandWidth = 6,
 }: ColorBendsProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
+  const rendererRef = useRef<WebGLRenderer | null>(null);
   const rafRef = useRef<number | null>(null);
-  const materialRef = useRef<THREE.ShaderMaterial | null>(null);
+  const materialRef = useRef<ShaderMaterial | null>(null);
   const resizeObserverRef = useRef<ResizeObserver | null>(null);
   const rotationRef = useRef(rotation);
   const autoRotateRef = useRef(autoRotate);
-  const pointerTargetRef = useRef(new THREE.Vector2(0, 0));
-  const pointerCurrentRef = useRef(new THREE.Vector2(0, 0));
+  const pointerTargetRef = useRef<Vector2 | null>(null);
+  const pointerCurrentRef = useRef<Vector2 | null>(null);
   const pointerSmoothRef = useRef(8);
 
   useEffect(() => {
-    const container = containerRef.current;
+    let cancelled = false;
+    (async () => {
+      const THREE = await loadThree();
+      if (cancelled || !containerRef.current) return;
+
+      const container = containerRef.current;
     if (!container) return;
+
+    // Initialize pointer refs lazily — THREE must be loaded first
+    if (!pointerTargetRef.current) pointerTargetRef.current = new THREE.Vector2(0, 0);
+    if (!pointerCurrentRef.current) pointerCurrentRef.current = new THREE.Vector2(0, 0);
 
     const scene = new THREE.Scene();
     const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
@@ -254,6 +273,7 @@ export default function ColorBends({
 
       const cur = pointerCurrentRef.current;
       const tgt = pointerTargetRef.current;
+      if (!cur || !tgt) return;
       const amt = Math.min(1, dt * pointerSmoothRef.current);
       cur.lerp(tgt, amt);
       material.uniforms.uPointer.value.copy(cur);
@@ -280,6 +300,8 @@ export default function ColorBends({
         container.removeChild(renderer.domElement);
       }
     };
+    })();
+    return () => { cancelled = true; };
   }, [bandWidth, frequency, intensity, iterations, mouseInfluence, noise, parallax, scale, speed, transparent, warpStrength]);
 
   useEffect(() => {
@@ -300,25 +322,28 @@ export default function ColorBends({
     material.uniforms.uIntensity.value = intensity;
     material.uniforms.uBandWidth.value = bandWidth;
 
-    const toVec3 = (hex: string) => {
-      const h = hex.replace("#", "").trim();
-      const v =
-        h.length === 3
-          ? [parseInt(h[0] + h[0], 16), parseInt(h[1] + h[1], 16), parseInt(h[2] + h[2], 16)]
-          : [parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)];
-      return new THREE.Vector3(v[0] / 255, v[1] / 255, v[2] / 255);
-    };
-
-    const arr = (colors || []).filter(Boolean).slice(0, MAX_COLORS).map(toVec3);
-    for (let i = 0; i < MAX_COLORS; i++) {
-      const vec = material.uniforms.uColors.value[i];
-      if (i < arr.length) vec.copy(arr[i]);
-      else vec.set(0, 0, 0);
-    }
-    material.uniforms.uColorCount.value = arr.length;
-
     material.uniforms.uTransparent.value = transparent ? 1 : 0;
     if (renderer) renderer.setClearColor(0x000000, transparent ? 0 : 1);
+
+    // Update color uniforms once THREE is available (may already be cached)
+    (async () => {
+      const THREE = await loadThree();
+      const toVec3 = (hex: string) => {
+        const h = hex.replace("#", "").trim();
+        const v =
+          h.length === 3
+            ? [parseInt(h[0] + h[0], 16), parseInt(h[1] + h[1], 16), parseInt(h[2] + h[2], 16)]
+            : [parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)];
+        return new THREE.Vector3(v[0] / 255, v[1] / 255, v[2] / 255);
+      };
+      const arr = (colors || []).filter(Boolean).slice(0, MAX_COLORS).map(toVec3);
+      for (let i = 0; i < MAX_COLORS; i++) {
+        const vec = material.uniforms.uColors.value[i];
+        if (i < arr.length) vec.copy(arr[i]);
+        else vec.set(0, 0, 0);
+      }
+      material.uniforms.uColorCount.value = arr.length;
+    })();
   }, [
     rotation,
     autoRotate,
@@ -344,7 +369,7 @@ export default function ColorBends({
       const rect = container.getBoundingClientRect();
       const x = ((e.clientX - rect.left) / (rect.width || 1)) * 2 - 1;
       const y = -(((e.clientY - rect.top) / (rect.height || 1)) * 2 - 1);
-      pointerTargetRef.current.set(x, y);
+      pointerTargetRef.current?.set(x, y);
     };
 
     container.addEventListener("pointermove", handlePointerMove);

@@ -31,7 +31,7 @@ export default function GoogleAnalyticsScript() {
       <Script
         id="ga4-loader"
         src={GA_SCRIPT_SRC(GA_MEASUREMENT_ID)}
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
       />
     </>
   );

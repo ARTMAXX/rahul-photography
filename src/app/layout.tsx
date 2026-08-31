@@ -22,7 +22,7 @@ const playfair = Playfair_Display({
   style: ["normal", "italic"],
   display: "swap",
   fallback: ["Georgia", "Cambria", "Times New Roman", "Times", "serif"],
-  adjustFontFallback: "Times New Roman",
+  adjustFontFallback: false,
 });
 
 const outfit = Outfit({
@@ -38,7 +38,7 @@ const outfit = Outfit({
     "Roboto",
     "sans-serif",
   ],
-  adjustFontFallback: "Arial",
+  adjustFontFallback: false,
 });
 
 export const viewport = {
@@ -114,7 +114,7 @@ export default function RootLayout({
       <head>
         {/* Unified typography system — loaded as a side-channel stylesheet
             so Tailwind v4's PostCSS pipeline doesn't purge the rules. */}
-        <link rel="stylesheet" href="/css/typography.css" />
+        <link rel="stylesheet" href="/css/typography.css" media="screen" />
         {/* Preload hero assets for LCP. Mobile uses the lightweight static
             hero-mobile.webp (the actual LCP element); desktop preloads the
             video poster. Media queries keep each device from fetching both. */}
@@ -149,7 +149,7 @@ export default function RootLayout({
         {/* Google Analytics 4 — page views + client-side route changes */}
         <GoogleAnalytics />
         {/* Microsoft Clarity — heatmaps and session recording */}
-        <Script strategy="beforeInteractive">{`
+        <Script strategy="afterInteractive">{`
           (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;

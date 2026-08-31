@@ -115,6 +115,24 @@ export default function EcommercePhotographyBlog() {
             <span>' </span>
             <span>By Rahul Chanda</span>
           </div>
+
+          <div className="mt-10 border-l-4 border-[#e83b2c] pl-6 py-4 bg-white/[0.04]">
+            <p className="text-[10px] uppercase tracking-widest text-[#e83b2c] mb-4 font-medium">
+              Key Takeaways
+            </p>
+            <ul className="space-y-2">
+              {[
+                "70% of e-commerce purchasing decisions are driven by product photography — professional imagery directly increases conversion rates.",
+                "Use a pure white or light grey sweep background with edge lighting to separate the product and keep focus on the item.",
+                "Shoot at your marketplace's required resolution (Amazon: 1000px+ on longest edge) in RAW or high-quality JPEG.",
+                "Apply consistent color calibration with a ColorChecker target to ensure all product images share identical white balance and tonal curves.",
+              ].map((point, i) => (
+                <li key={i} className="text-white/70 text-sm leading-relaxed pl-2 border-l border-white/10">
+                  {point}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 

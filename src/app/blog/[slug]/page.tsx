@@ -24,6 +24,8 @@ export interface BlogPost {
     href: string;
     subtext?: string;
   };
+  /** Key Takeaways / TL;DR — displayed as a callout box after the excerpt. */
+  tldr?: string[];
 }
 
 export const posts: BlogPost[] = [
@@ -83,6 +85,12 @@ export const posts: BlogPost[] = [
       "",
       "Explore our [portfolio gallery](/gallery) to see the final output of this pipeline across luxury watches, cosmetics, and packaged goods, or [contact us](/contact) to discuss post-production for your upcoming campaign.",
     ],
+    tldr: [
+      "Commercial retouching is a four-stage pipeline: culling, color calibration, pixel cleanup, and format-specific export.",
+      "Always shoot a ColorChecker reference target under your key lighting to lock white balance across entire product batches.",
+      "Keep all retouching non-destructive using layered Photoshop stacks — never paint directly on the original capture.",
+      "AI tools handle repetitive cleanup labor; human art direction protects tactile brand texture from over-smoothing.",
+    ],
   },
   {
     slug: "generative-ai-product-backgrounds",
@@ -126,6 +134,12 @@ export const posts: BlogPost[] = [
       "However, for **high-gloss chrome, glassware, and polished metals**, generative backgrounds still fall short. A reflective whiskey bottle reflects everything 360 degrees around it in the real studio. When composited into a generated room, the mismatched studio reflections break the illusion immediately. For these products, practical set styling remains irreplaceable. See our guide on [photographing glass and liquid](/blog/beverage-photography-glass) for how we handle reflective beverage assets.",
       "",
       "For regional brands across Dehradun and Uttarakhand looking to elevate catalog imagery, combining studio packshots with tasteful generative environments delivers campaign-grade visuals at a fraction of traditional location build costs. Check out our [commercial photography services](/services) or [get in touch](/contact) to plan your next shoot.",
+    ],
+    tldr: [
+      "The #1 reason AI composites look fake: mismatched lighting direction and color temperature between the product and the generated background.",
+      "Before the shoot, define the background environment so you can match key light angle, hardness, and color balance to the AI scene.",
+      "Generative backgrounds work well for matte surfaces (skincare, packaged goods, tech accessories). High-gloss chrome, glass, and polished metals still require physical sets.",
+      "Use a three-pass pipeline: neutral sweep capture, controlled AI background generation, and atmospheric blending in Photoshop.",
     ],
   },
   {
@@ -171,6 +185,12 @@ export const posts: BlogPost[] = [
       "",
       "Looking for commercial product imagery that combines modern turnaround speeds with meticulous craftsmanship? Explore our [services](/services) or [reach out to discuss your project](/contact).",
     ],
+    tldr: [
+      "Use the Remove Tool for micro-cleanup on textured surfaces; use Generative Fill for macro object removal in complex environments.",
+      "Keep retouching non-destructive: work on adjustment layers and layer copies, never directly on the original capture.",
+      "AI at 50% intensity handles baseline dust and sensor spots without erasing genuine product texture.",
+      "Over-smoothing is the greatest AI retouching risk — human art direction protects the tactile brand identity that automated filters destroy.",
+    ],
   },
   {
     slug: "ai-commercial-product-photography",
@@ -207,6 +227,12 @@ export const posts: BlogPost[] = [
       "4. **Creative Art Direction:** The decision of whether a luxury watch should feel dark and moody or crisp and technical is a strategic brand positioning choice that requires human understanding.",
       "",
       "For ambitious brands in Dehradun, Haridwar, Rishikesh, and across India, the winning formula is a photographer who masters both traditional studio craft and modern digital acceleration. Explore our [commercial photography in Dehradun](/dehradun) or browse our [portfolio](/gallery) to see our work in action.",
+    ],
+    tldr: [
+      "AI excels at pre-visualization, batch post-production, and multi-channel asset generation — not physical product fidelity.",
+      "Physical studio lighting captures real optical physics: caustic light through glass, rim highlights on metal, specular reflections that prompting cannot replicate.",
+      "Brand catalog consistency requires precise color calibration across all 50+ SKUs — AI generators drift between generations.",
+      "Accuracy in commercial advertising is a legal and commercial requirement, not a preference — AI approximations cannot replace optical captures of actual products.",
     ],
   },
   {
@@ -251,6 +277,12 @@ export const posts: BlogPost[] = [
       "3. **The Composite Master:** The finest splash crowns and droplets are blended seamlessly around the hero bottle in post-production.",
       "",
       "Whether shooting beverage campaigns for local breweries in Uttarakhand or packaged drink brands nationwide, high-speed photography demands both technical mastery and creative patience. Explore our [commercial photography services](/services) or [get in touch](/contact) to plan a high-impact campaign.",
+    ],
+    tldr: [
+      "Flash duration (t0.1 rating, not shutter speed) freezes liquid action — you need strobes firing at 1/8,000s to 1/15,000s t0.1.",
+      "Commercial splash images are almost always multi-plate composites: hero bottle, splash action, and post-production blend.",
+      "Custom glycerin-water formulations create lasting, photogenic condensation beads that real ice cannot maintain under studio lights.",
+      "Fluid viscosity determines behavior: plain water collapses fast, syrups hold sculptural shapes longer but need powerful backlight.",
     ],
   },
   {
@@ -340,6 +372,12 @@ export const posts: BlogPost[] = [
       "",
       "Explore our [gallery](/gallery) to see footwear and leather goods photographed with studio precision, or [get in touch with our Dehradun studio](/contact) to schedule a product shoot.",
     ],
+    tldr: [
+      "The three-quarter lateral hero (45-degree, slightly elevated) is the primary conversion angle for footwear — it reveals silhouette, profile, and lacing simultaneously.",
+      "Always include: lateral profile (brand logo and sole), outsole macro (tread grip and engineering), top-down (insole and fit), and an asymmetrical pair composition.",
+      "Gentle foam shaping inside the shoe maintains ankle collar volume for a dynamic, filled-in look.",
+      "Listings with comprehensive angle coverage achieve significantly higher conversion rates and lower return rates.",
+    ],
   },
   {
     slug: "ai-video-editing-tools-2026",
@@ -376,6 +414,12 @@ export const posts: BlogPost[] = [
       "",
       "AI video tools accelerate the mechanical friction of video editing — transcription, rotoscoping, reframing, and color matching. But pacing, visual storytelling, and brand voice remain human arts. Learn more about automated color workflows in our [AI color grading guide](/blog/ai-color-grading-scene-detection), or explore our [commercial video and brand services](/services).",
     ],
+    tldr: [
+      "DaVinci Resolve's Magic Mask isolates moving subjects without frame-by-frame rotoscoping — saving hours on complex product shots.",
+      "Premiere Pro Auto Reframe intelligently tracks action to convert horizontal footage into vertical 9:16 reels automatically.",
+      "Runway Gen-3 creates atmospheric background loops and liquid ripples for short social teasers without a physical set.",
+      "AI accelerates mechanical editing tasks; creative art direction, pacing, and brand voice still require human judgment.",
+    ],
   },
   {
     slug: "ai-color-grading-scene-detection",
@@ -405,6 +449,12 @@ export const posts: BlogPost[] = [
       "When adapting a 60-second brand film into rapid 15-second cutdowns for Instagram and YouTube ads, see our [commercial campaign services](/services/commercial-campaigns), Premiere Pro's AI scene detection identifies cut transitions automatically. This eliminates manual timeline scrubbing and allows editors to immediately begin re-sequencing high-impact hooks.",
       "",
       "Read our broader review of [AI video tools for commercial campaigns](/blog/ai-video-editing-tools-2026) or explore our [commercial photography and content services](/services).",
+    ],
+    tldr: [
+      "DaVinci Resolve's neural engine automatically aligns exposure, white balance, and contrast between a reference hero shot and target clips in one click.",
+      "Scene edit detection eliminates manual timeline scrubbing when adapting 60-second brand films into 15-second cutdowns for social ads.",
+      "AI color matching provides an 80% baseline — creative refinement still requires a trained colorist's eye.",
+      "Consistent color across multi-camera shoots is non-negotiable for professional brand reels — drifting skin tones or product colors undermine production quality instantly.",
     ],
   },
   {
@@ -442,6 +492,12 @@ export const posts: BlogPost[] = [
       "",
       "Pair these lighting techniques with dynamic [high-speed splash photography](/blog/why-beverage-splash-photography-is-hard) to create show-stopping commercial campaigns. Explore our [beverage photography portfolio](/gallery) or [contact our studio](/contact).",
     ],
+    tldr: [
+      "Beverage photography is about lighting the reflections and liquid within — not the glass itself.",
+      "Light must pass through the liquid toward the camera to make amber whiskey, golden beer, or vibrant juices glow with saturated color.",
+      "Use two vertical strip boxes with grid diffusers behind the bottle to create crisp, elegant contour highlight lines on both edges.",
+      "Black foam core panels in front of the set absorb stray room reflections, maintaining deep rich blacks along glass outer contours.",
+    ],
   },
   {
     slug: "ai-upscaling-ecommerce",
@@ -468,6 +524,12 @@ export const posts: BlogPost[] = [
       "## The Golden Rule for E-Commerce Catalogs",
       "",
       "There is no substitute for high native optical resolution captured with calibrated lenses and studio strobes. For professional product photography, see our [commercial product photography service](/services/product-photography). Use AI upscalers as an emergency safety net for legacy asset rescue — never as a primary production strategy. Learn more about catalog standards in our [color science guide](/blog/color-science-ecommerce) or explore our [commercial product photography services](/services).",
+    ],
+    tldr: [
+      "Topaz Gigapixel (deterministic) cleans up compression artifacts safely; Magnific AI (generative) synthesizes textures that may not match the real product.",
+      "AI hallucinated textures on a sweater or cosmetic cream cause customer returns when physical products don't match generated micro-textures.",
+      "Use AI upscalers as an emergency safety net for legacy asset rescue — never as a primary production strategy.",
+      "Native optical resolution from calibrated studio equipment is irreplaceable for e-commerce catalog accuracy.",
     ],
   },
   {
@@ -502,6 +564,12 @@ export const posts: BlogPost[] = [
       "While master PSD files are edited in wide-gamut ProPhoto RGB or Adobe RGB, web deliverables must be converted cleanly to **sRGB** with embedded ICC color profiles. Without proper profile embedding, web browsers and mobile screens render oversaturated or washed-out tones.",
       "",
       "Discover our full post-production workflow in our [Retouching 101 guide](/blog/retouching-101) or [contact our studio](/contact) to discuss calibrated catalog photography.",
+    ],
+    tldr: [
+      "Color mismatch is one of the leading causes of e-commerce returns in fashion, beauty, and home decor — strict color science prevents this.",
+      "Shoot a ColorChecker reference target under your key lighting on every setup to generate a bespoke DNG camera profile that removes sensor color bias.",
+      "Use color-stable commercial strobes with less than 50K color temperature variance across thousands of flashes.",
+      "Always convert web deliverables to sRGB with embedded ICC profiles — without proper profile embedding, browsers render oversaturated or washed-out tones.",
     ],
   },
 ];
@@ -687,6 +755,21 @@ export default async function BlogPostPage({
           <p className="t-lede mt-6 italic">
             {post.excerpt}
           </p>
+
+          {post.tldr && post.tldr.length > 0 && (
+            <div className="mt-10 border-l-4 border-[#e83b2c] pl-6 py-4 bg-white/[0.04]">
+              <p className="text-[10px] uppercase tracking-widest text-[#e83b2c] mb-4 font-medium">
+                Key Takeaways
+              </p>
+              <ul className="space-y-2">
+                {post.tldr.map((point, i) => (
+                  <li key={i} className="text-white/70 text-sm leading-relaxed pl-2 border-l border-white/10">
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           <div className="mt-12 space-y-6">
             {post.body.map((p, i) =>
