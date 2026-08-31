@@ -23,6 +23,13 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Rahul Chanda — Commercial Photographer in Dehradun",
+    description:
+      "Rahul Chanda — high-end commercial product photographer based in Dehradun, India. Crafting premium visual identities for brands worldwide.",
+    images: [absoluteUrl(siteConfig.ogImagePath)],
+  },
 };
 
 const aboutSchema = {
@@ -175,7 +182,7 @@ export default function AboutPage() {
             The <span className="italic text-[#e83b2c]">journey</span>.
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-            <div className="space-y-6 text-lg text-white/60 leading-relaxed max-w-[60ch]">
+            <div className="space-y-6 t-body max-w-[60ch]">
               <p>
                 I picked up a camera professionally in 2019 after years of studying light,
                 colour science, and the way commercial imagery shapes consumer behaviour.
@@ -200,7 +207,7 @@ export default function AboutPage() {
                 12-foot retail banner.
               </p>
             </div>
-            <div className="space-y-6 text-lg text-white/60 leading-relaxed max-w-[60ch]">
+            <div className="space-y-6 t-body max-w-[60ch]">
               <p>
                 My studio infrastructure is built for precision. I use Calibrite
                 ColorChecker targets on every scene, shoot tethered into Capture One
@@ -280,10 +287,10 @@ export default function AboutPage() {
         <div className="max-w-[1600px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-10 border-y border-white/10 py-12">
           {stats.map((s) => (
             <div key={s.l}>
-              <div className="text-5xl md:text-6xl font-serif text-[#e83b2c]">
+              <div className="text-4xl md:text-5xl font-serif text-[#e83b2c]">
                 {s.n}
               </div>
-              <div className="text-white/50 text-sm mt-2 uppercase tracking-widest">
+              <div className="text-white/50 text-xs mt-2 uppercase tracking-widest">
                 {s.l}
               </div>
             </div>

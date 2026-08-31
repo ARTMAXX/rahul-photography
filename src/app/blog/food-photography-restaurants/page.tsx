@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
   // Short meta title; the H1 inside the article still uses the long form.
   title: "Food Photography for Restaurants",
   description:
-    "Food photography guide for restaurants: menu items, delivery apps, and social media. Photography that increases orders. orders.",
+    "Food photography guide for restaurants: menu items, delivery apps, and social media. Photography that increases orders.",
   alternates: { canonical: "/blog/food-photography-restaurants" },
   keywords: "restaurant food photography, food photography for restaurants, restaurant menu photography, food photographer, how to photograph food",
   openGraph: {
@@ -25,6 +26,13 @@ export const metadata: Metadata = {
         alt: "Food Photography for Restaurants — Menu, Delivery Apps & Social",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Food Photography for Restaurants",
+    description:
+      "Professional restaurant food photography guide. Photograph your menu, Zomato, Swiggy, and social media content.",
+    images: [absoluteUrl(siteConfig.ogImagePath)],
   },
 };
 
@@ -70,6 +78,13 @@ const foodRestaurantSchema = {
         "@type": "Organization",
         "name": "Rahul Chanda Photography",
       },
+      "author": {
+        "@type": "Person",
+        "name": "Rahul Chanda",
+        "url": absoluteUrl("/about"),
+        "jobTitle": "Commercial Product Photographer",
+        "image": absoluteUrl("/opt/about-photo/rahul-chanda-portrait.webp"),
+      },
     },
   ],
 };
@@ -106,26 +121,26 @@ export default function FoodRestaurantPhotographyBlog() {
       <article className="max-w-[900px] mx-auto px-4 md:px-12 py-24">
         <section className="mb-16">
           <h2 className="h-section mt-16 mb-6">Why Food Photography Matters for Restaurants</h2>
-          <p className="text-lg text-white/70 leading-relaxed mb-4">
+          <p className="t-body mb-4">
             80% of customers check photos before ordering at a restaurant. On Zomato, Swiggy, Google, and Instagram, your food photos are your sales tool. A single professional food photo can increase dish orders by 30-50%. Bad food photos cost you orders.
           </p>
-          <p className="text-lg text-white/70 leading-relaxed">
+          <p className="t-body">
             This guide breaks down exactly how to photograph your restaurant's food — from menu shots to delivery app photos to social media content.
           </p>
         </section>
 
         <section className="mb-16">
           <h2 className="h-section mt-16 mb-6">Restaurant Photography Lighting</h2>
-          <p className="text-lg text-white/70 leading-relaxed mb-4">
+          <p className="t-body mb-4">
             Proper lighting is the foundation of professional food photography.
           </p>
           <div className="border-l-4 border-[#e83b2c] pl-6 py-4 bg-white/5 mb-6">
             <h4 className="text-lg font-serif text-white mb-3">Key Light Setup for Food:</h4>
             <ul className="space-y-2 text-white/70">
-              <li>'  <strong>Position:</strong> 45° angle, slightly elevated above the dish</li>
-              <li>'  <strong>Softness:</strong> Use diffusion (softbox, translucent panel) to avoid harsh shadows</li>
-              <li>'  <strong>Intensity:</strong> Bright enough to reveal texture and color without blown highlights</li>
-              <li>'  <strong>Direction:</strong> Side-lit or 45° creates dimension. Avoid flat overhead lighting.</li>
+              <li>— <strong>Position:</strong> 45° angle, slightly elevated above the dish</li>
+              <li>— <strong>Softness:</strong> Use diffusion (softbox, translucent panel) to avoid harsh shadows</li>
+              <li>— <strong>Intensity:</strong> Bright enough to reveal texture and color without blown highlights</li>
+              <li>— <strong>Direction:</strong> Side-lit or 45° creates dimension. Avoid flat overhead lighting.</li>
             </ul>
           </div>
           <div className="border-l-4 border-[#e83b2c] pl-6 py-4 bg-white/5">
@@ -136,7 +151,7 @@ export default function FoodRestaurantPhotographyBlog() {
 
         <section className="mb-16">
           <h2 className="h-section mt-16 mb-6">Food Styling for Restaurant Photography</h2>
-          <p className="text-lg text-white/70 leading-relaxed mb-4">
+          <p className="t-body mb-4">
             How you present the food determines how appetizing it looks.
           </p>
           <div className="space-y-4">
@@ -172,7 +187,7 @@ export default function FoodRestaurantPhotographyBlog() {
 
         <section className="mb-16">
           <h2 className="h-section mt-16 mb-6">Composition & Camera Angles</h2>
-          <p className="text-lg text-white/70 leading-relaxed mb-4">
+          <p className="t-body mb-4">
             Different angles serve different purposes.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
@@ -200,7 +215,7 @@ export default function FoodRestaurantPhotographyBlog() {
 
         <section className="mb-16">
           <h2 className="h-section mt-16 mb-6">Shooting for Multiple Platforms</h2>
-          <p className="text-lg text-white/70 leading-relaxed mb-4">
+          <p className="t-body mb-4">
             One shoot, multiple uses. Tailor photos to each platform.
           </p>
           <div className="space-y-4">
@@ -232,16 +247,43 @@ export default function FoodRestaurantPhotographyBlog() {
 
         <section className="mb-16">
           <h2 className="h-section mt-16 mb-6">Color Grading Restaurant Photos</h2>
-          <p className="text-lg text-white/70 leading-relaxed mb-4">
+          <p className="t-body mb-4">
             Color correction makes food look fresh and appetizing.
           </p>
-          <ul className="space-y-3 text-lg text-white/70 leading-relaxed">
-            <li>'  <strong>Warm tones:</strong> Slightly warm color temperature (3500-4500K) makes food look cozy</li>
-            <li>'  <strong>Saturation:</strong> Increase saturation slightly to make colors pop (but stay realistic)</li>
-            <li>'  <strong>Whites:</strong> Pure white backgrounds or plates stand out</li>
-            <li>'  <strong>Contrast:</strong> Increase contrast to make food details pop</li>
-            <li>'  <strong>Avoid:</strong> Don't over-process. Food should look real, not AI-generated</li>
+          <ul className="space-y-3 t-body">
+            <li>— <strong>Warm tones:</strong> Slightly warm color temperature (3500-4500K) makes food look cozy</li>
+            <li>— <strong>Saturation:</strong> Increase saturation slightly to make colors pop (but stay realistic)</li>
+            <li>— <strong>Whites:</strong> Pure white backgrounds or plates stand out</li>
+            <li>— <strong>Contrast:</strong> Increase contrast to make food details pop</li>
+            <li>— <strong>Avoid:</strong> Don't over-process. Food should look real, not AI-generated</li>
           </ul>
+        </section>
+
+        {/* About the Author */}
+        <section className="mt-16 pt-10 border-t border-white/10">
+          <div className="flex gap-6 items-start">
+            <div className="relative w-16 h-16 rounded-full overflow-hidden flex-shrink-0 hidden md:block">
+              <Image
+                src="/opt/about-photo/rahul-chanda-portrait.webp"
+                alt="Rahul Chanda, commercial product photographer"
+                fill
+                sizes="64px"
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-widest text-[#e83b2c] mb-2">About the author</p>
+              <h3 className="text-lg font-serif text-white mb-2">
+                <Link href="/about" className="hover:text-[#e83b2c] transition-colors">Rahul Chanda</Link>
+              </h3>
+              <p className="text-white/50 text-sm leading-relaxed">
+                Commercial product photographer based in Dehradun, India. 6+ years shooting product, food & beverage, and advertising campaigns with in-house retouching. Serving brands across Uttarakhand and pan-India.
+              </p>
+              <Link href="/about" className="inline-flex items-center gap-1 text-xs text-[#e83b2c] hover:text-[#f0523f] mt-3 transition-colors">
+                View full profile <span>&rarr;</span>
+              </Link>
+            </div>
+          </div>
         </section>
 
         <section className="mt-24 pt-12 border-t border-white/10">
@@ -254,7 +296,7 @@ export default function FoodRestaurantPhotographyBlog() {
               href="/services/food-beverage-photography"
               className="inline-flex items-center gap-2 text-[#e83b2c] hover:text-[#e83b2c]/80 transition-colors"
             >
-              Book Restaurant Food Photography ®
+              Book Restaurant Food Photography
             </Link>
           </div>
         </section>

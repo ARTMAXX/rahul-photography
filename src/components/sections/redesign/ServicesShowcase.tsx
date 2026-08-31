@@ -294,7 +294,7 @@ export default function ServicesShowcase() {
                 { value: "2,000+", label: "Images edited & graded" },
               ].map((stat) => (
                 <div key={stat.label} className="border-l border-white/10 pl-4">
-                  <div className="text-2xl md:text-3xl font-serif text-white">
+                  <div className="text-3xl md:text-4xl font-serif text-white">
                     {stat.value}
                   </div>
                   <div className="mt-1 text-[10px] uppercase tracking-[0.2em] text-white/40 leading-relaxed">
@@ -349,10 +349,10 @@ export default function ServicesShowcase() {
 
                           {/* Title + Short Desc */}
                           <div className="min-w-0 flex-1">
-                            <h3 className="text-xl md:text-2xl font-serif text-white mb-2 transition-colors duration-300">
+                            <h3 className="h-card mb-2 transition-colors duration-300">
                               {service.title}
                             </h3>
-                            <p className="text-sm md:text-base text-white/50 leading-relaxed line-clamp-2">
+                            <p className="t-body line-clamp-2">
                               {service.shortDesc}
                             </p>
                           </div>
@@ -405,17 +405,17 @@ export default function ServicesShowcase() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
                               {/* Full Description */}
                               <div>
-                                <h4 className="text-[10px] uppercase tracking-[0.25em] text-[#ffffff]/60 font-medium mb-4">
+                                <h4 className="h-eyebrow mb-4">
                                   Overview
                                 </h4>
-                                <p className="text-white/70 leading-relaxed text-base md:text-lg">
+                                <p className="t-body">
                                   {service.fullDesc}
                                 </p>
                               </div>
 
                               {/* Deliverables */}
                               <div>
-                                <h4 className="text-[10px] uppercase tracking-[0.25em] text-[#ffffff]/60 font-medium mb-4">
+                                <h4 className="h-eyebrow mb-4">
                                   What You Get
                                 </h4>
                                 <ul className="space-y-3">
@@ -429,7 +429,7 @@ export default function ServicesShowcase() {
                                         duration: 0.4,
                                         ease: [0.32, 0.72, 0, 1],
                                       }}
-                                      className="flex items-start gap-3 text-white/60 text-sm md:text-base"
+                                      className="flex items-start gap-3 t-body"
                                     >
                                       <span className="text-[#e83b2c]/50 mt-1.5 w-1.5 h-1.5 rounded-full bg-[#e83b2c]/50 flex-shrink-0" />
                                       <span>{item}</span>

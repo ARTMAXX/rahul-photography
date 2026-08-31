@@ -142,7 +142,7 @@ const blogs: BlogCard[] = [
 		image: "/opt/best shots/Product image/product-watch-luxury.webp",
 		createdAt: "2026-08-22",
 		tag: "Guides",
-		readTime: "10 min read",
+		readTime: "14 min read",
 	},
 	{
 		title: "Product Photography for Small Businesses in India: A Practical Guide",
@@ -152,7 +152,7 @@ const blogs: BlogCard[] = [
 		image: "/opt/best shots/new-images/new-product-blast.webp",
 		createdAt: "2026-08-28",
 		tag: "Guides",
-		readTime: "9 min read",
+		readTime: "13 min read",
 	},
 	{
 		title: "Studio Lighting Setups for Product Photography: From Basic to Advanced",
@@ -162,7 +162,7 @@ const blogs: BlogCard[] = [
 		image: "/opt/best shots/Product image/product-headphone.webp",
 		createdAt: "2026-08-25",
 		tag: "Technique",
-		readTime: "8 min read",
+		readTime: "12 min read",
 	},
 	{
 		title: "Food Photography for Restaurants: Menu, Atmosphere & Plate Shots",
@@ -172,7 +172,7 @@ const blogs: BlogCard[] = [
 		image: "/opt/best shots/Food photo/food-biriyani.webp",
 		createdAt: "2026-08-30",
 		tag: "Technique",
-		readTime: "7 min read",
+		readTime: "16 min read",
 	},
 	{
 		title: "Beverage Photography: Glass & Splash Photography Techniques",
@@ -182,7 +182,7 @@ const blogs: BlogCard[] = [
 		image: "/opt/best shots/Beverage images/beverage-macro.webp",
 		createdAt: "2026-08-20",
 		tag: "Behind the scenes",
-		readTime: "9 min read",
+		readTime: "15 min read",
 	},
 ];
 

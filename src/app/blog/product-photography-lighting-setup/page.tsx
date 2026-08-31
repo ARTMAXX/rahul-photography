@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
   // Short meta title; the H1 inside the article still uses the long form.
   title: "Product Photography Lighting Setups",
   description:
-    "Professional product photography lighting setups. Learn key light, rim light, and negative fill techniques for e-commerce and commercial product photography. Setup guide with examples.",
+    "Professional product photography lighting setups. Learn key light, rim light, and negative fill techniques for e-commerce and commercial work.",
   alternates: { canonical: "/blog/product-photography-lighting-setup" },
   keywords: "product photography lighting, product lighting setup, key light, rim light, negative fill, ecommerce product photography lighting",
   openGraph: {
@@ -25,6 +26,13 @@ export const metadata: Metadata = {
         alt: "Product Photography Lighting — Key Light, Rim Light & Negative Fill",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Product Photography Lighting Setups",
+    description:
+      "Master product photography lighting. Learn key light, rim light, and negative fill for professional product shots.",
+    images: [absoluteUrl(siteConfig.ogImagePath)],
   },
 };
 
@@ -59,8 +67,8 @@ const lightingSchema = {
       "headline": "Product Photography Lighting: Key Light, Rim Light & Negative Fill",
       "description": "Professional product photography lighting setups for e-commerce and commercial work.",
       "image": absoluteUrl("/opt/og-image.jpg"),
-      "datePublished": "2026-08-28",
-      "dateModified": "2026-08-28",
+      "datePublished": "2026-08-25",
+      "dateModified": "2026-08-25",
       "author": {
         "@type": "Person",
         "name": "Rahul Chanda",
@@ -74,6 +82,13 @@ const lightingSchema = {
           "@type": "ImageObject",
           "url": absoluteUrl("/icon.svg"),
         },
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Rahul Chanda",
+        "url": absoluteUrl("/about"),
+        "jobTitle": "Commercial Product Photographer",
+        "image": absoluteUrl("/opt/about-photo/rahul-chanda-portrait.webp"),
       },
       "mainEntity": {
         "@type": "HowTo",
@@ -121,7 +136,7 @@ export default function ProductPhotographyLightingBlog() {
             Master three professional lighting setups that every e-commerce and commercial product photographer needs to know.
           </p>
           <div className="flex gap-6 text-sm text-white/50">
-            <span>August 28, 2026</span>
+            <span>August 25, 2026</span>
             <span>' </span>
             <span>12 min read</span>
             <span>' </span>
@@ -134,61 +149,61 @@ export default function ProductPhotographyLightingBlog() {
       <article className="max-w-[900px] mx-auto px-4 md:px-12 py-24">
         <section className="mb-16">
           <h2 className="h-section mt-16 mb-6">Why Lighting Matters in Product Photography</h2>
-          <p className="text-lg text-white/70 leading-relaxed mb-4">
+          <p className="t-body mb-4">
             The difference between amateur and professional product photography is 90% lighting. You can have a premium product, perfect camera settings, and great composition — but without proper lighting, your product photos will look flat, unconvincing, and fail to convert.
           </p>
-          <p className="text-lg text-white/70 leading-relaxed">
+          <p className="t-body">
             In this guide, I'll break down three professional lighting setups I use for commercial product photography. These aren't theories — they're production-tested techniques I use for e-commerce brands, luxury product shoots, and advertising campaigns.
           </p>
         </section>
 
         <section className="mb-16">
           <h2 className="h-section mt-16 mb-6">Setup 01: Key Light (Main Light)</h2>
-          <p className="text-lg text-white/70 leading-relaxed mb-4">
+          <p className="t-body mb-4">
             The key light is your primary light source. It defines the shape, form, and volume of your product.
           </p>
           <div className="border-l-4 border-[#e83b2c] pl-6 py-4 bg-white/5 mb-6">
             <h3 className="text-xl font-serif text-white mb-3">Position:</h3>
             <p className="text-white/70">45 degrees to the product, elevated 30-45 degrees above the horizontal plane. This creates dimension without harsh shadows.</p>
           </div>
-          <p className="text-lg text-white/70 leading-relaxed mb-4">
+          <p className="t-body mb-4">
             Your key light should be large and soft. Use a softbox (2x3 feet or larger) or diffusion to create flattering shadows that reveal product details without looking overly dramatic.
           </p>
-          <p className="text-lg text-white/70 leading-relaxed">
+          <p className="t-body">
             For reflective products (watches, cosmetics, jewelry), the key light also creates the primary highlight. Control this highlight carefully — it defines perceived quality and premium perception.
           </p>
         </section>
 
         <section className="mb-16">
           <h2 className="h-section mt-16 mb-6">Setup 02: Rim Light (Back Light)</h2>
-          <p className="text-lg text-white/70 leading-relaxed mb-4">
+          <p className="t-body mb-4">
             The rim light is a secondary light that separates your product from the background and creates visual interest.
           </p>
           <div className="border-l-4 border-[#e83b2c] pl-6 py-4 bg-white/5 mb-6">
             <h3 className="text-xl font-serif text-white mb-3">Position:</h3>
             <p className="text-white/70">Behind or to the side of the product, slightly elevated. Angle it to graze the edges of your product.</p>
           </div>
-          <p className="text-lg text-white/70 leading-relaxed mb-4">
+          <p className="t-body mb-4">
             This light creates edge separation — the visual boundary between your product and background. Without rim light, your product can look flat and merged into the background.
           </p>
-          <p className="text-lg text-white/70 leading-relaxed">
+          <p className="t-body">
             Use a smaller, harder light source (strip light, Fresnel, or small softbox) to create controlled edge definition. Intensity should be 30-50% of your key light to feel natural.
           </p>
         </section>
 
         <section className="mb-16">
           <h2 className="h-section mt-16 mb-6">Setup 03: Negative Fill (Shadow Control)</h2>
-          <p className="text-lg text-white/70 leading-relaxed mb-4">
+          <p className="t-body mb-4">
             Negative fill isn't a light — it's the strategic blocking of ambient light to create contrast and shape.
           </p>
           <div className="border-l-4 border-[#e83b2c] pl-6 py-4 bg-white/5 mb-6">
             <h3 className="text-xl font-serif text-white mb-3">What It Does:</h3>
             <p className="text-white/70">Blocks light from filling shadows, creating deeper, more defined shadows that reveal product form.</p>
           </div>
-          <p className="text-lg text-white/70 leading-relaxed mb-4">
+          <p className="t-body mb-4">
             Position black flags, black foam board, or black fabric on the opposite side of your key light. This prevents light bounce that would otherwise soften shadows and flatten your product.
           </p>
-          <p className="text-lg text-white/70 leading-relaxed">
+          <p className="t-body">
             The more aggressive your negative fill, the more dramatic and premium your product will appear. E-commerce packshots need subtle negative fill. Luxury product photography uses more aggressive negative fill to create dramatic, editorial lighting.
           </p>
         </section>
@@ -264,6 +279,33 @@ export default function ProductPhotographyLightingBlog() {
           </div>
         </section>
 
+        {/* About the Author */}
+        <section className="mt-16 pt-10 border-t border-white/10">
+          <div className="flex gap-6 items-start">
+            <div className="relative w-16 h-16 rounded-full overflow-hidden flex-shrink-0 hidden md:block">
+              <Image
+                src="/opt/about-photo/rahul-chanda-portrait.webp"
+                alt="Rahul Chanda, commercial product photographer"
+                fill
+                sizes="64px"
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-widest text-[#e83b2c] mb-2">About the author</p>
+              <h3 className="text-lg font-serif text-white mb-2">
+                <Link href="/about" className="hover:text-[#e83b2c] transition-colors">Rahul Chanda</Link>
+              </h3>
+              <p className="text-white/50 text-sm leading-relaxed">
+                Commercial product photographer based in Dehradun, India. 6+ years shooting product, food & beverage, and advertising campaigns with in-house retouching. Serving brands across Uttarakhand and pan-India.
+              </p>
+              <Link href="/about" className="inline-flex items-center gap-1 text-xs text-[#e83b2c] hover:text-[#f0523f] mt-3 transition-colors">
+                View full profile <span>&rarr;</span>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* Internal Link to Service */}
         <section className="mt-24 pt-12 border-t border-white/10">
           <div className="bg-white/5 border border-white/10 p-8">
@@ -275,7 +317,7 @@ export default function ProductPhotographyLightingBlog() {
               href="/services/product-photography"
               className="inline-flex items-center gap-2 text-[#e83b2c] hover:text-[#e83b2c]/80 transition-colors"
             >
-              Explore Product Photography Services ®
+              Explore Product Photography Services
             </Link>
           </div>
         </section>

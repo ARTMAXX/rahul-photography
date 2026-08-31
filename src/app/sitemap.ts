@@ -66,8 +66,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     (slug) => ({
       url: absoluteUrl(`/blog/${slug}`),
       lastModified: new Date(postDates[slug]),
-      changeFrequency: "monthly",
-      priority: 0.6,
+      changeFrequency: "weekly",
+      priority: 0.7,
     })
   );
 
@@ -76,8 +76,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .map(([slug, date]) => ({
       url: absoluteUrl(`/blog/${slug}`),
       lastModified: new Date(date),
-      changeFrequency: "monthly",
-      priority: 0.6,
+      changeFrequency: "weekly",
+      priority: 0.7,
     }));
 
   return [...pages, ...standalonePosts, ...dynamicPosts];

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
@@ -25,6 +26,13 @@ export const metadata: Metadata = {
         alt: "Product Photography for Small Businesses in India",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Product Photography for Small Businesses",
+    description:
+      "Complete guide to affordable product photography for small Indian businesses. DIY vs professional, pricing, ROI.",
+    images: [absoluteUrl(siteConfig.ogImagePath)],
   },
 };
 
@@ -59,8 +67,8 @@ const smallBusinessSchema = {
       "headline": "Product Photography for Small Businesses in India: Getting Started",
       "description": "Guide to professional product photography for small Indian businesses. Affordable options, DIY vs professional, and ROI.",
       "image": absoluteUrl("/opt/og-image.jpg"),
-      "datePublished": "2026-09-01",
-      "dateModified": "2026-09-01",
+      "datePublished": "2026-08-28",
+      "dateModified": "2026-08-28",
       "author": {
         "@type": "Person",
         "name": "Rahul Chanda",
@@ -69,6 +77,13 @@ const smallBusinessSchema = {
       "publisher": {
         "@type": "Organization",
         "name": "Rahul Chanda Photography",
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Rahul Chanda",
+        "url": absoluteUrl("/about"),
+        "jobTitle": "Commercial Product Photographer",
+        "image": absoluteUrl("/opt/about-photo/rahul-chanda-portrait.webp"),
       },
     },
   ],
@@ -94,7 +109,7 @@ export default function SmallBusinessPhotographyBlog() {
             How small Indian businesses can compete with bigger brands through professional product photography. DIY vs hiring a professional. ROI calculator.
           </p>
           <div className="flex gap-6 text-sm text-white/50">
-            <span>September 1, 2026</span>
+            <span>August 28, 2026</span>
             <span>' </span>
             <span>13 min read</span>
             <span>' </span>
@@ -106,8 +121,8 @@ export default function SmallBusinessPhotographyBlog() {
       <article className="max-w-[900px] mx-auto px-4 md:px-12 py-24">
         <section className="mb-16">
           <h2 className="h-section mt-16 mb-6">Why Small Businesses Lose Sales Due to Poor Product Photos</h2>
-          <p className="text-lg text-white/70 leading-relaxed mb-4">
-            Small businesses on Flipkart, Amazon, Etsy, or their own Shopify stores are losing sales to better-lit competitors every day. Product photography isn't optional "''  it's your competitive advantage.
+          <p className="t-body mb-4">
+            Small businesses on Flipkart, Amazon, Etsy, or their own Shopify stores are losing sales to better-lit competitors every day. Product photography isn't optional "'— it's your competitive advantage.
           </p>
           <div className="space-y-4 mb-6">
             {[
@@ -149,7 +164,7 @@ export default function SmallBusinessPhotographyBlog() {
               },
             ].map((item, idx) => (
               <div key={idx} className="border border-white/10 p-6">
-                <h4 className="text-lg font-serif text-[#e83b2c] mb-2">' {item.mistake}</h4>
+                <h4 className="text-lg font-serif text-[#e83b2c] mb-2">— {item.mistake}</h4>
                 <p className="text-white/70">Impact: {item.impact}</p>
               </div>
             ))}
@@ -165,19 +180,19 @@ export default function SmallBusinessPhotographyBlog() {
                 <div>
                   <h4 className="text-white font-serif mb-2">Pros:</h4>
                   <ul className="text-white/70 space-y-1 text-sm">
-                    <li>'  No outside cost (use your phone)</li>
-                    <li>'  Full control over timing</li>
-                    <li>'  Learn useful skills</li>
+                    <li>— No outside cost (use your phone)</li>
+                    <li>— Full control over timing</li>
+                    <li>— Learn useful skills</li>
                   </ul>
                 </div>
                 <div>
                   <h4 className="text-white font-serif mb-2">Cons:</h4>
                   <ul className="text-white/70 space-y-1 text-sm">
-                    <li>'  Poor lighting = low quality</li>
-                    <li>'  Time investment (hours per shoot)</li>
-                    <li>'  No lighting equipment</li>
-                    <li>'  Inconsistency across photos</li>
-                    <li>'  Lost sales due to poor photos</li>
+                    <li>— Poor lighting = low quality</li>
+                    <li>— Time investment (hours per shoot)</li>
+                    <li>— No lighting equipment</li>
+                    <li>— Inconsistency across photos</li>
+                    <li>— Lost sales due to poor photos</li>
                   </ul>
                 </div>
               </div>
@@ -188,18 +203,18 @@ export default function SmallBusinessPhotographyBlog() {
                 <div>
                   <h4 className="text-white font-serif mb-2">Pros:</h4>
                   <ul className="text-white/70 space-y-1 text-sm">
-                    <li>'  Professional lighting & equipment</li>
-                    <li>'  Consistent quality across all photos</li>
-                    <li>'  Fast turnaround (1-2 weeks)</li>
-                    <li>'  40-70% increase in conversions</li>
-                    <li>'  Expert retouching included</li>
+                    <li>— Professional lighting & equipment</li>
+                    <li>— Consistent quality across all photos</li>
+                    <li>— Fast turnaround (1-2 weeks)</li>
+                    <li>— 40-70% increase in conversions</li>
+                    <li>— Expert retouching included</li>
                   </ul>
                 </div>
                 <div>
                   <h4 className="text-white font-serif mb-2">Cons:</h4>
                   <ul className="text-white/70 space-y-1 text-sm">
-                    <li>'  Upfront cost (-₹2,000-10,000+)</li>
-                    <li>'  Less hands-on control</li>
+                    <li>— Upfront cost (₹2,000-10,000+)</li>
+                    <li>— Less hands-on control</li>
                   </ul>
                 </div>
               </div>
@@ -209,23 +224,23 @@ export default function SmallBusinessPhotographyBlog() {
 
         <section className="mb-16">
           <h2 className="h-section mt-16 mb-6">ROI: Does Professional Photography Pay Off?</h2>
-          <p className="text-lg text-white/70 leading-relaxed mb-6">
-            Let's do the math. If you sell -₹1,00,000 of products per month:
+          <p className="t-body mb-6">
+            Let's do the math. If you sell ₹1,00,000 of products per month:
           </p>
           <div className="bg-white/5 border border-white/10 p-8 mb-6">
             <div className="space-y-4">
               <div>
                 <span className="text-white font-serif">Current (Poor Photos):</span>
-                <p className="text-white/70">-₹1,00,000/month revenue "” 2% conversion = -₹2,00,000 orders</p>
+                <p className="text-white/70">₹1,00,000/month revenue "” 2% conversion = ₹2,00,000 orders</p>
               </div>
               <div>
                 <span className="text-white font-serif">After Professional Photography:</span>
-                <p className="text-white/70">-₹1,00,000/month revenue "” 3.5% conversion = -₹3,50,000 orders</p>
+                <p className="text-white/70">₹1,00,000/month revenue "” 3.5% conversion = ₹3,50,000 orders</p>
               </div>
               <div className="border-t border-white/10 pt-4">
-                <span className="text-[#e83b2c] font-serif text-lg">Extra Revenue: -₹1,50,000/month</span>
+                <span className="text-[#e83b2c] font-serif text-lg">Extra Revenue: ₹1,50,000/month</span>
                 <p className="text-white/70 mt-2">
-                  Professional shoot cost: -₹5,000-10,000 (one-time)
+                  Professional shoot cost: ₹5,000-10,000 (one-time)
                   <br />
                   Payback period: Less than 1 week.
                 </p>
@@ -269,17 +284,17 @@ export default function SmallBusinessPhotographyBlog() {
             {[
               {
                 tier: "Budget Shoot",
-                price: "-₹2,000-5,000",
+                price: "₹2,000-5,000",
                 includes: "5-10 products, simple white background, basic retouching, 3-5 days delivery",
               },
               {
                 tier: "Standard Shoot",
-                price: "-₹5,000-15,000",
+                price: "₹5,000-15,000",
                 includes: "15-25 products, multiple backgrounds, professional retouching, consistent quality, 5-7 days",
               },
               {
                 tier: "Premium Shoot",
-                price: "-₹15,000-50,000+",
+                price: "₹15,000-50,000+",
                 includes: "50+ products, lifestyle + studio, art direction, advanced retouching, campaign-ready, 2-3 weeks",
               },
             ].map((tier, idx) => (
@@ -290,8 +305,8 @@ export default function SmallBusinessPhotographyBlog() {
               </div>
             ))}
           </div>
-          <p className="text-lg text-white/70 leading-relaxed">
-            Cost per product: -₹200-500 for professional photography. Compare to lost sales from bad photos: priceless.
+          <p className="t-body">
+            Cost per product: ₹200-500 for professional photography. Compare to lost sales from bad photos: priceless.
           </p>
         </section>
 
@@ -345,7 +360,7 @@ export default function SmallBusinessPhotographyBlog() {
               {
                 step: "03",
                 action: "Get Budget Approval",
-                detail: "Calculate ROI. -₹5,000 spend - — -₹50,000+ extra revenue in month 1.",
+                detail: "Calculate ROI. ₹5,000 spend - — ₹50,000+ extra revenue in month 1.",
               },
               {
                 step: "04",
@@ -381,6 +396,33 @@ export default function SmallBusinessPhotographyBlog() {
           </div>
         </section>
 
+        {/* About the Author */}
+        <section className="mt-16 pt-10 border-t border-white/10">
+          <div className="flex gap-6 items-start">
+            <div className="relative w-16 h-16 rounded-full overflow-hidden flex-shrink-0 hidden md:block">
+              <Image
+                src="/opt/about-photo/rahul-chanda-portrait.webp"
+                alt="Rahul Chanda, commercial product photographer"
+                fill
+                sizes="64px"
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-widest text-[#e83b2c] mb-2">About the author</p>
+              <h3 className="text-lg font-serif text-white mb-2">
+                <Link href="/about" className="hover:text-[#e83b2c] transition-colors">Rahul Chanda</Link>
+              </h3>
+              <p className="text-white/50 text-sm leading-relaxed">
+                Commercial product photographer based in Dehradun, India. 6+ years shooting product, food & beverage, and advertising campaigns with in-house retouching. Serving brands across Uttarakhand and pan-India.
+              </p>
+              <Link href="/about" className="inline-flex items-center gap-1 text-xs text-[#e83b2c] hover:text-[#f0523f] mt-3 transition-colors">
+                View full profile <span>&rarr;</span>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         <section className="mt-24 pt-12 border-t border-white/10">
           <div className="bg-white/5 border border-white/10 p-8">
             <h3 className="text-2xl font-serif text-white mb-4">Ready to Invest in Professional Product Photography?</h3>
@@ -394,7 +436,7 @@ export default function SmallBusinessPhotographyBlog() {
               href="/services/product-photography"
               className="inline-flex items-center gap-2 text-[#e83b2c] hover:text-[#e83b2c]/80 transition-colors"
             >
-              Get Professional Product Photography - —
+              Get Professional Product Photography
             </Link>
           </div>
         </section>

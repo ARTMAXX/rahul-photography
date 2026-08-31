@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
@@ -24,6 +25,12 @@ export const metadata: Metadata = {
         alt: "Beverage Product Photography — Glass, Condensation & Splash",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Beverage Product Photography",
+    description: "Master beverage photography. Learn glass lighting, condensation, and splash techniques.",
+    images: [absoluteUrl(siteConfig.ogImagePath)],
   },
 };
 
@@ -58,8 +65,8 @@ const beverageSchema = {
       "headline": "Beverage Product Photography: Glass, Condensation & Splash",
       "description": "Professional beverage photography guide for glass products, condensation, and splash techniques.",
       "image": absoluteUrl("/opt/og-image.jpg"),
-      "datePublished": "2026-08-31",
-      "dateModified": "2026-08-31",
+      "datePublished": "2026-08-20",
+      "dateModified": "2026-08-20",
       "author": {
         "@type": "Person",
         "name": "Rahul Chanda",
@@ -68,6 +75,13 @@ const beverageSchema = {
       "publisher": {
         "@type": "Organization",
         "name": "Rahul Chanda Photography",
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Rahul Chanda",
+        "url": absoluteUrl("/about"),
+        "jobTitle": "Commercial Product Photographer",
+        "image": absoluteUrl("/opt/about-photo/rahul-chanda-portrait.webp"),
       },
     },
   ],
@@ -93,7 +107,7 @@ export default function BeveragePhotographyBlog() {
             Advanced guide to professional beverage photography. Master glass lighting, condensation effects, and splash photography for commercial work.
           </p>
           <div className="flex gap-6 text-sm text-white/50">
-            <span>August 31, 2026</span>
+            <span>August 20, 2026</span>
             <span>' </span>
             <span>15 min read</span>
             <span>' </span>
@@ -105,7 +119,7 @@ export default function BeveragePhotographyBlog() {
       <article className="max-w-[900px] mx-auto px-4 md:px-12 py-24">
         <section className="mb-16">
           <h2 className="h-section mt-16 mb-6">Why Beverage Photography is Uniquely Challenging</h2>
-          <p className="text-lg text-white/70 leading-relaxed mb-4">
+          <p className="t-body mb-4">
             Beverage photography is one of the hardest product photography disciplines. Unlike solid products, beverages have three unique challenges:
           </p>
           <div className="space-y-3 mb-6">
@@ -123,7 +137,7 @@ export default function BeveragePhotographyBlog() {
 
         <section className="mb-16">
           <h2 className="h-section mt-16 mb-6">Glass Lighting: The Foundation</h2>
-          <p className="text-lg text-white/70 leading-relaxed mb-4">
+          <p className="t-body mb-4">
             Lighting glass beverages requires precision and control.
           </p>
           <div className="border-l-4 border-[#e83b2c] pl-6 py-4 bg-white/5 mb-6">
@@ -131,9 +145,9 @@ export default function BeveragePhotographyBlog() {
             <p className="text-white/70 mb-3">Place a bright light behind the glass to illuminate the beverage liquid and create transparency. This creates:
             </p>
             <ul className="space-y-2 text-white/70 ml-4">
-              <li>'  Visible liquid color (for teas, juices, sodas)</li>
-              <li>'  Edge separation from background</li>
-              <li>'  Glow effect that shows freshness</li>
+              <li>— Visible liquid color (for teas, juices, sodas)</li>
+              <li>— Edge separation from background</li>
+              <li>— Glow effect that shows freshness</li>
             </ul>
           </div>
           <div className="border-l-4 border-[#e83b2c] pl-6 py-4 bg-white/5">
@@ -144,7 +158,7 @@ export default function BeveragePhotographyBlog() {
 
         <section className="mb-16">
           <h2 className="h-section mt-16 mb-6">Creating Realistic Condensation</h2>
-          <p className="text-lg text-white/70 leading-relaxed mb-4">
+          <p className="t-body mb-4">
             Condensation signals a cold, fresh drink. It's essential for beverage photography appeal.
           </p>
           <div className="space-y-4">
@@ -172,27 +186,27 @@ export default function BeveragePhotographyBlog() {
 
         <section className="mb-16">
           <h2 className="h-section mt-16 mb-6">Beverage Splash Photography</h2>
-          <p className="text-lg text-white/70 leading-relaxed mb-4">
+          <p className="t-body mb-4">
             Splash photography requires timing, technique, and many attempts.
           </p>
           <div className="border-l-4 border-[#e83b2c] pl-6 py-4 bg-white/5 mb-6">
             <h4 className="text-lg font-serif text-white mb-3">Setup for Splash:</h4>
             <ul className="space-y-2 text-white/70">
-              <li>'  High-speed flash (1/500-1/1000s shutter) to freeze motion</li>
-              <li>'  Clean background (white or dark, depending on beverage)</li>
-              <li>'  Protective barriers (plastic sheets to contain splashing liquid)</li>
-              <li>'  Camera positioned to capture peak splash moment</li>
-              <li>'  Multiple attempts (spray bottles, drop methods, hand tosses)</li>
+              <li>— High-speed flash (1/500-1/1000s shutter) to freeze motion</li>
+              <li>— Clean background (white or dark, depending on beverage)</li>
+              <li>— Protective barriers (plastic sheets to contain splashing liquid)</li>
+              <li>— Camera positioned to capture peak splash moment</li>
+              <li>— Multiple attempts (spray bottles, drop methods, hand tosses)</li>
             </ul>
           </div>
-          <p className="text-lg text-white/70 leading-relaxed">
+          <p className="t-body">
             Expect 50+ attempts for one usable splash shot. Timing the peak splash moment is everything. Professional splash photography requires patience and technical mastery.
           </p>
         </section>
 
         <section className="mb-16">
           <h2 className="h-section mt-16 mb-6">Managing Reflections & Highlights</h2>
-          <p className="text-lg text-white/70 leading-relaxed mb-4">
+          <p className="t-body mb-4">
             Unwanted reflections kill beverage shots. Precise control prevents them.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -209,16 +223,43 @@ export default function BeveragePhotographyBlog() {
 
         <section className="mb-16">
           <h2 className="h-section mt-16 mb-6">Post-Production for Beverage Photography</h2>
-          <p className="text-lg text-white/70 leading-relaxed mb-4">
+          <p className="t-body mb-4">
             Retouching is essential for beverage shots.
           </p>
-          <ul className="space-y-3 text-lg text-white/70 leading-relaxed">
-            <li>'  <strong>Color correction:</strong> Bring out beverage liquid color. Increase vibrancy and saturation</li>
-            <li>'  <strong>Condensation enhancement:</strong> Sharpen and brighten real condensation droplets</li>
-            <li>'  <strong>Highlight control:</strong> Reduce harsh highlights, enhance subtle ones</li>
-            <li>'  <strong>Background cleanup:</strong> Remove unwanted reflections or dust</li>
-            <li>'  <strong>Bubble/foam enhancement:</strong> For carbonated beverages, enhance bubble detail</li>
+          <ul className="space-y-3 t-body">
+            <li>— <strong>Color correction:</strong> Bring out beverage liquid color. Increase vibrancy and saturation</li>
+            <li>— <strong>Condensation enhancement:</strong> Sharpen and brighten real condensation droplets</li>
+            <li>— <strong>Highlight control:</strong> Reduce harsh highlights, enhance subtle ones</li>
+            <li>— <strong>Background cleanup:</strong> Remove unwanted reflections or dust</li>
+            <li>— <strong>Bubble/foam enhancement:</strong> For carbonated beverages, enhance bubble detail</li>
           </ul>
+        </section>
+
+        {/* About the Author */}
+        <section className="mt-16 pt-10 border-t border-white/10">
+          <div className="flex gap-6 items-start">
+            <div className="relative w-16 h-16 rounded-full overflow-hidden flex-shrink-0 hidden md:block">
+              <Image
+                src="/opt/about-photo/rahul-chanda-portrait.webp"
+                alt="Rahul Chanda, commercial product photographer"
+                fill
+                sizes="64px"
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-widest text-[#e83b2c] mb-2">About the author</p>
+              <h3 className="text-lg font-serif text-white mb-2">
+                <Link href="/about" className="hover:text-[#e83b2c] transition-colors">Rahul Chanda</Link>
+              </h3>
+              <p className="text-white/50 text-sm leading-relaxed">
+                Commercial product photographer based in Dehradun, India. 6+ years shooting product, food & beverage, and advertising campaigns with in-house retouching. Serving brands across Uttarakhand and pan-India.
+              </p>
+              <Link href="/about" className="inline-flex items-center gap-1 text-xs text-[#e83b2c] hover:text-[#f0523f] mt-3 transition-colors">
+                View full profile <span>&rarr;</span>
+              </Link>
+            </div>
+          </div>
         </section>
 
         <section className="mt-24 pt-12 border-t border-white/10">
@@ -231,7 +272,7 @@ export default function BeveragePhotographyBlog() {
               href="/services/food-beverage-photography"
               className="inline-flex items-center gap-2 text-[#e83b2c] hover:text-[#e83b2c]/80 transition-colors"
             >
-              Book Beverage Photography ®
+              Book Beverage Photography
             </Link>
           </div>
         </section>

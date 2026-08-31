@@ -10,7 +10,7 @@ export function LegalFooter() {
         {/* Link columns */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">
           <div>
-            <h4 className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white/30 mb-4">
+            <h4 className="h-eyebrow mb-4">
               Services
             </h4>
             <ul className="space-y-2.5">
@@ -21,7 +21,7 @@ export function LegalFooter() {
             </ul>
           </div>
           <div>
-            <h4 className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white/30 mb-4">
+            <h4 className="h-eyebrow mb-4">
               Company
             </h4>
             <ul className="space-y-2.5">
@@ -32,7 +32,7 @@ export function LegalFooter() {
             </ul>
           </div>
           <div>
-            <h4 className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white/30 mb-4">
+            <h4 className="h-eyebrow mb-4">
               Support
             </h4>
             <ul className="space-y-2.5">
@@ -43,7 +43,7 @@ export function LegalFooter() {
             </ul>
           </div>
           <div>
-            <h4 className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white/30 mb-4">
+            <h4 className="h-eyebrow mb-4">
               Legal
             </h4>
             <ul className="space-y-2.5">

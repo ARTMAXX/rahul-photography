@@ -63,30 +63,28 @@ export default function FAQSection() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: true }}
           >
-            <div className="inline-flex border border-[#e83b2c]/20 py-1 px-4 rounded-full text-xs text-[#e83b2c]/70 uppercase tracking-widest" style={{ fontFamily: "Outfit, system-ui" }}>
+            <div className="inline-flex border border-[#e83b2c]/20 py-1 px-4 rounded-full text-xs text-[#e83b2c]/70 uppercase tracking-widest">
               FAQ
             </div>
-            <h2 className="mt-5 text-[clamp(2.4rem,6vw,4.5rem)] font-serif leading-[0.95] tracking-[-0.02em] text-white">
+            <h2 className="mt-5 h-section">
               Questions,
               <br />
               <span className="text-[#e83b2c] italic">answered.</span>
             </h2>
-            <p className="mt-6 text-white/50 text-sm md:text-base leading-relaxed max-w-[36ch]" style={{ fontFamily: "Outfit, system-ui" }}>
+            <p className="mt-6 t-body max-w-[36ch]">
               Straight answers — no fine print hiding. Anything else, just ask
               and I&apos;ll reply within 24 hours.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 bg-[#e83b2c] text-white text-xs font-semibold tracking-widest uppercase px-6 py-3.5 rounded-full hover:bg-[#f0523f] transition-colors"
-                style={{ fontFamily: "Outfit, system-ui" }}
+                className="inline-flex items-center justify-center gap-2 bg-[#e83b2c] text-white font-sans text-xs font-semibold tracking-widest uppercase px-6 py-3.5 rounded-full hover:bg-[#f0523f] transition-colors"
               >
                 Start a Project
               </a>
               <a
                 href="/faq"
-                className="inline-flex items-center justify-center gap-2 border border-white/15 text-white/70 hover:text-white text-xs font-semibold tracking-widest uppercase px-6 py-3.5 rounded-full hover:border-white/30 transition-colors"
-                style={{ fontFamily: "Outfit, system-ui" }}
+                className="inline-flex items-center justify-center gap-2 border border-white/15 font-sans text-white/70 hover:text-white text-xs font-semibold tracking-widest uppercase px-6 py-3.5 rounded-full hover:border-white/30 transition-colors"
               >
                 Full FAQ
               </a>
@@ -112,7 +110,7 @@ export default function FAQSection() {
                   className="w-full flex items-center justify-between py-5 md:py-6 text-left group"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-sm md:text-base font-medium text-white/90 group-hover:text-white transition-colors pr-8" style={{ fontFamily: "Outfit, system-ui" }}>
+                  <span className="t-body pr-8">
                     {faq.q}
                   </span>
                   <span className={`flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full border text-xs transition-all duration-300 ${
@@ -140,7 +138,7 @@ export default function FAQSection() {
                       transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
                       className="overflow-hidden"
                     >
-                      <p className="text-sm text-white/50 leading-relaxed pb-6 max-w-[70ch]" style={{ fontFamily: "Outfit, system-ui" }}>
+                      <p className="t-body pb-6 max-w-[70ch]">
                         {faq.a}
                       </p>
                     </motion.div>

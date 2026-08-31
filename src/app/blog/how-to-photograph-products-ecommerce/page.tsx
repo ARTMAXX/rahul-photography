@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
   // Short meta title; the H1 inside the article still uses the long form.
   title: "How to Photograph Products for E-commerce",
   description:
-    "7-step process for photographing products for e-commerce: lighting, background, retouching. For Amazon, Shopify, online stores.d online stores.",
+    "7-step process for photographing products for e-commerce: lighting, background, retouching. For Amazon, Shopify, and online stores.",
   alternates: { canonical: "/blog/how-to-photograph-products-ecommerce" },
   keywords: "how to photograph products, ecommerce product photography, product photography for ecommerce, product photos for online store, product photography tips",
   openGraph: {
@@ -25,6 +26,13 @@ export const metadata: Metadata = {
         alt: "E-commerce Product Photography — 7-Step Process",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "How to Photograph Products for E-commerce",
+    description:
+      "Master e-commerce product photography. Step-by-step process from lighting to retouching.",
+    images: [absoluteUrl(siteConfig.ogImagePath)],
   },
 };
 
@@ -59,8 +67,8 @@ const ecommerceSchema = {
       "headline": "How to Photograph Products for E-commerce: 7-Step Process",
       "description": "Complete guide to professional e-commerce product photography.",
       "image": absoluteUrl("/opt/og-image.jpg"),
-      "datePublished": "2026-08-29",
-      "dateModified": "2026-08-29",
+      "datePublished": "2026-08-22",
+      "dateModified": "2026-08-22",
       "author": {
         "@type": "Person",
         "name": "Rahul Chanda",
@@ -69,6 +77,13 @@ const ecommerceSchema = {
       "publisher": {
         "@type": "Organization",
         "name": "Rahul Chanda Photography",
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Rahul Chanda",
+        "url": absoluteUrl("/about"),
+        "jobTitle": "Commercial Product Photographer",
+        "image": absoluteUrl("/opt/about-photo/rahul-chanda-portrait.webp"),
       },
     },
   ],
@@ -94,7 +109,7 @@ export default function EcommercePhotographyBlog() {
             Complete step-by-step guide to professional e-commerce product photography for Amazon, Shopify, and online stores.
           </p>
           <div className="flex gap-6 text-sm text-white/50">
-            <span>August 29, 2026</span>
+            <span>August 22, 2026</span>
             <span>' </span>
             <span>14 min read</span>
             <span>' </span>
@@ -106,17 +121,17 @@ export default function EcommercePhotographyBlog() {
       <article className="max-w-[900px] mx-auto px-4 md:px-12 py-24">
         <section className="mb-16">
           <h2 className="h-section mt-16 mb-6">Why Professional Product Photography Matters for E-commerce</h2>
-          <p className="text-lg text-white/70 leading-relaxed mb-4">
+          <p className="t-body mb-4">
             70% of e-commerce purchasing decisions are influenced by product photography. On Amazon, Flipkart, and Shopify, your product photos are your sales tool. Poor photos mean lost sales. Professional photos mean conversions.
           </p>
-          <p className="text-lg text-white/70 leading-relaxed">
-            This guide breaks down the exact 7-step process I use for every e-commerce product shoot "''  from background selection through final retouching. Follow these steps, and your product photos will be marketplace-ready and conversion-optimized.
+          <p className="t-body">
+            This guide breaks down the exact 7-step process I use for every e-commerce product shoot "'— from background selection through final retouching. Follow these steps, and your product photos will be marketplace-ready and conversion-optimized.
           </p>
         </section>
 
         <section className="mb-16">
           <h2 className="h-section mt-16 mb-6">Step 01: Background Selection</h2>
-          <p className="text-lg text-white/70 leading-relaxed mb-4">
+          <p className="t-body mb-4">
             Your background sets the tone for how your product is perceived.
           </p>
           <div className="space-y-4 mb-6">
@@ -137,25 +152,25 @@ export default function EcommercePhotographyBlog() {
 
         <section className="mb-16">
           <h2 className="h-section mt-16 mb-6">Step 02: Professional Lighting Setup</h2>
-          <p className="text-lg text-white/70 leading-relaxed mb-4">
+          <p className="t-body mb-4">
             Lighting is 90% of product photography quality.
           </p>
           <div className="border-l-4 border-[#e83b2c] pl-6 py-4 bg-white/5 mb-6">
             <h4 className="text-lg font-serif text-white mb-3">Three-Light Setup (Professional):</h4>
             <ul className="space-y-3 text-white/70">
-              <li>'  <strong>Key Light:</strong> Large softbox at 45°, 30-45° elevated. Primary light defining product form.</li>
-              <li>'  <strong>Rim Light:</strong> Smaller light behind/to the side. Creates edge separation and depth.</li>
-              <li>'  <strong>Fill Light/Reflector:</strong> Soft fill to catch shadows without harshness.</li>
+              <li>— <strong>Key Light:</strong> Large softbox at 45°, 30-45° elevated. Primary light defining product form.</li>
+              <li>— <strong>Rim Light:</strong> Smaller light behind/to the side. Creates edge separation and depth.</li>
+              <li>— <strong>Fill Light/Reflector:</strong> Soft fill to catch shadows without harshness.</li>
             </ul>
           </div>
-          <p className="text-lg text-white/70 leading-relaxed">
+          <p className="t-body">
             For white backgrounds, ensure your backdrop is evenly lit to stay pure white. Underlit white backgrounds look gray and fail Amazon's white-background requirement.
           </p>
         </section>
 
         <section className="mb-16">
           <h2 className="h-section mt-16 mb-6">Step 03: Camera Angle & Composition</h2>
-          <p className="text-lg text-white/70 leading-relaxed mb-4">
+          <p className="t-body mb-4">
             Multiple angles show different product perspectives and increase trust.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
@@ -183,20 +198,20 @@ export default function EcommercePhotographyBlog() {
 
         <section className="mb-16">
           <h2 className="h-section mt-16 mb-6">Step 04: Product Positioning & Styling</h2>
-          <p className="text-lg text-white/70 leading-relaxed mb-4">
+          <p className="t-body mb-4">
             How you position your product signals quality and intent.
           </p>
-          <ul className="space-y-3 text-lg text-white/70 leading-relaxed mb-6">
-            <li>'  <strong>Center alignment:</strong> Product centered in frame for clean composition.</li>
-            <li>'  <strong>Props & scale:</strong> Show actual size with subtle context (coin, hand, surface).</li>
-            <li>'  <strong>Materials:</strong> Feature product materials (metal, glass, fabric) with appropriate lighting.</li>
-            <li>'  <strong>Stability:</strong> Ensure product sits naturally. Use fishing line or adhesive if necessary (remove in retouching).</li>
+          <ul className="space-y-3 t-body mb-6">
+            <li>— <strong>Center alignment:</strong> Product centered in frame for clean composition.</li>
+            <li>— <strong>Props & scale:</strong> Show actual size with subtle context (coin, hand, surface).</li>
+            <li>— <strong>Materials:</strong> Feature product materials (metal, glass, fabric) with appropriate lighting.</li>
+            <li>— <strong>Stability:</strong> Ensure product sits naturally. Use fishing line or adhesive if necessary (remove in retouching).</li>
           </ul>
         </section>
 
         <section className="mb-16">
           <h2 className="h-section mt-16 mb-6">Step 05: Consistency Across Your Catalog</h2>
-          <p className="text-lg text-white/70 leading-relaxed mb-4">
+          <p className="t-body mb-4">
             Amazon customers judge all your products together. Inconsistency looks unprofessional.
           </p>
           <div className="bg-white/5 border border-white/10 p-6 mb-6">
@@ -213,7 +228,7 @@ export default function EcommercePhotographyBlog() {
 
         <section className="mb-16">
           <h2 className="h-section mt-16 mb-6">Step 06: Professional Retouching</h2>
-          <p className="text-lg text-white/70 leading-relaxed mb-4">
+          <p className="t-body mb-4">
             Retouching transforms good photos into marketplace-ready ones.
           </p>
           <div className="space-y-3 mb-6">
@@ -234,29 +249,56 @@ export default function EcommercePhotographyBlog() {
 
         <section className="mb-16">
           <h2 className="h-section mt-16 mb-6">Step 07: Amazon/Shopify-Ready Export</h2>
-          <p className="text-lg text-white/70 leading-relaxed mb-4">
+          <p className="t-body mb-4">
             File format and size matter for marketplace optimization.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div className="border border-white/10 p-6">
               <h4 className="text-white font-serif mb-3">Amazon Requirements</h4>
               <ul className="space-y-2 text-white/70 text-sm">
-                <li>'  Format: JPEG or TIFF</li>
-                <li>'  Minimum 1600px (long edge)</li>
-                <li>'  File size: Under 10MB</li>
-                <li>'  Background: 85%+ white</li>
-                <li>'  Product occupies 85% of frame</li>
+                <li>— Format: JPEG or TIFF</li>
+                <li>— Minimum 1600px (long edge)</li>
+                <li>— File size: Under 10MB</li>
+                <li>— Background: 85%+ white</li>
+                <li>— Product occupies 85% of frame</li>
               </ul>
             </div>
             <div className="border border-white/10 p-6">
               <h4 className="text-white font-serif mb-3">Shopify/DTC Requirements</h4>
               <ul className="space-y-2 text-white/70 text-sm">
-                <li>'  Format: JPEG or WebP</li>
-                <li>'  Recommended 2400px+</li>
-                <li>'  Optimized for web (100-200KB)</li>
-                <li>'  Mobile-friendly aspect ratio</li>
-                <li>'  Alternative backgrounds acceptable</li>
+                <li>— Format: JPEG or WebP</li>
+                <li>— Recommended 2400px+</li>
+                <li>— Optimized for web (100-200KB)</li>
+                <li>— Mobile-friendly aspect ratio</li>
+                <li>— Alternative backgrounds acceptable</li>
               </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* About the Author */}
+        <section className="mt-16 pt-10 border-t border-white/10">
+          <div className="flex gap-6 items-start">
+            <div className="relative w-16 h-16 rounded-full overflow-hidden flex-shrink-0 hidden md:block">
+              <Image
+                src="/opt/about-photo/rahul-chanda-portrait.webp"
+                alt="Rahul Chanda, commercial product photographer"
+                fill
+                sizes="64px"
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-widest text-[#e83b2c] mb-2">About the author</p>
+              <h3 className="text-lg font-serif text-white mb-2">
+                <Link href="/about" className="hover:text-[#e83b2c] transition-colors">Rahul Chanda</Link>
+              </h3>
+              <p className="text-white/50 text-sm leading-relaxed">
+                Commercial product photographer based in Dehradun, India. 6+ years shooting product, food & beverage, and advertising campaigns with in-house retouching. Serving brands across Uttarakhand and pan-India.
+              </p>
+              <Link href="/about" className="inline-flex items-center gap-1 text-xs text-[#e83b2c] hover:text-[#f0523f] mt-3 transition-colors">
+                View full profile <span>&rarr;</span>
+              </Link>
             </div>
           </div>
         </section>
@@ -271,7 +313,7 @@ export default function EcommercePhotographyBlog() {
               href="/services/product-photography"
               className="inline-flex items-center gap-2 text-[#e83b2c] hover:text-[#e83b2c]/80 transition-colors"
             >
-              Book E-commerce Product Photography - —
+              Book E-commerce Product Photography
             </Link>
           </div>
         </section>
