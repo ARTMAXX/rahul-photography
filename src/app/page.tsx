@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     // Match the short meta title so link previews match the browser tab.
     title: "Rahul Chanda Photography | Dehradun, India",
     description:
-      "High-end commercial and product photographer based in Dehradun, India. Specializing in product, food & beverage, footwear, and brand advertising campaigns.",
+      "Commercial and product photographer in Dehradun, India. Product, food & beverage, footwear, and brand campaigns shot and retouched in-house.",
     url: absoluteUrl("/"),
     type: "website",
     images: [
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     // Match the short meta title.
     title: "Rahul Chanda Photography | Dehradun, India",
     description:
-      "High-end commercial and product photographer based in Dehradun, India. Specializing in product, food & beverage, footwear, and brand advertising campaigns.",
+      "Commercial and product photographer in Dehradun, India. Product, food & beverage, footwear, and brand campaigns shot and retouched in-house.",
     images: [absoluteUrl("/opt/best shots/Product image/product-serum.webp")],
   },
 };
