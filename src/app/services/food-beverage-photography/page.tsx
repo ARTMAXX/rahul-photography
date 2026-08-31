@@ -4,14 +4,14 @@ import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Food & Beverage Photography",
+  title: "Food Photographer Dehradun | Restaurant & Beverage Photography",
   description:
-    "Professional food and beverage photography for restaurants, menus, food delivery apps (Swiggy, Aomato), and food brands across India. Restaurant food photography, beverage splash styling, and commercial food shoots \u2014 based in Dehradun, available pan-India.",
+    "Food photographer in Dehradun for restaurants, cafes, food brands, and beverage companies. Menu, delivery-app and on-location food photography across Uttarakhand.",
   alternates: { canonical: "/services/food-beverage-photography" },
   openGraph: {
-    title: "Food & Beverage Photography Services | India",
+    title: "Food Photographer Dehradun | Restaurant & Beverage Photography",
     description:
-      "Professional food photography for restaurants, menus, food delivery apps, and beverage brands across India. Commercial food styling and restaurant photography.",
+      "Food photographer in Dehradun for restaurants, cafes, food brands, and beverage companies. Menu, delivery-app and on-location food photography across Uttarakhand.",
     url: absoluteUrl("/services/food-beverage-photography"),
     type: "website",
     images: [
@@ -19,9 +19,16 @@ export const metadata: Metadata = {
         url: absoluteUrl(siteConfig.ogImagePath),
         width: 1200,
         height: 630,
-        alt: "Food & Beverage Photography — Restaurants & Brands India",
+        alt: "Food Photographer Dehradun \u2014 Restaurant & Beverage Photography",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Food Photographer Dehradun | Restaurant & Beverage Photography",
+    description:
+      "Food photographer in Dehradun for restaurants, cafes, food brands, and beverage companies. Menu, delivery-app and on-location food photography across Uttarakhand.",
+    images: [absoluteUrl(siteConfig.ogImagePath)],
   },
 };
 
@@ -56,7 +63,7 @@ const foodPhotographySchema = {
       "@id": absoluteUrl("/services/food-beverage-photography#service"),
       "name": "Food & Beverage Photography",
       "description":
-        "Professional food and beverage photography for restaurants, delivery apps, menus, and food brands. Specializing in restaurant food photography, beverage styling, and commercial food shoots.",
+        "Food photographer in Dehradun for restaurants, cafes, food brands, and beverage companies. On-location food photography covering menu photography, delivery-app food imagery, and commercial food and beverage shoots across Uttarakhand.",
       "provider": {
         "@type": "LocalBusiness",
         "name": "Rahul Chanda Photography",
@@ -80,12 +87,58 @@ const foodPhotographySchema = {
           "name": "Mussoorie",
         },
         {
+          "@type": "City",
+          "name": "Rishikesh",
+        },
+        {
+          "@type": "City",
+          "name": "Haridwar",
+        },
+        {
           "@type": "State",
           "name": "Uttarakhand",
         },
         {
           "@type": "Country",
           "name": "India",
+        },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      "@id": absoluteUrl("/services/food-beverage-photography#faq"),
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do you provide food photography for restaurants in Dehradun?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. I shoot food photography for restaurants, cafes, cloud kitchens, and dining brands in Dehradun and across Uttarakhand. Coverage includes menu hero shots, full-menu coverage, social media content, and on-brand imagery for Google Business Profile and Instagram.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "Do you shoot food photography on location in Dehradun?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes \u2014 most food shoots happen on location at your restaurant, cafe, or kitchen. I bring studio lighting, styling props, and backgrounds to your venue, so you do not need a studio. Travel to nearby cities such as Mussoorie, Rishikesh, and Haridwar is included across Uttarakhand.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "Do you photograph menus and delivery-app food images?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. I deliver menu photography for print and digital menus, plus app-ready food imagery for Zomato, Swiggy, Magicpin, and other delivery platforms. All images are retouched for app-spec aspect ratios, brightness, and appetite appeal.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide beverage photography for brands and cafes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Beverage photography covers coffee, smoothies, cocktails, juices, and specialty drinks for cafes, bars, and packaged beverage brands. The work includes splash photography, condensation detail, glass product shots, and styled flat-lays for marketing and e-commerce.",
+          },
         },
       ],
     },
@@ -115,13 +168,17 @@ export default function FoodBeveragePhotographyPage() {
           <div className="inline-flex border border-[#e83b2c]/20 py-1 px-4 rounded-full text-xs text-[#e83b2c]/70 uppercase tracking-widest">
             Food & Beverage Photography
           </div>
-          <h1 className="text-[clamp(3rem,10vw,8rem)] font-serif leading-[0.85] tracking-[-0.03em] text-white mt-6 max-w-[16ch]">
-            Food Photography
+          <h1 className="text-[clamp(2.6rem,8vw,6rem)] font-serif leading-[0.9] tracking-[-0.03em] text-white mt-6 max-w-[20ch]">
+            Food photographer
             <br />
-            that <span className="italic text-[#e83b2c]">increases orders</span>.
+            in <span className="italic text-[#e83b2c]">Dehradun</span> —{" "}
+            <span className="italic text-[#e83b2c]">photography</span> that makes food sell.
           </h1>
-          <p className="text-lg md:text-xl text-white/50 max-w-[55ch] mt-8 leading-relaxed">
-            Professional food and beverage photography for restaurants, menus, delivery apps, and food brands. Commercial food styling, beverage shots, and restaurant menu photography in Dehradun.
+          <p className="text-lg md:text-xl text-white/50 max-w-[60ch] mt-8 leading-relaxed">
+            Professional food and beverage photography for restaurants, cafes, menus, delivery apps, and food brands across Dehradun and Uttarakhand.
+          </p>
+          <p className="text-base md:text-lg text-white/40 max-w-[60ch] mt-4 leading-relaxed">
+            I shoot on location in your kitchen, cafe, or venue — bringing studio lighting, food styling, and props to restaurants, cloud kitchens, and beverage brands in the Doon Valley, Mussoorie, Rishikesh, and beyond.
           </p>
         </div>
       </section>
@@ -267,6 +324,53 @@ export default function FoodBeveragePhotographyPage() {
               </h3>
               <p className="text-white/50 mt-3">Advanced beverage photography techniques</p>
             </Link>
+          </div>
+          <p className="text-white/50 mt-10 max-w-[60ch] leading-relaxed">
+            Based in Dehradun, I work with food, cafe, and restaurant brands across Uttarakhand. See the full local scope on the <Link href="/dehradun" className="text-white underline decoration-[#e83b2c]/60 underline-offset-4 hover:decoration-[#e83b2c] transition-colors">Food &amp; Beverage Photography in Dehradun</Link> page.
+          </p>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="relative w-full px-4 md:px-12 py-24 border-t border-white/10">
+        <div className="max-w-[900px] mx-auto">
+          <h2 className="h-section mb-12">
+            Food Photography in Dehradun — Common Questions
+          </h2>
+          <div className="space-y-0">
+            {[
+              {
+                q: "Do you provide food photography for restaurants in Dehradun?",
+                a: "Yes. I shoot food photography for restaurants, cafes, cloud kitchens, and dining brands in Dehradun and across Uttarakhand. Coverage includes menu hero shots, full-menu coverage, social media content, and on-brand imagery for Google Business Profile and Instagram.",
+              },
+              {
+                q: "Do you shoot food photography on location in Dehradun?",
+                a: "Yes — most food shoots happen on location at your restaurant, cafe, or kitchen. I bring studio lighting, styling props, and backgrounds to your venue, so you do not need a studio. Travel to nearby cities such as Mussoorie, Rishikesh, and Haridwar is included across Uttarakhand.",
+              },
+              {
+                q: "Do you photograph menus and delivery-app food images?",
+                a: "Yes. I deliver menu photography for print and digital menus, plus app-ready food imagery for Zomato, Swiggy, Magicpin, and other delivery platforms. All images are retouched for app-spec aspect ratios, brightness, and appetite appeal.",
+              },
+              {
+                q: "Do you provide beverage photography for brands and cafes?",
+                a: "Yes. Beverage photography covers coffee, smoothies, cocktails, juices, and specialty drinks for cafes, bars, and packaged beverage brands. The work includes splash photography, condensation detail, glass product shots, and styled flat-lays for marketing and e-commerce.",
+              },
+            ].map((item) => (
+              <details
+                key={item.q}
+                className="group border-t border-white/10 py-6 last:border-b"
+              >
+                <summary className="flex items-center justify-between gap-6 cursor-pointer list-none text-white text-lg font-serif">
+                  {item.q}
+                  <span className="text-[#e83b2c] shrink-0 group-open:rotate-45 transition-transform duration-300">
+                    +
+                  </span>
+                </summary>
+                <p className="text-white/50 mt-4 leading-relaxed max-w-[70ch]">
+                  {item.a}
+                </p>
+              </details>
+            ))}
           </div>
         </div>
       </section>

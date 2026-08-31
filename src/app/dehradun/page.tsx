@@ -83,7 +83,7 @@ const LOCAL_SERVICES = [
   {
     id: "food-beverage-photography",
     title: "Food & Beverage Photography",
-    slug: "/services#food",
+    slug: "/services/food-beverage-photography",
     description:
       "Menu photography, restaurant campaigns, beverage splash & glass work, ingredient styling — engineered to make kitchens and bars sell.",
     keywords: [
