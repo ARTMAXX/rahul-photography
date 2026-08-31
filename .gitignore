@@ -76,6 +76,11 @@ docs/
 # Stray nested repo accidentally tracked as a gitlink (breaks Netlify checkout)
 /website
 
+# IndexNow key (generated locally by scripts/setup-indexnow.js; public/{key}.txt
+# is generated automatically before each build and committed)
+.indexnow-key
+leads/
+
 # Stale pnpm lock (project uses npm; a pnpm lock makes Netlify pick pnpm and fail)
 pnpm-lock.yaml
 

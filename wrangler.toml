@@ -10,6 +10,7 @@ account_id = "94c6a8cbaf0496c5dc637910f4efeec7"
 NEXT_PUBLIC_GA_MEASUREMENT_ID = "G-YMQ3NXLTM4"
 
 # Static assets from the OpenNext build
+INDEXNOW_KEY = "6c8c1d3d2971605e76e178410078f24f"
 [assets]
 directory = ".open-next/assets"
 binding = "ASSETS"

@@ -176,8 +176,9 @@ export async function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     /*
-     * Match all routes while excluding static bundle chunks and media binaries
+     * Match all routes while excluding static bundle chunks, media binaries,
+     * the IndexNow key file (32-hex .txt at root), and the well-known directory.
      */
-    "/((?!_next/static|_next/image|opt/|favicon.ico|robots.txt|sitemap.xml|.*\\.(?:svg|png|jpg|jpeg|webp|avif|mp4|gif|css))(?!.*\\.js$).*)",
+    "/((?!_next/static|_next/image|opt/|favicon.ico|robots.txt|sitemap.xml|\\.well-known/|[a-f0-9]{32}\\.txt|.*\\.(?:svg|png|jpg|jpeg|webp|avif|mp4|gif|css|ico))(?!.*\\.js$).*)",
   ],
 };

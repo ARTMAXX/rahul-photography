@@ -14,10 +14,10 @@ export function LegalFooter() {
               Services
             </h4>
             <ul className="space-y-2.5">
-              <li><Link href="/services" className="text-xs md:text-sm text-white/50 hover:text-white transition-colors">Product Photography</Link></li>
-              <li><Link href="/services" className="text-xs md:text-sm text-white/50 hover:text-white transition-colors">Food & Beverage</Link></li>
-              <li><Link href="/services" className="text-xs md:text-sm text-white/50 hover:text-white transition-colors">Fashion & Footwear</Link></li>
-              <li><Link href="/services" className="text-xs md:text-sm text-white/50 hover:text-white transition-colors">High-End Retouching</Link></li>
+              <li><Link href="/services/product-photography" className="text-xs md:text-sm text-white/50 hover:text-white transition-colors">Product Photography</Link></li>
+              <li><Link href="/services/food-beverage-photography" className="text-xs md:text-sm text-white/50 hover:text-white transition-colors">Food & Beverage</Link></li>
+              <li><Link href="/services/footwear-fashion-photography" className="text-xs md:text-sm text-white/50 hover:text-white transition-colors">Fashion & Footwear</Link></li>
+              <li><Link href="/services/commercial-campaigns" className="text-xs md:text-sm text-white/50 hover:text-white transition-colors">Commercial Campaigns</Link></li>
             </ul>
           </div>
           <div>
