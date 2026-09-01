@@ -23,6 +23,12 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms of Service — Rahul Chanda Photography",
+    description: "Terms governing photography services provided by Rahul Chanda Photography.",
+    images: [absoluteUrl(siteConfig.ogImagePath)],
+  },
 };
 
 const termsSchema = {

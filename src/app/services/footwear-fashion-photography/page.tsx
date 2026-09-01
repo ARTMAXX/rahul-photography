@@ -4,14 +4,14 @@ import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Footwear & Fashion Photography",
+  title: "Footwear & Fashion Photographer in Dehradun",
   description:
-    "Professional footwear and fashion photography for e-commerce and brands across India. Amazon/Flipkart-ready shoe photography, apparel lookbooks, and fashion product photography \u2014 based in Dehradun, shoots pan-India.",
+    "Fashion & footwear photographer in Dehradun. E-commerce catalog, lookbooks, and brand campaigns. In-house retouching. Book a shoot.",
   alternates: { canonical: "/services/footwear-fashion-photography" },
   openGraph: {
-    title: "Footwear & Fashion Photography Services | India",
+    title: "Footwear & Fashion Photographer in Dehradun — E-commerce & Brand Campaigns",
     description:
-      "Professional shoe and fashion photography across India. Footwear e-commerce, lookbook photography, and commercial fashion product shoots.",
+      "Fashion and footwear photography in Dehradun. E-commerce catalog shots, lookbook photography, and brand campaign shoots for D2C and editorial clients.",
     url: absoluteUrl("/services/footwear-fashion-photography"),
     type: "website",
     images: [
@@ -22,6 +22,12 @@ export const metadata: Metadata = {
         alt: "Footwear & Fashion Photography — E-commerce & Brands",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Footwear & Fashion Photographer in Dehradun",
+    description: "Fashion and footwear photography in Dehradun. Catalog, lookbooks, and brand campaigns.",
+    images: [absoluteUrl(siteConfig.ogImagePath)],
   },
 };
 

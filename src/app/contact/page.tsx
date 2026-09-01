@@ -23,6 +23,13 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Rahul Chanda | Commercial Photographer Dehradun",
+    description:
+      "Start a commercial photography project. Product, food & beverage, footwear, and brand campaigns. Replies within 24 hours.",
+    images: [absoluteUrl(siteConfig.ogImagePath)],
+  },
 };
 
 const contactSchema = {

@@ -4,14 +4,14 @@ import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Commercial & Advertising Photography",
+  title: "Commercial Campaign Photography in Dehradun",
   description:
-    "Commercial and advertising photography for brand campaigns. Art-directed shoots and brand content in Dehradun, India.",
+    "Art-directed commercial campaign photography in Dehradun. Brand launches, billboards, and digital ads. Concept to delivery. Book a shoot.",
   alternates: { canonical: "/services/commercial-campaigns" },
   openGraph: {
-    title: "Commercial & Advertising Photography Services | Dehradun",
+    title: "Commercial Campaign Photography in Dehradun — Brand Launches & Digital Ads",
     description:
-      "Commercial campaign photography and advertising photography for brands. Art-directed shoots from concept to final retouched deliverables.",
+      "Commercial campaign photography and advertising photography in Dehradun. Art-directed shoots from concept to final retouched deliverables.",
     url: absoluteUrl("/services/commercial-campaigns"),
     type: "website",
     images: [
@@ -22,6 +22,12 @@ export const metadata: Metadata = {
         alt: "Commercial & Advertising Photography — Campaign Shoots",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Commercial Campaign Photography in Dehradun",
+    description: "Art-directed commercial campaign photography in Dehradun. Brand launches, billboards, digital ads.",
+    images: [absoluteUrl(siteConfig.ogImagePath)],
   },
 };
 

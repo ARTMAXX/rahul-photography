@@ -23,6 +23,12 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Commercial Photography Blog — Rahul Chanda",
+    description: "Field notes, lighting techniques, and behind-the-scenes guides from a Dehradun commercial photographer.",
+    images: [absoluteUrl(siteConfig.ogImagePath)],
+  },
 };
 
 const blogSchema = {

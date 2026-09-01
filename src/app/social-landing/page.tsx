@@ -9,11 +9,17 @@ export const metadata: Metadata = {
     "Professional commercial photography for products, food, footwear & brands. Based in Dehradun, India. Book your shoot today.",
   alternates: { canonical: "/social-landing" },
   openGraph: {
-    title: "Rahul Chanda Photography \u2014 Dehradun, India",
+    title: "Rahul Chanda Photography — Dehradun, India",
     description:
       "Product, food, footwear & commercial photography. Book your shoot today.",
     url: absoluteUrl("/social-landing"),
     images: [{ url: absoluteUrl("/best shots/new-images/new-product-bold.jpg"), width: 1200, height: 800 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rahul Chanda Photography — Dehradun, India",
+    description: "Product, food, footwear & commercial photography. Book your shoot today.",
+    images: [absoluteUrl("/best shots/new-images/new-product-bold.jpg")],
   },
   robots: { index: false, follow: true },
 };

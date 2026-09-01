@@ -25,6 +25,12 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Commercial Photography Services — Rahul Chanda Dehradun",
+    description: "Product, food & beverage, fashion, and campaign photography in Dehradun. In-house retouching.",
+    images: [absoluteUrl(siteConfig.ogImagePath)],
+  },
 };
 
 const servicesSchema = {
@@ -106,9 +112,9 @@ export default function ServicesPage() {
             Services
           </div>
           <h1 className="h-display">
-            Tailored to
+            Commercial photography
             <br />
-            your <span className="italic text-[#e83b2c]">vision</span>.
+            in Dehradun, tailored to your <span className="italic text-[#e83b2c]">vision</span>.
           </h1>
           <p className="text-lg md:text-xl text-white/50 max-w-[55ch] mt-8 leading-relaxed">
             Specialized photography services for brands that demand

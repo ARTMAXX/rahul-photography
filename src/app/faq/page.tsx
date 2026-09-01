@@ -86,6 +86,12 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "FAQ — Commercial Photography Dehradun",
+    description: "Common questions about pricing, turnaround, and booking with Rahul Chanda Photography.",
+    images: [absoluteUrl(siteConfig.ogImagePath)],
+  },
 };
 
 export default function FAQPage() {

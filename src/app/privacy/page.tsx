@@ -23,6 +23,12 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy — Rahul Chanda Photography",
+    description: "How Rahul Chanda Photography collects, uses, and protects your personal information.",
+    images: [absoluteUrl(siteConfig.ogImagePath)],
+  },
 };
 
 const privacySchema = {

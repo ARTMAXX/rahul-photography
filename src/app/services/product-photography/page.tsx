@@ -4,14 +4,14 @@ import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Product Photography — Amazon, Flipkart, Shopify",
+  title: "Product Photography in Dehradun — Amazon, Flipkart, Shopify",
   description:
-    "Professional product photography in India for e-commerce, brands, and D2C businesses \u2014 Amazon, Flipkart & Shopify-ready packshots, cosmetics, watches, jewelry, and footwear, with in-house retouching. Based in Dehradun, shoots pan-India.",
+    "Professional product photography in Dehradun for e-commerce brands, D2C, Amazon, Flipkart & Shopify. In-house retouching. Shoot pan-India. Book a shoot.",
   alternates: { canonical: "/services/product-photography" },
   openGraph: {
-    title: "Product Photography Services | India \u2014 Amazon, Flipkart & Shopify Ready",
+    title: "Product Photography in Dehradun — Amazon, Flipkart & Shopify Ready",
     description:
-      "Commercial product photography for e-commerce brands, startups, and established companies across India. Platform-compliant packshots, cosmetics, watches, jewelry, and footwear photography.",
+      "Commercial product photography in Dehradun for e-commerce brands, startups, and established companies. Platform-compliant packshots, cosmetics, watches, jewelry, and footwear photography.",
     url: absoluteUrl("/services/product-photography"),
     type: "website",
     images: [
@@ -22,6 +22,12 @@ export const metadata: Metadata = {
         alt: "Product Photography — E-commerce, Amazon, Flipkart, Shopify India",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Product Photography in Dehradun — Amazon, Flipkart, Shopify",
+    description: "Professional product photography in Dehradun. Platform-compliant packshots, in-house retouching, pan-India shoots.",
+    images: [absoluteUrl(siteConfig.ogImagePath)],
   },
 };
 
