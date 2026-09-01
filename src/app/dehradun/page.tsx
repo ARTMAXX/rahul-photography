@@ -10,7 +10,7 @@ import { generateQAPageSchema } from "@/lib/schemas";
 export const metadata: Metadata = {
   title: "Commercial Photographer in Dehradun, India",
   description:
-    "Rahul Chanda — Dehradun-based commercial photographer for product, food & beverage, cafe/restaurant, footwear, and brand campaigns. On-location across Uttarakhand with in-house retouching. Book a shoot: +91 70789 39475.",
+    "Dehradun commercial photographer for product, food & brand campaigns. In-house retouching. Book a shoot: +91 70789 39475.",
   alternates: { canonical: "/dehradun" },
   openGraph: {
     title: "Commercial Photographer Dehradun — Product, Food & Cafe Photography",
@@ -69,7 +69,7 @@ const LOCAL_SERVICES = [
   {
     id: "product-photography",
     title: "Product Photography",
-    slug: "/services#product",
+    slug: "/services/product-photography",
     description:
       "E-commerce catalogues, white-background packshots, lifestyle product imagery, and creative hero shots for Shopify, Amazon, and D2C brands.",
     keywords: [
@@ -98,7 +98,7 @@ const LOCAL_SERVICES = [
   {
     id: "cafe-restaurant-photography",
     title: "Cafe & Restaurant Photography",
-    slug: "/services#cafe",
+    slug: "/contact?service=Something+else",
     description:
       "Interior & ambience shots, food plating, lifestyle dining moments, barista action, and brand content packages for cafes, bakeries, and restaurants across Dehradun & Mussoorie.",
     keywords: [
@@ -113,7 +113,7 @@ const LOCAL_SERVICES = [
   {
     id: "footwear-fashion-photography",
     title: "Footwear & Fashion Photography",
-    slug: "/services#footwear",
+    slug: "/services/footwear-fashion-photography",
     description:
       "On-location shoots for footwear labels and apparel brands — detail macros, lifestyle lookbooks, and campaign imagery for brands in the Doon Valley and beyond.",
     keywords: [
@@ -127,7 +127,7 @@ const LOCAL_SERVICES = [
   {
     id: "commercial-campaigns",
     title: "Commercial Campaigns",
-    slug: "/services#campaigns",
+    slug: "/services/commercial-campaigns",
     description:
       "Art-directed campaign shoots with full production — brief, set design, lighting, talent, retouch, delivery. For brands launching products or seasonal collections.",
     keywords: [
@@ -141,7 +141,7 @@ const LOCAL_SERVICES = [
   {
     id: "brand-content",
     title: "Brand Content Packages",
-    slug: "/services#content",
+    slug: "/contact?service=Brand+Content+Creation",
     description:
       "Rolling libraries of on-brand imagery for social, web, and print — shot economically in monthly/quarterly batches, not expensive one-offs.",
     keywords: [

@@ -21,7 +21,6 @@ const ServicesShowcase = dynamic(() => import("@/components/sections/redesign/Se
 const ServicesGrid = dynamic(() => import("@/components/sections/redesign/ServicesGrid"), { ssr: true });
 const FAQSection = dynamic(() => import("@/components/sections/redesign/FAQSection"), { ssr: true });
 const ContactForm = dynamic(() => import("@/components/sections/redesign/ContactForm"), { ssr: true });
-const SelectedWorkParallax = dynamic(() => import("@/components/ui/selected-work-parallax").then(m => ({ default: m.SelectedWorkParallax })), { ssr: true });
 const CinematicFooter = dynamic(() => import("@/components/ui/motion-footer").then(m => ({ default: m.CinematicFooter })), { ssr: true });
 
 export const metadata: Metadata = {
@@ -30,9 +29,9 @@ export const metadata: Metadata = {
   description:
     "Commercial and product photographer in Dehradun, India. Product, food & beverage, footwear, and brand campaigns shot and retouched in-house.",
   alternates: { canonical: "/" },
-  // NOTE: product-serum.webp is 1024×1024 (square). The OG spec recommends
-  // 1200×630 — platforms will letterbox or crop this image. A 1200×630
-  // variant should be added later if social CTR becomes a priority.
+  // Home page shares the global optimized OG image (1200×630, /opt/og-image.jpg)
+  // — the previous product-serum.webp is a 1024×1024 square that platforms
+  // letterbox or crop. All 28 other pages use the global default.
   openGraph: {
     // Match the short meta title so link previews match the browser tab.
     title: "Rahul Chanda Photography | Dehradun, India",
@@ -42,10 +41,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: absoluteUrl("/opt/best shots/Product image/product-serum.webp"),
+        url: absoluteUrl(siteConfig.ogImagePath),
         width: 1200,
         height: 630,
-        alt: "Bloom Skincare Serum — high-end product photography by Rahul Chanda, commercial photographer in Dehradun",
+        alt: "Rahul Chanda — Commercial Product Photographer in Dehradun, India",
       },
     ],
   },
@@ -55,7 +54,7 @@ export const metadata: Metadata = {
     title: "Rahul Chanda Photography | Dehradun, India",
     description:
       "Commercial and product photographer in Dehradun, India. Product, food & beverage, footwear, and brand campaigns shot and retouched in-house.",
-    images: [absoluteUrl("/opt/best shots/Product image/product-serum.webp")],
+    images: [absoluteUrl(siteConfig.ogImagePath)],
   },
 };
 
@@ -230,7 +229,6 @@ export default function Home() {
       <Hero />
       <DesignInMotion />
       <ClientProblem />
-      <SelectedWorkParallax />
       <ServicesShowcase />
       <ServicesGrid />
       <CaseStudies />

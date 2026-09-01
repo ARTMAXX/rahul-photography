@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ServicesShowcase from "@/components/sections/redesign/ServicesShowcase";
+import ServicesGrid from "@/components/sections/redesign/ServicesGrid";
 import FAQSection from "@/components/sections/redesign/FAQSection";
 import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
@@ -119,6 +120,13 @@ export default function ServicesPage() {
 
       {/* Reuse the interactive services accordion */}
       <ServicesShowcase />
+
+      {/* Deep-link grid — every service with a dedicated sub-page gets an
+          explicit "Explore service" CTA below the accordion. Without this
+          the /services page has no visible link to any of the 4 money
+          sub-pages (/services/product-photography etc.) until a user clicks
+          to expand each accordion item. */}
+      <ServicesGrid />
 
       {/* Process strip */}
       <section className="relative w-full px-4 md:px-12 py-24 md:py-32">

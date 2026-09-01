@@ -16,35 +16,50 @@ const STYLES = `
 .footer-watermark {
   position: absolute;
   left: 50%;
-  top: 74%;
+  top: 78%;
   transform: translate(-50%, -50%);
   white-space: nowrap;
   pointer-events: none;
   user-select: none;
   z-index: 0;
   opacity: 0;
-  animation: watermarkReveal 2s 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: watermarkReveal 1.4s 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 .footer-watermark-text {
   font-size: clamp(80px, 20vw, 390px);
   line-height: 0.8;
   font-weight: 600;
   letter-spacing: -0.03em;
-  color: rgba(255, 255, 255, 0.015);
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.09);
+  color: rgba(255, 255, 255, 0.04);
+  -webkit-text-stroke: 1.5px rgba(232, 59, 44, 0.45);
   white-space: nowrap;
-  animation: watermarkGlow 5s ease-in-out infinite alternate;
+  /* Breathing red glow uses text-shadow (works on text strokes,
+     unlike drop-shadow which barely affects outline-only text).
+     Each frame stacks multiple shadow layers for a soft falloff. */
+  animation: watermarkGlow 3.5s ease-in-out infinite alternate;
 }
-/* Breathing outline glow  —  white " ' brand red */
+/* Breathing outline glow  —  text-shadow stacks that pulse brighter
+   and dimmer, brand red dominant, white highlight on the leading edge. */
 @keyframes watermarkGlow {
-  0%   { filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.02)); }
-  100% { filter: drop-shadow(0 0 22px rgba(232, 59, 44, 0.14)); }
+  0% {
+    text-shadow:
+      0 0 6px rgba(232, 59, 44, 0.35),
+      0 0 18px rgba(232, 59, 44, 0.25),
+      0 0 32px rgba(232, 59, 44, 0.15);
+  }
+  100% {
+    text-shadow:
+      0 0 8px rgba(232, 59, 44, 0.85),
+      0 0 28px rgba(232, 59, 44, 0.65),
+      0 0 56px rgba(232, 59, 44, 0.40),
+      0 0 80px rgba(232, 59, 44, 0.20);
+  }
 }
 
-/* Shine sweep  —  VengenceUI AnimatedButton style: a light band travels
-   along the outline stroke every few seconds.
-   This version runs CONTINUOUSLY (no pause)  —  the band loops end-to-end
-   in a fixed interval, so the glow never sits still. */
+/* Shine sweep layer  —  VengenceUI AnimatedButton style: a light band
+   travels along the outline stroke every few seconds. The red shine
+   sweeps across the already-drawn outline, creating the "drawing"
+   effect on top of the static text-stroke. */
 .footer-watermark-shine {
   position: absolute;
   left: 0;
@@ -79,6 +94,7 @@ const STYLES = `
 }
 @media (prefers-reduced-motion: reduce) {
   .footer-watermark-shine { animation: none; opacity: 0; }
+  .footer-watermark-text   { animation: none; }
 }
 @keyframes watermarkReveal {
   0%   { opacity: 0; transform: translate(-50%, -50%) scale(1.02); }
