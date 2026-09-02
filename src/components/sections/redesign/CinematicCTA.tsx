@@ -12,7 +12,7 @@ const EMAIL = "rahulchandaphotography@gmail.com";
 
 export default function CinematicCTA() {
   return (
-    <section className="relative py-24 md:py-36 overflow-hidden">
+    <section className="relative py-24 md:py-36 overflow-hidden bg-[#070707]">
       {/* Studio footage anchor */}
       <div className="absolute inset-0 z-0" aria-hidden="true">
         <LazyVideo
@@ -23,13 +23,9 @@ export default function CinematicCTA() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#070707] via-[#070707]/60 to-[#070707]" />
         <div className="absolute inset-0 bg-[#ffffff]/[0.04] mix-blend-screen" />
-        {/* Solid bottom edge so the next section (contact video) can't bleed up */}
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-[#070707]" />
       </div>
 
-      {/* Copper streak accents */}
       <div className="absolute left-1/2 top-0 h-px w-[70%] max-w-3xl -translate-x-1/2 bg-gradient-to-r from-transparent via-[#8c1c13]/50 to-transparent" />
-      <div className="absolute left-1/2 bottom-0 h-px w-[70%] max-w-3xl -translate-x-1/2 bg-gradient-to-r from-transparent via-[#8c1c13]/30 to-transparent" />
 
       <div className="relative z-10 mx-auto px-6 max-w-4xl text-center">
         <motion.div

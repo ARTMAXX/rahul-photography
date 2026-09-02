@@ -89,15 +89,15 @@ export default function About() {
     <section
       id="about"
       ref={containerRef}
-      className="relative w-full text-white"
+      className="relative w-full text-white bg-[#070707]"
     >
       {/* Ambient radial glow */}
       <div
         aria-hidden="true"
-        className="absolute top-1/4 right-0 w-[1200px] h-[1200px] rounded-full opacity-10 blur-3xl pointer-events-none"
+        className="absolute top-1/4 right-0 w-[1200px] h-[1200px] rounded-full opacity-[0.06] blur-3xl pointer-events-none"
         style={{
           background:
-            "radial-gradient(circle, rgba(140,28,19,0.6) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(140,28,19,0.4) 0%, transparent 70%)",
         }}
       />
 

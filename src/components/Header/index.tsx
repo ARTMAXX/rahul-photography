@@ -2,42 +2,13 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { AnimatePresence, motion, type Variants } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { useLenis } from "lenis/react";
-import Button from "./Button";
 import Nav from "./Nav";
 import styles from "./style.module.scss";
 import { registerLenisForLock, useScrollLock } from "@/lib/scroll-lock";
 import { useIsMobile } from "@/lib/hooks";
-
-const EASE = [0.76, 0, 0.24, 1] as [number, number, number, number];
-
-function getPanelVariants(): Variants {
-  // 9 links + social row no longer fit the old fixed 650px panel.
-  // Height adapts to the viewport (capped so it never leaves the screen);
-  // falls back to 650px during SSR.
-  const panelH =
-    typeof window !== "undefined"
-      ? Math.min(720, Math.max(520, window.innerHeight - 80))
-      : 650;
-  return {
-    open: {
-      width: "480px",
-      maxWidth: "480px",
-      height: `${panelH}px`,
-      top: "-25px",
-      right: "-25px",
-      transition: { duration: 0.75, type: "tween", ease: EASE },
-    },
-    closed: {
-      width: "100px",
-      height: "40px",
-      top: "0px",
-      right: "0px",
-      transition: { duration: 0.75, delay: 0.35, type: "tween", ease: EASE },
-    },
-  };
-}
+import NavigationMenuDemo from "@/components/ui/navigation-menu-demo";
 
 export default function Header() {
   const isMobile = useIsMobile();
@@ -45,17 +16,13 @@ export default function Header() {
   const [inCylinderSection, setInCylinderSection] = useState(false);
   const lenis = useLenis();
 
-  // Wire Lenis into the shared scroll-lock (mobile has no Lenis; lock still
-  // works through native overflow).
   useEffect(() => {
     registerLenisForLock(lenis ?? null);
     return () => registerLenisForLock(null);
   }, [lenis]);
 
-  // Freeze page scroll while the menu is open
   useScrollLock(isActive);
 
-  // Escape closes the menu
   useEffect(() => {
     if (!isActive) return;
     const onKey = (e: KeyboardEvent) => {
@@ -77,16 +44,9 @@ export default function Header() {
     return () => observer.disconnect();
   }, []);
 
-  const navVariant = isMobile ? "fullscreen" : "panel";
-
   return (
     <>
-      {/* Mobile fullscreen overlay  —  rendered OUTSIDE the header element.
-          The header creates its own stacking context (fixed + z-9999); a
-          nav inside it could never paint ABOVE the header, so the overlay
-          swallowed the logo and CLOSE button, leaving no way back. As a
-          sibling, the header (z-9999) sits above the overlay (z-9995):
-          logo + CLOSE stay visible and tappable while the menu is open. */}
+      {/* Mobile fullscreen overlay */}
       {isMobile && (
         <AnimatePresence>
           {isActive && (
@@ -101,9 +61,7 @@ export default function Header() {
         }`}
         data-menu-open={isActive || undefined}
       >
-        {/* Brand  —  always-visible logo image. The alt text provides the
-            accessible name so the link's accessible name resolves to
-            "Rahul Chanda Photography" (satisfies label-content-name-mismatch). */}
+        {/* Brand logo — sized to match nav bar height */}
         <Link
           href="/"
           onClick={() => setIsActive(false)}
@@ -111,37 +69,46 @@ export default function Header() {
           className="pointer-events-auto relative z-[2] select-none block"
         >
           <Image
-            src="/logo/logo-black-rahul-and-red-chanda-color.png"
+            src="/logo/whitelogo.png"
             alt="Rahul Chanda Photography"
             width={2000}
             height={800}
             priority
-            sizes="(max-width: 768px) 120px, 160px"
-            className="block w-[110px] md:w-[150px] h-auto"
+            sizes="(max-width: 768px) 90px, 110px"
+            className="block w-[90px] md:w-[110px] h-auto"
           />
         </Link>
 
-        {/* Right cluster: expanding desktop panel + MENU/CLOSE button.
-            The cluster mirrors the old header origin so the panel's negative
-            offsets keep their original bleed geometry. */}
+        {/* Desktop: Navigation menu + CTA button + Mobile: hamburger button */}
         <div className={styles.cluster}>
-          {!isMobile && (
-            <motion.div
-              className={styles.menu}
-              variants={getPanelVariants()}
-              animate={isActive ? "open" : "closed"}
-              initial="closed"
-            >
-              <AnimatePresence>
-                {isActive && <Nav variant="panel" onNavigate={() => setIsActive(false)} />}
-              </AnimatePresence>
-            </motion.div>
-          )}
+          {!isMobile && <NavigationMenuDemo />}
 
-          <Button
-            isActive={isActive}
-            toggleMenu={() => setIsActive(!isActive)}
-          />
+          {/* WhatsApp CTA button — always visible */}
+          <a
+            href="https://wa.me/917078939475"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-2 text-sm font-medium text-white hover:bg-[#1da851] transition-colors whitespace-nowrap"
+          >
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+            Let's Talk
+          </a>
+
+          {isMobile && (
+            <button
+              onClick={() => setIsActive(!isActive)}
+              className="flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-sm text-white/70 hover:text-white hover:border-white/40 transition-colors"
+              aria-label={isActive ? "Close menu" : "Open menu"}
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
+              </span>
+              {isActive ? "CLOSE" : "MENU"}
+            </button>
+          )}
         </div>
       </div>
     </>

@@ -235,7 +235,7 @@ export default function Home() {
       <About />
       <FAQSection />
       {/* ===== JOURNAL STRIP — internal links into blog cluster (SEO) ===== */}
-      <section aria-label="From the journal" className="relative w-full px-4 md:px-12 py-20 md:py-24 border-t border-white/5">
+      <section aria-label="From the journal" className="relative w-full px-4 md:px-12 py-20 md:py-24 bg-[#070707]">
         <div className="max-w-[1600px] mx-auto">
           <div className="flex items-end justify-between gap-6 flex-wrap">
             <h2 className="h-section leading-tight">

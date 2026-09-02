@@ -43,14 +43,14 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="relative w-full py-24 md:py-36 px-4 md:px-12 overflow-hidden bg-[#070707]">
+      <section id="faq" className="relative w-full py-24 md:py-36 px-4 md:px-12 overflow-hidden bg-[#070707]">
       {/* Ambient */}
       <div
         aria-hidden="true"
-        className="absolute bottom-0 right-0 w-[900px] h-[900px] rounded-full opacity-10 blur-3xl pointer-events-none"
+        className="absolute bottom-0 right-0 w-[900px] h-[900px] rounded-full opacity-[0.06] blur-3xl pointer-events-none"
         style={{
           background:
-            "radial-gradient(circle, rgba(140,28,19,0.6) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(140,28,19,0.5) 0%, transparent 70%)",
         }}
       />
 

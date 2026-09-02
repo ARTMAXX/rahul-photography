@@ -77,7 +77,7 @@ const thirdColumn = testimonials.slice(8, 12);
 
 const Testimonials = () => {
   return (
-    <section className="py-20 md:py-28 relative overflow-hidden">
+    <section className="py-20 md:py-28 relative overflow-hidden bg-[#070707]">
       {/* — Cinematic video backdrop (BTS footage playing behind quotes) — */}
       <div className="absolute inset-0 z-0" aria-hidden="true">
         <LazyVideo
@@ -89,7 +89,6 @@ const Testimonials = () => {
         {/* Cinematic grade: darken + silver tint so text stays readable */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#070707]/90 via-[#070707]/60 to-[#070707]/95" />
         <div className="absolute inset-0 bg-[#070707]/40 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-[#e83b2c]/5 mix-blend-screen" />
         {/* Vignette */}
         <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at center, transparent 35%, rgba(7,7,7,0.85) 100%)" }} />
       </div>

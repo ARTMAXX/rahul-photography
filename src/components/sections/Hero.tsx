@@ -87,9 +87,15 @@ export default function Hero() {
 
   return (
     <section ref={containerRef} id="hero-section" className="relative z-[1] h-screen 
-w-full overflow-hidden">
+w-full overflow-hidden bg-[#070707]">
       {/* Background Gradient Layer */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#0a0a0a] via-[#8c1c13] to-[#0a0a0a] opacity-80 mix-blend-screen blur-[100px]" />
+      <div
+        className="absolute inset-0 z-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse at 70% 60%, rgba(140,28,19,0.18) 0%, transparent 60%)",
+        }}
+      />
 
       {/* Top Left Text */}
       <div className="absolute top-24 left-8 md:top-32 md:left-12 z-20 text-white max-w-[280px] mix-blend-difference">

@@ -81,7 +81,7 @@ export default function ServicesGrid() {
   return (
     <section
       aria-label="Specialized photography services"
-      className="relative w-full py-24 md:py-32 px-4 md:px-12 bg-[#070707] border-t border-white/5"
+      className="relative w-full py-24 md:py-32 px-4 md:px-12 bg-[#070707]"
     >
       <div className="relative z-10 max-w-[1600px] mx-auto">
         <div className="mb-16 md:mb-20 grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 items-end">

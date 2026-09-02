@@ -257,10 +257,10 @@ export default function ServicesShowcase() {
       {/* Sticker Parallax Gradient */}
       <div
         ref={stickerRef}
-        className="absolute top-1/4 right-0 w-[1200px] h-[1200px] rounded-full opacity-10 blur-3xl pointer-events-none"
+        className="absolute top-1/4 right-0 w-[1200px] h-[1200px] rounded-full opacity-[0.06] blur-3xl pointer-events-none"
         style={{
           background:
-            "radial-gradient(circle, rgba(140,28,19,0.6) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(140,28,19,0.5) 0%, transparent 70%)",
         }}
       />
 

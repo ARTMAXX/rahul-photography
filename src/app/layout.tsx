@@ -4,7 +4,7 @@ import { Playfair_Display, Outfit } from "next/font/google";
 import { siteConfig, absoluteUrl } from "../lib/site";
 import PageShell from "../components/PageShell";
 import CustomCursor from "../components/CustomCursor";
-import Header from "../components/Header";
+import { Header1 } from "../components/ui/header";
 import ScrollToTop from "../components/ScrollToTop";
 import GoogleAnalytics from "../components/GoogleAnalytics";
 import GoogleAnalyticsScript from "../components/GoogleAnalyticsScript";
@@ -69,11 +69,11 @@ export const metadata: Metadata = {
   creator: "Rahul Chanda",
   icons: {
     icon: [
-      { url: "/logo/faviconlogo-black.png", type: "image/png", sizes: "any" },
+      { url: "/logo/blacklogofavicon.png", type: "image/png", sizes: "any" },
       { url: "/favicon.ico", sizes: "any" },
     ],
-    shortcut: "/logo/faviconlogo-black.png",
-    apple: "/apple-icon.png",
+    shortcut: "/logo/blacklogofavicon.png",
+    apple: "/logo/blacklogofavicon.png",
   },
   openGraph: {
     type: "website",
@@ -159,7 +159,7 @@ export default function RootLayout({
       >
         <PageShell>
           <CustomCursor />
-          <Header />
+          <Header1 />
           <ScrollToTop />
           {children}
         </PageShell>

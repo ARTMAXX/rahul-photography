@@ -35,17 +35,17 @@ export default function PageShell({ children }: { children: ReactNode }) {
     <SmoothScroll enabled={!isMobile}>
       {!isMobile && (
         <ColorBends
-          colors={["#0d0506", "#160809", "#260d0e", "#571610"]}
+          colors={["#0d0506", "#160809", "#1f0a0a", "#3a0f0c"]}
           rotation={90}
-          speed={0.15}
+          speed={0.12}
           scale={1.05}
           frequency={1.2}
-          warpStrength={0.9}
-          mouseInfluence={1}
-          noise={0.08}
-          parallax={0.5}
+          warpStrength={0.6}
+          mouseInfluence={0.6}
+          noise={0.05}
+          parallax={0.4}
           iterations={2}
-          intensity={0.55}
+          intensity={0.32}
           bandWidth={3}
           transparent={false}
           className="fixed inset-0 z-0 h-screen w-screen"

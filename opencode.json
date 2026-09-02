@@ -3,6 +3,31 @@
   "skills": {
     "paths": ["agent-skills/skills"]
   },
+  "provider": {
+    "b-ai": {
+      "name": "B.AI",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "https://api.b.ai/v1",
+        "apiKey": "sk-79dclewk8jfa5455swas88piwphwe7kp"
+      },
+      "models": {
+        "gemini-3-flash": { "name": "gemini-3-flash" },
+        "gemini-3.5-flash": { "name": "gemini-3.5-flash" },
+        "gemini-3.5-flash-lite": { "name": "gemini-3.5-flash-lite" },
+        "gemini-3.1-pro": { "name": "gemini-3.1-pro" },
+        "claude-haiku-4.5": { "name": "claude-haiku-4.5" },
+        "gpt-5.4-nano": { "name": "gpt-5.4-nano" },
+        "gpt-5.4-mini": { "name": "gpt-5.4-mini" },
+        "deepseek-v4-flash": { "name": "deepseek-v4-flash" },
+        "glm-5.3-flash": { "name": "glm-5.3-flash" },
+        "qwen3.8-flash": { "name": "qwen3.8-flash" },
+        "hy3": { "name": "hy3" },
+        "claude-opus-4.8": { "name": "claude-opus-4.8" },
+        "deepseek-v4-pro": { "name": "deepseek-v4-pro" }
+      }
+    }
+  },
   "mcp": {
     "chrome-devtools": {
       "type": "local",

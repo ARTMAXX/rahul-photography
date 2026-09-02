@@ -37,8 +37,8 @@ export default function TheCraft() {
   return (
     <section className="relative py-20 md:py-28 overflow-hidden bg-[#070707]" id="the-craft">
       {/* Ambient white glow */}
-      <div className="absolute top-0 right-0 w-[40vw] h-[40vw] rounded-full bg-[#e83b2c]/[0.05] blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[30vw] h-[30vw] rounded-full bg-[#8c1c13]/10 blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[40vw] h-[40vw] rounded-full bg-[#e83b2c]/[0.03] blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[30vw] h-[30vw] rounded-full bg-[#8c1c13]/[0.05] blur-[120px] pointer-events-none" />
 
       <div className="relative z-10 mx-auto px-6 max-w-[1400px]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">

@@ -23,6 +23,10 @@
   --border:            rgba(240, 240, 240, 0.12);
   --ring:              rgba(232, 59, 44, 0.5);
 
+  /* ── shadcn popover + navigation menu tokens ── */
+  --popover:           #0a0a0a;
+  --popover-foreground: #f0f0f0;
+
   /* ── Font families (resolved by Next.js font loader) ── */
   --font-editorial: var(--font-playfair), "Playfair Display", Georgia, serif;
   --font-sans:      var(--font-outfit), "Outfit", system-ui, sans-serif;
@@ -53,7 +57,17 @@
 
 html {
   cursor: auto;
-  background: #070707;
+  /* Warm-tinted base — slightly lighter at top, deeper at bottom.
+     Adds depth without competing with content. */
+  background:
+    linear-gradient(
+      180deg,
+      #100a0a 0%,
+      #0a0807 35%,
+      #070707 70%,
+      #050505 100%
+    );
+  background-attachment: fixed;
 }
 
 body {
