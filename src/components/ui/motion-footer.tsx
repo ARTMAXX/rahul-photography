@@ -12,18 +12,26 @@ const STYLES = `
   background: #000000;
 }
 
-/* Giant Watermark  —  outline-only, anchored below the nav (no overlap) */
+/* Giant Watermark  —  outline-only, anchored below the nav (no overlap).
+   Hidden on mobile to prevent overlap with the link grid + bottom bar;
+   the desktop-only 78% positioning relies on enough vertical space. */
 .footer-watermark {
-  position: absolute;
-  left: 50%;
-  top: 78%;
-  transform: translate(-50%, -50%);
-  white-space: nowrap;
-  pointer-events: none;
-  user-select: none;
-  z-index: 0;
-  opacity: 0;
-  animation: watermarkReveal 1.4s 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  display: none;
+}
+@media (min-width: 768px) {
+  .footer-watermark {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 78%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+    opacity: 0;
+    animation: watermarkReveal 1.4s 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
 }
 .footer-watermark-text {
   font-size: clamp(80px, 20vw, 390px);
@@ -34,8 +42,8 @@ const STYLES = `
   -webkit-text-stroke: 1.5px rgba(232, 59, 44, 0.45);
   white-space: nowrap;
   /* Breathing red glow uses text-shadow (works on text strokes,
-     unlike drop-shadow which barely affects outline-only text).
-     Each frame stacks multiple shadow layers for a soft falloff. */
+      unlike drop-shadow which barely affects outline-only text).
+      Each frame stacks multiple shadow layers for a soft falloff. */
   animation: watermarkGlow 3.5s ease-in-out infinite alternate;
 }
 /* Breathing outline glow  —  text-shadow stacks that pulse brighter
@@ -490,15 +498,17 @@ export function CinematicFooter() {
           </div>
         </nav>
 
-        {/* Layer 4: Bottom bar  —  copyright left, EN | socials right */}
-        <div className="absolute bottom-0 left-0 right-0 z-10 mx-4 md:mx-20 mb-5 footer-bottom">
+        {/* Layer 4: Bottom bar  —  copyright left, EN | socials right.
+            Switched from absolute positioning to flex flow so it stacks
+            cleanly on mobile and never overlaps the link grid above. */}
+        <div className="relative md:absolute md:bottom-0 md:left-0 md:right-0 z-10 mx-4 md:mx-20 mt-12 md:mt-0 mb-5 footer-bottom">
           {/* Left side */}
           <div className="flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-3">
             <span>© {new Date().getFullYear()} Rahul Chanda Photography. All rights reserved.</span>
           </div>
 
           {/* Right side */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 mt-4 md:mt-0">
             <button className="footer-en-btn" data-cursor="pointer">
               EN
               <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
