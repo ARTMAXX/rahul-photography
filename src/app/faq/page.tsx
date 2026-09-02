@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 import { generateQAPageSchema, generateBreadcrumbSchema } from "@/lib/schemas";
 import FAQContent from "./faq-content";
@@ -97,11 +96,10 @@ export const metadata: Metadata = {
 export default function FAQPage() {
   return (
     <main className="min-h-screen bg-black text-white">
-      <Script
+      <script
         id="faq-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        strategy="afterInteractive"
       />
       <FAQContent faqs={faqs} />
     </main>

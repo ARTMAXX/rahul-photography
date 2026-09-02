@@ -3,8 +3,51 @@ import Link from "next/link";
 import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
+// FAQPage schema for AI search engines and voice search (Sept 2026).
+// Note: Google retired FAQ rich results in May 2026, but FAQPage schema
+// still helps voice search and AI Overview citation.
+const campaignFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": absoluteUrl("/services/commercial-campaigns#faq"),
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What does a commercial campaign shoot include?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A commercial campaign shoot includes concept development, moodboards and shot lists, talent and location coordination, full production lighting and styling, multi-day capture as needed, and post-production retouching with deliverables sized for your media (print, OOH, social, digital).",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How much does brand campaign photography cost?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Brand campaign pricing is custom — it depends on concept, talent, locations, and deliverables. Single-day brand shoots in Dehradun start at ₹40,000; multi-day campaign productions with talent and locations are quoted per project.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you handle usage rights and licensing?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Usage rights are agreed upfront in the brief and reflected in the deliverables package. We license imagery for specific channels (web, social, OOH, print) and time periods based on your media plan.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How long does a commercial campaign take from concept to delivery?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Typical turnaround: 1 week for concept and pre-production, 1–3 shoot days, 1–2 weeks for post-production. Multi-channel campaigns may run longer. Rush timelines are available on request.",
+      },
+    },
+  ],
+};
+
 export const metadata: Metadata = {
-  title: "Commercial Campaign Photography in Dehradun",
+  title: "Brand & Advertising Photographer in Dehradun — Commercial Campaigns",
   description:
     "Art-directed commercial campaign photography in Dehradun. Brand launches, billboards, and digital ads. Concept to delivery. Book a shoot.",
   alternates: { canonical: "/services/commercial-campaigns" },
@@ -25,7 +68,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Commercial Campaign Photography in Dehradun",
+  title: "Advertising & Commercial Photographer in Dehradun",
     description: "Art-directed commercial campaign photography in Dehradun. Brand launches, billboards, digital ads.",
     images: [absoluteUrl(siteConfig.ogImagePath)],
   },
@@ -64,17 +107,7 @@ const commercialPhotographySchema = {
       "description":
         "Professional commercial and advertising photography for brand campaigns. Art-directed shoots from concept to final retouched deliverables.",
       "provider": {
-        "@type": "LocalBusiness",
-        "name": "Rahul Chanda Photography",
-        "image": absoluteUrl("/opt/og-image.jpg"),
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Dehradun",
-          "addressRegion": "Uttarakhand",
-          "addressCountry": "India",
-        },
-        "telephone": "+917078939475",
-        "url": absoluteUrl("/"),
+        "@id": absoluteUrl("/#business")
       },
       "areaServed": [
         {
@@ -103,6 +136,12 @@ export default function CommercialCampaignsPage() {
           __html: JSON.stringify(commercialPhotographySchema),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(campaignFaqSchema),
+        }}
+      />
 
       {/* Hero Section */}
       <section className="relative w-full min-h-[70vh] flex flex-col justify-end px-4 md:px-12 pb-20 pt-40 overflow-hidden">
@@ -122,7 +161,7 @@ export default function CommercialCampaignsPage() {
             <br />
             <span className="italic text-[#e83b2c]">campaign</span> photography.
           </h1>
-          <p className="text-lg md:text/xl text-white/50 max-w-[55ch] mt-8 leading-relaxed">
+          <p className="text-lg md:text-xl text-white/50 max-w-[55ch] mt-8 leading-relaxed">
             Art-directed advertising photography for brand campaigns. From concept to final delivery, every frame is crafted to sell your product, tell your story, and stand out.
           </p>
         </div>
@@ -269,6 +308,50 @@ export default function CommercialCampaignsPage() {
               </h3>
               <p className="text-white/50 mt-3">Post-production consistency for commercial video</p>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="relative w-full px-4 md:px-12 py-24 border-t border-white/10">
+        <div className="max-w-[900px] mx-auto">
+          <h2 className="h-section mb-12">
+            Commercial Campaigns — Common Questions
+          </h2>
+          <div className="space-y-0">
+            {[
+              {
+                q: "What does a commercial campaign shoot include?",
+                a: "A commercial campaign shoot includes concept development, moodboards and shot lists, talent and location coordination, full production lighting and styling, multi-day capture as needed, and post-production retouching with deliverables sized for your media (print, OOH, social, digital).",
+              },
+              {
+                q: "How much does brand campaign photography cost?",
+                a: "Brand campaign pricing is custom — it depends on concept, talent, locations, and deliverables. Single-day brand shoots in Dehradun start at ₹40,000; multi-day campaign productions with talent and locations are quoted per project.",
+              },
+              {
+                q: "Do you handle usage rights and licensing?",
+                a: "Yes. Usage rights are agreed upfront in the brief and reflected in the deliverables package. We license imagery for specific channels (web, social, OOH, print) and time periods based on your media plan.",
+              },
+              {
+                q: "How long does a commercial campaign take from concept to delivery?",
+                a: "Typical turnaround: 1 week for concept and pre-production, 1–3 shoot days, 1–2 weeks for post-production. Multi-channel campaigns may run longer. Rush timelines are available on request.",
+              },
+            ].map((item) => (
+              <details
+                key={item.q}
+                className="group border-t border-white/10 py-6 last:border-b"
+              >
+                <summary className="flex items-center justify-between gap-6 cursor-pointer list-none text-white text-lg font-serif">
+                  {item.q}
+                  <span className="text-[#e83b2c] shrink-0 group-open:rotate-45 transition-transform duration-300">
+                    +
+                  </span>
+                </summary>
+                <p className="text-white/50 mt-4 leading-relaxed max-w-[70ch]">
+                  {item.a}
+                </p>
+              </details>
+            ))}
           </div>
         </div>
       </section>

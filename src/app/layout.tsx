@@ -136,6 +136,21 @@ export default function RootLayout({
         />
         <link rel="manifest" href="/manifest.webmanifest" />
         <meta name="theme-color" content="#070707" />
+        {/* Geo meta tags for local SEO. Strengthens "Dehradun" signal for
+            Google local ranking. ICBM uses the same lat/long as the
+            LocalBusiness schema on the home page and /dehradun. */}
+        <meta name="geo.region" content="IN-UK" />
+        <meta name="geo.placename" content="Dehradun" />
+        <meta name="geo.position" content="30.3165;78.0322" />
+        <meta name="ICBM" content="30.3165, 78.0322" />
+        {/* Link to /llms.txt so AI crawlers that respect the llms.txt convention
+            can find a curated summary of this site. */}
+        <link
+          rel="alternate"
+          type="text/plain"
+          href="/llms.txt"
+          title="LLMs.txt — Rahul Chanda Photography"
+        />
         {/* Google Analytics 4 — gtag.js loader (server-rendered, in <head>) */}
         <GoogleAnalyticsScript />
       </head>

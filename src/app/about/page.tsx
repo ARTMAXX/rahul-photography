@@ -64,6 +64,7 @@ const aboutSchema = {
       "sameAs": [
         siteConfig.contact.instagram,
         siteConfig.contact.googleBusiness,
+        "https://www.linkedin.com/in/rahul-chanda-a9a860269",
       ],
       "knowsAbout": [
         "Commercial Photography",

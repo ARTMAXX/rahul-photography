@@ -7,6 +7,10 @@ const securityHeaders = [
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
   { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), interest-cohort=()" },
   { key: "X-DNS-Prefetch-Control", value: "on" },
+  // Content-Signal: signals to AI crawlers (Cloudflare AI Crawl Control,
+  // isitagentready, GPTBot, etc.) that this site is open to AI training
+  // and search grounding. See robots.ts:12-17 for the matching intent.
+  { key: "Content-Signal", value: "ai-train=yes, search=yes, ai-input=yes" },
   {
     key: "Strict-Transport-Security",
     value: "max-age=63072000; includeSubDomains; preload",
@@ -132,6 +136,15 @@ const nextConfig: NextConfig = {
     // any quality not listed here with a 400 on /_next/image).
     qualities: [70, 72, 74, 75, 76, 78, 80],
   },
+  // IndexNow API key. The /src/app/api/indexnow/route.ts endpoint and the
+  // /src/app/[key]/route.ts verification file both read this from
+  // process.env at runtime. Set INDEXNOW_KEY in .env.local (or Cloudflare
+  // Worker env vars) — generate a fresh key at https://www.bing.com/indexnow/getkey
+  //
+  // The /[key] route is what makes IndexNow work end-to-end: when you POST
+  // URLs to https://api.indexnow.org/IndexNow?key=..., the IndexNow bot
+  // fetches https://yoursite.com/{key}.txt to verify ownership. If that
+  // file returns the same key, your submission is accepted.
 };
 
 export default nextConfig;

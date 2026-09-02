@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { absoluteUrl } from "@/lib/site";
+import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Rahul Chanda Photography \u2014 Commercial & Product Photographer Dehradun",
@@ -13,13 +13,13 @@ export const metadata: Metadata = {
     description:
       "Product, food, footwear & commercial photography. Book your shoot today.",
     url: absoluteUrl("/social-landing"),
-    images: [{ url: absoluteUrl("/best shots/new-images/new-product-bold.jpg"), width: 1200, height: 800 }],
+    images: [{ url: absoluteUrl(siteConfig.ogImagePath), width: 1200, height: 800 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Rahul Chanda Photography — Dehradun, India",
     description: "Product, food, footwear & commercial photography. Book your shoot today.",
-    images: [absoluteUrl("/best shots/new-images/new-product-bold.jpg")],
+    images: [absoluteUrl(siteConfig.ogImagePath)],
   },
   robots: { index: false, follow: true },
 };
@@ -32,7 +32,7 @@ const schema = {
       name: "Rahul Chanda Photography",
       description: "Commercial & product photography services in Dehradun, India",
       url: absoluteUrl("/"),
-      image: absoluteUrl("/best shots/new-images/new-product-bold.jpg"),
+      image: absoluteUrl(siteConfig.ogImagePath),
       address: { "@type": "PostalAddress", addressLocality: "Dehradun", addressRegion: "Uttarakhand", addressCountry: "IN" },
     },
     {

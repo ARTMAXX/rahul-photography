@@ -6,7 +6,7 @@ import { siteConfig, absoluteUrl } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact Rahul Chanda | Commercial Photographer in Dehradun",
   description:
-    "Start a commercial photography project with Rahul Chanda in Dehradun. Product, food & beverage, footwear, and brand advertising shoots. Replies within 24 hours.",
+    "Start a commercial photography project with Rahul Chanda in Dehradun. Product, food, footwear, and brand shoots. Replies within 24 hours.",
   alternates: { canonical: "/contact" },
   openGraph: {
     title: "Contact Rahul Chanda — Commercial Photographer in Dehradun",

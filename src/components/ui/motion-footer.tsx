@@ -373,10 +373,13 @@ const LinkedInIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
+// Social profiles.
+// X (Twitter) entry was removed in Sept 2026 — no real X profile exists yet.
+// To re-enable, add `{ label: "X (Twitter)", href: "https://x.com/<handle>", Icon: XIcon }`
+// once a real account is created.
 const SOCIALS: { label: string; href: string; Icon: React.ComponentType<React.SVGProps<SVGSVGElement>> }[] = [
-  { label: "X (Twitter)", href: "https://x.com", Icon: XIcon },
   { label: "Instagram", href: "https://www.instagram.com/rahul_chanda_photography/", Icon: InstagramIcon },
-  { label: "LinkedIn", href: "https://linkedin.com", Icon: LinkedInIcon },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/rahul-chanda-a9a860269", Icon: LinkedInIcon },
 ];
 
 // -------------------------------------------------------------------------

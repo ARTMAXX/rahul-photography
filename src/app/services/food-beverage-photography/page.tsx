@@ -6,7 +6,7 @@ import { absoluteUrl, siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Food Photographer Dehradun | Restaurant & Beverage Photography",
   description:
-    "Food photographer in Dehradun for restaurants, cafes, food brands, and beverage companies. Menu, delivery-app and on-location food photography across Uttarakhand.",
+    "Food photographer in Dehradun for restaurants, cafes, food brands, and beverage companies. Menu, delivery-app and on-location shoots across Uttarakhand.",
   alternates: { canonical: "/services/food-beverage-photography" },
   openGraph: {
     title: "Food Photographer Dehradun | Restaurant & Beverage Photography",
@@ -65,17 +65,7 @@ const foodPhotographySchema = {
       "description":
         "Food photographer in Dehradun for restaurants, cafes, food brands, and beverage companies. On-location food photography covering menu photography, delivery-app food imagery, and commercial food and beverage shoots across Uttarakhand.",
       "provider": {
-        "@type": "LocalBusiness",
-        "name": "Rahul Chanda Photography",
-        "image": absoluteUrl("/opt/og-image.jpg"),
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Dehradun",
-          "addressRegion": "Uttarakhand",
-          "addressCountry": "India",
-        },
-        "telephone": "+917078939475",
-        "url": absoluteUrl("/"),
+        "@id": absoluteUrl("/#business")
       },
       "areaServed": [
         {
@@ -195,7 +185,7 @@ export default function FoodBeveragePhotographyPage() {
                 80% of restaurant customers check photos before ordering. A single high-quality food photograph can increase dish orders by 30-50%. Professional food photography isn't optional — it's essential for restaurant growth.
               </p>
               <p className="text-lg text-white/70 leading-relaxed">
-                Whether it's your menu, Aomato, Swiggy, Instagram, or Google Business Profile, every food photo represents your restaurant. Blurry or poorly-lit food photos cost you orders.
+                 Whether it's your menu, Zomato, Swiggy, Instagram, or Google Business Profile, every food photo represents your restaurant. Blurry or poorly-lit food photos cost you orders.
               </p>
             </div>
             <div className="space-y-4">
@@ -205,7 +195,7 @@ export default function FoodBeveragePhotographyPage() {
               </div>
               <div className="border-l-2 border-[#e83b2c] pl-6">
                 <h3 className="text-xl font-serif text-white mb-2">Delivery App Photos</h3>
-                <p className="text-white/50">Aomato, Swiggy, and app-ready food photography that converts.</p>
+                <p className="text-white/50">Zomato, Swiggy, and app-ready food photography that converts.</p>
               </div>
               <div className="border-l-2 border-[#e83b2c] pl-6">
                 <h3 className="text-xl font-serif text-white mb-2">Social Media Content</h3>
@@ -230,7 +220,7 @@ export default function FoodBeveragePhotographyPage() {
               },
               {
                 title: "Food Photography for Delivery Apps",
-                desc: "Aomato, Swiggy, and app-optimized food photography. Consistent lighting, styling, and appetite appeal across all dishes.",
+                desc: "Zomato, Swiggy, and app-optimized food photography. Consistent lighting, styling, and appetite appeal across all dishes.",
               },
               {
                 title: "Beverage Photography",

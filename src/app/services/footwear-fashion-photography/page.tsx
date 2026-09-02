@@ -3,6 +3,49 @@ import Link from "next/link";
 import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
+// FAQPage schema for AI search engines and voice search (Sept 2026).
+// Note: Google retired FAQ rich results in May 2026, but FAQPage schema
+// still helps voice search and AI Overview citation.
+const footwearFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": absoluteUrl("/services/footwear-fashion-photography#faq"),
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What angles do you shoot for e-commerce footwear?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Standard e-commerce footwear coverage includes the three-quarter hero, medial profile, lateral profile, top-down, sole detail, and pair shot. For campaign work, we add lifestyle contexts (in-use) and macro detail (stitching, texture, materials).",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you offer on-model shoe photography?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. We coordinate models, styling, and locations for on-model campaigns. For catalog work, we typically shoot on-foot or off-foot (white-background cutouts) and ghost-mannequin cutouts for apparel.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the turnaround time for footwear catalog work?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Standard turnaround is 5–7 business days after the shoot. Bulk catalog work (50–200+ SKUs) is typically delivered in batches so you can start listing while we continue shooting the remaining items.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can you handle colour-critical work for fashion?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. We shoot a Calibrite ColorChecker reference target on every scene, lock white balance against neutral patches, and use colour-managed workflows end to end so the colours in your final files match the actual product.",
+      },
+    },
+  ],
+};
+
 export const metadata: Metadata = {
   title: "Footwear & Fashion Photographer in Dehradun",
   description:
@@ -64,17 +107,7 @@ const footwearPhotographySchema = {
       "description":
         "Professional footwear and fashion photography for e-commerce and brands. Shoe photography, apparel lookbooks, and commercial fashion product shoots.",
       "provider": {
-        "@type": "LocalBusiness",
-        "name": "Rahul Chanda Photography",
-        "image": absoluteUrl("/opt/og-image.jpg"),
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Dehradun",
-          "addressRegion": "Uttarakhand",
-          "addressCountry": "India",
-        },
-        "telephone": "+917078939475",
-        "url": absoluteUrl("/"),
+        "@id": absoluteUrl("/#business")
       },
       "areaServed": [
         {
@@ -101,6 +134,12 @@ export default function FootwearFashionPhotographyPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(footwearPhotographySchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(footwearFaqSchema),
         }}
       />
 
@@ -204,6 +243,50 @@ export default function FootwearFashionPhotographyPage() {
                 <h3 className="text-xl font-serif text-white mt-4 mb-3">{process.title}</h3>
                 <p className="text-white/50 leading-relaxed">{process.desc}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="relative w-full px-4 md:px-12 py-24 border-t border-white/10">
+        <div className="max-w-[900px] mx-auto">
+          <h2 className="h-section mb-12">
+            Footwear & Fashion Photography — Common Questions
+          </h2>
+          <div className="space-y-0">
+            {[
+              {
+                q: "What angles do you shoot for e-commerce footwear?",
+                a: "Standard e-commerce footwear coverage includes the three-quarter hero, medial profile, lateral profile, top-down, sole detail, and pair shot. For campaign work, we add lifestyle contexts (in-use) and macro detail (stitching, texture, materials).",
+              },
+              {
+                q: "Do you offer on-model shoe photography?",
+                a: "Yes. We coordinate models, styling, and locations for on-model campaigns. For catalog work, we typically shoot on-foot or off-foot (white-background cutouts) and ghost-mannequin cutouts for apparel.",
+              },
+              {
+                q: "What is the turnaround time for footwear catalog work?",
+                a: "Standard turnaround is 5–7 business days after the shoot. Bulk catalog work (50–200+ SKUs) is typically delivered in batches so you can start listing while we continue shooting the remaining items.",
+              },
+              {
+                q: "Can you handle colour-critical work for fashion?",
+                a: "Yes. We shoot a Calibrite ColorChecker reference target on every scene, lock white balance against neutral patches, and use colour-managed workflows end to end so the colours in your final files match the actual product.",
+              },
+            ].map((item) => (
+              <details
+                key={item.q}
+                className="group border-t border-white/10 py-6 last:border-b"
+              >
+                <summary className="flex items-center justify-between gap-6 cursor-pointer list-none text-white text-lg font-serif">
+                  {item.q}
+                  <span className="text-[#e83b2c] shrink-0 group-open:rotate-45 transition-transform duration-300">
+                    +
+                  </span>
+                </summary>
+                <p className="text-white/50 mt-4 leading-relaxed max-w-[70ch]">
+                  {item.a}
+                </p>
+              </details>
             ))}
           </div>
         </div>

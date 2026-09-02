@@ -38,7 +38,7 @@ const services: ServiceLink[] = [
     title: "Food & Beverage Photography",
     icon: Pizza,
     shortDesc:
-      "Restaurants, menus, Swiggy/Aomato, and beverage splash photography.",
+      "Restaurants, menus, Swiggy/Zomato, and beverage splash photography.",
     longDesc:
       "Menu photography, restaurant campaigns, beverage splash & glass work, ingredient styling — engineered to make kitchens and bars sell more.",
     highlights: [

@@ -219,7 +219,9 @@ const LOCAL_FAQ = [
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": ["ProfessionalService", "LocalBusiness"],
-  "@id": absoluteUrl("/dehradun#localbusiness"),
+  // Reference the canonical /#business id from the home page schema so
+  // Google merges both into one entity instead of two competing ones.
+  "@id": absoluteUrl("/#business"),
   name: siteConfig.name,
   alternateName: "Rahul Chanda Photography",
   url: absoluteUrl("/dehradun"),
@@ -230,6 +232,12 @@ const localBusinessJsonLd = {
   telephone: siteConfig.contact.telephone,
   email: siteConfig.contact.email,
   priceRange: siteConfig.contact.priceRange,
+  // Founding year added Sept 2026 to strengthen entity signals for AI search.
+  // Update if the studio's official founding year differs.
+  foundingDate: "2019",
+  // Reference the canonical Person entity from the home page so Google merges
+  // the business and founder into a single entity graph.
+  founder: { "@id": absoluteUrl("/#person") },
   currenciesAccepted: "INR",
   paymentAccepted: "Cash, Credit Card, Bank Transfer, UPI",
   address: {
@@ -268,6 +276,7 @@ const localBusinessJsonLd = {
     siteConfig.contact.instagram,
     siteConfig.contact.googleBusiness,
     "https://www.behance.net/rahulchandaphotography",
+    "https://www.linkedin.com/in/rahul-chanda-a9a860269",
   ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
@@ -282,7 +291,7 @@ const localBusinessJsonLd = {
         provider: {
           "@type": "LocalBusiness",
           name: siteConfig.name,
-          "@id": absoluteUrl("/dehradun#localbusiness"),
+          "@id": absoluteUrl("/#business"),
         },
         areaServed: {
           "@type": "City",
@@ -292,6 +301,24 @@ const localBusinessJsonLd = {
       },
     })),
   },
+};
+
+// FAQPage schema derived from LOCAL_FAQ above. Mirrors the visible FAQ block
+// rendered in the page body so search engines / AI engines can pick it up as
+// a structured FAQ. Note: Google retired FAQ rich results in May 2026, but
+// FAQPage schema still helps voice search and AI Overview citation.
+const faqPageJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": absoluteUrl("/dehradun#faq"),
+  mainEntity: LOCAL_FAQ.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: f.a,
+    },
+  })),
 };
 
 
@@ -342,7 +369,7 @@ const personSchema = {
   worksFor: {
     "@type": "Organization",
     name: siteConfig.name,
-    "@id": absoluteUrl("/dehradun#localbusiness"),
+    "@id": absoluteUrl("/#business"),
   },
   address: {
     "@type": "PostalAddress",
@@ -371,6 +398,10 @@ export default function DehradunPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageJsonLd) }}
       />
 
       {/* ===== HERO ===== */}

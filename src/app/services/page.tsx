@@ -59,16 +59,7 @@ const servicesSchema = {
       "description":
         "Professional commercial photography services including product packshots, food & beverage photography, fashion and footwear campaigns, brand content, and interior photography.",
       "provider": {
-        "@type": "ProfessionalService",
-        "name": siteConfig.name,
-        "telephone": siteConfig.contact.telephone,
-        "email": siteConfig.contact.email,
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": siteConfig.contact.addressLocality,
-          "addressRegion": siteConfig.contact.addressRegion,
-          "addressCountry": siteConfig.contact.addressCountry,
-        },
+        "@id": absoluteUrl("/#business")
       },
       "areaServed": [
         { "@type": "City", "name": "Dehradun" },

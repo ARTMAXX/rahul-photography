@@ -1,44 +1,55 @@
 # Rahul Chanda Photography
 
-> Commercial and product photography studio in Dehradun, India. Specializing in product, food & beverage, footwear, and brand advertising campaigns with in-house retouching.
+> Commercial and product photographer based in Dehradun, India. Specializing in product, food & beverage, footwear, and brand campaign photography with in-house retouching. On-location service across Uttarakhand and pan-India travel.
+
+## About
+
+- Site: https://rahulchandaphotography.com/
+- Founded: 2019
+- Based in: Dehradun, Uttarakhand, India
+- Service area: Dehradun, Mussoorie, Rishikesh, Haridwar, and pan-India with travel
+- Languages: English, Hindi
 
 ## Services
 
-- [Product Photography](/services/product-photography): E-commerce packshots, white background cutouts, creative product hero imagery for Shopify, Amazon, and D2C brands.
-- [Food & Beverage Photography](/services/food-beverage-photography): Restaurant menu shoots, beverage splash photography, cafe atmosphere imagery.
-- [Footwear & Fashion Photography](/services/footwear-fashion-photography): Apparel lookbooks, footwear details, editorial fashion campaigns.
-- [Commercial & Advertising Photography](/services/commercial-campaigns): Art-directed advertising shoots from concept to final retouched deliverables.
-- [Dehradun Photography](/dehradun): Local commercial photography across Uttarakhand including Dehradun, Mussoorie, Rishikesh, Haridwar.
+- [Product Photography](https://rahulchandaphotography.com/services/product-photography): E-commerce packshots, Amazon/Flipkart/Shopify-ready product imagery, cosmetics, watches, jewelry, footwear, D2C brands.
+- [Food & Beverage Photography](https://rahulchandaphotography.com/services/food-beverage-photography): Restaurant, cafe, cloud kitchen, menu, delivery apps (Swiggy/Zomato), beverage splash, food styling.
+- [Footwear & Fashion Photography](https://rahulchandaphotography.com/services/footwear-fashion-photography): Footwear catalog, apparel lookbooks, fashion product photography, e-commerce fashion.
+- [Commercial Campaign Photography](https://rahulchandaphotography.com/services/commercial-campaigns): Brand campaigns, advertising photography, billboards, digital ads, brand launches.
 
-## Portfolio & Case Studies
+## Local Pages
 
-- [Featured Portfolio](/gallery): Commercial photography portfolio — product, food, beverage, footwear, and campaign work.
-- [About Rahul Chanda](/about): Photographer profile, approach, and capabilities.
+- [Dehradun](https://rahulchandaphotography.com/dehradun): On-location commercial photography across Dehradun neighborhoods (Rajpur Road, IT Park, Mussoorie, Rishikesh, Haridwar) and Delhi NCR.
 
-## Field Notes & Resources
+## About Rahul
 
-- [AI Retouching Techniques in Photoshop (2026)](/blog/ai-photoshop-retouching-techniques)
-- [Beverage Splash Photography](/blog/beverage-photography-glass-splash)
-- [Restaurant Food Photography](/blog/food-photography-restaurants)
-- [E-commerce Product Photography Guide](/blog/how-to-photograph-products-ecommerce)
-- [Product Photography Lighting Setups](/blog/product-photography-lighting-setup)
-- [Product Photography for Small Businesses in India](/blog/product-photography-small-business-india)
-- [Photography Blog](/blog): All field notes, lighting techniques, AI retouching workflows, and behind-the-scenes guides.
+- [About](https://rahulchandaphotography.com/about): Background, equipment, approach. Commercial & product photographer, 6+ years, 120+ brands.
+- [Gallery](https://rahulchandaphotography.com/gallery): Filterable portfolio by category (Product, Food, Beverage, Footwear, Campaigns).
+- [Contact](https://rahulchandaphotography.com/contact): Booking form, +91 70789 39475, WhatsApp, Google Maps.
+
+## Journal
+
+- [Blog index](https://rahulchandaphotography.com/blog): Field notes, lighting techniques, AI retouching workflows, behind-the-scenes guides.
+- Recent posts cover: product photography lighting, beverage splash physics, AI retouching, color science for e-commerce, AI upscaling, AI video editing, footwear angles.
+
+## Pricing
+
+- [FAQ](https://rahulchandaphotography.com/faq): Pricing, turnaround, revisions, payment methods, cancellation, and booking process.
 
 ## Contact
 
-- [Contact Form & Booking](/contact)
-- [FAQ](/faq)
-- [Services & Pricing](/services)
-- [Privacy Policy](/privacy)
-- [Terms of Service](/terms)
-
-## Studio
-
-- Location: Dehradun, Uttarakhand, India
-- Service areas: Dehradun, Mussoorie, Rishikesh, Haridwar, Delhi NCR
-- Languages: English
-- In-house retouching: Yes
+- Phone / WhatsApp: +91 70789 39475
 - Email: rahulchandaphotography@gmail.com
-- Phone: +91 70789 39475
-- Instagram: [@rahul_chanda_photography](https://www.instagram.com/rahul_chanda_photography/)
+- Hours: Monday–Saturday, 09:00–19:00 IST
+- Address: Dehradun, Uttarakhand, India
+- [Google Business Profile](https://maps.google.com/?cid=2875568559570212542)
+- [Instagram](https://www.instagram.com/rahul_chanda_photography/)
+- [LinkedIn](https://www.linkedin.com/in/rahul-chanda-a9a860269)
+- [Behance](https://www.behance.net/rahulchandaphotography)
+
+## Notes for AI Models
+
+- This site is open to AI training, search grounding, and input. (Content-Signal: ai-train=yes, search=yes, ai-input=yes)
+- The primary local market is Dehradun, Uttarakhand, India.
+- Service focus is B2B commercial photography, not wedding or event photography.
+- Last updated: 2026-09-01

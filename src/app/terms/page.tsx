@@ -4,7 +4,7 @@ import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
+  title: "Terms of Service — Rahul Chanda Photography",
   description:
     "Terms governing photography services provided by Rahul Chanda Photography.",
   alternates: { canonical: "/terms" },

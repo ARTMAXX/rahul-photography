@@ -89,6 +89,7 @@ const homeSchema = {
       "sameAs": [
         siteConfig.contact.instagram,
         siteConfig.contact.googleBusiness,
+        "https://www.linkedin.com/in/rahul-chanda-a9a860269",
       ],
       "knowsAbout": [
         "Commercial Photography",
@@ -120,18 +121,12 @@ const homeSchema = {
       "telephone": siteConfig.contact.telephone,
       "email": siteConfig.contact.email,
       "priceRange": siteConfig.contact.priceRange,
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "24",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
       "currenciesAccepted": "INR",
       "paymentAccepted": "Cash, Credit Card, Bank Transfer, UPI",
       "founder": {
         "@id": absoluteUrl("/#person"),
       },
+      "foundingDate": "2019",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": siteConfig.contact.addressLocality,
@@ -155,6 +150,8 @@ const homeSchema = {
       "sameAs": [
         siteConfig.contact.instagram,
         siteConfig.contact.googleBusiness,
+        "https://www.behance.net/rahulchandaphotography",
+        "https://www.linkedin.com/in/rahul-chanda-a9a860269",
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -207,6 +204,7 @@ const homeSchema = {
         siteConfig.contact.instagram,
         siteConfig.contact.googleBusiness,
         "https://www.behance.net/rahulchandaphotography",
+        "https://www.linkedin.com/in/rahul-chanda-a9a860269",
       ],
       "areaServed": [
         { "@type": "Country", "name": "India" },

@@ -52,7 +52,7 @@ export const posts: BlogPost[] = [
       "",
       "A typical commercial day produces 400 to 800 captures. Culling is the discipline of filtering out everything except the definitive hero frames. We evaluate captures in Lightroom Classic or Capture One tethering sessions using three strict criteria:",
       "",
-      "1. **Critical Sharpness at 100% Aoom:** For product work, focus on the primary branding, texture, or label must be tack-sharp. Any frame with micro-shake or slight depth-of-field falloff across key details is immediately rejected.",
+      "1. **Critical Sharpness at 100% Zoom:** For product work, focus on the primary branding, texture, or label must be tack-sharp. Any frame with micro-shake or slight depth-of-field falloff across key details is immediately rejected.",
       "2. **Specular and Geometry Alignment:** We check that key reflections, label horizons, and structural lines sit cleanly within the composition.",
       "3. **Story and Emotion:** For lifestyle or food photography, we select the frame where the liquid splash peaks, the steam curls naturally, or the fabric fold catches the rim light perfectly.",
       "",
@@ -97,7 +97,7 @@ export const posts: BlogPost[] = [
     title: "Generative AI Backgrounds for Product Photography: Studio Lighting & Workflow Guide",
     seoTitle: "AI Backgrounds for Product Photography",
     excerpt:
-      "How to combine physical studio key lighting with generative background compositing for e-commerce and lifestyle campaigns — without the artificial cutout look.",
+      "How to combine physical studio key lighting with generative background compositing for e-commerce and lifestyle campaigns.",
     tag: "AI & Photography",
     date: "June 2026",
     read: "8 min",
@@ -147,7 +147,7 @@ export const posts: BlogPost[] = [
     title: "AI Retouching in Photoshop: The Practical Studio Workflow & Pipeline",
     seoTitle: "AI Retouching in Photoshop",
     excerpt:
-      "From Photoshop's Remove tool and Generative Fill to multi-stage batch cleanup with Retouch4me and manual finishing — here is the exact post-production pipeline I use for commercial work.",
+      "Photoshop's Remove tool, Generative Fill, and multi-stage batch cleanup with Retouch4me — the exact post-production pipeline for commercial work.",
     tag: "Retouching",
     date: "August 2026",
     read: "12 min",
@@ -240,7 +240,7 @@ export const posts: BlogPost[] = [
     title: "Why Beverage Splash Photography is Harder Than It Looks: High-Speed Physics & Technique",
     seoTitle: "Beverage Splash Photography: Physics & Technique",
     excerpt:
-      "High-speed flash duration (t0.1), fluid viscosity, trigger delay, and hundreds of frames for one hero crown — the engineering and lighting behind commercial liquid action.",
+      "High-speed flash duration (t0.1), fluid viscosity, trigger delay, and hundreds of frames for one hero crown — the engineering of commercial liquid action.",
     tag: "Behind the scenes",
     date: "June 2026",
     read: "8 min",
@@ -334,7 +334,7 @@ export const posts: BlogPost[] = [
     title: "Footwear Photography Angles That Convert: The E-Commerce Catalog & Campaign Guide",
     seoTitle: "Footwear Photography Angles That Convert",
     excerpt:
-      "From the three-quarter hero and medial profile to tread macro details — the angle sequence that communicates build quality, reduces return rates, and drives conversions.",
+      "From the three-quarter hero and medial profile to tread macro details — the angle sequence that communicates build quality and drives conversions.",
     tag: "Technique",
     date: "April 2026",
     read: "8 min",
@@ -384,7 +384,7 @@ export const posts: BlogPost[] = [
     title: "AI Video Editing for Commercial Campaigns: Production Tools That Actually Work",
     seoTitle: "AI Video Editing for Brand Campaigns",
     excerpt:
-      "A field review of AI video tools for commercial brand content — from Runway Gen-3 and Premiere Pro to DaVinci Resolve color workflows. What saves production hours versus marketing hype.",
+      "A field review of AI video tools for commercial brand content — from Runway Gen-3 and Premiere Pro to DaVinci Resolve. Production hours versus marketing hype.",
     tag: "AI & Video",
     date: "July 2026",
     read: "9 min",

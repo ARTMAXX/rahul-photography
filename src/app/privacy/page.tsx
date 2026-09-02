@@ -4,9 +4,9 @@ import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
+  title: "Privacy Policy — Rahul Chanda Photography",
   description:
-    "How Rahul Chanda Photography collects, uses, and protects your personal information.",
+    "Privacy policy for Rahul Chanda Photography. How we collect, use, store, and protect your personal information across our website and services.",
   alternates: { canonical: "/privacy" },
   openGraph: {
     title: "Privacy Policy — Rahul Chanda Photography",

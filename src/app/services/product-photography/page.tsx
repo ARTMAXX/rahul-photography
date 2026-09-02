@@ -3,6 +3,49 @@ import Link from "next/link";
 import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
+// FAQPage schema for AI search engines and voice search (Sept 2026).
+// Note: Google retired FAQ rich results in May 2026, but FAQPage schema
+// still helps voice search and AI Overview citation.
+const productFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": absoluteUrl("/services/product-photography#faq"),
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How much does product photography cost in India?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Product photography in India typically starts at ₹20,000 for a basic 20-SKU catalog. Larger catalog work (200+ SKUs) and marketplace-specific Amazon/Flipkart/Myntra-ready packs are quoted per project based on volume, styling, and deliverables.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What file formats do you deliver for e-commerce?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "We deliver platform-ready files in JPG, PNG, and WebP/AVIF, sized for Amazon (2000×2000+), Flipkart (1000×1000+), Myntra (3:4 portrait), Shopify, and your own site. All files are colour-managed sRGB with embedded ICC profiles.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you shoot on location or in a studio?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Both. We shoot on location at your warehouse, office, or any venue that fits the brief, and bring full studio lighting. For large batch catalog work, we typically set up a temporary studio at your facility.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the turnaround time for product photography?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Standard delivery is 5–10 business days after the shoot. Rush turnaround (24–48 hours) is available for an additional fee. Catalog work is delivered in batches so you can start listing while we continue shooting.",
+      },
+    },
+  ],
+};
+
 export const metadata: Metadata = {
   title: "Product Photography in Dehradun — Amazon, Flipkart, Shopify",
   description:
@@ -64,17 +107,7 @@ const productPhotographySchema = {
       "description":
         "Professional product photography services for e-commerce, brands, and businesses. Specializing in product packshots, cosmetics, watches, jewelry, footwear, and D2C products.",
       "provider": {
-        "@type": "LocalBusiness",
-        "name": "Rahul Chanda Photography",
-        "image": absoluteUrl("/opt/og-image.jpg"),
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Dehradun",
-          "addressRegion": "Uttarakhand",
-          "addressCountry": "India",
-        },
-        "telephone": "+917078939475",
-        "url": absoluteUrl("/"),
+        "@id": absoluteUrl("/#business")
       },
       "areaServed": [
         {
@@ -143,6 +176,12 @@ export default function ProductPhotographyPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(productPhotographySchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(productFaqSchema),
         }}
       />
 
@@ -351,6 +390,50 @@ export default function ProductPhotographyPage() {
               </h3>
               <p className="text-white/50 mt-3">Complete guide to professional e-commerce product photography</p>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="relative w-full px-4 md:px-12 py-24 border-t border-white/10">
+        <div className="max-w-[900px] mx-auto">
+          <h2 className="h-section mb-12">
+            Product Photography — Common Questions
+          </h2>
+          <div className="space-y-0">
+            {[
+              {
+                q: "How much does product photography cost in India?",
+                a: "Product photography in India typically starts at ₹20,000 for a basic 20-SKU catalog. Larger catalog work (200+ SKUs) and marketplace-specific Amazon/Flipkart/Myntra-ready packs are quoted per project based on volume, styling, and deliverables.",
+              },
+              {
+                q: "What file formats do you deliver for e-commerce?",
+                a: "We deliver platform-ready files in JPG, PNG, and WebP/AVIF, sized for Amazon (2000×2000+), Flipkart (1000×1000+), Myntra (3:4 portrait), Shopify, and your own site. All files are colour-managed sRGB with embedded ICC profiles.",
+              },
+              {
+                q: "Do you shoot on location or in a studio?",
+                a: "Both. We shoot on location at your warehouse, office, or any venue that fits the brief, and bring full studio lighting. For large batch catalog work, we typically set up a temporary studio at your facility.",
+              },
+              {
+                q: "What is the turnaround time?",
+                a: "Standard delivery is 5–10 business days after the shoot. Rush turnaround (24–48 hours) is available for an additional fee. Catalog work is delivered in batches so you can start listing while we continue shooting.",
+              },
+            ].map((item) => (
+              <details
+                key={item.q}
+                className="group border-t border-white/10 py-6 last:border-b"
+              >
+                <summary className="flex items-center justify-between gap-6 cursor-pointer list-none text-white text-lg font-serif">
+                  {item.q}
+                  <span className="text-[#e83b2c] shrink-0 group-open:rotate-45 transition-transform duration-300">
+                    +
+                  </span>
+                </summary>
+                <p className="text-white/50 mt-4 leading-relaxed max-w-[70ch]">
+                  {item.a}
+                </p>
+              </details>
+            ))}
           </div>
         </div>
       </section>
