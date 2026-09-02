@@ -69,10 +69,10 @@ export const metadata: Metadata = {
   creator: "Rahul Chanda",
   icons: {
     icon: [
-      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/logo/faviconlogo-black.png", type: "image/png", sizes: "any" },
       { url: "/favicon.ico", sizes: "any" },
     ],
-    shortcut: "/icon.svg",
+    shortcut: "/logo/faviconlogo-black.png",
     apple: "/apple-icon.png",
   },
   openGraph: {

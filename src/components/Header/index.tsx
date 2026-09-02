@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion, type Variants } from "framer-motion";
 import { useLenis } from "lenis/react";
@@ -100,25 +101,24 @@ export default function Header() {
         }`}
         data-menu-open={isActive || undefined}
       >
-        {/* Brand  —  always-visible wordmark. No aria-label override: the
-            accessible name then equals the visible content, which satisfies
-            axe label-content-name-mismatch (href="/" carries the context). */}
+        {/* Brand  —  always-visible logo image. The alt text provides the
+            accessible name so the link's accessible name resolves to
+            "Rahul Chanda Photography" (satisfies label-content-name-mismatch). */}
         <Link
           href="/"
           onClick={() => setIsActive(false)}
-          className="pointer-events-auto relative z-[2] select-none leading-none"
+          aria-label="Rahul Chanda Photography"
+          className="pointer-events-auto relative z-[2] select-none block"
         >
-          <span className="font-serif text-lg tracking-tight text-white">
-            Rahul<span className="italic text-[#e83b2c]"> Chanda</span>
-          </span>
-          {/* leading space keeps textContent aligned with the accessible name
-              ("Rahul Chanda Photography"), satisfying label-content-name-mismatch */}
-          {" "}
-          {/* no text-transform: axe's label-content-name check compares the
-              RENDERED text case-sensitively against the accessible name */}
-          <span className="mt-0.5 block font-sans text-[8px] tracking-[0.35em] text-white/40">
-            PHOTOGRAPHY
-          </span>
+          <Image
+            src="/logo/logo-black-rahul-and-red-chanda-color.png"
+            alt="Rahul Chanda Photography"
+            width={2000}
+            height={800}
+            priority
+            sizes="(max-width: 768px) 120px, 160px"
+            className="block w-[110px] md:w-[150px] h-auto"
+          />
         </Link>
 
         {/* Right cluster: expanding desktop panel + MENU/CLOSE button.
