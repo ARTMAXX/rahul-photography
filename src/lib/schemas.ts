@@ -5,9 +5,9 @@
 
 import { siteConfig, absoluteUrl } from './site';
 
-// "¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½
+// ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 // BREADCRUMB SCHEMA  —  For all pages
-// "¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½
+// ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 export function generateBreadcrumbSchema(breadcrumbs: { label: string; url: string }[]) {
   return {
     "@context": "https://schema.org",
@@ -21,32 +21,20 @@ export function generateBreadcrumbSchema(breadcrumbs: { label: string; url: stri
   };
 }
 
-// "¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½
-// REVIEW / TESTIMONIAL SCHEMA  —  For testimonials section
-// "¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½
-export function generateReviewSchema(
-  testimonials: Array<{
-    text: string;
-    name: string;
-    role: string;
-  }>
-) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "bestRating": "5",
-    "worstRating": "1",
-    "ratingCount": testimonials.length,
-    "reviewCount": testimonials.length,
-  };
-}
+// ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+// REVIEW / TESTIMONIAL SCHEMA — REMOVED (was dead code).
+// The old generateReviewSchema() emitted a bare AggregateRating with a
+// hardcoded 4.9 — invalid per Google's guidelines (no itemReviewed, and
+// self-serving business ratings are ineligible for rich results).
+// If reviews markup is ever needed, nest real Review objects (with named
+// reviewers matching on-page testimonials) inside the LocalBusiness node.
 
-// "¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½
-// QA PAGE SCHEMA  —  For FAQ section (replaced deprecated FAQPage)
-// Note: FAQ rich results were retired May 7, 2026 by Google
-// QAPage is the modern replacement for genuine Q&A content
-// "¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½
+// ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+// QA PAGE SCHEMA  —  For FAQ section
+// Note: Google restricts FAQ rich results to gov/health sites (since Aug
+// 2023), so this will NOT produce FAQ rich snippets in Google. It is kept
+// because Bing/other engines still use it and it documents page structure.
+// ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 export function generateQAPageSchema(
   faqs: Array<{
     q: string;
@@ -67,13 +55,14 @@ export function generateQAPageSchema(
   };
 }
 
-// "¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½
+// ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 // ARTICLE / BLOG POST SCHEMA  —  For blog pages
-// "¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½
+// ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 export function generateBlogPostSchema(
   post: { title: string; excerpt: string; slug: string },
   datePublished: string,
-  imageUrl: string
+  imageUrl: string,
+  dateModified?: string
 ) {
   return {
     "@context": "https://schema.org",
@@ -85,7 +74,9 @@ export function generateBlogPostSchema(
       "url": imageUrl,
     },
     "datePublished": datePublished,
-    "dateModified": datePublished,
+    // Real refresh date when provided (SEO freshness signal) — falls back
+    // to the publish date for posts never substantively updated.
+    "dateModified": dateModified ?? datePublished,
     "author": {
       "@type": "Person",
       "name": "Rahul Chanda",
@@ -106,9 +97,9 @@ export function generateBlogPostSchema(
   };
 }
 
-// "¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½
+// ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 // ORGANIZATION / LOCAL BUSINESS SCHEMA  —  For homepage
-// "¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½
+// ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 export function generateOrganizationSchema() {
   return {
     "@context": "https://schema.org",
@@ -153,9 +144,9 @@ export function generateOrganizationSchema() {
   };
 }
 
-// "¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½
+// ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 // PERSON SCHEMA  —  For founder/photographer
-// "¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½
+// ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 export function generatePersonSchema() {
   return {
     "@context": "https://schema.org",
@@ -188,9 +179,9 @@ export function generatePersonSchema() {
   };
 }
 
-// "¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½
+// ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 // COMBINED GRAPH SCHEMA  —  For complex multi-entity pages
-// "¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½"¢½
+// ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 export function generateWebsiteGraphSchema() {
   return {
     "@context": "https://schema.org",

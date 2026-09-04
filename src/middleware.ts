@@ -21,7 +21,7 @@ const MARKDOWN_PATHS = new Set([
 const MARKDOWN_PATH_PREFIXES = ["/blog/"];
 
 /**
- * Link header values per RFC 8288 / RFC 9727 Ã‚Â§3
+ * Link header values per RFC 8288 / RFC 9727 §3
  * Added to page responses so AI agents can auto-discover machine-readable resources.
  */
 const LINK_HEADERS = [

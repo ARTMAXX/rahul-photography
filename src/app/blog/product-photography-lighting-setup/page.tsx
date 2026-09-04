@@ -69,12 +69,6 @@ const lightingSchema = {
       "image": absoluteUrl("/opt/og-image.jpg"),
       "datePublished": "2026-08-25",
       "dateModified": "2026-08-25",
-      "author": {
-        "@type": "Person",
-        "name": "Rahul Chanda",
-        "url": absoluteUrl("/about"),
-        "image": absoluteUrl("/opt/about-photo/rahul-chanda-portrait.webp"),
-      },
       "publisher": {
         "@type": "Organization",
         "name": "Rahul Chanda Photography",
@@ -112,6 +106,16 @@ const lightingSchema = {
         ],
       },
     },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is a basic product photography lighting setup?", "acceptedAnswer": { "@type": "Answer", "text": "One large diffused key light at about 45 degrees to the product, a white bounce card opposite for shadow fill, and a rim light behind for edge separation. This three-element recipe adapts to almost any product by changing the size and distance of the sources." } },
+        { "@type": "Question", "name": "What does negative fill do in a lighting setup?", "acceptedAnswer": { "@type": "Answer", "text": "Negative fill is a black flag or card placed opposite the key light that absorbs stray bounce instead of adding it. It deepens the shadow side of the product, adding the contrast and dimension that separates premium packshots from flat catalog snapshots." } },
+        { "@type": "Question", "name": "Should you start with one light or multiple lights?", "acceptedAnswer": { "@type": "Answer", "text": "Start with one light and move it — distance, angle, and modifier size change everything. Add a rim light when the product blends into the background, and gradient scrims or strip boxes only once the key relationship is dialed in." } },
+        { "@type": "Question", "name": "Are strobes or LED lights better for product photography?", "acceptedAnswer": { "@type": "Answer", "text": "Color-stable studio strobes win for stills: consistent color temperature across thousands of flashes and more power for clean depth of field. LEDs suit hybrid photo-video shoots. Cheap LEDs drift in color as they heat, which breaks batch consistency." } },
+      ],
+    },
+
   ],
 };
 
@@ -293,6 +297,29 @@ export default function ProductPhotographyLightingBlog() {
                 </p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* FAQ — People-Also-Ask targeting */}
+        <section className="mb-16">
+          <h2 className="h-section mt-16 mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-8">
+            <div>
+              <h3 className="font-serif text-lg text-white leading-snug">What is a basic product photography lighting setup?</h3>
+              <p className="t-body mt-2">One large diffused key light at about 45 degrees to the product, a white bounce card opposite for shadow fill, and a rim light behind for edge separation. This three-element recipe adapts to almost any product by changing the size and distance of the sources.</p>
+            </div>
+            <div>
+              <h3 className="font-serif text-lg text-white leading-snug">What does negative fill do in a lighting setup?</h3>
+              <p className="t-body mt-2">Negative fill is a black flag or card placed opposite the key light that absorbs stray bounce instead of adding it. It deepens the shadow side of the product, adding the contrast and dimension that separates premium packshots from flat catalog snapshots.</p>
+            </div>
+            <div>
+              <h3 className="font-serif text-lg text-white leading-snug">Should you start with one light or multiple lights?</h3>
+              <p className="t-body mt-2">Start with one light and move it — distance, angle, and modifier size change everything. Add a rim light when the product blends into the background, and gradient scrims or strip boxes only once the key relationship is dialed in.</p>
+            </div>
+            <div>
+              <h3 className="font-serif text-lg text-white leading-snug">Are strobes or LED lights better for product photography?</h3>
+              <p className="t-body mt-2">Color-stable studio strobes win for stills: consistent color temperature across thousands of flashes and more power for clean depth of field. LEDs suit hybrid photo-video shoots. Cheap LEDs drift in color as they heat, which breaks batch consistency.</p>
+            </div>
           </div>
         </section>
 

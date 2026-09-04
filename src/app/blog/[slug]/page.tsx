@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { CinematicFooter } from "@/components/ui/motion-footer";
 import { siteConfig, absoluteUrl } from "@/lib/site";
 import { generateBlogPostSchema } from "@/lib/schemas";
-import { postISO } from "@/lib/blog-posts";
+import { postISO, postModified } from "@/lib/blog-posts";
 
 export { postISO } from "@/lib/blog-posts";
 
@@ -26,18 +26,42 @@ export interface BlogPost {
   };
   /** Key Takeaways / TL;DR — displayed as a callout box after the excerpt. */
   tldr?: string[];
+  /**
+   * FAQ block — rendered before the author box and emitted as FAQPage
+   * JSON-LD. Targets People-Also-Ask queries for the post's keyword.
+   * Answers support the same markdown links/bold as body text.
+   */
+  faq?: Array<{ q: string; a: string }>;
 }
 
 export const posts: BlogPost[] = [
   {
     slug: "retouching-101",
     title: "Commercial Photo Retouching 101: The Studio Pipeline from RAW to Final Master",
-    seoTitle: "Photo Retouching 101: RAW to Master",
+    seoTitle: "Commercial Photo Retouching: 4-Stage Pipeline",
     excerpt:
-      "Culling, color balancing, non-destructive cleanup, frequency separation, multi-format delivery: the commercial retouching pipeline.",
+      "Commercial photo retouching explained stage by stage: culling, ColorChecker color calibration, non-destructive cleanup, frequency separation, and multi-format delivery.",
     tag: "Guides",
     date: "February 2026",
     read: "9 min",
+    faq: [
+      {
+        q: "What is commercial photo retouching?",
+        a: "Commercial retouching is the post-production pipeline that turns raw captures into marketplace-ready brand assets: culling, global color calibration, non-destructive pixel cleanup, frequency separation, and format-specific export for print, web, and e-commerce platforms.",
+      },
+      {
+        q: "What is the difference between photo editing and retouching?",
+        a: "Editing covers global adjustments applied to the whole frame — exposure, white balance, contrast. Retouching is the pixel-level work that follows: removing dust and smudges, shaping reflections, frequency separation to smooth tone while preserving texture, and dodge & burn for dimension.",
+      },
+      {
+        q: "How long does professional product retouching take?",
+        a: "A single hero image with full cleanup, frequency separation, and dodge & burn typically takes 20–45 minutes. Batch catalog work runs faster per image because global calibration is applied once across the set. Standard studio delivery is 5–10 business days.",
+      },
+      {
+        q: "Why is non-destructive retouching important for brands?",
+        a: "Layered, non-destructive files preserve every edit as a reversible adjustment. When a brand needs a new crop, marketplaces change image rules, or a packaging update ships, the master file can be re-exported in minutes instead of re-shot and re-retouched from scratch.",
+      },
+    ],
     cta: {
       text: "Explore our commercial photography & retouching services",
       href: "/services/product-photography",
@@ -95,12 +119,30 @@ export const posts: BlogPost[] = [
   {
     slug: "generative-ai-product-backgrounds",
     title: "Generative AI Backgrounds for Product Photography: Studio Lighting & Workflow Guide",
-    seoTitle: "AI Backgrounds for Product Photography",
+    seoTitle: "AI Product Backgrounds: Compositing Guide",
     excerpt:
-      "How to combine physical studio key lighting with generative background compositing for e-commerce and lifestyle campaigns.",
+      "AI product backgrounds done right: match key-light angle, hardness, and color temperature before you shoot, then composite with a three-pass pipeline that never looks fake.",
     tag: "AI & Photography",
     date: "June 2026",
     read: "8 min",
+    faq: [
+      {
+        q: "Are AI-generated backgrounds allowed on Amazon and other marketplaces?",
+        a: "For the Amazon main image, no — marketplace rules require a pure white background with the product filling about 85% of the frame. AI backgrounds are for secondary and lifestyle images, social content, and ads, where they perform extremely well.",
+      },
+      {
+        q: "Why do most AI product photos look fake?",
+        a: "Because the product was lit for a neutral studio, then dropped into a scene with different light physics. If the generated background has warm directional sunset light but the product carries flat, shadowless front-light, the composite fails instantly. Match light direction, hardness, and color temperature on set first.",
+      },
+      {
+        q: "Which AI tools are used for product background generation?",
+        a: "Adobe Firefly for commercially safe generation inside Photoshop, Midjourney for scene ideation, and dedicated compositing tools for perspective-locked backgrounds. The tool matters less than the three-pass pipeline: neutral capture, perspective-matched generation, then atmospheric blending.",
+      },
+      {
+        q: "Is an AI background cheaper than building a physical set?",
+        a: "For one-off lifestyle scenes, usually yes. For glossy products — chrome, glassware, packaged liquids — real sets remain mandatory, because mirror-like surfaces reflect the actual environment and expose a generated backdrop immediately.",
+      },
+    ],
     cta: {
       text: "Book a commercial product shoot with custom environments",
       href: "/services/product-photography",
@@ -145,12 +187,30 @@ export const posts: BlogPost[] = [
   {
     slug: "ai-photoshop-retouching-techniques",
     title: "AI Retouching in Photoshop: The Practical Studio Workflow & Pipeline",
-    seoTitle: "AI Retouching in Photoshop",
+    seoTitle: "AI Retouching in Photoshop: Studio Workflow (2026)",
     excerpt:
-      "Photoshop's Remove tool, Generative Fill, and multi-stage batch cleanup with Retouch4me — the exact post-production pipeline for commercial work.",
+      "AI retouching in Photoshop, tested on real client volume: the Remove tool, Generative Fill, and Retouch4me batch pipelines — where AI is fast, where it fails.",
     tag: "Retouching",
     date: "August 2026",
     read: "12 min",
+    faq: [
+      {
+        q: "Can AI retouching replace manual retouching in Photoshop?",
+        a: "No — it replaces the repetitive 70%. AI cleanup tools handle sensor dust, stray fibers, and batch skin or surface smoothing well, but brand-critical work (label typography, specular geometry, product-specific texture) still needs a human retoucher making judgment calls.",
+      },
+      {
+        q: "What are the best AI retouching tools for product photography?",
+        a: "Photoshop's Remove tool and Generative Fill for object removal and context-aware fills, Retouch4me plugins for high-volume batch cleanup (dust, skin, cloth), and Topaz for detail recovery. Each earns its place only when output survives 100% zoom inspection.",
+      },
+      {
+        q: "Is AI retouching allowed for e-commerce product images?",
+        a: "Marketplaces allow cleanup of the product and background — dust, scratches, stray props. They prohibit misrepresentation: AI-generated textures that alter what the customer will physically receive can trigger returns and account-level complaints.",
+      },
+      {
+        q: "How do you keep AI retouching consistent across hundreds of images?",
+        a: "Lock the pipeline: identical tool settings per batch, calibrated monitors, a color-graded reference frame, and human QC on a random sample plus every hero frame. Consistency is a process problem, not a tool problem.",
+      },
+    ],
     cta: {
       text: "View commercial retouching in our portfolio",
       href: "/services/product-photography",
@@ -195,12 +255,30 @@ export const posts: BlogPost[] = [
   {
     slug: "ai-commercial-product-photography",
     title: "How AI is Changing Commercial Product Photography (And What It Cannot Replace)",
-    seoTitle: "How AI Is Changing Product Photography",
+    seoTitle: "Will AI Replace Product Photographers? Field Report",
     excerpt:
-      "Twelve months of AI tool integration in commercial shoots: what accelerates production and where physics still demands a studio.",
+      "Will AI replace product photographers? After 12 months of AI tools on live commercial shoots: what genuinely accelerates production, and where physics and brand accuracy still demand a studio.",
     tag: "AI & Photography",
     date: "August 2026",
     read: "10 min",
+    faq: [
+      {
+        q: "Can AI generate product photos instead of a photoshoot?",
+        a: "AI image generators approximate a product from a prompt — they do not photograph your actual SKU. Packaging typography drifts, pump shapes change, stitching patterns invent themselves. For e-commerce and advertising, where the image must match the physical product, real photography remains mandatory.",
+      },
+      {
+        q: "What parts of commercial photography has AI actually accelerated?",
+        a: "Post-production cleanup, batch masking, background generation for secondary lifestyle imagery, and video repurposing. In our studio these cut turnaround measurably — while capture, lighting, and art direction remain unchanged.",
+      },
+      {
+        q: "Is AI-generated imagery legally safe for advertising?",
+        a: "It depends on the tool's training data and licensing terms. Commercially safe models (like Adobe Firefly) exist, but brands still carry the risk of similarity to existing products or trademarks. Photographing the real product eliminates that legal exposure entirely.",
+      },
+      {
+        q: "What is the best hybrid workflow for brands right now?",
+        a: "Shoot the real product for hero and catalog accuracy; use AI for scene variation, backgrounds, and fast social-format derivatives — always composited under the same light physics as the original capture.",
+      },
+    ],
     cta: {
       text: "Partner with a dedicated commercial photographer",
       href: "/dehradun",
@@ -238,12 +316,30 @@ export const posts: BlogPost[] = [
   {
     slug: "why-beverage-splash-photography-is-hard",
     title: "Why Beverage Splash Photography is Harder Than It Looks: High-Speed Physics & Technique",
-    seoTitle: "Beverage Splash Photography: Physics & Technique",
+    seoTitle: "Beverage Splash Photography: The Physics Explained",
     excerpt:
-      "High-speed flash duration (t0.1), fluid viscosity, trigger delay, and hundreds of frames for one hero crown — the engineering of commercial liquid action.",
+      "Beverage splash photography is high-speed engineering: flash duration at t0.1, fluid viscosity, trigger delay, and hundreds of frames for one hero crown. The physics, explained.",
     tag: "Behind the scenes",
     date: "June 2026",
     read: "8 min",
+    faq: [
+      {
+        q: "What flash duration do you need to freeze a beverage splash?",
+        a: "To freeze droplets razor-sharp, the strobe's flash duration at t0.1 must be around 1/4000s or faster — speedlights and cheap monolights are too slow once power drops. The flash, not the shutter, freezes the action in high-speed work.",
+      },
+      {
+        q: "How many attempts does one splash shot take?",
+        a: "Expect hundreds of frames to land one hero crown: viscosity, temperature, drop height, and timing all drift between throws. Studios dial in the rig with test throws, then trigger repeatedly until geometry, light, and splash shape align in a single frame.",
+      },
+      {
+        q: "Can you fake a splash with stock photos or AI instead?",
+        a: "Stock splashes never match your bottle, label angle, or liquid color, and AI-generated splashes invent fluid physics real liquid cannot obey. For campaign work where the bottle is the hero, a real high-speed capture is the only honest option.",
+      },
+      {
+        q: "What camera settings are used for splash photography?",
+        a: "The studio is darkened so the only light is the high-speed strobe: ISO 100–200, aperture around f/8–f/11 for depth on the bottle, shutter effectively irrelevant (typically 1/200s sync speed) because the flash duration does the freezing.",
+      },
+    ],
     cta: {
       text: "See beverage & food photography in our portfolio",
       href: "/services/food-beverage-photography",
@@ -288,12 +384,30 @@ export const posts: BlogPost[] = [
   {
     slug: "lighting-patterns-for-product-photography",
     title: "Essential Studio Lighting Patterns for Commercial Product Photography",
-    seoTitle: "Studio Lighting Patterns for Product Photography",
+    seoTitle: "Lighting Patterns in Product Photography: 4 Patterns",
     excerpt:
-      "Key lights, rim highlights, gradient scrims, and negative fill — how to sculpt form, control specular reflections, and create editorial depth for packshots.",
+      "Lighting patterns in product photography: the four studio patterns — key direction, rim separation, gradient scrims, and negative fill — that sculpt form and control specular reflections.",
     tag: "Technique",
     date: "May 2026",
     read: "7 min",
+    faq: [
+      {
+        q: "What are the main lighting patterns in product photography?",
+        a: "Four patterns do most commercial work: a directional key light at 30–45° for form, a rim or edge light for subject-background separation, gradient lighting through scrims for smooth falloff on reflective surfaces, and negative fill (black flags) to deepen shadow sides and add contrast.",
+      },
+      {
+        q: "What is the difference between a lighting pattern and a lighting setup?",
+        a: "A pattern is the single relationship between one light and the product — direction, size, hardness. A setup is the complete recipe combining several patterns plus modifiers and camera position. This guide covers patterns; our [complete lighting setup guide](/blog/product-photography-lighting-setup) assembles them into full scenes.",
+      },
+      {
+        q: "Which lighting pattern works best for glossy products?",
+        a: "Glossy products are lit by their reflections, so the pattern that matters is the shape of the light itself: large, diffused sources (strip boxes, scrim gradations) create clean elongated highlights that describe the form, while small hard sources produce distracting hot spots.",
+      },
+      {
+        q: "What does negative fill do in product photography?",
+        a: "Negative fill — black cards or flags placed opposite the key — absorbs stray bounce and deepens the shadow side. It turns a flat, grey shadowed face into a rich gradient, which is what gives packshots their dimensional, premium look.",
+      },
+    ],
     cta: {
       text: "Book a professional studio product shoot",
       href: "/services/product-photography",
@@ -334,10 +448,28 @@ export const posts: BlogPost[] = [
     title: "Footwear Photography Angles That Convert: The E-Commerce Catalog & Campaign Guide",
     seoTitle: "Footwear Photography Angles That Convert",
     excerpt:
-      "From the three-quarter hero and medial profile to tread macro details — the angle sequence that communicates build quality and drives conversions.",
+      "Footwear photography angles that convert: the complete e-commerce sequence — three-quarter hero, medial profile, heel counter, tread macro — that lifts conversions and cuts returns.",
     tag: "Technique",
     date: "April 2026",
     read: "8 min",
+    faq: [
+      {
+        q: "How many angles should a shoe listing have?",
+        a: "Six to eight images cover the buyer's questions: three-quarter hero, lateral (outer) profile, medial (inner) profile, top-down, heel counter, sole or tread macro, plus a size-scale shot and a lifestyle frame. Listings with complete angle coverage consistently show higher conversion and lower returns.",
+      },
+      {
+        q: "What is the three-quarter hero angle in shoe photography?",
+        a: "The shoe rotated roughly 30–45° from front-on with the camera slightly elevated — it shows the toe box, side profile, lacing, and collar depth in one frame. It is the standard first image for e-commerce footwear because it answers the most buyer questions at a glance.",
+      },
+      {
+        q: "Do marketplaces have specific footwear image requirements?",
+        a: "Amazon requires a pure white main image with the product filling ~85% of the frame and supports alternate-angle and SWATCH views; Flipkart expects ≥1000×1000px; Myntra favors 3:4 portrait crops. Consistent scale and rotation across the catalog matter as much as the angles themselves.",
+      },
+      {
+        q: "Should shoes be photographed flat, on a mannequin, or on-foot?",
+        a: "All three, for different jobs: ghost-mannequin or shaped-flat shots for clean catalog geometry, on-foot lifestyle for fit and context, and macros for material truth. The catalog sequence stays standardized; lifestyle images vary by campaign.",
+      },
+    ],
     cta: {
       text: "Explore footwear & fashion commercial photography",
       href: "/services/footwear-fashion-photography",
@@ -382,12 +514,30 @@ export const posts: BlogPost[] = [
   {
     slug: "ai-video-editing-tools-2026",
     title: "AI Video Editing for Commercial Campaigns: Production Tools That Actually Work",
-    seoTitle: "AI Video Editing for Brand Campaigns",
+    seoTitle: "AI Video Editing Tools for Brand Campaigns (2026)",
     excerpt:
-      "A field review of AI video tools for commercial brand content — from Runway Gen-3 and Premiere Pro to DaVinci Resolve. Production hours versus marketing hype.",
+      "AI video editing tools reviewed on live commercial campaigns: Runway, Premiere Pro AI, and DaVinci Resolve — measured in production hours saved, not marketing hype.",
     tag: "AI & Video",
     date: "July 2026",
     read: "9 min",
+    faq: [
+      {
+        q: "Which AI video editing tools are actually worth using for brand content?",
+        a: "For commercial work, three categories earn their keep: AI-assisted NLEs (Premiere Pro's text-based editing and scene detection), DaVinci Resolve's neural color matching, and generative tools (Runway) for b-roll ideation. Everything else is mostly demo-reel magic that fails on brand-accurate footage.",
+      },
+      {
+        q: "Can AI video tools replace a human editor for commercial campaigns?",
+        a: "No. AI accelerates mechanical stages — transcription, cut detection, rough color match — but hook selection, pacing to a brand's voice, and platform-specific cutdown judgment remain human. The winning workflow is AI-assisted, editor-approved.",
+      },
+      {
+        q: "What is the fastest way to repurpose a brand film into social reels?",
+        a: "Scene edit detection to split the master into segments, AI transcription to find spoken hooks, then template-driven reformatting to 9:16 with safe zones. A 60-second film becomes 15-second cutdowns in a fraction of the manual scrubbing time.",
+      },
+      {
+        q: "Do AI video tools help with multi-format delivery (9:16, 16:9, 1:1)?",
+        a: "Yes — auto-reframing tracks the subject across aspect ratios, but it needs review: product logos, packshots, and text overlays routinely get cropped out. Auto-reframe first, manual fix on every hero frame.",
+      },
+    ],
     cta: {
       text: "Plan a brand content & video shoot",
       href: "/services/commercial-campaigns",
@@ -424,12 +574,30 @@ export const posts: BlogPost[] = [
   {
     slug: "ai-color-grading-scene-detection",
     title: "AI Color Grading and Scene Detection: Automating Post-Production Consistency",
-    seoTitle: "AI Color Grading & Scene Detection",
+    seoTitle: "AI Color Grading: Multi-Camera Consistency Guide",
     excerpt:
-      "How neural color matching in DaVinci Resolve and automated scene edit detection in Premiere Pro speed up multi-camera delivery for commercial video campaigns.",
+      "AI color grading for commercial video: how DaVinci Resolve's neural color match and Premiere's scene edit detection keep multi-camera campaigns consistent at delivery speed.",
     tag: "AI & Video",
     date: "April 2026",
     read: "8 min",
+    faq: [
+      {
+        q: "What is AI color matching in video editing?",
+        a: "The editor samples a reference frame — usually the hero shot graded by the colorist — and the neural engine matches exposure, white balance, and contrast of every other clip to it by comparing tonal histograms and spectral distributions. One click delivers an ~80% baseline.",
+      },
+      {
+        q: "Is AI color grading accurate enough to replace a colorist?",
+        a: "For mechanical consistency across multi-camera footage, yes. For creative intent — brand palettes, skin tone craft, scene mood — no. Professional pipelines use AI for the baseline pass and a colorist for the final 20% that defines the look.",
+      },
+      {
+        q: "What is scene edit detection and why does it matter?",
+        a: "AI analyzes the timeline and marks every cut automatically. When repurposing a 60-second brand film into 15-second social cutdowns, this removes hours of manual scrubbing and lets editors start re-sequencing hooks immediately.",
+      },
+      {
+        q: "How do you keep colors consistent between an FX3 and a drone camera?",
+        a: "Shoot both to log profiles where possible, set a common white-balance reference on set, then run a neural color match against a shared reference frame — product shots with known neutrals (a grey card or the packaging itself) make the strongest targets.",
+      },
+    ],
     cta: {
       text: "View our commercial video & photo portfolio",
       href: "/gallery",
@@ -460,12 +628,30 @@ export const posts: BlogPost[] = [
   {
     slug: "beverage-photography-glass",
     title: "Photographing Glass, Bottles & Liquids: Reflection Control and Backlighting",
-    seoTitle: "Photographing Glass, Bottles & Liquids",
+    seoTitle: "How to Photograph Glass Bottles: Reflection Control",
     excerpt:
-      "Controlling specular reflections, building translucent backlights, and crafting custom condensation formulas for premium beverage and spirits photography.",
+      "How to photograph glass bottles: kill blown-out reflections with strip-box contour lines, backlight transparent liquids for glow, and build safe fake condensation.",
     tag: "Technique",
     date: "March 2026",
     read: "8 min",
+    faq: [
+      {
+        q: "Why is glass so hard to photograph?",
+        a: "Glass is transparent and reflective at the same time: it is defined not by its surface but by what passes through it and what it reflects. A strobe aimed straight at a bottle creates a blown-out hot spot that hides the label — glass must be lit indirectly, through its reflections and edges.",
+      },
+      {
+        q: "How do you light a glass bottle without glare on the label?",
+        a: "Use two vertical strip boxes behind and beside the bottle to draw clean white contour lines along its edges, backlight the liquid through a diffuser for glow, and place black flags in front of the camera to absorb stray room reflections. The camera never sees a bare light source.",
+      },
+      {
+        q: "How do you make bottles look cold with condensation?",
+        a: "Real condensation melts and slides within minutes. Studios use a glycerin-and-water mixture (sometimes with a whisper of acrylic varnish) spritzed in fine droplets — it holds its beading shape for the entire shoot while reading as genuine chill in the frame.",
+      },
+      {
+        q: "Should you photograph glass on a white or black background?",
+        a: "Both define glass by its edges: dark backgrounds need light edges (bright contour lines from strip boxes), white backgrounds need dark edges (black flags shaping the silhouette). The choice is a branding decision — dark for premium spirits, white for clean FMCG catalog work.",
+      },
+    ],
     cta: {
       text: "Book a commercial beverage or food shoot",
       href: "/services/food-beverage-photography",
@@ -502,12 +688,30 @@ export const posts: BlogPost[] = [
   {
     slug: "ai-upscaling-ecommerce",
     title: "AI Upscaling for E-Commerce: When Neural Resampling Helps and When It Kills Trust",
-    seoTitle: "AI Upscaling for E-Commerce",
+    seoTitle: "AI Upscaling for E-Commerce: When It Helps",
     excerpt:
-      "Comparing Topaz Gigapixel, Magnific AI, and optical resolution — understanding marketplace compliance, texture hallucinations, and catalog zoom standards.",
+      "AI upscaling for e-commerce product images: when Topaz Gigapixel safely rescues legacy assets, when Magnific hallucinates textures that kill trust, and the zoom standards that matter.",
     tag: "AI & Photography",
     date: "March 2026",
     read: "8 min",
+    faq: [
+      {
+        q: "Can I upscale photos to meet Amazon's image requirements?",
+        a: "Deterministic upscalers like Topaz Gigapixel can take a clean 1000px capture to the 1600px+ zoom standard acceptably. But marketplace minimums are floors, not targets — an upscaled image still loses to a natively high-resolution capture under deep zoom, which is where buyers inspect texture.",
+      },
+      {
+        q: "Does AI upscaling reduce image quality?",
+        a: "Deterministic upscaling (Topaz) preserves real detail and cleans compression artifacts at 2x. Generative upscalers (Magnific) synthesize new micro-textures that may not match the physical product — on knits, creams, or leather, that mismatch reads as false advertising and drives returns.",
+      },
+      {
+        q: "What resolution do e-commerce platforms actually need?",
+        a: "Amazon wants at least 1000px on the longest side (1600px+ enables zoom), Flipkart 1000×1000px+, and Shopify recommends 2048×2048px for square product images. Shoot at high native resolution and crop down — never the reverse.",
+      },
+      {
+        q: "What should AI upscaling be used for?",
+        a: "Emergency rescue of legacy assets that cannot be re-shot — discontinued SKUs, archived campaigns. As a primary production strategy it is a false economy: one reshoot beats a catalog of softened, hallucination-prone images.",
+      },
+    ],
     cta: {
       text: "Get crisp, native high-resolution commercial images",
       href: "/services/product-photography",
@@ -535,12 +739,30 @@ export const posts: BlogPost[] = [
   {
     slug: "color-science-ecommerce",
     title: "Color Accuracy & Science for E-Commerce Photography: Preventing Catalog Return Rates",
-    seoTitle: "Color Accuracy for E-Commerce",
+    seoTitle: "Color Accuracy in E-Commerce: Cut Returns",
     excerpt:
-      "ColorChecker calibration and display profile management: the quality control pipeline that keeps product colors true to life.",
+      "Color accuracy for e-commerce: the ColorChecker-to-sRGB pipeline that keeps product colors true to life, protects brand trust, and cuts catalog return rates.",
     tag: "Guides",
     date: "March 2026",
     read: "8 min",
+    faq: [
+      {
+        q: "Why do product colors look different online than in person?",
+        a: "Three culprits: uncalibrated capture lighting (mixed color temperatures), no camera color profile, and web files exported without an embedded sRGB ICC profile. Each step drifts color until the customer receives a dress that is brown instead of terracotta.",
+      },
+      {
+        q: "What is a ColorChecker and why do studios use one?",
+        a: "A 24-patch calibrated chart (X-Rite/Calibrite) shot under the exact key lighting of every setup. Sampling its neutral patches in post generates a bespoke camera profile that removes sensor color bias — one test frame locks white balance for the entire product batch.",
+      },
+      {
+        q: "Should e-commerce images be sRGB or Adobe RGB?",
+        a: "sRGB, always, for web deliverables — with the ICC profile embedded. Editing masters stay in wide-gamut ProPhoto or Adobe RGB, but browsers and mobile screens assume sRGB; untagged files render oversaturated or washed out depending on the browser's guess.",
+      },
+      {
+        q: "How does color accuracy reduce e-commerce returns?",
+        a: "Color mismatch is a leading return driver in fashion, beauty, and home decor. When the image matches the physical product, the customer receives what they expected — eliminating the 'it looked different online' return category entirely.",
+      },
+    ],
     cta: {
       text: "Ensure true-to-life product catalog photography",
       href: "/services",
@@ -689,6 +911,19 @@ export default async function BlogPostPage({
   const post = posts.find((p) => p.slug === slug);
   if (!post) notFound();
 
+  // FAQPage JSON-LD — only when the post declares FAQ content.
+  const faqPageSchema = post.faq?.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: post.faq.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      }
+    : null;
+
   const postSchema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -718,8 +953,10 @@ export default async function BlogPostPage({
       generateBlogPostSchema(
         post,
         postISO[slug],
-        absoluteUrl(siteConfig.ogImagePath)
+        absoluteUrl(siteConfig.ogImagePath),
+        postModified[slug]
       ),
+      ...(faqPageSchema ? [faqPageSchema] : []),
     ],
   };
 
@@ -799,6 +1036,25 @@ export default async function BlogPostPage({
               )
             )}
           </div>
+
+          {/* ===== FAQ — People-Also-Ask targeting, feeds FAQPage JSON-LD ===== */}
+          {post.faq && post.faq.length > 0 && (
+            <div className="mt-16 pt-10 border-t border-white/10">
+              <h2 className="text-xs uppercase tracking-widest text-white/40">
+                Frequently asked questions
+              </h2>
+              <div className="mt-6 space-y-8">
+                {post.faq.map((item) => (
+                  <div key={item.q}>
+                    <h3 className="font-serif text-lg text-white leading-snug">
+                      {item.q}
+                    </h3>
+                    <p className="t-body mt-2">{renderFormattedText(item.a)}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* ===== ABOUT THE AUTHOR ===== */}
           <div className="mt-16 pt-10 border-t border-white/10">

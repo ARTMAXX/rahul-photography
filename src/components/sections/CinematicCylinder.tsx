@@ -575,7 +575,7 @@ export default function CinematicCylinder() {
       style={{ height: "500svh" }}
     >
       <div className="sticky top-0 h-svh w-full overflow-hidden">
-        {/* "¢½"¢½"¢½"¢½"¢½"¢½ Ambient radial glow  —  matches the Services section "¢½"¢½"¢½"¢½"¢½"¢½ */}
+        {/* ✓✓✓✓✓✓ Ambient radial glow  —  matches the Services section ✓✓✓✓✓✓ */}
         <div
           aria-hidden="true"
           className="absolute top-1/4 right-0 w-[1200px] h-[1200px] rounded-full opacity-10 blur-3xl pointer-events-none"

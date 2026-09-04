@@ -8,10 +8,9 @@ import TheCraft from "@/components/sections/redesign/TheCraft";
 import Testimonials from "@/components/sections/redesign/Testimonials";
 import CinematicCTA from "@/components/sections/redesign/CinematicCTA";
 import { siteConfig, absoluteUrl } from "@/lib/site";
-import { 
-  generateBreadcrumbSchema, 
-  generateReviewSchema,
-  generateWebsiteGraphSchema 
+import {
+  generateBreadcrumbSchema,
+  generateWebsiteGraphSchema
 } from "@/lib/schemas";
 
 // Dynamic imports for below-the-fold heavy components (reduces initial JS bundle)

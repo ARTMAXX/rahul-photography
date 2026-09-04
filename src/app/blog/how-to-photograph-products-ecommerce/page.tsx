@@ -69,11 +69,6 @@ const ecommerceSchema = {
       "image": absoluteUrl("/opt/og-image.jpg"),
       "datePublished": "2026-08-22",
       "dateModified": "2026-08-22",
-      "author": {
-        "@type": "Person",
-        "name": "Rahul Chanda",
-        "url": absoluteUrl("/about"),
-      },
       "publisher": {
         "@type": "Organization",
         "name": "Rahul Chanda Photography",
@@ -86,6 +81,16 @@ const ecommerceSchema = {
         "image": absoluteUrl("/opt/about-photo/rahul-chanda-portrait.webp"),
       },
     },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How do I photograph products for e-commerce at home?", "acceptedAnswer": { "@type": "Answer", "text": "One window with diffusion, a white sweep or large white card, and your phone on a tripod will beat most DIY attempts. Lock exposure and white balance, keep the product filling about 85% of the frame, and shoot every SKU from the same height and distance." } },
+        { "@type": "Question", "name": "What is the best lighting setup for product photos?", "acceptedAnswer": { "@type": "Answer", "text": "One large, diffused key light at roughly 45 degrees, a white bounce card opposite for shadow fill, and — if the surface is reflective — a second small light for a rim edge. Avoid mixing daylight with tungsten room light; mixed color temperature is the #1 DIY mistake." } },
+        { "@type": "Question", "name": "What size and format should e-commerce product images be?", "acceptedAnswer": { "@type": "Answer", "text": "Amazon: at least 1600px on the longest edge for zoom, pure white main image, JPEG under 10MB. Flipkart: 1000x1000px minimum. Shopify/DTC: 2048x2048px square, WebP or JPEG optimized to 100-200KB for fast mobile loads." } },
+        { "@type": "Question", "name": "Should a small brand DIY product photos or hire a professional?", "acceptedAnswer": { "@type": "Answer", "text": "DIY works for early validation with this guide's process. Hire a professional when you hit marketplace scale, need consistent catalogs of 20+ SKUs, or the product's premium perception depends on image quality — the conversion and return-rate math usually pays for the shoot." } },
+      ],
+    },
+
   ],
 };
 
@@ -290,6 +295,29 @@ export default function EcommercePhotographyBlog() {
                 <li>— Mobile-friendly aspect ratio</li>
                 <li>— Alternative backgrounds acceptable</li>
               </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ — People-Also-Ask targeting */}
+        <section className="mb-16">
+          <h2 className="h-section mt-16 mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-8">
+            <div>
+              <h3 className="font-serif text-lg text-white leading-snug">How do I photograph products for e-commerce at home?</h3>
+              <p className="t-body mt-2">One window with diffusion, a white sweep or large white card, and your phone on a tripod will beat most DIY attempts. Lock exposure and white balance, keep the product filling about 85% of the frame, and shoot every SKU from the same height and distance.</p>
+            </div>
+            <div>
+              <h3 className="font-serif text-lg text-white leading-snug">What is the best lighting setup for product photos?</h3>
+              <p className="t-body mt-2">One large, diffused key light at roughly 45 degrees, a white bounce card opposite for shadow fill, and — if the surface is reflective — a second small light for a rim edge. Avoid mixing daylight with tungsten room light; mixed color temperature is the #1 DIY mistake.</p>
+            </div>
+            <div>
+              <h3 className="font-serif text-lg text-white leading-snug">What size and format should e-commerce product images be?</h3>
+              <p className="t-body mt-2">Amazon: at least 1600px on the longest edge for zoom, pure white main image, JPEG under 10MB. Flipkart: 1000x1000px minimum. Shopify/DTC: 2048x2048px square, WebP or JPEG optimized to 100-200KB for fast mobile loads.</p>
+            </div>
+            <div>
+              <h3 className="font-serif text-lg text-white leading-snug">Should a small brand DIY product photos or hire a professional?</h3>
+              <p className="t-body mt-2">DIY works for early validation with this guide's process. Hire a professional when you hit marketplace scale, need consistent catalogs of 20+ SKUs, or the product's premium perception depends on image quality — the conversion and return-rate math usually pays for the shoot.</p>
             </div>
           </div>
         </section>

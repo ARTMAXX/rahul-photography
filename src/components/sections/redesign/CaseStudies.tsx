@@ -3,9 +3,9 @@
 import { motion } from "motion/react";
 import Image from "next/image";
 
-/* Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½
-   CaseStudies  —  three flagship assignments, framed as challenge " ' work " ' result
-   Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½Ãƒ—Ã‚½ */
+/* ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+   CaseStudies  —  three flagship assignments, framed as challenge → work → result
+   ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓ */
 
 interface Study {
   src: string;
@@ -18,7 +18,7 @@ interface Study {
 const studies: Study[] = [
   {
     src: "/opt/best%20shots/Product%20image/product-watch-luxury.webp",
-    category: "Product Ã‚Â· Campaign",
+    category: "Product · Campaign",
     title: "Luxury Watch — Campaign Hero",
     brief:
       "A premium timepiece launching into a crowded market needed a hero image with the weight of the product itself. The brief: make metal look expensive, macro-level.",
@@ -27,7 +27,7 @@ const studies: Study[] = [
   },
   {
     src: "/opt/best%20shots/Food%20photo/food-biriyani.webp",
-    category: "Food & Beverage Ã‚Â· Menu",
+    category: "Food & Beverage · Menu",
     title: "Biriyani — Menu Hero",
     brief:
       "A restaurant refresh needed a menu image that made a 15-year-old dish look ordered-again. The ask was simple: texture you can almost smell.",
@@ -36,7 +36,7 @@ const studies: Study[] = [
   },
   {
     src: "/opt/best%20shots/mens%20shoe/shoe-mens-white.webp",
-    category: "Footwear Ã‚Â· Marketplace",
+    category: "Footwear · Marketplace",
     title: "White Sneaker — Clean Cutout",
     brief:
       "A D2C shoe label needed Amazon/Flipkart-ready assets: studio cutouts with flawless edges, consistent angle, and zero retouch-tell.",

@@ -67,11 +67,6 @@ const beverageSchema = {
       "image": absoluteUrl("/opt/og-image.jpg"),
       "datePublished": "2026-08-20",
       "dateModified": "2026-08-20",
-      "author": {
-        "@type": "Person",
-        "name": "Rahul Chanda",
-        "url": absoluteUrl("/about"),
-      },
       "publisher": {
         "@type": "Organization",
         "name": "Rahul Chanda Photography",
@@ -84,6 +79,16 @@ const beverageSchema = {
         "image": absoluteUrl("/opt/about-photo/rahul-chanda-portrait.webp"),
       },
     },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How do you photograph a beverage bottle professionally?", "acceptedAnswer": { "@type": "Answer", "text": "Glass is lit through its edges and reflections, never directly: strip boxes behind and beside the bottle draw clean contour lines, a diffused backlight passes through the liquid for color glow, and black flags in front of the camera absorb stray reflections." } },
+        { "@type": "Question", "name": "Are splash photographs a single shot or composited?", "acceptedAnswer": { "@type": "Answer", "text": "Most commercial splash images are multi-plate composites: a hero frame of the bottle perfectly lit, separate high-speed splash passes, and a post-production blend. It is the standard studio approach — a single capture rarely nails bottle, splash, and droplets at once." } },
+        { "@type": "Question", "name": "What is the fake condensation trick for beverage photography?", "acceptedAnswer": { "@type": "Answer", "text": "A glycerin-and-water mix spritzed in fine droplets holds beading shape for hours under hot studio lights, where real condensation melts in minutes. It reads as genuine chill in the final image and is standard practice in beverage advertising." } },
+        { "@type": "Question", "name": "What background works best for beverage photography?", "acceptedAnswer": { "@type": "Answer", "text": "Dark backgrounds with bright contour edges for premium spirits and luxury positioning; bright, fresh backgrounds with water droplets and fruit for juices and mixers. The lighting geometry changes with the choice — edges lit bright on dark, shaped dark on white." } },
+      ],
+    },
+
   ],
 };
 
@@ -108,9 +113,9 @@ export default function BeveragePhotographyBlog() {
           </p>
           <div className="flex gap-6 text-sm text-white/50">
             <span>August 20, 2026</span>
-            <span>' </span>
+            <span>&middot;</span>
             <span>15 min read</span>
-            <span>' </span>
+            <span>&middot;</span>
             <span>By Rahul Chanda</span>
           </div>
 
@@ -251,6 +256,29 @@ export default function BeveragePhotographyBlog() {
             <li>— <strong>Background cleanup:</strong> Remove unwanted reflections or dust</li>
             <li>— <strong>Bubble/foam enhancement:</strong> For carbonated beverages, enhance bubble detail</li>
           </ul>
+        </section>
+
+        {/* FAQ — People-Also-Ask targeting */}
+        <section className="mb-16">
+          <h2 className="h-section mt-16 mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-8">
+            <div>
+              <h3 className="font-serif text-lg text-white leading-snug">How do you photograph a beverage bottle professionally?</h3>
+              <p className="t-body mt-2">Glass is lit through its edges and reflections, never directly: strip boxes behind and beside the bottle draw clean contour lines, a diffused backlight passes through the liquid for color glow, and black flags in front of the camera absorb stray reflections.</p>
+            </div>
+            <div>
+              <h3 className="font-serif text-lg text-white leading-snug">Are splash photographs a single shot or composited?</h3>
+              <p className="t-body mt-2">Most commercial splash images are multi-plate composites: a hero frame of the bottle perfectly lit, separate high-speed splash passes, and a post-production blend. It is the standard studio approach — a single capture rarely nails bottle, splash, and droplets at once.</p>
+            </div>
+            <div>
+              <h3 className="font-serif text-lg text-white leading-snug">What is the fake condensation trick for beverage photography?</h3>
+              <p className="t-body mt-2">A glycerin-and-water mix spritzed in fine droplets holds beading shape for hours under hot studio lights, where real condensation melts in minutes. It reads as genuine chill in the final image and is standard practice in beverage advertising.</p>
+            </div>
+            <div>
+              <h3 className="font-serif text-lg text-white leading-snug">What background works best for beverage photography?</h3>
+              <p className="t-body mt-2">Dark backgrounds with bright contour edges for premium spirits and luxury positioning; bright, fresh backgrounds with water droplets and fruit for juices and mixers. The lighting geometry changes with the choice — edges lit bright on dark, shaped dark on white.</p>
+            </div>
+          </div>
         </section>
 
         {/* About the Author */}

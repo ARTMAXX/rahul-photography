@@ -10,7 +10,9 @@ export const siteConfig = {
   url: "https://rahulchandaphotography.com",
 
   name: "Rahul Chanda Photography",
-  title: "Rahul Chanda — Commercial Product Photographer | Dehradun, India",
+  // Default/fallback title (≤60 chars so Google never truncates it).
+  // Individual pages override this with their own metadata.
+  title: "Rahul Chanda — Product Photographer | Dehradun, India",
   description:
     "Commercial and product photographer in Dehradun, India. Product, food & beverage, footwear, and campaign photography shot and retouched in-house.",
 

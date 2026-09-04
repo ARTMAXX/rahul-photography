@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { siteConfig, absoluteUrl } from "../lib/site";
-import { postDates } from "../lib/blog-posts";
+import { postDates, postModified } from "../lib/blog-posts";
 
 // Standalone blog posts that have their own page.tsx — listed in the sitemap
 // with lastModified derived from their own page file, not from postDates
@@ -65,7 +65,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const standalonePosts: MetadataRoute.Sitemap = [...standaloneBlogSlugs].map(
     (slug) => ({
       url: absoluteUrl(`/blog/${slug}`),
-      lastModified: new Date(postDates[slug]),
+      lastModified: new Date(postModified[slug] ?? postDates[slug]),
       changeFrequency: "weekly",
       priority: 0.7,
     })
@@ -75,7 +75,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .filter(([slug]) => !standaloneBlogSlugs.has(slug))
     .map(([slug, date]) => ({
       url: absoluteUrl(`/blog/${slug}`),
-      lastModified: new Date(date),
+      lastModified: new Date(postModified[slug] ?? date),
       changeFrequency: "weekly",
       priority: 0.7,
     }));

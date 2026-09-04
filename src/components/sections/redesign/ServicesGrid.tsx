@@ -155,7 +155,7 @@ export default function ServicesGrid() {
                     <div className="flex items-center gap-2 text-xs text-[#e83b2c]/80 font-medium uppercase tracking-wide pt-4 border-t border-white/5">
                       Explore service
                       <span className="transition-transform duration-300 group-hover:translate-x-1">
-                        â" '
+                        →
                       </span>
                     </div>
                   </div>

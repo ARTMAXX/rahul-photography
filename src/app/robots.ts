@@ -20,7 +20,10 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/api/", "/_next/"],
+      // Only /_next/data/ is blocked. Do NOT block /_next/ wholesale:
+      // that also blocks /_next/static (CSS/JS), which Googlebot needs
+      // to render the page and evaluate mobile-friendliness.
+      disallow: ["/api/", "/_next/data/"],
     },
     sitemap: absoluteUrl("sitemap.xml"),
     host: absoluteUrl("/"),

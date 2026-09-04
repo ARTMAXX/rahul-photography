@@ -69,11 +69,6 @@ const foodRestaurantSchema = {
       "image": absoluteUrl("/opt/og-image.jpg"),
       "datePublished": "2026-08-30",
       "dateModified": "2026-08-30",
-      "author": {
-        "@type": "Person",
-        "name": "Rahul Chanda",
-        "url": absoluteUrl("/about"),
-      },
       "publisher": {
         "@type": "Organization",
         "name": "Rahul Chanda Photography",
@@ -86,6 +81,16 @@ const foodRestaurantSchema = {
         "image": absoluteUrl("/opt/about-photo/rahul-chanda-portrait.webp"),
       },
     },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How much does restaurant food photography cost in India?", "acceptedAnswer": { "@type": "Answer", "text": "Menu shoots typically range from Rs 15,000 for a small cafe set to Rs 60,000+ for full multi-page menus with drinks. Many studios quote per dish for delivery-app packages, so you only pay for what you list." } },
+        { "@type": "Question", "name": "How do you photograph food for Zomato and Swiggy listings?", "acceptedAnswer": { "@type": "Answer", "text": "Delivery-app dishes need a clean, bright, consistent look: same plate family, a 45-degree or top-down angle, visible garnish and steam, and crops that survive mobile thumbnail size. Consistency across the menu reads as professionalism and lifts order rates." } },
+        { "@type": "Question", "name": "What equipment do you need for restaurant food photography?", "acceptedAnswer": { "@type": "Answer", "text": "A 50mm or macro lens, one large diffused light source (a window with a diffusion panel works), white and black bounce cards, and a tripod. The craft is in styling and timing — shooting within seconds of plating while steam and gloss are alive." } },
+        { "@type": "Question", "name": "How often should a restaurant update its food photos?", "acceptedAnswer": { "@type": "Answer", "text": "Whenever the menu changes, seasonally, or at minimum yearly. Listings and menus with fresh, professional photos consistently earn higher click-through and order rates than years-old smartphone images." } },
+      ],
+    },
+
   ],
 };
 
@@ -275,6 +280,29 @@ export default function FoodRestaurantPhotographyBlog() {
             <li>— <strong>Contrast:</strong> Increase contrast to make food details pop</li>
             <li>— <strong>Avoid:</strong> Don't over-process. Food should look real, not AI-generated</li>
           </ul>
+        </section>
+
+        {/* FAQ — People-Also-Ask targeting */}
+        <section className="mb-16">
+          <h2 className="h-section mt-16 mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-8">
+            <div>
+              <h3 className="font-serif text-lg text-white leading-snug">How much does restaurant food photography cost in India?</h3>
+              <p className="t-body mt-2">Menu shoots typically range from Rs 15,000 for a small cafe set to Rs 60,000+ for full multi-page menus with drinks. Many studios quote per dish for delivery-app packages, so you only pay for what you list.</p>
+            </div>
+            <div>
+              <h3 className="font-serif text-lg text-white leading-snug">How do you photograph food for Zomato and Swiggy listings?</h3>
+              <p className="t-body mt-2">Delivery-app dishes need a clean, bright, consistent look: same plate family, a 45-degree or top-down angle, visible garnish and steam, and crops that survive mobile thumbnail size. Consistency across the menu reads as professionalism and lifts order rates.</p>
+            </div>
+            <div>
+              <h3 className="font-serif text-lg text-white leading-snug">What equipment do you need for restaurant food photography?</h3>
+              <p className="t-body mt-2">A 50mm or macro lens, one large diffused light source (a window with a diffusion panel works), white and black bounce cards, and a tripod. The craft is in styling and timing — shooting within seconds of plating while steam and gloss are alive.</p>
+            </div>
+            <div>
+              <h3 className="font-serif text-lg text-white leading-snug">How often should a restaurant update its food photos?</h3>
+              <p className="t-body mt-2">Whenever the menu changes, seasonally, or at minimum yearly. Listings and menus with fresh, professional photos consistently earn higher click-through and order rates than years-old smartphone images.</p>
+            </div>
+          </div>
         </section>
 
         {/* About the Author */}

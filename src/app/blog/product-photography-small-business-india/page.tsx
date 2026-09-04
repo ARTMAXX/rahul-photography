@@ -69,11 +69,6 @@ const smallBusinessSchema = {
       "image": absoluteUrl("/opt/og-image.jpg"),
       "datePublished": "2026-08-28",
       "dateModified": "2026-08-28",
-      "author": {
-        "@type": "Person",
-        "name": "Rahul Chanda",
-        "url": absoluteUrl("/about"),
-      },
       "publisher": {
         "@type": "Organization",
         "name": "Rahul Chanda Photography",
@@ -86,6 +81,16 @@ const smallBusinessSchema = {
         "image": absoluteUrl("/opt/about-photo/rahul-chanda-portrait.webp"),
       },
     },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How much does product photography cost for a small business in India?", "acceptedAnswer": { "@type": "Answer", "text": "A basic 20-SKU catalog typically starts around Rs 20,000, with larger catalogs and campaign work quoted per project. Regional studios (Dehradun, Jaipur, Indore) usually price 30-50% below Delhi or Bangalore for equivalent quality." } },
+        { "@type": "Question", "name": "Is professional product photography worth it for a small brand?", "acceptedAnswer": { "@type": "Answer", "text": "If you sell online, your photos are the entire store experience. Better images lift conversion, reduce 'looks different in person' returns, and can be reused across the website, marketplaces, social, and ads — one shoot feeds every channel." } },
+        { "@type": "Question", "name": "Can I photograph my products myself with a phone?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, for early-stage testing: a window, white sweep, and tripod get you usable images. The limits show at scale — color consistency across SKUs, reflective surfaces, and marketplace zoom standards are where professional studios earn their fee." } },
+        { "@type": "Question", "name": "How many photos do I need per product?", "acceptedAnswer": { "@type": "Answer", "text": "Six to eight: hero, both profiles, top-down, detail macro, scale reference, and one lifestyle frame. Complete angle coverage is directly linked to higher conversion and lower return rates in e-commerce data." } },
+      ],
+    },
+
   ],
 };
 
@@ -411,6 +416,29 @@ export default function SmallBusinessPhotographyBlog() {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* FAQ — People-Also-Ask targeting */}
+        <section className="mb-16">
+          <h2 className="h-section mt-16 mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-8">
+            <div>
+              <h3 className="font-serif text-lg text-white leading-snug">How much does product photography cost for a small business in India?</h3>
+              <p className="t-body mt-2">A basic 20-SKU catalog typically starts around Rs 20,000, with larger catalogs and campaign work quoted per project. Regional studios (Dehradun, Jaipur, Indore) usually price 30-50% below Delhi or Bangalore for equivalent quality.</p>
+            </div>
+            <div>
+              <h3 className="font-serif text-lg text-white leading-snug">Is professional product photography worth it for a small brand?</h3>
+              <p className="t-body mt-2">If you sell online, your photos are the entire store experience. Better images lift conversion, reduce 'looks different in person' returns, and can be reused across the website, marketplaces, social, and ads — one shoot feeds every channel.</p>
+            </div>
+            <div>
+              <h3 className="font-serif text-lg text-white leading-snug">Can I photograph my products myself with a phone?</h3>
+              <p className="t-body mt-2">Yes, for early-stage testing: a window, white sweep, and tripod get you usable images. The limits show at scale — color consistency across SKUs, reflective surfaces, and marketplace zoom standards are where professional studios earn their fee.</p>
+            </div>
+            <div>
+              <h3 className="font-serif text-lg text-white leading-snug">How many photos do I need per product?</h3>
+              <p className="t-body mt-2">Six to eight: hero, both profiles, top-down, detail macro, scale reference, and one lifestyle frame. Complete angle coverage is directly linked to higher conversion and lower return rates in e-commerce data.</p>
+            </div>
           </div>
         </section>
 

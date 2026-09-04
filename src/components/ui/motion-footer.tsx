@@ -245,7 +245,7 @@ const STYLES = `
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* #8a8a8a "°Ë† 5.3:1 on black  —  WCAG AA for small legal text */
+  /* #8a8a8a → 5.3:1 on black  —  WCAG AA for small legal text */
   color: #8a8a8a;
   font-size: 11.5px;
   opacity: 0;
