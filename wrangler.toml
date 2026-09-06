@@ -15,5 +15,16 @@ INDEXNOW_KEY = "6c8c1d3d2971605e76e178410078f24f"
 directory = ".open-next/assets"
 binding = "ASSETS"
 
+# Cloudflare Images binding — enables real image resizing in the
+# /_next/image handler. Without it, OpenNext's image handler silently
+# returns ORIGINAL full-size images for every ?w= variant (verified
+# 2026-09-06: ?w=256 and ?w=750 responses were byte-identical to the
+# source files), which wastes ~479 KiB per homepage load. With this
+# binding, Next's responsive srcset actually serves resized variants.
+# NOTE: requires Image transformations to be enabled for the zone
+# (verified working: /cdn-cgi/image/width=256/... returned a resized file).
+[images]
+binding = "IMAGES"
+
 # Keep unbound routes config empty — custom domains are configured in the
 # Cloudflare dashboard (rahulchandaphotography.com + www) and persist across deploys.

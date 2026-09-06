@@ -117,16 +117,13 @@ export default function RootLayout({
         {/* Unified typography system — loaded as a side-channel stylesheet
             so Tailwind v4's PostCSS pipeline doesn't purge the rules. */}
         <link rel="stylesheet" href="/css/typography.css" media="screen" />
-        {/* Preload hero assets for LCP. Mobile uses the lightweight static
-            hero-mobile.webp (the actual LCP element); desktop preloads the
-            video poster. Media queries keep each device from fetching both. */}
-        <link
-          rel="preload"
-          href="/opt/hero-mobile.webp"
-          as="image"
-          fetchPriority="high"
-          media="(max-width: 767px)"
-        />
+        {/* Preload hero assets for LCP. Desktop preloads the video poster
+            (matches the actual poster= attribute used by LazyVideo).
+            Mobile: the priority hero <Image> in Hero.tsx already emits a
+            fetchpriority=high srcset preload for its /_next/image variant —
+            a manual raw-file preload here would fetch /opt/hero-mobile.webp
+            (the 900px original) which the LCP element never uses, stealing
+            high-priority bandwidth from the real LCP resource on slow 4G. */}
         <link
           rel="preload"
           href="/opt/hero-shots/hero-video-poster.webp"
@@ -165,19 +162,22 @@ export default function RootLayout({
         </PageShell>
         {/* Google Analytics 4 — page views + client-side route changes */}
         <GoogleAnalytics />
-        {/* Microsoft Clarity — heatmaps and session recording */}
-        <Script strategy="afterInteractive">{`
+        {/* Microsoft Clarity — heatmaps and session recording.
+            lazyOnload: loads during idle time after window.load so the
+            recording SDK never competes with the LCP image on the critical
+            path. Events queued before it loads are buffered and flushed. */}
+        <Script strategy="lazyOnload">{`
           (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
           })(window, document, "clarity", "script", "ya0waul2ro");
         `}</Script>
-        {/* Ahrefs Web Analytics */}
+        {/* Ahrefs Web Analytics — lazyOnload keeps it off the critical path */}
         <Script
           src="https://analytics.ahrefs.com/analytics.js"
           data-key="TiJZdymXtkHehsEBZqxbkg"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         {/* WebMCP — expose site tools to browser-based AI agents
             Ref: https://webmachinelearning.github.io/webmcp/ */}

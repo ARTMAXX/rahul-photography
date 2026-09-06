@@ -128,7 +128,11 @@ export default function MobileBentoGrid() {
               src={images[item.idx]}
               alt={`${LABELS[item.idx]}  —  commercial photography by Rahul Chanda`}
               fill
-              sizes="(max-width: 768px) 33vw"
+              sizes={
+                item.span.includes('col-span-2')
+                  ? '(max-width: 768px) 61vw'
+                  : '(max-width: 768px) 33vw'
+              }
               quality={72}
               className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
             />

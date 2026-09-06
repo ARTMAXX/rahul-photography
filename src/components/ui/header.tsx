@@ -93,7 +93,11 @@ function Header1() {
   const [isCylinderVisible, setIsCylinderVisible] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
+    // rAF-throttled: the raw handler read getBoundingClientRect() on every
+    // scroll event, forcing layout ("forced reflow" — ~78 ms in PSI trace).
+    let ticking = false;
+    const measure = () => {
+      ticking = false;
       const section = document.getElementById("design-in-motion");
       if (!section) return;
       const rect = section.getBoundingClientRect();
@@ -102,8 +106,13 @@ function Header1() {
       const inView = rect.top < window.innerHeight * 0.5 && rect.bottom > 0;
       setIsCylinderVisible(inView);
     };
+    const handleScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(measure);
+    };
 
-    handleScroll();
+    measure();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -216,6 +225,8 @@ function Header1() {
             variant="ghost"
             onClick={() => setOpen(!isOpen)}
             className="text-white hover:bg-white/10"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
           >
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </Button>

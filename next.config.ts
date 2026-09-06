@@ -118,15 +118,29 @@ const nextConfig: NextConfig = {
     root: process.cwd(),
   },
   images: {
+    // Cloudflare Images custom loader (image-loader.ts). Serves
+    // /cdn-cgi/image/... URLs that Cloudflare edge-caches automatically
+    // (Cache-Control: public, max-age=2592000). The default OpenNext
+    // /_next/image pipeline returns NO Cache-Control for string-path
+    // images and re-transforms on every request (~500 ms on the LCP hero).
+    // deviceSizes/imageSizes still generate the responsive srcset
+    // candidates; `sizes` still controls selection; priority images still
+    // get a fetchpriority=high preload. Widths/format behave as before.
+    // See opennext.js.org/cloudflare/howtos/image. (2026-09-06)
+    loader: "custom",
+    loaderFile: "./image-loader.ts",
     // Support up to 4K resolutions
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2560, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384, 512, 720, 1080, 1440, 1920, 2560],
     // Modern formats: AVIF first (best compression), WebP fallback.
+    // (Kept for the OpenNext /_next/image fallback handler; the custom
+    // loader negotiates format via format=auto + Vary: Accept.)
     formats: ['image/avif', 'image/webp'],
     // Cache optimized variants at the edge for 1 year.
+    // NOTE: not supported by the OpenNext image handler; harmless.
     minimumCacheTTL: 31536000,
     // Enable next/image responsive srcset generation.
-    // The /_next/image endpoint serves appropriately sized WebP/AVIF
+    // The image endpoint serves appropriately sized WebP/AVIF
     // variants to each device, preventing mobile from downloading
     // desktop-sized originals. unoptimized: true was bypassing this
     // entire pipeline (Apr 2026 — we have stable Cloudflare cache and
