@@ -25,8 +25,11 @@ import { siteConfig } from "@/lib/site";
  * deliveries are not re-billed). This site uses a few hundred per month.
  *
  * ⚠️ Cloudflare transformations require ABSOLUTE source URLs — relative
- * paths return 404 (verified live). encodeURI() percent-encodes spaces in
- * asset paths ("best shots") — literal spaces would break srcset parsing.
+ * paths return 404 (verified live). new URL().href produces a canonically
+ * single-encoded absolute URL (spaces in asset paths like "best shots" \
+ * become %20); do NOT encodeURI() it again — that re-encodes the % into
+ * %25 (%2520) and Cloudflare 404s on the path (regression caught live on
+ * the bento-grid + case-study images, 2026-09-06).
  */
 const normalizeSrc = (src: string) => (src.startsWith("/") ? src.slice(1) : src);
 
@@ -39,5 +42,5 @@ export default function cloudflareLoader({ src, width, quality }: ImageLoaderPro
   }
 
   const absolute = new URL(src, siteConfig.url).href;
-  return `/cdn-cgi/image/${params.join(",")}/${encodeURI(absolute)}`;
+  return `/cdn-cgi/image/${params.join(",")}/${absolute}`;
 }
