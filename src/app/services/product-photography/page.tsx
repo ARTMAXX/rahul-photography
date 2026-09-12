@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
@@ -16,7 +17,7 @@ const productFaqSchema = {
       name: "How much does product photography cost in India?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Product photography in India typically starts at ₹20,000 for a basic 20-SKU catalog. Larger catalog work (200+ SKUs) and marketplace-specific Amazon/Flipkart/Myntra-ready packs are quoted per project based on volume, styling, and deliverables.",
+        text: "Product photography in India starts at ₹10,000 for a compact product shoot. Full e-commerce catalogue work (20+ SKUs) starts at ₹25,000, and larger catalog runs (200+ SKUs) and marketplace-specific Amazon/Flipkart/Myntra-ready packs are quoted per project based on volume, styling, and deliverables.",
       },
     },
     {
@@ -185,28 +186,37 @@ export default function ProductPhotographyPage() {
         }}
       />
 
-      {/* Hero Section */}
-      <section className="relative w-full min-h-[70vh] flex flex-col justify-end px-4 md:px-12 pb-20 pt-40 overflow-hidden">
-        <div
-          className="absolute top-0 right-0 w-[800px] h-[800px] rounded-full opacity-15 blur-3xl pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(255,255,255,0.5) 0%, transparent 70%)",
-          }}
-        />
-        <div className="relative z-10 max-w-[1600px] mx-auto w-full">
-          <div className="inline-flex border border-[#e83b2c]/20 py-1 px-4 rounded-full text-xs text-[#e83b2c]/70 uppercase tracking-widest">
-            Product Photography
+      {/* Hero — full-bleed photo, text in the free space left of the subject */}
+      <section className="relative flex min-h-[92vh] w-full items-start justify-start overflow-hidden px-4 pb-16 pt-32 md:px-12 lg:min-h-[100svh] lg:items-center lg:pt-24">
+        <div className="absolute inset-0 pointer-events-none">
+          <Image
+            src="/best shots/eachHeropages/product-serum-services-product-photography.webp"
+            alt="Cosmetics serum bottle studio shot — commercial product photography by Rahul Chanda, Dehradun"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[72%_50%]"
+          />
+          {/* Mobile: top scrim. Desktop: left-side scrim behind text only — bottle stays clean */}
+          <div className="absolute inset-x-0 top-0 h-[62%] bg-gradient-to-b from-[#070707]/85 via-[#070707]/40 to-transparent lg:hidden" />
+          <div className="absolute inset-y-0 left-0 hidden w-[58%] bg-gradient-to-r from-[#070707]/90 via-[#070707]/55 to-transparent lg:block" />
+          <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#070707]/70 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#070707] to-transparent" />
+        </div>
+        <div className="relative z-10 mx-auto w-full max-w-[1600px]">
+          <div className="max-w-[36rem] text-left">
+            <div className="inline-flex border border-[#e83b2c]/20 py-1 px-4 rounded-full text-xs text-[#e83b2c]/70 uppercase tracking-widest">
+              Product Photography
+            </div>
+            <h1 className="text-[clamp(2.4rem,5vw,4.5rem)] font-serif leading-[0.95] tracking-[-0.03em] text-white mt-5 max-w-[12ch] text-balance">
+              Product Photography
+              <br />
+              for <span className="italic text-[#e83b2c]">e-commerce</span> &amp; brands.
+            </h1>
+            <p className="text-base md:text-lg text-white/60 max-w-[52ch] mt-5 leading-relaxed text-balance">
+              High-end commercial product photography that makes your products worth choosing. From packshots to luxury product detail work — e-commerce-ready and campaign-grade imagery.
+            </p>
           </div>
-          <h1 className="text-[clamp(3rem,10vw,8rem)] font-serif leading-[0.85] tracking-[-0.03em] text-white mt-6 max-w-[16ch]">
-            Product Photography
-            <br />
-            for <span className="italic text-[#e83b2c]">e-commerce</span> &
-            brands.
-          </h1>
-          <p className="text-lg md:text-xl text-white/50 max-w-[55ch] mt-8 leading-relaxed">
-            High-end commercial product photography that makes your products worth choosing. From packshots to luxury product detail work, we deliver e-commerce-ready and campaign-grade imagery.
-          </p>
         </div>
       </section>
 
@@ -404,7 +414,7 @@ export default function ProductPhotographyPage() {
             {[
               {
                 q: "How much does product photography cost in India?",
-                a: "Product photography in India typically starts at ₹20,000 for a basic 20-SKU catalog. Larger catalog work (200+ SKUs) and marketplace-specific Amazon/Flipkart/Myntra-ready packs are quoted per project based on volume, styling, and deliverables.",
+                a: "Product photography in India starts at ₹10,000 for a compact product shoot. Full e-commerce catalogue work (20+ SKUs) starts at ₹25,000, and larger catalog runs (200+ SKUs) and marketplace-specific Amazon/Flipkart/Myntra-ready packs are quoted per project based on volume, styling, and deliverables.",
               },
               {
                 q: "What file formats do you deliver for e-commerce?",

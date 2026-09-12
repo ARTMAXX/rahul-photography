@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
@@ -143,27 +144,35 @@ export default function FootwearFashionPhotographyPage() {
         }}
       />
 
-      {/* Hero Section */}
-      <section className="relative w-full min-h-[70vh] flex flex-col justify-end px-4 md:px-12 pb-20 pt-40 overflow-hidden">
-        <div
-          className="absolute top-0 right-0 w-[800px] h-[800px] rounded-full opacity-15 blur-3xl pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(255,255,255,0.5) 0%, transparent 70%)",
-          }}
-        />
-        <div className="relative z-10 max-w-[1600px] mx-auto w-full">
-          <div className="inline-flex border border-[#e83b2c]/20 py-1 px-4 rounded-full text-xs text-[#e83b2c]/70 uppercase tracking-widest">
-            Footwear & Fashion
+      {/* Hero — full-bleed photo, text in the free space left of the shoe */}
+      <section className="relative flex min-h-[92vh] w-full items-start justify-start overflow-hidden px-4 pb-16 pt-32 md:px-12 lg:min-h-[100svh] lg:items-center lg:pt-24">
+        <div className="absolute inset-0 pointer-events-none">
+          <Image
+            src="/best shots/eachHeropages/High-end-shoe-services-footwear-fashion-photography.webp"
+            alt="High-end shoe studio shot — footwear and fashion photography by Rahul Chanda, Dehradun"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[65%_50%]"
+          />
+          {/* Mobile: top scrim. Desktop: left-side scrim behind text only — shoe stays clean */}
+          <div className="absolute inset-x-0 top-0 h-[62%] bg-gradient-to-b from-[#070707]/85 via-[#070707]/40 to-transparent lg:hidden" />
+          <div className="absolute inset-y-0 left-0 hidden w-[50%] bg-gradient-to-r from-[#070707]/90 via-[#070707]/55 to-transparent lg:block" />
+          <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#070707]/70 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#070707] to-transparent" />
+        </div>
+        <div className="relative z-10 mx-auto w-full max-w-[1600px]">
+          <div className="max-w-[36rem] text-left">
+            <div className="inline-flex border border-[#e83b2c]/20 py-1 px-4 rounded-full text-xs text-[#e83b2c]/70 uppercase tracking-widest">
+              Footwear &amp; Fashion
+            </div>
+            <h1 className="text-[clamp(2.4rem,5vw,4.5rem)] font-serif leading-[0.95] tracking-[-0.03em] text-white mt-5 max-w-[12ch] text-balance">
+              Footwear &amp; <span className="italic text-[#e83b2c]">fashion</span> photography.
+            </h1>
+            <p className="text-base md:text-lg text-white/60 max-w-[52ch] mt-5 leading-relaxed text-balance">
+              Professional footwear and fashion product photography for e-commerce and brands. Shoe photography, apparel lookbooks, and lifestyle fashion imagery.
+            </p>
           </div>
-          <h1 className="text-[clamp(3rem,10vw,8rem)] font-serif leading-[0.85] tracking-[-0.03em] text-white mt-6 max-w-[16ch]">
-            Footwear &
-            <br />
-            <span className="italic text-[#e83b2c]">fashion</span> photography.
-          </h1>
-          <p className="text-lg md:text-xl text-white/50 max-w-[55ch] mt-8 leading-relaxed">
-            Professional footwear and fashion product photography for e-commerce and brands. Shoe photography, apparel lookbooks, and lifestyle fashion imagery.
-          </p>
         </div>
       </section>
 

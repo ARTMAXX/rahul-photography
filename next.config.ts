@@ -25,6 +25,11 @@ const securityHeaders = [
       "font-src 'self' https://fonts.gstatic.com",
       "connect-src 'self' https://analytics.ahrefs.com https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://*.googletagmanager.com https://c.clarity.ms https://www.clarity.ms https://*.clarity.ms https://cloudflareinsights.com",
       "media-src 'self' https://rahulchandaphotography.com https://d8j0ntlcm91z4.cloudfront.net",
+      // frame-src: needed for the GBP map embeds on /contact + /dehradun
+      // (Google Maps iframes). Without it, frame-src falls back to
+      // default-src 'self' and the browser blocks the iframe entirely.
+      // frame-ancestors 'none' still prevents OTHER sites from framing us.
+      "frame-src 'self' https://www.google.com https://maps.google.com https://*.google.com",
       "frame-ancestors 'none'",
       "base-uri 'self'",
       "form-action 'self'",
@@ -66,10 +71,14 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        // Cache images
+        // Cache images — PROD ONLY. In dev this header made the browser hold
+        // same-named replacement images for 24h (eachHeropages swap incident,
+        // 2026-09-12). Dev must re-fetch on every load.
         source: "/(.*)\\.(jpg|jpeg|png|gif|ico|svg|webp|avif)",
         headers: [
-          { key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
+          process.env.NODE_ENV === "production"
+            ? { key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" }
+            : { key: "Cache-Control", value: "no-store, must-revalidate" },
         ],
       },
     ];

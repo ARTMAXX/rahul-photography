@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
@@ -24,7 +25,7 @@ const campaignFaqSchema = {
       name: "How much does brand campaign photography cost?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Brand campaign pricing is custom — it depends on concept, talent, locations, and deliverables. Single-day brand shoots in Dehradun start at ₹40,000; multi-day campaign productions with talent and locations are quoted per project.",
+        text: "Brand campaign pricing is custom — it depends on concept, talent, locations, and deliverables. Single-day brand shoots in Dehradun start at ₹15,000; multi-day campaign productions with talent and locations are quoted per project.",
       },
     },
     {
@@ -143,27 +144,35 @@ export default function CommercialCampaignsPage() {
         }}
       />
 
-      {/* Hero Section */}
-      <section className="relative w-full min-h-[70vh] flex flex-col justify-end px-4 md:px-12 pb-20 pt-40 overflow-hidden">
-        <div
-          className="absolute top-0 right-0 w-[800px] h-[800px] rounded-full opacity-15 blur-3xl pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(255,255,255,0.5) 0%, transparent 70%)",
-          }}
-        />
-        <div className="relative z-10 max-w-[1600px] mx-auto w-full">
-          <div className="inline-flex border border-[#e83b2c]/20 py-1 px-4 rounded-full text-xs text-[#e83b2c]/70 uppercase tracking-widest">
-            Commercial Campaigns
+      {/* Hero — full-bleed photo, text in the free space right of the bottle */}
+      <section className="relative flex min-h-[92vh] w-full items-start justify-start overflow-hidden px-4 pb-16 pt-32 md:px-12 lg:min-h-[100svh] lg:items-center lg:pt-24">
+        <div className="absolute inset-0 pointer-events-none">
+          <Image
+            src="/best shots/eachHeropages/new-product-bold-services-commercial-campaigns.webp"
+            alt="Bold product campaign shot — commercial and advertising campaign photography by Rahul Chanda, Dehradun"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[38%_50%]"
+          />
+          {/* Mobile: top scrim. Desktop: right-side scrim behind text only — model + bottle stay clean */}
+          <div className="absolute inset-x-0 top-0 h-[62%] bg-gradient-to-b from-[#070707]/85 via-[#070707]/40 to-transparent lg:hidden" />
+          <div className="absolute inset-y-0 right-0 hidden w-[46%] bg-gradient-to-l from-[#070707]/90 via-[#070707]/55 to-transparent lg:block" />
+          <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#070707]/70 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#070707] to-transparent" />
+        </div>
+        <div className="relative z-10 mx-auto w-full max-w-[1600px]">
+          <div className="max-w-[34rem] text-left lg:ml-auto">
+            <div className="inline-flex border border-[#e83b2c]/20 py-1 px-4 rounded-full text-xs text-[#e83b2c]/70 uppercase tracking-widest">
+              Commercial Campaigns
+            </div>
+            <h1 className="text-[clamp(2.4rem,5vw,4.5rem)] font-serif leading-[0.95] tracking-[-0.03em] text-white mt-5 max-w-[12ch] text-balance">
+              Commercial <span className="italic text-[#e83b2c]">campaign</span> photography.
+            </h1>
+            <p className="text-base md:text-lg text-white/60 max-w-[52ch] mt-5 leading-relaxed text-balance">
+              Art-directed advertising photography for brand campaigns. From concept to final delivery — frames crafted to sell your product, tell your story, and stand out.
+            </p>
           </div>
-          <h1 className="text-[clamp(3rem,10vw,8rem)] font-serif leading-[0.85] tracking-[-0.03em] text-white mt-6 max-w-[16ch]">
-            Commercial
-            <br />
-            <span className="italic text-[#e83b2c]">campaign</span> photography.
-          </h1>
-          <p className="text-lg md:text-xl text-white/50 max-w-[55ch] mt-8 leading-relaxed">
-            Art-directed advertising photography for brand campaigns. From concept to final delivery, every frame is crafted to sell your product, tell your story, and stand out.
-          </p>
         </div>
       </section>
 
@@ -326,7 +335,7 @@ export default function CommercialCampaignsPage() {
               },
               {
                 q: "How much does brand campaign photography cost?",
-                a: "Brand campaign pricing is custom — it depends on concept, talent, locations, and deliverables. Single-day brand shoots in Dehradun start at ₹40,000; multi-day campaign productions with talent and locations are quoted per project.",
+                a: "Brand campaign pricing is custom — it depends on concept, talent, locations, and deliverables. Single-day brand shoots in Dehradun start at ₹15,000; multi-day campaign productions with talent and locations are quoted per project.",
               },
               {
                 q: "Do you handle usage rights and licensing?",
