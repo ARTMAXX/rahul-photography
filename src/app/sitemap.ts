@@ -11,6 +11,10 @@ const standaloneBlogSlugs = new Set<string>([
   "product-photography-lighting-setup",
   "how-to-photograph-products-ecommerce",
   "beverage-photography-glass-splash",
+  // AI roundup posts — live standalone pages, previously missing from sitemap
+  "ai-product-photography-tools-ecommerce-2026",
+  "ai-photo-culling-software",
+  "ai-video-generation-commercial-ads-india",
 ]);
 
 // Per-page lastModified values for core pages. Set from git history of the

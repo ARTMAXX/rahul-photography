@@ -19,6 +19,11 @@ export const postDates: Record<string, string> = {
   "how-to-choose-commercial-photographer-dehradun": "2026-09-12",
   "food-photography-pricing-india-what-you-get-20000": "2026-09-12",
 
+  // AI roundup posts (standalone page.tsx files in src/app/blog/<slug>/)
+  "ai-product-photography-tools-ecommerce-2026": "2026-09-04",
+  "ai-photo-culling-software": "2026-09-04",
+  "ai-video-generation-commercial-ads-india": "2026-09-04",
+
   // Dynamic [slug] blog posts
   "ai-photoshop-retouching-techniques": "2026-08-15",
   "ai-commercial-product-photography": "2026-08-05",
@@ -43,6 +48,12 @@ export const postModified: Record<string, string> = {
   "why-product-photography-increases-ecommerce-sales": "2026-09-12",
   "how-to-choose-commercial-photographer-dehradun": "2026-09-12",
   "food-photography-pricing-india-what-you-get-20000": "2026-09-12",
+
+  // AI roundup posts (standalone page.tsx files in src/app/blog/<slug>/)
+  "ai-product-photography-tools-ecommerce-2026": "2026-09-04",
+  "ai-photo-culling-software": "2026-09-04",
+  "ai-video-generation-commercial-ads-india": "2026-09-04",
+
   "food-photography-restaurants": "2026-09-04",
   "product-photography-small-business-india": "2026-09-04",
   "product-photography-lighting-setup": "2026-09-04",
