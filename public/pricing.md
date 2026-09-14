@@ -1,6 +1,6 @@
 # Pricing — Rahul Chanda Photography
 
-Last updated: 2026-07-29
+Last updated: 2026-09-11
 
 Pricing is per project setup. Final quotes may vary based on complexity, styling requirements, and usage scope. Contact for custom project quotes.
 
@@ -10,8 +10,8 @@ Pricing is per project setup. Final quotes may vary based on complexity, styling
 
 | Detail | Value |
 |--------|-------|
-| Starting Price | ₹25,000 |
-| Starting Price (USD) | ~$300 |
+| Starting Price | ₹10,000 |
+| Starting Price (USD) | ~$120 |
 | Deliverables | 20-50 edited high-res images, White background & lifestyle shots, Multiple angles & detail captures, Retouching & color correction, Web-optimized versions |
 | Ideal For | E-commerce, product launches, brand campaigns, catalogs |
 
@@ -19,8 +19,8 @@ Pricing is per project setup. Final quotes may vary based on complexity, styling
 
 | Detail | Value |
 |--------|-------|
-| Starting Price | ₹40,000 |
-| Starting Price (USD) | ~$480 |
+| Starting Price | ₹30,000 |
+| Starting Price (USD) | ~$360 |
 | Deliverables | 30-80 edited images per session, Creative direction & styling guidance, Model coordination, Location scouting, Post-production & retouching |
 | Ideal For | Lookbooks, editorial campaigns, fashion brands, publications |
 
@@ -28,8 +28,8 @@ Pricing is per project setup. Final quotes may vary based on complexity, styling
 
 | Detail | Value |
 |--------|-------|
-| Starting Price | ₹20,000 |
-| Starting Price (USD) | ~$240 |
+| Starting Price | ₹12,000 |
+| Starting Price (USD) | ~$145 |
 | Deliverables | 15-30 hero shots per session, Styled & natural light setups, Props & surface styling, Multiple compositions, Menu-ready files |
 | Ideal For | Restaurants, food brands, menus, social media, recipe publishers |
 
@@ -37,7 +37,8 @@ Pricing is per project setup. Final quotes may vary based on complexity, styling
 
 | Detail | Value |
 |--------|-------|
-| Starting Price | Custom quote |
+| Starting Price | ₹15,000 |
+| Starting Price (USD) | ~$180 |
 | Deliverables | 50-150+ campaign images, Creative concepting & storyboarding, Location & talent management, Multi-format deliverables, Usage rights consultation |
 | Ideal For | Full-scale brand campaigns, product launches, advertising |
 
@@ -45,8 +46,8 @@ Pricing is per project setup. Final quotes may vary based on complexity, styling
 
 | Detail | Value |
 |--------|-------|
-| Starting Price | ₹35,000/month |
-| Starting Price (USD) | ~$420/month |
+| Starting Price | ₹40,000/month |
+| Starting Price (USD) | ~$480/month |
 | Deliverables | 40-100 images per month, Content calendar planning, Multiple formats & sizes, Priority scheduling, 48-72hr turnaround |
 | Ideal For | Ongoing content needs, social media, consistent brand presence |
 

@@ -26,6 +26,13 @@ function Header1() {
       description: "Commercial photography services for brands and businesses.",
       items: [
         {
+          // "All Services" gives /services a sitewide link. It previously had
+          // no internal links except scattered side links, so Google/Bing left
+          // it in "Discovered - currently not indexed" for a month.
+          title: "All Services",
+          href: "/services",
+        },
+        {
           title: "Product Photography",
           href: "/services/product-photography",
         },
@@ -59,10 +66,10 @@ function Header1() {
     },
     {
       title: "More",
-      description: "Read the journal, learn about us, or get in touch.",
+      description: "Read the blog, learn about us, or get in touch.",
       items: [
         {
-          title: "Journal",
+          title: "Blog",
           href: "/blog",
         },
         {

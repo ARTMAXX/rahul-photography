@@ -47,7 +47,7 @@ const services: Service[] = [
       "Retouching & color correction",
       "Web-optimized versions",
     ],
-    pricing: "Starting at \u20B925,000",
+    pricing: "Starting at \u20B910,000",
   },
   {
     id: 2,
@@ -63,7 +63,7 @@ const services: Service[] = [
       "Location scouting & setup",
       "Post-production & retouching",
     ],
-    pricing: "Starting at \u20B940,000",
+    pricing: "Starting at \u20B930,000",
   },
   {
     id: 3,
@@ -80,7 +80,7 @@ const services: Service[] = [
       "Multiple compositions",
       "Menu-ready files",
     ],
-    pricing: "Starting at \u20B920,000",
+    pricing: "Starting at \u20B912,000",
   },
   {
     id: 4,
@@ -98,7 +98,7 @@ const services: Service[] = [
       "Multi-format deliverables",
       "Usage rights consultation",
     ],
-    pricing: "Custom quote",
+    pricing: "Starting at \u20B915,000",
   },
   {
     id: 5,
@@ -114,7 +114,7 @@ const services: Service[] = [
       "Priority scheduling",
       "Quick turnaround (48-72hrs)",
     ],
-    pricing: "\u20B935,000/month",
+    pricing: "\u20B940,000/month",
   },
   {
     id: 6,

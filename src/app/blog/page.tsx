@@ -46,7 +46,7 @@ const blogSchema = {
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Journal & Field Notes",
+          "name": "Blog & Field Notes",
           "item": absoluteUrl("/blog"),
         },
       ],

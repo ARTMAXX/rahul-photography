@@ -49,6 +49,71 @@ const faqs = [
     q: "Do you offer package deals or retainers?",
     a: "Yes. Monthly content packages and long-term retainers are available for brands needing consistent photography. Let's discuss your needs.",
   },
+  // ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+  // LOCAL UTTARAKHAND QUESTIONS — sourced from real Google autocomplete +
+  // "People also ask" data collected 2026-09-11 for the Dehradun/Uttarakhand
+  // market (scripts/keyword-research/data/question-plan-2026-09-11.md).
+  // ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+  {
+    q: "How much does product photography cost in Dehradun?",
+    a: "Product photography in Dehradun for small businesses and e-commerce sellers typically starts at ₹10,000 per session (10 SKUs). Scope — packshots, lifestyle scenes, or catalogue sets — moves the final quote. Contact me for a same-day estimate based on your SKU count.",
+  },
+  {
+    q: "Who is the best photographer in Dehradun?",
+    a: "The 'best' photographer depends on what you're shooting. For commercial needs — product, food or brand photography — look for a specialist with a portfolio in that exact category. I focus on commercial and product photography for brands across Uttarakhand; my portfolio and Google reviews (5.0) show the work behind that claim.",
+  },
+  {
+    q: "What is the 20-60-20 rule in photography?",
+    a: "The 20-60-20 rule is a budgeting guideline: roughly 20% of a project's budget goes to pre-production (briefing, mood boards, styling), 60% to the shoot itself, and 20% to post-production (editing, retouching, delivery). It helps brands allocate realistically instead of under-budgeting post-work.",
+  },
+  {
+    q: "How much does it cost to get a photographer?",
+    a: "In Uttarakhand, rates vary widely by type: a portrait or headshot session from ₹4,000, product photography from ₹10,000, food/café from ₹12,000, commercial campaigns from ₹12,000–40,000, and videography rates quoted per project. Always ask what's included — editing, usage rights, number of final images.",
+  },
+  {
+    q: "How many photos for a 2 hour shoot?",
+    a: "For a two-hour session expect roughly 100–250 captures, and typically 15–40 professionally edited final images depending on the type of shoot. Product catalogue work delivers more images per hour; directed portraiture produces fewer, higher-polish selects.",
+  },
+  {
+    q: "What are some good places for a photoshoot in Dehradun?",
+    a: "Dehradun's top shoot spots include Rajaji National Park outskirts for green backdrops, Forest Research Institute for stately architecture, Sahastradhara for rocky streams, Robber's Cave for cinematic caves, and the mall road/Kandoli area in Mussoorie (45 min away) for mountain scenery. I also arrange studio sets for product and food shoots.",
+  },
+  {
+    q: "How much is a photographer for one day?",
+    a: "A full-day commercial photographer in Uttarakhand typically charges ₹15,000–₹40,000 depending on scope, equipment, travel, and post-production included. My day rates are quoted per project after I see your brief — I can confirm exact pricing within 24 hours.",
+  },
+  {
+    q: "How much does a photographer charge for a day?",
+    a: "Day rates for photography in the Dehradun/Uttarakhand market run ₹8,000 (single-location event coverage) to ₹40,000+ (multi-location commercial campaigns with assistant, lighting, and retouching). Ask for a written scope before comparing quotes.",
+  },
+  {
+    q: "How much is a photograph photoshoot in Dehradun?",
+    a: "A professional photoshoot in Dehradun starts around ₹4,000 for individual headshots and scales with scope: couples/portraits from ₹8,000, product sessions from ₹10,000, and full brand campaigns from ₹15,000. I send a fixed quote before you commit — no hidden fees.",
+  },
+  {
+    q: "What is commercial photography?",
+    a: "Commercial photography is imagery created to sell, promote, or represent a business — product packshots, food & beverage shots for menus and ads, brand campaigns, corporate headshots, and e-commerce catalogue images. Unlike portrait or event work, it's brief-driven and optimised for a brand's marketing channels.",
+  },
+  {
+    q: "How much does a videographer charge per day in Uttarakhand?",
+    a: "Videography day rates in Uttarakhand typically range ₹8,000–₹25,000 for commercial work (product reels, brand films, café promos), plus optional equipment and post-editing. I quote per project based on the video's use, duration targets, and locations.",
+  },
+  {
+    q: "How much does a food photography shoot cost?",
+    a: "Food & beverage shoots in Dehradun/Uttarakhand start at ₹12,000 per session and cover hero shots for menus, social content, and delivery-app listings. Multi-day menu or café rebrand projects are quoted by scope.",
+  },
+  {
+    q: "Where to shoot in Rishikesh or Mussoorie for a brand shoot?",
+    a: "Rishikesh offers the Ganges riverside, Laxman Jhula viewpoints, and jungle resorts for lifestyle and wedding content; Mussoorie gives mountain cafés, colonial-era hotels, and Kempty Falls for destination shoots. I travel across Uttarakhand for shoots and handle location permits and logistics.",
+  },
+  {
+    q: "What should I ask a photographer before booking?",
+    a: "Always ask: what's the full price and what's excluded, how many edited images are included, who owns the usage rights, what's the delivery timeline, what happens with reshoots, and whether raw files are included. Getting these in writing upfront prevents surprises.",
+  },
+  {
+    q: "How important is lighting in product photography?",
+    a: "Lighting is the single biggest factor in product photography — it controls texture, reflections, colour accuracy, and perceived value. Studio-controlled lighting with softboxes and diffusion gives clean, repeatable results that phone or window-light shots can't match. That's why studio-based product photography produces higher-converting images.",
+  },
 ];
 
 // ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓

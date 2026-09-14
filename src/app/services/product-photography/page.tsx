@@ -48,7 +48,7 @@ const productFaqSchema = {
 };
 
 export const metadata: Metadata = {
-  title: "Product Photography in Dehradun — Amazon, Flipkart, Shopify",
+  title: "Top Product Photography in Dehradun | Amazon, Flipkart, Shopify",
   description:
     "Professional product photography in Dehradun for e-commerce brands, D2C, Amazon, Flipkart & Shopify. In-house retouching. Shoot pan-India. Book a shoot.",
   alternates: { canonical: "/services/product-photography" },
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: absoluteUrl(siteConfig.ogImagePath),
+        url: absoluteUrl("/opt/og-image-product.jpg"),
         width: 1200,
         height: 630,
         alt: "Product Photography — E-commerce, Amazon, Flipkart, Shopify India",
@@ -69,9 +69,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Product Photography in Dehradun — Amazon, Flipkart, Shopify",
+    title: "Top Product Photography in Dehradun | Amazon, Flipkart, Shopify",
     description: "Professional product photography in Dehradun. Platform-compliant packshots, in-house retouching, pan-India shoots.",
-    images: [absoluteUrl(siteConfig.ogImagePath)],
+    images: [absoluteUrl("/opt/og-image-product.jpg")],
   },
 };
 

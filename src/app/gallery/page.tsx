@@ -14,6 +14,7 @@ interface GalleryImage {
   category: string;
   width: number;
   height: number;
+  type?: "image" | "video";
 }
 
 const galleryImages: GalleryImage[] = [
@@ -35,8 +36,7 @@ const galleryImages: GalleryImage[] = [
   { id: 16, url: "/opt/best shots/Beverage images/bev-iced.webp", title: "Iced Beverage \u2014 Condensation", alt: "Iced beverage photography with condensation droplets by Rahul Chanda, beverage photographer India", category: "Beverage", width: 1024, height: 1024 },
   { id: 17, url: "/opt/best shots/Beverage images/bev-macro.webp", title: "Beverage Macro Detail", alt: "Macro beverage photography capturing liquid detail by Rahul Chanda, commercial photographer Dehradun", category: "Beverage", width: 1024, height: 1024 },
   { id: 18, url: "/opt/best shots/Beverage images/bev-toast.webp", title: "Celebration Toast", alt: "Celebration toast beverage photography with glasses clinking by Rahul Chanda, product photographer", category: "Beverage", width: 1024, height: 1024 },
-  { id: 19, url: "/opt/best shots/Beverage images/beverage-macro.webp", title: "Drink Detail Shot", alt: "Close-up drink detail photography with ice and garnish by Rahul Chanda, beverage photographer India", category: "Beverage", width: 1024, height: 1024 },
-  // Deduplicated: id 20 (Three Iced Beverages) removed — same set as id 16 Iced Beverage
+  // Deduplicated: id 19 (Drink Detail Shot, beverage-macro.webp) removed — same photo as id 17 Beverage Macro Detail (different resolution/encode)
   { id: 21, url: "/opt/best shots/mens shoe/shoe-mens-white.webp", title: "White Sneaker \u2014 Clean Cutout", alt: "White sneaker product photography on clean background by Rahul Chanda, footwear photographer India", category: "Footwear", width: 1024, height: 1024 },
   { id: 22, url: "/opt/best shots/mens shoe/modern-athletic-sneaker.webp", title: "Modern Athletic Sneaker", alt: "Modern athletic sneaker product photography for ecommerce by Rahul Chanda, Dehradun commercial photographer", category: "Footwear", width: 1024, height: 1024 },
   { id: 23, url: "/opt/best shots/mens shoe/shoe-mens-duo.webp", title: "New Balance \u2014 Branded Campaign", alt: "New Balance sneaker duo product photography for branded campaign by Rahul Chanda, commercial photographer Dehradun", category: "Footwear", width: 1024, height: 1024 },
@@ -51,6 +51,10 @@ const galleryImages: GalleryImage[] = [
   { id: 32, url: "/opt/best shots/new-images/new-juice-01.webp", title: "Fresh Juice Campaign", alt: "Fresh juice product photography campaign with fruit splash by Rahul Chanda, beverage photographer India", category: "Campaigns", width: 1024, height: 1024 },
   { id: 33, url: "/opt/best shots/new-images/new-product-heel.webp", title: "Denim Sandal on Water", alt: "Creative denim sandal product photography with water reflection by Rahul Chanda, Dehradun commercial photographer", category: "Campaigns", width: 1024, height: 1024 },
   { id: 34, url: "/opt/best shots/Product image/product-energy-can-poster.webp", title: "Campa Energy \u2014 Campaign Hero", alt: "Campa energy drink advertising campaign with neon lightning effects by Rahul Chanda, beverage photographer India", category: "Campaigns", width: 1024, height: 1024 },
+  { id: 35, type: "video", url: "/opt/best shots/mens shoe/shoe-mens-video.mp4", title: "Sneaker Motion \u2014 Mens", alt: "Sneaker product motion reel video, rotating athletic shoe studio shot by Rahul Chanda, footwear videographer Dehradun", category: "Video", width: 960, height: 540 },
+  { id: 36, type: "video", url: "/opt/best shots/ladies shoe/shoe-ladies-video.mp4", title: "Heel Motion \u2014 Ladies", alt: "Ladies heel product motion reel video with elegant studio rotation by Rahul Chanda, footwear videographer India", category: "Video", width: 960, height: 540 },
+  // Deduplicated: id 37 (Athletic Sneaker — Motion, modern-athleti-sneaker.mp4) removed — byte-identical video to id 35 Sneaker Motion — Mens
+  { id: 38, type: "video", url: "/opt/best shots/Product image/product-energy-can.mp4", title: "Energy Can \u2014 Vertical Reel", alt: "Vertical energy drink can product reel video for social media by Rahul Chanda, beverage videographer India", category: "Video", width: 960, height: 1706 },
 ];
 
 export default function GalleryPage() {
@@ -140,15 +144,27 @@ export default function GalleryPage() {
                 style={{ breakInside: "avoid", marginBottom: "16px" }}
                 className="group relative overflow-hidden rounded-lg cursor-pointer"
               >
-                <Image
-                  src={image.url}
-                  alt={image.alt}
-                  width={image.width}
-                  height={image.height}
-                  loading="lazy"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="w-full h-auto block rounded-lg transition-transform duration-500 group-hover:scale-[1.04]"
-                />
+                {image.type === "video" ? (
+                  <video
+                    src={image.url}
+                    className="w-full h-auto block rounded-lg transition-transform duration-500 group-hover:scale-[1.04]"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                  />
+                ) : (
+                  <Image
+                    src={image.url}
+                    alt={image.alt}
+                    width={image.width}
+                    height={image.height}
+                    loading="lazy"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="w-full h-auto block rounded-lg transition-transform duration-500 group-hover:scale-[1.04]"
+                  />
+                )}
                 {/* Hover overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-end p-4 rounded-lg">
                   <h3 className="text-white font-medium text-sm mb-2 text-center drop-shadow-md">{image.title}</h3>
@@ -180,26 +196,24 @@ export default function GalleryPage() {
             </p>
           </div>
 
-          {/* Video player placeholder — replace src with your reel video */}
-          <div className="relative w-full max-w-4xl mx-auto rounded-xl overflow-hidden border border-white/10 bg-black/40 aspect-video">
-            <video
-              // TODO: Replace with your actual video file, e.g. "/videos/reel.mp4"
-              src=""
-              className="w-full h-full object-cover"
-              controls
-              preload="none"
-              poster=""
-            />
-            {/* Placeholder overlay when no video src is set */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-black/80 via-black/60 to-black/80">
-              <div className="w-20 h-20 rounded-full border-2 border-white/20 flex items-center justify-center mb-4">
-                <svg className="w-8 h-8 text-white/40 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </div>
-              <p className="text-white/40 text-sm tracking-wider uppercase">Reel Coming Soon</p>
-              <p className="text-white/20 text-xs mt-2">Contact for video reel &amp; campaign films</p>
-            </div>
+          {/* Product motion reels — inline players with controls */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {galleryImages
+              .filter((item) => item.type === "video")
+              .map((video) => (
+                <div key={video.id} className="rounded-xl overflow-hidden border border-white/10 bg-black/40">
+                  <video
+                    src={video.url}
+                    className="w-full h-auto block"
+                    controls
+                    playsInline
+                    preload="metadata"
+                    muted
+                    loop
+                  />
+                  <p className="text-white/50 text-xs tracking-wider uppercase px-4 py-3">{video.title}</p>
+                </div>
+              ))}
           </div>
 
           <p className="text-center text-white/30 text-xs mt-6">

@@ -81,6 +81,11 @@ docs/
 .indexnow-key
 leads/
 
+# Google Indexing API service-account key (NEVER commit) — used by
+# scripts/request-indexing.mjs for bulk "Request Indexing"
+service-account-key.json
+google-service-account*.json
+
 # Stale pnpm lock (project uses npm; a pnpm lock makes Netlify pick pnpm and fail)
 pnpm-lock.yaml
 

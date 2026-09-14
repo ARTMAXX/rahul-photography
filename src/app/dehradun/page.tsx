@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CinematicFooter } from "@/components/ui/motion-footer";
+import GbpMapEmbed from "@/components/ui/gbp-map-embed";
 import { siteConfig, absoluteUrl } from "@/lib/site";
 import { generateQAPageSchema } from "@/lib/schemas";
 
@@ -8,7 +9,7 @@ import { generateQAPageSchema } from "@/lib/schemas";
 // METADATA — Targeted for commercial photography intent in Dehradun
 // ============================================================================
 export const metadata: Metadata = {
-  title: "Commercial Photographer in Dehradun, India",
+  title: "Top Commercial Photographer in Dehradun, India | Rahul Chanda",
   description:
     "Dehradun commercial photographer for product, food & brand campaigns. In-house retouching. Book a shoot: +91 70789 39475.",
   alternates: { canonical: "/dehradun" },
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
     images: [
       {
-        url: absoluteUrl(siteConfig.ogImagePath),
+        url: absoluteUrl("/opt/og-image-homepage.jpg"),
         width: 1200,
         height: 630,
         alt: "Rahul Chanda — Commercial Product Photographer in Dehradun",
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     title: "Commercial Photographer Dehradun — Rahul Chanda",
     description:
       "Product, food, cafe & brand photography in Dehradun. On-location across Uttarakhand.",
-    images: [absoluteUrl(siteConfig.ogImagePath)],
+    images: [absoluteUrl("/opt/og-image-homepage.jpg")],
   },
   robots: { index: true, follow: true },
 };
@@ -226,7 +227,7 @@ const localBusinessJsonLd = {
   alternateName: "Rahul Chanda Photography",
   url: absoluteUrl("/dehradun"),
   logo: absoluteUrl("/icon.svg"),
-  image: absoluteUrl(siteConfig.ogImagePath),
+  image: absoluteUrl("/opt/og-image-homepage.jpg"),
   description:
     "Commercial photographer in Dehradun specializing in product, food & beverage, cafe/restaurant, footwear, and brand campaign photography. On-location service across Uttarakhand with in-house retouching.",
   telephone: siteConfig.contact.telephone,
@@ -647,11 +648,11 @@ export default function DehradunPage() {
         </div>
       </section>
 
-      {/* ===== FROM THE JOURNAL — internal links into blog cluster (SEO) ===== */}
+      {/* ===== FROM THE BLOG — internal links into blog cluster (SEO) ===== */}
       <section className="relative w-full px-4 md:px-12 py-24 md:py-28 border-t border-white/5">
         <div className="max-w-[1600px] mx-auto">
           <div className="text-[#e83b2c] text-sm font-medium uppercase tracking-widest">
-            From the Journal
+            From the Blog
           </div>
           <h2 className="text-3xl md:text-5xl font-serif text-white mt-4 leading-tight max-w-[30ch]">
             How the work gets{" "}
@@ -701,6 +702,13 @@ export default function DehradunPage() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ===== GBP MAP EMBED — local-trust signal + directions ===== */}
+      <section className="relative w-full px-4 md:px-12 pb-24 md:pb-28">
+        <div className="max-w-[1100px] mx-auto">
+          <GbpMapEmbed />
         </div>
       </section>
 

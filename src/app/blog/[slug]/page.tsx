@@ -939,7 +939,7 @@ export default async function BlogPostPage({
           {
             "@type": "ListItem",
             "position": 2,
-            "name": "Journal",
+            "name": "Blog",
             "item": absoluteUrl("/blog"),
           },
           {

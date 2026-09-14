@@ -23,7 +23,6 @@ const playfair = Playfair_Display({
   display: "swap",
   fallback: ["Georgia", "Cambria", "Times New Roman", "Times", "serif"],
   adjustFontFallback: true,
-  fallbackFont: "Georgia",
 });
 
 const outfit = Outfit({
@@ -40,7 +39,6 @@ const outfit = Outfit({
     "sans-serif",
   ],
   adjustFontFallback: true,
-  fallbackFont: "Arial",
 });
 
 export const viewport = {

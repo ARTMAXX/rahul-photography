@@ -10,7 +10,15 @@ type ThreeInstance = typeof import("three");
 // This shaves ~600 KB off the critical-path JS bundle.
 let _threeLoader: Promise<ThreeInstance> | null = null;
 const loadThree = (): Promise<ThreeInstance> => {
-  if (!_threeLoader) _threeLoader = import("three");
+  if (!_threeLoader) {
+    _threeLoader = import("three").catch((err) => {
+      // Chunk load failed (offline, stale chunk after deploy, etc.).
+      // Reset the cache so a later mount can retry the import instead of
+      // re-awaiting a permanently rejected promise.
+      _threeLoader = null;
+      throw err;
+    });
+  }
   return _threeLoader;
 };
 
@@ -170,7 +178,19 @@ export default function ColorBends({
   useEffect(() => {
     let cancelled = false;
     (async () => {
-      const THREE = await loadThree();
+      let THREE: ThreeInstance;
+      try {
+        THREE = await loadThree();
+      } catch (err) {
+        // three.js chunk failed to load (the "three is not defined" /
+        // "failed to load chunk" errors seen in Clarity on live users).
+        // Degrade gracefully: the section keeps its static background and
+        // the failure never surfaces as an unhandled rejection.
+        if (process.env.NODE_ENV !== "production") {
+          console.warn("[ColorBends] three.js failed to load — skipping WebGL layer:", err);
+        }
+        return;
+      }
       if (cancelled || !containerRef.current) return;
 
       const container = containerRef.current;
@@ -327,7 +347,14 @@ export default function ColorBends({
 
     // Update color uniforms once THREE is available (may already be cached)
     (async () => {
-      const THREE = await loadThree();
+      let THREE: ThreeInstance;
+      try {
+        THREE = await loadThree();
+      } catch {
+        // Same graceful-degrade path as the main effect: if the chunk never
+        // loads, there is no material to color anyway.
+        return;
+      }
       const toVec3 = (hex: string) => {
         const h = hex.replace("#", "").trim();
         const v =

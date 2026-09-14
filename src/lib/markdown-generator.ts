@@ -45,7 +45,7 @@ export function getMarkdownForPath(pathname: string): MarkdownResponse | null {
   // 2. Blog Hub: /blog
   if (cleanPath === "/blog") {
     const lines = [
-      "# Commercial Photography Journal & Field Notes — Rahul Chanda",
+      "# Commercial Photography Blog & Field Notes — Rahul Chanda",
       "",
       "> Technical lighting setups, color science, fluid dynamics, AI post-production workflows, and field guides from commercial photography shoots across Dehradun and regional brand campaigns.",
       "> **Canonical URL:** https://rahulchandaphotography.com/blog",
@@ -227,7 +227,7 @@ To receive an accurate estimate and timeline, please include:
 - **Services:** [Commercial Photography Services](https://rahulchandaphotography.com/services)
 - **Dehradun Studio:** [Commercial Photographer Dehradun](https://rahulchandaphotography.com/dehradun)
 - **Portfolio Gallery:** [Featured Work](https://rahulchandaphotography.com/gallery)
-- **Journal & Field Notes:** [Photography Blog](https://rahulchandaphotography.com/blog)
+- **Blog & Field Notes:** [Photography Blog](https://rahulchandaphotography.com/blog)
 - **About:** [Photographer Profile](https://rahulchandaphotography.com/about)
 - **Contact:** [Book a Shoot](https://rahulchandaphotography.com/contact)
 

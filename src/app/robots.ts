@@ -26,6 +26,8 @@ export default function robots(): MetadataRoute.Robots {
       disallow: ["/api/", "/_next/data/"],
     },
     sitemap: absoluteUrl("sitemap.xml"),
-    host: absoluteUrl("/"),
+    // NOTE: no `host` directive here. `Host:` is a Yandex-only robots.txt
+    // directive — Bing's parser flags it as an error (unknown directive) and
+    // Google ignores it. Bing discovers the host from the sitemap + URL instead.
   };
 }

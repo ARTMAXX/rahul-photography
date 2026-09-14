@@ -48,19 +48,19 @@ const footwearFaqSchema = {
 };
 
 export const metadata: Metadata = {
-  title: "Footwear & Fashion Photographer in Dehradun",
+  title: "Top Footwear & Fashion Photographer in Dehradun",
   description:
     "Fashion & footwear photographer in Dehradun. E-commerce catalog, lookbooks, and brand campaigns. In-house retouching. Book a shoot.",
   alternates: { canonical: "/services/footwear-fashion-photography" },
   openGraph: {
-    title: "Footwear & Fashion Photographer in Dehradun — E-commerce & Brand Campaigns",
+    title: "Top Footwear & Fashion Photographer in Dehradun — E-commerce & Brand Campaigns",
     description:
       "Fashion and footwear photography in Dehradun. E-commerce catalog shots, lookbook photography, and brand campaign shoots for D2C and editorial clients.",
     url: absoluteUrl("/services/footwear-fashion-photography"),
     type: "website",
     images: [
       {
-        url: absoluteUrl(siteConfig.ogImagePath),
+        url: absoluteUrl("/opt/og-image-footwear-fashion.jpg"),
         width: 1200,
         height: 630,
         alt: "Footwear & Fashion Photography — E-commerce & Brands",
@@ -69,9 +69,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Footwear & Fashion Photographer in Dehradun",
+    title: "Top Footwear & Fashion Photographer in Dehradun",
     description: "Fashion and footwear photography in Dehradun. Catalog, lookbooks, and brand campaigns.",
-    images: [absoluteUrl(siteConfig.ogImagePath)],
+    images: [absoluteUrl("/opt/og-image-footwear-fashion.jpg")],
   },
 };
 

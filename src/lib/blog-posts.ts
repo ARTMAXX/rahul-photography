@@ -15,6 +15,9 @@ export const postDates: Record<string, string> = {
   "product-photography-lighting-setup": "2026-08-25",
   "how-to-photograph-products-ecommerce": "2026-08-22",
   "beverage-photography-glass-splash": "2026-08-20",
+  "why-product-photography-increases-ecommerce-sales": "2026-09-12",
+  "how-to-choose-commercial-photographer-dehradun": "2026-09-12",
+  "food-photography-pricing-india-what-you-get-20000": "2026-09-12",
 
   // Dynamic [slug] blog posts
   "ai-photoshop-retouching-techniques": "2026-08-15",
@@ -37,6 +40,9 @@ export const postDates: Record<string, string> = {
  * a post is substantively rewritten or expanded.
  */
 export const postModified: Record<string, string> = {
+  "why-product-photography-increases-ecommerce-sales": "2026-09-12",
+  "how-to-choose-commercial-photographer-dehradun": "2026-09-12",
+  "food-photography-pricing-india-what-you-get-20000": "2026-09-12",
   "food-photography-restaurants": "2026-09-04",
   "product-photography-small-business-india": "2026-09-04",
   "product-photography-lighting-setup": "2026-09-04",

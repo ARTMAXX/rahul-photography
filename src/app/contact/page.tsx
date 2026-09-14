@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/sections/redesign/ContactForm";
 import { CinematicFooter } from "@/components/ui/motion-footer";
+import GbpMapEmbed from "@/components/ui/gbp-map-embed";
 import { siteConfig, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -127,6 +128,14 @@ export default function ContactPage() {
               View on Google Maps
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* GBP map embed — Google cross-checks the website against the Business
+          Profile; showing the Maps profile here is a local-trust signal. */}
+      <section className="relative w-full px-4 md:px-12 pb-24 md:pb-32 bg-[#070707]">
+        <div className="max-w-[1600px] mx-auto">
+          <GbpMapEmbed />
         </div>
       </section>
 

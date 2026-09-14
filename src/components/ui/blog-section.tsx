@@ -14,6 +14,36 @@ interface BlogCard {
 
 const blogs: BlogCard[] = [
 	{
+		title: "Food Photography Pricing in India: What You Get for ₹20,000",
+		slug: "/blog/food-photography-pricing-india-what-you-get-20000",
+		description:
+			"A ₹20,000 food shoot broken down line by line — dishes, styling, retouching, usage rights. Written by a working food photographer, not an agency deck.",
+		image: "/opt/best shots/ADs/ad-culinary.webp",
+		createdAt: "2026-09-12",
+		tag: "Pricing",
+		readTime: "12 min read",
+	},
+	{
+		title: "How to Choose a Commercial Photographer in Dehradun (Without Getting Burned)",
+		slug: "/blog/how-to-choose-commercial-photographer-dehradun",
+		description:
+			"The hiring checklist I'd use if I were a brand owner — portfolios, retouching, e-commerce specs, quote red flags and six questions to ask before the advance.",
+		image: "/opt/best shots/Product image/product-molton-brown.webp",
+		createdAt: "2026-09-12",
+		tag: "Dehradun Guide",
+		readTime: "12 min read",
+	},
+	{
+		title: "Why Professional Product Photography Increases E-Commerce Sales",
+		slug: "/blog/why-product-photography-increases-ecommerce-sales",
+		description:
+			"Clicks, conversion, returns, ad costs — what actually changes when a brand replaces phone photos with studio-lit catalogue work. From the studio floor.",
+		image: "/opt/best shots/new-images/new-product-blast.webp",
+		createdAt: "2026-09-12",
+		tag: "E-Commerce",
+		readTime: "11 min read",
+	},
+	{
 		title: "Commercial Photo Retouching 101: The Studio Pipeline from RAW to Final Master",
 		slug: "/blog/retouching-101",
 		description:
@@ -184,12 +214,43 @@ const blogs: BlogCard[] = [
 		tag: "Behind the scenes",
 		readTime: "15 min read",
 	},
+	// --- AI roundup posts added below ---
+	{
+		title: "AI Product Photography Tools for E-Commerce in 2026: The Indian Studio's Tested Roundup",
+		slug: "/blog/ai-product-photography-tools-ecommerce-2026",
+		description:
+			"A working commercial studio in Dehradun ranks the AI product photography tools that actually save hours on real e-commerce work — Photoroom, Claid, Photoshop, Magnific, Topaz compared.",
+		image: "/opt/best shots/new-images/new-product-blast.webp",
+		createdAt: "2026-09-04",
+		tag: "AI & Photography",
+		readTime: "14 min read",
+	},
+	{
+		title: "AI Photo Culling Software: How Modern Photographers Cull 2,000 Shots in 20 Minutes",
+		slug: "/blog/ai-photo-culling-software",
+		description:
+			"Aftershoot vs Imagen vs Evoto vs Narrative — every major AI culling tool tested on real client work. The hybrid AI-first, human-final workflow Indian studios use.",
+		image: "/opt/best shots/Product image/product-molton-brown.webp",
+		createdAt: "2026-09-04",
+		tag: "AI & Photography",
+		readTime: "13 min read",
+	},
+	{
+		title: "AI Video Generation for Commercial Ads in India: What Actually Works for Small Studios",
+		slug: "/blog/ai-video-generation-commercial-ads-india",
+		description:
+			"Runway, Veo 3, Sora 2, HeyGen, Creatify — every major AI video tool tested on real D2C ad work. The hybrid real-footage + AI workflow that ships for under $100/month.",
+		image: "/opt/best shots/ADs/ad-culinary.webp",
+		createdAt: "2026-09-04",
+		tag: "AI & Video",
+		readTime: "15 min read",
+	},
 ];
 
 export function BlogSection() {
 	return (
 		<div className="mx-auto w-full max-w-[1600px] px-4 md:px-12 py-24 md:py-32">
-			<div className="h-eyebrow">Journal & Field Notes</div>
+			<div className="h-eyebrow">Blog & Field Notes</div>
 			<h1 className="h-display">
 				Field notes on <span className="h-accent">commercial photography</span>.
 			</h1>

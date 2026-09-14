@@ -24,23 +24,23 @@ const CinematicFooter = dynamic(() => import("@/components/ui/motion-footer").th
 
 export const metadata: Metadata = {
   // Short meta title; the H1 inside the page still uses the longer form.
-  title: "Rahul Chanda Photography | Dehradun, India",
+  title: "Best Commercial Photographer in Dehradun | Rahul Chanda",
   description:
     "Commercial and product photographer in Dehradun, India. Product, food & beverage, footwear, and brand campaigns shot and retouched in-house.",
   alternates: { canonical: "/" },
-  // Home page shares the global optimized OG image (1200×630, /opt/og-image.jpg)
-  // — the previous product-serum.webp is a 1024×1024 square that platforms
-  // letterbox or crop. All 28 other pages use the global default.
+  // Home page uses its own OG image (Rahul portrait, 1200x630,
+  // /opt/og-image-homepage.jpg). Each service page also overrides with its own
+  // OG image; every other page falls back to the global /opt/og-image.jpg.
   openGraph: {
     // Match the short meta title so link previews match the browser tab.
-    title: "Rahul Chanda Photography | Dehradun, India",
+    title: "Best Commercial Photographer in Dehradun | Rahul Chanda",
     description:
       "Commercial and product photographer in Dehradun, India. Product, food & beverage, footwear, and brand campaigns shot and retouched in-house.",
     url: absoluteUrl("/"),
     type: "website",
     images: [
       {
-        url: absoluteUrl(siteConfig.ogImagePath),
+        url: absoluteUrl("/opt/og-image-homepage.jpg"),
         width: 1200,
         height: 630,
         alt: "Rahul Chanda — Commercial Product Photographer in Dehradun, India",
@@ -50,10 +50,10 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     // Match the short meta title.
-    title: "Rahul Chanda Photography | Dehradun, India",
+    title: "Best Commercial Photographer in Dehradun | Rahul Chanda",
     description:
       "Commercial and product photographer in Dehradun, India. Product, food & beverage, footwear, and brand campaigns shot and retouched in-house.",
-    images: [absoluteUrl(siteConfig.ogImagePath)],
+    images: [absoluteUrl("/opt/og-image-homepage.jpg")],
   },
 };
 
@@ -114,7 +114,7 @@ const homeSchema = {
       "legalName": "Rahul Chanda Photography",
       "url": absoluteUrl("/"),
       "logo": absoluteUrl("/icon.svg"),
-      "image": absoluteUrl(siteConfig.ogImagePath),
+      "image": absoluteUrl("/opt/og-image-homepage.jpg"),
       "description":
         "Commercial and product photography studio based in Dehradun, India. Specializing in product, food & beverage, footwear, and advertising campaigns with professional in-house retouching.",
       "telephone": siteConfig.contact.telephone,
@@ -197,7 +197,7 @@ const homeSchema = {
       "name": siteConfig.name,
       "url": absoluteUrl("/"),
       "logo": absoluteUrl("/icon.svg"),
-      "image": absoluteUrl(siteConfig.ogImagePath),
+      "image": absoluteUrl("/opt/og-image-homepage.jpg"),
       "description": siteConfig.description,
       "sameAs": [
         siteConfig.contact.instagram,
@@ -233,12 +233,12 @@ export default function Home() {
       <Testimonials />
       <About />
       <FAQSection />
-      {/* ===== JOURNAL STRIP — internal links into blog cluster (SEO) ===== */}
-      <section aria-label="From the journal" className="relative w-full px-4 md:px-12 py-20 md:py-24 bg-[#070707]">
+      {/* ===== BLOG STRIP — internal links into blog cluster (SEO) ===== */}
+      <section aria-label="From the blog" className="relative w-full px-4 md:px-12 py-20 md:py-24 bg-[#070707]">
         <div className="max-w-[1600px] mx-auto">
           <div className="flex items-end justify-between gap-6 flex-wrap">
             <h2 className="h-section leading-tight">
-              From the <span className="italic text-[#e83b2c]">journal</span>.
+              From the <span className="italic text-[#e83b2c]">blog</span>.
             </h2>
             <Link
               href="/blog"

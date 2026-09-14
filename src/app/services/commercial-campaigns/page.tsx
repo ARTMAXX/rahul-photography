@@ -48,7 +48,7 @@ const campaignFaqSchema = {
 };
 
 export const metadata: Metadata = {
-  title: "Brand & Advertising Photographer in Dehradun — Commercial Campaigns",
+  title: "Top Brand & Advertising Photographer in Dehradun | Campaigns",
   description:
     "Art-directed commercial campaign photography in Dehradun. Brand launches, billboards, and digital ads. Concept to delivery. Book a shoot.",
   alternates: { canonical: "/services/commercial-campaigns" },
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: absoluteUrl(siteConfig.ogImagePath),
+        url: absoluteUrl("/opt/og-image-commercial.jpg"),
         width: 1200,
         height: 630,
         alt: "Commercial & Advertising Photography — Campaign Shoots",
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
   title: "Advertising & Commercial Photographer in Dehradun",
     description: "Art-directed commercial campaign photography in Dehradun. Brand launches, billboards, digital ads.",
-    images: [absoluteUrl(siteConfig.ogImagePath)],
+    images: [absoluteUrl("/opt/og-image-commercial.jpg")],
   },
 };
 

@@ -6,7 +6,7 @@ import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Commercial Photography Services | Rahul Chanda Dehradun",
+  title: "Top Commercial Photography Services in Dehradun | Rahul Chanda",
   description:
     "Professional commercial photography in Dehradun — product packshots, food & beverage, fashion, campaigns, and brand content. In-house retouching.",
   alternates: { canonical: "/services" },

@@ -88,12 +88,22 @@ export default function Hero() {
   return (
     <section ref={containerRef} id="hero-section" className="relative z-[1] h-screen 
 w-full overflow-hidden bg-[#070707]">
-      {/* Background Gradient Layer */}
+      {/* Background Gradient Layer — calibrated to localhost-hero.png.
+          Sampled reference values: upper-right glow ~rgb(99,22,15) at (88%,15%),
+          top-right ~rgb(75,18,15), mid-right ~rgb(72,18,14); left side stays
+          dark ~rgb(32,14,11) and bottom-right ~rgb(19,12,11). The right-side
+          ellipse peak alpha is tuned to composite to ~rgb(97,23,15) over the
+          near-black base; the low-left wash is only a faint echo. */}
       <div
         className="absolute inset-0 z-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse at 70% 60%, rgba(140,28,19,0.18) 0%, transparent 60%)",
+            "radial-gradient(ellipse 82% 62% at 80% 16%, rgba(145,32,20,0.60) 0%, rgba(118,26,18,0.42) 40%, transparent 68%)," +
+            "radial-gradient(ellipse 70% 55% at 24% 80%, rgba(130,28,19,0.28) 0%, transparent 62%)," +
+            "radial-gradient(ellipse 60% 40% at 55% 102%, rgba(120,26,18,0.30) 0%, transparent 70%)," +
+            "radial-gradient(ellipse 70% 55% at 45% 40%, rgba(110,24,16,0.22) 0%, transparent 60%)," +
+            "radial-gradient(ellipse 140% 140% at 50% 50%, rgba(105,24,16,0.17) 0%, transparent 100%)," +
+            "linear-gradient(165deg, #0a0203 0%, #190708 45%, #0b0202 100%)",
         }}
       />
 

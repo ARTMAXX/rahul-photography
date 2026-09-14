@@ -5,19 +5,19 @@ import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Food Photographer Dehradun | Restaurant & Beverage Photography",
+  title: "Best Food Photographer in Dehradun | Restaurant & Beverage",
   description:
     "Food photographer in Dehradun for restaurants, cafes, food brands, and beverage companies. Menu, delivery-app and on-location shoots across Uttarakhand.",
   alternates: { canonical: "/services/food-beverage-photography" },
   openGraph: {
-    title: "Food Photographer Dehradun | Restaurant & Beverage Photography",
+    title: "Best Food Photographer in Dehradun | Restaurant & Beverage",
     description:
       "Food photographer in Dehradun for restaurants, cafes, food brands, and beverage companies. Menu, delivery-app and on-location food photography across Uttarakhand.",
     url: absoluteUrl("/services/food-beverage-photography"),
     type: "website",
     images: [
       {
-        url: absoluteUrl(siteConfig.ogImagePath),
+        url: absoluteUrl("/opt/og-image-food-photography.jpg"),
         width: 1200,
         height: 630,
         alt: "Food Photographer Dehradun \u2014 Restaurant & Beverage Photography",
@@ -26,10 +26,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Food Photographer Dehradun | Restaurant & Beverage Photography",
+    title: "Best Food Photographer in Dehradun | Restaurant & Beverage",
     description:
       "Food photographer in Dehradun for restaurants, cafes, food brands, and beverage companies. Menu, delivery-app and on-location food photography across Uttarakhand.",
-    images: [absoluteUrl(siteConfig.ogImagePath)],
+    images: [absoluteUrl("/opt/og-image-food-photography.jpg")],
   },
 };
 
