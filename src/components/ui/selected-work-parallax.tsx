@@ -150,11 +150,11 @@ const defaultServices: ServiceItem[] = [
     keywords: "Food photographer India — Restaurant menu — Beverage splash photography",
   },
   {
-    title: "Footwear & Fashion Photography",
+    title: "Footwear Photography",
     description:
-      "Sneaker product photography, apparel lookbooks, and e-commerce catalog shoots for footwear brands and fashion labels. White cutout, on-model, and lifestyle campaign imagery.",
-    link: "/services/footwear-fashion-photography",
-    keywords: "Footwear photographer India — Sneaker photography — Fashion catalog",
+      "Sneaker and shoe product photography for footwear brands and marketplace sellers. White cutout packshots, multi-angle catalog coverage, and lifestyle campaign imagery.",
+    link: "/services/footwear-photography",
+    keywords: "Footwear photographer India — Sneaker photography — Shoe product photography",
   },
   {
     title: "Commercial Campaign Photography",

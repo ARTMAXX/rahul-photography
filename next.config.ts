@@ -85,6 +85,13 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Sept 2026: footwear split out of the old combined "footwear-fashion" URL.
+      // Footwear now lives in the product family; fashion became its own page.
+      {
+        source: "/services/footwear-fashion-photography",
+        destination: "/services/footwear-photography",
+        permanent: true,
+      },
       {
         source: "/blog/preparing-for-a-product-shoot",
         destination: "/blog/ai-commercial-product-photography",

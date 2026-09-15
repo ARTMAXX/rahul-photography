@@ -56,6 +56,7 @@ const services: Service[] = [
     shortDesc: "Editorial-quality fashion imagery for brands and publications.",
     fullDesc:
       "From lookbooks to editorial campaigns, I craft fashion photography that tells your brand's story with emotional depth and visual impact.",
+    subpageHref: "/services/fashion-photography",
     deliverables: [
       "30-80 edited images per session",
       "Creative direction & styling guidance",

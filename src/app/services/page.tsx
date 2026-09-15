@@ -4,6 +4,7 @@ import ServicesGrid from "@/components/sections/redesign/ServicesGrid";
 import FAQSection from "@/components/sections/redesign/FAQSection";
 import { CinematicFooter } from "@/components/ui/motion-footer";
 import OfferBanner from "@/components/ui/offer-banner";
+import ServiceCta from "@/components/ui/service-cta";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -73,7 +74,8 @@ const servicesSchema = {
         "itemListElement": [
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Product Photography" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Food & Beverage Photography" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fashion & Footwear Photography" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fashion Photography" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Footwear Photography" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Advertising Campaigns" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Interior & Architecture Photography" } },
         ],
@@ -164,19 +166,11 @@ export default function ServicesPage() {
       <FAQSection />
 
       {/* CTA band */}
-      <section className="relative w-full px-4 md:px-12 pb-28">
-        <div className="max-w-[1600px] mx-auto">
-          <a
-            href="/contact?service=Commercial%20Campaigns"
-            className="group inline-flex items-center gap-4 text-2xl md:text-4xl font-serif text-white/80 hover:text-white transition-colors duration-300"
-            data-cursor="pointer"
-          >
-            <span className="italic text-[#e83b2c]">Let&apos;s plan your shoot</span>
-            <span className="w-10 h-px bg-[#e83b2c]/30 group-hover:bg-[#e83b2c] transition-colors duration-300" />
-            <span className="text-[#e83b2c]">→</span>
-          </a>
-        </div>
-      </section>
+      <ServiceCta
+        label="Let's plan your shoot"
+        href="/contact?service=Commercial%20Campaigns"
+        sectionClassName="relative w-full px-4 md:px-12 pb-28"
+      />
 
       <CinematicFooter />
     </main>

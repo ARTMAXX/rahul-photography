@@ -4,6 +4,7 @@ import { CinematicFooter } from "@/components/ui/motion-footer";
 import GbpMapEmbed from "@/components/ui/gbp-map-embed";
 import { siteConfig, absoluteUrl } from "@/lib/site";
 import { generateQAPageSchema } from "@/lib/schemas";
+import ServiceCta from "@/components/ui/service-cta";
 
 // ============================================================================
 // METADATA — Targeted for commercial photography intent in Dehradun
@@ -69,13 +70,13 @@ const SERVICE_AREAS = [
 const LOCAL_SERVICES = [
   {
     id: "product-photography",
-    title: "Product Photography",
+    title: "E-commerce Product Photography",
     slug: "/services/product-photography",
     description:
-      "E-commerce catalogues, white-background packshots, lifestyle product imagery, and creative hero shots for Shopify, Amazon, and D2C brands.",
+      "E-commerce product photographer in Dehradun — catalogues, white-background packshots, lifestyle product imagery, and creative hero shots for Shopify, Amazon, and D2C brands.",
     keywords: [
-      "product photography dehradun",
       "ecommerce product photography dehradun",
+      "product photography dehradun",
       "packshot photography dehradun",
       "product photographer dehradun",
     ],
@@ -112,18 +113,31 @@ const LOCAL_SERVICES = [
     icon: "☕",
   },
   {
-    id: "footwear-fashion-photography",
-    title: "Footwear & Fashion Photography",
-    slug: "/services/footwear-fashion-photography",
+    id: "footwear-photography",
+    title: "Footwear Photography",
+    slug: "/services/footwear-photography",
     description:
-      "On-location shoots for footwear labels and apparel brands — detail macros, lifestyle lookbooks, and campaign imagery for brands in the Doon Valley and beyond.",
+      "Marketplace-ready footwear photography — packshots, detail macros, and lifestyle shots for shoe brands and e-commerce catalogues.",
     keywords: [
       "footwear photographer dehradun",
-      "fashion photographer dehradun",
       "footwear photography dehradun",
-      "apparel photography dehradun",
+      "shoe photography dehradun",
     ],
     icon: "👟",
+  },
+  {
+    id: "fashion-photography",
+    title: "Fashion Photography",
+    slug: "/services/fashion-photography",
+    description:
+      "Fashion photographer in Dehradun for apparel brands and boutiques — on-model lookbooks, editorial campaigns, and apparel e-commerce imagery.",
+    keywords: [
+      "fashion photographer dehradun",
+      "fashion photography dehradun",
+      "lookbook photography dehradun",
+      "apparel photographer dehradun",
+    ],
+    icon: "👗",
   },
   {
     id: "commercial-campaigns",
@@ -742,21 +756,11 @@ export default function DehradunPage() {
       </section>
 
       {/* ===== CTA BAND ===== */}
-      <section className="relative w-full px-4 md:px-12 pb-28 pt-8">
-        <div className="max-w-[1600px] mx-auto">
-          <Link
-            href="/contact"
-            className="group inline-flex items-center gap-4 text-2xl md:text-4xl font-serif text-white/80 hover:text-white transition-colors duration-300"
-            data-cursor="pointer"
-          >
-            <span className="italic text-[#e83b2c]">
-              Let&apos;s plan your shoot in Dehradun
-            </span>
-            <span className="w-10 h-px bg-[#e83b2c]/30 group-hover:bg-[#e83b2c] transition-colors duration-300" />
-            <span className="text-[#e83b2c]">→</span>
-          </Link>
-        </div>
-      </section>
+      <ServiceCta
+        label="Let's plan your shoot in Dehradun"
+        href="/contact"
+        sectionClassName="relative w-full px-4 md:px-12 pb-28 pt-8"
+      />
 
       <CinematicFooter />
     </main>

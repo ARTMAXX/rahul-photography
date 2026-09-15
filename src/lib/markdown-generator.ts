@@ -33,7 +33,7 @@ export function getMarkdownForPath(pathname: string): MarkdownResponse | null {
         "## Commercial Studio Booking",
         "- **Photographer:** Rahul Chanda",
         "- **Location:** Dehradun, Uttarakhand, India (on-location across India)",
-        "- **Services:** Commercial Product Photography, Food & Beverage, Footwear & Fashion, Campaign Art Direction, Post-Production & Color Management",
+        "- **Services:** Commercial Product Photography, Food & Beverage, Footwear Photography, Fashion Photography, Campaign Art Direction, Post-Production & Color Management",
         "- **Website:** https://rahulchandaphotography.com",
         "- **Contact:** https://rahulchandaphotography.com/contact | Phone: +91 70789 39475",
       ];
@@ -70,7 +70,7 @@ export function getMarkdownForPath(pathname: string): MarkdownResponse | null {
   // 3. Services: /services
   if (cleanPath === "/services") {
     const md = `# Commercial Photography Services — Rahul Chanda Photography
-> Professional commercial, product, food & beverage, footwear, and advertising campaign photography services based in Dehradun, India with in-house post-production.
+> Professional commercial, product, food & beverage, footwear, fashion, and advertising campaign photography services based in Dehradun, India with in-house post-production.
 > **Canonical URL:** https://rahulchandaphotography.com/services
 
 ## Service Offerings
@@ -83,15 +83,21 @@ export function getMarkdownForPath(pathname: string): MarkdownResponse | null {
 - **Focus:** Restaurant menu visuals, packaged food advertising, cafe branding, beverage splash action, and spirits bottle photography.
 - **Key Capabilities:** High-speed flash sync for liquid freeze, custom condensation styling, translucent backlighting, on-location kitchen shoots.
 
-### 3. Fashion & Footwear Photography
-- **Focus:** Footwear e-commerce angles, apparel lookbooks, leather goods, and model lifestyle campaigns.
-- **Key Capabilities:** Standardized conversion angle sequences, texture-preserving frequency separation, on-location across Uttarakhand.
+### 3. Footwear Photography
+- **Focus:** Footwear e-commerce angle sequences, sneaker and shoe catalog work, leather goods detail macros, and on-foot brand campaigns.
+- **Key Capabilities:** Standardized conversion angle coverage (three-quarter hero, profiles, sole, pair), texture-preserving frequency separation, colour-accurate material rendering.
+- **Page:** https://rahulchandaphotography.com/services/footwear-photography
 
-### 4. Brand Campaign & Commercial Video
+### 4. Fashion Photography
+- **Focus:** On-model lookbooks, editorial campaigns, apparel e-commerce imagery, and boutique and designer brand stories.
+- **Key Capabilities:** Creative direction and mood-boarding, model coordination and styling guidance, on-location across Uttarakhand and Delhi NCR.
+- **Page:** https://rahulchandaphotography.com/services/fashion-photography
+
+### 5. Brand Campaign & Commercial Video
 - **Focus:** Short-form social video reels, behind-the-scenes brand stories, and 4K commercial campaign assets.
 - **Key Capabilities:** Multi-aspect ratio delivery (9:16 vertical, 16:9 widescreen), DaVinci Resolve color consistency, high-speed camera motion.
 
-### 5. Architectural & Interior Photography
+### 6. Architectural & Interior Photography
 - **Focus:** Luxury resorts, boutique hotels, restaurants, cafes, and commercial spaces across Dehradun, Mussoorie, and Rishikesh.
 - **Key Capabilities:** Ambient + flash exposure blending, perspective control, interior styling.
 
@@ -123,8 +129,9 @@ export function getMarkdownForPath(pathname: string): MarkdownResponse | null {
 ## Core Commercial Capabilities
 1. **Product Photography for E-Commerce & Retail:** Amazon/Flipkart compliance, pure white sweeps, contextual lifestyle staging, in-house retouching.
 2. **Food, Restaurant & Cafe Photography:** Menu shoots on-location along Rajpur Road and Dehradun food hubs, styled flat-lays, dynamic pour/splash captures.
-3. **Apparel & Footwear Photography:** Clean multi-angle catalog packs, leathercraft detail macros, model lookbooks.
-4. **Resort & Hospitality Photography:** Boutique stays and cafes across Mussoorie, Rishikesh, and Dehradun.
+3. **Footwear Photography:** Clean multi-angle catalog packs, leathercraft detail macros, conversion-tested shoe angle sequences.
+4. **Fashion Photography:** On-model lookbooks, editorial campaigns, apparel e-commerce imagery, and boutique brand stories.
+5. **Resort & Hospitality Photography:** Boutique stays and cafes across Mussoorie, Rishikesh, and Dehradun.
 
 ## Direct Contact
 - **Phone / WhatsApp:** +91 70789 39475
@@ -163,7 +170,7 @@ Commercial photography is where artistic vision meets commercial precision. Ever
 ## Studio Infrastructure & Experience
 - **Experience:** Over 10 years in commercial photography, advertising campaigns, and studio lighting.
 - **Location:** Dehradun, Uttarakhand, India (serving national and international brands).
-- **Specialties:** Product packshots, beverage splashes, food styling, fashion footwear, AI-accelerated studio workflows.
+- **Specialties:** Product packshots, beverage splashes, food styling, footwear and fashion photography, AI-accelerated studio workflows.
 - **Post-Production:** Full in-house color management (Calibrite / X-Rite ColorChecker), frequency separation, dodge & burn, and multi-format delivery.
 
 ## Connect
@@ -221,7 +228,7 @@ To receive an accurate estimate and timeline, please include:
 - **Lead Photographer:** Rahul Chanda
 - **Location:** Dehradun, Uttarakhand, India (serving pan-India)
 - **Phone / WhatsApp:** +91 70789 39475
-- **Primary Specialization:** Commercial Product, Food & Beverage, Fashion Footwear, Advertising Campaigns
+- **Primary Specialization:** Commercial Product, Food & Beverage, Footwear, Fashion, Advertising Campaigns
 
 ## Site Navigation
 - **Services:** [Commercial Photography Services](https://rahulchandaphotography.com/services)
@@ -234,8 +241,9 @@ To receive an accurate estimate and timeline, please include:
 ## Core Services Summary
 1. **Product Photography:** E-commerce packshots, cosmetics, watches, Amazon/Shopify listings.
 2. **Food & Beverage:** High-speed splash photography, menu styling, bottle lighting.
-3. **Footwear & Fashion:** Conversion-tested e-commerce angle sequences.
-4. **Brand Video & Motion:** 4K commercial reels, DaVinci Resolve color consistency.
+3. **Footwear Photography:** Conversion-tested e-commerce angle sequences for shoes, sneakers, and leather goods.
+4. **Fashion Photography:** On-model lookbooks, editorial campaigns, and apparel e-commerce imagery.
+5. **Brand Video & Motion:** 4K commercial reels, DaVinci Resolve color consistency.
 
 ## Machine-Readable Endpoints
 - **llms.txt:** https://rahulchandaphotography.com/llms.txt

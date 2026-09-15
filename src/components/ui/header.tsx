@@ -41,8 +41,12 @@ function Header1() {
           href: "/services/food-beverage-photography",
         },
         {
-          title: "Fashion & Footwear",
-          href: "/services/footwear-fashion-photography",
+          title: "Fashion Photography",
+          href: "/services/fashion-photography",
+        },
+        {
+          title: "Footwear Photography",
+          href: "/services/footwear-photography",
         },
         {
           title: "Commercial Campaigns",

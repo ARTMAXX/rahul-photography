@@ -16,7 +16,8 @@ export function LegalFooter() {
             <ul className="space-y-2.5">
               <li><Link href="/services/product-photography" className="text-xs md:text-sm text-white/50 hover:text-white transition-colors">Product Photography</Link></li>
               <li><Link href="/services/food-beverage-photography" className="text-xs md:text-sm text-white/50 hover:text-white transition-colors">Food & Beverage</Link></li>
-              <li><Link href="/services/footwear-fashion-photography" className="text-xs md:text-sm text-white/50 hover:text-white transition-colors">Fashion & Footwear</Link></li>
+              <li><Link href="/services/fashion-photography" className="text-xs md:text-sm text-white/50 hover:text-white transition-colors">Fashion Photography</Link></li>
+              <li><Link href="/services/footwear-photography" className="text-xs md:text-sm text-white/50 hover:text-white transition-colors">Footwear Photography</Link></li>
               <li><Link href="/services/commercial-campaigns" className="text-xs md:text-sm text-white/50 hover:text-white transition-colors">Commercial Campaigns</Link></li>
             </ul>
           </div>

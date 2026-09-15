@@ -142,8 +142,15 @@ export default function NavigationMenuDemo() {
               </li>
               <li>
                 <NavigationMenuLink asChild>
-                  <Link href="/services/footwear-fashion-photography" className="block select-none rounded-lg px-3 py-2 text-sm text-white/70 no-underline hover:bg-white/5 hover:text-white transition-colors">
+                  <Link href="/services/fashion-photography" className="block select-none rounded-lg px-3 py-2 text-sm text-white/70 no-underline hover:bg-white/5 hover:text-white transition-colors">
                     Fashion
+                  </Link>
+                </NavigationMenuLink>
+              </li>
+              <li>
+                <NavigationMenuLink asChild>
+                  <Link href="/services/footwear-photography" className="block select-none rounded-lg px-3 py-2 text-sm text-white/70 no-underline hover:bg-white/5 hover:text-white transition-colors">
+                    Footwear
                   </Link>
                 </NavigationMenuLink>
               </li>

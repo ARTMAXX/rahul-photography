@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { CinematicFooter } from "@/components/ui/motion-footer";
+import ServiceCta from "@/components/ui/service-cta";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
 // FAQPage schema for AI search engines and voice search (Sept 2026).
@@ -48,14 +49,14 @@ const productFaqSchema = {
 };
 
 export const metadata: Metadata = {
-  title: "Top Product Photography in Dehradun | Amazon, Flipkart, Shopify",
+  title: "E-commerce Product Photographer in Dehradun | Rahul Chanda",
   description:
-    "Professional product photography in Dehradun for e-commerce brands, D2C, Amazon, Flipkart & Shopify. In-house retouching. Shoot pan-India. Book a shoot.",
+    "E-commerce product photographer in Dehradun for Amazon, Flipkart, Shopify & D2C brands. Marketplace-ready packshots, creative hero shots, in-house retouching. Book a shoot.",
   alternates: { canonical: "/services/product-photography" },
   openGraph: {
-    title: "Product Photography in Dehradun — Amazon, Flipkart & Shopify Ready",
+    title: "E-commerce Product Photographer in Dehradun — Amazon, Flipkart & Shopify Ready",
     description:
-      "Commercial product photography in Dehradun for e-commerce brands, startups, and established companies. Platform-compliant packshots, cosmetics, watches, jewelry, and footwear photography.",
+      "E-commerce product photography in Dehradun for online brands, D2C startups, and established companies. Platform-compliant packshots, cosmetics, watches, jewelry, and footwear photography.",
     url: absoluteUrl("/services/product-photography"),
     type: "website",
     images: [
@@ -69,8 +70,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Top Product Photography in Dehradun | Amazon, Flipkart, Shopify",
-    description: "Professional product photography in Dehradun. Platform-compliant packshots, in-house retouching, pan-India shoots.",
+    title: "E-commerce Product Photographer in Dehradun | Rahul Chanda",
+    description: "E-commerce product photographer in Dehradun. Marketplace-compliant packshots, in-house retouching, pan-India shoots.",
     images: [absoluteUrl("/opt/og-image-product.jpg")],
   },
 };
@@ -104,9 +105,9 @@ const productPhotographySchema = {
     {
       "@type": "Service",
       "@id": absoluteUrl("/services/product-photography#service"),
-      "name": "Product Photography",
+      "name": "E-commerce Product Photography",
       "description":
-        "Professional product photography services for e-commerce, brands, and businesses. Specializing in product packshots, cosmetics, watches, jewelry, footwear, and D2C products.",
+        "E-commerce product photographer in Dehradun, India. Specializing in marketplace-ready product packshots for Amazon, Flipkart, and Shopify, plus cosmetics, watches, jewelry, footwear, and D2C product photography with in-house retouching.",
       "provider": {
         "@id": absoluteUrl("/#business")
       },
@@ -206,15 +207,15 @@ export default function ProductPhotographyPage() {
         <div className="relative z-10 mx-auto w-full max-w-[1600px]">
           <div className="max-w-[36rem] text-left">
             <div className="inline-flex border border-[#e83b2c]/20 py-1 px-4 rounded-full text-xs text-[#e83b2c]/70 uppercase tracking-widest">
-              Product Photography
+              E-commerce Product Photography
             </div>
             <h1 className="text-[clamp(2.4rem,5vw,4.5rem)] font-serif leading-[0.95] tracking-[-0.03em] text-white mt-5 max-w-[12ch] text-balance">
-              Product Photography
+              E-commerce Product
               <br />
-              for <span className="italic text-[#e83b2c]">e-commerce</span> &amp; brands.
+              Photography in <span className="italic text-[#e83b2c]">Dehradun</span>.
             </h1>
             <p className="text-base md:text-lg text-white/60 max-w-[52ch] mt-5 leading-relaxed text-balance">
-              High-end commercial product photography that makes your products worth choosing. From packshots to luxury product detail work — e-commerce-ready and campaign-grade imagery.
+              E-commerce product photographer for Amazon, Flipkart, Shopify, and D2C brands — marketplace-ready packshots, creative hero shots, and campaign-grade imagery, retouched in-house.
             </p>
           </div>
         </div>
@@ -373,6 +374,37 @@ export default function ProductPhotographyPage() {
         </div>
       </section>
 
+      {/* Specialist spokes — hub → spoke internal linking (Sept 2026) */}
+      <section className="relative w-full px-4 md:px-12 py-24 border-t border-white/10">
+        <div className="max-w-[1600px] mx-auto">
+          <h2 className="h-section mb-12">
+            Specialist Product Photography
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Link
+              href="/services/footwear-photography"
+              className="group border border-white/10 p-8 hover:border-[#e83b2c]/50 transition-colors"
+            >
+              <span className="text-xs uppercase tracking-widest text-[#e83b2c]">Specialisation</span>
+              <h3 className="text-xl font-serif text-white mt-3 group-hover:text-[#e83b2c] transition-colors">
+                Footwear &amp; Shoe Product Photography
+              </h3>
+              <p className="text-white/50 mt-3">White-background sneaker packshots, 6-angle catalog coverage, and sole and stitch detail macros for shoe brands</p>
+            </Link>
+            <Link
+              href="/services/fashion-photography"
+              className="group border border-white/10 p-8 hover:border-[#e83b2c]/50 transition-colors"
+            >
+              <span className="text-xs uppercase tracking-widest text-[#e83b2c]">Specialisation</span>
+              <h3 className="text-xl font-serif text-white mt-3 group-hover:text-[#e83b2c] transition-colors">
+                Fashion &amp; Apparel Photography
+              </h3>
+              <p className="text-white/50 mt-3">On-model lookbooks, editorial campaigns, and apparel e-commerce imagery for clothing brands and boutiques</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Internal Linking to Blog */}
       <section className="relative w-full px-4 md:px-12 py-24 border-t border-white/10">
         <div className="max-w-[1600px] mx-auto">
@@ -449,18 +481,10 @@ export default function ProductPhotographyPage() {
       </section>
 
       {/* CTA */}
-      <section className="relative w-full px-4 md:px-12 pb-28 pt-24 border-t border-white/10">
-        <div className="max-w-[1600px] mx-auto">
-          <a
-            href="/contact?service=Product%20Photography"
-            className="group inline-flex items-center gap-4 text-2xl md:text-4xl font-serif text-white/80 hover:text-white transition-colors duration-300"
-          >
-            <span className="italic text-[#e83b2c]">Ready to photograph your products?</span>
-            <span className="w-10 h-px bg-[#e83b2c]/30 group-hover:bg-[#e83b2c] transition-colors duration-300" />
-            <span className="text-[#e83b2c]"> —</span>
-          </a>
-        </div>
-      </section>
+      <ServiceCta
+        label="Ready to photograph your products?"
+        href="/contact?service=Product%20Photography"
+      />
 
       <CinematicFooter />
     </main>

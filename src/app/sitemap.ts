@@ -31,18 +31,20 @@ const corePageDates: Record<string, string> = {
   "/faq":       "2026-08-29",
   "/terms":     "2026-08-29",
   "/privacy":   "2026-08-29",
-  "/services/product-photography":          "2026-08-29",
+  "/services/product-photography":          "2026-09-15",
   "/services/food-beverage-photography":    "2026-08-29",
-  "/services/footwear-fashion-photography": "2026-08-29",
+  "/services/footwear-photography":        "2026-09-15",
   "/services/commercial-campaigns":         "2026-08-29",
+  "/services/fashion-photography":          "2026-09-15",
 };
 
 // Service sub-pages  —  primary national/India-wide ranking targets
 const servicePages = [
   { path: "/services/product-photography", priority: 0.9, freq: "monthly" as const },
   { path: "/services/food-beverage-photography", priority: 0.9, freq: "monthly" as const },
-  { path: "/services/footwear-fashion-photography", priority: 0.9, freq: "monthly" as const },
+  { path: "/services/footwear-photography", priority: 0.9, freq: "monthly" as const },
   { path: "/services/commercial-campaigns", priority: 0.9, freq: "monthly" as const },
+  { path: "/services/fashion-photography", priority: 0.9, freq: "monthly" as const },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

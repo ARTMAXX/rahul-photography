@@ -471,14 +471,14 @@ export const posts: BlogPost[] = [
       },
     ],
     cta: {
-      text: "Explore footwear & fashion commercial photography",
-      href: "/services/footwear-fashion-photography",
+      text: "Explore footwear commercial photography",
+      href: "/services/footwear-photography",
       subtext: "Catalog and campaign photography tailored for footwear brands.",
     },
     body: [
       "Footwear is one of the most visually competitive and return-sensitive categories in digital commerce. When shoppers purchase shoes online, they cannot touch the leather, test the cushioning, or inspect the sole grip. The product photography must answer every sensory question in a matter of seconds.",
       "",
-      "Studies consistently show that listings with comprehensive, standardized angle coverage achieve significantly higher conversion rates and lower return rates. For professional footwear photography, see our [footwear & fashion photography services](/services/footwear-fashion-photography). Here is the definitive sequence of footwear photography angles we shoot for e-commerce and brand lookbooks.",
+      "Studies consistently show that listings with comprehensive, standardized angle coverage achieve significantly higher conversion rates and lower return rates. For professional footwear photography, see our [footwear photography services](/services/footwear-photography). Here is the definitive sequence of footwear photography angles we shoot for e-commerce and brand lookbooks.",
       "",
       "## 1. The Three-Quarter Lateral Hero (The Primary Conversion Angle)",
       "",

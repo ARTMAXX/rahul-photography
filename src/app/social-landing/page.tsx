@@ -57,7 +57,8 @@ const heroImages = [
 const services = [
   { title: "Product Photography", desc: "Clean packshots, lifestyle shots, and e-commerce imagery that sells.", href: "/services/product-photography", img: "/best shots/new-images/new-product-bold.jpg" },
   { title: "Food & Beverage", desc: "Mouth-watering food and beverage photography for restaurants and brands.", href: "/services/food-beverage-photography", img: "/best shots/new-images/new-food-biriyani.png" },
-  { title: "Footwear & Fashion", desc: "Editorial and commercial footwear and fashion photography.", href: "/services/footwear-fashion-photography", img: "/best shots/new-images/new-product-heel.jpg" },
+  { title: "Footwear Photography", desc: "Marketplace-ready footwear packshots, multi-angle catalog coverage, and detail macros for shoe brands.", href: "/services/footwear-photography", img: "/best shots/new-images/new-product-heel.jpg" },
+  { title: "Fashion Photography", desc: "On-model lookbooks, editorial campaigns, and apparel e-commerce imagery with styling and creative direction.", href: "/services/fashion-photography", img: "/best shots/eachHeropages/lifestyle-fashion-services-fashion-photography.webp" },
 ];
 
 export default function SocialLandingPage() {
@@ -140,7 +141,7 @@ export default function SocialLandingPage() {
             <h2 className="text-3xl md:text-4xl font-light text-center mb-12">
               What I Do
             </h2>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {services.map((s, i) => (
                 <Link key={i} href={s.href} className="group">
                   <div className="relative aspect-[4/3] overflow-hidden mb-4">
@@ -149,7 +150,7 @@ export default function SocialLandingPage() {
                       alt={s.title}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 768px) 100vw, 33vw"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     />
                   </div>
                   <h3 className="text-lg font-medium mb-2">{s.title}</h3>

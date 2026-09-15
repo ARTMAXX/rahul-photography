@@ -21,10 +21,10 @@ interface ServiceLink {
 const services: ServiceLink[] = [
   {
     href: "/services/product-photography",
-    title: "Product Photography",
+    title: "E-commerce Product Photography",
     icon: Camera,
     shortDesc:
-      "Amazon, Flipkart & Shopify-ready packshots, cosmetics, watches, jewelry and footwear.",
+      "E-commerce product photographer in Dehradun — Amazon, Flipkart & Shopify-ready packshots, cosmetics, watches, jewelry and footwear.",
     longDesc:
       "E-commerce catalogue volumes, white-background packshots, and creative hero imagery — engineered for marketplace compliance and brand campaigns across India.",
     highlights: [
@@ -48,17 +48,31 @@ const services: ServiceLink[] = [
     ],
   },
   {
-    href: "/services/footwear-fashion-photography",
-    title: "Footwear & Fashion Photography",
+    href: "/services/footwear-photography",
+    title: "Footwear Photography",
     icon: Shirt,
     shortDesc:
-      "E-commerce footwear, apparel lookbooks, and editorial fashion campaigns.",
+      "Marketplace-ready footwear packshots, detail macros, and lifestyle shots for shoe brands.",
     longDesc:
-      "On-location shoots for footwear labels and apparel brands — detail macros, lifestyle lookbooks, and campaign imagery for D2C, marketplaces, and editorial.",
+      "On-location and studio shoots for footwear labels — detail macros, lifestyle shots, and marketplace-ready catalog imagery for D2C and e-commerce.",
     highlights: [
       "Marketplace-ready shoe angles",
-      "Lookbook & campaign production",
-      "Editorial & D2C-ready grading",
+      "Detail macro & texture work",
+      "Batch catalogue workflows",
+    ],
+  },
+  {
+    href: "/services/fashion-photography",
+    title: "Fashion Photography",
+    icon: Shirt,
+    shortDesc:
+      "Fashion photographer in Dehradun — on-model lookbooks, editorial campaigns, and apparel e-commerce imagery.",
+    longDesc:
+      "Story-led fashion photography for apparel brands and boutiques — on-model lookbooks, editorial campaigns, and apparel catalog imagery with full creative direction.",
+    highlights: [
+      "On-model lookbooks",
+      "Editorial & campaign production",
+      "Model coordination & styling",
     ],
   },
   {
