@@ -41,27 +41,8 @@ const STYLES = `
   color: rgba(255, 255, 255, 0.04);
   -webkit-text-stroke: 1.5px rgba(232, 59, 44, 0.45);
   white-space: nowrap;
-  /* Breathing red glow uses text-shadow (works on text strokes,
-      unlike drop-shadow which barely affects outline-only text).
-      Each frame stacks multiple shadow layers for a soft falloff. */
-  animation: watermarkGlow 3.5s ease-in-out infinite alternate;
-}
-/* Breathing outline glow  —  text-shadow stacks that pulse brighter
-   and dimmer, brand red dominant, white highlight on the leading edge. */
-@keyframes watermarkGlow {
-  0% {
-    text-shadow:
-      0 0 6px rgba(232, 59, 44, 0.35),
-      0 0 18px rgba(232, 59, 44, 0.25),
-      0 0 32px rgba(232, 59, 44, 0.15);
-  }
-  100% {
-    text-shadow:
-      0 0 8px rgba(232, 59, 44, 0.85),
-      0 0 28px rgba(232, 59, 44, 0.65),
-      0 0 56px rgba(232, 59, 44, 0.40),
-      0 0 80px rgba(232, 59, 44, 0.20);
-  }
+  /* Plain outline — no text-shadow glow. The shine sweep layer below
+     provides the continuous pulsing/drawing effect on the stroke. */
 }
 
 /* Shine sweep layer  —  VengenceUI AnimatedButton style: a light band

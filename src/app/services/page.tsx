@@ -3,6 +3,7 @@ import ServicesShowcase from "@/components/sections/redesign/ServicesShowcase";
 import ServicesGrid from "@/components/sections/redesign/ServicesGrid";
 import FAQSection from "@/components/sections/redesign/FAQSection";
 import { CinematicFooter } from "@/components/ui/motion-footer";
+import OfferBanner from "@/components/ui/offer-banner";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -114,6 +115,9 @@ export default function ServicesPage() {
           </p>
         </div>
       </section>
+
+      {/* Festive Early-Bird offer — anchor target for GBP Offer post redemption link */}
+      <OfferBanner />
 
       {/* Reuse the interactive services accordion */}
       <ServicesShowcase />
