@@ -343,6 +343,8 @@ const NAV_ROW_2: { label: string; href: string; external?: boolean }[] = [
 const NAV_ROW_3: { label: string; href: string; external?: boolean }[] = [
   { label: "Book on IndiaMART", href: "https://www.indiamart.com/proddetail/ecommerce-product-photoshoot-service-2859857038448.html?sellerpreview=1", external: true },
   { label: "View on Justdial", href: "https://jsdl.in/DT-99ESASPGCK1", external: true },
+  { label: "Book on OLX", href: "https://www.olx.in/item/other-services-c625-commercial-product-photographer-in-dehradun-food-fashion-iid-1855861146", external: true },
+  { label: "OLX Profile", href: "https://www.olx.in/profile/588865366", external: true },
   { label: "Behance Portfolio", href: "https://www.behance.net/rahulchanda4", external: true },
   { label: "Sulekha Listing", href: "https://www.sulekha.com/business/rahul-chanda-photography-gms-road-dehradun-contact-address", external: true },
   { label: "Adobe Stock", href: "https://stock.adobe.com/in/contributor/211259582/ARTMAXX", external: true },
