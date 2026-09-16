@@ -1,234 +1,267 @@
 # Local Citation Checklist
-## Rahul Chanda Photography — Dehradun / Uttarakhand
+
+## 📋 Overview
+This checklist helps you build consistent NAP (Name, Address, Phone) citations across local business directories and classifieds platforms for SEO and local visibility.
 
 ---
 
-## 📊 VERIFICATION SUMMARY (Last Verified: Sep 16, 2026)
+## 🔵 OLX India (olx.in)
 
-| Status | Count | Details |
-|--------|-------|---------|
-| ✅ **VERIFIED LIVE** | **9** | Google Business, Instagram, Behance, Justdial, IndiaMART, LinkedIn Company, Sulekha, Adobe Stock, Pinterest |
-| 🔄 **PENDING** | **2** | Bing Places (publishing), Apple Business Connect (signup) |
-| ⚠️ **NEEDS FIX** | **1** | Facebook (MAX PRIDE removal) |
-| ⬜ **NOT STARTED** | **13** | Urban Company, Quikr, OLX, etc. |
+### Platform Details
+- **URL**: https://www.olx.in/post/attributes
+- **Type**: Free Classifieds / Local Services Directory
+- **NAP Consistency**: ✅ Critical
 
-### ✅ CONFIRMED LIVE (9 Citations):
-1. **Google Business Profile** — CID: 2875568559570212542 ✅
-2. **Instagram** — @rahul_chanda_photography ✅
-3. **Behance** — behance.net/rahulchandaphotography ✅
-4. **Justdial** — Profile score 58% — Needs improvement ✅
-5. **IndiaMART** — Company profile created — Needs completion ✅
-6. **LinkedIn Company** — linkedin.com/company/143897286/ ✅
-7. **Sulekha** — sulekha.com/business/rahul-chanda-photography-gms-road-dehradun-contact-address ✅
-8. **Adobe Stock** — stock.adobe.com/in/contributor/211259582/ARTMAXX ✅
-9. **Pinterest** — pin.it/4o5krN3OF ✅
+### Post Your Ad Checklist
 
-### 🔄 PENDING (2 Citations):
-10. **Bing Places** — Synced with Google, publishing in 7-12 days 🔄
-11. **Apple Business Connect** — Signup in progress 🔄
+#### ✅ Category Selection
+- [ ] Select correct category: **Services > Other Services** (or relevant service type)
+- [ ] Verify category matches your business offering
 
-### ⚠️ NEEDS FIX (1 Citation):
-12. **Facebook Business** — MAX PRIDE page needs removal ⚠️
+#### ✅ Include Some Details
+| Field | Status | Notes |
+|-------|--------|-------|
+| **Ad Title** | ☐ | Min 10 characters, Max 70 characters |
+| **Description** | ☐ | Min 10 characters, Max 4096 characters |
 
-### ⬜ NOT STARTED (13 Citations):
-**Tier 2 (Indian):** Urban Company, Quikr, OLX
-**Tier 3 (Industry):** Clutch.co, The Manifest, DesignRush, WeddingWire, WedMeGood
-**Tier 5 (Photo):** 500px, Flickr, Unsplash, Houzz, Dribbble
+**Ad Title Best Practices:**
+- [ ] Include primary service keyword
+- [ ] Include location/city name
+- [ ] Example: "Professional Photography Services in Dehradun"
 
-### 🎯 RECOMMENDATION:
-**Current: 9 live citations → Target: 45+ in 6 months**
-**Gap: 36 more citations needed**
+**Description Best Practices:**
+- [ ] Include full NAP details
+- [ ] List all services offered
+- [ ] Add business hours
+- [ ] Include website URL (if allowed)
+- [ ] Use relevant keywords naturally
 
-**Priority Actions This Week:**
-1. Complete Apple Business Connect signup (in progress)
-2. Improve Justdial profile score (58% → 84%)
-3. Complete IndiaMART product descriptions
-4. Fix Facebook MAX PRIDE page removal
+#### ✅ Upload Photos
+- [ ] Upload high-quality business photos (up to 12)
+- [ ] Include logo as first image
+- [ ] Add team/studio photos
+- [ ] Show previous work/portfolio
+- [ ] Ensure consistent branding across images
+
+#### ✅ Location Confirmation
+| Field | Status | Example |
+|-------|--------|---------|
+| **State** | ☐ | Uttaranchal |
+| **City** | ☐ | Dehradun |
+| **Neighbourhood** | ☐ | Specific area name |
+
+**Location Best Practices:**
+- [ ] Use exact same city name as Google Business Profile
+- [ ] Include nearby landmark in neighbourhood if possible
+- [ ] Verify GPS coordinates match if using current location
+
+#### ✅ Review Your Details
+| Field | Status | Value |
+|-------|--------|-------|
+| **Name** | ☐ | rahul chanda |
+| **Mobile Phone** | ☐ | +91 XXXXX XXXXX |
+
+**NAP Consistency Rules:**
+- [ ] Business name matches Google Business Profile exactly
+- [ ] Phone number matches across all platforms
+- [ ] No variations (e.g., "Rahul Chanda" vs "R. Chanda")
+
+#### ✅ Account Verification
+- [ ] Verify mobile number via SMS code
+- [ ] Keep verification code accessible for re-posting
 
 ---
 
+## 📊 Citation Quality Checklist
 
+### Before Posting - Verify These:
 
-**NAP (Must Be IDENTICAL Everywhere):**
+#### NAP Consistency
+- [ ] **Business Name**: Exact match with Google Business Profile
+- [ ] **Address**: Same format, same abbreviations
+- [ ] **Phone**: Same number, same format (+91 format recommended)
+- [ ] **Website**: Same URL (with/without www, consistent protocol)
+
+#### Business Information
+- [ ] Business hours are accurate
+- [ ] Service areas are clearly defined
+- [ ] Categories are relevant and correct
+- [ ] Description is unique (not duplicate content)
+
+#### Media Assets
+- [ ] Logo is high-resolution (min 500x500px)
+- [ ] Cover photo is properly sized for platform
+- [ ] All images are properly compressed for web
+- [ ] No watermarks or borders on images
+
+---
+
+## 🏢 Other Local Citation Platforms
+
+### Tier 1 - High Priority (India)
+
+| Platform | URL | Status | Notes |
+|----------|-----|--------|-------|
+| **Google Business Profile** | business.google.com | ☐ | Primary citation source |
+| **JustDial** | justdial.com | ☐ | Major local directory |
+| **Sulekha** | sulekha.com | ☐ | Services directory |
+| **IndiaMart** | indiamart.com | ☐ | Business directory |
+| **TradeIndia** | tradeindia.com | ☐ | B2B directory |
+| **OLX India** | olx.in | ☐ | Classifieds |
+| **Quikr** | quikr.com | ☐ | Classifieds |
+
+### Tier 2 - Medium Priority
+
+| Platform | URL | Status | Notes |
+|----------|-----|--------|-------|
+| **Yelp India** | yelp.co.in | ☐ | Reviews + directory |
+| **Hotfrog India** | hotfrog.in | ☐ | Business directory |
+| **Fyple India** | fyple.co.in | ☐ | Local search |
+| **ConnectIN** | connectin.com | ☐ | Business network |
+| **LocalBusiness.com** | localbusiness.com | ☐ | Directory |
+| **2findlocal** | 2findlocal.com | ☐ | Local search |
+
+### Tier 3 - Niche/Industry Specific
+
+| Platform | URL | Status | Notes |
+|----------|-----|--------|-------|
+| **Zomato** (for food) | zomato.com | ☐ | Restaurant directory |
+| **UrbanClap** | urbanclap.com | ☐ | Home services |
+| **Housejoy** | housejoy.in | ☐ | Home services |
+| **Practo** (for healthcare) | practo.com | ☐ | Healthcare directory |
+
+---
+
+## 📝 Citation Building Process
+
+### Step 1: Audit Existing Citations
+- [ ] Search Google for: "business name" + "phone number"
+- [ ] Check each result for NAP consistency
+- [ ] Note any inconsistencies to fix
+
+### Step 2: Create Master NAP Document
+```yaml
+Business Name: [Exact Business Name]
+Address Line 1: [Street Address]
+Address Line 2: [Suite/Unit if applicable]
+City: [City Name]
+State: [State Name]
+PIN Code: [PIN Code]
+Country: India
+Phone: +91 XXXXX XXXXX
+Website: https://www.example.com
+Email: contact@example.com
 ```
-Name: Rahul Chanda Photography
-Address: Dehradun, Uttarakhand, India
-Phone: +91 70789 39475
-Email: rahulchandaphotography@gmail.com
-Website: https://rahulchandaphotography.com
-```
+
+### Step 3: Prioritize Platforms
+1. Google Business Profile (MUST HAVE)
+2. Major directories (JustDial, Sulekha, IndiaMart)
+3. Classifieds (OLX, Quikr)
+4. Industry-specific platforms
+5. General directories
+
+### Step 4: Post/Claim on Each Platform
+- [ ] Use exact NAP from master document
+- [ ] Add all relevant business details
+- [ ] Upload consistent media assets
+- [ ] Verify listing after creation
+
+### Step 5: Monitor & Maintain
+- [ ] Set calendar reminder for quarterly audit
+- [ ] Check for duplicate listings
+- [ ] Update information if business details change
+- [ ] Respond to reviews where applicable
 
 ---
 
-## TIER 1 — Core Platforms (Claim & Verify THIS WEEK)
+## 🚨 Common Citation Mistakes to Avoid
 
-| Platform | URL | Status | Login/Notes |
-|----------|-----|--------|-------------|
-| **Google Business Profile** | business.google.com | ✅ Verified | CID: 2875568559570212542 — LIVE |
-| **Bing Places** | bingplaces.com | 🔄 Pending Publish | Synced with Google — ETA 7-12 days |
-| **Apple Maps** | register.apple.com/places | 🔄 In Progress | Apple Business Connect — User completing signup now |
-| **Facebook Business** | business.facebook.com | ⚠️ Needs Fix | MAX PRIDE page needs removal from business portfolio |
-| **Instagram** | instagram.com | ✅ Verified | @rahul_chanda_photography — LIVE |
-| **LinkedIn Company** | linkedin.com/company/143897286/ | ✅ Verified | Company page created — LIVE |
-
----
-
-## TIER 2 — Indian Local Directories (High Trust)
-
-| Platform | URL | Category to Select | Status |
-|----------|-----|-------------------|--------|
-| **Justdial** | justdial.com | Photographers / Commercial Photographers | ✅ Verified | Profile score: 58% — Needs improvement |
-| **Sulekha** | sulekha.com/business/rahul-chanda-photography-gms-road-dehradun-contact-address | Commercial Photography | ✅ Verified | LIVE |
-| **IndiaMART** | indiamart.com | Photography Services | ✅ Verified | Company profile created — Needs completion |
-| **UrbanClap / Urban Company** | urbancompany.com | Photographer | ⬜ Not found — Needs submission |
-| **Quikr** | quikr.com | Photography Services | ⬜ Needs verification |
-| **OLX** | olx.in | Services > Photography | ⬜ Needs verification |
+| ❌ Don't | ✅ Do Instead |
+|----------|--------------|
+| Use different business names | Use exact same name everywhere |
+| Abbreviate address sometimes | Use same format always |
+| Use landline for one, mobile for another | Use same primary phone |
+| Skip filling optional fields | Complete all available fields |
+| Use stock photos | Use real business photos |
+| Copy-paste same description everywhere | Customize slightly for each platform |
+| Ignore verification emails | Complete verification promptly |
 
 ---
 
-## TIER 3 — Industry & Niche Directories
+## 📅 Citation Building Schedule
 
-| Platform | URL | Why It Matters | Status |
-|----------|-----|----------------|--------|
-| **Clutch.co** | clutch.co/profile | B2B buyers, agency partners | ⬜ Not found — Needs submission |
-| **The Manifest** | themanifest.com | Agency directory | ⬜ Needs verification |
-| **DesignRush** | designrush.com | Creative agencies | ⬜ Needs verification |
-| **Behance** | behance.net | Portfolio + profile | ✅ Verified — behance.net/rahulchandaphotography |
-| **WeddingWire (Commercial)** | weddingwire.com | Adjacent market | ⬜ Not found |
-| **WedMeGood (Vendor)** | wedmegood.com | Wedding adjacent | ⬜ Not found — Different photographer (Rahul Sunehra) exists |
+### Week 1: Foundation
+- [ ] Day 1-2: Complete Google Business Profile
+- [ ] Day 3-4: Post on OLX, Quikr
+- [ ] Day 5-7: Create JustDial, Sulekha listings
 
----
+### Week 2: Expansion
+- [ ] Day 8-10: IndiaMart, TradeIndia
+- [ ] Day 11-12: Yelp, Hotfrog
+- [ ] Day 13-14: Industry-specific platforms
 
-## TIER 4 — Local Dehradun / Uttarakhand (Hyper-Local Authority)
+### Week 3: Verification
+- [ ] Day 15-17: Verify all listings are live
+- [ ] Day 18-19: Fix any inconsistencies
+- [ ] Day 20-21: Respond to any pending verifications
 
-| Platform | URL / Contact | Why It Matters | Status |
-|----------|---------------|----------------|--------|
-| **Dehradun Chamber of Commerce** | dcci.in / +91 135 265xxxx | Local business authority | ⬜ |
-| **Uttarakhand Tourism Dept. (Empanelled Photographers)** | uttarakhandtourism.gov.in | Hotel/resort clients | ⬜ |
-| **Hotel & Restaurant Association Uttarakhand** | hrau.in / LinkedIn | Cafe/restaurant clients | ⬜ |
-| **FICCI Uttarakhand** | ficci.in/uttarakhand | Corporate clients | ⬜ |
-| **CII Uttarakhand** | cii.in/uttarakhand | Corporate clients | ⬜ |
-| **Doon Today / Doon News** | doitoday.com / Local paper | Local PR / citations | ⬜ |
-| **Garhwal Post** | garhwalpost.in | Local media | ⬜ |
-| **Dehradun Live / Dehradun Buzz** | Local FB groups / pages | Hyper-local visibility | ⬜ |
-| **Mussoorie Hotel Association** | Local contact | Hospitality clients | ⬜ |
-| **Rishikesh Hotel Association** | Local contact | Hospitality clients | ⬜ |
+### Week 4: Documentation
+- [ ] Day 22-24: Document all listing URLs
+- [ ] Day 25-26: Create tracking spreadsheet
+- [ ] Day 27-28: Set up monitoring alerts
 
 ---
 
-## TIER 5 — Photography-Specific (Portfolio + Citations)
+## 📊 Citation Tracking Spreadsheet
 
-| Platform | URL | Status |
-|----------|-----|--------|
-| **Adobe Stock** | stock.adobe.com/in/contributor/211259582/ARTMAXX | ✅ Verified | Contributor profile — LIVE |
-| **Pinterest** | pin.it/4o5krN3OF | ✅ Verified | LIVE |
-| **500px** | 500px.com | ⬜ Not found — Needs submission |
-| **Flickr** | flickr.com | ⬜ Needs verification |
-| **Unsplash** | unsplash.com/@username | ⬜ Needs verification |
-| **Houzz (Pro)** | houzz.com/pro | ⬜ Needs verification |
-| **Dribbble** | dribbble.com | ⬜ Needs verification |
-
----
-
-## TIER 6 — Client & Partner Citations (Highest Value)
-
-**Ask these partners to link/mention you:**
-
-| Partner Type | Specific Ask | Status |
-|--------------|--------------|--------|
-| **Dehradun D2C Brands** | "Product photography by Rahul Chanda Photography" + link on their "Our Partners" or "Credits" page | ⬜ |
-| **Dehradun Cafes/Restaurants** | Photo credit on menu, website, Instagram highlights | ⬜ |
-| **Marketing Agencies (Dehradun/Delhi)** | Vendor page / case study credit | ⬜ |
-| **Hotels/Resorts (Mussoorie/Rishikesh)** | "Photography: Rahul Chanda" on gallery page | ⬜ |
-| **Food Brands (Uttarakhand)** | Packaging/website photo credit | ⬜ |
-| **Footwear Brands (Doon Valley)** | Lookbook/website credit | ⬜ |
-| **Interior Designers/Architects** | Project credits | ⬜ |
+| Platform | URL | Date Listed | NAP Verified | Status | Notes |
+|----------|-----|-------------|--------------|--------|-------|
+| Google Business | | | ☐ | | |
+| OLX | | | ☐ | | |
+| JustDial | | | ☐ | | |
+| Sulekha | | | ☐ | | |
+| IndiaMart | | | ☐ | | |
+| Quikr | | | ☐ | | |
+| | | | ☐ | | |
 
 ---
 
-## CITATION AUDIT TEMPLATE (Monthly)
+## 🔍 Verification Checklist
 
-| Platform | NAP Match? | Photos Added | Reviews Linked | Last Updated | Action Needed |
-|----------|------------|--------------|----------------|--------------|---------------|
-| Google Business | ✅ | ⬜ | ⬜ | Sep 2026 | Add more photos |
-| Bing Places | ⬜ | ⬜ | ⬜ | — | Create listing |
-| Justdial | ⬜ | ⬜ | ⬜ | — | Improve profile score |
-| Sulekha | ✅ | ⬜ | ⬜ | Sep 2026 | Add photos |
-| IndiaMART | ⬜ | ⬜ | ⬜ | — | Complete product descriptions |
-| LinkedIn Company | ✅ | ⬜ | ⬜ | Sep 2026 | Add first post |
-| Adobe Stock | ✅ | ⬜ | N/A | Sep 2026 | Add portfolio images |
-| Pinterest | ✅ | ⬜ | N/A | Sep 2026 | Add pins |
-| Clutch.co | ⬜ | ⬜ | ⬜ | — | Submit profile |
-| Dehradun Chamber | ⬜ | ⬜ | ⬜ | — | Contact for listing |
-| Uttarakhand Tourism | ⬜ | ⬜ | ⬜ | — | Apply for empanelment |
-| Instagram | ✅ | ✅ | N/A | Sep 2026 | Add location tag |
-| Facebook | ✅ | ⬜ | ⬜ | Sep 2026 | Remove MAX PRIDE, link to main |
+After posting on each platform:
+- [ ] Listing appears in search results
+- [ ] NAP information displays correctly
+- [ ] Phone number is clickable/callable
+- [ ] Website link works and points to correct page
+- [ ] Photos load properly
+- [ ] Business hours are displayed (if applicable)
+- [ ] Map location is accurate (if applicable)
 
 ---
 
-## QUICK SUBMISSION DATA (Copy-Paste)
+## 📞 Support Contacts
 
-**Business Name:** Rahul Chanda Photography
-**Alternate Name:** Rahul Chanda (Photographer)
-**Category:** Commercial Photographer / Product Photographer / Food Photographer
-**Description:** Dehradun-based commercial photographer for product, food & beverage, cafe/restaurant, footwear, and brand campaigns. On-location across Uttarakhand with in-house retouching.
-**Address:** Dehradun, Uttarakhand, India (Service-area business — no storefront)
-**Phone:** +91 70789 39475
-**Email:** rahulchandaphotography@gmail.com
-**Website:** https://rahulchandaphotography.com
-**Booking URL:** https://rahulchandaphotography.com/contact
-**Hours:** Mon–Fri 9AM–7PM, Sat 10AM–6PM, Sun Closed/By Appointment
-**Service Areas:** Dehradun, Mussoorie, Rishikesh, Haridwar, Haldwani, Delhi NCR (travel)
-**Price Range:** ₹₹₹ (₹12,000 – ₹2,00,000+)
-**Founded:** 2018
-**Keywords:** commercial photographer dehradun, product photographer dehradun, food photographer dehradun, cafe photographer dehradun, restaurant photography dehradun, beverage photography dehradun, footwear photographer dehradun, brand photographer dehradun
-**Social:**
-- Instagram: https://www.instagram.com/rahul_chanda_photography/
-- Google Business: https://maps.google.com/?cid=2875568559570212542
-- Behance: https://www.behance.net/rahulchandaphotography
-
-**Logo:** https://rahulchandaphotography.com/icon.svg
-**Cover Photo:** https://rahulchandaphotography.com/og-image.png
+### OLX India
+- **Help Center**: https://www.olx.in/help
+- **Email**: support@olx.in
+- **Phone**: Check website for current support number
 
 ---
 
-## TRACKING: CITATION VELOCITY
+## ✅ Final Sign-Off
 
-| Month | New Citations | Total Live | Avg. NAP Score |
-|-------|---------------|------------|----------------|
-| Month 1 | Target: 15 | 9 | ⬜ |
-| Month 2 | Target: 10 | | |
-| Month 3 | Target: 8 | | |
-| Month 4 | Target: 5 | | |
-| Month 5 | Target: 5 | | |
-| Month 6 | Target: 5 | | |
-
-**Target:** 45+ quality citations in 6 months
-
----
-
-## TOOLS FOR CITATION MANAGEMENT
-
-| Tool | Purpose | Cost |
-|------|---------|------|
-| **Whitespark Local Citation Finder** | Find competitor citations, submit | $20–30/mo |
-| **BrightLocal** | Citation audit, tracking, submission | $29–79/mo |
-| **Moz Local** | Distribution to aggregators | $14/mo |
-| **Yext** | Enterprise listing management | $$$ |
-| **Manual (Free)** | This checklist + spreadsheets | Free |
-
-**Recommendation:** Start manual (this checklist) for Tier 1–4. Use Whitespark for 1-month audit at Month 3.
+| Task | Completed By | Date |
+|------|--------------|------|
+| Master NAP document created | | |
+| Google Business Profile verified | | |
+| OLX listing posted | | |
+| JustDial listing created | | |
+| Sulekha listing created | | |
+| All Tier 1 platforms covered | | |
+| Citation audit completed | | |
+| Tracking spreadsheet finalized | | |
 
 ---
 
-## RED FLAGS — DON'T SUBMIT TO
-
-- ❌ Free "SEO directory" sites with no traffic
-- ❌ Sites requiring reciprocal links
-- ❌ Sites with DA < 20 and no relevance
-- ❌ Bulk submission services (spam signal)
-- ❌ Identical descriptions everywhere (customize per platform)
-
----
-
-**Next Review:** 30 days — audit Tier 1–3 completion, start Tier 4 outreach
+*Last Updated: [Date]*
+*Next Audit Due: [Date + 3 months]*

@@ -8,7 +8,7 @@ export function LegalFooter() {
     <footer className="border-t border-white/10 bg-[#070707]">
       <div className="max-w-[1200px] mx-auto px-4 md:px-12 py-12 md:py-16">
         {/* Link columns */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12 mb-12">
           <div>
             <h4 className="h-eyebrow mb-4">
               Services
@@ -41,6 +41,15 @@ export function LegalFooter() {
               <li><a href={`mailto:${EMAIL}`} className="text-xs md:text-sm text-white/50 hover:text-white transition-colors">Email Us</a></li>
               <li><a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="text-xs md:text-sm text-white/50 hover:text-white transition-colors">WhatsApp</a></li>
               <li><a href="https://www.instagram.com/rahul_chanda_photography/" target="_blank" rel="noopener noreferrer" className="text-xs md:text-sm text-white/50 hover:text-white transition-colors">Instagram</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="h-eyebrow mb-4">
+              Find Us On
+            </h4>
+            <ul className="space-y-2.5">
+              <li><a href="https://www.olx.in/profile/588865366" target="_blank" rel="noopener noreferrer" className="text-xs md:text-sm text-white/50 hover:text-white transition-colors">OLX Profile</a></li>
+              <li><a href="https://www.olx.in/item/other-services-c625-commercial-product-photographer-in-dehradun-food-fashion-iid-1855861146" target="_blank" rel="noopener noreferrer" className="text-xs md:text-sm text-white/50 hover:text-white transition-colors">Book on OLX</a></li>
             </ul>
           </div>
           <div>
