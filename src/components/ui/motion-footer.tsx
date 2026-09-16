@@ -12,9 +12,9 @@ const STYLES = `
   background: #000000;
 }
 
-/* Giant Watermark  —  outline-only, anchored below the nav (no overlap).
-   Hidden on mobile to prevent overlap with the link grid + bottom bar;
-   the desktop-only 78% positioning relies on enough vertical space. */
+/* Giant Watermark  —  outline-only, anchored to the BOTTOM edge so it always
+   sits below the link grid no matter how many pill rows the footer has.
+   Hidden on mobile to prevent overlap with the link grid + bottom bar. */
 .footer-watermark {
   display: none;
 }
@@ -23,8 +23,8 @@ const STYLES = `
     display: block;
     position: absolute;
     left: 50%;
-    top: 78%;
-    transform: translate(-50%, -50%);
+    bottom: 0;
+    transform: translateX(-50%);
     white-space: nowrap;
     pointer-events: none;
     user-select: none;
@@ -34,7 +34,9 @@ const STYLES = `
   }
 }
 .footer-watermark-text {
-  font-size: clamp(80px, 20vw, 390px);
+  /* Morphic-scale mark — ~20vw so RAHUL spans most of the footer width,
+     anchored bottom and cropped by the footer edge like Morphic's watermark. */
+  font-size: clamp(80px, 20vw, 330px);
   line-height: 0.8;
   font-weight: 600;
   letter-spacing: -0.03em;
@@ -86,8 +88,8 @@ const STYLES = `
   .footer-watermark-text   { animation: none; }
 }
 @keyframes watermarkReveal {
-  0%   { opacity: 0; transform: translate(-50%, -50%) scale(1.02); }
-  100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  0%   { opacity: 0; transform: translateX(-50%) scale(1.02); }
+  100% { opacity: 1; transform: translateX(-50%) scale(1); }
 }
 
 /* Wide grid-cell pills  —  Morphic layout + React-Bits circle-rise hover */
@@ -110,7 +112,6 @@ const STYLES = `
   overflow: hidden;
   isolation: isolate;
   letter-spacing: 0.01em;
-  width: 100%;
 }
 
 /* Rising circle fill  —  bubbles up from the bottom on hover */
@@ -283,6 +284,8 @@ const STYLES = `
 }
 .footer-pill-row:nth-child(1) { animation-delay: 0.3s; }
 .footer-pill-row:nth-child(2) { animation-delay: 0.4s; }
+.footer-pill-row:nth-child(3) { animation-delay: 0.5s; }
+.footer-pill-row:nth-child(4) { animation-delay: 0.6s; }
 @keyframes pillRowReveal {
   0%   { opacity: 0; transform: translateY(8px); }
   100% { opacity: 1; transform: translateY(0); }
@@ -339,16 +342,21 @@ const NAV_ROW_2: { label: string; href: string; external?: boolean }[] = [
   { label: "Terms of Use", href: "/terms" },
 ];
 
-// Marketplace / Book Now links
+// Marketplace / booking + portfolio/social links. Grouped 5 + 4 so that, combined
+// with NAV_ROW_2 (4), they fill a shared 7-column grid evenly (7 + 7 with the
+// last pill spanning two columns) — no orphaned rows.
 const NAV_ROW_3: { label: string; href: string; external?: boolean }[] = [
-  { label: "Book on IndiaMART", href: "https://www.indiamart.com/proddetail/ecommerce-product-photoshoot-service-2859857038448.html?sellerpreview=1", external: true },
+  { label: "IndiaMART", href: "https://www.indiamart.com/proddetail/ecommerce-product-photoshoot-service-2859857038448.html?sellerpreview=1", external: true },
   { label: "View on Justdial", href: "https://jsdl.in/DT-99ESASPGCK1", external: true },
   { label: "Book on OLX", href: "https://www.olx.in/item/other-services-c625-commercial-product-photographer-in-dehradun-food-fashion-iid-1855861146", external: true },
   { label: "OLX Profile", href: "https://www.olx.in/profile/588865366", external: true },
-  { label: "Behance Portfolio", href: "https://www.behance.net/rahulchanda4", external: true },
   { label: "Sulekha Listing", href: "https://www.sulekha.com/business/rahul-chanda-photography-gms-road-dehradun-contact-address", external: true },
+];
+
+const NAV_ROW_4: { label: string; href: string; external?: boolean }[] = [
+  { label: "Behance Portfolio", href: "https://www.behance.net/rahulchanda4", external: true },
   { label: "Adobe Stock", href: "https://stock.adobe.com/in/contributor/211259582/ARTMAXX", external: true },
-  { label: "LinkedIn Company", href: "https://www.linkedin.com/company/143897286/", external: true },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/143897286/", external: true },
   { label: "Pinterest", href: "https://pin.it/4o5krN3OF", external: true },
 ];
 
@@ -425,7 +433,7 @@ export function CinematicFooter() {
     <>
       <style dangerouslySetInnerHTML={{ __html: STYLES }} />
 
-      <footer className="cinematic-footer-wrapper relative w-full overflow-hidden min-h-[500px]">
+      <footer className="cinematic-footer-wrapper relative w-full overflow-hidden min-h-[560px]">
         {/* Giant watermark  —  outline-only, anchored below the nav (no overlap) */}
         <div className="footer-watermark" aria-hidden="true">
           <span className="footer-watermark-text">RAHUL</span>
@@ -453,7 +461,7 @@ export function CinematicFooter() {
           <TimelineRuler />
         </div>
 
-        {/* Layer 3: Grid pills  —  equal-width cells like Morphic */}
+        {/* Layer 3: Grid pills  —  Morphic-style centered block */}
         <nav className="relative z-[11] mx-auto mt-6 w-full max-w-[960px] px-4" aria-label="Footer">
           <div className="footer-pill-row grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-2">
             {NAV_ROW_1.map((link) => (
@@ -472,33 +480,18 @@ export function CinematicFooter() {
               </a>
             ))}
           </div>
-          <div className="footer-pill-row grid grid-cols-2 md:grid-cols-4 gap-2 mt-2">
-            {NAV_ROW_2.map((link) => (
+          {/* Layer 3b: support/legal + marketplace/social — one flex-wrap track so
+              clips flow and wrap organically (timeline-clip look, staggered
+              boundaries like Morphic — not a rigid shared grid). w-auto overrides
+              .footer-pill's width:100%, which only makes sense in grid cells. */}
+          <div className="footer-pill-row flex flex-wrap justify-center gap-2 mt-2">
+            {[...NAV_ROW_2, ...NAV_ROW_3, ...NAV_ROW_4].map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 data-cursor="pointer"
-                className="footer-pill"
-              >
-                <span className="pill-label-stack">
-                  <span className="pill-label">{link.label}</span>
-                  <span className="pill-label-hover" aria-hidden="true">
-                    {link.label}
-                  </span>
-                </span>
-              </a>
-            ))}
-          </div>
-          {/* Marketplace / Book Now row */}
-          <div className="footer-pill-row grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-2 mt-2">
-            {NAV_ROW_3.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                data-cursor="pointer"
-                className="footer-pill"
+                className="footer-pill w-auto"
               >
                 <span className="pill-label-stack">
                   <span className="pill-label">{link.label}</span>
