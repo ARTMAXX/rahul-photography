@@ -1,6 +1,54 @@
 # Local Citation Checklist
 ## Rahul Chanda Photography — Dehradun / Uttarakhand
 
+---
+
+## 📊 VERIFICATION SUMMARY (Last Verified: Sep 16, 2026)
+
+| Status | Count | Details |
+|--------|-------|---------|
+| ✅ **VERIFIED LIVE** | **9** | Google Business, Instagram, Behance, Justdial, IndiaMART, LinkedIn Company, Sulekha, Adobe Stock, Pinterest |
+| 🔄 **PENDING** | **2** | Bing Places (publishing), Apple Business Connect (signup) |
+| ⚠️ **NEEDS FIX** | **1** | Facebook (MAX PRIDE removal) |
+| ⬜ **NOT STARTED** | **13** | Urban Company, Quikr, OLX, etc. |
+
+### ✅ CONFIRMED LIVE (9 Citations):
+1. **Google Business Profile** — CID: 2875568559570212542 ✅
+2. **Instagram** — @rahul_chanda_photography ✅
+3. **Behance** — behance.net/rahulchandaphotography ✅
+4. **Justdial** — Profile score 58% — Needs improvement ✅
+5. **IndiaMART** — Company profile created — Needs completion ✅
+6. **LinkedIn Company** — linkedin.com/company/143897286/ ✅
+7. **Sulekha** — sulekha.com/business/rahul-chanda-photography-gms-road-dehradun-contact-address ✅
+8. **Adobe Stock** — stock.adobe.com/in/contributor/211259582/ARTMAXX ✅
+9. **Pinterest** — pin.it/4o5krN3OF ✅
+
+### 🔄 PENDING (2 Citations):
+10. **Bing Places** — Synced with Google, publishing in 7-12 days 🔄
+11. **Apple Business Connect** — Signup in progress 🔄
+
+### ⚠️ NEEDS FIX (1 Citation):
+12. **Facebook Business** — MAX PRIDE page needs removal ⚠️
+
+### ⬜ NOT STARTED (13 Citations):
+**Tier 2 (Indian):** Urban Company, Quikr, OLX
+**Tier 3 (Industry):** Clutch.co, The Manifest, DesignRush, WeddingWire, WedMeGood
+**Tier 5 (Photo):** 500px, Flickr, Unsplash, Houzz, Dribbble
+
+### 🎯 RECOMMENDATION:
+**Current: 9 live citations → Target: 45+ in 6 months**
+**Gap: 36 more citations needed**
+
+**Priority Actions This Week:**
+1. Complete Apple Business Connect signup (in progress)
+2. Improve Justdial profile score (58% → 84%)
+3. Complete IndiaMART product descriptions
+4. Fix Facebook MAX PRIDE page removal
+
+---
+
+
+
 **NAP (Must Be IDENTICAL Everywhere):**
 ```
 Name: Rahul Chanda Photography
@@ -16,12 +64,12 @@ Website: https://rahulchandaphotography.com
 
 | Platform | URL | Status | Login/Notes |
 |----------|-----|--------|-------------|
-| **Google Business Profile** | business.google.com | ⬜ Primary | [CID: 2875568559570212542] |
-| **Bing Places** | bingplaces.com | ⬜ | Mirror GBP exactly |
-| **Apple Maps** | register.apple.com/places | ⬜ | Apple Business Connect |
-| **Facebook Business** | business.facebook.com | ⬜ | Create Page if missing |
-| **Instagram** | instagram.com | ✅ | @rahul_chanda_photography — add location + link in bio |
-| **LinkedIn Company** | linkedin.com/company | ⬜ | Create company page |
+| **Google Business Profile** | business.google.com | ✅ Verified | CID: 2875568559570212542 — LIVE |
+| **Bing Places** | bingplaces.com | 🔄 Pending Publish | Synced with Google — ETA 7-12 days |
+| **Apple Maps** | register.apple.com/places | 🔄 In Progress | Apple Business Connect — User completing signup now |
+| **Facebook Business** | business.facebook.com | ⚠️ Needs Fix | MAX PRIDE page needs removal from business portfolio |
+| **Instagram** | instagram.com | ✅ Verified | @rahul_chanda_photography — LIVE |
+| **LinkedIn Company** | linkedin.com/company/143897286/ | ✅ Verified | Company page created — LIVE |
 
 ---
 
@@ -29,12 +77,12 @@ Website: https://rahulchandaphotography.com
 
 | Platform | URL | Category to Select | Status |
 |----------|-----|-------------------|--------|
-| **Justdial** | justdial.com | Photographers / Commercial Photographers | ⬜ |
-| **Sulekha** | sulekha.com | Commercial Photography | ⬜ |
-| **IndiaMART** | indiamart.com | Photography Services | ⬜ |
-| **UrbanClap / Urban Company** | urbancompany.com | Photographer | ⬜ |
-| **Quikr** | quikr.com | Photography Services | ⬜ |
-| **OLX** | olx.in | Services > Photography | ⬜ |
+| **Justdial** | justdial.com | Photographers / Commercial Photographers | ✅ Verified | Profile score: 58% — Needs improvement |
+| **Sulekha** | sulekha.com/business/rahul-chanda-photography-gms-road-dehradun-contact-address | Commercial Photography | ✅ Verified | LIVE |
+| **IndiaMART** | indiamart.com | Photography Services | ✅ Verified | Company profile created — Needs completion |
+| **UrbanClap / Urban Company** | urbancompany.com | Photographer | ⬜ Not found — Needs submission |
+| **Quikr** | quikr.com | Photography Services | ⬜ Needs verification |
+| **OLX** | olx.in | Services > Photography | ⬜ Needs verification |
 
 ---
 
@@ -42,12 +90,12 @@ Website: https://rahulchandaphotography.com
 
 | Platform | URL | Why It Matters | Status |
 |----------|-----|----------------|--------|
-| **Clutch.co** | clutch.co/profile | B2B buyers, agency partners | ⬜ |
-| **The Manifest** | themanifest.com | Agency directory | ⬜ |
-| **DesignRush** | designrush.com | Creative agencies | ⬜ |
-| **Behance** | behance.net | Portfolio + profile | ✅ |
-| **WeddingWire (Commercial)** | weddingwire.com | Adjacent market | ⬜ |
-| **WedMeGood (Vendor)** | wedmegood.com | Wedding adjacent | ⬜ |
+| **Clutch.co** | clutch.co/profile | B2B buyers, agency partners | ⬜ Not found — Needs submission |
+| **The Manifest** | themanifest.com | Agency directory | ⬜ Needs verification |
+| **DesignRush** | designrush.com | Creative agencies | ⬜ Needs verification |
+| **Behance** | behance.net | Portfolio + profile | ✅ Verified — behance.net/rahulchandaphotography |
+| **WeddingWire (Commercial)** | weddingwire.com | Adjacent market | ⬜ Not found |
+| **WedMeGood (Vendor)** | wedmegood.com | Wedding adjacent | ⬜ Not found — Different photographer (Rahul Sunehra) exists |
 
 ---
 
@@ -72,12 +120,13 @@ Website: https://rahulchandaphotography.com
 
 | Platform | URL | Status |
 |----------|-----|--------|
-| **500px** | 500px.com | ⬜ |
-| **Flickr** | flickr.com | ⬜ |
-| **Unsplash** | unsplash.com/@username | ⬜ |
-| **Pinterest Business** | business.pinterest.com | ⬜ |
-| **Houzz (Pro)** | houzz.com/pro | ⬜ |
-| **Dribbble** | dribbble.com | ⬜ |
+| **Adobe Stock** | stock.adobe.com/in/contributor/211259582/ARTMAXX | ✅ Verified | Contributor profile — LIVE |
+| **Pinterest** | pin.it/4o5krN3OF | ✅ Verified | LIVE |
+| **500px** | 500px.com | ⬜ Not found — Needs submission |
+| **Flickr** | flickr.com | ⬜ Needs verification |
+| **Unsplash** | unsplash.com/@username | ⬜ Needs verification |
+| **Houzz (Pro)** | houzz.com/pro | ⬜ Needs verification |
+| **Dribbble** | dribbble.com | ⬜ Needs verification |
 
 ---
 
@@ -101,16 +150,19 @@ Website: https://rahulchandaphotography.com
 
 | Platform | NAP Match? | Photos Added | Reviews Linked | Last Updated | Action Needed |
 |----------|------------|--------------|----------------|--------------|---------------|
-| Google Business | ⬜ | ⬜ | ⬜ | | |
-| Bing Places | ⬜ | ⬜ | ⬜ | | |
-| Justdial | ⬜ | ⬜ | ⬜ | | |
-| Sulekha | ⬜ | ⬜ | ⬜ | | |
-| IndiaMART | ⬜ | ⬜ | ⬜ | | |
-| Clutch.co | ⬜ | ⬜ | ⬜ | | |
-| Dehradun Chamber | ⬜ | ⬜ | ⬜ | | |
-| Uttarakhand Tourism | ⬜ | ⬜ | ⬜ | | |
-| Instagram | ✅ | ✅ | N/A | | |
-| Facebook | ⬜ | ⬜ | ⬜ | | |
+| Google Business | ✅ | ⬜ | ⬜ | Sep 2026 | Add more photos |
+| Bing Places | ⬜ | ⬜ | ⬜ | — | Create listing |
+| Justdial | ⬜ | ⬜ | ⬜ | — | Improve profile score |
+| Sulekha | ✅ | ⬜ | ⬜ | Sep 2026 | Add photos |
+| IndiaMART | ⬜ | ⬜ | ⬜ | — | Complete product descriptions |
+| LinkedIn Company | ✅ | ⬜ | ⬜ | Sep 2026 | Add first post |
+| Adobe Stock | ✅ | ⬜ | N/A | Sep 2026 | Add portfolio images |
+| Pinterest | ✅ | ⬜ | N/A | Sep 2026 | Add pins |
+| Clutch.co | ⬜ | ⬜ | ⬜ | — | Submit profile |
+| Dehradun Chamber | ⬜ | ⬜ | ⬜ | — | Contact for listing |
+| Uttarakhand Tourism | ⬜ | ⬜ | ⬜ | — | Apply for empanelment |
+| Instagram | ✅ | ✅ | N/A | Sep 2026 | Add location tag |
+| Facebook | ✅ | ⬜ | ⬜ | Sep 2026 | Remove MAX PRIDE, link to main |
 
 ---
 
@@ -144,7 +196,7 @@ Website: https://rahulchandaphotography.com
 
 | Month | New Citations | Total Live | Avg. NAP Score |
 |-------|---------------|------------|----------------|
-| Month 1 | Target: 15 | | |
+| Month 1 | Target: 15 | 9 | ⬜ |
 | Month 2 | Target: 10 | | |
 | Month 3 | Target: 8 | | |
 | Month 4 | Target: 5 | | |

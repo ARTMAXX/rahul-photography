@@ -339,6 +339,17 @@ const NAV_ROW_2: { label: string; href: string; external?: boolean }[] = [
   { label: "Terms of Use", href: "/terms" },
 ];
 
+// Marketplace / Book Now links
+const NAV_ROW_3: { label: string; href: string; external?: boolean }[] = [
+  { label: "Book on IndiaMART", href: "https://www.indiamart.com/proddetail/ecommerce-product-photoshoot-service-2859857038448.html?sellerpreview=1", external: true },
+  { label: "View on Justdial", href: "https://jsdl.in/DT-99ESASPGCK1", external: true },
+  { label: "Behance Portfolio", href: "https://www.behance.net/rahulchanda4", external: true },
+  { label: "Sulekha Listing", href: "https://www.sulekha.com/business/rahul-chanda-photography-gms-road-dehradun-contact-address", external: true },
+  { label: "Adobe Stock", href: "https://stock.adobe.com/in/contributor/211259582/ARTMAXX", external: true },
+  { label: "LinkedIn Company", href: "https://www.linkedin.com/company/143897286/", external: true },
+  { label: "Pinterest", href: "https://pin.it/4o5krN3OF", external: true },
+];
+
 // Inline SVG icons
 const XIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -461,6 +472,25 @@ export function CinematicFooter() {
           </div>
           <div className="footer-pill-row grid grid-cols-2 md:grid-cols-4 gap-2 mt-2">
             {NAV_ROW_2.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                data-cursor="pointer"
+                className="footer-pill"
+              >
+                <span className="pill-label-stack">
+                  <span className="pill-label">{link.label}</span>
+                  <span className="pill-label-hover" aria-hidden="true">
+                    {link.label}
+                  </span>
+                </span>
+              </a>
+            ))}
+          </div>
+          {/* Marketplace / Book Now row */}
+          <div className="footer-pill-row grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-2 mt-2">
+            {NAV_ROW_3.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
