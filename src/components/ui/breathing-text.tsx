@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { usePrefersReducedMotion } from "@/lib/hooks"
 
 interface TextProps {
   label: string
@@ -32,6 +33,10 @@ const BreathingText = ({
   onClick,
   ...props
 }: TextProps) => {
+  // prefers-reduced-motion: skip the looping pulse entirely (Apple §14
+  // calls out slow looping oscillations as an avoid). Gating here fixes
+  // every usage site at once.
+  const prefersReducedMotion = usePrefersReducedMotion()
   const getCustomIndex = (index: number, total: number) => {
     if (typeof staggerFrom === "number") {
       return Math.abs(index - staggerFrom)
@@ -48,6 +53,15 @@ const BreathingText = ({
   }
 
   const letters = label.split("")
+
+  // Static render: same element shape, zero animation.
+  if (prefersReducedMotion) {
+    return (
+      <span className={className} onClick={onClick} {...props}>
+        {label}
+      </span>
+    )
+  }
 
   return (
     <span className={className} onClick={onClick} {...props}>

@@ -3,6 +3,7 @@
 import { useEffect, useState, type ReactNode } from "react";
 import SmoothScroll from "./SmoothScroll";
 import ColorBends from "./ColorBends";
+import { usePrefersReducedMotion } from "@/lib/hooks";
 
 /**
  * PageShell  —  ONE stable tree for every viewport.
@@ -22,6 +23,9 @@ import ColorBends from "./ColorBends";
  */
 export default function PageShell({ children }: { children: ReactNode }) {
   const [isMobile, setIsMobile] = useState(true); // SSR-safe default
+  // Apple §14: smoothing is a motion effect — a reduced-motion user on
+  // desktop must get native 1:1 scrolling, not a 1.2s-lagged smooth scroll.
+  const reducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 768px)");
@@ -32,12 +36,15 @@ export default function PageShell({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <SmoothScroll enabled={!isMobile}>
+    <SmoothScroll enabled={!isMobile && !reducedMotion}>
+      {/* ColorBends (Three.js shader background) only MOUNTS on "°768px.
+          Under prefers-reduced-motion it stays mounted but freezes (speed 0):
+          the ambient brand wash is a visual, not a requirement — motion is. */}
       {!isMobile && (
         <ColorBends
           colors={["#0d0506", "#160809", "#1f0a0a", "#3a0f0c"]}
           rotation={90}
-          speed={0.12}
+          speed={reducedMotion ? 0 : 0.12}
           scale={1.05}
           frequency={1.2}
           warpStrength={0.6}

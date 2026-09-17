@@ -2,16 +2,22 @@
 
 import { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
+import { usePrefersReducedMotion } from "@/lib/hooks";
 
 export default function CursorImpl() {
   const [cursorType, setCursorType] = useState<"default" | "pointer" | "view" | "close">("default");
   const [cursorText, setCursorText] = useState("");
   const [isVisible, setIsVisible] = useState(false);
+  // prefers-reduced-motion: the trailing ring IS motion decoration —
+  // users who asked for less motion get the plain native cursor only.
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
 
-  const springConfig = { damping: 40, stiffness: 300, mass: 0.4 };
+  // Accent ring spring — stiff enough to hug the pointer without wobbling.
+  // The native cursor stays visible; this ring is decoration, not the cursor.
+  const springConfig = { damping: 40, stiffness: 400, mass: 0.35 };
   const trailX = useSpring(cursorX, springConfig);
   const trailY = useSpring(cursorY, springConfig);
 
@@ -62,7 +68,7 @@ export default function CursorImpl() {
     };
   }, [cursorX, cursorY, isVisible]);
 
-  if (!isVisible) return null;
+  if (!isVisible || prefersReducedMotion) return null;
 
   const outerVariants = {
     default: {
@@ -92,28 +98,9 @@ export default function CursorImpl() {
     },
   };
 
-  const innerVariants = {
-    default: {
-      scale: 1,
-      backgroundColor: "#ffffff",
-    },
-    pointer: {
-      scale: 0.4,
-      backgroundColor: "#ffffff",
-    },
-    view: {
-      scale: 0,
-      backgroundColor: "#ffffff",
-    },
-    close: {
-      scale: 0.5,
-      backgroundColor: "#ffffff",
-    },
-  };
-
   return (
     <>
-      {/* Trailing ring */}
+      {/* Accent ring — trails softly behind the native cursor */}
       <motion.div
         className="fixed top-0 left-0 rounded-full pointer-events-none z-[9998] flex items-center justify-center"
         style={{
@@ -132,20 +119,6 @@ export default function CursorImpl() {
           </span>
         )}
       </motion.div>
-
-      {/* Center dot */}
-      <motion.div
-        className="fixed top-0 left-0 w-2 h-2 rounded-full pointer-events-none z-[9999]"
-        style={{
-          x: cursorX,
-          y: cursorY,
-          translateX: "-50%",
-          translateY: "-50%",
-        }}
-        animate={cursorType}
-        variants={innerVariants}
-        transition={{ type: "spring", stiffness: 500, damping: 28 }}
-      />
     </>
   );
 }

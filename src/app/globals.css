@@ -100,11 +100,15 @@ a, button, [role="button"], input, select, textarea, label {
   touch-action: manipulation;
 }
 
-/* ── Custom cursor handles interactive elements (desktop only) ── */
-@media (pointer: fine) {
-  a, button, [role="button"], input, select, textarea, label, [data-cursor] {
-    cursor: none;
-  }
+/* ── Press feedback: respond on pointer-down, not release (Apple: Response) ──
+   Instant, causal, zero-motion — safe alongside GSAP-managed inline styles. */
+a:active,
+button:active,
+[role="button"]:active,
+input:active,
+select:active,
+textarea:active {
+  opacity: 0.8;
 }
 
 /* ── Reduced motion: restore native cursor & calm animations ── */
@@ -122,6 +126,23 @@ a, button, [role="button"], input, select, textarea, label {
   }
   a, button, [role="button"], input, select, textarea, label, [data-cursor] {
     cursor: auto;
+  }
+}
+
+/* ── Reduced transparency: swap blurred glass for opaque surfaces (§14) ── */
+@media (prefers-reduced-transparency: reduce) {
+  [class*="backdrop-blur"] {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background-color: #0a0a0a !important;
+  }
+}
+
+/* ── Prefer more contrast: strengthen dim text and hairline borders (§14) ── */
+@media (prefers-contrast: more) {
+  :root {
+    --border:           rgba(240, 240, 240, 0.42);
+    --muted-foreground: rgba(240, 240, 240, 0.82);
   }
 }
 

@@ -137,10 +137,20 @@ export default function GalleryPage() {
               <motion.div
                 key={image.id}
                 variants={{
-                  hidden: { opacity: 0, scale: 0.85, filter: "blur(8px)" },
-                  visible: { opacity: 1, scale: 1, filter: "blur(0px)" },
+                  hidden:
+                    index % 3 === 1
+                      ? { opacity: 0, scale: 0.94 }
+                      : { opacity: 0, y: index % 3 === 0 ? 28 : 16 },
+                  visible:
+                    index % 3 === 1
+                      ? { opacity: 1, scale: 1 }
+                      : { opacity: 1, y: 0 },
                 }}
-                transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+                transition={{
+                  duration: [0.55, 0.7, 0.62][index % 3] ?? 0.55,
+                  delay: (index % 3) * 0.05,
+                  ease: [0.25, 0.46, 0.45, 0.94],
+                }}
                 style={{ breakInside: "avoid", marginBottom: "16px" }}
                 className="group relative overflow-hidden rounded-lg cursor-pointer"
               >

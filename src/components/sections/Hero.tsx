@@ -30,6 +30,11 @@ export default function Hero() {
       borderRadius: "12px",
     });
 
+    // Scroll budget: restored to the original +=80%. Reducing it to +=40%
+    // played the same timeline over half the scroll distance, which doubled
+    // the perceived speed and made the choreography feel rushed. The pin
+    // length IS the animation's pacing — don't shorten it without retiming
+    // every child tween.
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
@@ -163,14 +168,14 @@ w-full overflow-hidden bg-[#070707]">
       </div>
 
       {/* Bottom Nav / Lines */}
-      <div className="absolute bottom-0 w-full z-20 flex justify-between items-end px-4 md:px-8 pb-4 md:pb-6 border-b border-white/20 mix-blend-difference text-white">
-        <span className="text-[11px] md:text-xs font-sans tracking-widest uppercase pb-1">Dehradun, India</span>
-        <div className="flex items-center gap-1 md:gap-4 text-[11px] md:text-[11px] font-sans tracking-widest uppercase">
-          <a href="https://www.instagram.com/rahul_chanda_photography/" target="_blank" className="py-2 px-2 -mx-2 min-h-[44px] flex items-center hover:opacity-70 transition-opacity">INSTAGRAM</a>
-          <span className="text-white/30">/</span>
-          <a href="mailto:rahulchandaphotography@gmail.com" className="py-2 px-2 -mx-2 min-h-[44px] flex items-center hover:opacity-70 transition-opacity">EMAIL</a>
-          <span className="text-white/30">/</span>
-          <a href="tel:+917078939475" className="py-2 px-2 -mx-2 min-h-[44px] flex items-center hover:opacity-70 transition-opacity">PHONE</a>
+      <div className="absolute bottom-0 w-full z-20 flex justify-between items-end px-4 md:px-8 pt-2.5 md:pt-3 pb-3 md:pb-4 border-t border-white/20 mix-blend-difference text-white">
+        <span className="text-[11px] md:text-xs font-sans tracking-widest uppercase pb-2">Dehradun, India</span>
+        <div className="flex items-end gap-1 md:gap-4 text-[11px] md:text-[11px] font-sans tracking-widest uppercase">
+          <a href="https://www.instagram.com/rahul_chanda_photography/" target="_blank" className="py-2 px-2 -mx-2 min-h-[44px] md:min-h-0 flex items-end hover:opacity-70 transition-opacity">INSTAGRAM</a>
+          <span className="text-white/30 pb-2">/</span>
+          <a href="mailto:rahulchandaphotography@gmail.com" className="py-2 px-2 -mx-2 min-h-[44px] md:min-h-0 flex items-end hover:opacity-70 transition-opacity">EMAIL</a>
+          <span className="text-white/30 pb-2">/</span>
+          <a href="tel:+917078939475" className="py-2 px-2 -mx-2 min-h-[44px] md:min-h-0 flex items-end hover:opacity-70 transition-opacity">PHONE</a>
         </div>
         <div className="hidden md:flex gap-6 text-[11px] font-sans tracking-widest uppercase">
           <a href="#design-in-motion" className="py-2 hover:opacity-70 transition-opacity">WORK</a>
@@ -180,7 +185,6 @@ w-full overflow-hidden bg-[#070707]">
           <a href="#contact" className="py-2 hover:opacity-70 transition-opacity">CONTACT</a>
         </div>
       </div>
-      <div className="absolute bottom-10 md:bottom-12 w-full h-px bg-white/20 z-20 mix-blend-difference" />
 
       {/* Centered Expanding Video/Image Wrapper.
           Size is set in CSS (not JS) so the priority LCP image has a box to
