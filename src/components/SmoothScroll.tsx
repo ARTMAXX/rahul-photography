@@ -72,10 +72,16 @@ export default function SmoothScroll({
     <ReactLenis
       root
       options={{
-        lerp: 0.1,
-        duration: 1.2,
+        // Buttery, not laggy: higher lerp = tighter to the wheel (less float).
+        // duration + easing shape the wheel-to-target curve; anchor jumps
+        // reuse the same ease via lenis.scrollTo so they match wheel feel.
+        lerp: 0.14,
+        duration: 1.0,
+        easing: (t: number) => 1 - Math.pow(1 - t, 4),
         autoRaf: enabled,
         smoothWheel: enabled,
+        touchMultiplier: 1.5,
+        anchors: true,
       }}
     >
       <LenisScrollSync enabled={enabled} />

@@ -45,8 +45,10 @@
   --gutter:         clamp(1.25rem, 4vw, 3rem);
   --max-width:      1400px;
 
-  /* ── Scroll behavior ── */
-  scroll-behavior: smooth;
+  /* ── Scroll behavior ──
+     NOTE: never set scroll-behavior:smooth here — Lenis owns all smoothing.
+     CSS smooth + Lenis virtual scroll = double easing = jerky/stuttery wheel.
+     Anchor jumps still animate via Lenis scrollTo. */
 }
 
 *,
