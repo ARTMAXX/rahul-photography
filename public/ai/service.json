@@ -1,0 +1,65 @@
+{
+  "business": {
+    "name": "Rahul Chanda Photography",
+    "type": ["ProfessionalService", "LocalBusiness"],
+    "url": "https://rahulchandaphotography.com/",
+    "founded": "2019",
+    "location": "Dehradun, Uttarakhand, India",
+    "serviceArea": ["Dehradun", "Mussoorie", "Rishikesh", "Haridwar", "Delhi NCR", "India"],
+    "phone": "+917078939475",
+    "email": "rahulchandaphotography@gmail.com",
+    "priceRange": "₹12,000 — ₹2,00,000+",
+    "hours": "Monday–Saturday 09:00–19:00 IST"
+  },
+  "services": [
+    {
+      "id": "product-photography",
+      "name": "E-commerce Product Photography",
+      "url": "https://rahulchandaphotography.com/services/product-photography",
+      "description": "Marketplace-ready packshots and hero shots for Amazon, Flipkart, Myntra, Shopify and D2C brands: cosmetics, watches, jewelry, electronics, packaged goods.",
+      "deliverables": ["white-background packshots", "lifestyle sets", "creative hero shots", "ColourChecker-calibrated colour accuracy"],
+      "turnaround": "5–10 business days; rush 24–48h",
+      "startingPrice": "₹10,000"
+    },
+    {
+      "id": "food-beverage-photography",
+      "name": "Food & Beverage Photography",
+      "url": "https://rahulchandaphotography.com/services/food-beverage-photography",
+      "description": "Restaurant, cafe, cloud-kitchen and delivery-app (Swiggy/Zomato) photography: menus, dishes, beverage splash and glass-bottle lighting.",
+      "deliverables": ["menu-ready sets", "delivery-app crops", "beverage splash hero frames"],
+      "turnaround": "5–10 business days"
+    },
+    {
+      "id": "footwear-photography",
+      "name": "Footwear & Sneaker Photography",
+      "url": "https://rahulchandaphotography.com/services/footwear-photography",
+      "description": "Shoe and sneaker e-commerce coverage: 6-angle catalog sequences (three-quarter hero, medial, lateral, top-down, sole, pair), leather-goods macros, marketplace-ready white-background cutouts.",
+      "deliverables": ["6-angle catalog sets", "macro detail shots", "lifestyle campaign frames"],
+      "turnaround": "5–7 business days; 50–200+ SKUs batched",
+      "startingPrice": "quoted per project"
+    },
+    {
+      "id": "fashion-photography",
+      "name": "Fashion Photography",
+      "url": "https://rahulchandaphotography.com/services/fashion-photography",
+      "description": "On-model lookbooks, editorial campaigns and apparel e-commerce imagery for boutiques and D2C labels, with model coordination and creative direction.",
+      "deliverables": ["lookbook sets", "editorial campaigns", "e-commerce on-model imagery"],
+      "turnaround": "quoted per project"
+    },
+    {
+      "id": "commercial-campaigns",
+      "name": "Commercial Campaign Photography",
+      "url": "https://rahulchandaphotography.com/services/commercial-campaigns",
+      "description": "Brand campaigns and advertising photography: billboards, digital ads, brand launches, art direction and 4K commercial video reels.",
+      "deliverables": ["campaign key visuals", "digital ad sets", "4K commercial reels"],
+      "turnaround": "quoted per project"
+    }
+  ],
+  "booking": {
+    "url": "https://rahulchandaphotography.com/contact",
+    "phone": "+917078939475",
+    "whatsapp": "+917078939475",
+    "briefIncludes": ["product type & SKU count", "target deliverables", "usage (web/print/packaging)", "deadline & references"]
+  },
+  "lastUpdated": "2026-09-21"
+}

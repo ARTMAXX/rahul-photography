@@ -51,7 +51,7 @@ const productFaqSchema = {
 export const metadata: Metadata = {
   title: "E-commerce Product Photographer in Dehradun | Rahul Chanda",
   description:
-    "E-commerce product photographer in Dehradun for Amazon, Flipkart, Shopify & D2C brands. Marketplace-ready packshots, creative hero shots, in-house retouching. Book a shoot.",
+    "E-commerce product photographer in Dehradun for Amazon, Flipkart, Shopify & D2C brands: marketplace-ready packshots, hero shots, in-house retouching.",
   alternates: { canonical: "/services/product-photography" },
   openGraph: {
     title: "E-commerce Product Photographer in Dehradun — Amazon, Flipkart & Shopify Ready",

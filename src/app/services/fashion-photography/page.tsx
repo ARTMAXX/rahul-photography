@@ -49,9 +49,9 @@ const fashionFaqSchema = {
 };
 
 export const metadata: Metadata = {
-  title: "Fashion Photographer in Dehradun | Lookbooks & Editorial — Rahul Chanda",
+  title: "Fashion Photographer in Dehradun | Lookbook & Editorial",
   description:
-    "Fashion photographer in Dehradun for apparel brands & boutiques. On-model lookbooks, editorial campaigns, apparel e-commerce imagery. In-house retouching. Book a shoot.",
+    "Fashion photographer in Dehradun for apparel brands & boutiques: on-model lookbooks, editorial campaigns, e-commerce imagery. In-house retouching.",
   alternates: { canonical: "/services/fashion-photography" },
   openGraph: {
     title: "Fashion Photographer in Dehradun — Lookbooks, On-Model & Editorial",

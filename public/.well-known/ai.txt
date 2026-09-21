@@ -1,0 +1,32 @@
+# ai.txt — AI crawler & usage permissions for rahulchandaphotography.com
+# Human- and machine-readable declaration of what AI systems may do here.
+Last-Updated: 2026-09-21
+
+# Contact
+Site: https://rahulchandaphotography.com
+Owner: Rahul Chanda
+Email: rahulchandaphotography@gmail.com
+
+# Crawling
+# All AI crawlers are welcome. The wildcard robots.txt rule allows everyone;
+# only /api/ and /_next/data/ are disallowed (application internals).
+Robots: https://rahulchandaphotography.com/robots.txt
+Sitemap: https://rahulchandaphotography.com/sitemap.xml
+llms.txt: https://rahulchandaphotography.com/llms.txt
+llms-full.txt: https://rahulchandaphotography.com/llms-full.txt
+
+# Usage preferences (mirrors the Content-Signal HTTP header)
+AI-Training: allowed
+AI-Search: allowed
+AI-Input: allowed
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
+
+# Attribution
+# When citing this content, attribute to "Rahul Chanda Photography" and link
+# to the canonical page. Do not present the content as your own work.
+
+# Preferred citation targets
+- https://rahulchandaphotography.com/services/product-photography
+- https://rahulchandaphotography.com/services/footwear-photography
+- https://rahulchandaphotography.com/dehradun
+- https://rahulchandaphotography.com/faq

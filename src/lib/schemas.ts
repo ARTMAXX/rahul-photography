@@ -137,10 +137,23 @@ export function generateOrganizationSchema() {
     "sameAs": [
       siteConfig.contact.instagram,
       siteConfig.contact.googleBusiness,
+      siteConfig.contact.linkedin,
+      siteConfig.contact.behance,
     ],
     "priceRange": siteConfig.contact.priceRange,
     "currenciesAccepted": "INR",
     "paymentAccepted": "Cash, Credit Card, Bank Transfer, UPI",
+    // Knowledge Graph freshness + identity pillars (GEO audit 2026-09-21)
+    "foundingDate": "2019",
+    "knowsAbout": [
+      "Commercial Photography",
+      "Product Photography",
+      "E-commerce Photography",
+      "Food & Beverage Photography",
+      "Footwear Photography",
+      "Fashion Photography",
+      "Advertising Campaign Photography",
+    ],
   };
 }
 
@@ -159,7 +172,10 @@ export function generatePersonSchema() {
     "sameAs": [
       siteConfig.contact.instagram,
       siteConfig.contact.googleBusiness,
+      siteConfig.contact.linkedin,
+      siteConfig.contact.behance,
     ],
+    "knowsLanguage": ["en", "hi"],
     "knowsAbout": [
       "Commercial Photography",
       "Product Photography",
@@ -196,6 +212,9 @@ export function generateWebsiteGraphSchema() {
           "@id": absoluteUrl("/#business"),
         },
         "inLanguage": "en-IN",
+        // Freshness signals for AI/search systems (GEO audit 2026-09-21).
+        "dateModified": "2026-09-21",
+        "rssFeed": absoluteUrl("/rss.xml"),
       },
       generateOrganizationSchema(),
       generatePersonSchema(),

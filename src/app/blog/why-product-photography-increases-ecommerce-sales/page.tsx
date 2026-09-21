@@ -7,7 +7,7 @@ import { absoluteUrl, siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Product Photography & E-Commerce Sales | Rahul Chanda",
   description:
-    "What actually changes when a brand replaces phone photos with professional product photography — clicks, conversion, returns and ad costs, from a working commercial studio.",
+    "What changes when a brand replaces phone photos with professional product photography: clicks, conversion, returns and ad costs, from a working studio.",
   alternates: { canonical: "/blog/why-product-photography-increases-ecommerce-sales" },
   keywords: "product photography for e-commerce, commercial product photography benefits, product photography increase sales, ecommerce product photos India",
   openGraph: {

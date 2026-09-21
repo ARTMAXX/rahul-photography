@@ -10,9 +10,9 @@ import ServiceCta from "@/components/ui/service-cta";
 // METADATA — Targeted for commercial photography intent in Dehradun
 // ============================================================================
 export const metadata: Metadata = {
-  title: "Top Commercial Photographer in Dehradun, India | Rahul Chanda",
+  title: "Commercial Photographer Dehradun | Rahul Chanda Photography",
   description:
-    "Dehradun commercial photographer for product, food & brand campaigns. In-house retouching. Book a shoot: +91 70789 39475.",
+    "Commercial product, food, footwear & campaign photography in Dehradun. On-location across Uttarakhand, in-house retouching. WhatsApp +91 70789 39475.",
   alternates: { canonical: "/dehradun" },
   openGraph: {
     title: "Commercial Photographer Dehradun — Product, Food & Cafe Photography",

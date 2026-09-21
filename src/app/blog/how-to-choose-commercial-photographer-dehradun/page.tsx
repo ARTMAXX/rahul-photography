@@ -5,9 +5,9 @@ import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "How to Choose a Commercial Photographer in Dehradun | Rahul Chanda",
+  title: "How to Choose a Commercial Photographer in Dehradun",
   description:
-    "A working Dehradun commercial photographer's honest checklist: portfolios, retouching, e-commerce specs, quote red flags and the six questions to ask before paying an advance.",
+    "A working Dehradun commercial photographer's checklist: portfolios, retouching, e-commerce specs, quote red flags, and questions to ask before paying.",
   alternates: { canonical: "/blog/how-to-choose-commercial-photographer-dehradun" },
   keywords: "commercial photographer Dehradun, best photographer Uttarakhand, hire product photographer Dehradun, photography studio Dehradun",
   openGraph: {

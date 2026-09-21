@@ -48,9 +48,9 @@ const footwearFaqSchema = {
   ],
 };
 export const metadata: Metadata = {
-  title: "Footwear Photographer in Dehradun | Shoe & Sneaker Product Photography",
+  title: "Footwear & Sneaker Photographer in Dehradun | Rahul Chanda",
   description:
-    "Footwear product photographer in Dehradun for shoe brands and e-commerce. White-background sneaker packshots, 6-angle catalog coverage, and lifestyle campaign shots. In-house retouching.",
+    "Footwear product photographer in Dehradun: white-background sneaker packshots, 6-angle catalog coverage, lifestyle campaigns. In-house retouching.",
   alternates: { canonical: "/services/footwear-photography" },
   openGraph: {
     title: "Footwear Photographer in Dehradun — Shoe & Sneaker Product Photography",

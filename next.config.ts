@@ -88,6 +88,13 @@ const nextConfig: NextConfig = {
       // Sept 2026: footwear split out of the old combined "footwear-fashion" URL.
       // Footwear now lives in the product family; fashion became its own page.
       {
+        // Legacy external link target (seen in backlink captures) that 404s.
+        // /privacy is the live page.
+        source: "/privacy-policy",
+        destination: "/privacy",
+        permanent: true,
+      },
+      {
         source: "/services/footwear-fashion-photography",
         destination: "/services/footwear-photography",
         permanent: true,

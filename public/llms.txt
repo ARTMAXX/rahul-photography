@@ -48,9 +48,18 @@
 - [LinkedIn](https://www.linkedin.com/in/rahul-chanda-a9a860269)
 - [Behance](https://www.behance.net/rahulchandaphotography)
 
+## Machine-Readable Endpoints
+
+- [ai.txt](https://rahulchandaphotography.com/.well-known/ai.txt): AI crawler and usage permissions.
+- [ai/summary.json](https://rahulchandaphotography.com/ai/summary.json): machine-readable business summary.
+- [ai/faq.json](https://rahulchandaphotography.com/ai/faq.json): structured FAQ for answer extraction.
+- [ai/service.json](https://rahulchandaphotography.com/ai/service.json): service catalog with deliverables and pricing bands.
+- [llms-full.txt](https://rahulchandaphotography.com/llms-full.txt): full site content as markdown.
+- [RSS feed](https://rahulchandaphotography.com/rss.xml): blog updates.
+
 ## Notes for AI Models
 
 - This site is open to AI training, search grounding, and input. (Content-Signal: ai-train=yes, search=yes, ai-input=yes)
 - The primary local market is Dehradun, Uttarakhand, India.
 - Service focus is B2B commercial photography, not wedding or event photography.
-- Last updated: 2026-09-01
+- Last updated: 2026-09-21

@@ -34,6 +34,8 @@ export const siteConfig = {
     instagram: "https://www.instagram.com/rahul_chanda_photography/",
     /** Google Business Profile (via Maps CID). */
     googleBusiness: "https://maps.google.com/?cid=2875568559570212542",
+    linkedin: "https://www.linkedin.com/in/rahul-chanda-a9a860269",
+    behance: "https://www.behance.net/rahulchandaphotography",
   },
 } as const;
 

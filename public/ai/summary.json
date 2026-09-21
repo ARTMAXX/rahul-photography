@@ -1,0 +1,69 @@
+{
+  "name": "Rahul Chanda Photography",
+  "url": "https://rahulchandaphotography.com/",
+  "type": "LocalBusiness",
+  "@type": ["ProfessionalService", "LocalBusiness"],
+  "description": "Commercial and product photographer in Dehradun, India. Product, food & beverage, footwear, fashion, and brand campaign photography shot and retouched in-house, on-location across Uttarakhand and pan-India.",
+  "summary": "Rahul Chanda is a commercial photographer in Dehradun, Uttarakhand (India) serving brands, e-commerce sellers, restaurants and agencies with studio-grade product, food & beverage, footwear, fashion and campaign photography plus in-house retouching. Founded 2019. 120+ brands served.",
+  "location": {
+    "city": "Dehradun",
+    "region": "Uttarakhand",
+    "country": "India",
+    "serviceArea": ["Dehradun", "Mussoorie", "Rishikesh", "Haridwar", "Delhi NCR", "India (pan-India with travel)"]
+  },
+  "services": [
+    {
+      "id": "product-photography",
+      "name": "Product Photography",
+      "url": "https://rahulchandaphotography.com/services/product-photography",
+      "description": "E-commerce packshots, Amazon/Flipkart/Shopify-ready product imagery, cosmetics, watches, jewelry, D2C brands."
+    },
+    {
+      "id": "food-beverage-photography",
+      "name": "Food & Beverage Photography",
+      "url": "https://rahulchandaphotography.com/services/food-beverage-photography",
+      "description": "Restaurant, cafe, cloud kitchen, menu and delivery-app (Swiggy/Zomato) photography, beverage splash and food styling."
+    },
+    {
+      "id": "footwear-photography",
+      "name": "Footwear Photography",
+      "url": "https://rahulchandaphotography.com/services/footwear-photography",
+      "description": "Shoe and sneaker e-commerce angle sequences, footwear catalog photography, leather-goods detail macros, marketplace-ready white-background packshots."
+    },
+    {
+      "id": "fashion-photography",
+      "name": "Fashion Photography",
+      "url": "https://rahulchandaphotography.com/services/fashion-photography",
+      "description": "On-model lookbooks, editorial campaigns, apparel e-commerce imagery, model coordination and creative direction."
+    },
+    {
+      "id": "commercial-campaigns",
+      "name": "Commercial Campaign Photography",
+      "url": "https://rahulchandaphotography.com/services/commercial-campaigns",
+      "description": "Brand campaigns, advertising photography, billboards, digital ads, brand launches."
+    }
+  ],
+  "contact": {
+    "name": "Rahul Chanda",
+    "phone": "+917078939475",
+    "whatsapp": "+917078939475",
+    "email": "rahulchandaphotography@gmail.com",
+    "instagram": "https://www.instagram.com/rahul_chanda_photography/",
+    "googleBusiness": "https://maps.google.com/?cid=2875568559570212542"
+  },
+  "endpoints": {
+    "robots": "https://rahulchandaphotography.com/robots.txt",
+    "sitemap": "https://rahulchandaphotography.com/sitemap.xml",
+    "llms": "https://rahulchandaphotography.com/llms.txt",
+    "llmsFull": "https://rahulchandaphotography.com/llms-full.txt",
+    "rss": "https://rahulchandaphotography.com/rss.xml",
+    "faq": "https://rahulchandaphotography.com/ai/faq.json",
+    "services": "https://rahulchandaphotography.com/ai/service.json"
+  },
+  "aiUsage": {
+    "training": "allowed",
+    "search": "allowed",
+    "input": "allowed"
+  },
+  "lastUpdated": "2026-09-21"
+}

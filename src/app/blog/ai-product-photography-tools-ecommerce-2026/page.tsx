@@ -7,7 +7,7 @@ import { absoluteUrl, siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: "AI Product Photography Tools 2026",
   description:
-    "AI product photography tools tested for Indian e-commerce studios. Photoroom, Claid, Photoshop Firefly, Magnific, Topaz compared for catalog, marketplace, and brand work.",
+    "AI product photography tools tested in an Indian e-commerce studio: Photoroom, Claid, Photoshop Firefly, Magnific, Topaz for catalog and marketplace work.",
   alternates: { canonical: "/blog/ai-product-photography-tools-ecommerce-2026" },
   keywords: "AI product photography tools, AI ecommerce photo India, Photoroom alternative, AI background removal product, AI product photo studio Dehradun, Claid.ai review, AI catalog photography",
   openGraph: {

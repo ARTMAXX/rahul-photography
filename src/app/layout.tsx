@@ -63,6 +63,13 @@ export const metadata: Metadata = {
     template: "%s",
   },
   description: siteConfig.description,
+  alternates: {
+    // Advertise the RSS feed so browsers, readers and AI agents discover it
+    // (emits <link rel="alternate" type="application/rss+xml" href="/rss.xml">).
+    types: {
+      "application/rss+xml": "/rss.xml",
+    },
+  },
   authors: [{ name: "Rahul Chanda" }],
   creator: "Rahul Chanda",
   icons: {

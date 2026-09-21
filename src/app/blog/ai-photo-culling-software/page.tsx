@@ -7,7 +7,7 @@ import { absoluteUrl, siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: "AI Photo Culling Software 2026",
   description:
-    "AI photo culling software tested for working photographers. Aftershoot vs Imagen vs Evoto vs Narrative — how to cull 2,000 photos in 20 minutes without losing your best shots.",
+    "AI photo culling software tested on real client work: Aftershoot vs Imagen vs Evoto vs Narrative — cull 2,000 photos in 20 minutes without losing keepers.",
   alternates: { canonical: "/blog/ai-photo-culling-software" },
   keywords: "AI photo culling software, AI culling photographers, Aftershoot vs Imagen, auto cull photos, AI photo culling wedding, Aftershoot review, Imagen AI review, AI photo selection",
   openGraph: {
