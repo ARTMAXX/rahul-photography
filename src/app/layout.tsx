@@ -63,13 +63,6 @@ export const metadata: Metadata = {
     template: "%s",
   },
   description: siteConfig.description,
-  alternates: {
-    // Advertise the RSS feed so browsers, readers and AI agents discover it
-    // (emits <link rel="alternate" type="application/rss+xml" href="/rss.xml">).
-    types: {
-      "application/rss+xml": "/rss.xml",
-    },
-  },
   authors: [{ name: "Rahul Chanda" }],
   creator: "Rahul Chanda",
   icons: {
@@ -122,6 +115,16 @@ export default function RootLayout({
         {/* Unified typography system — loaded as a side-channel stylesheet
             so Tailwind v4's PostCSS pipeline doesn't purge the rules. */}
         <link rel="stylesheet" href="/css/typography.css" media="screen" />
+        {/* RSS discovery: emitted here (not via metadata alternates.types)
+            because page-level `alternates: { canonical }` blocks REPLACE the
+            layout's alternates object, which would drop the feed link on
+            every page that sets its own canonical. */}
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Rahul Chanda Photography — Blog"
+          href="/rss.xml"
+        />
         {/* Preload hero assets for LCP. Desktop preloads the video poster
             (matches the actual poster= attribute used by LazyVideo).
             Mobile: the priority hero <Image> in Hero.tsx already emits a

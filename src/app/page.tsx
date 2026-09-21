@@ -78,6 +78,9 @@ const homeSchema = {
         "@id": absoluteUrl("/#business"),
       },
       "inLanguage": "en-IN",
+      // Freshness + feed signals for AI/search systems (GEO audit 2026-09-21).
+      "dateModified": "2026-09-21",
+      "rssFeed": absoluteUrl("/rss.xml"),
     },
     {
       "@type": "Person",
