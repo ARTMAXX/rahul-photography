@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import ServicesShowcase from "@/components/sections/redesign/ServicesShowcase";
 import ServicesGrid from "@/components/sections/redesign/ServicesGrid";
 import FAQSection from "@/components/sections/redesign/FAQSection";
@@ -112,7 +113,27 @@ export default function ServicesPage() {
           </h1>
           <p className="text-lg md:text-xl text-white/50 max-w-[55ch] mt-8 leading-relaxed">
             Specialized photography services for brands that demand
-            precision. Every project is scoped to your product, your story,
+            precision — from{" "}
+            <Link href="/services/product-photography" className="underline decoration-[#e83b2c]/40 underline-offset-4 hover:decoration-[#e83b2c] hover:text-white/80 transition-colors">
+              e-commerce product photography
+            </Link>
+            ,{" "}
+            <Link href="/services/food-beverage-photography" className="underline decoration-[#e83b2c]/40 underline-offset-4 hover:decoration-[#e83b2c] hover:text-white/80 transition-colors">
+              food &amp; beverage shoots
+            </Link>
+            {" "}and{" "}
+            <Link href="/services/fashion-photography" className="underline decoration-[#e83b2c]/40 underline-offset-4 hover:decoration-[#e83b2c] hover:text-white/80 transition-colors">
+              fashion campaigns
+            </Link>{" "}
+            to{" "}
+            <Link href="/services/footwear-photography" className="underline decoration-[#e83b2c]/40 underline-offset-4 hover:decoration-[#e83b2c] hover:text-white/80 transition-colors">
+              footwear catalogues
+            </Link>{" "}
+            and{" "}
+            <Link href="/services/commercial-campaigns" className="underline decoration-[#e83b2c]/40 underline-offset-4 hover:decoration-[#e83b2c] hover:text-white/80 transition-colors">
+              full commercial campaigns
+            </Link>
+            . Every project is scoped to your product, your story,
             and your budget.
           </p>
         </div>

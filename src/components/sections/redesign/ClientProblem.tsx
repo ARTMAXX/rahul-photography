@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import Link from "next/link";
 
 /* ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
    ClientProblem  —  "YOUR PRODUCT IS GOOD. DOES IT LOOK GOOD ENOUGH?"
@@ -68,16 +69,16 @@ export default function ClientProblem() {
           viewport={{ once: true }}
           className="mt-12"
         >
-          <a
-            href="#services"
+          <Link
+            href="/services/product-photography"
             className="group inline-flex items-center gap-2 text-[#e83b2c] hover:text-[#f0523f] transition-colors text-sm uppercase tracking-[0.2em]"
             style={{ fontFamily: "Outfit, system-ui" }}
           >
-            See how good products get photographed
+            See product photography services
             <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
             </svg>
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

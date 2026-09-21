@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { motion } from "motion/react";
 import { useRef } from "react";
 import LazyVideo from "@/components/ui/LazyVideo";
@@ -63,8 +64,11 @@ export default function TheCraft() {
               </h2>
 
               <p className="mt-5 text-white/40 text-sm md:text-base leading-relaxed max-w-md" style={{ fontFamily: "Outfit, system-ui" }}>
-                From the moment the shutter clicks to the final export, each image passes through a considered
-                pipeline — the same one behind every campaign in the portfolio.
+                From the moment the shutter clicks to the final export, each image passes through a considered{" "}
+                <Link href="/services/product-photography" className="underline decoration-[#e83b2c]/40 underline-offset-4 hover:decoration-[#e83b2c] hover:text-white/70 transition-colors">
+                  product photography pipeline
+                </Link>{" "}
+                — the same one behind every campaign in the portfolio.
               </p>
             </motion.div>
 

@@ -124,8 +124,15 @@ export default function About() {
               ref={aboutSubRef}
               className="mt-8 md:mt-10 text-base md:text-lg font-sans leading-[1.7] tracking-[-0.005em] text-white/70 max-w-[60ch]"
             >
-              My name is Rahul Chanda. A commercial product photographer based
-              in{" "}
+              My name is Rahul Chanda. A{" "}
+              <a
+                href="/services/product-photography"
+                className="underline decoration-[#e83b2c]/40 underline-offset-4 hover:decoration-[#e83b2c] transition-colors text-white"
+                data-cursor="pointer"
+              >
+                commercial product photographer
+              </a>{" "}
+              based in{" "}
               <a
                 href="/dehradun"
                 className="underline decoration-[#e83b2c]/40 underline-offset-4 hover:decoration-[#e83b2c] transition-colors text-white"
