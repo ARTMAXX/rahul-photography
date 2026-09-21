@@ -93,6 +93,7 @@ const homeSchema = {
         siteConfig.contact.instagram,
         siteConfig.contact.googleBusiness,
         "https://www.linkedin.com/in/rahul-chanda-a9a860269",
+        siteConfig.contact.behance,
       ],
       "knowsAbout": [
         "Commercial Photography",

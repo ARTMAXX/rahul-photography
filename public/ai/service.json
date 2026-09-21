@@ -1,4 +1,15 @@
 {
+  "name": "Rahul Chanda Photography",
+  "description": "Commercial photography services in Dehradun, India: e-commerce product, food & beverage, footwear, fashion and brand campaign photography with in-house retouching.",
+  "url": "https://rahulchandaphotography.com/",
+  "capabilities": [
+    "E-commerce product photography (Amazon/Flipkart/Shopify packshots, hero shots)",
+    "Food & beverage photography (menus, delivery apps, splash, bottle lighting)",
+    "Footwear & sneaker photography (6-angle catalog sequences, white-background cutouts)",
+    "Fashion photography (on-model lookbooks, editorial, apparel e-commerce)",
+    "Commercial campaign photography (billboards, digital ads, brand launches, 4K reels)",
+    "In-house retouching (colour calibration, frequency separation, contrast sculpting)"
+  ],
   "business": {
     "name": "Rahul Chanda Photography",
     "type": ["ProfessionalService", "LocalBusiness"],
