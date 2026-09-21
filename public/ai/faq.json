@@ -1,47 +1,47 @@
-﻿{
-    "faqs":  [
-                 {
-                     "question":  "Where is Rahul Chanda Photography located?",
-                     "answer":  "The studio is based in Dehradun, Uttarakhand, India. Rahul travels with full mobile lighting setups across India for on-location productions."
-                 },
-                 {
-                     "question":  "What does Rahul Chanda Photography specialize in?",
-                     "answer":  "Commercial photography: e-commerce product photography, food \u0026 beverage photography (restaurants, cafes, delivery apps), footwear and sneaker catalogs, fashion lookbooks, and brand advertising campaigns, with in-house retouching."
-                 },
-                 {
-                     "question":  "How much does product photography cost in India?",
-                     "answer":  "Product photography starts at â‚¹10,000 for a compact product shoot. Full e-commerce catalogue work (20+ SKUs) starts at â‚¹25,000; larger catalog runs (200+ SKUs) and marketplace-specific Amazon/Flipkart/Myntra packs are quoted per project based on volume, styling, and deliverables."
-                 },
-                 {
-                     "question":  "What is the typical delivery timeframe?",
-                     "answer":  "Standard turnaround is 5â€“10 business days after the shoot. Rush turnaround (24â€“48 hours) is available on request. Bulk catalog work is delivered in batches so listings can start early."
-                 },
-                 {
-                     "question":  "What file formats are delivered for e-commerce?",
-                     "answer":  "Platform-ready JPG, PNG and WebP/AVIF sized for Amazon (2000Ã—2000+), Flipkart (1000Ã—1000+), Myntra (3:4 portrait), Shopify and direct web use, colour-managed sRGB with embedded ICC profiles, plus 16-bit TIFF/PSD masters."
-                 },
-                 {
-                     "question":  "Do you shoot on location or in a studio?",
-                     "answer":  "Both. On location at the client\u0027s warehouse, office or venue with full studio lighting brought on site; for large catalog jobs a temporary studio is set up at the client\u0027s facility."
-                 },
-                 {
-                     "question":  "What footwear photography angles are covered for e-commerce?",
-                     "answer":  "Standard coverage includes the three-quarter hero, medial profile, lateral profile, top-down, sole detail, and pair shot; brand campaigns add lifestyle in-use contexts and macro detail shots of stitching, texture and materials."
-                 },
-                 {
-                     "question":  "Can you match the exact colour of a product?",
-                     "answer":  "Yes. A Calibrite ColorChecker reference target is shot on every scene, white balance is locked against neutral patches, and the workflow is colour-managed end to end so leather, suede, mesh and synthetic finishes match the actual product."
-                 },
-                 {
-                     "question":  "Is retouching included?",
-                     "answer":  "Yes. All commercial deliverables include colour calibration, surface dust cleanup, frequency separation and contrast sculpting done in-house."
-                 },
-                 {
-                     "question":  "How do I book a shoot?",
-                     "answer":  "WhatsApp or call +91 70789 39475, email rahulchandaphotography@gmail.com, or use the booking form at https://rahulchandaphotography.com/contact. Replies within 24 hours."
-                 }
-             ],
-    "site":  "https://rahulchandaphotography.com/",
-    "name":  "Rahul Chanda Photography",
-    "lastUpdated":  "2026-09-21"
+{
+  "faqs": [
+    {
+      "question": "Where is Rahul Chanda Photography located?",
+      "answer": "The studio is based in Dehradun, Uttarakhand, India. Rahul travels with full mobile lighting setups across India for on-location productions."
+    },
+    {
+      "question": "What does Rahul Chanda Photography specialize in?",
+      "answer": "Commercial photography: e-commerce product photography, food & beverage photography (restaurants, cafes, delivery apps), footwear and sneaker catalogs, fashion lookbooks, and brand advertising campaigns, with in-house retouching."
+    },
+    {
+      "question": "How much does product photography cost in India?",
+      "answer": "Product photography starts at â‚¹10,000 for a compact product shoot. Full e-commerce catalogue work (20+ SKUs) starts at â‚¹25,000; larger catalog runs (200+ SKUs) and marketplace-specific Amazon/Flipkart/Myntra packs are quoted per project based on volume, styling, and deliverables."
+    },
+    {
+      "question": "What is the typical delivery timeframe?",
+      "answer": "Standard turnaround is 5â€“10 business days after the shoot. Rush turnaround (24â€“48 hours) is available on request. Bulk catalog work is delivered in batches so listings can start early."
+    },
+    {
+      "question": "What file formats are delivered for e-commerce?",
+      "answer": "Platform-ready JPG, PNG and WebP/AVIF sized for Amazon (2000Ã—2000+), Flipkart (1000Ã—1000+), Myntra (3:4 portrait), Shopify and direct web use, colour-managed sRGB with embedded ICC profiles, plus 16-bit TIFF/PSD masters."
+    },
+    {
+      "question": "Do you shoot on location or in a studio?",
+      "answer": "Both. On location at the client's warehouse, office or venue with full studio lighting brought on site; for large catalog jobs a temporary studio is set up at the client's facility."
+    },
+    {
+      "question": "What footwear photography angles are covered for e-commerce?",
+      "answer": "Standard coverage includes the three-quarter hero, medial profile, lateral profile, top-down, sole detail, and pair shot; brand campaigns add lifestyle in-use contexts and macro detail shots of stitching, texture and materials."
+    },
+    {
+      "question": "Can you match the exact colour of a product?",
+      "answer": "Yes. A Calibrite ColorChecker reference target is shot on every scene, white balance is locked against neutral patches, and the workflow is colour-managed end to end so leather, suede, mesh and synthetic finishes match the actual product."
+    },
+    {
+      "question": "Is retouching included?",
+      "answer": "Yes. All commercial deliverables include colour calibration, surface dust cleanup, frequency separation and contrast sculpting done in-house."
+    },
+    {
+      "question": "How do I book a shoot?",
+      "answer": "WhatsApp or call +91 70789 39475, email rahulchandaphotography@gmail.com, or use the booking form at https://rahulchandaphotography.com/contact. Replies within 24 hours."
+    }
+  ],
+  "site": "https://rahulchandaphotography.com/",
+  "name": "Rahul Chanda Photography",
+  "lastUpdated": "2026-09-21"
 }
