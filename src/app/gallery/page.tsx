@@ -15,6 +15,7 @@ interface GalleryImage {
   width: number;
   height: number;
   type?: "image" | "video";
+  poster?: string;
 }
 
 const galleryImages: GalleryImage[] = [
@@ -55,6 +56,44 @@ const galleryImages: GalleryImage[] = [
   { id: 36, type: "video", url: "/opt/best shots/ladies shoe/shoe-ladies-video.mp4", title: "Heel Motion \u2014 Ladies", alt: "Ladies heel product motion reel video with elegant studio rotation by Rahul Chanda, footwear videographer India", category: "Video", width: 960, height: 540 },
   // Deduplicated: id 37 (Athletic Sneaker — Motion, modern-athleti-sneaker.mp4) removed — byte-identical video to id 35 Sneaker Motion — Mens
   { id: 38, type: "video", url: "/opt/best shots/Product image/product-energy-can.mp4", title: "Energy Can \u2014 Vertical Reel", alt: "Vertical energy drink can product reel video for social media by Rahul Chanda, beverage videographer India", category: "Video", width: 960, height: 1706 },
+  { id: 39, url: "/opt/home-decor/home-decor-01.webp", title: "Handcrafted Wooden Platter & Decor", alt: "Handcrafted Wooden Platter & Decor by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 736, height: 736 },
+  { id: 40, url: "/opt/home-decor/home-decor-02.webp", title: "Artisanal Ceramic Vase & Pampas", alt: "Artisanal Ceramic Vase & Pampas by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 750, height: 937 },
+  { id: 41, url: "/opt/home-decor/home-decor-03.webp", title: "Nordic Minimalist Living Room Setting", alt: "Nordic Minimalist Living Room Setting by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 1200, height: 1600 },
+  { id: 42, url: "/opt/home-decor/home-decor-04.webp", title: "Earthy Terracotta Pitcher & Tableware", alt: "Earthy Terracotta Pitcher & Tableware by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 736, height: 1307 },
+  { id: 43, url: "/opt/home-decor/home-decor-05.webp", title: "Bohemian Rattan Pendant & Interior", alt: "Bohemian Rattan Pendant & Interior by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 736, height: 1308 },
+  { id: 44, url: "/opt/home-decor/home-decor-06.webp", title: "Contemporary Ceramic Sculpture & Styling", alt: "Contemporary Ceramic Sculpture & Styling by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 1200, height: 1500 },
+  { id: 45, url: "/opt/home-decor/home-decor-07.webp", title: "Warm Tone Living Room Ambience", alt: "Warm Tone Living Room Ambience by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 736, height: 1097 },
+  { id: 46, url: "/opt/home-decor/home-decor-08.webp", title: "Handcrafted Mango Wood Tray Display", alt: "Handcrafted Mango Wood Tray Display by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 736, height: 981 },
+  { id: 47, url: "/opt/home-decor/home-decor-09.webp", title: "Sculptural Stone Bookends & Bookshelf", alt: "Sculptural Stone Bookends & Bookshelf by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 814, height: 1108 },
+  { id: 48, url: "/opt/home-decor/home-decor-10.webp", title: "Modern Minimalist Accent Lamp & Console", alt: "Modern Minimalist Accent Lamp & Console by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 736, height: 1104 },
+  { id: 49, url: "/opt/home-decor/home-decor-11.webp", title: "Wabi-Sabi Ceramic Bowl Detail", alt: "Wabi-Sabi Ceramic Bowl Detail by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 1024, height: 1280 },
+  { id: 50, url: "/opt/home-decor/home-decor-12.webp", title: "Japandi Textured Clay Planter", alt: "Japandi Textured Clay Planter by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 736, height: 981 },
+  { id: 51, url: "/opt/home-decor/home-decor-13.webp", title: "Artisan Glazed Pottery & Linen", alt: "Artisan Glazed Pottery & Linen by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 735, height: 1110 },
+  { id: 52, url: "/opt/home-decor/home-decor-14.webp", title: "Sunlit Architectural Decor Vignette", alt: "Sunlit Architectural Decor Vignette by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 1200, height: 1500 },
+  { id: 53, url: "/opt/home-decor/home-decor-15.webp", title: "Organic Form Sculpted Ceramic Vase", alt: "Organic Form Sculpted Ceramic Vase by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 569, height: 569 },
+  { id: 54, url: "/opt/home-decor/home-decor-16.webp", title: "Rustic Earthenware Jar & Dried Botanicals", alt: "Rustic Earthenware Jar & Dried Botanicals by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 1155, height: 1200 },
+  { id: 55, url: "/opt/home-decor/home-decor-17.webp", title: "Hand-carved Teak Accent Decor", alt: "Hand-carved Teak Accent Decor by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 736, height: 981 },
+  { id: 56, url: "/opt/home-decor/home-decor-18.webp", title: "Minimalist Geometric Ceramic Vessel", alt: "Minimalist Geometric Ceramic Vessel by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 1080, height: 1440 },
+  { id: 57, url: "/opt/home-decor/home-decor-19.webp", title: "Monochrome Textured Wall Art & Nook", alt: "Monochrome Textured Wall Art & Nook by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 736, height: 1349 },
+  { id: 58, url: "/opt/home-decor/home-decor-20.webp", title: "Mid-Century Brass & Wood Table Accents", alt: "Mid-Century Brass & Wood Table Accents by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 735, height: 919 },
+  { id: 59, url: "/opt/home-decor/home-decor-21.webp", title: "Brutalist Concrete Pedestal & Ornament", alt: "Brutalist Concrete Pedestal & Ornament by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 794, height: 659 },
+  { id: 60, url: "/opt/home-decor/home-decor-22.webp", title: "Modern Tableware & Artisan Candleholder", alt: "Modern Tableware & Artisan Candleholder by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 1076, height: 928 },
+  { id: 61, url: "/opt/home-decor/home-decor-23.webp", title: "Natural Fibre Weave Basket & Neutral Tones", alt: "Natural Fibre Weave Basket & Neutral Tones by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 360, height: 480 },
+  { id: 62, url: "/opt/home-decor/home-decor-24.webp", title: "Sculptural Fluted Glass Vase & Florals", alt: "Sculptural Fluted Glass Vase & Florals by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 736, height: 978 },
+  { id: 63, url: "/opt/home-decor/home-decor-25.webp", title: "Curated Coffee Table Aesthetic", alt: "Curated Coffee Table Aesthetic by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 1014, height: 1800 },
+  { id: 64, url: "/opt/home-decor/home-decor-26.webp", title: "Modernist Stone Lamp & Staging", alt: "Modernist Stone Lamp & Staging by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 736, height: 920 },
+  { id: 65, url: "/opt/home-decor/home-decor-27.webp", title: "Textured Ceramic Pitcher in Morning Light", alt: "Textured Ceramic Pitcher in Morning Light by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 405, height: 720 },
+  { id: 66, url: "/opt/home-decor/home-decor-28.webp", title: "Elegant Dining Centerpiece & Stemware", alt: "Elegant Dining Centerpiece & Stemware by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 1200, height: 1600 },
+  { id: 67, url: "/opt/home-decor/home-decor-29.webp", title: "Neutral Living Room Corner Styling", alt: "Neutral Living Room Corner Styling by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 736, height: 920 },
+  { id: 68, url: "/opt/home-decor/home-decor-30.webp", title: "Hand-thrown Clay Decor & Raw Linen", alt: "Hand-thrown Clay Decor & Raw Linen by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 1200, height: 1500 },
+  { id: 69, url: "/opt/home-decor/home-decor-31.webp", title: "Handmade Terracotta Vessel on Pedestal", alt: "Handmade Terracotta Vessel on Pedestal by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 592, height: 800 },
+  { id: 70, url: "/opt/home-decor/home-decor-32.webp", title: "Warm Architectural Interior Details", alt: "Warm Architectural Interior Details by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 736, height: 1104 },
+  { id: 71, url: "/opt/home-decor/home-decor-33.webp", title: "Contemporary Marble & Wood Objects", alt: "Contemporary Marble & Wood Objects by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 735, height: 790 },
+  { id: 72, url: "/opt/home-decor/home-decor-34.webp", title: "Minimalist Organic Form Clay Vessels", alt: "Minimalist Organic Form Clay Vessels by Rahul Chanda, commercial interior and home decor photographer in Dehradun, India", category: "Home Decor", width: 736, height: 736 },
+  { id: 73, type: "video", url: "/opt/home-decor/home-decor-video-01.mp4", poster: "/opt/home-decor/home-decor-video-01-poster.webp", title: "Handcrafted Pattachitra Wood Tray — Reel", alt: "Handcrafted Pattachitra Wood Tray — Reel video reel by Rahul Chanda, commercial videographer in Dehradun", category: "Home Decor", width: 720, height: 1280 },
+  { id: 74, type: "video", url: "/opt/home-decor/home-decor-video-02.mp4", poster: "/opt/home-decor/home-decor-video-02-poster.webp", title: "Artisan Handpainted Lamp Shades — Showcase", alt: "Artisan Handpainted Lamp Shades — Showcase video reel by Rahul Chanda, commercial videographer in Dehradun", category: "Home Decor", width: 720, height: 1280 },
+  { id: 75, type: "video", url: "/opt/home-decor/home-decor-video-03.mp4", poster: "/opt/home-decor/home-decor-video-03-poster.webp", title: "Curated Home Aesthetics — Ambient Reel", alt: "Curated Home Aesthetics — Ambient Reel video reel by Rahul Chanda, commercial videographer in Dehradun", category: "Home Decor", width: 720, height: 1280 },
+  { id: 76, type: "video", url: "/opt/home-decor/home-decor-video-04.mp4", poster: "/opt/home-decor/home-decor-video-04-poster.webp", title: "Modern Living Space Styling — Motion Film", alt: "Modern Living Space Styling — Motion Film video reel by Rahul Chanda, commercial videographer in Dehradun", category: "Home Decor", width: 720, height: 1280 },
 ];
 
 export default function GalleryPage() {
@@ -157,7 +196,12 @@ export default function GalleryPage() {
                 {image.type === "video" ? (
                   <video
                     src={image.url}
-                    className="w-full h-auto block rounded-lg transition-transform duration-500 group-hover:scale-[1.04]"
+                    poster={image.poster}
+                    width={image.width}
+                    height={image.height}
+                    className={`w-full h-auto block rounded-lg transition-transform duration-500 group-hover:scale-[1.04]${
+                      image.url.includes("home-decor") ? " max-h-[620px] object-cover" : ""
+                    }`}
                     autoPlay
                     muted
                     loop
@@ -171,8 +215,11 @@ export default function GalleryPage() {
                     width={image.width}
                     height={image.height}
                     loading="lazy"
+                    quality={image.url.includes("home-decor") ? 80 : undefined}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="w-full h-auto block rounded-lg transition-transform duration-500 group-hover:scale-[1.04]"
+                    className={`w-full h-auto block rounded-lg transition-transform duration-500 group-hover:scale-[1.04]${
+                      image.url.includes("home-decor") ? " max-h-[620px] object-cover" : ""
+                    }`}
                   />
                 )}
                 {/* Hover overlay */}
@@ -202,7 +249,7 @@ export default function GalleryPage() {
               Behind the <span className="italic text-[#e83b2c]">Lens</span>
             </h2>
             <p className="text-white/50 mt-4 max-w-[50ch] mx-auto">
-              Motion reels, campaign films, and brand story videos \u2014 shot and edited by Rahul Chanda Photography.
+              Motion reels, campaign films, and brand story videos {"\u2014"} shot and edited by Rahul Chanda Photography.
             </p>
           </div>
 
@@ -214,7 +261,11 @@ export default function GalleryPage() {
                 <div key={video.id} className="rounded-xl overflow-hidden border border-white/10 bg-black/40">
                   <video
                     src={video.url}
-                    className="w-full h-auto block"
+                    width={video.width}
+                    height={video.height}
+                    className={`w-full h-auto block${
+                      video.url.includes("home-decor") ? " max-w-[315px] mx-auto" : ""
+                    }`}
                     controls
                     playsInline
                     preload="metadata"
@@ -227,7 +278,7 @@ export default function GalleryPage() {
           </div>
 
           <p className="text-center text-white/30 text-xs mt-6">
-            For brand films, product reels, or social content \u2014{" "}
+            For brand films, product reels, or social content {"\u2014"}{" "}
             <a href="/contact" className="text-[#e83b2c] hover:underline">get in touch</a>
           </p>
         </div>

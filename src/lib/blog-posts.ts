@@ -18,6 +18,7 @@ export const postDates: Record<string, string> = {
   "why-product-photography-increases-ecommerce-sales": "2026-09-12",
   "how-to-choose-commercial-photographer-dehradun": "2026-09-12",
   "food-photography-pricing-india-what-you-get-20000": "2026-09-12",
+  "home-decor-product-photography-dehradun": "2026-09-25",
 
   // AI roundup posts (standalone page.tsx files in src/app/blog/<slug>/)
   "ai-product-photography-tools-ecommerce-2026": "2026-09-04",

@@ -14,6 +14,16 @@ interface BlogCard {
 
 const blogs: BlogCard[] = [
 	{
+		title: "Home Decor Product Photography in Dehradun: How It's Actually Shot",
+		slug: "/blog/home-decor-product-photography-dehradun",
+		description:
+			"Vases, lamps and hand-thrown pottery break every rule that works for bottles and shoes. Five rules, the real one-day shot list for 20 SKUs, marketplace specs and Dehradun pricing.",
+		image: "/opt/home-decor/home-decor-03.webp",
+		createdAt: "2026-09-25",
+		tag: "Product Photography",
+		readTime: "12 min read",
+	},
+	{
 		title: "Food Photography Pricing in India: What You Get for ₹20,000",
 		slug: "/blog/food-photography-pricing-india-what-you-get-20000",
 		description:
