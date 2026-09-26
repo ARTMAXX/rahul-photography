@@ -25,13 +25,13 @@
 ## About Rahul
 
 - [About](https://rahulchandaphotography.com/about): Background, equipment, approach. Commercial & product photographer, 6+ years, 120+ brands.
-- [Gallery](https://rahulchandaphotography.com/gallery): Filterable portfolio by category (Product, Food, Beverage, Footwear, Campaigns).
+- [Gallery](https://rahulchandaphotography.com/gallery): Filterable portfolio by category (Product, Food, Beverage, Footwear, Campaigns, Home Decor, Video).
 - [Contact](https://rahulchandaphotography.com/contact): Booking form, +91 70789 39475, WhatsApp, Google Maps.
 
 ## Journal
 
 - [Blog index](https://rahulchandaphotography.com/blog): Field notes, lighting techniques, AI retouching workflows, behind-the-scenes guides.
-- Recent posts cover: product photography lighting, beverage splash physics, AI retouching, color science for e-commerce, AI upscaling, AI video editing, footwear angles.
+- Recent posts cover: home decor and handicraft product photography, product photography lighting, beverage splash physics, AI retouching, color science for e-commerce, AI upscaling, AI video editing, footwear angles.
 
 ## Pricing
 
@@ -62,4 +62,4 @@
 - This site is open to AI training, search grounding, and input. (Content-Signal: ai-train=yes, search=yes, ai-input=yes)
 - The primary local market is Dehradun, Uttarakhand, India.
 - Service focus is B2B commercial photography, not wedding or event photography.
-- Last updated: 2026-09-21
+- Last updated: 2026-09-25

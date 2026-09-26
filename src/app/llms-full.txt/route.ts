@@ -1,4 +1,5 @@
 import { getMarkdownForPath } from "@/lib/markdown-generator";
+import { blogs } from "@/lib/blog-catalog";
 
 // Prerendered at build time.
 export const dynamic = "force-static";
@@ -19,20 +20,12 @@ const SITE_PATHS = [
   "/blog",
 ];
 
-const POST_SLUGS = [
-  "ai-photoshop-retouching-techniques",
-  "ai-commercial-product-photography",
-  "ai-video-editing-tools-2026",
-  "why-beverage-splash-photography-is-hard",
-  "generative-ai-product-backgrounds",
-  "lighting-patterns-for-product-photography",
-  "footwear-photography-angles",
-  "ai-color-grading-scene-detection",
-  "beverage-photography-glass",
-  "ai-upscaling-ecommerce",
-  "color-science-ecommerce",
-  "retouching-101",
-];
+/**
+ * Blog paths with markdown available. Derived from the canonical catalog so
+ * both standalone and dynamic posts are included automatically; catalog slugs
+ * are already in "/blog/<slug>" form, which is what getMarkdownForPath expects.
+ */
+const POST_PATHS = [...new Set(blogs.map((b) => b.slug))];
 
 export async function GET() {
   const sections: string[] = [];
@@ -41,8 +34,8 @@ export async function GET() {
     const md = getMarkdownForPath(p);
     if (md) sections.push(md.markdown);
   }
-  for (const slug of POST_SLUGS) {
-    const md = getMarkdownForPath(`/blog/${slug}`);
+  for (const path of POST_PATHS) {
+    const md = getMarkdownForPath(path);
     if (md) sections.push(md.markdown);
   }
 

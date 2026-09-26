@@ -1,4 +1,5 @@
 import { posts } from "@/app/blog/[slug]/page";
+import { blogs } from "@/lib/blog-catalog";
 
 export interface MarkdownResponse {
   markdown: string;
@@ -40,6 +41,33 @@ export function getMarkdownForPath(pathname: string): MarkdownResponse | null {
       const md = lines.join("\n");
       return { markdown: md, tokens: countTokens(md) };
     }
+
+    // Standalone posts own their own page.tsx and therefore have no entry in
+    // `posts`, so fall back to the canonical catalog for an accurate summary.
+    const catalogPost = blogs.find((b) => b.slug === `/blog/${slug}`);
+    if (catalogPost) {
+      const md = [
+        `# ${catalogPost.title}`,
+        "",
+        `> **Author:** Rahul Chanda | **Category:** ${catalogPost.tag} | **Published:** ${catalogPost.createdAt} | **Read Time:** ${catalogPost.readTime}`,
+        `> **Canonical URL:** https://rahulchandaphotography.com${catalogPost.slug}`,
+        "",
+        "## Summary",
+        catalogPost.description,
+        "",
+        "## Full Article",
+        `This article is authored as a standalone page. Read the full piece, with images, at https://rahulchandaphotography.com${catalogPost.slug}`,
+        "",
+        "---",
+        "## Commercial Studio Booking",
+        "- **Photographer:** Rahul Chanda",
+        "- **Location:** Dehradun, Uttarakhand, India (on-location across India)",
+        "- **Services:** Commercial Product Photography, Food & Beverage, Footwear Photography, Fashion Photography, Campaign Art Direction, Post-Production & Color Management",
+        "- **Website:** https://rahulchandaphotography.com",
+        "- **Contact:** https://rahulchandaphotography.com/contact | Phone: +91 70789 39475",
+      ].join("\n");
+      return { markdown: md, tokens: countTokens(md) };
+    }
   }
 
   // 2. Blog Hub: /blog
@@ -52,9 +80,9 @@ export function getMarkdownForPath(pathname: string): MarkdownResponse | null {
       "",
       "## Published Articles",
       "",
-      ...posts.map(
-        (p) =>
-          `### [${p.title}](https://rahulchandaphotography.com/blog/${p.slug})\n- **Category:** ${p.tag} | **Published:** ${p.date} | **Read Time:** ${p.read}\n- **Summary:** ${p.excerpt}\n`
+      ...blogs.map(
+        (b) =>
+          `### [${b.title}](https://rahulchandaphotography.com${b.slug})\n- **Category:** ${b.tag} | **Published:** ${b.createdAt} | **Read Time:** ${b.readTime}\n- **Summary:** ${b.description}\n`
       ),
       "---",
       "## Studio Information",
