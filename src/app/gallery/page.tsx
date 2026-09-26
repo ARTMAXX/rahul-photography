@@ -34,6 +34,24 @@ const galleryImages: GalleryImage[] = [
   { id: 13, url: "/opt/best shots/Food photo/food-mutton.webp", title: "Mutton Special", alt: "Mutton dish food photography with rich gravy by Rahul Chanda, commercial food photographer Dehradun", category: "Food", width: 1024, height: 1024 },
   { id: 14, url: "/opt/best shots/Food photo/food-buffet.webp", title: "Food Buffet", alt: "Grand food buffet spread photography for restaurant marketing by Rahul Chanda, food photographer", category: "Food", width: 1024, height: 1024 },
   { id: 15, url: "/opt/best shots/Food photo/food-cream-macro.webp", title: "Cream Macro Detail", alt: "Macro food photography of cream texture and detail by Rahul Chanda, Dehradun commercial photographer", category: "Food", width: 1024, height: 1024 },
+  { id: 77, url: "/opt/food-shoot/food-biryani-hand-pour.webp", title: "Biryani \u2014 Hand Garnish", alt: "Hand garnishing steaming biryani in a copper pot, food photography by Rahul Chanda, food photographer in Dehradun", category: "Food", width: 1078, height: 1600 },
+  { id: 78, url: "/opt/food-shoot/food-biryani-copper-topdown.webp", title: "Biryani \u2014 Copper Handi", alt: "Overhead copper handi biryani with raita and fried onions, food photography by Rahul Chanda, restaurant food photographer India", category: "Food", width: 1067, height: 1600 },
+  { id: 79, url: "/opt/food-shoot/food-biryani-bowl-spoon.webp", title: "Biryani \u2014 Spoon Lift", alt: "Spoon lifting spiced biryani rice from a copper bowl, food photography by Rahul Chanda, food photographer in Dehradun", category: "Food", width: 736, height: 1308 },
+  { id: 80, url: "/opt/food-shoot/food-platter-overhead.webp", title: "Chicken & Rice Platter", alt: "Overhead fried chicken and rice platter with chutneys and onion rings, food photography by Rahul Chanda, restaurant photographer India", category: "Food", width: 736, height: 1308 },
+  { id: 81, url: "/opt/food-shoot/food-fried-chicken-steam.webp", title: "Chicken Lollipops \u2014 Steam", alt: "Crispy chicken lollipops with rising steam on a dark plate, food photography by Rahul Chanda, food photographer India", category: "Food", width: 720, height: 1280 },
+  { id: 82, url: "/opt/food-shoot/food-grilled-fish-plate.webp", title: "Grilled Fish \u2014 Styled Plate", alt: "Grilled fish fillet on a ceramic plate against a painted backdrop, food photography by Rahul Chanda, food photographer in Dehradun", category: "Food", width: 1067, height: 1600 },
+  { id: 83, url: "/opt/food-shoot/food-chef-plating.webp", title: "Chef at Work \u2014 Plating", alt: "Chef plating a dish in a dark kitchen, behind-the-scenes food photography by Rahul Chanda, Dehradun commercial photographer", category: "Food", width: 1067, height: 1600 },
+  { id: 84, url: "/opt/food-shoot/food-thali-naan-editorial.webp", title: "Thali & Naan \u2014 Editorial Set", alt: "Editorial thali styling with naan and colourful backdrop, food photography by Rahul Chanda, commercial food photographer India", category: "Food", width: 1067, height: 1600 },
+  { id: 85, url: "/opt/food-shoot/food-thali-naan-colorful.webp", title: "Thali & Naan \u2014 Colour Spread", alt: "Colourful north Indian thali with naan, curry and rice, food photography by Rahul Chanda, food photographer India", category: "Food", width: 900, height: 1600 },
+  { id: 86, url: "/opt/food-shoot/food-thali-naan-dark.webp", title: "Thali & Naan \u2014 Low Key", alt: "Moody low-lit thali with naan and steel katoris, food photography by Rahul Chanda, Dehradun commercial photographer", category: "Food", width: 960, height: 1200 },
+  { id: 87, url: "/opt/food-shoot/food-thali-rice-spread.webp", title: "Brass Thali \u2014 Rice Spread", alt: "Brass thali with rice, dal and assorted katoris, Indian food photography by Rahul Chanda, food photographer in Dehradun", category: "Food", width: 896, height: 1344 },
+  { id: 88, url: "/opt/food-shoot/food-steel-thali-overhead.webp", title: "Steel Thali \u2014 Overhead", alt: "Overhead steel bowl thali with curries and rice, Indian food photography by Rahul Chanda, restaurant photographer India", category: "Food", width: 736, height: 981 },
+  { id: 89, url: "/opt/food-shoot/food-mutter-paneer-card.webp", title: "Mutter Paneer \u2014 Menu Card", alt: "Mutter paneer menu design card with curry food photography by Rahul Chanda, restaurant branding photographer in Dehradun", category: "Food", width: 736, height: 1308 },
+  { id: 90, url: "/opt/food-shoot/food-daal-makhani-card.webp", title: "Daal Makhani \u2014 Menu Card", alt: "Daal makhani menu design card with food photography by Rahul Chanda, restaurant branding photographer in Dehradun", category: "Food", width: 736, height: 1307 },
+  { id: 91, url: "/opt/food-shoot/food-happy-monday-social.webp", title: "Happy Monday \u2014 Social Post", alt: "Happy Monday social media food graphic with photography by Rahul Chanda, restaurant social media photographer Dehradun", category: "Food", width: 900, height: 1600 },
+  { id: 92, url: "/opt/food-shoot/food-instagram-dish-mockup.webp", title: "Instagram Post \u2014 Dish Mockup", alt: "Instagram post mockup of a plated dish for restaurant social media by Rahul Chanda, commercial food photographer India", category: "Food", width: 1080, height: 1350 },
+  { id: 93, url: "/opt/food-shoot/food-cocktails-trio.webp", title: "Cocktails \u2014 Trio", alt: "Trio of colourful cocktails on a wooden bar, beverage photography by Rahul Chanda, beverage photographer India", category: "Food", width: 675, height: 1200 },
+  { id: 94, url: "/opt/food-shoot/food-orange-cocktail-garden.webp", title: "Orange Cocktail \u2014 Garden Light", alt: "Orange cocktail with dried citrus on rustic wood in garden light, beverage photography by Rahul Chanda, beverage photographer India", category: "Food", width: 1067, height: 1600 },
   { id: 16, url: "/opt/best shots/Beverage images/bev-iced.webp", title: "Iced Beverage \u2014 Condensation", alt: "Iced beverage photography with condensation droplets by Rahul Chanda, beverage photographer India", category: "Beverage", width: 1024, height: 1024 },
   { id: 17, url: "/opt/best shots/Beverage images/bev-macro.webp", title: "Beverage Macro Detail", alt: "Macro beverage photography capturing liquid detail by Rahul Chanda, commercial photographer Dehradun", category: "Beverage", width: 1024, height: 1024 },
   { id: 18, url: "/opt/best shots/Beverage images/bev-toast.webp", title: "Celebration Toast", alt: "Celebration toast beverage photography with glasses clinking by Rahul Chanda, product photographer", category: "Beverage", width: 1024, height: 1024 },
@@ -199,9 +217,7 @@ export default function GalleryPage() {
                     poster={image.poster}
                     width={image.width}
                     height={image.height}
-                    className={`w-full h-auto block rounded-lg transition-transform duration-500 group-hover:scale-[1.04]${
-                      image.url.includes("home-decor") ? " max-h-[620px] object-cover" : ""
-                    }`}
+                    className="w-full h-auto block rounded-lg transition-transform duration-500 group-hover:scale-[1.04]"
                     autoPlay
                     muted
                     loop
@@ -217,9 +233,7 @@ export default function GalleryPage() {
                     loading="lazy"
                     quality={image.url.includes("home-decor") ? 80 : undefined}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className={`w-full h-auto block rounded-lg transition-transform duration-500 group-hover:scale-[1.04]${
-                      image.url.includes("home-decor") ? " max-h-[620px] object-cover" : ""
-                    }`}
+                    className="w-full h-auto block rounded-lg transition-transform duration-500 group-hover:scale-[1.04]"
                   />
                 )}
                 {/* Hover overlay */}

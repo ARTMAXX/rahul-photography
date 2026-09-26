@@ -27,7 +27,7 @@ export const blogs: BlogCard[] = [
 		slug: "/blog/home-decor-product-photography-dehradun",
 		description:
 			"Vases, lamps and hand-thrown pottery break every rule that works for bottles and shoes. Five rules, the real one-day shot list for 20 SKUs, marketplace specs and Dehradun pricing.",
-		image: "/opt/home-decor/home-decor-03.webp",
+		image: "/opt/home-decor/home-decor-14.webp",
 		createdAt: "2026-09-25",
 		tag: "Product Photography",
 		readTime: "12 min read",
@@ -37,7 +37,7 @@ export const blogs: BlogCard[] = [
 		slug: "/blog/food-photography-pricing-india-what-you-get-20000",
 		description:
 			"A ₹20,000 food shoot broken down line by line — dishes, styling, retouching, usage rights. Written by a working food photographer, not an agency deck.",
-		image: "/opt/best shots/ADs/ad-culinary.webp",
+		image: "/opt/best shots/Food photo/food-biriyani-hero.webp",
 		createdAt: "2026-09-12",
 		tag: "Pricing",
 		readTime: "12 min read",
@@ -47,7 +47,7 @@ export const blogs: BlogCard[] = [
 		slug: "/blog/how-to-choose-commercial-photographer-dehradun",
 		description:
 			"The hiring checklist I'd use if I were a brand owner — portfolios, retouching, e-commerce specs, quote red flags and six questions to ask before the advance.",
-		image: "/opt/best shots/Product image/product-molton-brown.webp",
+		image: "/opt/cinematic-assets/photographer-studio-poster.webp",
 		createdAt: "2026-09-12",
 		tag: "Dehradun Guide",
 		readTime: "12 min read",
@@ -57,7 +57,7 @@ export const blogs: BlogCard[] = [
 		slug: "/blog/why-product-photography-increases-ecommerce-sales",
 		description:
 			"Clicks, conversion, returns, ad costs — what actually changes when a brand replaces phone photos with studio-lit catalogue work. From the studio floor.",
-		image: "/opt/best shots/new-images/new-product-blast.webp",
+		image: "/opt/best shots/mens shoe/shoe-mens-white.webp",
 		createdAt: "2026-09-12",
 		tag: "E-Commerce",
 		readTime: "11 min read",
@@ -67,7 +67,7 @@ export const blogs: BlogCard[] = [
 		slug: "/blog/retouching-101",
 		description:
 			"Culling standards, color balancing, non-destructive cleanup, frequency separation, and multi-format delivery: the step-by-step post-production process for commercial campaigns.",
-		image: "/opt/best shots/ladies shoe/High-end-shoe.webp",
+		image: "/opt/cinematic-assets/editing-video-poster.webp",
 		createdAt: "2026-02-06",
 		tag: "Guides",
 		readTime: "9 min read",
@@ -77,7 +77,7 @@ export const blogs: BlogCard[] = [
 		slug: "/blog/generative-ai-product-backgrounds",
 		description:
 			"How to combine physical studio key lighting with generative background compositing for e-commerce and lifestyle campaigns — without the artificial cutout look.",
-		image: "/opt/best shots/new-images/new-product-blast.webp",
+		image: "/opt/best shots/Product image/product-serum.webp",
 		createdAt: "2026-06-10",
 		tag: "AI & Photography",
 		readTime: "8 min read",
@@ -87,7 +87,7 @@ export const blogs: BlogCard[] = [
 		slug: "/blog/ai-photoshop-retouching-techniques",
 		description:
 			"From Photoshop's Remove tool and Generative Fill to multi-stage batch cleanup with Retouch4me and manual finishing — the exact post-production pipeline for commercial work.",
-		image: "/opt/best shots/Product image/product-watch-luxury.webp",
+		image: "/opt/best shots/Product image/product-molton-brown.webp",
 		createdAt: "2026-08-15",
 		tag: "Retouching",
 		readTime: "12 min read",
@@ -97,7 +97,7 @@ export const blogs: BlogCard[] = [
 		slug: "/blog/ai-commercial-product-photography",
 		description:
 			"Twelve months of integrating AI tools into commercial shoots across Dehradun and regional brands: what actually accelerates production, where physics still demands a studio, and why art direction matters.",
-		image: "/opt/best shots/Product image/product-molton-brown.webp",
+		image: "/opt/best shots/Product image/product-watch-luxury.webp",
 		createdAt: "2026-08-05",
 		tag: "AI & Photography",
 		readTime: "10 min read",
@@ -107,7 +107,7 @@ export const blogs: BlogCard[] = [
 		slug: "/blog/why-beverage-splash-photography-is-hard",
 		description:
 			"High-speed flash duration (t0.1), fluid viscosity, trigger delay, and hundreds of frames for one hero crown — the engineering and lighting behind commercial liquid action.",
-		image: "/opt/best shots/Beverage images/beverage-macro.webp",
+		image: "/opt/best shots/new-images/new-juice-01.webp",
 		createdAt: "2026-06-20",
 		tag: "Behind the scenes",
 		readTime: "8 min read",
@@ -117,7 +117,7 @@ export const blogs: BlogCard[] = [
 		slug: "/blog/lighting-patterns-for-product-photography",
 		description:
 			"Key lights, rim highlights, gradient scrims, and negative fill — how to sculpt form, control specular reflections, and create editorial depth for packshots.",
-		image: "/opt/best shots/Product image/product-headphone.webp",
+		image: "/opt/best shots/Product image/energy-drink-design.webp",
 		createdAt: "2026-05-27",
 		tag: "Technique",
 		readTime: "7 min read",
@@ -147,7 +147,7 @@ export const blogs: BlogCard[] = [
 		slug: "/blog/ai-color-grading-scene-detection",
 		description:
 			"How neural color matching in DaVinci Resolve and automated scene edit detection in Premiere Pro speed up multi-camera delivery for commercial video campaigns.",
-		image: "/opt/best shots/ADs/ad-culinary.webp",
+		image: "/opt/hero-shots/main hero landing page.webp",
 		createdAt: "2026-04-15",
 		tag: "AI & Video",
 		readTime: "8 min read",
@@ -157,7 +157,7 @@ export const blogs: BlogCard[] = [
 		slug: "/blog/beverage-photography-glass",
 		description:
 			"Controlling specular reflections, building translucent backlights, and crafting custom condensation formulas for premium beverage and spirits photography.",
-		image: "/opt/best shots/Beverage images/bev-iced.webp",
+		image: "/opt/best shots/Beverage images/bev-macro.webp",
 		createdAt: "2026-03-24",
 		tag: "Technique",
 		readTime: "8 min read",
@@ -167,7 +167,7 @@ export const blogs: BlogCard[] = [
 		slug: "/blog/ai-upscaling-ecommerce",
 		description:
 			"Comparing Topaz Gigapixel, Magnific AI, and optical resolution — understanding marketplace compliance, texture hallucinations, and catalog zoom standards.",
-		image: "/opt/best shots/Product image/product-bodywash.webp",
+		image: "/opt/best shots/new-images/new-product-heel.webp",
 		createdAt: "2026-03-10",
 		tag: "AI & Photography",
 		readTime: "8 min read",
@@ -177,7 +177,7 @@ export const blogs: BlogCard[] = [
 		slug: "/blog/color-science-ecommerce",
 		description:
 			"ColorChecker calibration, repeatable lighting documentation, and display profile management: the quality control pipeline that keeps product colors true to life.",
-		image: "/opt/best shots/Food photo/food-biriyani.webp",
+		image: "/opt/best shots/Food photo/food-cream-macro.webp",
 		createdAt: "2026-03-08",
 		tag: "Guides",
 		readTime: "8 min read",
@@ -188,7 +188,7 @@ export const blogs: BlogCard[] = [
 		slug: "/blog/how-to-photograph-products-ecommerce",
 		description:
 			"From camera angles and white backgrounds to lighting setups and post-processing — the complete e-commerce product photography workflow for D2C Indian brands.",
-		image: "/opt/best shots/Product image/product-watch-luxury.webp",
+		image: "/opt/best shots/Product image/product-bodywash.webp",
 		createdAt: "2026-08-22",
 		tag: "Guides",
 		readTime: "14 min read",
@@ -198,7 +198,7 @@ export const blogs: BlogCard[] = [
 		slug: "/blog/product-photography-small-business-india",
 		description:
 			"Affordable studio setups, DIY lighting hacks, and smartphone-to-slr workflows for small Indian brands that need professional-looking product photography on a budget.",
-		image: "/opt/best shots/new-images/new-product-blast.webp",
+		image: "/opt/best shots/Product image/product-hairspray.webp",
 		createdAt: "2026-08-28",
 		tag: "Guides",
 		readTime: "13 min read",
@@ -208,7 +208,7 @@ export const blogs: BlogCard[] = [
 		slug: "/blog/product-photography-lighting-setup",
 		description:
 			"One-light, two-light, three-light setups — understanding modifier distance, ratio, and quality to achieve anything from clean white backgrounds to dramatic editorial product shots.",
-		image: "/opt/best shots/Product image/product-headphone.webp",
+		image: "/opt/best shots/Product image/product-energy-can-poster.webp",
 		createdAt: "2026-08-25",
 		tag: "Technique",
 		readTime: "12 min read",
@@ -218,7 +218,7 @@ export const blogs: BlogCard[] = [
 		slug: "/blog/food-photography-restaurants",
 		description:
 			"Restaurant photography for digital menus, social media, and Google Business profiles — the lighting, styling, and camera setup for appetizing food imagery.",
-		image: "/opt/best shots/Food photo/food-biriyani.webp",
+		image: "/opt/best shots/Food photo/food-buffet.webp",
 		createdAt: "2026-08-30",
 		tag: "Technique",
 		readTime: "16 min read",
@@ -228,7 +228,7 @@ export const blogs: BlogCard[] = [
 		slug: "/blog/beverage-photography-glass-splash",
 		description:
 			"High-speed splash photography for beverages — trigger systems, flash duration, exposure settings, and the physics of freezing liquid action at 1/8000s.",
-		image: "/opt/best shots/Beverage images/beverage-macro.webp",
+		image: "/opt/best shots/Beverage images/bev-toast.webp",
 		createdAt: "2026-08-20",
 		tag: "Behind the scenes",
 		readTime: "15 min read",
@@ -239,7 +239,7 @@ export const blogs: BlogCard[] = [
 		slug: "/blog/ai-product-photography-tools-ecommerce-2026",
 		description:
 			"A working commercial studio in Dehradun ranks the AI product photography tools that actually save hours on real e-commerce work — Photoroom, Claid, Photoshop, Magnific, Topaz compared.",
-		image: "/opt/best shots/new-images/new-product-blast.webp",
+		image: "/opt/best shots/new-images/new-product-bold.webp",
 		createdAt: "2026-09-04",
 		tag: "AI & Photography",
 		readTime: "14 min read",
@@ -249,7 +249,7 @@ export const blogs: BlogCard[] = [
 		slug: "/blog/ai-photo-culling-software",
 		description:
 			"Aftershoot vs Imagen vs Evoto vs Narrative — every major AI culling tool tested on real client work. The hybrid AI-first, human-final workflow Indian studios use.",
-		image: "/opt/best shots/Product image/product-molton-brown.webp",
+		image: "/opt/best shots/Product image/headphone-jbl.webp",
 		createdAt: "2026-09-04",
 		tag: "AI & Photography",
 		readTime: "13 min read",
