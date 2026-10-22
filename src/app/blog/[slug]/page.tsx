@@ -796,11 +796,13 @@ export const posts: BlogPost[] = [
   },
 ];
 
-export const dynamicParams = false;
-
-export function generateStaticParams() {
-  return posts.map((p) => ({ slug: p.slug }));
-}
+// NOTE (2026-10-22): No `generateStaticParams` and no `dynamicParams` — see
+// opennextjs issue #611: on Cloudflare + OpenNext (no R2 incremental cache),
+// prerendered dynamic routes 404 in production. Fully dynamic render (12
+// posts, per-request) is reliable and notFound() still 404s unknown slugs.
+// export function generateStaticParams() {
+//   return posts.map((p) => ({ slug: p.slug }));
+// }
 
 /** Related posts: same-tag posts first, then most recent others. Max 3. */
 function getRelatedPosts(slug: string, count = 3) {
