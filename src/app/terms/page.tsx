@@ -72,7 +72,7 @@ const sections = [
   {
     h: "Disclaimer",
     body: [
-      "These Terms of Service are a draft and are not legal advice. They are provided to set clear expectations between Rahul Chanda Photography and our clients. Please review them with a qualified lawyer before relying on them in a commercial engagement.",
+      "These Terms of Service set clear expectations between Rahul Chanda Photography and our clients. They are not legal advice — for high-value engagements, please have them reviewed by a qualified lawyer before signing.",
     ],
   },
   {

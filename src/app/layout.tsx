@@ -28,7 +28,7 @@ const playfair = Playfair_Display({
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
   fallback: [
     "system-ui",

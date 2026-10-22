@@ -290,7 +290,7 @@ const localBusinessJsonLd = {
   sameAs: [
     siteConfig.contact.instagram,
     siteConfig.contact.googleBusiness,
-    "https://www.behance.net/rahulchandaphotography",
+    "https://www.behance.net/rahulchanda4",
     "https://www.linkedin.com/in/rahul-chanda-a9a860269",
   ],
   hasOfferCatalog: {
@@ -370,7 +370,7 @@ const personSchema = {
   sameAs: [
     siteConfig.contact.instagram,
     siteConfig.contact.googleBusiness,
-    "https://www.behance.net/rahulchandaphotography",
+    "https://www.behance.net/rahulchanda4",
   ],
   knowsAbout: [
     "Product Photography",
@@ -488,7 +488,15 @@ export default function DehradunPage() {
           <p className="text-white/50 mt-6 leading-relaxed max-w-[65ch]">
             No studio needed. I bring professional strobes, continuous lights, modifiers, backgrounds, and
             grip equipment to your location — whether it's a cafe on Rajpur Road, a restaurant in Mussoorie,
-            a footwear factory in Sahastradhara, or your home kitchen in Rishikesh.
+            a footwear factory in Sahastradhara, or your home kitchen in Rishikesh. Prefer shooting under
+            studio conditions?{" "}
+            <Link
+              href="/photo-studio-dehradun"
+              className="text-[#e83b2c]/80 underline decoration-white/20 hover:text-[#e83b2c] hover:decoration-[#e83b2c]/60 transition-colors"
+            >
+              See the photo-studio-in-Dehradun page
+            </Link>
+            .
           </p>
           <ul className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 text-white/60">
             {[

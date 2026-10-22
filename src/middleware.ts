@@ -95,6 +95,27 @@ const API_CATALOG_PAYLOAD = JSON.stringify(
 );
 
 export async function middleware(request: NextRequest) {
+  /**
+   * Canonical-host 301 — anything that is not the live production domain
+   * (e.g. the old Indexed rahulchandaphotography.netlify.app copy, stray
+   * preview hosts, or www variants) is redirected to the apex domain so
+   * Google can never index a second copy of the site.
+   */
+  const rawHost = (request.headers.get("host") || "").toLowerCase();
+  const host = rawHost.replace(/^www\./, "").split(":")[0];
+  const isCanonicalHost =
+    host === "rahulchandaphotography.com" ||
+    host === "localhost" ||
+    /^127\./.test(host) ||
+    /\.local$/.test(host);
+  if (rawHost && !isCanonicalHost) {
+    const redirectUrl = request.nextUrl.clone();
+    redirectUrl.protocol = "https:";
+    redirectUrl.hostname = "rahulchandaphotography.com";
+    redirectUrl.port = "";
+    return NextResponse.redirect(redirectUrl, 301);
+  }
+
   const acceptHeader = request.headers.get("accept") || "";
   const pathname = request.nextUrl.pathname;
   const cleanPath = pathname.replace(/\/$/, "") || "/";

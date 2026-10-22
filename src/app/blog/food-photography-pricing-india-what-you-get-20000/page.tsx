@@ -5,7 +5,7 @@ import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Food Photography Pricing in India: ₹20,000 Explained | Rahul Chanda",
+  title: "Food Photography Pricing India: ₹20,000 Explained",
   description:
     "Exactly what a ₹20,000 food photography shoot covers — dishes, styling, retouching, revisions, usage rights — what it doesn't, and when you should spend more. No 'depends on requirements'.",
   alternates: { canonical: "/blog/food-photography-pricing-india-what-you-get-20000" },

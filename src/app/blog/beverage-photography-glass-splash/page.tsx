@@ -5,16 +5,16 @@ import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  // Short meta title; the H1 inside the article still uses the long form.
-  title: "Beverage Product Photography",
+  // Mid-length meta title (was 28 chars — too thin); the H1 inside keeps the long form.
+  title: "Beverage Product Photography Guide | Glass & Splash",
   description:
     "Beverage photography guide: glass, condensation, splash, and beverage lighting for product shoots and campaigns.",
   alternates: { canonical: "/blog/beverage-photography-glass-splash" },
   keywords: "beverage product photography, glass product photography, beverage splash photography, beverage photography techniques, glass bottle lighting",
   openGraph: {
-    // Match the short meta title so link previews match the browser tab.
-    title: "Beverage Product Photography",
-    description: "Master beverage photography. Learn glass lighting, condensation, and splash techniques.",
+    title: "Beverage Product Photography Guide | Glass & Splash",
+    description:
+      "Master beverage photography: glass, condensation and splash lighting techniques for product shoots.",
     url: absoluteUrl("/blog/beverage-photography-glass-splash"),
     type: "article",
     images: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Beverage Product Photography",
+    title: "Beverage Product Photography Guide",
     description: "Master beverage photography. Learn glass lighting, condensation, and splash techniques.",
     images: [absoluteUrl(siteConfig.ogImagePath)],
   },
