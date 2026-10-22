@@ -796,6 +796,8 @@ export const posts: BlogPost[] = [
   },
 ];
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }));
 }
