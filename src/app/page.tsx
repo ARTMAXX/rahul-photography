@@ -327,6 +327,29 @@ export default function Home() {
               </Link>
             ))}
           </div>
+          <div className="flex flex-wrap items-center gap-x-8 gap-y-3 mt-12 pt-6 border-t border-white/[0.06]">
+            <Link
+              href="/photo-studio-dehradun"
+              className="text-xs uppercase tracking-widest text-white/50 hover:text-[#e83b2c] transition-colors"
+              data-cursor="pointer"
+            >
+              Inside the studio —
+            </Link>
+            <Link
+              href="/dehradun"
+              className="text-xs uppercase tracking-widest text-white/50 hover:text-[#e83b2c] transition-colors"
+              data-cursor="pointer"
+            >
+              Commercial photography in Dehradun —
+            </Link>
+            <Link
+              href="/gallery"
+              className="text-xs uppercase tracking-widest text-white/50 hover:text-[#e83b2c] transition-colors"
+              data-cursor="pointer"
+            >
+              Portfolio —
+            </Link>
+          </div>
         </div>
       </section>
       <CinematicCTA />

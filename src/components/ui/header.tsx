@@ -75,6 +75,10 @@ function Header1() {
       description: "Read the blog, learn about us, or get in touch.",
       items: [
         {
+          title: "Photo Studio",
+          href: "/photo-studio-dehradun",
+        },
+        {
           title: "Blog",
           href: "/blog",
         },
