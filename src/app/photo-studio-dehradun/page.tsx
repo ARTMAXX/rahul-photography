@@ -38,6 +38,12 @@ export const metadata: Metadata = {
     images: [absoluteUrl("/opt/og-image-homepage.jpg")],
   },
   robots: { index: true, follow: true },
+  // Freshness signal — og:updated_time via top-level `other` (Next rejects
+  // modifiedTime on og:type=website). Refresh ONLY on genuine content
+  // revisions; do not churn this date on deploys.
+  other: {
+    "og:updated_time": "2026-10-22T09:30:00.000Z",
+  },
 };
 
 // ============================================================================
@@ -180,6 +186,7 @@ const faqPageJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "@id": absoluteUrl("/photo-studio-dehradun#faq"),
+  dateModified: "2026-10-22",
   mainEntity: STUDIO_FAQ.map((f) => ({
     "@type": "Question",
     name: f.q,

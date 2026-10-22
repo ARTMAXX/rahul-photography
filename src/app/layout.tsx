@@ -158,6 +158,22 @@ export default function RootLayout({
         />
         {/* Google Analytics 4 — gtag.js loader (server-rendered, in <head>) */}
         <GoogleAnalyticsScript />
+        {/* WebSite JSON-LD — site-level entity node for AI crawlers
+            (no SearchAction: the site has no functional /search path). */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "@id": absoluteUrl("/#website"),
+              name: "Rahul Chanda Photography",
+              url: siteConfig.url,
+              inLanguage: "en-IN",
+              publisher: { "@id": absoluteUrl("/#business") },
+            }),
+          }}
+        />
       </head>
       <body
         className={`${playfair.variable} ${outfit.variable} antialiased`}
