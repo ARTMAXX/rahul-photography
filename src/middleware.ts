@@ -94,6 +94,47 @@ const API_CATALOG_PAYLOAD = JSON.stringify(
   2
 );
 
+// 5. Blog slug guard — unknown /blog/<slug> must return a real 404.
+// generateMetadata's notFound() cannot set the HTTP status once SSR
+// streaming has begun on Workers, so unknown slugs would otherwise be
+// served as soft-404s (200 + 404 content). The blog catalog (static +
+// dynamic posts) is the single source of truth; it is lazily imported
+// so non-blog requests never pay the bundle cost.
+const BLOG_NOT_FOUND_HTML = `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>404 — Page Not Found | Rahul Chanda Photography</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center;
+    background: #0a0a0a; color: #ededed; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { text-align: center; padding: 2rem; }
+  .code { font-size: clamp(4rem, 12vw, 7rem); font-weight: 700; letter-spacing: -0.04em; margin: 0; color: #fff; }
+  h1 { font-size: 1.25rem; font-weight: 500; margin: 0.5rem 0 1rem; }
+  p { color: #9a9a9a; margin: 0 0 2rem; }
+  .actions { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+  a { display: inline-block; padding: 0.75rem 1.5rem; border: 1px solid #3a3a3a; border-radius: 999px;
+    color: #fff; text-decoration: none; }
+  a:hover { border-color: #fff; }
+</style>
+</head>
+<body>
+<main>
+  <p class="code">404</p>
+  <h1>This page does not exist.</h1>
+  <p>The article you are looking for may have been moved or removed.</p>
+  <nav class="actions">
+    <a href="/">Back to home</a>
+    <a href="/blog">Browse the blog</a>
+  </nav>
+</main>
+</body>
+</html>`;
+
 export async function middleware(request: NextRequest) {
   /**
    * Canonical-host 301 — anything that is not the live production domain
@@ -119,6 +160,22 @@ export async function middleware(request: NextRequest) {
   const acceptHeader = request.headers.get("accept") || "";
   const pathname = request.nextUrl.pathname;
   const cleanPath = pathname.replace(/\/$/, "") || "/";
+
+  // 0. Blog slug guard — catalog-authoritative 404 for unknown /blog/<slug>.
+  if (cleanPath.startsWith("/blog/")) {
+    const { blogs } = await import("@/lib/blog-catalog");
+    const validBlogPaths = new Set(blogs.map((b) => b.slug));
+    if (!validBlogPaths.has(cleanPath)) {
+      return new NextResponse(BLOG_NOT_FOUND_HTML, {
+        status: 404,
+        headers: {
+          "Content-Type": "text/html; charset=utf-8",
+          "X-Robots-Tag": "noindex, nofollow",
+          "Cache-Control": "public, max-age=60",
+        },
+      });
+    }
+  }
 
   // 1. API Catalog (RFC 9727)  —  return application/linkset+json
   if (pathname === "/.well-known/api-catalog") {
