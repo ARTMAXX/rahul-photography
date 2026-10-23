@@ -173,7 +173,7 @@ export const posts: BlogPost[] = [
       "",
       "Generative backgrounds work exceptionally well for matte skincare containers, packaged snacks, tech accessories, and boxed goods. Because these surfaces do not mirror their surroundings, the background integrates cleanly.",
       "",
-      "However, for **high-gloss chrome, glassware, and polished metals**, generative backgrounds still fall short. A reflective whiskey bottle reflects everything 360 degrees around it in the real studio. When composited into a generated room, the mismatched studio reflections break the illusion immediately. For these products, practical set styling remains irreplaceable. See our guide on [photographing glass and liquid](/blog/beverage-photography-glass) for how we handle reflective beverage assets.",
+      "However, for **high-gloss chrome, glassware, and polished metals**, generative backgrounds still fall short. A reflective whiskey bottle reflects everything 360 degrees around it in the real studio. When composited into a generated room, the mismatched studio reflections break the illusion immediately. For these products, practical set styling remains irreplaceable. See our guide on [photographing glass and liquid](/blog/beverage-photography-glass-splash) for how we handle reflective beverage assets.",
       "",
       "For regional brands across Dehradun and Uttarakhand looking to elevate catalog imagery, combining studio packshots with tasteful generative environments delivers campaign-grade visuals at a fraction of traditional location build costs. Check out our [commercial photography services](/services) or [get in touch](/contact) to plan your next shoot.",
     ],
@@ -362,7 +362,7 @@ export const posts: BlogPost[] = [
       "",
       "- **Water & Sodas:** Rapid, crisp droplet crowns requiring precise trigger timing down to 2\u20135 milliseconds.",
       "- **Syrups & Coffee:** Slower, thicker ribbons that hold architectural shapes longer but require powerful backlighting to prevent them from looking heavy or muddy.",
-      "- **Condensation Beads:** Real ice water drips and runs uncontrollably under studio lights. We craft lasting, photogenic condensation beads using a custom water and glycerin formulation applied with fine atomizers. Learn more in our [glass and beverage lighting guide](/blog/beverage-photography-glass).",
+      "- **Condensation Beads:** Real ice water drips and runs uncontrollably under studio lights. We craft lasting, photogenic condensation beads using a custom water and glycerin formulation applied with fine atomizers. Learn more in our [glass and beverage lighting guide](/blog/beverage-photography-glass-splash).",
       "",
       "## 3. The Multi-Plate Composite Strategy",
       "",
@@ -626,66 +626,6 @@ export const posts: BlogPost[] = [
     ],
   },
   {
-    slug: "beverage-photography-glass",
-    title: "Photographing Glass, Bottles & Liquids: Reflection Control and Backlighting",
-    seoTitle: "How to Photograph Glass Bottles: Reflection Control",
-    excerpt:
-      "How to photograph glass bottles: kill blown-out reflections with strip-box contour lines, backlight transparent liquids for glow, and build safe fake condensation.",
-    tag: "Technique",
-    date: "March 2026",
-    read: "8 min",
-    faq: [
-      {
-        q: "Why is glass so hard to photograph?",
-        a: "Glass is transparent and reflective at the same time: it is defined not by its surface but by what passes through it and what it reflects. A strobe aimed straight at a bottle creates a blown-out hot spot that hides the label — glass must be lit indirectly, through its reflections and edges.",
-      },
-      {
-        q: "How do you light a glass bottle without glare on the label?",
-        a: "Use two vertical strip boxes behind and beside the bottle to draw clean white contour lines along its edges, backlight the liquid through a diffuser for glow, and place black flags in front of the camera to absorb stray room reflections. The camera never sees a bare light source.",
-      },
-      {
-        q: "How do you make bottles look cold with condensation?",
-        a: "Real condensation melts and slides within minutes. Studios use a glycerin-and-water mixture (sometimes with a whisper of acrylic varnish) spritzed in fine droplets — it holds its beading shape for the entire shoot while reading as genuine chill in the frame.",
-      },
-      {
-        q: "Should you photograph glass on a white or black background?",
-        a: "Both define glass by its edges: dark backgrounds need light edges (bright contour lines from strip boxes), white backgrounds need dark edges (black flags shaping the silhouette). The choice is a branding decision — dark for premium spirits, white for clean FMCG catalog work.",
-      },
-    ],
-    cta: {
-      text: "Book a commercial beverage or food shoot",
-      href: "/services/food-beverage-photography",
-      subtext: "Premium liquid, bottle, and restaurant photography in Dehradun.",
-    },
-    body: [
-      "Glass bottles and liquids present a unique optical paradox: glass is completely transparent, yet it reflects everything in the studio. A novice photographer pointing a strobe directly at a wine or liquor bottle will produce an ugly, blown-out white flash reflection that obscures the label and flattens the liquid.",
-      "",
-      "Professional beverage photography is not about lighting the glass — it is about lighting the reflections and the liquid within. Here is our studio formula for photographing glass bottles and translucent drinks.",
-      "",
-      "## 1. The Magic of Backlighting Transparent Liquids",
-      "",
-      "To make amber whiskey, golden beer, or vibrant juices glow with rich, saturated color, light must pass **through** the liquid toward the camera. We place a diffused strobe or white bounce card directly behind the bottle, masked precisely to the bottle's silhouette.",
-      "",
-      "This creates a luminous internal glow while keeping the background dark or controlled, making the beverage jump off the screen.",
-      "",
-      "## 2. Double Strip Boxes for Defined Contour Lines",
-      "",
-      "To define the outer glass curvature without unwanted room reflections, we position two vertical strip boxes fitted with grid diffusers slightly behind and to the sides of the bottle. This casts two crisp, elegant white reflection lines along the left and right edges, defining the three-dimensional cylinder.",
-      "",
-      "## 3. Black Flags to Eliminate Stray Bounce",
-      "",
-      "We place black foam core panels directly in front of the camera and alongside the set to block stray reflections from the room, ceiling, and camera lens. This ensures the glass maintains deep, rich blacks along its outer contours.",
-      "",
-      "Pair these lighting techniques with dynamic [high-speed splash photography](/blog/why-beverage-splash-photography-is-hard) to create show-stopping commercial campaigns. Explore our [beverage photography portfolio](/gallery) or [contact our studio](/contact).",
-    ],
-    tldr: [
-      "Beverage photography is about lighting the reflections and liquid within — not the glass itself.",
-      "Light must pass through the liquid toward the camera to make amber whiskey, golden beer, or vibrant juices glow with saturated color.",
-      "Use two vertical strip boxes with grid diffusers behind the bottle to create crisp, elegant contour highlight lines on both edges.",
-      "Black foam core panels in front of the set absorb stray room reflections, maintaining deep rich blacks along glass outer contours.",
-    ],
-  },
-  {
     slug: "ai-upscaling-ecommerce",
     title: "AI Upscaling for E-Commerce: When Neural Resampling Helps and When It Kills Trust",
     seoTitle: "AI Upscaling for E-Commerce: When It Helps",
@@ -875,7 +815,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const post = posts.find((p) => p.slug === slug);
-  if (!post) return { title: "Blog" };
+  if (!post) notFound();
   return {
     // No suffix: post.seoTitle (if set) or post.title is used as-is. The
     // previous template (${post.title} | Rahul Chanda) added a brand suffix

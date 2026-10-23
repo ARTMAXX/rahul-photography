@@ -37,7 +37,7 @@ export const metadata: Metadata = {
       "Product, food, footwear & brand shoots from a commercial photography studio in Dehradun.",
     images: [absoluteUrl("/opt/og-image-homepage.jpg")],
   },
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: false },
   // Freshness signal — og:updated_time via top-level `other` (Next rejects
   // modifiedTime on og:type=website). Refresh ONLY on genuine content
   // revisions; do not churn this date on deploys.
@@ -496,7 +496,7 @@ export default function PhotoStudioPage() {
                 desc: "The four-stage pipeline behind every consistent delivery.",
               },
               {
-                href: "/blog/beverage-photography-glass",
+                href: "/blog/beverage-photography-glass-splash",
                 title: "Glass, liquid, and light: photographing premium beverages",
                 desc: "Backlight, glycerin condensation, and controlled reflections.",
               },

@@ -69,15 +69,11 @@ function Header1() {
       ],
     },
     {
-      // Named for its contents (Apple: "specific labels beat generic
-      // ones" — the old umbrella "More" answered nothing).
-      title: "Studio",
+      // Renamed from "Studio" — the photo-studio page now redirects to
+      // /dehradun; keeping a dead link in the nav would confuse visitors.
+      title: "More",
       description: "Read the blog, learn about us, or get in touch.",
       items: [
-        {
-          title: "Photo Studio",
-          href: "/photo-studio-dehradun",
-        },
         {
           title: "Blog",
           href: "/blog",

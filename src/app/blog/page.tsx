@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { BlogSection } from "@/components/ui/blog-section";
 import { CinematicFooter } from "@/components/ui/motion-footer";
 import { absoluteUrl, siteConfig } from "@/lib/site";
+import { blogs } from "@/lib/blog-catalog";
+import { postDates, postModified } from "@/lib/blog-posts";
 
 export const metadata: Metadata = {
   title: "Commercial Photography Blog & Field Notes | Rahul Chanda",
@@ -31,6 +33,33 @@ export const metadata: Metadata = {
   },
 };
 
+/**
+ * Blog + ItemList JSON-LD. The post list comes from the single catalog source
+ * (src/lib/blog-catalog.ts — the same list the card grid and RSS render);
+ * publish and refresh dates come from src/lib/blog-posts.ts so these nodes
+ * agree with each post's own JSON-LD and the sitemap. All dates are static
+ * strings — never new Date().
+ */
+const blogPageUrl = absoluteUrl("/blog");
+
+const blogPostNodes = blogs.map((b) => {
+  const slugKey = b.slug.replace(/^\/blog\//, "");
+  const published = postDates[slugKey] ?? b.createdAt;
+  const modified = postModified[slugKey] ?? published;
+  return {
+    "@type": "BlogPosting",
+    "@id": absoluteUrl(b.slug),
+    "url": absoluteUrl(b.slug),
+    "headline": b.title,
+    "description": b.description,
+    "image": absoluteUrl(b.image),
+    "datePublished": published,
+    "dateModified": modified,
+    "isPartOf": { "@id": blogPageUrl },
+    "author": { "@type": "Person", "name": siteConfig.contact.name },
+  };
+});
+
 const blogSchema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -50,6 +79,29 @@ const blogSchema = {
           "item": absoluteUrl("/blog"),
         },
       ],
+    },
+    {
+      "@type": "Blog",
+      "@id": blogPageUrl,
+      "url": blogPageUrl,
+      "name": `${siteConfig.name} — Blog & Field Notes`,
+      "description":
+        "Field notes, lighting techniques, AI retouching workflows, and behind-the-scenes guides from commercial photographer Rahul Chanda in Dehradun, India.",
+      "inLanguage": "en",
+      "publisher": { "@type": "Organization", "name": siteConfig.name },
+      "blogPost": blogPostNodes,
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${blogPageUrl}#blog-posts`,
+      "name": "Blog & Field Notes — Posts",
+      "numberOfItems": blogPostNodes.length,
+      "itemListElement": blogPostNodes.map((p, i) => ({
+        "@type": "ListItem",
+        "position": i + 1,
+        "url": p.url,
+        "name": p.headline,
+      })),
     },
   ],
 };

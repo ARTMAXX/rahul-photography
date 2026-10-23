@@ -153,16 +153,6 @@ export const blogs: BlogCard[] = [
 		readTime: "8 min read",
 	},
 	{
-		title: "Photographing Glass, Bottles & Liquids: Reflection Control and Backlighting",
-		slug: "/blog/beverage-photography-glass",
-		description:
-			"Controlling specular reflections, building translucent backlights, and crafting custom condensation formulas for premium beverage and spirits photography.",
-		image: "/opt/best shots/Beverage images/bev-macro.webp",
-		createdAt: "2026-03-24",
-		tag: "Technique",
-		readTime: "8 min read",
-	},
-	{
 		title: "AI Upscaling for E-Commerce: When Neural Resampling Helps and When It Kills Trust",
 		slug: "/blog/ai-upscaling-ecommerce",
 		description:

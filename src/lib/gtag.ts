@@ -26,7 +26,14 @@ declare global {
  * (avoids sending the previous path on back/forward navigation).
  */
 export function pageview(path: string) {
-  if (typeof window === "undefined" || !GA_MEASUREMENT_ID) return;
+  if (typeof window === "undefined") return;
+  // Prefer the build-inlined measurement ID; fall back to the server-rendered
+  // global (window.__GA_MEASUREMENT_ID__) so client-side navigation tracking
+  // works even when NEXT_PUBLIC_GA_MEASUREMENT_ID was not inlined at build time.
+  const id =
+    GA_MEASUREMENT_ID ||
+    (window as Window & { __GA_MEASUREMENT_ID__?: string }).__GA_MEASUREMENT_ID__;
+  if (!id || typeof window.gtag !== "function") return;
   window.gtag("event", "page_view", {
     page_path: path,
     page_location: window.location.origin + path,

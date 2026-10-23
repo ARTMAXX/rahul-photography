@@ -46,8 +46,24 @@ const SERVICES = [
   "Commercial Campaigns",
   "Brand Content Creation",
   "Architectural & Interiors",
+  "Footwear Photography",
   "Something else",
 ];
+
+// Legacy ?service= label spellings -> canonical SERVICES value. Service pages
+// link /contact?service=<label>; some older links use different spellings, so
+// map those to the canonical value so the dropdown still pre-fills correctly.
+const SERVICE_ALIASES: Record<string, string> = {
+  "Fashion Photography": "Fashion & Lifestyle",
+  "Food & Beverage Photography": "Food & Beverage",
+  "Footwear Photography": "Footwear Photography",
+};
+
+function resolveService(svc: string | null): string | null {
+  if (!svc) return null;
+  if (SERVICES.includes(svc)) return svc;
+  return SERVICE_ALIASES[svc] ?? null;
+}
 
 export default function ContactForm({
   headingLevel = "h2",
@@ -70,7 +86,8 @@ export default function ContactForm({
   useEffect(() => {
     const onInquire = (e: Event) => {
       const title = (e as CustomEvent<string>).detail;
-      if (title && SERVICES.includes(title)) setService(title);
+      const resolved = resolveService(title);
+      if (resolved) setService(resolved);
     };
     window.addEventListener("inquire-service", onInquire);
     return () => window.removeEventListener("inquire-service", onInquire);
@@ -81,7 +98,8 @@ export default function ContactForm({
     if (typeof window === "undefined") return;
     const params = new URLSearchParams(window.location.search);
     const svc = params.get("service");
-    if (svc && SERVICES.includes(svc)) setService(svc);
+    const resolved = resolveService(svc);
+    if (resolved) setService(resolved);
   }, []);
 
   useGSAP(() => {

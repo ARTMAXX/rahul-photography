@@ -1,9 +1,9 @@
-﻿"use client";
+"use client";
 
 import * as React from "react";
 
 // -------------------------------------------------------------------------
-// 1. STYLES  â€”  Morphic-exact + animations
+// 1. STYLES  —  Morphic-exact + animations
 // -------------------------------------------------------------------------
 const STYLES = `
 .cinematic-footer-wrapper {
@@ -12,7 +12,7 @@ const STYLES = `
   background: #000000;
 }
 
-/* Giant Watermark  â€”  outline-only, anchored to the BOTTOM edge so it always
+/* Giant Watermark  —  outline-only, anchored to the BOTTOM edge so it always
    sits below the link grid no matter how many pill rows the footer has.
    Hidden on mobile to prevent overlap with the link grid + bottom bar. */
 .footer-watermark {
@@ -34,7 +34,7 @@ const STYLES = `
   }
 }
 .footer-watermark-text {
-  /* Morphic-scale mark â€” ~20vw so RAHUL spans most of the footer width,
+  /* Morphic-scale mark — ~20vw so RAHUL spans most of the footer width,
      anchored bottom and cropped by the footer edge like Morphic's watermark. */
   font-size: clamp(80px, 20vw, 330px);
   line-height: 0.8;
@@ -43,11 +43,11 @@ const STYLES = `
   color: rgba(255, 255, 255, 0.04);
   -webkit-text-stroke: 1.5px rgba(232, 59, 44, 0.45);
   white-space: nowrap;
-  /* Plain outline â€” no text-shadow glow. The shine sweep layer below
+  /* Plain outline — no text-shadow glow. The shine sweep layer below
      provides the continuous pulsing/drawing effect on the stroke. */
 }
 
-/* Shine sweep layer  â€”  VengenceUI AnimatedButton style: a light band
+/* Shine sweep layer  —  VengenceUI AnimatedButton style: a light band
    travels along the outline stroke every few seconds. The red shine
    sweeps across the already-drawn outline, creating the "drawing"
    effect on top of the static text-stroke. */
@@ -92,7 +92,7 @@ const STYLES = `
   100% { opacity: 1; transform: translateX(-50%) scale(1); }
 }
 
-/* Wide grid-cell pills  â€”  Morphic layout + React-Bits circle-rise hover */
+/* Wide grid-cell pills  —  Morphic layout + React-Bits circle-rise hover */
 .footer-pill {
   display: flex;
   align-items: center;
@@ -114,7 +114,7 @@ const STYLES = `
   letter-spacing: 0.01em;
 }
 
-/* Rising circle fill  â€”  bubbles up from the bottom on hover */
+/* Rising circle fill  —  bubbles up from the bottom on hover */
 .footer-pill::before {
   content: '';
   position: absolute;
@@ -137,7 +137,7 @@ const STYLES = `
   border-color: rgba(232, 59, 44, 0.4);
 }
 
-/* Touch: 44px minimum target (WCAG 2.5.5 / Apple HIG)  â€”  desktop keeps
+/* Touch: 44px minimum target (WCAG 2.5.5 / Apple HIG)  —  desktop keeps
    the original slim 34px pill */
 @media (pointer: coarse) {
   .footer-pill {
@@ -145,7 +145,7 @@ const STYLES = `
   }
 }
 
-/* Label stack  â€”  old label exits up, white label enters from below */
+/* Label stack  —  old label exits up, white label enters from below */
 .pill-label-stack {
   position: relative;
   display: inline-block;
@@ -172,7 +172,7 @@ const STYLES = `
   transform: translateY(0);
 }
 
-/* Morphic-style timeline ruler  â€”  subtle seconds labels + fine ticks */
+/* Morphic-style timeline ruler  —  subtle seconds labels + fine ticks */
 .footer-ruler {
   width: 100%;
   padding: 0 8px;
@@ -208,7 +208,7 @@ const STYLES = `
   height: 10px;
 }
 
-/* Thin 1px ticks  â€”  fine marks, not blocks */
+/* Thin 1px ticks  —  fine marks, not blocks */
 .footer-ruler-tick {
   flex: none;
   width: 1px;
@@ -227,7 +227,7 @@ const STYLES = `
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* #8a8a8a â†’ 5.3:1 on black  â€”  WCAG AA for small legal text */
+  /* #8a8a8a → 5.3:1 on black  —  WCAG AA for small legal text */
   color: #8a8a8a;
   font-size: 11.5px;
   opacity: 0;
@@ -257,7 +257,7 @@ const STYLES = `
   transform: translateY(-2px) scale(1.1);
 }
 
-/* Logo waveform bars  â€”  staggered pulse animation */
+/* Logo waveform bars  —  staggered pulse animation */
 .footer-logo-bar {
   display: block;
   width: 2.5px;
@@ -323,7 +323,6 @@ const NAV_ROW_1: { label: string; href: string; external?: boolean }[] = [
   { label: "Portfolio", href: "/gallery" },
   { label: "Services", href: "/services" },
   { label: "Dehradun", href: "/dehradun" },
-  { label: "Studio", href: "/photo-studio-dehradun" },
   { label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/faq" },
@@ -345,7 +344,7 @@ const NAV_ROW_2: { label: string; href: string; external?: boolean }[] = [
 
 // Marketplace / booking + portfolio/social links. Grouped 5 + 4 so that, combined
 // with NAV_ROW_2 (4), they fill a shared 7-column grid evenly (7 + 7 with the
-// last pill spanning two columns) â€” no orphaned rows.
+// last pill spanning two columns) — no orphaned rows.
 const NAV_ROW_3: { label: string; href: string; external?: boolean }[] = [
   { label: "IndiaMART", href: "https://www.indiamart.com/proddetail/ecommerce-product-photoshoot-service-2859857038448.html?sellerpreview=1", external: true },
   { label: "View on Justdial", href: "https://jsdl.in/DT-99ESASPGCK1", external: true },
@@ -385,7 +384,7 @@ const LinkedInIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 // Social profiles.
-// X (Twitter) entry was removed in Sept 2026 â€” no real X profile exists yet.
+// X (Twitter) entry was removed in Sept 2026 — no real X profile exists yet.
 // To re-enable, add `{ label: "X (Twitter)", href: "https://x.com/<handle>", Icon: XIcon }`
 // once a real account is created.
 const SOCIALS: { label: string; href: string; Icon: React.ComponentType<React.SVGProps<SVGSVGElement>> }[] = [
@@ -394,7 +393,7 @@ const SOCIALS: { label: string; href: string; Icon: React.ComponentType<React.SV
 ];
 
 // -------------------------------------------------------------------------
-// 3. TIMELINE RULER  â€”  Morphic-style: subtle seconds + fine ticks (no playhead)
+// 3. TIMELINE RULER  —  Morphic-style: subtle seconds + fine ticks (no playhead)
 // -------------------------------------------------------------------------
 const TIMELINE_SECONDS = 15;
 const TICKS_PER_SECOND = 8; // fine minor ticks
@@ -427,7 +426,7 @@ const TimelineRuler = () => {
 };
 
 // -------------------------------------------------------------------------
-// 4. MAIN COMPONENT  â€”  Morphic-exact layout + micro/macro animations
+// 4. MAIN COMPONENT  —  Morphic-exact layout + micro/macro animations
 // -------------------------------------------------------------------------
 export function CinematicFooter() {
   return (
@@ -435,7 +434,7 @@ export function CinematicFooter() {
       <style dangerouslySetInnerHTML={{ __html: STYLES }} />
 
       <footer className="cinematic-footer-wrapper relative w-full overflow-hidden min-h-[560px]">
-        {/* Giant watermark  â€”  outline-only, anchored below the nav (no overlap) */}
+        {/* Giant watermark  —  outline-only, anchored below the nav (no overlap) */}
         <div className="footer-watermark" aria-hidden="true">
           <span className="footer-watermark-text">RAHUL</span>
           <span className="footer-watermark-text footer-watermark-shine">
@@ -443,7 +442,7 @@ export function CinematicFooter() {
           </span>
         </div>
 
-        {/* Layer 1: Logo  â€”  top-left with animated waveform bars */}
+        {/* Layer 1: Logo  —  top-left with animated waveform bars */}
         <div className="relative z-10 px-4 md:px-20 pt-8">
           <a href="/" className="inline-flex items-center gap-2 group" data-cursor="pointer">
             <span className="flex h-4 items-end gap-[2px]">
@@ -462,7 +461,7 @@ export function CinematicFooter() {
           <TimelineRuler />
         </div>
 
-        {/* Layer 3: Grid pills  â€”  Morphic-style centered block */}
+        {/* Layer 3: Grid pills  —  Morphic-style centered block */}
         <nav className="relative z-[11] mx-auto mt-6 w-full max-w-[960px] px-4" aria-label="Footer">
           <div className="footer-pill-row grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-2">
             {NAV_ROW_1.map((link) => (
@@ -481,9 +480,9 @@ export function CinematicFooter() {
               </a>
             ))}
           </div>
-          {/* Layer 3b: support/legal + marketplace/social â€” one flex-wrap track so
+          {/* Layer 3b: support/legal + marketplace/social — one flex-wrap track so
               clips flow and wrap organically (timeline-clip look, staggered
-              boundaries like Morphic â€” not a rigid shared grid). w-auto overrides
+              boundaries like Morphic — not a rigid shared grid). w-auto overrides
               .footer-pill's width:100%, which only makes sense in grid cells. */}
           <div className="footer-pill-row flex flex-wrap justify-center gap-2 mt-2">
             {[...NAV_ROW_2, ...NAV_ROW_3, ...NAV_ROW_4].map((link) => (
@@ -505,13 +504,13 @@ export function CinematicFooter() {
           </div>
         </nav>
 
-        {/* Layer 4: Bottom bar  â€”  copyright left, EN | socials right.
+        {/* Layer 4: Bottom bar  —  copyright left, EN | socials right.
             Switched from absolute positioning to flex flow so it stacks
             cleanly on mobile and never overlaps the link grid above. */}
         <div className="relative md:absolute md:bottom-0 md:left-0 md:right-0 z-10 mx-4 md:mx-20 mt-12 md:mt-0 mb-5 footer-bottom">
           {/* Left side */}
           <div className="flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-3">
-            <span>Â© {new Date().getFullYear()} Rahul Chanda Photography. All rights reserved.</span>
+            <span>© {new Date().getFullYear()} Rahul Chanda Photography. All rights reserved.</span>
           </div>
 
           {/* Right side */}

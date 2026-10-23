@@ -54,14 +54,6 @@
       "command": ["npx", "-y", "@playwright/mcp"],
       "enabled": true
     },
-    "webwright": {
-      "type": "local",
-      "command": [
-        "C:\\Users\\Rahul\\Downloads\\data\\Webwright\\venv\\Scripts\\python.exe",
-        "C:\\Users\\Rahul\\Downloads\\data\\Webwright\\mcp_bridge.py"
-      ],
-      "enabled": true
-    },
     "cloudflare-ai-search": {
       "type": "remote",
       "url": "https://133947d0-8106-481e-b824-ccc6712e768d.search.ai.cloudflare.com/mcp",

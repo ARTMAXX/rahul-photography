@@ -1,8 +1,8 @@
 "use client";
 
 import { usePathname, useSearchParams } from "next/navigation";
-import { useEffect, Suspense } from "react";
-import { GA_MEASUREMENT_ID, pageview } from "../lib/gtag";
+import { useEffect, Suspense, useRef } from "react";
+import { pageview } from "../lib/gtag";
 
 /**
  * Google Analytics 4 — client-side route-change tracker.
@@ -27,10 +27,15 @@ export default function GoogleAnalytics() {
 function RouteChangeTracker() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  // The initial page_view is fired by gtag('config', ..., { send_page_view: true })
+  // in GoogleAnalyticsScript (server-rendered). Skip the first mount so this
+  // tracker owns only subsequent client-side navigations — exactly one owner of
+  // page_view events (config = initial load, tracker = navigation).
+  const isFirstMount = useRef(true);
 
   useEffect(() => {
-    if (!GA_MEASUREMENT_ID) return;
     if (typeof window.gtag !== "function") return;
+    if (isFirstMount.current) { isFirstMount.current = false; return; }
     const query = searchParams?.toString();
     const path = query ? `${pathname}?${query}` : pathname;
     pageview(path);

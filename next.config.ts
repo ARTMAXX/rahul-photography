@@ -134,6 +134,22 @@ const nextConfig: NextConfig = {
         destination: "/blog/ai-commercial-product-photography",
         permanent: true,
       },
+      // 2026-10-22 SEO consolidation: /blog/beverage-photography-glass (100%
+      // exit rate in Ahrefs) was the weakest beverage post; its technique
+      // content now lives in the stronger splash guide below.
+      {
+        source: "/blog/beverage-photography-glass",
+        destination: "/blog/beverage-photography-glass-splash",
+        permanent: true,
+      },
+      // 2026-10-23 accuracy: /photo-studio-dehradun described a walk-in studio
+      // that doesn't exist. /dehradun is the accurate destination for commercial
+      // photography in Dehradun. Permanent redirect preserves link equity.
+      {
+        source: "/photo-studio-dehradun",
+        destination: "/dehradun",
+        permanent: true,
+      },
     ];
   },
   // Turbopack root — resolves lockfile ambiguity warning

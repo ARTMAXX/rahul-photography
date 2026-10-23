@@ -25,6 +25,7 @@ export default function GoogleAnalyticsScript() {
           window.dataLayer = window.dataLayer || [];
           window.gtag = function gtag(){ window.dataLayer.push(arguments); };
           window.gtag('js', new Date());
+          window.__GA_MEASUREMENT_ID__ = '${GA_MEASUREMENT_ID}';
           window.gtag('config', '${GA_MEASUREMENT_ID}', { send_page_view: true });
         `}
       </Script>

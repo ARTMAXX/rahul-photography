@@ -23,8 +23,7 @@ const standaloneBlogSlugs = new Set<string>([
 const corePageDates: Record<string, string> = {
   "/":          "2026-08-29",
   "/services":  "2026-08-29",
-  "/dehradun":  "2026-08-29",
-  "/photo-studio-dehradun": "2026-10-22",
+  "/dehradun":  "2026-10-23",
   "/gallery":   "2026-08-29",
   "/about":     "2026-08-29",
   "/blog":      "2026-08-29",
@@ -53,7 +52,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/", priority: 1.0, freq: "weekly" as const },
     { path: "/services", priority: 0.9, freq: "monthly" as const },
     { path: "/dehradun", priority: 0.9, freq: "weekly" as const },
-    { path: "/photo-studio-dehradun", priority: 0.8, freq: "weekly" as const },
     { path: "/gallery", priority: 0.9, freq: "monthly" as const },
     { path: "/about", priority: 0.8, freq: "monthly" as const },
     { path: "/blog", priority: 0.8, freq: "weekly" as const },

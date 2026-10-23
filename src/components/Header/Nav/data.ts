@@ -9,7 +9,6 @@ export const links = [
   // Secondary destinations  —  still reachable, lower in the hierarchy
   { title: "Dehradun", href: "/dehradun" },
   { title: "Blog", href: "/blog" },
-  { title: "Studio", href: "/photo-studio-dehradun" },
 ];
 
 export const footerLinks = [

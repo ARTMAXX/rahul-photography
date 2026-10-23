@@ -64,12 +64,6 @@ export default function NotFound() {
                 href: "/dehradun",
                 icon: "◉",
               },
-              {
-                title: "Photo Studio",
-                desc: "Inside the Dehradun studio",
-                href: "/photo-studio-dehradun",
-                icon: "▣",
-              },
             ].map((item) => (
               <Link
                 key={item.title}

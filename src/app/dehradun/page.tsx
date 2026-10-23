@@ -488,15 +488,8 @@ export default function DehradunPage() {
           <p className="text-white/50 mt-6 leading-relaxed max-w-[65ch]">
             No studio needed. I bring professional strobes, continuous lights, modifiers, backgrounds, and
             grip equipment to your location — whether it's a cafe on Rajpur Road, a restaurant in Mussoorie,
-            a footwear factory in Sahastradhara, or your home kitchen in Rishikesh. Prefer shooting under
-            studio conditions?{" "}
-            <Link
-              href="/photo-studio-dehradun"
-              className="text-[#e83b2c]/80 underline decoration-white/20 hover:text-[#e83b2c] hover:decoration-[#e83b2c]/60 transition-colors"
-            >
-              See the photo-studio-in-Dehradun page
-            </Link>
-            .
+            a footwear factory in Sahastradhara, or your home kitchen in Rishikesh. For shoots that require
+            a controlled studio environment, I work with rented studio spaces in Dehradun as needed.
           </p>
           <ul className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 text-white/60">
             {[
@@ -692,7 +685,7 @@ export default function DehradunPage() {
                 desc: "Timing, viscosity, lighting — what goes into that hero splash frame.",
               },
               {
-                href: "/blog/beverage-photography-glass",
+                href: "/blog/beverage-photography-glass-splash",
                 title: "Glass, liquid, and light: photographing premium beverages",
                 desc: "Backlight, glycerin condensation, and controlled reflections.",
               },
